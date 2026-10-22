@@ -1,0 +1,9 @@
+// Cloudflare Workers static assets: serves the Astro build (dist/), including dist/_headers.
+{
+  "name": "forever-leveling",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
