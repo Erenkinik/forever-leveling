@@ -28,4 +28,4 @@ def test_canonical_data_valid():
             problems.append(f"{qid}: unknown sources {sorted(bad)}")
         if _has_forbidden_key(q):
             problems.append(f"{qid}: forbidden D/O key")
-    assert problems[:10] == []
+    assert not problems, f"{len(problems)} problems, first 10: {problems[:10]}"

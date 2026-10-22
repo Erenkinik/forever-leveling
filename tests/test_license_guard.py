@@ -29,9 +29,19 @@ def find_violations(files: list[str]) -> list[str]:
     return hits
 
 
+def _tracked_files() -> list[str]:
+    """All tracked files; fails if the listing is empty or lacks known anchors."""
+    files = _git_ls_files()
+    assert files, "git ls-files returned nothing; the guard would pass vacuously"
+    for anchor in ("tests/test_license_guard.py", "pipeline/config.py"):
+        assert anchor in files, f"anchor {anchor} not tracked; wrong repo or empty index"
+    return files
+
+
 def test_no_forbidden_sources():
-    assert find_violations(_git_ls_files()) == []
+    assert find_violations(_tracked_files()) == []
 
 
 def test_no_raw_dir_tracked():
+    _tracked_files()
     assert _git_ls_files("raw/") == []
