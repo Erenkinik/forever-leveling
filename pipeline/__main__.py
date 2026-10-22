@@ -404,9 +404,12 @@ def _item_icons(root: Path) -> dict[str, int | None] | None:
 
 
 def cmd_export(args) -> int:
-    from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
+    from pipeline.canonical import (
+        load_questxp_canonical, load_spawns_canonical, load_taxi_canonical, load_uimaps_canonical,
+    )
     from pipeline.export.lua import to_lua
     from pipeline.export.site import to_site_json
+    from pipeline.export.timing import step_seconds
 
     if args.all == bool(args.route):
         print("give exactly one of --all or <route>", file=sys.stderr)
@@ -431,6 +434,7 @@ def cmd_export(args) -> int:
     xp_table = load_questxp_canonical(DATA_DIR)
     root = DATA_DIR.parent
     item_icons = _item_icons(root)
+    taxi = load_taxi_canonical(DATA_DIR)
     outputs = []
     for path in paths:
         try:
@@ -439,7 +443,9 @@ def cmd_export(args) -> int:
             print(f"cannot read route file {path}: {exc}", file=sys.stderr)
             return 1
         try:
-            site = to_site_json(route, quests, spawns, uimaps, _route_levels(route, quests, xp_table), item_icons)
+            levels = _route_levels(route, quests, xp_table)
+            site = to_site_json(route, quests, spawns, uimaps, levels, item_icons,
+                                step_seconds(route, quests, levels, taxi))
             outputs.append((path.stem, _json_text(site), to_lua(route)))
         except (ValueError, KeyError, TypeError, AttributeError) as exc:
             print(f"cannot export route file {path}: {type(exc).__name__}: {exc}", file=sys.stderr)

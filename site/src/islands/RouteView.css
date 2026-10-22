@@ -121,6 +121,19 @@ svg.step-icon.grind { stroke: var(--gold); }
 .tag { font: 14px var(--font-mono); color: var(--muted); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0 6px; }
 .report { font: 14px var(--font-mono); color: var(--gold); min-height: 24px; display: inline-flex; align-items: center; }
 .tag.warn { color: var(--warn); border-color: var(--warn); }
+.tag.session { color: var(--on-gold); background: var(--gold); border-color: var(--gold); }
+
+/* Session plan above the steps. */
+.session-plan {
+  display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 4px 0 14px; padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 10px;
+}
+.session-plan label { display: flex; gap: 10px; align-items: center; }
+.session-plan select {
+  min-height: 44px; padding: 6px 10px; background: var(--raised); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px; font: 16px var(--font-body); cursor: pointer;
+}
+.session-plan p { margin: 0; color: var(--muted); }
 .quest { color: var(--quest); font-weight: 600; }
 .npc { color: var(--npc); }
 .item { color: var(--text); font-weight: 600; }
@@ -170,6 +183,16 @@ svg.step-icon.grind { stroke: var(--gold); }
   color: var(--text); font: 600 20px var(--font-mono); cursor: pointer;
 }
 .zoom button:disabled { color: var(--muted); cursor: default; }
+.zoom button.explore { width: auto; padding: 0 14px; font: 15px var(--font-body); }
+.zoom button.explore[aria-pressed="true"] { background: var(--raised); border-color: var(--gold); color: var(--gold); }
+
+/* Exploration mode: quests off the route, a small faint "!" under the route's pins. */
+.pin.optional { width: 20px; height: 20px; background: none; border: 0; outline: 0; cursor: default; }
+.pin.optional img { width: 20px; height: 20px; opacity: .55; filter: drop-shadow(0 0 1px #000); }
+.pin.optional:hover img { opacity: 1; }
+/* Not takeable yet (the game shows no "!" below a quest's minimum level): grey and fainter. */
+.pin.optional.too-high img { filter: grayscale(1) drop-shadow(0 0 1px #000); opacity: .35; }
+.pin.optional:hover .pin-label { display: block; }
 .coords { margin: 12px 0 0; padding-left: 0; list-style: none; font-size: 14px; color: var(--muted); display: grid; gap: 4px; }
 .coords strong { color: var(--text); font-family: var(--font-mono); }
 .map-note { font-size: 14px; color: var(--muted); margin: 8px 0 0; }

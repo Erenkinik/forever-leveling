@@ -190,3 +190,32 @@ def test_site_json_complete_step_carries_the_objective_area_on_its_map():
     step = to_site_json(route, quests, spawns, {})["steps"][0]
     # Kobold points on this map (rounded, deduplicated), the three nearest droppers, the statue; sorted.
     assert step["area"] == [[20.0, 20.0], [51.0, 50.0], [52.0, 50.0], [55.0, 50.0], [60.0, 50.0]]
+
+
+def test_optional_quests_are_the_doable_ones_off_the_route_on_its_maps():
+    from pipeline.export.site import optional_quests
+
+    def q(qid, map_id=1429, **kw):
+        return {"id": qid, "name": f"Q{qid}", "level": 5, "minLevel": 3, "races": None, "factions": None,
+                "classes": None, "inForever": True,
+                "start": {"type": "npc", "id": 9, "name": "Giver", "uiMapId": map_id, "x": 40.0, "y": 50.0}, **kw}
+    quests = {
+        1: q(1),                                   # on the route already
+        2: q(2),                                   # optional
+        3: q(3, map_id=1411),                      # on a map the route never visits
+        4: q(4, factions=["Horde"]),               # the other faction
+        5: q(5, races=["Dwarf"]),                  # another race
+        6: q(6, level=40),                         # over the cap
+        7: q(7, classes=["Shaman"]),               # Humans play no Shamans
+        8: q(8, classes=["Mage", "Shaman"]),       # a Human mage can
+        9: q(9, inForever=False),
+        10: {**q(10), "start": {"type": "item", "id": 5, "name": None, "uiMapId": None, "x": None, "y": None}},
+    }
+    route = {"race": "Human", "faction": "Alliance",
+             "steps": [{"id": "accept-1", "type": "accept", "mapId": 1429, "x": 1, "y": 1, "questId": 1}]}
+    assert optional_quests(route, quests) == [
+        {"questId": 2, "name": "Q2", "mapId": 1429, "x": 40.0, "y": 50.0, "level": 5, "minLevel": 3,
+         "npcName": "Giver"},
+        {"questId": 8, "name": "Q8", "mapId": 1429, "x": 40.0, "y": 50.0, "level": 5, "minLevel": 3,
+         "npcName": "Giver", "classOnly": ["Mage"]},
+    ]

@@ -9,3 +9,6 @@ zones:
   - Stonetalon Mountains  # median 25, 25 quests, Kalimdor
   - Ashenvale  # median 25, 21 quests, Kalimdor
   - Thousand Needles  # median 29, 19 quests, Kalimdor
+  - Desolace  # median 33, 19 quests, Kalimdor (added for the 30–35 range)
+  - Stranglethorn Vale  # median 33.5, 14 quests, Eastern Kingdoms (added for the 30–35 range)
+  - Arathi Highlands  # median 34, 12 quests, Eastern Kingdoms (added for the 30–35 range)

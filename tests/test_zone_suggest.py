@@ -1,5 +1,6 @@
 import pytest
 
+from pipeline.generate.config import LEVEL_CAP
 from pipeline.generate.zone_suggest import ZoneStat, render_yaml, suggest_zones
 
 EK, KAL = 1415, 1414
@@ -47,7 +48,7 @@ def test_continent_switch_costs_levels_and_zones_left_behind_are_dropped():
 
 def test_cities_other_start_zones_small_and_high_zones_are_left_out():
     quests = _quests({
-        1: [5] * 10, 6: [20] * 20, 7: [6] * 20, 8: [15] * 9, 9: [30] * 10, 10: [29] * 10,
+        1: [5] * 10, 6: [20] * 20, 7: [6] * 20, 8: [15] * 9, 9: [LEVEL_CAP] * 10, 10: [LEVEL_CAP - 1] * 10,
     })
     names = [s.name for s in suggest_zones(quests, NAMES, PARENTS, "Human", "Alliance")]
     assert names == ["Elwynn Forest", "Searing Gorge"]

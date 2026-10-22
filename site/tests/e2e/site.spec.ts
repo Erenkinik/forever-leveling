@@ -11,7 +11,7 @@ const ROUTES = ['dwarf', 'gnome', 'human', 'night-elf', 'orc', 'tauren', 'troll'
 
 test('race picker reaches every route and marks Skyborne as coming soon', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Level 1 to 30, the fast way');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/^Level 1 to \d+, the fast way$/);
   const hrefs = await page.locator('a.race').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
   expect(hrefs.sort()).toEqual(ROUTES.map((r) => `/${r}/`).sort());
   await expect(page.getByText('Coming soon')).toHaveCount(2);
@@ -160,7 +160,7 @@ test('the current pin sits on the current step coordinates', async ({ page }) =>
 test('route page has one main landmark and one h1', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('main')).toHaveCount(1);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Human 1–30 leveling route');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/^Human 1–\d+ leveling route$/);
 });
 
 test('high contrast is remembered across pages and reloads', async ({ page }) => {
@@ -209,7 +209,7 @@ test('steps show objectives, levels and plain-language gap reasons', async ({ pa
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step.complete').first()).toContainText(/: (kill|collect|use) /);
-  await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+$/);
+  await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+( · about .+)?$/);
   await expect(page.locator('.progress-level')).toHaveText('Level 1');
   const gap = page.locator('li.step.gap').first();
   await expect(gap).toContainText('Skip for now:');
@@ -341,4 +341,30 @@ test('choosing a class shows only its own class quests, and the choice is rememb
   await page.reload();
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.getByRole('combobox', { name: 'Class' })).toHaveValue('Warlock');
+});
+
+test('exploration mode shows the quests off the route on the map, and is remembered', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const toggle = page.getByRole('button', { name: 'All quests' });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('.pin.optional')).toHaveCount(0);
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.locator('.pin.optional').count()).toBeGreaterThan(0);
+  await expect(page.locator('.pin.optional').first()).toHaveAttribute('aria-label', /^Optional quest: .+, level \d+$/);
+  await page.reload();
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'All quests' })).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('a session plan marks where the chosen time runs out, and zones show their time', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.locator('.session-plan p')).toContainText(/About .+ left on this route/);
+  await expect(page.locator('.zone-levels').first()).toContainText(/about \d+ (h|min)/);
+  await expect(page.locator('.tag.session')).toHaveCount(0);
+  await page.getByLabel('Play session').selectOption('60');
+  await expect(page.locator('.session-plan p')).toContainText(/Steps 1–\d+, to about level \d+/);
+  await expect(page.locator('.tag.session')).toHaveCount(1);
 });

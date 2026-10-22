@@ -14,3 +14,6 @@ zones:
   - Ashenvale  # median 25, 36 quests, Kalimdor
   - Duskwood  # median 25, 54 quests, Eastern Kingdoms
   - Wetlands  # median 26, 32 quests, Eastern Kingdoms
+  - Hillsbrad Foothills  # median 32, 12 quests, Eastern Kingdoms (added for the 30–35 range)
+  - Stranglethorn Vale  # median 33, 19 quests, Eastern Kingdoms (added for the 30–35 range)
+  - Desolace  # median 33, 17 quests, Kalimdor (added for the 30–35 range)

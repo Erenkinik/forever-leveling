@@ -5,14 +5,16 @@ import { routes } from '../lib/data.ts';
 import { themeFor } from '../lib/races.ts';
 
 const factions = ['Alliance', 'Horde'] as const;
+// The highest level the routes reach (their levelRange), so the page follows the pipeline's LEVEL_CAP.
+const cap = Math.max(...routes.map((r) => r.levelRange[1]));
 ---
-<Base title="ForeverXP: free WoW Forever 1–30 leveling routes"
-      description="Pick your race and follow a free step-by-step quest route from level 1 to 30 in WoW Forever.">
+<Base title={`ForeverXP: free WoW Forever 1–${cap} leveling routes`}
+      description={`Pick your race and follow a free step-by-step quest route from level 1 to ${cap} in WoW Forever.`}>
   <main id="main">
     <section class="hero">
       <Emblem size={96} class="hero-emblem" />
       <div>
-        <h1>Level 1 to 30, the fast way</h1>
+        <h1>Level 1 to {cap}, the fast way</h1>
         <p class="lead">A free step-by-step quest route for every race in WoW Forever, with the map, the NPCs and
           what to do at each stop. Your progress is saved in this browser.</p>
       </div>

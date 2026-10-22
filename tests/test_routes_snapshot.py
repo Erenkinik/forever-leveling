@@ -5,10 +5,13 @@ import re
 import pytest
 
 from pipeline.__main__ import _json_text
-from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
+from pipeline.canonical import (
+    load_questxp_canonical, load_spawns_canonical, load_taxi_canonical, load_uimaps_canonical,
+)
 from pipeline.config import DATA_DIR, ROOT
 from pipeline.export.lua import to_lua
 from pipeline.export.site import to_site_json
+from pipeline.export.timing import step_seconds
 from pipeline.generate.config import BETA_BLOCKING_RULES
 from pipeline.generate.xpsim import estimate_levels
 from pipeline.validate.semantic import check_route
@@ -44,12 +47,14 @@ def test_committed_exports_match_routes():
     uimaps = load_uimaps_canonical(DATA_DIR)
     spawns = load_spawns_canonical(DATA_DIR)
     xp_table = load_questxp_canonical(DATA_DIR)
+    taxi = load_taxi_canonical(DATA_DIR)
     for path in _route_paths():
         route = json.loads(path.read_text(encoding="utf-8"))
         site = ROOT / "site" / "src" / "data" / f"{path.stem}.json"
         lua = ROOT / "addon" / "ForeverXP" / "Data" / f"{path.stem}.lua"
-        expected = to_site_json(route, quests, spawns, uimaps, estimate_levels(route, quests, xp_table),
-                                cli._item_icons(ROOT))
+        levels = estimate_levels(route, quests, xp_table)
+        expected = to_site_json(route, quests, spawns, uimaps, levels, cli._item_icons(ROOT),
+                                step_seconds(route, quests, levels, taxi))
         assert site.read_bytes() == _json_text(expected).encode("utf-8"), site
         assert lua.read_bytes() == to_lua(route).encode("utf-8"), lua
 

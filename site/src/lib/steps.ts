@@ -37,6 +37,8 @@ export interface Step {
   objectives?: Objective[];
   /** estimated player level when the step starts (pipeline xpsim.estimate_levels) */
   level?: number;
+  /** estimated seconds for the step, getting there included (pipeline export.timing) */
+  seconds?: number;
   /** complete steps: spawn points (x, y on this map) where the objectives are done */
   area?: [number, number][];
 }
@@ -51,6 +53,20 @@ export interface Route {
   reviewed: boolean;
   releaseTier: 'beta' | 'full';
   steps: Step[];
+  /** quests off the route that the race can do on its maps (exploration mode) */
+  optional?: OptionalQuest[];
+}
+
+export interface OptionalQuest {
+  questId: number;
+  name: string | null;
+  mapId: number;
+  x: number;
+  y: number;
+  level: number;
+  minLevel: number | null;
+  npcName: string | null;
+  classOnly?: string[];
 }
 
 export interface Part {
@@ -114,6 +130,41 @@ export function routeClasses(steps: Step[]): string[] {
 /** The steps a player of this class does: everyone's steps and the class's own ('' keeps every step). */
 export function stepsForClass(steps: Step[], playerClass: string): Step[] {
   return playerClass ? steps.filter((s) => !s.classOnly || s.classOnly.includes(playerClass)) : steps;
+}
+
+/** Exploration mode: the quests off the route on this map that a player of this class can take ('' = any). */
+export function optionalOnMap(quests: OptionalQuest[], mapId: number, playerClass: string): OptionalQuest[] {
+  return quests.filter((q) => q.mapId === mapId
+    && (!playerClass || !q.classOnly || q.classOnly.includes(playerClass)));
+}
+
+/** "45 min", "1 h 20 min", "31 h" (whole minutes, minutes dropped from 10 hours up). */
+export function formatDuration(seconds: number): string {
+  const minutes = Math.max(1, Math.round(seconds / 60));
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  if (h === 0) return `${m} min`;
+  return h >= 10 || m === 0 ? `${h} h` : `${h} h ${m} min`;
+}
+
+/** Estimated seconds of the steps not done yet. */
+export function secondsLeft(steps: Step[], done: ReadonlySet<string>): number {
+  return steps.reduce((t, s) => t + (done.has(s.id) ? 0 : s.seconds ?? 0), 0);
+}
+
+/** Where a session of `minutes` from step `from` ends: the last step that fits (at least `from`), and the level
+ *  the player is at after it (the next step's estimate). Done steps take no time. */
+export function sessionEnd(steps: Step[], from: number, minutes: number, done: ReadonlySet<string>):
+  { index: number; level?: number } {
+  let left = minutes * 60;
+  let index = from;
+  for (let i = from; i < steps.length; i++) {
+    const cost = done.has(steps[i].id) ? 0 : steps[i].seconds ?? 0;
+    if (cost > left && i > from) break;
+    left -= cost;
+    index = i;
+  }
+  return { index, level: steps[index + 1]?.level ?? steps[index]?.level };
 }
 
 export interface ZoneGroup {
@@ -190,11 +241,17 @@ export interface Settings {
   highContrast: boolean;
   /** the player's class; '' shows every class's quests */
   playerClass: string;
+  /** exploration mode: the map also shows the quests off the route */
+  explore: boolean;
+  /** session plan: minutes the player has now; 0 = no plan */
+  sessionMinutes: number;
 }
 
 // Also read by the inline script in src/layouts/Base.astro, which applies high contrast before first paint.
 export const SETTINGS_KEY = 'fxp:v1:settings';
-const DEFAULT_SETTINGS: Settings = { shortcuts: true, highContrast: false, playerClass: '' };
+const DEFAULT_SETTINGS: Settings = {
+  shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0,
+};
 
 export function loadSettings(store: KeyValueStore): Settings {
   try {
@@ -205,6 +262,9 @@ export function loadSettings(store: KeyValueStore): Settings {
       shortcuts: typeof r.shortcuts === 'boolean' ? r.shortcuts : DEFAULT_SETTINGS.shortcuts,
       highContrast: typeof r.highContrast === 'boolean' ? r.highContrast : DEFAULT_SETTINGS.highContrast,
       playerClass: typeof r.playerClass === 'string' ? r.playerClass : DEFAULT_SETTINGS.playerClass,
+      explore: typeof r.explore === 'boolean' ? r.explore : DEFAULT_SETTINGS.explore,
+      sessionMinutes: typeof r.sessionMinutes === 'number' && r.sessionMinutes >= 0
+        ? r.sessionMinutes : DEFAULT_SETTINGS.sessionMinutes,
     };
   } catch {
     return { ...DEFAULT_SETTINGS };

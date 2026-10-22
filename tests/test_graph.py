@@ -3,6 +3,7 @@ import pytest
 from pipeline.canonical import load_uimaps_canonical
 from pipeline.config import DATA_DIR
 from pipeline.generate import GenerationError
+from pipeline.generate.config import LEVEL_CAP
 from pipeline.generate.graph import Selection, build_graph, select_quests
 from pipeline.generate.zone_order import ZoneOrder, load_zone_order
 
@@ -68,10 +69,10 @@ def test_exclusion_reasons_and_precedence():
     quests = {
         1: _q(1, in_forever=False, min_level=None, races=["Orc"], map_id=99),
         2: _q(2, min_level=None, races=["Orc"], map_id=99),
-        3: _q(3, min_level=31, races=["Orc"], map_id=99),
+        3: _q(3, min_level=LEVEL_CAP + 1, races=["Orc"], map_id=99),
         4: _q(4, races=["Orc"], map_id=99),
         5: _q(5, map_id=99),
-        6: _q(6, min_level=30),
+        6: _q(6, min_level=LEVEL_CAP),
         7: _q(7, classes=["Shaman"], map_id=99),
     }
     sel = select_quests(quests, ORDER)

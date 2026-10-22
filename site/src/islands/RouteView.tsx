@@ -1,8 +1,9 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief, reportUrl,
-  mapStepsFor, openQuests, routeClasses, safeStorage, saveDone, pinIcon,
+  clusterPins, describeStep, formatDuration, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
+  reportUrl, secondsLeft, sessionEnd,
+  mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
@@ -17,6 +18,8 @@ const MAP_ART = mapIndex.maps as Record<string, { width: number; height: number 
 
 const ZOOMS = [1, 1.5, 2, 3];
 const SEARCH_LIMIT = 8;
+// Session plan choices, in minutes.
+const SESSION_MINUTES = [30, 60, 90, 120, 180];
 // Steps shown on the map: a few behind and ahead of the current step, on its map only (plus the quest log's).
 const MAP_BEHIND = 2;
 const MAP_AHEAD = 6;
@@ -60,11 +63,14 @@ interface RowProps {
   isCurrent: boolean;
   /** Only the current step gets a report link, so the list stays one tab stop per step. */
   reportHref?: string;
+  /** the last step of the planned session */
+  endsSession?: boolean;
   onToggle: (step: Step, e: MouseEvent<HTMLButtonElement>) => void;
   register: (id: string, el: HTMLLIElement | null) => void;
 }
 
-const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, onToggle, register }: RowProps) {
+const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, endsSession, onToggle, register }:
+  RowProps) {
   return (
     <li
       id={isCurrent ? 'current-step' : undefined}
@@ -86,6 +92,7 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
           <span className="xy">{coords(step)}</span>
           {step.classOnly && <span className="tag class">{step.classOnly.join(', ')}</span>}
           {step.type === 'gap' && <span className="tag warn">Skipped</span>}
+          {endsSession && <span className="tag session">Session end</span>}
           {reportHref && (
             <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
               Report this step<span className="sr-only"> (opens GitHub in a new tab)</span>
@@ -131,7 +138,9 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
 
   const [done, setDone] = useState<Set<string>>(() => new Set());
   const [loaded, setLoaded] = useState(false);
-  const [settings, setSettings] = useState<Settings>({ shortcuts: true, highContrast: false, playerClass: '' });
+  const [settings, setSettings] = useState<Settings>({
+    shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0,
+  });
   const [zoom, setZoom] = useState(0);
   const [announcement, setAnnouncement] = useState('');
   const [query, setQuery] = useState('');
@@ -248,6 +257,8 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   const found = searchSteps(steps, query, Math.max(0, currentIndex), SEARCH_LIMIT + 1);
   const matches = found.slice(0, SEARCH_LIMIT);
   const doneCount = steps.reduce((n, s) => n + (done.has(s.id) ? 1 : 0), 0);
+  const plan = current && settings.sessionMinutes > 0
+    ? sessionEnd(steps, currentIndex, settings.sessionMinutes, done) : null;
 
   return (
     <div className="route-view">
@@ -297,19 +308,41 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
 
       <div className="route-main">
         <section aria-label="Route steps" className="steps" data-loaded={loaded ? 'true' : 'false'}>
+          <div className="session-plan">
+            <label>
+              <span>Play session</span>
+              <select value={settings.sessionMinutes}
+                      onChange={(e) => updateSettings({ sessionMinutes: Number(e.target.value) })}>
+                <option value={0}>No plan</option>
+                {SESSION_MINUTES.map((m) => <option key={m} value={m}>{formatDuration(m * 60)}</option>)}
+              </select>
+            </label>
+            <p aria-live="polite">
+              {plan && current
+                ? <>Steps {currentIndex + 1}–{plan.index + 1}{plan.level !== undefined && <>, to about level {plan.level}</>}.</>
+                : <>About {formatDuration(secondsLeft(steps, done))} left on this route.</>}
+            </p>
+          </div>
           {groups.map((g) => (
             <section key={g.key}>
               <h2 className="zone">
                 {g.zoneName}
                 {(() => {
                   const range = levelRange(g.steps);
-                  return range && <span className="zone-levels">Levels {range[0]}–{range[1]}</span>;
+                  const time = g.steps.reduce((t, s) => t + (s.seconds ?? 0), 0);
+                  return (
+                    <span className="zone-levels">
+                      {range && <>Levels {range[0]}–{range[1]}</>}{range && time > 0 && ' · '}
+                      {time > 0 && <>about {formatDuration(time)}</>}
+                    </span>
+                  );
                 })()}
               </h2>
               <ol>
                 {g.steps.map((s) => (
                   <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}
                            isCurrent={s === current} onToggle={onRowToggle} register={register}
+                           endsSession={plan !== null && s === steps[plan.index]}
                            reportHref={s === current ? reportUrl(route, s, currentIndex + 1) : undefined} />
                 ))}
               </ol>
@@ -361,6 +394,15 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       ))}
                     </svg>
                   )}
+                  {settings.explore && optionalOnMap(route.optional ?? [], current.mapId, playerClass).map((q) => (
+                    // Off-route quests: drawn under the route's pins, named on hover and in the list below.
+                    <span key={`optional-${q.questId}`} role="img" style={{ left: `${q.x}%`, top: `${q.y}%` }}
+                          className={`pin optional${(q.minLevel ?? q.level) > (current.level ?? 1) ? ' too-high' : ''}`}
+                          aria-label={`Optional quest: ${q.name ?? `quest #${q.questId}`}, level ${q.level}`}>
+                      <img src="/art/icon-accept.webp" alt="" width={20} height={20} />
+                      <span className="pin-label">{q.name ?? `quest #${q.questId}`} ({q.level})</span>
+                    </span>
+                  ))}
                   {pins.map((group) => {
                     const lead = group[0];
                     const numbers = group.map((s) => (index.get(s.id) ?? 0) + 1).sort((a, b) => a - b);
@@ -400,6 +442,10 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                         onClick={() => setZoom((z) => Math.min(ZOOMS.length - 1, z + 1))}>+</button>
                 <button type="button" aria-label="Zoom out" disabled={zoom === 0}
                         onClick={() => setZoom((z) => Math.max(0, z - 1))}>−</button>
+                <button type="button" className="explore" aria-pressed={settings.explore}
+                        onClick={() => updateSettings({ explore: !settings.explore })}>
+                  All quests
+                </button>
               </div>
               {(() => {
                 const brief = questBrief(steps, current, done);

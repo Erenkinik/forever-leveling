@@ -22,7 +22,7 @@ def test_human_zone_order_loads():
     assert order.reviewed is False
     assert order.zones[0] == 1429
     assert order.zones[1] == 1436
-    assert len(order.zones) == 9
+    assert len(order.zones) == 11  # up to level 35
 
 
 def test_unknown_zone_name_rejected(tmp_path):

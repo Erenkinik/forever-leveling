@@ -87,12 +87,12 @@ test('settings round-trip with defaults for missing or broken values', async () 
   const { loadSettings, saveSettings, SETTINGS_KEY } = await import('../../src/lib/steps.ts');
   const mem = new Map<string, string>();
   const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) };
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '' });
-  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock' });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0 });
+  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true, sessionMinutes: 60 });
   assert.equal(SETTINGS_KEY, 'fxp:v1:settings');
-  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock' });
+  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true, sessionMinutes: 60 });
   mem.set(SETTINGS_KEY, '[1]');
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '' });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0 });
 });
 
 test('reportUrl opens a prefilled GitHub issue for the step', async () => {
@@ -300,4 +300,28 @@ test('the map shows what is left of every quest in the log, wherever it is in th
   assert.deepEqual(mapStepsFor(fresh, 0, new Set(), 2, 3).map((s) => s.id), ['b1']);
   // Accepted: the "!" goes, the turn-in "?" comes.
   assert.deepEqual(mapStepsFor(fresh, 1, new Set(['b1']), 2, 3).map((s) => s.id), ['b2']);
+});
+
+test('exploration mode lists the quests off the route on the map, for the chosen class', async () => {
+  const { optionalOnMap } = await import('../../src/lib/steps.ts');
+  const o = (questId: number, mapId: number, classOnly?: string[]) =>
+    ({ questId, name: `Q${questId}`, mapId, x: 1, y: 1, level: 5, minLevel: 3, npcName: null, classOnly });
+  const quests = [o(1, 10), o(2, 20), o(3, 10, ['Mage']), o(4, 10, ['Warlock'])];
+  assert.deepEqual(optionalOnMap(quests, 10, '').map((q) => q.questId), [1, 3, 4]);
+  assert.deepEqual(optionalOnMap(quests, 10, 'Mage').map((q) => q.questId), [1, 3]);
+});
+
+test('durations read like a person would say them, and a session ends where its time runs out', async () => {
+  const { formatDuration, secondsLeft, sessionEnd } = await import('../../src/lib/steps.ts');
+  assert.equal(formatDuration(20), '1 min');
+  assert.equal(formatDuration(45 * 60), '45 min');
+  assert.equal(formatDuration(80 * 60), '1 h 20 min');
+  assert.equal(formatDuration(120 * 60), '2 h');
+  assert.equal(formatDuration(31.4 * 3600), '31 h');
+  const t = (id: string, seconds: number, level: number): Step => ({ ...base, id, type: 'accept', seconds, level });
+  const steps = [t('a', 600, 1), t('b', 1200, 2), t('c', 1200, 3), t('d', 600, 4)];
+  assert.equal(secondsLeft(steps, new Set(['a'])), 3000);
+  assert.deepEqual(sessionEnd(steps, 0, 30, new Set()), { index: 1, level: 3 });  // 10 + 20 min
+  assert.deepEqual(sessionEnd(steps, 0, 30, new Set(['b'])), { index: 2, level: 4 });  // done steps are free
+  assert.deepEqual(sessionEnd(steps, 1, 5, new Set()), { index: 1, level: 3 });  // at least the current step
 });

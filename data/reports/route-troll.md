@@ -2,44 +2,45 @@
 
 - Veri sürümü: 1.60.1.70532
 - Yayın seviyesi: beta
-- Görevlerle ulaşılan tahmini seviye: 29 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
-- Tahmini son seviye: 30
-- Boşluk (gap) adımı: 43
+- Görevlerle ulaşılan tahmini seviye: 35 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
+- Tahmini son seviye: 35
+- Boşluk (gap) adımı: 63
 
 ## Adım sayıları
 
-- accept: 177
-- turnin: 177
-- complete: 106
-- travel: 53
-- flightpath: 9
+- accept: 214
+- turnin: 214
+- complete: 125
+- travel: 68
+- flightpath: 13
 - sethearth: 0
 - train: 0
 - grind: 11
-- gap: 43
+- gap: 63
 
 ## Elenen görevler (nedene göre)
 
-- class: 25 (kimlikler: 30, 1471, 1472, 1473, 1474, 1476, 1478, 1501, 1504, 1506, 1507, 1508, 1509, 1510, 1511, 1512, 1513, 1515, 1740, 1795, 1801, 1803, 1805, 2996, 3001)
-- faction: 581
+- class: 32 (kimlikler: 30, 1471, 1472, 1473, 1474, 1476, 1478, 1501, 1504, 1506, 1507, 1508, 1509, 1510, 1511, 1512, 1513, 1515, 1740, 1795, 1796, 1801, 1803, 1805, 2996, 3001, 4737, 4739, 4781, 4782, 4967, 4969)
+- faction: 670
 - level-unknown: 2968
 - not-in-forever: 771
-- over-cap: 2252
-- race: 203
-- zone: 336
-- zone-outlier: 31 (kimlikler: 235, 846, 849, 873, 874, 879, 906, 1040, 1095, 1130, 1153, 1221, 1719, 1791, 1838, 1839, 1840, 1841, 1842, 1843, 1848, 1944, 1945, 1946, 2380, 3369, 5680, 7789, 7834, 8370, 8426)
+- over-cap: 2039
+- race: 215
+- zone: 381
+- zone-outlier: 34 (kimlikler: 235, 846, 849, 873, 874, 1040, 1095, 1112, 1130, 1145, 1153, 1184, 1221, 1362, 1719, 1791, 1838, 1839, 1840, 1841, 1842, 1843, 1848, 1944, 1945, 1946, 2380, 5680, 6626, 7789, 7834, 7866, 8370, 8426)
 
 ## Rotaya çekilen önkoşullar (başka bölgede başlıyor)
 
-- 7 görev: 809, 860, 861, 886, 1061, 1528, 1823
+- 10 görev: 676, 809, 860, 861, 886, 1061, 1431, 1432, 1528, 1823
 
 ## Boşluk nedenleri (sayıyla; N bir sayıyı gösterir)
 
 - quest N: end location unknown: 3
-- quest N: objective item N location unknown: 11
-- quest N: objective unit N location unknown: 2
-- quest N: prereq N is a gap: 11
-- quest N: prereq N not in route: 16
+- quest N: objective item N location unknown: 15
+- quest N: objective located only off-route: 1
+- quest N: objective unit N location unknown: 5
+- quest N: prereq N is a gap: 15
+- quest N: prereq N not in route: 24
 
 ## Engellemeyen denetim bulguları (kurala göre)
 

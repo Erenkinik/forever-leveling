@@ -6,7 +6,7 @@ import pytest
 from pipeline.canonical import load_spawns_canonical, load_uimaps_canonical
 from pipeline.config import DATA_DIR
 from pipeline.generate import GenerationError
-from pipeline.generate.config import BETA_BLOCKING_RULES, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
+from pipeline.generate.config import BETA_BLOCKING_RULES, LEVEL_CAP, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
 from pipeline.generate.steps import generate_route
 from pipeline.generate.zone_order import ZoneOrder
 from pipeline.ingest.wago import load_quest_xp
@@ -64,7 +64,7 @@ def test_route_header_and_report():
     assert schema_validate("route", route) == []
     assert {k: route[k] for k in ("id", "race", "faction", "levelRange", "releaseTier", "reviewed",
                                   "generatedAt", "dataBuild")} == {
-        "id": "t", "race": "Human", "faction": "Alliance", "levelRange": [1, 30], "releaseTier": "beta",
+        "id": "t", "race": "Human", "faction": "Alliance", "levelRange": [1, LEVEL_CAP], "releaseTier": "beta",
         "reviewed": False, "generatedAt": NOW, "dataBuild": "1.60.1.70532",
     }
     assert report["xpIsEstimate"] is True
@@ -419,15 +419,15 @@ def test_estimate_levels_matches_generator_on_real_route():
     final = estimate_levels({**route, "steps": route["steps"] + [
         {"id": "end", "type": "travel", "mapId": zones[0], "x": 1.0, "y": 1.0, "confidence": "unverified"}]},
         quests, xp)["end"]
-    assert final == report["estimatedFinalLevel"] == 30
+    assert final == report["estimatedFinalLevel"] == LEVEL_CAP
 
 
 def test_route_ends_with_grind_to_cap_when_quests_fall_short():
     route, report = _gen(_quests(_q(1, 10, 10), _q(2, 30, 40)), reach_cap=True)
     last = route["steps"][-1]
-    assert last["id"] == "grind-10-30" and last["type"] == "grind" and last["untilLevel"] == 30
+    assert last["id"] == f"grind-10-{LEVEL_CAP}" and last["type"] == "grind" and last["untilLevel"] == LEVEL_CAP
     assert (last["mapId"], last["x"], last["y"]) == (10, 30, 40)  # where the route ended
-    assert report["questLevel"] == 1 and report["estimatedFinalLevel"] == 30
+    assert report["questLevel"] == 1 and report["estimatedFinalLevel"] == LEVEL_CAP
     assert report["stepCounts"]["grind"] == 1
 
 
@@ -435,7 +435,7 @@ def test_no_final_grind_when_quests_reach_cap():
     rich = {1: [10 ** 7] * 10}
     route, report = generate_route(ORDER, _quests(_q(1)), _spawns(), rich, "beta", "1.60.1.70532", NOW)
     assert not any(s["type"] == "grind" for s in route["steps"])
-    assert report["questLevel"] == report["estimatedFinalLevel"] == 30
+    assert report["questLevel"] == report["estimatedFinalLevel"] == LEVEL_CAP
 
 
 def test_off_route_prereq_is_done_before_its_dependent():
