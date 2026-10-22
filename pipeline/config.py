@@ -32,3 +32,16 @@ RACE_BITS: dict[str, int] = {
     "Gnome": 64,
     "Troll": 128,
 }
+
+# Vanilla class bit mask (pfQuest `class`). Bits not listed here become "unknown-bit-<n>".
+CLASS_BITS: dict[str, int] = {
+    "Warrior": 1,
+    "Paladin": 2,
+    "Hunter": 4,
+    "Rogue": 8,
+    "Priest": 16,
+    "Shaman": 64,
+    "Mage": 128,
+    "Warlock": 256,
+    "Druid": 1024,
+}

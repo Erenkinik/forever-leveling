@@ -164,7 +164,7 @@ kaynaklar (wago DB2, pfQuest, CMaNGOS, Recorder kayıtları)
 
 ### 6.3 Veri şeması (özet)
 
-**Quest:** `id` (Blizzard questID), `name`, `level`, `minLevel`, `faction`, `races[]`, `classes[]`, `prereqs[]`, `startNpc {id,name,mapId,x,y}`, `endNpc`, `objectives[] {type,targetIds[],count,areas[]}`, `xp`, `sources[]`, `confidence`, `verifiedBuild?`
+**Quest:** `id` (Blizzard questID), `name`, `level`, `minLevel`, `faction`, `races[]`, `classes[]`, `prereqs[]`, `startNpc {id,name,mapId,x,y}`, `endNpc`, `objectives[] {type,targetIds[],count,areas[]}`, `xp`, `sources[]`, `confidence`, `seenInBuild`
 
 **Route:** `id`, `race`, `faction`, `levelRange [1,30]`, `generatedAt`, `dataBuild`, `reviewed`, `steps[]`
 

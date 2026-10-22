@@ -100,8 +100,17 @@ def test_over_level_uses_last_grind_untillevel():
 
 def test_unknown_quest_is_reported_not_crashing():
     issues = _check("unknown-quest")
-    assert {i.rule for i in issues} == {"over-level"}
+    assert {i.rule for i in issues} == {"unknown-quest"}
     assert [i.stepId for i in issues] == ["s1", "s2"]
+    assert "quest 424242 is not in the canonical data" in issues[0].message
+
+
+def test_unknown_quest_and_prereq_not_done_block_in_beta():
+    from pipeline.generate.config import BETA_BLOCKING_RULES
+
+    assert "unknown-quest" in BETA_BLOCKING_RULES
+    assert "prereq-not-done" in BETA_BLOCKING_RULES
+    assert "over-level" not in BETA_BLOCKING_RULES and "level-unknown" not in BETA_BLOCKING_RULES
 
 
 def test_rule_xp_target():
@@ -130,9 +139,9 @@ def test_beta_tier_allows_gap_and_unverified():
 def test_null_min_level_reported_not_crashing():
     quests = {**QUESTS, 33: _q(33, minLevel=None)}
     issues = _check("valid", quests=quests)
-    assert {i.rule for i in issues} == {"over-level"}
+    assert {i.rule for i in issues} == {"level-unknown"}
     assert {i.stepId for i in issues} == {"s2", "s3", "s4"}
-    assert all("level unknown" in i.message for i in issues)
+    assert all("quest 33 level unknown" in i.message for i in issues)
 
 
 def test_unaccepted_turnin_does_not_satisfy_prereq():

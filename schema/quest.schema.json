@@ -10,6 +10,7 @@
     "level",
     "minLevel",
     "races",
+    "classes",
     "prereqs",
     "start",
     "end",
@@ -44,6 +45,15 @@
       ]
     },
     "races": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "classes": {
       "type": [
         "array",
         "null"

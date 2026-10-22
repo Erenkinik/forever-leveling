@@ -1,5 +1,5 @@
 """Build the canonical quest database from pfQuest, wago DB2 ids and manual entries."""
-from pipeline.config import DATA_BUILD, RACE_BITS, SOURCE_LINEAGE
+from pipeline.config import CLASS_BITS, DATA_BUILD, RACE_BITS, SOURCE_LINEAGE
 from pipeline.ingest.pfquest import PfData
 from pipeline.schema import validate
 
@@ -11,20 +11,32 @@ PRESENCE_ONLY_SOURCES = frozenset({"wago-db2"})
 _MANUAL_COMPARED = ("name", "level", "minLevel", "races", "prereqs")
 
 
-def races_from_mask(mask: int | None) -> list[str] | None:
-    if not mask or mask == ALL_RACES:
-        return None
-    races = [name for name, bit in RACE_BITS.items() if mask & bit]
+def _names_from_mask(mask: int, bits: dict[str, int]) -> list[str]:
+    """Names for the known bits, then "unknown-bit-<n>" for every other set bit."""
+    names = [name for name, bit in bits.items() if mask & bit]
     known = 0
-    for bit in RACE_BITS.values():
+    for bit in bits.values():
         known |= bit
     rest = mask & ~known
     bit = 1
     while rest >= bit:
         if rest & bit:
-            races.append(f"unknown-bit-{bit}")
+            names.append(f"unknown-bit-{bit}")
         bit <<= 1
-    return races
+    return names
+
+
+def races_from_mask(mask: int | None) -> list[str] | None:
+    if not mask or mask == ALL_RACES:
+        return None
+    return _names_from_mask(mask, RACE_BITS)
+
+
+def classes_from_mask(mask: int | None) -> list[str] | None:
+    """pfQuest `class` mask -> class names; no mask means any class (None)."""
+    if not mask:
+        return None
+    return _names_from_mask(mask, CLASS_BITS)
 
 
 def confidence_for(lineages: set[str], conflicts: list[str]) -> str:
@@ -101,7 +113,7 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     if qid in forever_ids:
         sources.append("wago-db2")
     rec = {
-        "id": qid, "name": None, "level": None, "minLevel": None, "races": None, "prereqs": [],
+        "id": qid, "name": None, "level": None, "minLevel": None, "races": None, "classes": None, "prereqs": [],
         "start": _point(), "end": _point(), "objectives": _objectives(None),
     }
     if pq is not None:
@@ -112,7 +124,8 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
                 conflicts.append(f"{label}.multiple")
         rec.update(
             name=pq.get("name"), level=pq.get("lvl"), minLevel=pq.get("min"),
-            races=races_from_mask(pq.get("race")), prereqs=list(pq.get("pre") or []),
+            races=races_from_mask(pq.get("race")), classes=classes_from_mask(pq.get("class")),
+            prereqs=list(pq.get("pre") or []),
             start=_build_point(pf, s_ref, _unit_zones(pf, e_ref), zone_to_uimap, conflicts, "start"),
             end=_build_point(pf, e_ref, _unit_zones(pf, s_ref), zone_to_uimap, conflicts, "end"),
             objectives=_objectives(pq.get("obj")),

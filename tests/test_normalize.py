@@ -222,3 +222,21 @@ def test_manual_endpoint_changing_type_or_id_resets_pfquest_point():
     q = _one(pf, {1}, manual={1: _manual(start={"type": "npc", "id": 7, "name": "New"})})
     assert q["start"]["name"] == "New" and q["start"]["x"] is None
     assert "start.coords" in q["conflicts"]
+
+
+def test_classes_from_mask():
+    from pipeline.normalize.quests import classes_from_mask
+
+    assert classes_from_mask(None) is None
+    assert classes_from_mask(0) is None
+    assert classes_from_mask(8) == ["Rogue"]
+    assert classes_from_mask(1494) == ["Paladin", "Hunter", "Priest", "Shaman", "Mage", "Warlock", "Druid"]
+    assert classes_from_mask(1 | 32 | 2048) == ["Warrior", "unknown-bit-32", "unknown-bit-2048"]
+
+
+def test_class_mask_carried_into_canonical_classes():
+    pf = _pf({1: {"name": "Q", "class": 256}, 2: {"name": "R"}})
+    out = {r["id"]: r for r in build_canonical(pf, frozenset(), Z, {})}
+    assert out[1]["classes"] == ["Warlock"]
+    assert out[2]["classes"] is None
+    assert validate("quest", out[1]) == [] and validate("quest", out[2]) == []
