@@ -1,4 +1,5 @@
 """Download and load pfQuest (MIT) database files."""
+import http.client
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -19,9 +20,9 @@ def fetch_pfquest(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> N
         dest.parent.mkdir(parents=True, exist_ok=True)
         part = dest.with_name(dest.name + ".part")
         try:
-            with opener(BASE_URL + rel) as resp:
+            with opener(BASE_URL + rel, timeout=60) as resp:
                 part.write_bytes(resp.read())
-        except (urllib.error.URLError, OSError) as exc:  # HTTPError is a URLError
+        except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:  # HTTPError is a URLError
             part.unlink(missing_ok=True)
             raise RuntimeError(f"failed to download {rel}: {exc}") from exc
         part.replace(dest)
@@ -38,9 +39,15 @@ def _read(path: Path):
     return parse_lua_table(path.read_text(encoding="utf-8"))
 
 
+def _dict(value) -> dict:
+    """Lua `{}` parses as []; coerce empty/non-dict tables to {}."""
+    return value if isinstance(value, dict) else {}
+
+
 def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
     out: dict[int, dict] = {}
     for sid, entry in src.items():
+        entry = _dict(entry)
         rec = {
             "coords": [(c[0], c[1], c[2]) for c in entry.get("coords", [])],
             "fac": entry.get("fac"),
@@ -53,15 +60,18 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
 
 def load_pfquest(src_dir: Path) -> PfData:
     src = Path(src_dir)
-    quest_names = _read(src / "enUS" / "quests.lua")
+    quest_names = _dict(_read(src / "enUS" / "quests.lua"))
     quests: dict[int, dict] = {}
-    for qid, entry in _read(src / "quests.lua").items():
-        rec = dict(entry)
-        rec["name"] = quest_names.get(qid, {}).get("T")
+    for qid, entry in _dict(_read(src / "quests.lua")).items():
+        rec = dict(_dict(entry))
+        for key in ("start", "end", "obj"):
+            if key in rec:
+                rec[key] = _dict(rec[key])
+        rec["name"] = _dict(quest_names.get(qid)).get("T")
         quests[qid] = rec
-    unit_names = _read(src / "enUS" / "units.lua")
+    unit_names = _dict(_read(src / "enUS" / "units.lua"))
     return PfData(
         quests=quests,
-        units=_spawns(_read(src / "units.lua"), unit_names),
-        objects=_spawns(_read(src / "objects.lua"), None),
+        units=_spawns(_dict(_read(src / "units.lua")), unit_names),
+        objects=_spawns(_dict(_read(src / "objects.lua")), None),
     )

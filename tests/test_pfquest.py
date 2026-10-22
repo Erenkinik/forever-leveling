@@ -54,7 +54,7 @@ class _Resp(io.BytesIO):
 
 
 def test_fetch_writes_all_files_and_no_part(tmp_path):
-    fetch_pfquest(tmp_path, opener=lambda url: _Resp(b"pfDB = {}"))
+    fetch_pfquest(tmp_path, opener=lambda url, timeout=None: _Resp(b"pfDB = {}"))
     base = tmp_path / "pfquest"
     for rel in ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua"):
         assert (base / rel).read_bytes() == b"pfDB = {}"
@@ -62,7 +62,7 @@ def test_fetch_writes_all_files_and_no_part(tmp_path):
 
 
 def test_fetch_http_error_names_file_and_leaves_no_partial(tmp_path):
-    def opener(url):
+    def opener(url, timeout=None):
         if url.endswith("units.lua") and "enUS" not in url:
             raise urllib.error.HTTPError(url, 404, "nf", {}, None)
         return _Resp(b"x")
@@ -72,3 +72,46 @@ def test_fetch_http_error_names_file_and_leaves_no_partial(tmp_path):
     base = tmp_path / "pfquest"
     assert not (base / "units.lua").exists()
     assert not list(base.rglob("*.part"))
+
+
+def test_empty_entries_load_without_error(tmp_path):
+    (tmp_path / "enUS").mkdir()
+    files = {
+        "quests.lua": 'pfDB["quests"]["data"] = {\n [5] = {},\n [6] = { ["start"] = {}, ["lvl"] = 1 },\n}\n',
+        "enUS/quests.lua": 'pfDB["quests"]["enUS"] = {\n [5] = {},\n}\n',
+        "units.lua": 'pfDB["units"]["data"] = {\n [9] = {},\n}\n',
+        "enUS/units.lua": 'pfDB["units"]["enUS"] = {\n [9] = "X",\n}\n',
+        "objects.lua": 'pfDB["objects"]["data"] = {\n [2] = {},\n}\n',
+    }
+    for rel, text in files.items():
+        (tmp_path / rel).write_text(text, encoding="utf-8")
+    d = load_pfquest(tmp_path)
+    assert d.quests[5]["name"] is None
+    assert d.quests[6]["start"] == {}
+    assert d.units[9] == {"coords": [], "fac": None, "name": "X"}
+    assert d.objects[2] == {"coords": [], "fac": None}
+
+
+def test_fetch_incomplete_read_cleans_up(tmp_path):
+    import http.client
+
+    class Bad(_Resp):
+        def read(self, *a):
+            raise http.client.IncompleteRead(b"")
+
+    with pytest.raises(RuntimeError, match="quests.lua"):
+        fetch_pfquest(tmp_path, opener=lambda url, timeout=None: Bad())
+    base = tmp_path / "pfquest"
+    assert not list(base.rglob("*.part"))
+    assert not (base / "quests.lua").exists()
+
+
+def test_fetch_passes_timeout(tmp_path):
+    seen = []
+
+    def opener(url, timeout=None):
+        seen.append(timeout)
+        return _Resp(b"x")
+
+    fetch_pfquest(tmp_path, opener=opener)
+    assert seen and all(t == 60 for t in seen)

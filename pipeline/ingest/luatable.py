@@ -3,7 +3,7 @@ import re
 
 _NUMBER = re.compile(r"-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")
 _NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
-_ESCAPES = {"n": "\n", "r": "\r", "t": "\t", "\\": "\\", "'": "'", '"': '"', "0": "\0"}
+_ESCAPES = {"n": "\n", "r": "\r", "t": "\t", "\\": "\\", "'": "'", '"': '"'}
 _PUNCT = "{}[]=,"
 
 
@@ -65,8 +65,17 @@ def _read_string(text: str, i: int) -> tuple[int, str]:
                 out.append("\n")
             elif e == "\n":
                 out.append("\n")
+            elif e.isdigit():
+                m = re.compile(r"\d{1,3}").match(text, i)
+                value = int(m.group())
+                if value > 255:
+                    raise ValueError(f"decimal escape too large at offset {i - 1}")
+                out.append(chr(value))
+                i = m.end() - 1
+            elif e in _ESCAPES:
+                out.append(_ESCAPES[e])
             else:
-                out.append(_ESCAPES.get(e, e))
+                raise ValueError(f"unsupported escape '\\{e}' at offset {i - 1}")
         else:
             out.append(c)
         i += 1

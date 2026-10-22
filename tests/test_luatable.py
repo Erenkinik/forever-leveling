@@ -55,3 +55,17 @@ def test_only_first_table_after_first_equals():
 def test_unterminated_table_raises():
     with pytest.raises(ValueError):
         parse_lua_table("x = { [1] = 2")
+
+
+def test_decimal_escape():
+    assert parse_lua_table(r'x = { "\065\10x\0" }') == ["A\nx\0"]
+
+
+def test_decimal_escape_over_255_raises():
+    with pytest.raises(ValueError, match="offset"):
+        parse_lua_table(r'x = { "\256" }')
+
+
+def test_unsupported_escape_raises_with_position():
+    with pytest.raises(ValueError, match="offset"):
+        parse_lua_table(r'x = { "a\qb" }')
