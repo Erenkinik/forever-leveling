@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Route override patches",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["op", "after", "step"],
+        "properties": {
+          "op": {"const": "insertAfter"},
+          "after": {"type": "string", "minLength": 1},
+          "step": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string", "minLength": 1}}}
+        }
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["op", "id"],
+        "properties": {
+          "op": {"const": "remove"},
+          "id": {"type": "string", "minLength": 1}
+        }
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["op", "id", "after"],
+        "properties": {
+          "op": {"const": "move"},
+          "id": {"type": "string", "minLength": 1},
+          "after": {"type": "string", "minLength": 1}
+        }
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["op", "id", "mapId", "x", "y"],
+        "properties": {
+          "op": {"const": "setCoords"},
+          "id": {"type": "string", "minLength": 1},
+          "mapId": {"type": "integer"},
+          "x": {"type": "number", "minimum": 0, "maximum": 100},
+          "y": {"type": "number", "minimum": 0, "maximum": 100}
+        }
+      }
+    ]
+  }
+}
