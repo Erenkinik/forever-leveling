@@ -66,6 +66,27 @@ def _build_questxp() -> str:
     return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
 
 
+def _taxi_path() -> Path:
+    return DATA_DIR / "canonical" / "taxi.json"
+
+
+def _build_taxi() -> str:
+    import csv
+
+    from pipeline.ingest.wago import load_uimap_parents, load_uimaps
+    from pipeline.normalize.taxi import build_taxi
+
+    wago = RAW_DIR / "wago" / DATA_BUILD
+
+    def rows(table: str) -> list[dict]:
+        with open(wago / f"{table}.csv", encoding="utf-8", newline="") as f:
+            return list(csv.DictReader(f))
+
+    doc = build_taxi(rows("TaxiNodes"), rows("TaxiPath"), rows("UiMapAssignment"), load_uimaps(wago),
+                     load_uimap_parents(wago))
+    return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
+
+
 def _spawns_path() -> Path:
     return DATA_DIR / "canonical" / "spawns.json"
 
@@ -93,6 +114,7 @@ def cmd_normalize(args) -> int:
         uimaps_text = _build_uimaps()
         questxp_text = _build_questxp()
         spawns_text = _build_spawns(records)
+        taxi_text = _build_taxi()
     except FileNotFoundError as exc:
         print(f"missing raw data: {exc.filename} (run the fetch step first)", file=sys.stderr)
         return 1
@@ -105,6 +127,7 @@ def cmd_normalize(args) -> int:
         ("uimaps", _uimaps_path(), uimaps_text),
         ("spawns", _spawns_path(), spawns_text),
         ("questxp", _questxp_path(), questxp_text),
+        ("taxi", _taxi_path(), taxi_text),
     ]
     if args.check:
         for label, out, text in targets:
@@ -120,7 +143,7 @@ def cmd_normalize(args) -> int:
         _write_text_atomic(out, text)
     print(
         f"wrote {len(records)} quests to {targets[0][1]}, uimaps to {targets[1][1]}, "
-        f"spawns to {targets[2][1]} and questxp to {targets[3][1]}"
+        f"spawns to {targets[2][1]}, questxp to {targets[3][1]} and flight paths to {targets[4][1]}"
     )
     return 0
 
@@ -287,7 +310,8 @@ def cmd_generate(args) -> int:
     from datetime import datetime, timezone
 
     from pipeline.canonical import (
-        load_questxp_canonical, load_spawns_canonical, load_uimap_parents_canonical, load_uimaps_canonical,
+        load_questxp_canonical, load_spawns_canonical, load_taxi_canonical, load_uimap_parents_canonical,
+        load_uimaps_canonical,
     )
     from pipeline.generate import GenerationError
     from pipeline.generate.config import BETA_BLOCKING_RULES
@@ -321,7 +345,7 @@ def cmd_generate(args) -> int:
     try:
         generated, report = generate_route(
             order, quests, load_spawns_canonical(DATA_DIR), xp_table, args.tier, DATA_BUILD, now,
-            continents=load_uimap_parents_canonical(DATA_DIR),
+            continents=load_uimap_parents_canonical(DATA_DIR), taxi=load_taxi_canonical(DATA_DIR),
         )
     except (GenerationError, ValueError) as exc:
         print(str(exc), file=sys.stderr)
@@ -553,7 +577,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
     norm = sub.add_parser(
-        "normalize", help="build data/canonical/quests.json, uimaps.json, spawns.json and questxp.json"
+        "normalize", help="build data/canonical/quests.json, uimaps.json, spawns.json, questxp.json and taxi.json"
     )
     norm.add_argument("--check", action="store_true", help="compare with the committed file; never writes")
     norm.set_defaults(func=cmd_normalize)

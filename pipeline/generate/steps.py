@@ -3,6 +3,7 @@ import math
 
 from pipeline.generate import GenerationError
 from pipeline.generate.config import CONTINENT_TRAVEL, ISLAND_MAPS, LEVEL_CAP, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
+from pipeline.generate.flight import Flights
 from pipeline.generate.gaps import complete_location, quest_gaps
 from pipeline.generate.graph import build_graph, drop_pulled, select_quests
 from pipeline.generate.hubs import Hub, build_hubs, unplaced
@@ -10,7 +11,7 @@ from pipeline.generate.xpsim import XpState, kill_xp, quest_level, quest_xp
 from pipeline.generate.zone_order import ZoneOrder
 
 TIERS = ("beta", "full")
-STEP_TYPES = ("accept", "turnin", "complete", "travel", "sethearth", "train", "grind", "gap")
+STEP_TYPES = ("accept", "turnin", "complete", "travel", "flightpath", "sethearth", "train", "grind", "gap")
 NON_QUEST_CONFIDENCE = "unverified"
 # Exclusion reasons whose quest ids the report lists; the others are counted only.
 LISTED_EXCLUSIONS = ("class", "zone-outlier")
@@ -20,15 +21,18 @@ class _Steps:
     """Step list that emits a travel step on every map change and keeps ids unique (-2, -3, ...).
 
     `continents` (map -> continent UiMap) decides the travel mode: across continents, or to or from an
-    island, the faction's boat or zeppelin; otherwise walking. Unknown maps walk.
+    island, the faction's boat or zeppelin; otherwise walking. Unknown maps walk. With `flights`, a flight master
+    near a step is found there (a flightpath step), and a walk to another map flies when that is much shorter.
     """
 
-    def __init__(self, faction: str = "Alliance", continents: dict[int, int] | None = None) -> None:
+    def __init__(self, faction: str = "Alliance", continents: dict[int, int] | None = None,
+                 flights: Flights | None = None) -> None:
         self.steps: list[dict] = []
         self._used: set[str] = set()
         self.pos: tuple[int, float, float] | None = None
         self._ship = CONTINENT_TRAVEL.get(faction, "boat")
         self._continents = continents or {}
+        self._flights = flights
 
     def _mode(self, src: int, dst: int) -> str:
         a, b = self._continents.get(src), self._continents.get(dst)
@@ -39,9 +43,26 @@ class _Steps:
     def add(self, base_id: str, kind: str, map_id: int, x: float, y: float,
             confidence: str = NON_QUEST_CONFIDENCE, **extra) -> None:
         if self.pos is not None and self.pos[0] != map_id:
-            self._push(f"travel-{self.pos[0]}-{map_id}", "travel", map_id, x, y, NON_QUEST_CONFIDENCE,
-                       {"mode": self._mode(self.pos[0], map_id), "radius": 5})
+            mode = self._mode(self.pos[0], map_id)
+            hop = self._flights.plan(self.pos, (map_id, x, y)) if self._flights and mode == "walk" else None
+            if hop:
+                a, b = (self._flights.nodes[n] for n in hop)
+                self._push(f"travel-fly-{hop[0]}-{hop[1]}", "travel", b["uiMapId"], b["x"], b["y"],
+                           NON_QUEST_CONFIDENCE, {"mode": "flight", "radius": 5, "fromNode": a["name"], "node": b["name"]})
+            if self.pos[0] != map_id:
+                self._push(f"travel-{self.pos[0]}-{map_id}", "travel", map_id, x, y, NON_QUEST_CONFIDENCE,
+                           {"mode": self._mode(self.pos[0], map_id), "radius": 5})
         self._push(base_id, kind, map_id, x, y, confidence, extra)
+        self._find_flight_masters()
+
+    def _find_flight_masters(self) -> None:
+        """A flightpath step for each flight master not found yet near where the player now is."""
+        if self._flights is None or self.pos is None:
+            return
+        for n in self._flights.found_near(*self.pos):
+            node = self._flights.nodes[n]
+            self._flights.known.add(n)
+            self.add(f"flightpath-{n}", "flightpath", node["uiMapId"], node["x"], node["y"], node=node["name"])
 
     def _push(self, base_id: str, kind: str, map_id: int, x: float, y: float, confidence: str, extra: dict) -> None:
         sid, n = base_id, 1
@@ -193,11 +214,12 @@ def _attach_unplaced(ids: list[int], quests: dict[int, dict], hubs: list[Hub]) -
 
 def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_table: dict[int, list[int]],
                    tier: str, data_build: str, now: str, reach_cap: bool = True,
-                   continents: dict[int, int] | None = None) -> tuple[dict, dict]:
+                   continents: dict[int, int] | None = None, taxi: dict | None = None) -> tuple[dict, dict]:
     """Build the route for a zone order and the generation report. XP is an estimate.
 
     reach_cap=False leaves out the closing grind to LEVEL_CAP (unit tests of the quest steps).
-    continents (map -> continent UiMap) sets boat/zeppelin travel; without it every trip walks.
+    continents (map -> continent UiMap) sets boat/zeppelin travel; without it every trip walks. taxi
+    (data/canonical/taxi.json) adds flight paths; without it there are none.
     """
     if tier not in TIERS:
         raise GenerationError(f"unknown release tier {tier!r}; expected one of {TIERS}")
@@ -220,7 +242,7 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
 
     position = {qid: i for i, qid in enumerate(graph.order)}
     attached = _attach_unplaced(no_start, sel.quests, hubs)
-    steps = _Steps(order.faction, continents)
+    steps = _Steps(order.faction, continents, Flights(taxi, order.faction) if taxi else None)
     state = XpState(1, 0)
     needed = {p for qid in sel.quests if qid not in gaps for p in sel.quests[qid].get("prereqs") or []}
     deferred = _Deferred({qid for qid in sel.quests if qid not in needed})

@@ -159,6 +159,7 @@ ATLAS_ICONS: dict[str, tuple[int, int]] = {
     "collect": (1, 2),  # loot sack
     "use": (1, 4),      # gear
     "grind": (5, 3),    # skull
+    "flight": (4, 2),   # winged boot: flight master
 }
 
 

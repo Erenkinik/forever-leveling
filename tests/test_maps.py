@@ -138,7 +138,7 @@ def test_atlas_icon_is_the_32px_cell_at_column_and_row():
     atlas.paste(Image.new("RGBA", (32, 32), (255, 210, 0, 255)), (32, 32))  # column 1, row 1
     icon = atlas_icon(atlas, 1, 1)
     assert icon.size == (32, 32) and icon.getpixel((0, 0)) == (255, 210, 0, 255)
-    assert set(ATLAS_ICONS) == {"accept", "turnin", "kill", "collect", "use", "grind"}
+    assert set(ATLAS_ICONS) == {"accept", "turnin", "kill", "collect", "use", "grind", "flight"}
 
 
 def _mark() -> Image.Image:

@@ -251,3 +251,17 @@ test('collect objectives carry the item icon into the text parts', async () => {
   assert.equal(items[1].parts.find((p) => p.kind === 'item')?.icon, undefined);
   assert.equal(describeStep(step).find((p) => p.kind === 'item')?.icon, '/art/items/133972.webp');
 });
+
+test('flight steps: finding a flight master and flying between two', async () => {
+  const { describeStep, stepIcon, pinLabel } = await import('../../src/lib/steps.ts');
+  const found: Step = { ...base, id: 'flightpath-25', type: 'flightpath', node: 'Crossroads, The Barrens' };
+  const fly: Step = { ...base, id: 'travel-fly-23-25', type: 'travel', mode: 'flight',
+    fromNode: 'Orgrimmar, Durotar', node: 'Crossroads, The Barrens' };
+  assert.equal(describeStep(found).map((p) => p.text).join(''), 'Get the flight path at Crossroads, The Barrens');
+  assert.equal(describeStep(fly).map((p) => p.text).join(''),
+    'Fly from Orgrimmar, Durotar to Crossroads, The Barrens');
+  assert.equal(stepIcon(found), 'flight');
+  assert.equal(stepIcon(fly), 'flight');
+  assert.equal(stepIcon({ ...fly, mode: 'walk' }), null);
+  assert.equal(pinLabel(fly), 'Fly to Crossroads');
+});

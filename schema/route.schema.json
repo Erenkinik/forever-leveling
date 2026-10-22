@@ -83,6 +83,7 @@
             "turnin",
             "complete",
             "travel",
+            "flightpath",
             "sethearth",
             "train",
             "grind",
@@ -136,6 +137,14 @@
         "radius": {
           "type": "number"
         },
+        "node": {
+          "description": "flight master: the one found (flightpath) or flown to (travel by flight)",
+          "type": "string"
+        },
+        "fromNode": {
+          "description": "travel by flight: the flight master flown from",
+          "type": "string"
+        },
         "untilLevel": {
           "type": "integer"
         },
@@ -185,6 +194,16 @@
           "required": [
             "mode",
             "radius"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "flightpath"
+            }
+          },
+          "required": [
+            "node"
           ]
         },
         {

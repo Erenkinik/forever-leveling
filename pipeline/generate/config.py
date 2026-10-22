@@ -81,6 +81,14 @@ DEFAULT_DROP_CHANCE = 50.0
 MAX_KILLS_PER_OBJECTIVE = 40
 
 # Travel: a map change across continents is a boat (Alliance) or zeppelin (Horde) trip. Teldrassil is an
-# island, so going to or from it is a boat even within Kalimdor. Flight paths are not modelled yet.
+# island, so going to or from it is a boat even within Kalimdor.
 CONTINENT_TRAVEL = {"Alliance": "boat", "Horde": "zeppelin"}
 ISLAND_MAPS = frozenset({1438})  # Teldrassil
+
+# Flight paths (pipeline/generate/flight.py). A flight master within DISCOVER_YARDS of a step is found then (a
+# flightpath step). A map change on one continent flies when walking to a found flight master, flying and walking
+# on saves at least FLY_MIN_SAVING_YARDS of walking; a flight counts FLIGHT_SPEED_RATIO times shorter than a walk
+# (about 7 yards a second on foot, about 30 in the air).
+DISCOVER_YARDS = 150
+FLIGHT_SPEED_RATIO = 4.0
+FLY_MIN_SAVING_YARDS = 600

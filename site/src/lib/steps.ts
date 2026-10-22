@@ -1,6 +1,7 @@
 // Route step model and pure helpers shared by the pages and the RouteView island.
 
-export type StepType = 'accept' | 'turnin' | 'complete' | 'travel' | 'sethearth' | 'train' | 'grind' | 'gap';
+export type StepType =
+  'accept' | 'turnin' | 'complete' | 'travel' | 'flightpath' | 'sethearth' | 'train' | 'grind' | 'gap';
 
 export interface Objective {
   kind: 'kill' | 'collect' | 'use';
@@ -27,6 +28,10 @@ export interface Step {
   untilLevel?: number;
   reason?: string;
   mode?: string;
+  /** flightpath: the flight master found; travel by flight: the one flown to */
+  node?: string;
+  /** travel by flight: the flight master flown from */
+  fromNode?: string;
   objectives?: Objective[];
   /** estimated player level when the step starts (pipeline xpsim.estimate_levels) */
   level?: number;
@@ -84,7 +89,10 @@ export function describeStep(s: Step): Part[] {
           ...(i > 0 ? [{ text: '; ' }] : []), ...objectiveParts(o)])]
         : [{ text: 'Complete the objectives of ' }, quest(s)];
     case 'travel':
+      if (s.mode === 'flight' && s.fromNode && s.node) return [{ text: `Fly from ${s.fromNode} to ${s.node}` }];
       return [{ text: `${TRAVEL_VERB[s.mode ?? 'walk'] ?? 'Travel to'} ${zone(s)}` }];
+    case 'flightpath':
+      return [{ text: `Get the flight path at ${s.node ?? zone(s)}` }];
     case 'grind':
       return [{ text: `Grind until level ${s.untilLevel}` }];
     case 'gap':
@@ -260,6 +268,10 @@ export function pinLabel(s: Step): string {
     }
     case 'grind':
       return `Grind to ${s.untilLevel}`;
+    case 'flightpath':
+      return 'Flight master';
+    case 'travel':
+      return s.mode === 'flight' && s.node ? `Fly to ${s.node.split(',')[0]}` : zone(s);
     default:
       return s.questName ?? zone(s);
   }
@@ -296,7 +308,12 @@ function briefParts(s: Step, here: Step): Part[][] {
         return [capital, ...rest, { text: at }];
       });
     case 'travel':
+      if (s.mode === 'flight' && s.fromNode && s.node) {
+        return [[{ text: `Take the flight from ${s.fromNode} to ${s.node}.` }]];
+      }
       return [[{ text: `${TRAVEL_VERB[s.mode ?? 'walk'] ?? 'Travel to'} ${zone(s)}.` }]];
+    case 'flightpath':
+      return [[{ text: `Talk to the flight master at ${xy(s)}${where} to learn the ${s.node ?? zone(s)} flight path.` }]];
     case 'grind':
       return [[{ text: `Kill monsters around ${xy(s)} until you reach level ${s.untilLevel}.` }]];
     default:
@@ -317,7 +334,7 @@ export function questBrief(steps: Step[], current: Step, done: Set<string>): Que
   return { title, zone: zone(current), items };
 }
 
-export type IconName = 'accept' | 'turnin' | 'progress' | 'kill' | 'collect' | 'use' | 'grind';
+export type IconName = 'accept' | 'turnin' | 'progress' | 'kill' | 'collect' | 'use' | 'grind' | 'flight';
 
 /** The game icon for a step (site/public/art/icon-<name>.webp, from the minimap icon atlas), or null. */
 export function stepIcon(s: Step): IconName | null {
@@ -328,6 +345,10 @@ export function stepIcon(s: Step): IconName | null {
       return s.type;
     case 'complete':
       return s.objectives?.[0]?.kind ?? 'kill';
+    case 'flightpath':
+      return 'flight';
+    case 'travel':
+      return s.mode === 'flight' ? 'flight' : null;
     default:
       return null;
   }

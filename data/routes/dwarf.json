@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:34:02Z",
+ "generatedAt": "2026-10-22T21:14:31Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -776,11 +776,40 @@
    "npcId": 1340
   },
   {
+   "id": "travel-1426-1432",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 50.8,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "flightpath-8",
+   "type": "flightpath",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 50.8,
+   "confidence": "unverified",
+   "node": "Thelsamar, Loch Modan"
+  },
+  {
+   "id": "travel-1432-1426",
+   "type": "travel",
+   "mapId": 1426,
+   "x": 83.9,
+   "y": 39.2,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
    "id": "gap-419",
    "type": "gap",
    "mapId": 1426,
-   "x": 95.4,
-   "y": 46.5,
+   "x": 83.9,
+   "y": 39.2,
    "confidence": "unverified",
    "questId": 419,
    "reason": "quest 419: end location unknown"
@@ -843,7 +872,7 @@
    "questId": 314
   },
   {
-   "id": "travel-1426-1432",
+   "id": "travel-1426-1432-2",
    "type": "travel",
    "mapId": 1432,
    "x": 33.14,
@@ -862,7 +891,7 @@
    "questId": 416
   },
   {
-   "id": "travel-1432-1426",
+   "id": "travel-1432-1426-2",
    "type": "travel",
    "mapId": 1426,
    "x": 95.4,
@@ -932,14 +961,25 @@
    "npcId": 1274
   },
   {
-   "id": "travel-1455-1432",
+   "id": "flightpath-6",
+   "type": "flightpath",
+   "mapId": 1455,
+   "x": 55.9,
+   "y": 47.9,
+   "confidence": "unverified",
+   "node": "Ironforge, Dun Morogh"
+  },
+  {
+   "id": "travel-fly-6-8",
    "type": "travel",
    "mapId": 1432,
-   "x": 22.1,
-   "y": 73.1,
+   "x": 33.9,
+   "y": 50.8,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Thelsamar, Loch Modan"
   },
   {
    "id": "accept-224",
@@ -1049,7 +1089,7 @@
    "npcId": 1572
   },
   {
-   "id": "travel-1432-1426-2",
+   "id": "travel-1432-1426-3",
    "type": "travel",
    "mapId": 1426,
    "x": 96.1,
@@ -1069,7 +1109,7 @@
    "npcId": 1572
   },
   {
-   "id": "travel-1426-1432-2",
+   "id": "travel-1426-1432-3",
    "type": "travel",
    "mapId": 1432,
    "x": 46.0,
@@ -1128,14 +1168,16 @@
    "npcId": 1340
   },
   {
-   "id": "travel-1432-1455",
+   "id": "travel-fly-8-6",
    "type": "travel",
    "mapId": 1455,
-   "x": 69.2,
-   "y": 50.6,
+   "x": 55.9,
+   "y": 47.9,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Thelsamar, Loch Modan",
+   "node": "Ironforge, Dun Morogh"
   },
   {
    "id": "accept-2039",
@@ -1148,7 +1190,7 @@
    "npcId": 6569
   },
   {
-   "id": "travel-1455-1432-2",
+   "id": "travel-1455-1432",
    "type": "travel",
    "mapId": 1432,
    "x": 24.8,
@@ -1353,14 +1395,16 @@
    "npcId": 6577
   },
   {
-   "id": "travel-1432-1455-2",
+   "id": "travel-fly-8-6-2",
    "type": "travel",
    "mapId": 1455,
-   "x": 74.6,
-   "y": 11.7,
+   "x": 55.9,
+   "y": 47.9,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Thelsamar, Loch Modan",
+   "node": "Ironforge, Dun Morogh"
   },
   {
    "id": "turnin-301",
@@ -1393,14 +1437,16 @@
    "npcId": 1356
   },
   {
-   "id": "travel-1455-1432-3",
+   "id": "travel-fly-6-8-2",
    "type": "travel",
    "mapId": 1432,
-   "x": 83.5,
-   "y": 65.5,
+   "x": 33.9,
+   "y": 50.8,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Thelsamar, Loch Modan"
   },
   {
    "id": "accept-257",
@@ -1791,6 +1837,15 @@
    "npcId": 2086
   },
   {
+   "id": "flightpath-7",
+   "type": "flightpath",
+   "mapId": 1437,
+   "x": 9.5,
+   "y": 59.7,
+   "confidence": "unverified",
+   "node": "Menethil Harbor, Wetlands"
+  },
+  {
    "id": "travel-1437-1453",
    "type": "travel",
    "mapId": 1453,
@@ -2004,6 +2059,15 @@
    "confidence": "unverified",
    "questId": 102,
    "npcId": 821
+  },
+  {
+   "id": "flightpath-4",
+   "type": "flightpath",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.7,
+   "confidence": "unverified",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "accept-12",
@@ -2298,6 +2362,15 @@
    "npcId": 1070
   },
   {
+   "id": "flightpath-5",
+   "type": "flightpath",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "node": "Lakeshire, Redridge"
+  },
+  {
    "id": "accept-246",
    "type": "accept",
    "mapId": 1433,
@@ -2551,14 +2624,25 @@
    "npcId": 466
   },
   {
-   "id": "travel-1453-1436-2",
+   "id": "flightpath-2",
+   "type": "flightpath",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "node": "Stormwind, Elwynn"
+  },
+  {
+   "id": "travel-fly-2-4",
    "type": "travel",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "turnin-132",
@@ -2571,14 +2655,16 @@
    "npcId": 234
   },
   {
-   "id": "travel-1436-1433-3",
+   "id": "travel-fly-4-5",
    "type": "travel",
    "mapId": 1433,
-   "x": 22.7,
-   "y": 43.8,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "turnin-92",
@@ -2670,14 +2756,16 @@
    "npcId": 342
   },
   {
-   "id": "travel-1433-1453",
+   "id": "travel-fly-5-2",
    "type": "travel",
    "mapId": 1453,
-   "x": 45.7,
-   "y": 38.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-343",
@@ -2690,14 +2778,16 @@
    "npcId": 1444
   },
   {
-   "id": "travel-1453-1433",
+   "id": "travel-fly-2-5",
    "type": "travel",
    "mapId": 1433,
-   "x": 16.0,
-   "y": 49.3,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "complete-34",
@@ -2719,14 +2809,16 @@
    "npcId": 342
   },
   {
-   "id": "travel-1433-1453-2",
+   "id": "travel-fly-5-2-2",
    "type": "travel",
    "mapId": 1453,
-   "x": 74.2,
-   "y": 7.5,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-343",
@@ -2739,14 +2831,16 @@
    "npcId": 1440
   },
   {
-   "id": "travel-1453-1433-2",
+   "id": "travel-fly-2-5-2",
    "type": "travel",
    "mapId": 1433,
-   "x": 15.3,
-   "y": 71.5,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-130",
@@ -2759,14 +2853,16 @@
    "npcId": 464
   },
   {
-   "id": "travel-1433-1453-3",
+   "id": "travel-fly-5-2-3",
    "type": "travel",
    "mapId": 1453,
-   "x": 64,
-   "y": 75.3,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-121",
@@ -2779,14 +2875,16 @@
    "npcId": 466
   },
   {
-   "id": "travel-1453-1433-3",
+   "id": "travel-fly-2-5-3",
    "type": "travel",
    "mapId": 1433,
-   "x": 31,
-   "y": 47.3,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-122",
@@ -2799,14 +2897,16 @@
    "npcId": 415
   },
   {
-   "id": "travel-1433-1436-2",
+   "id": "travel-fly-5-4",
    "type": "travel",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "accept-135",
@@ -2819,14 +2919,16 @@
    "npcId": 234
   },
   {
-   "id": "travel-1436-1433-4",
+   "id": "travel-fly-4-5-2",
    "type": "travel",
    "mapId": 1433,
-   "x": 31,
-   "y": 47.3,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-124",
@@ -2859,14 +2961,16 @@
    "npcId": 382
   },
   {
-   "id": "travel-1433-1453-4",
+   "id": "travel-fly-5-2-4",
    "type": "travel",
    "mapId": 1453,
-   "x": 74.2,
-   "y": 7.5,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-344",
@@ -2879,14 +2983,16 @@
    "npcId": 1440
   },
   {
-   "id": "travel-1453-1433-4",
+   "id": "travel-fly-2-5-4",
    "type": "travel",
    "mapId": 1433,
-   "x": 42.81,
-   "y": 66.93,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "complete-122",
@@ -2955,14 +3061,16 @@
    "npcId": 415
   },
   {
-   "id": "travel-1433-1453-5",
+   "id": "travel-fly-5-2-5",
    "type": "travel",
    "mapId": 1453,
-   "x": 75.8,
-   "y": 59.8,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-135",
@@ -2975,14 +3083,16 @@
    "npcId": 332
   },
   {
-   "id": "travel-1453-1433-5",
+   "id": "travel-fly-2-5-5",
    "type": "travel",
    "mapId": 1433,
-   "x": 31,
-   "y": 47.3,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "turnin-124",
@@ -3015,7 +3125,19 @@
    "npcId": 382
   },
   {
-   "id": "travel-1433-1429-2",
+   "id": "travel-fly-5-2-6",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
+  },
+  {
+   "id": "travel-1453-1429",
    "type": "travel",
    "mapId": 1429,
    "x": 49.6,
@@ -3055,14 +3177,16 @@
    "npcId": 342
   },
   {
-   "id": "travel-1433-1453-6",
+   "id": "travel-fly-5-2-7",
    "type": "travel",
    "mapId": 1453,
-   "x": 75.8,
-   "y": 59.8,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-141",
@@ -3075,14 +3199,16 @@
    "npcId": 332
   },
   {
-   "id": "travel-1453-1433-6",
+   "id": "travel-fly-2-5-6",
    "type": "travel",
    "mapId": 1433,
-   "x": 30,
-   "y": 44.5,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-143",
@@ -3095,7 +3221,7 @@
    "npcId": 344
   },
   {
-   "id": "travel-1433-1429-3",
+   "id": "travel-1433-1429-2",
    "type": "travel",
    "mapId": 1429,
    "x": 49.6,
@@ -3135,14 +3261,16 @@
    "npcId": 379
   },
   {
-   "id": "travel-1433-1436-3",
+   "id": "travel-fly-5-4-2",
    "type": "travel",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "turnin-141",
@@ -3165,14 +3293,16 @@
    "npcId": 234
   },
   {
-   "id": "travel-1436-1433-5",
+   "id": "travel-fly-4-5-3",
    "type": "travel",
    "mapId": 1433,
-   "x": 32.1,
-   "y": 48.6,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "turnin-345",
@@ -3185,14 +3315,16 @@
    "npcId": 341
   },
   {
-   "id": "travel-1433-1436-4",
+   "id": "travel-fly-5-4-3",
    "type": "travel",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "accept-142",
@@ -3215,14 +3347,16 @@
    "npcId": 234
   },
   {
-   "id": "travel-1436-1433-6",
+   "id": "travel-fly-4-5-4",
    "type": "travel",
    "mapId": 1433,
-   "x": 32.1,
-   "y": 48.6,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-347",
@@ -3244,14 +3378,16 @@
    "questId": 347
   },
   {
-   "id": "travel-1433-1436-5",
+   "id": "travel-fly-5-4-4",
    "type": "travel",
    "mapId": 1436,
-   "x": 44.5,
-   "y": 69.6,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "complete-142",
@@ -3273,14 +3409,16 @@
    "npcId": 234
   },
   {
-   "id": "travel-1436-1433-7",
+   "id": "travel-fly-4-5-5",
    "type": "travel",
    "mapId": 1433,
-   "x": 30,
-   "y": 44.5,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "turnin-144",
@@ -3293,14 +3431,16 @@
    "npcId": 344
   },
   {
-   "id": "travel-1433-1436-6",
+   "id": "travel-fly-5-4-5",
    "type": "travel",
    "mapId": 1436,
-   "x": 55.7,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "accept-155",
@@ -3313,14 +3453,16 @@
    "npcId": 467
   },
   {
-   "id": "travel-1436-1433-8",
+   "id": "travel-fly-4-5-6",
    "type": "travel",
    "mapId": 1433,
-   "x": 30,
-   "y": 44.5,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "accept-145",
@@ -3333,14 +3475,16 @@
    "npcId": 344
   },
   {
-   "id": "travel-1433-1436-7",
+   "id": "travel-fly-5-4-6",
    "type": "travel",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56.6,
+   "y": 52.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall"
   },
   {
    "id": "turnin-155",
@@ -3412,7 +3556,19 @@
    "npcId": 820
   },
   {
-   "id": "travel-1436-1429",
+   "id": "travel-fly-4-2",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Stormwind, Elwynn"
+  },
+  {
+   "id": "travel-1453-1429-2",
    "type": "travel",
    "mapId": 1429,
    "x": 49.6,
@@ -3639,6 +3795,15 @@
    "confidence": "unverified",
    "questId": 963,
    "npcId": 3644
+  },
+  {
+   "id": "flightpath-26",
+   "type": "flightpath",
+   "mapId": 1439,
+   "x": 36.4,
+   "y": 45.6,
+   "confidence": "unverified",
+   "node": "Auberdine, Darkshore"
   },
   {
    "id": "accept-3524",
@@ -4392,6 +4557,15 @@
    "confidence": "unverified",
    "questId": 866,
    "npcId": 3446
+  },
+  {
+   "id": "flightpath-80",
+   "type": "flightpath",
+   "mapId": 1413,
+   "x": 63.1,
+   "y": 37.1,
+   "confidence": "unverified",
+   "node": "Ratchet, The Barrens"
   },
   {
    "id": "accept-887",
@@ -5325,6 +5499,15 @@
    "npcId": 3845
   },
   {
+   "id": "flightpath-28",
+   "type": "flightpath",
+   "mapId": 1440,
+   "x": 34.5,
+   "y": 48.0,
+   "confidence": "unverified",
+   "node": "Astranaar, Ashenvale"
+  },
+  {
    "id": "accept-1070",
    "type": "accept",
    "mapId": 1440,
@@ -5482,14 +5665,25 @@
    "npcId": 3994
   },
   {
-   "id": "travel-1442-1440-2",
+   "id": "flightpath-33",
+   "type": "flightpath",
+   "mapId": 1442,
+   "x": 36.5,
+   "y": 7.2,
+   "confidence": "unverified",
+   "node": "Stonetalon Peak, Stonetalon Mountains"
+  },
+  {
+   "id": "travel-fly-33-28",
    "type": "travel",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 34.5,
+   "y": 48.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stonetalon Peak, Stonetalon Mountains",
+   "node": "Astranaar, Ashenvale"
   },
   {
    "id": "turnin-1033",
@@ -5522,7 +5716,7 @@
    "npcId": 4080
   },
   {
-   "id": "travel-1442-1440-3",
+   "id": "travel-1442-1440-2",
    "type": "travel",
    "mapId": 1440,
    "x": 20.3,
@@ -5562,14 +5756,16 @@
    "npcId": 3894
   },
   {
-   "id": "travel-1440-1442-4",
+   "id": "travel-fly-28-33",
    "type": "travel",
    "mapId": 1442,
-   "x": 37.1,
-   "y": 8.1,
+   "x": 36.5,
+   "y": 7.2,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Astranaar, Ashenvale",
+   "node": "Stonetalon Peak, Stonetalon Mountains"
   },
   {
    "id": "accept-1057",
@@ -5600,7 +5796,7 @@
    "questId": 1057
   },
   {
-   "id": "travel-1442-1440-4",
+   "id": "travel-1442-1440-3",
    "type": "travel",
    "mapId": 1440,
    "x": 20.37,
@@ -5628,7 +5824,7 @@
    "questId": 1034
   },
   {
-   "id": "travel-1440-1442-5",
+   "id": "travel-1440-1442-4",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -5648,7 +5844,7 @@
    "npcId": 4077
   },
   {
-   "id": "travel-1442-1440-5",
+   "id": "travel-1442-1440-4",
    "type": "travel",
    "mapId": 1440,
    "x": 36.6,
@@ -5688,14 +5884,16 @@
    "npcId": 3894
   },
   {
-   "id": "travel-1440-1442-6",
+   "id": "travel-fly-28-33-2",
    "type": "travel",
    "mapId": 1442,
-   "x": 37.1,
-   "y": 8.1,
+   "x": 36.5,
+   "y": 7.2,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Astranaar, Ashenvale",
+   "node": "Stonetalon Peak, Stonetalon Mountains"
   },
   {
    "id": "turnin-1057",
@@ -5708,14 +5906,16 @@
    "npcId": 3994
   },
   {
-   "id": "travel-1442-1440-6",
+   "id": "travel-fly-33-28-2",
    "type": "travel",
    "mapId": 1440,
-   "x": 34.7,
-   "y": 48.8,
+   "x": 34.5,
+   "y": 48.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stonetalon Peak, Stonetalon Mountains",
+   "node": "Astranaar, Ashenvale"
   },
   {
    "id": "accept-4581",
@@ -5738,7 +5938,7 @@
    "npcId": 3848
   },
   {
-   "id": "travel-1440-1442-7",
+   "id": "travel-1440-1442-5",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -5758,7 +5958,7 @@
    "npcId": 4077
   },
   {
-   "id": "travel-1442-1440-7",
+   "id": "travel-1442-1440-5",
    "type": "travel",
    "mapId": 1440,
    "x": 36.6,
@@ -5788,14 +5988,16 @@
    "npcId": 3691
   },
   {
-   "id": "travel-1440-1442-8",
+   "id": "travel-fly-28-33-3",
    "type": "travel",
    "mapId": 1442,
-   "x": 37.1,
-   "y": 8.1,
+   "x": 36.5,
+   "y": 7.2,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Astranaar, Ashenvale",
+   "node": "Stonetalon Peak, Stonetalon Mountains"
   },
   {
    "id": "accept-1059",
@@ -5817,7 +6019,7 @@
    "questId": 1071
   },
   {
-   "id": "travel-1442-1440-8",
+   "id": "travel-1442-1440-6",
    "type": "travel",
    "mapId": 1440,
    "x": 53.65,
@@ -5836,7 +6038,7 @@
    "questId": 1025
   },
   {
-   "id": "travel-1440-1442-9",
+   "id": "travel-1440-1442-6",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -5856,7 +6058,7 @@
    "npcId": 4077
   },
   {
-   "id": "travel-1442-1440-9",
+   "id": "travel-1442-1440-7",
    "type": "travel",
    "mapId": 1440,
    "x": 53.5,
@@ -5886,7 +6088,7 @@
    "npcId": 3691
   },
   {
-   "id": "travel-1440-1442-10",
+   "id": "travel-1440-1442-7",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -5916,7 +6118,7 @@
    "npcId": 4077
   },
   {
-   "id": "travel-1442-1440-10",
+   "id": "travel-1442-1440-8",
    "type": "travel",
    "mapId": 1440,
    "x": 49.8,
@@ -6151,14 +6353,16 @@
    "npcId": 3880
   },
   {
-   "id": "travel-1440-1439-2",
+   "id": "travel-fly-28-26",
    "type": "travel",
    "mapId": 1439,
-   "x": 55,
-   "y": 24.9,
+   "x": 36.4,
+   "y": 45.6,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Astranaar, Ashenvale",
+   "node": "Auberdine, Darkshore"
   },
   {
    "id": "turnin-1167",
@@ -6171,7 +6375,19 @@
    "npcId": 3661
   },
   {
-   "id": "travel-1439-1444",
+   "id": "travel-fly-26-28",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 34.5,
+   "y": 48.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Auberdine, Darkshore",
+   "node": "Astranaar, Ashenvale"
+  },
+  {
+   "id": "travel-1440-1444",
    "type": "travel",
    "mapId": 1444,
    "x": 89.6,
@@ -6189,6 +6405,15 @@
    "confidence": "unverified",
    "questId": 1059,
    "npcId": 4048
+  },
+  {
+   "id": "flightpath-31",
+   "type": "flightpath",
+   "mapId": 1444,
+   "x": 89.5,
+   "y": 45.9,
+   "confidence": "unverified",
+   "node": "Thalanaar, Feralas"
   },
   {
    "id": "travel-1444-1455",
@@ -6211,14 +6436,16 @@
    "npcId": 4081
   },
   {
-   "id": "travel-1455-1453",
+   "id": "travel-fly-6-2",
    "type": "travel",
    "mapId": 1453,
-   "x": 43.1,
-   "y": 80.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-1075",
@@ -6400,6 +6627,15 @@
    "npcId": 633
   },
   {
+   "id": "flightpath-12",
+   "type": "flightpath",
+   "mapId": 1431,
+   "x": 77.6,
+   "y": 44.4,
+   "confidence": "unverified",
+   "node": "Darkshire, Duskwood"
+  },
+  {
    "id": "accept-164",
    "type": "accept",
    "mapId": 1431,
@@ -6480,14 +6716,16 @@
    "npcId": 663
   },
   {
-   "id": "travel-1431-1453",
+   "id": "travel-fly-12-2",
    "type": "travel",
    "mapId": 1453,
-   "x": 38.7,
-   "y": 25.9,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-1274",
@@ -6500,14 +6738,16 @@
    "npcId": 4982
   },
   {
-   "id": "travel-1453-1431",
+   "id": "travel-fly-2-12",
    "type": "travel",
    "mapId": 1431,
-   "x": 79.39,
-   "y": 70.74,
+   "x": 77.6,
+   "y": 44.4,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Darkshire, Duskwood"
   },
   {
    "id": "complete-56",
@@ -6537,7 +6777,19 @@
    "questId": 101
   },
   {
-   "id": "travel-1431-1426",
+   "id": "travel-fly-4-6",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 55.9,
+   "y": 47.9,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Ironforge, Dun Morogh"
+  },
+  {
+   "id": "travel-1455-1426",
    "type": "travel",
    "mapId": 1426,
    "x": 19.8,
@@ -6556,7 +6808,19 @@
    "questId": 174
   },
   {
-   "id": "travel-1426-1431",
+   "id": "travel-fly-6-4",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Sentinel Hill, Westfall"
+  },
+  {
+   "id": "travel-1436-1431-2",
    "type": "travel",
    "mapId": 1431,
    "x": 18.4,
@@ -6646,14 +6910,16 @@
    "npcId": 663
   },
   {
-   "id": "travel-1431-1453-2",
+   "id": "travel-fly-12-2-2",
    "type": "travel",
    "mapId": 1453,
-   "x": 78.3,
-   "y": 25.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-1274",
@@ -6666,7 +6932,19 @@
    "npcId": 4960
   },
   {
-   "id": "travel-1453-1431-2",
+   "id": "travel-fly-2-4-2",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Sentinel Hill, Westfall"
+  },
+  {
+   "id": "travel-1436-1431-3",
    "type": "travel",
    "mapId": 1431,
    "x": 18.4,
@@ -6716,14 +6994,16 @@
    "npcId": 663
   },
   {
-   "id": "travel-1431-1453-3",
+   "id": "travel-fly-12-2-3",
    "type": "travel",
    "mapId": 1453,
-   "x": 78.3,
-   "y": 25.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-1241",
@@ -6736,7 +7016,7 @@
    "npcId": 4960
   },
   {
-   "id": "travel-1453-1431-3",
+   "id": "travel-1453-1431",
    "type": "travel",
    "mapId": 1431,
    "x": 33.85,
@@ -6804,14 +7084,16 @@
    "npcId": 663
   },
   {
-   "id": "travel-1431-1453-4",
+   "id": "travel-fly-12-2-4",
    "type": "travel",
    "mapId": 1453,
-   "x": 73.2,
-   "y": 78.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-1241",
@@ -6824,14 +7106,16 @@
    "npcId": 4959
   },
   {
-   "id": "travel-1453-1431-4",
+   "id": "travel-fly-2-12-2",
    "type": "travel",
    "mapId": 1431,
-   "x": 73.9,
-   "y": 43.5,
+   "x": 77.6,
+   "y": 44.4,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Darkshire, Duskwood"
   },
   {
    "id": "accept-93",
@@ -6864,14 +7148,16 @@
    "npcId": 302
   },
   {
-   "id": "travel-1431-1453-5",
+   "id": "travel-fly-12-2-5",
    "type": "travel",
    "mapId": 1453,
-   "x": 73.2,
-   "y": 78.4,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-1242",
@@ -6884,7 +7170,7 @@
    "npcId": 4959
   },
   {
-   "id": "travel-1453-1431-5",
+   "id": "travel-1453-1431-2",
    "type": "travel",
    "mapId": 1431,
    "x": 39.73,
@@ -6951,14 +7237,16 @@
    "npcId": 276
   },
   {
-   "id": "travel-1431-1453-6",
+   "id": "travel-fly-12-2-6",
    "type": "travel",
    "mapId": 1453,
-   "x": 59.9,
-   "y": 64.2,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-1242",
@@ -6971,14 +7259,16 @@
    "npcId": 482
   },
   {
-   "id": "travel-1453-1431-6",
+   "id": "travel-fly-2-12-3",
    "type": "travel",
    "mapId": 1431,
-   "x": 73.9,
-   "y": 43.5,
+   "x": 77.6,
+   "y": 44.4,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Darkshire, Duskwood"
   },
   {
    "id": "accept-240",
@@ -7001,14 +7291,16 @@
    "npcId": 276
   },
   {
-   "id": "travel-1431-1453-7",
+   "id": "travel-fly-12-2-7",
    "type": "travel",
    "mapId": 1453,
-   "x": 59.9,
-   "y": 64.2,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "accept-1243",
@@ -7021,7 +7313,7 @@
    "npcId": 482
   },
   {
-   "id": "travel-1453-1431-7",
+   "id": "travel-1453-1431-3",
    "type": "travel",
    "mapId": 1431,
    "x": 36.8,
@@ -7515,14 +7807,16 @@
    "npcId": 263
   },
   {
-   "id": "travel-1431-1433",
+   "id": "travel-fly-12-5",
    "type": "travel",
    "mapId": 1433,
-   "x": 30,
-   "y": 44.5,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Darkshire, Duskwood",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "turnin-146",
@@ -7535,14 +7829,16 @@
    "npcId": 344
   },
   {
-   "id": "travel-1433-1453-7",
+   "id": "travel-fly-5-2-8",
    "type": "travel",
    "mapId": 1453,
-   "x": 59.9,
-   "y": 64.2,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
    "id": "turnin-1245",
@@ -7555,14 +7851,16 @@
    "npcId": 482
   },
   {
-   "id": "travel-1453-1437",
+   "id": "travel-fly-2-7",
    "type": "travel",
    "mapId": 1437,
-   "x": 49.9,
-   "y": 39.4,
+   "x": 9.5,
+   "y": 59.7,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Menethil Harbor, Wetlands"
   },
   {
    "id": "accept-469",

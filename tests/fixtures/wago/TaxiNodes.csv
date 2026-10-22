@@ -1,0 +1,5 @@
+Name_lang,Pos_0,Pos_1,Pos_2,MapOffset_0,MapOffset_1,FlightMapOffset_0,FlightMapOffset_1,ID,ContinentID,ConditionID,CharacterBitNumber,Flags,UiTextureKitID,MinimapAtlasMemberID,Facing,SpecialIconConditionID,VisibilityConditionID,MountCreatureID_0,MountCreatureID_1
+"Goldshire, Elwynn",-9460,62,56,0,0,0,0,90,0,0,0,1025,0,4689,0,0,0,0,541
+"Eastvale, Elwynn",-9460,-1300,56,0,0,0,0,91,0,0,0,1025,0,4689,0,0,0,0,541
+"Transport, Elwynn Boat",-9000,0,0,0,0,0,0,0,92,0,0,0,1024,0,4689,0,0,0,0,0
+"zzOLDGoldshire, Elwynn",-9460,62,56,0,0,0,0,93,0,0,0,1025,0,4689,0,0,0,0,541

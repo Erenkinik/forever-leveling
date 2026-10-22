@@ -11,7 +11,8 @@
 - accept: 253
 - turnin: 253
 - complete: 141
-- travel: 109
+- travel: 117
+- flightpath: 12
 - sethearth: 0
 - train: 0
 - grind: 9

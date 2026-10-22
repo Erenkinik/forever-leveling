@@ -28,3 +28,9 @@ def load_questxp_canonical(data_dir: Path = DATA_DIR) -> dict[int, list[int]]:
 def load_spawns_canonical(data_dir: Path = DATA_DIR) -> dict:
     """The committed spawns.json: build, units, objects, items, droppedPoints."""
     return json.loads((Path(data_dir) / "canonical" / "spawns.json").read_text(encoding="utf-8"))
+
+
+def load_taxi_canonical(data_dir: Path = DATA_DIR) -> dict | None:
+    """The committed taxi.json (flight masters, flights, zone map bounds), or None before normalize wrote it."""
+    path = Path(data_dir) / "canonical" / "taxi.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else None

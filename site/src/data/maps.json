@@ -97,6 +97,10 @@
    "width": 1002,
    "height": 668
   },
+  "1456": {
+   "width": 1002,
+   "height": 668
+  },
   "1458": {
    "width": 1002,
    "height": 668
@@ -118,6 +122,7 @@
   "icon-collect",
   "icon-use",
   "icon-grind",
+  "icon-flight",
   "icon-progress"
  ],
  "fonts": [

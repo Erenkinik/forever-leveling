@@ -1,0 +1,4 @@
+ID,FromTaxiNode,ToTaxiNode,Cost
+1,90,91,10
+2,91,90,10
+3,90,92,10
