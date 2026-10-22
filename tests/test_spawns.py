@@ -89,9 +89,9 @@ def test_duplicate_points_collapsed_and_ids_numeric_sorted():
 
 def test_load_pfquest_reads_items():
     data = load_pfquest(FIX / "pfquest")
-    assert data.items[750] == {"units": [197], "objects": [31], "name": "Tough Wolf Meat"}
-    assert data.items[17] == {"units": [], "objects": [], "name": "Martin Fury"}
-    assert data.items[6497] == {"units": [], "objects": [], "name": None}  # vendors ("V") are not drop sources
+    assert data.items[750] == {"units": [197], "objects": [31], "name": "Tough Wolf Meat", "chances": {197: 0.5}}
+    assert data.items[17] == {"units": [], "objects": [], "name": "Martin Fury", "chances": {}}
+    assert data.items[6497] == {"units": [], "objects": [], "name": None, "chances": {}}  # vendors ("V") are not drop sources
     assert data.objects[31]["name"] == "Old Lion Statue" and data.objects[4]["name"] is None
 
 

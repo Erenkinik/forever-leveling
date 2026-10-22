@@ -69,11 +69,14 @@ ROUTES: dict[str, tuple[str, str]] = {
     "tauren": ("Tauren", "Horde"),
 }
 
-# Kill XP estimate (a guess; open data has no objective counts). A kill objective is taken as this many kills,
-# a collect objective as this many kills (drop chance), a use objective as none. Mob XP: vanilla same-level
-# formula 45 + 5 * level, with the mob at the quest's level.
+# Kill XP. Counts, drop chances and mob levels come from the quest's `kills` (pipeline/normalize/kills.py); these
+# fill in what the data does not say. A kill objective of unknown count is taken as this many kills, a collect
+# objective of unknown count and drop chance as this many kills, and an unknown drop chance as this percent.
 KILLS_PER_KILL_OBJECTIVE = 8
 KILLS_PER_COLLECT = 10
+DEFAULT_DROP_CHANCE = 50.0
+# A rare drop is still got within this many kills (players use other droppers, or the item is shared).
+MAX_KILLS_PER_OBJECTIVE = 40
 
 # Travel: a map change across continents is a boat (Alliance) or zeppelin (Horde) trip. Teldrassil is an
 # island, so going to or from it is a boat even within Kalimdor. Flight paths are not modelled yet.

@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:36:32Z",
+ "generatedAt": "2026-10-22T20:13:34Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -212,7 +212,7 @@
    "questName": "Sarkoth",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 2,
+   "level": 1,
    "objectives": [
     {
      "kind": "collect",
@@ -243,7 +243,7 @@
    "questName": "The New Horde",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 2
+   "level": 1
   },
   {
    "id": "turnin-790",
@@ -257,7 +257,7 @@
    "questName": "Sarkoth",
    "npcName": "Hana'zua",
    "zoneName": "Durotar",
-   "level": 3
+   "level": 2
   },
   {
    "id": "turnin-4641",
@@ -271,7 +271,7 @@
    "questName": "Your Place In The World",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 3
+   "level": 2
   },
   {
    "id": "turnin-5441",
@@ -285,7 +285,7 @@
    "questName": "Lazy Peons",
    "npcName": "Foreman Thazz'ril",
    "zoneName": "Durotar",
-   "level": 3
+   "level": 2
   },
   {
    "id": "accept-804",
@@ -653,7 +653,7 @@
    "questName": "Sarkoth",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 4
+   "level": 3
   },
   {
    "id": "turnin-788",
@@ -667,7 +667,7 @@
    "questName": "Cutting Teeth",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 4
+   "level": 3
   },
   {
    "id": "turnin-6394",
@@ -681,7 +681,7 @@
    "questName": "Thazz'ril's Pick",
    "npcName": "Foreman Thazz'ril",
    "zoneName": "Durotar",
-   "level": 4
+   "level": 3
   },
   {
    "id": "accept-789",
@@ -973,7 +973,7 @@
    "questName": "Galgar's Cactus Apple Surprise",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 5,
+   "level": 4,
    "objectives": [
     {
      "kind": "collect",
@@ -1200,7 +1200,7 @@
    "questName": "Sting of the Scorpid",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "turnin-4402",
@@ -1214,7 +1214,7 @@
    "questName": "Galgar's Cactus Apple Surprise",
    "npcName": "Galgar",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "gap-786",
@@ -1228,7 +1228,7 @@
    "questName": "Thwarting Kolkar Aggression",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-2161",
@@ -1242,7 +1242,7 @@
    "questName": "A Peon's Burden",
    "npcName": "Ukor",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-808",
@@ -1256,7 +1256,7 @@
    "questName": "Minshina's Skull",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-823",
@@ -1270,7 +1270,7 @@
    "questName": "Report to Orgnil",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-826",
@@ -1284,7 +1284,7 @@
    "questName": "Zalazane",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-817",
@@ -1298,7 +1298,7 @@
    "questName": "Practical Prey",
    "npcName": "Vel'rin Fang",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-818",
@@ -1312,7 +1312,7 @@
    "questName": "A Solvent Spirit",
    "npcName": "Master Vornal",
    "zoneName": "Durotar",
-   "level": 5
+   "level": 4
   },
   {
    "id": "complete-817",
@@ -1325,7 +1325,7 @@
    "questName": "Practical Prey",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 5,
+   "level": 4,
    "objectives": [
     {
      "kind": "collect",
@@ -1471,7 +1471,7 @@
    "questName": "Zalazane",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 5,
+   "level": 4,
    "objectives": [
     {
      "kind": "kill",
@@ -1623,7 +1623,7 @@
    "questName": "Minshina's Skull",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 6,
+   "level": 5,
    "objectives": [
     {
      "kind": "collect",
@@ -1657,7 +1657,7 @@
    "questName": "A Solvent Spirit",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 6,
+   "level": 5,
    "objectives": [
     {
      "kind": "collect",
@@ -2409,7 +2409,7 @@
    "questName": "A Peon's Burden",
    "npcName": "Innkeeper Grosk",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 5
   },
   {
    "id": "turnin-808",
@@ -2423,7 +2423,7 @@
    "questName": "Minshina's Skull",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 5
   },
   {
    "id": "turnin-823",
@@ -2437,7 +2437,7 @@
    "questName": "Report to Orgnil",
    "npcName": "Orgnil Soulscar",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 6
   },
   {
    "id": "turnin-826",
@@ -2451,7 +2451,7 @@
    "questName": "Zalazane",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 6
   },
   {
    "id": "turnin-817",
@@ -2465,7 +2465,7 @@
    "questName": "Practical Prey",
    "npcName": "Vel'rin Fang",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 6
   },
   {
    "id": "turnin-818",
@@ -2479,7 +2479,7 @@
    "questName": "A Solvent Spirit",
    "npcName": "Master Vornal",
    "zoneName": "Durotar",
-   "level": 7
+   "level": 6
   },
   {
    "id": "gap-831",
@@ -2493,7 +2493,20 @@
    "questName": "The Admiral's Orders",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 8
+   "level": 6
+  },
+  {
+   "id": "grind-1411-8",
+   "type": "grind",
+   "mapId": 1411,
+   "x": 51.9,
+   "y": 43.5,
+   "confidence": "unverified",
+   "untilLevel": 8,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 6
   },
   {
    "id": "accept-784",
@@ -3375,7 +3388,7 @@
    "questName": "Break a Few Eggs",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 9,
+   "level": 8,
    "objectives": [
     {
      "kind": "collect",
@@ -3509,7 +3522,7 @@
    "questName": "Dark Storms",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 9,
+   "level": 8,
    "objectives": [
     {
      "kind": "collect",
@@ -3540,7 +3553,7 @@
    "questName": "Vanquish the Betrayers",
    "npcName": "Gar'Thok",
    "zoneName": "Durotar",
-   "level": 9
+   "level": 8
   },
   {
    "id": "turnin-791",
@@ -3554,7 +3567,7 @@
    "questName": "Carry Your Weight",
    "npcName": "Furl Scornbrow",
    "zoneName": "Durotar",
-   "level": 9
+   "level": 8
   },
   {
    "id": "turnin-806",
@@ -3568,7 +3581,7 @@
    "questName": "Dark Storms",
    "npcName": "Orgnil Soulscar",
    "zoneName": "Durotar",
-   "level": 9
+   "level": 8
   },
   {
    "id": "turnin-815",
@@ -3582,7 +3595,7 @@
    "questName": "Break a Few Eggs",
    "npcName": "Cook Torka",
    "zoneName": "Durotar",
-   "level": 9
+   "level": 8
   },
   {
    "id": "turnin-837",
@@ -3638,7 +3651,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "accept-825",
@@ -3652,7 +3665,7 @@
    "questName": "From The Wreckage....",
    "npcName": "Gar'Thok",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "accept-828",
@@ -3666,7 +3679,7 @@
    "questName": "Margoz",
    "npcName": "Orgnil Soulscar",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "complete-825",
@@ -3679,7 +3692,7 @@
    "questName": "From The Wreckage....",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 10,
+   "level": 9,
    "objectives": [
     {
      "kind": "collect",
@@ -3790,7 +3803,7 @@
    "questName": "From The Wreckage....",
    "npcName": "Gar'Thok",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "turnin-828",
@@ -3804,7 +3817,7 @@
    "questName": "Margoz",
    "npcName": "Margoz",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "accept-834",
@@ -3818,7 +3831,7 @@
    "questName": "Winds in the Desert",
    "npcName": "Rezlak",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "complete-834",
@@ -3831,7 +3844,7 @@
    "questName": "Winds in the Desert",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 10,
+   "level": 9,
    "objectives": [
     {
      "kind": "collect",
@@ -3934,7 +3947,7 @@
    "questName": "Winds in the Desert",
    "npcName": "Rezlak",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "accept-835",
@@ -3948,7 +3961,7 @@
    "questName": "Securing the Lines",
    "npcName": "Rezlak",
    "zoneName": "Durotar",
-   "level": 10
+   "level": 9
   },
   {
    "id": "complete-835",
@@ -3961,7 +3974,7 @@
    "questName": "Securing the Lines",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 10,
+   "level": 9,
    "objectives": [
     {
      "kind": "kill",
@@ -4322,7 +4335,7 @@
    "questName": "Investigate the Scourge of Orgrimmar",
    "npcName": "Lieutenant Dagel",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-827",
@@ -4336,7 +4349,7 @@
    "questName": "Skull Rock",
    "npcName": "Margoz",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "complete-827",
@@ -4349,7 +4362,7 @@
    "questName": "Skull Rock",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 11,
+   "level": 10,
    "objectives": [
     {
      "kind": "collect",
@@ -4558,7 +4571,7 @@
    "questName": "Skull Rock",
    "npcName": "Margoz",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-829",
@@ -4572,7 +4585,7 @@
    "questName": "Neeru Fireblade",
    "npcName": "Margoz",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "travel-1411-1454-2",
@@ -4586,7 +4599,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Orgrimmar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "turnin-829",
@@ -4600,7 +4613,7 @@
    "questName": "Neeru Fireblade",
    "npcName": "Neeru Fireblade",
    "zoneName": "Orgrimmar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "travel-1454-1411-2",
@@ -4614,7 +4627,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-816",
@@ -4628,7 +4641,7 @@
    "questName": "Lost But Not Forgotten",
    "npcName": "Misha Tor'kren",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "complete-816",
@@ -4641,7 +4654,7 @@
    "questName": "Lost But Not Forgotten",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 11,
+   "level": 10,
    "objectives": [
     {
      "kind": "collect",
@@ -4869,7 +4882,7 @@
    "questName": "Lost But Not Forgotten",
    "npcName": "Misha Tor'kren",
    "zoneName": "Durotar",
-   "level": 11
+   "level": 10
   },
   {
    "id": "travel-1411-1413-2",
@@ -4883,7 +4896,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-833",
@@ -4897,7 +4910,7 @@
    "questName": "A Sacred Burial",
    "npcName": "Lorekeeper Raintotem",
    "zoneName": "The Barrens",
-   "level": 11
+   "level": 10
   },
   {
    "id": "complete-833",
@@ -4910,7 +4923,7 @@
    "questName": "A Sacred Burial",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 11,
+   "level": 10,
    "objectives": [
     {
      "kind": "kill",
@@ -5045,7 +5058,7 @@
    "questName": "A Sacred Burial",
    "npcName": "Lorekeeper Raintotem",
    "zoneName": "The Barrens",
-   "level": 11
+   "level": 10
   },
   {
    "id": "travel-1413-1454",
@@ -5143,7 +5156,7 @@
    "questName": "The Demon Seed",
    "npcName": "Ak'Zeloth",
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "complete-924",
@@ -5156,7 +5169,7 @@
    "questName": "The Demon Seed",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 12,
+   "level": 11,
    "objectives": [
     {
      "kind": "use",
@@ -5183,7 +5196,7 @@
    "questName": "The Demon Seed",
    "npcName": "Ak'Zeloth",
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "gap-6362",
@@ -5197,7 +5210,7 @@
    "questName": "Ride to Thunder Bluff",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "gap-4021",
@@ -5211,7 +5224,7 @@
    "questName": "Counterattack!",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "gap-862",
@@ -5225,7 +5238,7 @@
    "questName": "Dig Rat Stew",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "grind-1413-15",
@@ -5238,7 +5251,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 12
+   "level": 11
   },
   {
    "id": "accept-855",
@@ -8912,7 +8925,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-855",
@@ -8926,7 +8939,7 @@
    "questName": "Centaur Bracers",
    "npcName": "Regthar Deathgate",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-869",
@@ -8940,7 +8953,7 @@
    "questName": "Raptor Thieves",
    "npcName": "Gazrog",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-871",
@@ -8954,7 +8967,7 @@
    "questName": "Disrupt the Attacks",
    "npcName": "Thork",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-1492",
@@ -8968,7 +8981,7 @@
    "questName": "Wharfmaster Dizzywig",
    "npcName": "Wharfmaster Dizzywig",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-5041",
@@ -8982,7 +8995,7 @@
    "questName": "Supplies for the Crossroads",
    "npcName": "Thork",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-848",
@@ -8996,7 +9009,7 @@
    "questName": "Fungal Spores",
    "npcName": "Apothecary Helbrim",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "travel-1413-1412-3",
@@ -9010,7 +9023,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Mulgore",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-861",
@@ -9024,7 +9037,7 @@
    "questName": "The Hunter's Way",
    "npcName": "Melor Stonehoof",
    "zoneName": "Mulgore",
-   "level": 16
+   "level": 15
   },
   {
    "id": "travel-1412-1413-3",
@@ -9038,7 +9051,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-886",
@@ -9052,7 +9065,7 @@
    "questName": "The Barrens Oases",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-6365",
@@ -9066,7 +9079,7 @@
    "questName": "Meats to Orgrimmar",
    "npcName": "Devrak",
    "zoneName": "The Barrens",
-   "level": 16
+   "level": 15
   },
   {
    "id": "turnin-850",
@@ -9477,7 +9490,7 @@
    "questName": "Verog the Dervish",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 17,
+   "level": 16,
    "objectives": [
     {
      "kind": "collect",
@@ -9507,7 +9520,7 @@
    "questName": "Stolen Silver",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 17,
+   "level": 16,
    "objectives": [
     {
      "kind": "collect",
@@ -9537,7 +9550,7 @@
    "questName": "Harpy Lieutenants",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 17,
+   "level": 16,
    "objectives": [
     {
      "kind": "collect",
@@ -9756,7 +9769,7 @@
    "questName": "The Disruption Ends",
    "npcName": "Thork",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "turnin-3281",
@@ -9770,7 +9783,7 @@
    "questName": "Stolen Silver",
    "npcName": "Gazrog",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "turnin-860",
@@ -9784,7 +9797,7 @@
    "questName": "Sergra Darkthorn",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "turnin-870",
@@ -9798,7 +9811,7 @@
    "questName": "The Forgotten Pools",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "turnin-851",
@@ -9812,7 +9825,7 @@
    "questName": "Verog the Dervish",
    "npcName": "Regthar Deathgate",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "turnin-875",
@@ -9826,7 +9839,7 @@
    "questName": "Harpy Lieutenants",
    "npcName": "Darsok Swiftdagger",
    "zoneName": "The Barrens",
-   "level": 17
+   "level": 16
   },
   {
    "id": "accept-844",
@@ -10824,7 +10837,7 @@
    "questName": "The Stagnant Oasis",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-852",
@@ -10838,7 +10851,7 @@
    "questName": "Hezrul Bloodmark",
    "npcName": "Regthar Deathgate",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-876",
@@ -10852,7 +10865,7 @@
    "questName": "Serena Bloodfeather",
    "npcName": "Darsok Swiftdagger",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-845",
@@ -10866,7 +10879,7 @@
    "questName": "The Zhevra",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-880",
@@ -10880,7 +10893,7 @@
    "questName": "Altered Beings",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-1060",
@@ -10894,7 +10907,7 @@
    "questName": "Letter to Jin'Zil",
    "npcName": "Darsok Swiftdagger",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "complete-845",
@@ -10907,7 +10920,7 @@
    "questName": "The Zhevra",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "collect",
@@ -11735,7 +11748,7 @@
    "questName": "Altered Beings",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "collect",
@@ -11910,7 +11923,7 @@
    "questName": "The Zhevra",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-880",
@@ -11924,7 +11937,7 @@
    "questName": "Altered Beings",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-903",
@@ -11938,7 +11951,7 @@
    "questName": "Prowlers of the Barrens",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-1489",
@@ -11952,7 +11965,7 @@
    "questName": "Hamuul Runetotem",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-3301",
@@ -11966,7 +11979,7 @@
    "questName": "Mura Runetotem",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "complete-903",
@@ -11979,7 +11992,7 @@
    "questName": "Prowlers of the Barrens",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "collect",
@@ -12418,7 +12431,7 @@
    "questName": "Prowlers of the Barrens",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-881",
@@ -12432,7 +12445,7 @@
    "questName": "Echeyakee",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "complete-881",
@@ -12445,7 +12458,7 @@
    "questName": "Echeyakee",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "collect",
@@ -12476,7 +12489,7 @@
    "questName": "Echeyakee",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-905",
@@ -12490,7 +12503,7 @@
    "questName": "The Angry Scytheclaws",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "complete-905",
@@ -12503,7 +12516,7 @@
    "questName": "The Angry Scytheclaws",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "collect",
@@ -13347,7 +13360,7 @@
    "questName": "The Angry Scytheclaws",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-3261",
@@ -13361,7 +13374,7 @@
    "questName": "Jorn Skyseer",
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-3261",
@@ -13375,7 +13388,7 @@
    "questName": "Jorn Skyseer",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "gap-894",
@@ -13389,7 +13402,7 @@
    "questName": "Samophlange",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "gap-3921",
@@ -13403,7 +13416,7 @@
    "questName": "Wenikee Boltbucket",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "gap-821",
@@ -13417,7 +13430,7 @@
    "questName": "Chen's Empty Keg",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-866",
@@ -13431,7 +13444,7 @@
    "questName": "Root Samples",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-887",
@@ -13445,7 +13458,7 @@
    "questName": "Southsea Freebooters",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-865",
@@ -13459,7 +13472,7 @@
    "questName": "Raptor Horns",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-891",
@@ -13473,7 +13486,7 @@
    "questName": "The Guns of Northwatch",
    "npcName": "Captain Thalo'thas Brightsun",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-896",
@@ -13487,7 +13500,7 @@
    "questName": "Miner's Fortune",
    "npcName": "Wharfmaster Dizzywig",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-959",
@@ -13501,7 +13514,7 @@
    "questName": "Trouble at the Docks",
    "npcName": "Crane Operator Bigglefuzz",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-1069",
@@ -13515,7 +13528,7 @@
    "questName": "Deepmoss Spider Eggs",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-1483",
@@ -13529,7 +13542,7 @@
    "questName": "Ziz Fizziks",
    "npcName": "Sputtervalve",
    "zoneName": "The Barrens",
-   "level": 18
+   "level": 17
   },
   {
    "id": "complete-887",
@@ -13542,7 +13555,7 @@
    "questName": "Southsea Freebooters",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "kill",
@@ -13741,7 +13754,7 @@
    "questName": "The Guns of Northwatch",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 17,
    "objectives": [
     {
      "kind": "kill",
@@ -14088,7 +14101,7 @@
    "questName": "Root Samples",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -14916,7 +14929,7 @@
    "questName": "Raptor Horns",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -15308,7 +15321,7 @@
    "questName": "Trouble at the Docks",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -15338,7 +15351,7 @@
    "questName": "Miner's Fortune",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -15563,7 +15576,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "complete-1069",
@@ -15576,7 +15589,7 @@
    "questName": "Deepmoss Spider Eggs",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -15787,7 +15800,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-866",
@@ -15801,7 +15814,7 @@
    "questName": "Root Samples",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-887",
@@ -15815,7 +15828,7 @@
    "questName": "Southsea Freebooters",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-865",
@@ -15829,7 +15842,7 @@
    "questName": "Raptor Horns",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-891",
@@ -15843,7 +15856,7 @@
    "questName": "The Guns of Northwatch",
    "npcName": "Captain Thalo'thas Brightsun",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-896",
@@ -15857,7 +15870,7 @@
    "questName": "Miner's Fortune",
    "npcName": "Wharfmaster Dizzywig",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-959",
@@ -15871,7 +15884,7 @@
    "questName": "Trouble at the Docks",
    "npcName": "Crane Operator Bigglefuzz",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-1069",
@@ -15885,7 +15898,7 @@
    "questName": "Deepmoss Spider Eggs",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 19
+   "level": 18
   },
   {
    "id": "travel-1413-1442-2",
@@ -15899,7 +15912,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-1483",
@@ -15913,7 +15926,7 @@
    "questName": "Ziz Fizziks",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-1060",
@@ -15927,7 +15940,7 @@
    "questName": "Letter to Jin'Zil",
    "npcName": "Witch Doctor Jin'Zil",
    "zoneName": "Stonetalon Mountains",
-   "level": 20
+   "level": 18
   },
   {
    "id": "travel-1442-1413-2",
@@ -15941,7 +15954,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 18
   },
   {
    "id": "accept-890",
@@ -15955,7 +15968,7 @@
    "questName": "The Missing Shipment",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 18
   },
   {
    "id": "accept-1491",
@@ -15969,7 +15982,7 @@
    "questName": "Smart Drinks",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 18
   },
   {
    "id": "complete-1491",
@@ -15982,7 +15995,7 @@
    "questName": "Smart Drinks",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20,
+   "level": 18,
    "objectives": [
     {
      "kind": "collect",
@@ -16049,7 +16062,7 @@
    "questName": "The Missing Shipment",
    "npcName": "Wharfmaster Dizzywig",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 18
   },
   {
    "id": "turnin-1491",
@@ -16063,7 +16076,7 @@
    "questName": "Smart Drinks",
    "npcName": "Mebok Mizzyrix",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 18
   },
   {
    "id": "accept-892",
@@ -16077,7 +16090,7 @@
    "questName": "The Missing Shipment",
    "npcName": "Wharfmaster Dizzywig",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-892",
@@ -16091,7 +16104,7 @@
    "questName": "The Missing Shipment",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-888",
@@ -16105,7 +16118,7 @@
    "questName": "Stolen Booty",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-888",
@@ -16118,7 +16131,7 @@
    "questName": "Stolen Booty",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "collect",
@@ -16162,7 +16175,7 @@
    "questName": "Stolen Booty",
    "npcName": "Gazlowe",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-858",
@@ -16176,7 +16189,7 @@
    "questName": "Ignition",
    "npcName": "Wizzlecrank's Shredder",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-858",
@@ -16189,7 +16202,7 @@
    "questName": "Ignition",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "collect",
@@ -16220,7 +16233,7 @@
    "questName": "Ignition",
    "npcName": "Wizzlecrank's Shredder",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-863",
@@ -16234,7 +16247,7 @@
    "questName": "The Escape",
    "npcName": "Wizzlecrank's Shredder",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-863",
@@ -16248,7 +16261,7 @@
    "questName": "The Escape",
    "npcName": "Sputtervalve",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "gap-3922",
@@ -16262,7 +16275,7 @@
    "questName": "Nugget Slugs",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "gap-3923",
@@ -16276,7 +16289,7 @@
    "questName": "Rilli Greasygob",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "gap-8368",
@@ -16290,7 +16303,7 @@
    "questName": "Battle of Warsong Gulch",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-6548",
@@ -16304,7 +16317,7 @@
    "questName": "Avenge My Village",
    "npcName": "Makaba Flathoof",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1413-1454-2",
@@ -16318,7 +16331,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Orgrimmar",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-1061",
@@ -16332,7 +16345,7 @@
    "questName": "The Spirits of Stonetalon",
    "npcName": "Zor Lonetree",
    "zoneName": "Orgrimmar",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1454-1413-2",
@@ -16346,7 +16359,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-6548",
@@ -16359,7 +16372,7 @@
    "questName": "Avenge My Village",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -16583,7 +16596,7 @@
    "questName": "Avenge My Village",
    "npcName": "Makaba Flathoof",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-1061",
@@ -16597,7 +16610,7 @@
    "questName": "The Spirits of Stonetalon",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-6629",
@@ -16611,7 +16624,7 @@
    "questName": "Kill Grundig Darkcloud",
    "npcName": "Makaba Flathoof",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-1062",
@@ -16625,7 +16638,7 @@
    "questName": "Goblin Invaders",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-6629",
@@ -16638,7 +16651,7 @@
    "questName": "Kill Grundig Darkcloud",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -16762,7 +16775,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-1062",
@@ -16775,7 +16788,7 @@
    "questName": "Goblin Invaders",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -17210,7 +17223,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "turnin-6629",
@@ -17224,7 +17237,7 @@
    "questName": "Kill Grundig Darkcloud",
    "npcName": "Makaba Flathoof",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "turnin-1062",
@@ -17238,7 +17251,7 @@
    "questName": "Goblin Invaders",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-1063",
@@ -17252,7 +17265,7 @@
    "questName": "The Elder Crone",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-1068",
@@ -17266,7 +17279,7 @@
    "questName": "Shredding Machines",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "travel-1413-1442-4",
@@ -17280,7 +17293,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 21
+   "level": 19
   },
   {
    "id": "complete-1068",
@@ -17293,7 +17306,7 @@
    "questName": "Shredding Machines",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 21,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -17329,7 +17342,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "turnin-1068",
@@ -17343,7 +17356,7 @@
    "questName": "Shredding Machines",
    "npcName": "Seereth Stonebreak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "gap-1487",
@@ -17357,7 +17370,7 @@
    "questName": "Deviate Eradication",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-1486",
@@ -17371,7 +17384,7 @@
    "questName": "Deviate Hides",
    "npcName": "Nalpak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "complete-1486",
@@ -17384,7 +17397,7 @@
    "questName": "Deviate Hides",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21,
+   "level": 19,
    "objectives": [
     {
      "kind": "collect",
@@ -17529,7 +17542,7 @@
    "questName": "Deviate Hides",
    "npcName": "Nalpak",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-882",
@@ -17543,7 +17556,7 @@
    "questName": "Ishamuhale",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-878",
@@ -17557,7 +17570,7 @@
    "questName": "Tribes at War",
    "npcName": "Mangletooth",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-893",
@@ -17571,7 +17584,7 @@
    "questName": "Weapons of Choice",
    "npcName": "Tatternack Steelforge",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "accept-6382",
@@ -17585,7 +17598,7 @@
    "questName": "The Ashenvale Hunt",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 19
   },
   {
    "id": "complete-878",
@@ -17598,7 +17611,7 @@
    "questName": "Tribes at War",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -18010,7 +18023,7 @@
    "questName": "Ishamuhale",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21,
+   "level": 20,
    "objectives": [
     {
      "kind": "collect",
@@ -18847,7 +18860,7 @@
    "questName": "Weapons of Choice",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 21,
+   "level": 20,
    "objectives": [
     {
      "kind": "collect",
@@ -19197,7 +19210,7 @@
    "questName": "Ishamuhale",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-878",
@@ -19211,7 +19224,7 @@
    "questName": "Tribes at War",
    "npcName": "Mangletooth",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-893",
@@ -19225,7 +19238,7 @@
    "questName": "Weapons of Choice",
    "npcName": "Tatternack Steelforge",
    "zoneName": "The Barrens",
-   "level": 21
+   "level": 20
   },
   {
    "id": "accept-907",
@@ -19239,7 +19252,7 @@
    "questName": "Enraged Thunder Lizards",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "accept-5052",
@@ -19253,7 +19266,7 @@
    "questName": "Blood Shards of Agamaggan",
    "npcName": "Mangletooth",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "complete-907",
@@ -19266,7 +19279,7 @@
    "questName": "Enraged Thunder Lizards",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 22,
+   "level": 20,
    "objectives": [
     {
      "kind": "collect",
@@ -19942,7 +19955,7 @@
    "questName": "Blood Shards of Agamaggan",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 22,
+   "level": 20,
    "objectives": [
     {
      "kind": "collect",
@@ -20771,7 +20784,7 @@
    "questName": "Enraged Thunder Lizards",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "turnin-5052",
@@ -20785,7 +20798,7 @@
    "questName": "Blood Shards of Agamaggan",
    "npcName": "Mangletooth",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "accept-913",
@@ -20799,7 +20812,7 @@
    "questName": "Cry of the Thunderhawk",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "complete-913",
@@ -20812,7 +20825,7 @@
    "questName": "Cry of the Thunderhawk",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 22,
+   "level": 20,
    "objectives": [
     {
      "kind": "collect",
@@ -20985,7 +20998,7 @@
    "questName": "Cry of the Thunderhawk",
    "npcName": "Jorn Skyseer",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "accept-898",
@@ -20999,7 +21012,7 @@
    "questName": "Free From the Hold",
    "npcName": "Gilthares Firebough",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "turnin-898",
@@ -21013,7 +21026,7 @@
    "questName": "Free From the Hold",
    "npcName": "Captain Thalo'thas Brightsun",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "accept-843",
@@ -21027,7 +21040,7 @@
    "questName": "Gann's Reclamation",
    "npcName": "Gann Stonespire",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "complete-843",
@@ -21040,7 +21053,7 @@
    "questName": "Gann's Reclamation",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 22,
+   "level": 20,
    "objectives": [
     {
      "kind": "kill",
@@ -21225,7 +21238,7 @@
    "questName": "Gann's Reclamation",
    "npcName": "Gann Stonespire",
    "zoneName": "The Barrens",
-   "level": 22
+   "level": 20
   },
   {
    "id": "travel-1413-1412-5",
@@ -21239,7 +21252,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Mulgore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-853",
@@ -21253,7 +21266,7 @@
    "questName": "Apothecary Zamah",
    "npcName": "Apothecary Zamah",
    "zoneName": "Mulgore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-1489",
@@ -21267,7 +21280,7 @@
    "questName": "Hamuul Runetotem",
    "npcName": "Arch Druid Hamuul Runetotem",
    "zoneName": "Mulgore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-1063",
@@ -21281,7 +21294,7 @@
    "questName": "The Elder Crone",
    "npcName": "Magatha Grimtotem",
    "zoneName": "Mulgore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "travel-1412-1454",
@@ -21295,7 +21308,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Orgrimmar",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-6384",
@@ -21309,7 +21322,7 @@
    "questName": "Ride to Orgrimmar",
    "npcName": "Innkeeper Gryshka",
    "zoneName": "Orgrimmar",
-   "level": 22
+   "level": 21
   },
   {
    "id": "travel-1454-1421",
@@ -21323,7 +21336,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Silverpine Forest",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-3301",
@@ -21337,7 +21350,7 @@
    "questName": "Mura Runetotem",
    "npcName": "Mura Runetotem",
    "zoneName": "Silverpine Forest",
-   "level": 22
+   "level": 21
   },
   {
    "id": "travel-1421-1442",
@@ -21351,7 +21364,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-6523",
@@ -21365,7 +21378,7 @@
    "questName": "Protect Kaya",
    "npcName": "Kaya Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-6523",
@@ -21379,7 +21392,7 @@
    "questName": "Protect Kaya",
    "npcName": "Makaba Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-6401",
@@ -21393,7 +21406,7 @@
    "questName": "Kaya's Alive",
    "npcName": "Makaba Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-6401",
@@ -21407,7 +21420,7 @@
    "questName": "Kaya's Alive",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-6461",
@@ -21421,7 +21434,7 @@
    "questName": "Blood Feeders",
    "npcName": "Xen'Zilla",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-6542",
@@ -21435,7 +21448,7 @@
    "questName": "Report to Kadrak",
    "npcName": "Darn Talongrip",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-1058",
@@ -21449,7 +21462,7 @@
    "questName": "Jin'Zil's Forest Magic",
    "npcName": "Witch Doctor Jin'Zil",
    "zoneName": "Stonetalon Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "complete-6461",
@@ -21462,7 +21475,7 @@
    "questName": "Blood Feeders",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "kill",
@@ -21801,7 +21814,7 @@
    "questName": "Jin'Zil's Forest Magic",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -22118,7 +22131,7 @@
    "questName": "Blood Feeders",
    "npcName": "Xen'Zilla",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "turnin-1058",
@@ -22132,7 +22145,7 @@
    "questName": "Jin'Zil's Forest Magic",
    "npcName": "Witch Doctor Jin'Zil",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "accept-1090",
@@ -22146,7 +22159,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "turnin-1090",
@@ -22160,7 +22173,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "accept-1092",
@@ -22174,7 +22187,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "turnin-1092",
@@ -22188,7 +22201,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "gap-1096",
@@ -22202,7 +22215,7 @@
    "questName": "Gerenzo Wrenchwhistle",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "accept-1093",
@@ -22216,7 +22229,7 @@
    "questName": "Super Reaper 6000",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 21
   },
   {
    "id": "complete-1093",
@@ -22229,7 +22242,7 @@
    "questName": "Super Reaper 6000",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -22352,7 +22365,7 @@
    "questName": "Super Reaper 6000",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-1094",
@@ -22366,7 +22379,7 @@
    "questName": "Further Instructions",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-6481",
@@ -22380,7 +22393,7 @@
    "questName": "Earthen Arise",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-1089",
@@ -22394,7 +22407,7 @@
    "questName": "The Den",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-6421",
@@ -22408,7 +22421,7 @@
    "questName": "Boulderslide Ravine",
    "npcName": "Mor'rogal",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-6301",
@@ -22422,7 +22435,7 @@
    "questName": "Cycle of Rebirth",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-6562",
@@ -22436,7 +22449,7 @@
    "questName": "Trouble in the Deeps",
    "npcName": "Tsunaman",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-6282",
@@ -22450,7 +22463,7 @@
    "questName": "Harpies Threaten",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-6393",
@@ -22464,7 +22477,7 @@
    "questName": "Elemental War",
    "npcName": "Tsunaman",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-1087",
@@ -22478,7 +22491,7 @@
    "questName": "Cenarius' Legacy",
    "npcName": "Braelyn Firehand",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-5881",
@@ -22492,7 +22505,7 @@
    "questName": "Calling in the Reserves",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-6393",
@@ -22505,7 +22518,7 @@
    "questName": "Elemental War",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -22613,7 +22626,7 @@
    "questName": "Harpies Threaten",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "kill",
@@ -22974,7 +22987,7 @@
    "questName": "Cycle of Rebirth",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23060,7 +23073,7 @@
    "questName": "Cenarius' Legacy",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "kill",
@@ -23156,7 +23169,7 @@
    "questName": "Boulderslide Ravine",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23343,7 +23356,7 @@
    "questName": "Boulderslide Ravine",
    "npcName": "Mor'rogal",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6301",
@@ -23357,7 +23370,7 @@
    "questName": "Cycle of Rebirth",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "travel-1442-1440",
@@ -23371,7 +23384,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6562",
@@ -23385,7 +23398,7 @@
    "questName": "Trouble in the Deeps",
    "npcName": "Je'neu Sancrea",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 22
   },
   {
    "id": "travel-1440-1442",
@@ -23399,7 +23412,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6282",
@@ -23413,7 +23426,7 @@
    "questName": "Harpies Threaten",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6393",
@@ -23427,7 +23440,7 @@
    "questName": "Elemental War",
    "npcName": "Tsunaman",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-1087",
@@ -23441,7 +23454,7 @@
    "questName": "Cenarius' Legacy",
    "npcName": "Braelyn Firehand",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "accept-6381",
@@ -23455,7 +23468,7 @@
    "questName": "New Life",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "accept-6283",
@@ -23469,7 +23482,7 @@
    "questName": "Bloodfury Bloodline",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "accept-1088",
@@ -23483,7 +23496,7 @@
    "questName": "Ordanus",
    "npcName": "Braelyn Firehand",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "complete-6381",
@@ -23496,7 +23509,7 @@
    "questName": "New Life",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
+   "level": 22,
    "objectives": [
     {
      "kind": "use",
@@ -23654,7 +23667,7 @@
    "questName": "Bloodfury Bloodline",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23685,7 +23698,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 22
   },
   {
    "id": "complete-1088",
@@ -23698,7 +23711,7 @@
    "questName": "Ordanus",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23729,7 +23742,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6381",
@@ -23743,7 +23756,7 @@
    "questName": "New Life",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-6283",
@@ -23757,7 +23770,7 @@
    "questName": "Bloodfury Bloodline",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-1088",
@@ -23771,7 +23784,7 @@
    "questName": "Ordanus",
    "npcName": "Braelyn Firehand",
    "zoneName": "Stonetalon Mountains",
-   "level": 24
+   "level": 22
   },
   {
    "id": "travel-1442-1413-5",
@@ -23785,7 +23798,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-1094",
@@ -23799,7 +23812,7 @@
    "questName": "Further Instructions",
    "npcName": "Sputtervalve",
    "zoneName": "The Barrens",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-5881",
@@ -23813,7 +23826,7 @@
    "questName": "Calling in the Reserves",
    "npcName": "Grish Longrunner",
    "zoneName": "The Barrens",
-   "level": 24
+   "level": 23
   },
   {
    "id": "travel-1413-1440",
@@ -23827,7 +23840,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-6541",
@@ -23841,7 +23854,7 @@
    "questName": "Report to Kadrak",
    "npcName": "Kadrak",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-6382",
@@ -23855,7 +23868,7 @@
    "questName": "The Ashenvale Hunt",
    "npcName": "Senani Thunderheart",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-6542",
@@ -23869,7 +23882,7 @@
    "questName": "Report to Kadrak",
    "npcName": "Kadrak",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "gap-6565",
@@ -23883,7 +23896,7 @@
    "questName": "Allegiance to the Old Gods",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-6621",
@@ -23897,7 +23910,7 @@
    "questName": "King of the Foulweald",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-6921",
@@ -23911,7 +23924,7 @@
    "questName": "Amongst the Ruins",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6442",
@@ -23925,7 +23938,7 @@
    "questName": "Naga at the Zoram Strand",
    "npcName": "Marukai",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6563",
@@ -23939,7 +23952,7 @@
    "questName": "The Essence of Aku'Mai",
    "npcName": "Je'neu Sancrea",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6462",
@@ -23953,7 +23966,7 @@
    "questName": "Troll Charm",
    "npcName": "Mitsuwa",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6641",
@@ -23967,7 +23980,7 @@
    "questName": "Vorsha the Lasher",
    "npcName": "Muglash",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-216",
@@ -23981,7 +23994,7 @@
    "questName": "Between a Rock and a Thistlefur",
    "npcName": "Karang Amakkar",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "complete-6442",
@@ -23994,7 +24007,7 @@
    "questName": "Naga at the Zoram Strand",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24242,7 +24255,7 @@
    "questName": "The Essence of Aku'Mai",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24448,7 +24461,7 @@
    "questName": "Between a Rock and a Thistlefur",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "kill",
@@ -24679,7 +24692,7 @@
    "questName": "Troll Charm",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24798,7 +24811,7 @@
    "questName": "Naga at the Zoram Strand",
    "npcName": "Marukai",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-6563",
@@ -24812,7 +24825,7 @@
    "questName": "The Essence of Aku'Mai",
    "npcName": "Je'neu Sancrea",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-6462",
@@ -24826,7 +24839,7 @@
    "questName": "Troll Charm",
    "npcName": "Mitsuwa",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-6641",
@@ -24840,7 +24853,7 @@
    "questName": "Vorsha the Lasher",
    "npcName": "Warsong Runner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-216",
@@ -24854,7 +24867,7 @@
    "questName": "Between a Rock and a Thistlefur",
    "npcName": "Karang Amakkar",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6482",
@@ -24868,7 +24881,7 @@
    "questName": "Freedom to Ruul",
    "npcName": "Ruul Snowhoof",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-6482",
@@ -24882,7 +24895,7 @@
    "questName": "Freedom to Ruul",
    "npcName": "Yama Snowhoof",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-3514",
@@ -24896,7 +24909,7 @@
    "questName": "Horde Presence",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-6543",
@@ -24910,7 +24923,7 @@
    "questName": "The Warsong Reports",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-6571",
@@ -24924,7 +24937,7 @@
    "questName": "Warsong Supplies",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "gap-6504",
@@ -24938,7 +24951,7 @@
    "questName": "The Lost Pages",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6503",
@@ -24952,7 +24965,7 @@
    "questName": "Ashenvale Outrunners",
    "npcName": "Kuray'bin",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-6544",
@@ -24966,7 +24979,7 @@
    "questName": "Torek's Assault",
    "npcName": "Torek",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "complete-6503",
@@ -24979,7 +24992,7 @@
    "questName": "Ashenvale Outrunners",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "kill",
@@ -25082,7 +25095,7 @@
    "questName": "Ashenvale Outrunners",
    "npcName": "Kuray'bin",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-6544",
@@ -25096,7 +25109,7 @@
    "questName": "Torek's Assault",
    "npcName": "Ertog Ragetusk",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-247",
@@ -25110,7 +25123,7 @@
    "questName": "The Hunt Completed",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-6383",
@@ -25124,7 +25137,7 @@
    "questName": "The Ashenvale Hunt",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-824",
@@ -25138,7 +25151,7 @@
    "questName": "Je'neu of the Earthen Ring",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-6441",
@@ -25152,7 +25165,7 @@
    "questName": "Satyr Horns",
    "npcName": "Pixel",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-25",
@@ -25166,7 +25179,7 @@
    "questName": "Stonetalon Standstill",
    "npcName": "Mastok Wrilehiss",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "complete-6441",
@@ -25179,7 +25192,7 @@
    "questName": "Satyr Horns",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25299,7 +25312,7 @@
    "questName": "Stonetalon Standstill",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -25454,7 +25467,7 @@
    "questName": "Satyr Horns",
    "npcName": "Pixel",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "turnin-25",
@@ -25468,7 +25481,7 @@
    "questName": "Stonetalon Standstill",
    "npcName": "Mastok Wrilehiss",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1045",
@@ -25482,7 +25495,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "travel-1440-1441",
@@ -25496,7 +25509,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-4542",
@@ -25510,7 +25523,7 @@
    "questName": "Message to Freewind Post",
    "npcName": "Brave Moonhorn",
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "turnin-4542",
@@ -25524,7 +25537,7 @@
    "questName": "Message to Freewind Post",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1197",
@@ -25538,7 +25551,7 @@
    "questName": "The Sacred Flame",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-4841",
@@ -25552,7 +25565,7 @@
    "questName": "Pacify the Centaur",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-4821",
@@ -25566,7 +25579,7 @@
    "questName": "Alien Egg",
    "npcName": "Hagar Lightninghoof",
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-4767",
@@ -25580,7 +25593,7 @@
    "questName": "Wind Rider",
    "npcName": "Elu",
    "zoneName": "Thousand Needles",
-   "level": 25
+   "level": 24
   },
   {
    "id": "complete-4821",
@@ -25593,7 +25606,7 @@
    "questName": "Alien Egg",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25631,7 +25644,7 @@
    "questName": "Pacify the Centaur",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -25947,7 +25960,7 @@
    "questName": "Wind Rider",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -26066,7 +26079,7 @@
    "questName": "Pacify the Centaur",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-4821",
@@ -26080,7 +26093,7 @@
    "questName": "Alien Egg",
    "npcName": "Hagar Lightninghoof",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-4767",
@@ -26094,7 +26107,7 @@
    "questName": "Wind Rider",
    "npcName": "Elu",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-4865",
@@ -26108,7 +26121,7 @@
    "questName": "Serpent Wild",
    "npcName": "Hagar Lightninghoof",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-5064",
@@ -26122,7 +26135,7 @@
    "questName": "Grimtotem Spying",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "complete-5064",
@@ -26135,7 +26148,7 @@
    "questName": "Grimtotem Spying",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -26192,7 +26205,7 @@
    "questName": "Serpent Wild",
    "npcName": "Motega Firemane",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-5064",
@@ -26206,7 +26219,7 @@
    "questName": "Grimtotem Spying",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-1150",
@@ -26220,7 +26233,7 @@
    "questName": "Test of Endurance",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-1151",
@@ -26234,7 +26247,7 @@
    "questName": "Test of Strength",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-1152",
@@ -26248,7 +26261,7 @@
    "questName": "Test of Lore",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-1154",
@@ -26262,7 +26275,7 @@
    "questName": "Test of Lore",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-6627",
@@ -26276,7 +26289,7 @@
    "questName": "Test of Lore",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-1159",
@@ -26290,7 +26303,7 @@
    "questName": "Test of Lore",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-1149",
@@ -26304,7 +26317,7 @@
    "questName": "Test of Faith",
    "npcName": "Dorn Plainstalker",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "turnin-1149",
@@ -26318,7 +26331,7 @@
    "questName": "Test of Faith",
    "npcName": "Dorn Plainstalker",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-4904",
@@ -26332,7 +26345,7 @@
    "questName": "Free at Last",
    "npcName": "Lakota Windsong",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "turnin-4904",
@@ -26346,7 +26359,7 @@
    "questName": "Free at Last",
    "npcName": "Thalia Amberhide",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "gap-4966",
@@ -26360,7 +26373,7 @@
    "questName": "Protect Kanati Greycloud",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-5062",
@@ -26374,7 +26387,7 @@
    "questName": "Sacred Fire",
    "npcName": "Motega Firemane",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-5151",
@@ -26388,7 +26401,7 @@
    "questName": "Hypercapacitor Gizmo",
    "npcName": "Wizlo Bearingshiner",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "complete-5151",
@@ -26401,7 +26414,7 @@
    "questName": "Hypercapacitor Gizmo",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -26431,7 +26444,7 @@
    "questName": "Sacred Fire",
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -26498,7 +26511,7 @@
    "questName": "Hypercapacitor Gizmo",
    "npcName": "Wizlo Bearingshiner",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-4770",
@@ -26512,7 +26525,7 @@
    "questName": "Homeward Bound",
    "npcName": "Pao'ka Swiftmountain",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "turnin-4770",
@@ -26526,7 +26539,7 @@
    "questName": "Homeward Bound",
    "npcName": "Motega Firemane",
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "grind-1441-27",
@@ -26539,7 +26552,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-1104",

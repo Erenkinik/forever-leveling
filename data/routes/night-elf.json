@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:36:29Z",
+ "generatedAt": "2026-10-22T20:13:32Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -1109,6 +1109,15 @@
    "confidence": "unverified",
    "mode": "boat",
    "radius": 5
+  },
+  {
+   "id": "grind-1438-12",
+   "type": "grind",
+   "mapId": 1438,
+   "x": 24.8,
+   "y": 64.8,
+   "confidence": "unverified",
+   "untilLevel": 12
   },
   {
    "id": "accept-2518",
@@ -4258,6 +4267,15 @@
    "radius": 5
   },
   {
+   "id": "grind-1433-26",
+   "type": "grind",
+   "mapId": 1433,
+   "x": 30,
+   "y": 44.5,
+   "confidence": "unverified",
+   "untilLevel": 26
+  },
+  {
    "id": "accept-120",
    "type": "accept",
    "mapId": 1433,
@@ -6191,6 +6209,15 @@
    "confidence": "unverified",
    "questId": 647,
    "npcId": 2705
+  },
+  {
+   "id": "grind-1424-30",
+   "type": "grind",
+   "mapId": 1424,
+   "x": 52.1,
+   "y": 58.7,
+   "confidence": "unverified",
+   "untilLevel": 30
   }
  ]
 }

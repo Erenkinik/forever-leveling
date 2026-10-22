@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:15:26Z",
+ "generatedAt": "2026-10-22T20:13:29Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -1298,7 +1298,7 @@
    "questName": "Skirmish at Echo Ridge",
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
-   "level": 5
+   "level": 4
   },
   {
    "id": "accept-3903",
@@ -1312,7 +1312,7 @@
    "questName": "Milly Osworth",
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
-   "level": 5
+   "level": 4
   },
   {
    "id": "complete-21",
@@ -1325,7 +1325,7 @@
    "questName": "Skirmish at Echo Ridge",
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 5,
+   "level": 4,
    "objectives": [
     {
      "kind": "kill",
@@ -1718,7 +1718,7 @@
    "questName": "Grape Manifest",
    "npcName": "Milly Osworth",
    "zoneName": "Elwynn Forest",
-   "level": 6
+   "level": 5
   },
   {
    "id": "turnin-3905",
@@ -1732,7 +1732,7 @@
    "questName": "Grape Manifest",
    "npcName": "Brother Neals",
    "zoneName": "Elwynn Forest",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-85",
@@ -1746,7 +1746,7 @@
    "questName": "Lost Necklace",
    "npcName": "\"Auntie\" Bernice Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-88",
@@ -1760,7 +1760,7 @@
    "questName": "Princess Must Die!",
    "npcName": "Ma Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 6
+   "level": 5
   },
   {
    "id": "complete-88",
@@ -1773,7 +1773,7 @@
    "questName": "Princess Must Die!",
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 6,
+   "level": 5,
    "objectives": [
     {
      "kind": "collect",
@@ -1804,7 +1804,7 @@
    "questName": "Lost Necklace",
    "npcName": "Billy Maclure",
    "zoneName": "Elwynn Forest",
-   "level": 6
+   "level": 5
   },
   {
    "id": "turnin-88",
@@ -2478,7 +2478,7 @@
    "questName": "Young Lovers",
    "npcName": "Tommy Joe Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 7
+   "level": 6
   },
   {
    "id": "accept-84",
@@ -2492,7 +2492,7 @@
    "questName": "Back to Billy",
    "npcName": "\"Auntie\" Bernice Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 7
+   "level": 6
   },
   {
    "id": "accept-111",
@@ -2506,7 +2506,7 @@
    "questName": "Speak with Gramma",
    "npcName": "Tommy Joe Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 7
+   "level": 6
   },
   {
    "id": "turnin-84",
@@ -2520,7 +2520,7 @@
    "questName": "Back to Billy",
    "npcName": "Billy Maclure",
    "zoneName": "Elwynn Forest",
-   "level": 7
+   "level": 6
   },
   {
    "id": "turnin-111",
@@ -2534,7 +2534,7 @@
    "questName": "Speak with Gramma",
    "npcName": "Gramma Stonefield",
    "zoneName": "Elwynn Forest",
-   "level": 7
+   "level": 6
   },
   {
    "id": "accept-87",
@@ -3101,7 +3101,7 @@
    "questName": "Gold Dust Exchange",
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 8,
+   "level": 7,
    "objectives": [
     {
      "kind": "collect",
@@ -3485,7 +3485,7 @@
    "questName": "Collecting Kelp",
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 8,
+   "level": 7,
    "objectives": [
     {
      "kind": "collect",
@@ -3717,7 +3717,7 @@
    "questName": "Kobold Candles",
    "npcName": "William Pestle",
    "zoneName": "Elwynn Forest",
-   "level": 8
+   "level": 7
   },
   {
    "id": "turnin-47",
@@ -3857,7 +3857,7 @@
    "questName": "The Escape",
    "npcName": "Maybell Maclure",
    "zoneName": "Elwynn Forest",
-   "level": 9
+   "level": 8
   },
   {
    "id": "turnin-35",
@@ -3871,7 +3871,7 @@
    "questName": "Further Concerns",
    "npcName": "Guard Thomas",
    "zoneName": "Elwynn Forest",
-   "level": 9
+   "level": 8
   },
   {
    "id": "accept-239",
@@ -5366,7 +5366,7 @@
    "questName": "Bounty on Murlocs",
    "npcName": "Guard Thomas",
    "zoneName": "Elwynn Forest",
-   "level": 10
+   "level": 9
   },
   {
    "id": "turnin-52",
@@ -6055,7 +6055,7 @@
    "questName": "Poor Old Blanchy",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 11,
+   "level": 10,
    "objectives": [
     {
      "kind": "collect",
@@ -6678,7 +6678,7 @@
    "questName": "Westfall Stew",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "turnin-64",
@@ -6692,7 +6692,7 @@
    "questName": "The Forgotten Heirloom",
    "npcName": "Farmer Furlbrow",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "turnin-151",
@@ -6706,7 +6706,7 @@
    "questName": "Poor Old Blanchy",
    "npcName": "Verna Furlbrow",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-9",
@@ -6720,7 +6720,7 @@
    "questName": "The Killing Fields",
    "npcName": "Farmer Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-22",
@@ -6734,7 +6734,7 @@
    "questName": "Goretusk Liver Pie",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "accept-38",
@@ -6748,7 +6748,7 @@
    "questName": "Westfall Stew",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 10
   },
   {
    "id": "complete-9",
@@ -6761,7 +6761,7 @@
    "questName": "The Killing Fields",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 11,
+   "level": 10,
    "objectives": [
     {
      "kind": "kill",
@@ -7783,7 +7783,7 @@
    "questName": "Goretusk Liver Pie",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 12,
+   "level": 11,
    "objectives": [
     {
      "kind": "collect",
@@ -8276,7 +8276,7 @@
    "questName": "The Killing Fields",
    "npcName": "Farmer Saldean",
    "zoneName": "Westfall",
-   "level": 12
+   "level": 11
   },
   {
    "id": "turnin-22",
@@ -9941,7 +9941,7 @@
    "questName": "The People's Militia",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 13
+   "level": 12
   },
   {
    "id": "turnin-153",
@@ -10684,7 +10684,7 @@
    "questName": "The People's Militia",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 13
+   "level": 14
   },
   {
    "id": "accept-103",
@@ -13492,7 +13492,7 @@
    "questName": "Bingles' Missing Supplies",
    "npcName": "Bingles Blastenheimer",
    "zoneName": "Loch Modan",
-   "level": 16
+   "level": 15
   },
   {
    "id": "complete-2038",
@@ -13505,7 +13505,7 @@
    "questName": "Bingles' Missing Supplies",
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 16,
+   "level": 15,
    "objectives": [
     {
      "kind": "collect",
@@ -13575,7 +13575,7 @@
    "questName": "Bingles' Missing Supplies",
    "npcName": "Bingles Blastenheimer",
    "zoneName": "Loch Modan",
-   "level": 16
+   "level": 15
   },
   {
    "id": "accept-307",
@@ -13589,7 +13589,7 @@
    "questName": "Filthy Paws",
    "npcName": "Mountaineer Stormpike",
    "zoneName": "Loch Modan",
-   "level": 16
+   "level": 15
   },
   {
    "id": "complete-307",
@@ -13602,7 +13602,7 @@
    "questName": "Filthy Paws",
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 16,
+   "level": 15,
    "objectives": [
     {
      "kind": "collect",
@@ -13685,7 +13685,7 @@
    "questName": "Filthy Paws",
    "npcName": "Mountaineer Stormpike",
    "zoneName": "Loch Modan",
-   "level": 16
+   "level": 15
   },
   {
    "id": "grind-1432-17",
@@ -13698,7 +13698,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 16
+   "level": 15
   },
   {
    "id": "accept-418",
@@ -15220,7 +15220,7 @@
    "questName": "Resupplying the Excavation",
    "npcName": "Jern Hornhelm",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-273",
@@ -15234,7 +15234,7 @@
    "questName": "Resupplying the Excavation",
    "npcName": "Huldar",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-454",
@@ -15248,7 +15248,7 @@
    "questName": "After the Ambush",
    "npcName": "Huldar",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 17
   },
   {
    "id": "turnin-454",
@@ -15262,7 +15262,7 @@
    "questName": "After the Ambush",
    "npcName": "Miran",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 17
   },
   {
    "id": "accept-309",
@@ -16072,7 +16072,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-1338",
@@ -16086,7 +16086,7 @@
    "questName": "Stormpike's Order",
    "npcName": "Furen Longbeard",
    "zoneName": "Stormwind City",
-   "level": 19
+   "level": 18
   },
   {
    "id": "travel-1453-1433",
@@ -16100,7 +16100,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "accept-244",
@@ -16114,7 +16114,7 @@
    "questName": "Encroaching Gnolls",
    "npcName": "Guard Parker",
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "turnin-244",
@@ -16128,7 +16128,7 @@
    "questName": "Encroaching Gnolls",
    "npcName": "Deputy Feldon",
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "accept-246",
@@ -16142,7 +16142,7 @@
    "questName": "Assessing the Threat",
    "npcName": "Deputy Feldon",
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 18
   },
   {
    "id": "complete-246",
@@ -16155,7 +16155,7 @@
    "questName": "Assessing the Threat",
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 19,
+   "level": 18,
    "objectives": [
     {
      "kind": "kill",
@@ -18088,7 +18088,7 @@
    "questName": "Hilary's Necklace",
    "npcName": "Hilary",
    "zoneName": "Redridge Mountains",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1433-1429",
@@ -18102,7 +18102,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-118",
@@ -18116,7 +18116,7 @@
    "questName": "The Price of Shoes",
    "npcName": "Smith Argus",
    "zoneName": "Elwynn Forest",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1429-1453-2",
@@ -18130,7 +18130,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-120",
@@ -18144,7 +18144,7 @@
    "questName": "Messenger to Stormwind",
    "npcName": "General Marcus Jonathan",
    "zoneName": "Stormwind City",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1453-1436-2",
@@ -18158,7 +18158,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 20
+   "level": 19
   },
   {
    "id": "turnin-132",
@@ -18172,7 +18172,7 @@
    "questName": "The Defias Brotherhood",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 20
+   "level": 19
   },
   {
    "id": "travel-1436-1433-2",
@@ -19275,7 +19275,7 @@
    "questName": "Visit the Herbalist",
    "npcName": "Martie Jainrose",
    "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-121",
@@ -19289,7 +19289,7 @@
    "questName": "Messenger to Stormwind",
    "npcName": "Magistrate Solomon",
    "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-122",
@@ -19303,7 +19303,7 @@
    "questName": "Underbelly Scales",
    "npcName": "Verner Osgood",
    "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 20
   },
   {
    "id": "travel-1433-1453-2",
@@ -19317,7 +19317,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-135",
@@ -19331,7 +19331,7 @@
    "questName": "The Defias Brotherhood",
    "npcName": "Master Mathias Shaw",
    "zoneName": "Stormwind City",
-   "level": 21
+   "level": 20
   },
   {
    "id": "travel-1453-1433-3",
@@ -19345,7 +19345,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-124",
@@ -19359,7 +19359,7 @@
    "questName": "A Baying of Gnolls",
    "npcName": "Verner Osgood",
    "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 20
   },
   {
    "id": "turnin-89",
@@ -20429,7 +20429,7 @@
    "questName": "Easy Strider Living",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21257,7 +21257,7 @@
    "questName": "Tools of the Highborne",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21481,7 +21481,7 @@
    "questName": "For Love Eternal",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21511,7 +21511,7 @@
    "questName": "Fruit of the Sea",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21670,7 +21670,7 @@
    "questName": "Cave Mushrooms",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21801,7 +21801,7 @@
    "questName": "Deep Ocean, Vast Sea",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -21845,7 +21845,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-958",
@@ -21859,7 +21859,7 @@
    "questName": "Tools of the Highborne",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-2178",
@@ -21873,7 +21873,7 @@
    "questName": "Easy Strider Living",
    "npcName": "Alanndarian Nightsong",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-984",
@@ -21887,7 +21887,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-963",
@@ -21901,7 +21901,7 @@
    "questName": "For Love Eternal",
    "npcName": "Cerellean Whiteclaw",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-3524",
@@ -21915,7 +21915,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-947",
@@ -21929,7 +21929,7 @@
    "questName": "Cave Mushrooms",
    "npcName": "Barithras Moonshade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-4811",
@@ -21943,7 +21943,7 @@
    "questName": "The Red Crystal",
    "npcName": "Sentinel Glynda Nal'Shea",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-965",
@@ -21957,7 +21957,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-982",
@@ -21971,7 +21971,7 @@
    "questName": "Deep Ocean, Vast Sea",
    "npcName": "Gorbold Steelhand",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-1138",
@@ -21985,7 +21985,7 @@
    "questName": "Fruit of the Sea",
    "npcName": "Gubber Blump",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-955",
@@ -21999,7 +21999,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-985",
@@ -22013,7 +22013,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-4681",
@@ -22027,7 +22027,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-4761",
@@ -22041,7 +22041,7 @@
    "questName": "Thundris Windweaver",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "accept-948",
@@ -22055,7 +22055,7 @@
    "questName": "Onu",
    "npcName": "Barithras Moonshade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "complete-4681",
@@ -22068,7 +22068,7 @@
    "questName": "Washed Ashore",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -22098,7 +22098,7 @@
    "questName": "How Big a Threat?",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "kill",
@@ -22229,7 +22229,7 @@
    "questName": "Bashal'Aran",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -22417,7 +22417,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-985",
@@ -22431,7 +22431,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-4681",
@@ -22445,7 +22445,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-4761",
@@ -22459,7 +22459,7 @@
    "questName": "Thundris Windweaver",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-948",
@@ -22473,7 +22473,7 @@
    "questName": "Onu",
    "npcName": "Onu",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-956",
@@ -22487,7 +22487,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-986",
@@ -22501,7 +22501,7 @@
    "questName": "A Lost Master",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-956",
@@ -22514,7 +22514,7 @@
    "questName": "Bashal'Aran",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -22564,7 +22564,7 @@
    "questName": "A Lost Master",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -22732,7 +22732,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-986",
@@ -22746,7 +22746,7 @@
    "questName": "A Lost Master",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-957",
@@ -22760,7 +22760,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-993",
@@ -22774,7 +22774,7 @@
    "questName": "A Lost Master",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-957",
@@ -22787,7 +22787,7 @@
    "questName": "Bashal'Aran",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "use",
@@ -22814,7 +22814,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-993",
@@ -22828,7 +22828,7 @@
    "questName": "A Lost Master",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-966",
@@ -22842,7 +22842,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-966",
@@ -22855,7 +22855,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -22986,7 +22986,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-967",
@@ -23000,7 +23000,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "travel-1439-1440",
@@ -23014,7 +23014,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-967",
@@ -23028,7 +23028,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 22
   },
   {
    "id": "travel-1440-1439",
@@ -23042,7 +23042,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-2098",
@@ -23056,7 +23056,7 @@
    "questName": "Gyromast's Retrieval",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-2098",
@@ -23069,7 +23069,7 @@
    "questName": "Gyromast's Retrieval",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23701,7 +23701,7 @@
    "questName": "Gyromast's Retrieval",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-2078",
@@ -23715,7 +23715,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-2078",
@@ -23728,7 +23728,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "kill",
@@ -23755,7 +23755,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-944",
@@ -23769,7 +23769,7 @@
    "questName": "The Master's Glaive",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-951",
@@ -23783,7 +23783,7 @@
    "questName": "Mathystra Relics",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-5321",
@@ -23797,7 +23797,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Kerlonian Evershade",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "complete-5321",
@@ -23810,7 +23810,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -23841,7 +23841,7 @@
    "questName": "Escape Through Force",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-995",
@@ -23855,7 +23855,7 @@
    "questName": "Escape Through Stealth",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-5713",
@@ -23869,7 +23869,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Aynasha",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-994",
@@ -23883,7 +23883,7 @@
    "questName": "Escape Through Force",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-995",
@@ -23897,7 +23897,7 @@
    "questName": "Escape Through Stealth",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-731",
@@ -23911,7 +23911,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "gap-741",
@@ -23925,7 +23925,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "accept-945",
@@ -23939,7 +23939,7 @@
    "questName": "Therylune's Escape",
    "npcName": "Therylune",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 22
   },
   {
    "id": "travel-1439-1440-2",
@@ -23953,7 +23953,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-5321",
@@ -23967,7 +23967,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Liladris Moonriver",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 22
   },
   {
    "id": "turnin-5713",
@@ -23981,7 +23981,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Onaeya",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 22
   },
   {
    "id": "turnin-945",
@@ -23995,7 +23995,7 @@
    "questName": "Therylune's Escape",
    "npcName": "Therysil",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 22
   },
   {
    "id": "accept-1007",
@@ -24009,7 +24009,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-1007",
@@ -24022,7 +24022,7 @@
    "questName": "The Ancient Statuette",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24053,7 +24053,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1009",
@@ -24067,7 +24067,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-1009",
@@ -24080,7 +24080,7 @@
    "questName": "Ruuzel",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24116,7 +24116,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-970",
@@ -24130,7 +24130,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1010",
@@ -24144,7 +24144,7 @@
    "questName": "Bathran's Hair",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-970",
@@ -24157,7 +24157,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24249,7 +24249,7 @@
    "questName": "Bathran's Hair",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24352,7 +24352,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-1010",
@@ -24366,7 +24366,7 @@
    "questName": "Bathran's Hair",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-973",
@@ -24380,7 +24380,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1020",
@@ -24394,7 +24394,7 @@
    "questName": "Orendil's Cure",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-973",
@@ -24407,7 +24407,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24438,7 +24438,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-1020",
@@ -24452,7 +24452,7 @@
    "questName": "Orendil's Cure",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1140",
@@ -24466,7 +24466,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-976",
@@ -24480,7 +24480,7 @@
    "questName": "Supplies to Auberdine",
    "npcName": "Feero Ironhand",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-1140",
@@ -24493,7 +24493,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "use",
@@ -24529,7 +24529,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-976",
@@ -24543,7 +24543,7 @@
    "questName": "Supplies to Auberdine",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1167",
@@ -24557,7 +24557,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "gap-1081",
@@ -24571,7 +24571,7 @@
    "questName": "Reception from Tyrande",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "gap-1134",
@@ -24585,7 +24585,7 @@
    "questName": "Pridewings of Stonetalon",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1008",
@@ -24599,7 +24599,7 @@
    "questName": "The Zoram Strand",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1070",
@@ -24613,7 +24613,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Sentinel Thenysil",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-991",
@@ -24627,7 +24627,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1054",
@@ -24641,7 +24641,7 @@
    "questName": "Culling the Threat",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1056",
@@ -24655,7 +24655,7 @@
    "questName": "Journey to Stonetalon Peak",
    "npcName": "Faldreas Goeth'Shael",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-1033",
@@ -24669,7 +24669,7 @@
    "questName": "Elune's Tear",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "accept-4581",
@@ -24683,7 +24683,7 @@
    "questName": "Kayneth Stillwind",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "complete-1033",
@@ -24696,7 +24696,7 @@
    "questName": "Elune's Tear",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24754,7 +24754,7 @@
    "questName": "Culling the Threat",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -24784,7 +24784,7 @@
    "questName": "The Zoram Strand",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -25033,7 +25033,7 @@
    "questName": "The Zoram Strand",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-991",
@@ -25047,7 +25047,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Teronis' Corpse",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 23
   },
   {
    "id": "turnin-1054",
@@ -25061,7 +25061,7 @@
    "questName": "Culling the Threat",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-1033",
@@ -25075,7 +25075,7 @@
    "questName": "Elune's Tear",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "turnin-4581",
@@ -25089,7 +25089,7 @@
    "questName": "Kayneth Stillwind",
    "npcName": "Kayneth Stillwind",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-1023",
@@ -25103,7 +25103,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Teronis' Corpse",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "accept-1034",
@@ -25117,7 +25117,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 23
   },
   {
    "id": "complete-1034",
@@ -25130,7 +25130,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -25228,7 +25228,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -25337,7 +25337,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "turnin-1034",
@@ -25351,7 +25351,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-1024",
@@ -25365,7 +25365,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-1025",
@@ -25379,7 +25379,7 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-1035",
@@ -25393,7 +25393,7 @@
    "questName": "Fallen Sky Lake",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "complete-1025",
@@ -25406,7 +25406,7 @@
    "questName": "An Aggressive Defense",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -25619,7 +25619,7 @@
    "questName": "Fallen Sky Lake",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25650,7 +25650,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "turnin-1025",
@@ -25664,7 +25664,7 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "turnin-1035",
@@ -25678,7 +25678,7 @@
    "questName": "Fallen Sky Lake",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1016",
@@ -25692,7 +25692,7 @@
    "questName": "Elemental Bracers",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1017",
@@ -25706,7 +25706,7 @@
    "questName": "Mage Summoner",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1027",
@@ -25720,7 +25720,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1028",
@@ -25734,7 +25734,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1029",
@@ -25748,7 +25748,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1030",
@@ -25762,7 +25762,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-1026",
@@ -25776,7 +25776,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "complete-1026",
@@ -25789,7 +25789,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25886,7 +25886,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1045",
@@ -25900,7 +25900,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-1046",
@@ -25914,7 +25914,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "gap-7788",
@@ -25928,7 +25928,7 @@
    "questName": "Vanquish the Invaders!",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "accept-1011",
@@ -25942,7 +25942,7 @@
    "questName": "Forsaken Diseases",
    "npcName": "Kayneth Stillwind",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 24
   },
   {
    "id": "complete-1011",
@@ -25955,7 +25955,7 @@
    "questName": "Forsaken Diseases",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25994,7 +25994,7 @@
    "questName": "Forsaken Diseases",
    "npcName": "Kayneth Stillwind",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-1022",
@@ -26008,7 +26008,7 @@
    "questName": "The Howling Vale",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 24
   },
   {
    "id": "complete-1022",
@@ -26021,7 +26021,7 @@
    "questName": "The Howling Vale",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 24,
    "objectives": [
     {
      "kind": "use",
@@ -26048,7 +26048,7 @@
    "questName": "The Howling Vale",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-1037",
@@ -26062,7 +26062,7 @@
    "questName": "Velinde Starsong",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 24
   },
   {
    "id": "travel-1440-1439-2",
@@ -26076,7 +26076,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-1167",
@@ -26090,7 +26090,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 26
+   "level": 24
   },
   {
    "id": "travel-1439-1442",
@@ -26104,7 +26104,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-1070",
@@ -26118,7 +26118,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Kaela Shadowspear",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-1056",
@@ -26132,7 +26132,7 @@
    "questName": "Journey to Stonetalon Peak",
    "npcName": "Keeper Albagorm",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 24
   },
   {
    "id": "travel-1442-1438",
@@ -26146,7 +26146,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-1037",
@@ -26160,7 +26160,7 @@
    "questName": "Velinde Starsong",
    "npcName": "Thyn'tel Bladeweaver",
    "zoneName": "Teldrassil",
-   "level": 26
+   "level": 24
   },
   {
    "id": "travel-1438-1437",
@@ -26174,7 +26174,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-469",
@@ -26188,7 +26188,7 @@
    "questName": "Daily Delivery",
    "npcName": "Einar Stonegrip",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "turnin-469",
@@ -26202,7 +26202,7 @@
    "questName": "Daily Delivery",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "gap-274",
@@ -26216,7 +26216,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "gap-278",
@@ -26230,7 +26230,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "gap-280",
@@ -26244,7 +26244,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "gap-378",
@@ -26258,7 +26258,7 @@
    "questName": "The Fury Runs Deep",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "accept-303",
@@ -26272,7 +26272,7 @@
    "questName": "The Dark Iron War",
    "npcName": "Motley Garmason",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 24
   },
   {
    "id": "complete-303",
@@ -26285,7 +26285,7 @@
    "questName": "The Dark Iron War",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -26583,7 +26583,7 @@
    "questName": "The Dark Iron War",
    "npcName": "Motley Garmason",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-294",
@@ -26597,7 +26597,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-299",
@@ -26611,7 +26611,7 @@
    "questName": "Uncovering the Past",
    "npcName": "Prospector Whelgar",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 25
   },
   {
    "id": "complete-299",
@@ -26624,7 +26624,7 @@
    "questName": "Uncovering the Past",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -26789,7 +26789,7 @@
    "questName": "Ormer's Revenge",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 26,
+   "level": 25,
    "objectives": [
     {
      "kind": "kill",
@@ -26989,7 +26989,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 25
   },
   {
    "id": "turnin-299",
@@ -27003,7 +27003,7 @@
    "questName": "Uncovering the Past",
    "npcName": "Prospector Whelgar",
    "zoneName": "Wetlands",
-   "level": 26
+   "level": 25
   },
   {
    "id": "accept-295",
@@ -27017,7 +27017,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "complete-295",
@@ -27030,7 +27030,7 @@
    "questName": "Ormer's Revenge",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 25,
    "objectives": [
     {
      "kind": "kill",
@@ -27150,7 +27150,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-296",
@@ -27164,7 +27164,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "complete-296",
@@ -27177,7 +27177,7 @@
    "questName": "Ormer's Revenge",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -27208,7 +27208,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-943",
@@ -27222,7 +27222,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-281",
@@ -27236,7 +27236,7 @@
    "questName": "Reclaiming Goods",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-321",
@@ -27250,7 +27250,7 @@
    "questName": "Lightforge Iron",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-526",
@@ -27264,7 +27264,7 @@
    "questName": "Lightforge Ingots",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-322",
@@ -27278,7 +27278,7 @@
    "questName": "Blessed Arm",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-288",
@@ -27292,7 +27292,7 @@
    "questName": "The Third Fleet",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-289",
@@ -27306,7 +27306,7 @@
    "questName": "The Cursed Crew",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-290",
@@ -27320,7 +27320,7 @@
    "questName": "Lifting the Curse",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "gap-293",
@@ -27334,7 +27334,7 @@
    "questName": "Cleansing the Eye",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-484",
@@ -27348,7 +27348,7 @@
    "questName": "Young Crocolisk Skins",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-1132",
@@ -27362,7 +27362,7 @@
    "questName": "Fiora Longears",
    "npcName": "Red Jack Flint",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-470",
@@ -27376,7 +27376,7 @@
    "questName": "Digging Through the Ooze",
    "npcName": "Sida",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-279",
@@ -27390,7 +27390,7 @@
    "questName": "Claws from the Deep",
    "npcName": "Karl Boran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-463",
@@ -27404,7 +27404,7 @@
    "questName": "The Greenwarden",
    "npcName": "First Mate Fitzsimmons",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-305",
@@ -27418,7 +27418,7 @@
    "questName": "In Search of The Excavation Team",
    "npcName": "Tarrel Rockweaver",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-473",
@@ -27432,7 +27432,7 @@
    "questName": "Report to Captain Stoutfist",
    "npcName": "Valstag Ironjaw",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "accept-472",
@@ -27446,7 +27446,7 @@
    "questName": "Fall of Dun Modr",
    "npcName": "Harlo Barnaby",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "complete-279",
@@ -27459,7 +27459,7 @@
    "questName": "Claws from the Deep",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 25,
    "objectives": [
     {
      "kind": "kill",
@@ -27606,7 +27606,7 @@
    "questName": "Young Crocolisk Skins",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -27940,7 +27940,7 @@
    "questName": "Digging Through the Ooze",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -28217,7 +28217,7 @@
    "questName": "Young Crocolisk Skins",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "turnin-470",
@@ -28231,7 +28231,7 @@
    "questName": "Digging Through the Ooze",
    "npcName": "Sida",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "turnin-279",
@@ -28245,7 +28245,7 @@
    "questName": "Claws from the Deep",
    "npcName": "Karl Boran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "turnin-463",
@@ -28259,7 +28259,7 @@
    "questName": "The Greenwarden",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 25
   },
   {
    "id": "turnin-305",
@@ -28273,7 +28273,7 @@
    "questName": "In Search of The Excavation Team",
    "npcName": "Merrin Rockweaver",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "turnin-473",
@@ -28287,7 +28287,7 @@
    "questName": "Report to Captain Stoutfist",
    "npcName": "Captain Stoutfist",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "turnin-472",
@@ -28301,7 +28301,7 @@
    "questName": "Fall of Dun Modr",
    "npcName": "Longbraid the Grim",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "accept-471",
@@ -28315,7 +28315,7 @@
    "questName": "Apprentice's Duties",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "accept-276",
@@ -28329,7 +28329,7 @@
    "questName": "Tramping Paws",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "accept-306",
@@ -28343,7 +28343,7 @@
    "questName": "In Search of The Excavation Team",
    "npcName": "Merrin Rockweaver",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "accept-464",
@@ -28357,7 +28357,7 @@
    "questName": "War Banners",
    "npcName": "Captain Stoutfist",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "complete-471",
@@ -28370,7 +28370,7 @@
    "questName": "Apprentice's Duties",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -28448,7 +28448,7 @@
    "questName": "War Banners",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -28824,7 +28824,7 @@
    "questName": "Tramping Paws",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 27,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -29116,7 +29116,7 @@
    "questName": "Apprentice's Duties",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "turnin-276",
@@ -29130,7 +29130,7 @@
    "questName": "Tramping Paws",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 27
+   "level": 26
   },
   {
    "id": "turnin-306",
@@ -29144,7 +29144,7 @@
    "questName": "In Search of The Excavation Team",
    "npcName": "Tarrel Rockweaver",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "turnin-464",
@@ -29158,7 +29158,7 @@
    "questName": "War Banners",
    "npcName": "Captain Stoutfist",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-277",
@@ -29172,7 +29172,7 @@
    "questName": "Fire Taboo",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "complete-277",
@@ -29185,7 +29185,7 @@
    "questName": "Fire Taboo",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -29614,7 +29614,7 @@
    "questName": "Fire Taboo",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-275",
@@ -29628,7 +29628,7 @@
    "questName": "Blisters on The Land",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "complete-275",
@@ -29641,7 +29641,7 @@
    "questName": "Blisters on The Land",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -29740,7 +29740,7 @@
    "questName": "Blisters on The Land",
    "npcName": "Rethiel the Greenwarden",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-647",
@@ -29754,7 +29754,7 @@
    "questName": "MacKreel's Moonshine",
    "npcName": "Foggy MacKreel",
    "zoneName": "Wetlands",
-   "level": 28
+   "level": 26
   },
   {
    "id": "travel-1437-1445",
@@ -29768,7 +29768,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Dustwallow Marsh",
-   "level": 28
+   "level": 26
   },
   {
    "id": "turnin-1132",
@@ -29782,7 +29782,7 @@
    "questName": "Fiora Longears",
    "npcName": "Fiora Longears",
    "zoneName": "Dustwallow Marsh",
-   "level": 28
+   "level": 26
   },
   {
    "id": "travel-1445-1431",
@@ -29796,7 +29796,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-245",
@@ -29810,7 +29810,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": "Watcher Dodds",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "complete-245",
@@ -29823,7 +29823,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -29990,7 +29990,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": "Watcher Dodds",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-90",
@@ -30004,7 +30004,7 @@
    "questName": "Seasoned Wolf Kabobs",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-174",
@@ -30018,7 +30018,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-175",
@@ -30032,7 +30032,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-177",
@@ -30046,7 +30046,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-181",
@@ -30060,7 +30060,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-67",
@@ -30074,7 +30074,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-69",
@@ -30088,7 +30088,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-79",
@@ -30102,7 +30102,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-80",
@@ -30116,7 +30116,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-97",
@@ -30130,7 +30130,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-377",
@@ -30144,7 +30144,7 @@
    "questName": "Crime and Punishment",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-1042",
@@ -30158,7 +30158,7 @@
    "questName": "The Carevin Family",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-1043",
@@ -30172,7 +30172,7 @@
    "questName": "The Scythe of Elune",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "gap-1044",
@@ -30186,7 +30186,7 @@
    "questName": "Answered Questions",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-163",
@@ -30200,7 +30200,7 @@
    "questName": "Raven Hill",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-164",
@@ -30214,7 +30214,7 @@
    "questName": "Deliveries to Sven",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-165",
@@ -30228,7 +30228,7 @@
    "questName": "The Hermit",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-56",
@@ -30242,7 +30242,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-101",
@@ -30256,7 +30256,7 @@
    "questName": "The Totem of Infliction",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-146",
@@ -30270,7 +30270,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-66",
@@ -30284,7 +30284,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-173",
@@ -30298,7 +30298,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "travel-1431-1453",
@@ -30312,7 +30312,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 26
   },
   {
    "id": "accept-1274",
@@ -30326,7 +30326,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Thomas",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 26
   },
   {
    "id": "travel-1453-1431",
@@ -30340,7 +30340,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 26
   },
   {
    "id": "complete-56",
@@ -30353,7 +30353,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -30488,7 +30488,7 @@
    "questName": "Worgen in the Woods",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -30642,7 +30642,7 @@
    "questName": "The Totem of Infliction",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -31493,7 +31493,7 @@
    "questName": "Raven Hill",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-164",
@@ -31507,7 +31507,7 @@
    "questName": "Deliveries to Sven",
    "npcName": "Sven Yorgen",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-165",
@@ -31521,7 +31521,7 @@
    "questName": "The Hermit",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-56",
@@ -31535,7 +31535,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-101",
@@ -31549,7 +31549,7 @@
    "questName": "The Totem of Infliction",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-66",
@@ -31563,7 +31563,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": "Clerk Daltry",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-173",
@@ -31577,7 +31577,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 27
   },
   {
    "id": "travel-1431-1453-2",
@@ -31591,7 +31591,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-1274",
@@ -31605,7 +31605,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Bishop DeLavey",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 27
   },
   {
    "id": "travel-1453-1431-2",
@@ -31619,7 +31619,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-5",
@@ -31633,7 +31633,7 @@
    "questName": "Jitters' Growling Gut",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-57",
@@ -31647,7 +31647,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-221",
@@ -31661,7 +31661,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1431-1453-3",
@@ -31675,7 +31675,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-1241",
@@ -31689,7 +31689,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Bishop DeLavey",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1453-1431-3",
@@ -31703,7 +31703,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "complete-57",
@@ -31716,7 +31716,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 27,
    "objectives": [
     {
      "kind": "kill",
@@ -31895,7 +31895,7 @@
    "questName": "Worgen in the Woods",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 27,
    "objectives": [
     {
      "kind": "kill",
@@ -32158,7 +32158,7 @@
    "questName": "Jitters' Growling Gut",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "turnin-57",
@@ -32172,7 +32172,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "turnin-221",
@@ -32186,7 +32186,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1431-1453-4",
@@ -32200,7 +32200,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "turnin-1241",
@@ -32214,7 +32214,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Jorgen",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1453-1431-4",
@@ -32228,7 +32228,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-93",
@@ -32242,7 +32242,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-58",
@@ -32256,7 +32256,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1431-1453-5",
@@ -32270,7 +32270,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "accept-1242",
@@ -32284,7 +32284,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Jorgen",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1453-1431-5",
@@ -32298,7 +32298,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "complete-93",
@@ -32311,7 +32311,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 27,
    "objectives": [
     {
      "kind": "collect",
@@ -32839,7 +32839,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 27,
    "objectives": [
     {
      "kind": "kill",
@@ -32974,7 +32974,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "turnin-58",
@@ -32988,7 +32988,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 27
   },
   {
    "id": "travel-1431-1453-6",
@@ -33002,7 +33002,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-1242",
@@ -33016,7 +33016,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 28
   },
   {
    "id": "travel-1453-1431-6",
@@ -33030,7 +33030,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-240",
@@ -33044,7 +33044,7 @@
    "questName": "Return to Jitters",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "travel-1431-1453-7",
@@ -33058,7 +33058,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-1243",
@@ -33072,7 +33072,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 28
   },
   {
    "id": "travel-1453-1431-7",
@@ -33086,7 +33086,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-240",
@@ -33100,7 +33100,7 @@
    "questName": "Return to Jitters",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-1243",
@@ -33114,7 +33114,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-1244",
@@ -33128,7 +33128,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "complete-1244",
@@ -33141,7 +33141,7 @@
    "questName": "The Missing Diplomat",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -33172,7 +33172,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-1245",
@@ -33186,7 +33186,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-95",
@@ -33200,7 +33200,7 @@
    "questName": "Sven's Revenge",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-262",
@@ -33214,7 +33214,7 @@
    "questName": "The Shadowy Figure",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-265",
@@ -33228,7 +33228,7 @@
    "questName": "The Shadowy Search Continues",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-266",
@@ -33242,7 +33242,7 @@
    "questName": "Inquire at the Inn",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-453",
@@ -33256,7 +33256,7 @@
    "questName": "Finding the Shadowy Figure",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-268",
@@ -33270,7 +33270,7 @@
    "questName": "Return to Sven",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-323",
@@ -33284,7 +33284,7 @@
    "questName": "Proving Your Worth",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-269",
@@ -33298,7 +33298,7 @@
    "questName": "Seeking Wisdom",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-226",
@@ -33312,7 +33312,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": "Lars",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "complete-226",
@@ -33325,7 +33325,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 28,
    "objectives": [
     {
      "kind": "kill",
@@ -33637,7 +33637,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": "Lars",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "gap-253",
@@ -33651,7 +33651,7 @@
    "questName": "Bride of the Embalmer",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-148",
@@ -33665,7 +33665,7 @@
    "questName": "Supplies from Darkshire",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-148",
@@ -33679,7 +33679,7 @@
    "questName": "Supplies from Darkshire",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-149",
@@ -33693,7 +33693,7 @@
    "questName": "Ghost Hair Thread",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-149",
@@ -33707,7 +33707,7 @@
    "questName": "Ghost Hair Thread",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-154",
@@ -33721,7 +33721,7 @@
    "questName": "Return the Comb",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-154",
@@ -33735,7 +33735,7 @@
    "questName": "Return the Comb",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-157",
@@ -33749,7 +33749,7 @@
    "questName": "Deliver the Thread",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-157",
@@ -33763,7 +33763,7 @@
    "questName": "Deliver the Thread",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-158",
@@ -33777,7 +33777,7 @@
    "questName": "Zombie Juice",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-158",
@@ -33791,7 +33791,7 @@
    "questName": "Zombie Juice",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 28
   },
   {
    "id": "accept-156",
@@ -33805,7 +33805,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "complete-156",
@@ -33818,7 +33818,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 30,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -33998,7 +33998,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-159",
@@ -34012,7 +34012,7 @@
    "questName": "Juice Delivery",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-159",
@@ -34026,7 +34026,7 @@
    "questName": "Juice Delivery",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-133",
@@ -34040,7 +34040,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "complete-133",
@@ -34053,7 +34053,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 30,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -34186,7 +34186,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-134",
@@ -34200,7 +34200,7 @@
    "questName": "Ogre Thieves",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "complete-134",
@@ -34213,7 +34213,7 @@
    "questName": "Ogre Thieves",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 30,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -34244,7 +34244,7 @@
    "questName": "Ogre Thieves",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-160",
@@ -34258,7 +34258,7 @@
    "questName": "Note to the Mayor",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-160",
@@ -34272,7 +34272,7 @@
    "questName": "Note to the Mayor",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-251",
@@ -34286,7 +34286,7 @@
    "questName": "Translate Abercrombie's Note",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-251",
@@ -34300,7 +34300,7 @@
    "questName": "Translate Abercrombie's Note",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-401",
@@ -34314,7 +34314,7 @@
    "questName": "Wait for Sirra to Finish",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-401",
@@ -34328,7 +34328,7 @@
    "questName": "Wait for Sirra to Finish",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "accept-252",
@@ -34342,7 +34342,7 @@
    "questName": "Translation to Ello",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-252",
@@ -34356,7 +34356,7 @@
    "questName": "Translation to Ello",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 28
   },
   {
    "id": "travel-1431-1433",
@@ -34370,7 +34370,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-146",
@@ -34384,7 +34384,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Magistrate Solomon",
    "zoneName": "Redridge Mountains",
-   "level": 30
+   "level": 28
   },
   {
    "id": "travel-1433-1453-4",
@@ -34398,7 +34398,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 30
+   "level": 28
   },
   {
    "id": "turnin-1245",
@@ -34412,7 +34412,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 30
+   "level": 28
   },
   {
    "id": "travel-1453-1424",
@@ -34426,7 +34426,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Hillsbrad Foothills",
-   "level": 30
+   "level": 29
   },
   {
    "id": "turnin-647",
@@ -34440,7 +34440,7 @@
    "questName": "MacKreel's Moonshine",
    "npcName": "Brewmeister Bilger",
    "zoneName": "Hillsbrad Foothills",
-   "level": 30
+   "level": 29
   },
   {
    "id": "accept-536",
@@ -34454,7 +34454,7 @@
    "questName": "Down the Coast",
    "npcName": "Lieutenant Farren Orinelle",
    "zoneName": "Hillsbrad Foothills",
-   "level": 30
+   "level": 29
   },
   {
    "id": "complete-536",
@@ -34467,7 +34467,7 @@
    "questName": "Down the Coast",
    "npcName": null,
    "zoneName": "Hillsbrad Foothills",
-   "level": 30,
+   "level": 29,
    "objectives": [
     {
      "kind": "kill",
@@ -34655,7 +34655,20 @@
    "questName": "Down the Coast",
    "npcName": "Lieutenant Farren Orinelle",
    "zoneName": "Hillsbrad Foothills",
-   "level": 30
+   "level": 29
+  },
+  {
+   "id": "grind-1424-30",
+   "type": "grind",
+   "mapId": 1424,
+   "x": 51.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "untilLevel": 30,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Hillsbrad Foothills",
+   "level": 29
   }
  ]
 }

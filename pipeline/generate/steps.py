@@ -73,7 +73,7 @@ def _turn_in(steps: _Steps, qid: int, quests: dict[int, dict], xp_table: dict[in
     q = quests[qid]
     e = q["end"]
     steps.add(f"turnin-{qid}", "turnin", e["uiMapId"], e["x"], e["y"], q["confidence"], questId=qid, npcId=e["id"])
-    return state.gain(quest_xp(quest_level(q), xp_table))
+    return state.gain(quest_xp(quest_level(q), xp_table, state.level))
 
 
 class _Deferred:
@@ -138,7 +138,7 @@ def _run_chunk(steps: _Steps, chunk: list[int], quests: dict[int, dict], spawns:
         qid = min(pending, key=key)
         map_id, x, y = pending.pop(qid)
         steps.add(f"complete-{qid}", "complete", map_id, x, y, quests[qid]["confidence"], questId=qid)
-        state = state.gain(kill_xp(quests[qid]))
+        state = state.gain(kill_xp(quests[qid], state.level))
 
     for qid in chunk:
         if not deferred.take(qid, quests, here):

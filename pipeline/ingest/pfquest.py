@@ -34,7 +34,8 @@ class PfData:
     quests: dict[int, dict]
     units: dict[int, dict]
     objects: dict[int, dict]
-    items: dict[int, dict] = field(default_factory=dict)  # itemId -> {"units": [ids], "objects": [ids], "name"}
+    # itemId -> {"units": [ids], "objects": [ids], "name", "chances": {unitId: drop chance in percent}}
+    items: dict[int, dict] = field(default_factory=dict)
 
 
 def _read(path: Path):
@@ -54,6 +55,8 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
             "coords": [(c[0], c[1], c[2]) for c in entry.get("coords", [])],
             "fac": entry.get("fac"),
         }
+        if "lvl" in entry:
+            rec["lvl"] = entry["lvl"]  # units: "12" or a range "1-2"
         if names is not None:
             rec["name"] = names.get(sid)
         out[sid] = rec
@@ -61,12 +64,15 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
 
 
 def _items(src: dict, names: dict) -> dict[int, dict]:
-    """Drop sources per item: only unit ("U") and object ("O") ids; chances, vendors and refs are ignored."""
+    """Drop sources per item: unit ("U") and object ("O") ids and the units' drop chances; vendors and refs are
+    ignored."""
     out: dict[int, dict] = {}
     for iid, entry in src.items():
         entry = _dict(entry)
+        droppers = _dict(entry.get("U"))
         out[iid] = {
-            "units": list(_dict(entry.get("U"))), "objects": list(_dict(entry.get("O"))), "name": names.get(iid),
+            "units": list(droppers), "objects": list(_dict(entry.get("O"))), "name": names.get(iid),
+            "chances": {u: c for u, c in droppers.items() if isinstance(c, (int, float))},
         }
     return out
 
@@ -92,6 +98,7 @@ def load_pfquest(src_dir: Path, require_items: bool = False) -> PfData:
             if key in rec:
                 rec[key] = _dict(rec[key])
         rec["name"] = _dict(quest_names.get(qid)).get("T")
+        rec["objectiveText"] = _dict(quest_names.get(qid)).get("O")  # "Kill 10 Kobold Vermin, then ..."
         quests[qid] = rec
     unit_names = _dict(_read(src / "enUS" / "units.lua"))
     items_path = src / "items.lua"

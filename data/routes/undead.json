@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:13:26Z",
+ "generatedAt": "2026-10-22T20:13:34Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -390,6 +390,15 @@
    "confidence": "unverified",
    "questId": 375,
    "reason": "quest 375: objective item 2320 location unknown"
+  },
+  {
+   "id": "grind-1420-7",
+   "type": "grind",
+   "mapId": 1420,
+   "x": 61.3,
+   "y": 50.8,
+   "confidence": "unverified",
+   "untilLevel": 7
   },
   {
    "id": "accept-358",
@@ -5536,6 +5545,15 @@
    "confidence": "unverified",
    "questId": 4770,
    "npcId": 10428
+  },
+  {
+   "id": "grind-1441-27",
+   "type": "grind",
+   "mapId": 1441,
+   "x": 78.1,
+   "y": 77.1,
+   "confidence": "unverified",
+   "untilLevel": 27
   },
   {
    "id": "accept-1104",

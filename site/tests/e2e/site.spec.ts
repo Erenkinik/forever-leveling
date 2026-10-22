@@ -32,7 +32,7 @@ test('a marked step stays marked after reload', async ({ page }) => {
   await page.reload();
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step').first()).toHaveClass(/done/);
-  await expect(page.locator('.progress-step')).toHaveText('Step 2 / 697');
+  await expect(page.locator('.progress-step')).toHaveText(/^Step 2 \/ \d+$/);
   // Progress is per route.
   await page.goto('/orc/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();

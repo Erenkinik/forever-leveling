@@ -260,6 +260,52 @@
         "string",
         "null"
       ]
+    },
+    "kills": {
+      "description": "What the objectives take: per unit/item objective the count asked for, the best drop chance (percent; 0 = only from objects) and the mob level (pipeline/normalize/kills.py).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "id",
+          "count",
+          "chance",
+          "level"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "kill",
+              "collect"
+            ]
+          },
+          "id": {
+            "type": "integer"
+          },
+          "count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "chance": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "level": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
     }
   }
 }

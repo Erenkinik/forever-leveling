@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:36:31Z",
+ "generatedAt": "2026-10-22T20:13:33Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -460,6 +460,15 @@
    "confidence": "unverified",
    "questId": 831,
    "reason": "quest 831: prereq 830 not in route"
+  },
+  {
+   "id": "grind-1411-8",
+   "type": "grind",
+   "mapId": 1411,
+   "x": 51.9,
+   "y": 43.5,
+   "confidence": "unverified",
+   "untilLevel": 8
   },
   {
    "id": "accept-784",

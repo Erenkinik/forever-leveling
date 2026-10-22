@@ -2,7 +2,7 @@
 
 - Veri sürümü: 1.60.1.70532
 - Yayın seviyesi: beta
-- Görevlerle ulaşılan tahmini seviye: 30 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
+- Görevlerle ulaşılan tahmini seviye: 29 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
 - Tahmini son seviye: 30
 - Boşluk (gap) adımı: 76
 
@@ -14,7 +14,7 @@
 - travel: 73
 - sethearth: 0
 - train: 0
-- grind: 2
+- grind: 5
 - gap: 76
 
 ## Elenen görevler (nedene göre)

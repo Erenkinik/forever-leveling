@@ -14,7 +14,7 @@
 - travel: 48
 - sethearth: 0
 - train: 0
-- grind: 3
+- grind: 4
 - gap: 41
 
 ## Elenen görevler (nedene göre)

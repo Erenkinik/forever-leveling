@@ -1,6 +1,7 @@
 """Build the canonical quest database from pfQuest, wago DB2 ids and manual entries."""
 from pipeline.config import CLASS_BITS, DATA_BUILD, RACE_BITS, RACE_FACTION, SOURCE_LINEAGE
 from pipeline.ingest.pfquest import PfData
+from pipeline.normalize.kills import kill_plan
 from pipeline.schema import validate
 
 ALL_RACES = 255
@@ -150,7 +151,7 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
         sources.append("wago-db2")
     rec = {
         "id": qid, "name": None, "level": None, "minLevel": None, "races": None, "classes": None, "prereqs": [],
-        "start": _point(), "end": _point(), "objectives": _objectives(None),
+        "start": _point(), "end": _point(), "objectives": _objectives(None), "kills": [],
     }
     if pq is not None:
         sources.append("pfquest")
@@ -165,6 +166,7 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
             start=_build_point(pf, s_ref, _unit_zones(pf, e_ref), zone_to_uimap, conflicts, "start"),
             end=_build_point(pf, e_ref, _unit_zones(pf, s_ref), zone_to_uimap, conflicts, "end"),
             objectives=_objectives(pq.get("obj")),
+            kills=kill_plan(pq, pf),
         )
     m = manual.get(qid)
     if m is not None:
