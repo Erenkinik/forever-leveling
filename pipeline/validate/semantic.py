@@ -51,6 +51,8 @@ def check_route(
             if quest is None:
                 # Cannot judge level or confidence; never pass silently.
                 issues.append(Issue("over-level", sid, f"quest {qid} is not in the canonical data"))
+            elif quest["minLevel"] is None:
+                issues.append(Issue("over-level", sid, f"quest {qid} level unknown"))
             elif quest["minLevel"] > level + LEVEL_SLACK:
                 issues.append(Issue(
                     "over-level", sid,
@@ -71,7 +73,8 @@ def check_route(
         elif kind == "turnin":
             if qid not in accepted:
                 issues.append(Issue("turnin-before-accept", sid, f"quest {qid} turned in before it is accepted"))
-            turned_in.add(qid)
+            if qid in accepted:
+                turned_in.add(qid)
 
         if full:
             if kind == "gap":

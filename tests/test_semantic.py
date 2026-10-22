@@ -109,3 +109,27 @@ def test_rule_tier_full_requires_cross_checked():
 
 def test_beta_tier_allows_gap_and_unverified():
     assert _check("beta-gap-unverified") == []
+
+
+def test_null_min_level_reported_not_crashing():
+    quests = {**QUESTS, 33: _q(33, minLevel=None)}
+    issues = _check("valid", quests=quests)
+    assert {i.rule for i in issues} == {"over-level"}
+    assert {i.stepId for i in issues} == {"s2", "s3", "s4"}
+    assert all("level unknown" in i.message for i in issues)
+
+
+def test_unaccepted_turnin_does_not_satisfy_prereq():
+    # quest 100 has prereq 783; 783 is turned in without ever being accepted
+    route = json.loads((FIX / "valid.json").read_text(encoding="utf-8"))
+    base = {"mapId": 1429, "x": 1, "y": 1, "confidence": "cross-checked", "npcId": 5}
+    route["steps"] = [
+        {**base, "id": "a1", "type": "turnin", "questId": 783},
+        {**base, "id": "a2", "type": "accept", "questId": 100},
+        {**base, "id": "a3", "type": "turnin", "questId": 100},
+    ]
+    issues = check_route(route, QUESTS, MAPS)
+    assert {(i.rule, i.stepId) for i in issues} == {
+        ("turnin-before-accept", "a1"),
+        ("prereq-not-done", "a2"),
+    }
