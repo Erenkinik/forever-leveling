@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["night-elf"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Alliance",
-  ["generatedAt"] = "2026-10-22T14:36:29Z",
+  ["generatedAt"] = "2026-10-22T20:13:32Z",
   ["id"] = "night-elf",
   ["levelRange"] = {1, 30},
   ["race"] = "Night Elf",
@@ -122,6 +122,7 @@ ForeverXP_Routes["night-elf"] = {
     {["confidence"]="unverified", ["id"]="turnin-6342", ["mapId"]=1439, ["npcId"]=4200, ["questId"]=6342, ["type"]="turnin", ["x"]=36.8, ["y"]=44.3},
     {["confidence"]="unverified", ["id"]="turnin-952", ["mapId"]=1439, ["npcId"]=3616, ["questId"]=952, ["type"]="turnin", ["x"]=43.6, ["y"]=76.3},
     {["confidence"]="unverified", ["id"]="travel-1439-1438", ["mapId"]=1438, ["mode"]="boat", ["radius"]=5, ["type"]="travel", ["x"]=24.8, ["y"]=64.8},
+    {["confidence"]="unverified", ["id"]="grind-1438-12", ["mapId"]=1438, ["type"]="grind", ["untilLevel"]=12, ["x"]=24.8, ["y"]=64.8},
     {["confidence"]="unverified", ["id"]="accept-2518", ["mapId"]=1438, ["npcId"]=7313, ["questId"]=2518, ["type"]="accept", ["x"]=24.8, ["y"]=64.8},
     {["confidence"]="unverified", ["id"]="accept-730", ["mapId"]=1438, ["npcId"]=2912, ["questId"]=730, ["type"]="accept", ["x"]=23.7, ["y"]=64.5},
     {["confidence"]="unverified", ["id"]="complete-2518", ["mapId"]=1438, ["questId"]=2518, ["type"]="complete", ["x"]=45.7, ["y"]=25.4},
@@ -442,6 +443,7 @@ ForeverXP_Routes["night-elf"] = {
     {["confidence"]="unverified", ["id"]="gap-1043", ["mapId"]=1431, ["questId"]=1043, ["reason"]="quest 1043: prereq 1042 is a gap", ["type"]="gap", ["x"]=45.1, ["y"]=67},
     {["confidence"]="unverified", ["id"]="gap-1044", ["mapId"]=1431, ["questId"]=1044, ["reason"]="quest 1044: prereq 1043 is a gap", ["type"]="gap", ["x"]=45.1, ["y"]=67},
     {["confidence"]="unverified", ["id"]="travel-1431-1433", ["mapId"]=1433, ["mode"]="walk", ["radius"]=5, ["type"]="travel", ["x"]=30, ["y"]=44.5},
+    {["confidence"]="unverified", ["id"]="grind-1433-26", ["mapId"]=1433, ["type"]="grind", ["untilLevel"]=26, ["x"]=30, ["y"]=44.5},
     {["confidence"]="unverified", ["id"]="accept-120", ["mapId"]=1433, ["npcId"]=344, ["questId"]=120, ["type"]="accept", ["x"]=30, ["y"]=44.5},
     {["confidence"]="unverified", ["id"]="travel-1433-1431", ["mapId"]=1431, ["mode"]="walk", ["radius"]=5, ["type"]="travel", ["x"]=75.3, ["y"]=48.7},
     {["confidence"]="unverified", ["id"]="accept-163", ["mapId"]=1431, ["npcId"]=633, ["questId"]=163, ["type"]="accept", ["x"]=75.3, ["y"]=48.7},
@@ -638,5 +640,6 @@ ForeverXP_Routes["night-elf"] = {
     {["confidence"]="unverified", ["id"]="turnin-1132", ["mapId"]=1445, ["npcId"]=4456, ["questId"]=1132, ["type"]="turnin", ["x"]=66.5, ["y"]=45.1},
     {["confidence"]="unverified", ["id"]="travel-1445-1424", ["mapId"]=1424, ["mode"]="boat", ["radius"]=5, ["type"]="travel", ["x"]=52.1, ["y"]=58.7},
     {["confidence"]="unverified", ["id"]="turnin-647", ["mapId"]=1424, ["npcId"]=2705, ["questId"]=647, ["type"]="turnin", ["x"]=52.1, ["y"]=58.7},
+    {["confidence"]="unverified", ["id"]="grind-1424-30", ["mapId"]=1424, ["type"]="grind", ["untilLevel"]=30, ["x"]=52.1, ["y"]=58.7},
   },
 }

@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["tauren"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Horde",
-  ["generatedAt"] = "2026-10-22T14:36:35Z",
+  ["generatedAt"] = "2026-10-22T20:13:35Z",
   ["id"] = "tauren",
   ["levelRange"] = {1, 30},
   ["race"] = "Tauren",
@@ -491,6 +491,7 @@ ForeverXP_Routes["tauren"] = {
     {["confidence"]="unverified", ["id"]="turnin-5151", ["mapId"]=1441, ["npcId"]=10941, ["questId"]=5151, ["type"]="turnin", ["x"]=21.4, ["y"]=32.6},
     {["confidence"]="unverified", ["id"]="accept-4770", ["mapId"]=1441, ["npcId"]=10427, ["questId"]=4770, ["type"]="accept", ["x"]=17.9, ["y"]=40.6},
     {["confidence"]="unverified", ["id"]="turnin-4770", ["mapId"]=1441, ["npcId"]=10428, ["questId"]=4770, ["type"]="turnin", ["x"]=21.5, ["y"]=32.3},
+    {["confidence"]="unverified", ["id"]="grind-1441-27", ["mapId"]=1441, ["type"]="grind", ["untilLevel"]=27, ["x"]=78.1, ["y"]=77.1},
     {["confidence"]="unverified", ["id"]="accept-1104", ["mapId"]=1441, ["npcId"]=4454, ["questId"]=1104, ["type"]="accept", ["x"]=78.1, ["y"]=77.1},
     {["confidence"]="unverified", ["id"]="accept-1105", ["mapId"]=1441, ["npcId"]=4453, ["questId"]=1105, ["type"]="accept", ["x"]=78.1, ["y"]=77.1},
     {["confidence"]="unverified", ["id"]="accept-1176", ["mapId"]=1441, ["npcId"]=4630, ["questId"]=1176, ["type"]="accept", ["x"]=80.2, ["y"]=75.9},

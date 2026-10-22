@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["orc"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Horde",
-  ["generatedAt"] = "2026-10-22T14:36:31Z",
+  ["generatedAt"] = "2026-10-22T20:13:33Z",
   ["id"] = "orc",
   ["levelRange"] = {1, 30},
   ["race"] = "Orc",
@@ -56,6 +56,7 @@ ForeverXP_Routes["orc"] = {
     {["confidence"]="unverified", ["id"]="turnin-817", ["mapId"]=1411, ["npcId"]=3194, ["questId"]=817, ["type"]="turnin", ["x"]=56, ["y"]=73.9},
     {["confidence"]="unverified", ["id"]="turnin-818", ["mapId"]=1411, ["npcId"]=3304, ["questId"]=818, ["type"]="turnin", ["x"]=55.9, ["y"]=74.4},
     {["confidence"]="unverified", ["id"]="gap-831", ["mapId"]=1411, ["questId"]=831, ["reason"]="quest 831: prereq 830 not in route", ["type"]="gap", ["x"]=55.9, ["y"]=74.4},
+    {["confidence"]="unverified", ["id"]="grind-1411-8", ["mapId"]=1411, ["type"]="grind", ["untilLevel"]=8, ["x"]=51.9, ["y"]=43.5},
     {["confidence"]="unverified", ["id"]="accept-784", ["mapId"]=1411, ["npcId"]=3139, ["questId"]=784, ["type"]="accept", ["x"]=51.9, ["y"]=43.5},
     {["confidence"]="unverified", ["id"]="accept-791", ["mapId"]=1411, ["npcId"]=3147, ["questId"]=791, ["type"]="accept", ["x"]=49.9, ["y"]=40.4},
     {["confidence"]="unverified", ["id"]="accept-806", ["mapId"]=1411, ["npcId"]=3142, ["questId"]=806, ["type"]="accept", ["x"]=52.2, ["y"]=43.2},
