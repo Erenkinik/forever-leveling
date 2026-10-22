@@ -1,5 +1,7 @@
 # ForeverXP
 
+**Live site: https://forever-leveling.erenkinik.workers.dev**
+
 A free leveling guide for WoW Forever: a step-by-step quest route from level 1 to 30 for every race, as a website and (later) an in-game addon.
 
 > **Beta.** Routes are generated from open quest data and have not been played through yet. Found a wrong step? Use "Report this step" on the site or [open an issue](https://github.com/Erenkinik/forever-leveling/issues/new).
