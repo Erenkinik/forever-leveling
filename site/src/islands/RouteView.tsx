@@ -1,17 +1,20 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, groupByZone, loadDone, loadSettings, reportUrl, safeStorage, saveDone, saveSettings, storageKey,
+  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, reportUrl, safeStorage, saveDone,
+  saveSettings, searchSteps, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import './RouteView.css';
 
 const ZOOMS = [1, 1.5, 2, 3];
+const SEARCH_LIMIT = 8;
 // Steps shown on the map: a few behind and ahead of the current step, on its map only.
 const MAP_BEHIND = 2;
 const MAP_AHEAD = 6;
-// Pins are 44px; pins whose centres are closer than this are merged so targets never overlap (WCAG 2.5.8).
-const PIN_SPACING_PX = 48;
+// Pins are 28px with a mouse and 44px on touch screens (RouteView.css); pins whose centres are closer than
+// the pin size plus a small gap are merged so targets never overlap (WCAG 2.5.8).
+const PIN_SPACING_PX = { fine: 32, coarse: 48 };
 
 const plain = (s: Step) => describeStep(s).map((p) => p.text).join('');
 const coords = (s: Step) => `${s.x.toFixed(1)}, ${s.y.toFixed(1)}`;
@@ -89,6 +92,7 @@ export default function RouteView({ route }: { route: Route }) {
   const [settings, setSettings] = useState<Settings>({ shortcuts: true, highContrast: false });
   const [zoom, setZoom] = useState(0);
   const [announcement, setAnnouncement] = useState('');
+  const [query, setQuery] = useState('');
   const itemRefs = useRef(new Map<string, HTMLLIElement>());
 
   useEffect(() => {
@@ -157,6 +161,14 @@ export default function RouteView({ route }: { route: Route }) {
 
   // Map frame width for pin merging; a callback ref so a frame that remounts is observed again.
   const [frameWidth, setFrameWidth] = useState(400);
+  const [coarse, setCoarse] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(pointer: coarse)');
+    setCoarse(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setCoarse(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
   const observerRef = useRef<ResizeObserver | null>(null);
   const frameRef = useCallback((el: HTMLDivElement | null) => {
     observerRef.current?.disconnect();
@@ -172,7 +184,7 @@ export default function RouteView({ route }: { route: Route }) {
     : [];
   // The current step leads its cluster, so a merged pin is drawn where the player has to go.
   const pins = current
-    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)], (PIN_SPACING_PX / (frameWidth * ZOOMS[zoom])) * 100)
+    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)], (PIN_SPACING_PX[coarse ? 'coarse' : 'fine'] / (frameWidth * ZOOMS[zoom])) * 100)
     : [];
   const focusStep = (s: Step) => {
     const el = itemRefs.current.get(s.id);
@@ -180,6 +192,9 @@ export default function RouteView({ route }: { route: Route }) {
     el?.focus();
   };
   const position = current ? currentIndex + 1 : steps.length;
+  // One more than shown, so "8+" only appears when there really are more.
+  const found = searchSteps(steps, query, Math.max(0, currentIndex), SEARCH_LIMIT + 1);
+  const matches = found.slice(0, SEARCH_LIMIT);
   const doneCount = steps.reduce((n, s) => n + (done.has(s.id) ? 1 : 0), 0);
 
   return (
@@ -194,8 +209,30 @@ export default function RouteView({ route }: { route: Route }) {
           <a className="pill" href="/">Change race</a>
         </div>
         <div className="progress">
-          <label htmlFor="route-progress">Step {position} of {steps.length} · {doneCount} done</label>
+          <label htmlFor="route-progress">
+            Step {position} of {steps.length} · {doneCount} done
+            {current?.level !== undefined && <> · about level {current.level}</>}
+          </label>
           <progress id="route-progress" max={steps.length} value={doneCount} />
+        </div>
+        <div className="search">
+          <label htmlFor="step-search">Find a quest or NPC</label>
+          <input id="step-search" type="search" value={query} autoComplete="off"
+                 onChange={(e) => setQuery(e.target.value)} aria-describedby="step-search-count" />
+          <p id="step-search-count" className="search-count" aria-live="polite">
+            {query.trim() ? `${found.length > SEARCH_LIMIT ? `${SEARCH_LIMIT}+` : found.length} found` : ''}
+          </p>
+          {matches.length > 0 && (
+            <ul className="search-results">
+              {matches.map((s) => (
+                <li key={s.id}>
+                  <button type="button" onClick={() => focusStep(s)}>
+                    <strong>{(index.get(s.id) ?? 0) + 1}</strong> {plain(s)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="settings">
           <label>
@@ -209,13 +246,19 @@ export default function RouteView({ route }: { route: Route }) {
           </label>
         </div>
       </div>
-      <p className="sr-only" aria-live="polite">{announcement}</p>
+      <p id="announcer" className="sr-only" aria-live="polite">{announcement}</p>
 
       <div className="route-main">
         <section aria-label="Route steps" className="steps" data-loaded={loaded ? 'true' : 'false'}>
           {groups.map((g) => (
             <section key={g.key}>
-              <h2 className="zone">{g.zoneName}</h2>
+              <h2 className="zone">
+                {g.zoneName}
+                {(() => {
+                  const range = levelRange(g.steps);
+                  return range && <span className="zone-levels">Levels {range[0]}–{range[1]}</span>;
+                })()}
+              </h2>
               <ol>
                 {g.steps.map((s) => (
                   <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}

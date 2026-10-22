@@ -38,7 +38,7 @@ test('Space marks the current step done and is announced; the shortcut can be tu
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await page.keyboard.press('Space');
   await expect(page.locator('li.step').first()).toHaveClass(/done/);
-  await expect(page.locator('[aria-live="polite"]')).toContainText('Step 1 done. Next:');
+  await expect(page.locator('#announcer')).toContainText('Step 1 done. Next:');
   await page.getByLabel('Space marks the current step done').uncheck();
   await page.locator('h2.zone').first().click();
   await page.keyboard.press('Space');
@@ -76,6 +76,7 @@ test('high contrast switch sets the contrast theme', async ({ page }) => {
 
 for (const path of ['/', '/human/']) {
   test(`axe finds no violations on ${path}`, async ({ page }) => {
+    test.setTimeout(90_000); // ~700 steps: the scan is slow when tests run in parallel
     await page.goto(path);
     await page.waitForLoadState('networkidle');
     const results = await new AxeBuilder({ page })
@@ -191,4 +192,30 @@ test('pages work under the CSP from dist/_headers', async ({ page }) => {
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
   expect(violations).toEqual([]);
+});
+
+test('steps show objectives, levels and plain-language gap reasons', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.locator('li.step.complete').first()).toContainText(/: (kill|collect|use) /);
+  await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+$/);
+  await expect(page.locator('label[for="route-progress"]')).toContainText('about level 1');
+  const gap = page.locator('li.step.gap').first();
+  await expect(gap).toContainText('Skip for now:');
+  await expect(gap).not.toContainText(/quest \d+:/);
+});
+
+test('search finds a quest and jumps to its step', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await page.getByLabel('Find a quest or NPC').fill('kobold camp');
+  await expect(page.locator('#step-search-count')).toHaveText(/found$/);
+  const first = page.locator('.search-results button').first();
+  await expect(first).toContainText('Kobold Camp Cleanup');
+  await first.click();
+  await expect(page.locator('li.step:focus')).toContainText('Kobold Camp Cleanup');
+  // Typing a space in the search box must not mark a step.
+  await page.getByLabel('Find a quest or NPC').fill('');
+  await page.getByLabel('Find a quest or NPC').press('Space');
+  await expect(page.locator('li.step.done')).toHaveCount(0);
 });

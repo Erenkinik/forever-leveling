@@ -2,6 +2,14 @@
 
 export type StepType = 'accept' | 'turnin' | 'complete' | 'travel' | 'sethearth' | 'train' | 'grind' | 'gap';
 
+export interface Objective {
+  kind: 'kill' | 'collect' | 'use';
+  id: number;
+  name: string | null;
+  /** collect only: nearest units/objects on the step's map that drop the item */
+  sources?: string[];
+}
+
 export interface Step {
   id: string;
   type: StepType;
@@ -17,6 +25,9 @@ export interface Step {
   untilLevel?: number;
   reason?: string;
   mode?: string;
+  objectives?: Objective[];
+  /** estimated player level when the step starts (pipeline xpsim.estimate_levels) */
+  level?: number;
 }
 
 export interface Route {
@@ -33,12 +44,25 @@ export interface Route {
 
 export interface Part {
   text: string;
-  kind?: 'quest' | 'npc';
+  kind?: 'quest' | 'npc' | 'item';
 }
+
+const TRAVEL_VERB: Record<string, string> = {
+  walk: 'Travel to', boat: 'Take the boat to', zeppelin: 'Take the zeppelin to', flight: 'Fly to', hearth: 'Hearth to',
+};
 
 const quest = (s: Step): Part => ({ text: s.questName ?? `quest #${s.questId}`, kind: 'quest' });
 const npc = (s: Step): Part => ({ text: s.npcName ?? `NPC #${s.npcId}`, kind: 'npc' });
 const zone = (s: Step): string => s.zoneName ?? `map #${s.mapId}`;
+
+function objectiveParts(o: Objective): Part[] {
+  if (o.kind === 'kill') return [{ text: 'kill ' }, { text: o.name ?? `NPC #${o.id}`, kind: 'npc' }];
+  const thing: Part = { text: o.name ?? (o.kind === 'use' ? `object #${o.id}` : `item #${o.id}`), kind: 'item' };
+  if (o.kind === 'use') return [{ text: 'use ' }, thing];
+  const from = (o.sources ?? []).flatMap((name, i): Part[] => [
+    { text: i === 0 ? ' from ' : ', ' }, { text: name, kind: 'npc' }]);
+  return [{ text: 'collect ' }, thing, ...from];
+}
 
 /** The step as text segments; quest and NPC names are tagged for styling. */
 export function describeStep(s: Step): Part[] {
@@ -48,13 +72,16 @@ export function describeStep(s: Step): Part[] {
     case 'turnin':
       return [{ text: 'Turn in ' }, quest(s), { text: ' to ' }, npc(s)];
     case 'complete':
-      return [{ text: 'Complete the objectives of ' }, quest(s)];
+      return s.objectives?.length
+        ? [quest(s), { text: ': ' }, ...s.objectives.flatMap((o, i) => [
+          ...(i > 0 ? [{ text: '; ' }] : []), ...objectiveParts(o)])]
+        : [{ text: 'Complete the objectives of ' }, quest(s)];
     case 'travel':
-      return [{ text: `Travel to ${zone(s)}` }];
+      return [{ text: `${TRAVEL_VERB[s.mode ?? 'walk'] ?? 'Travel to'} ${zone(s)}` }];
     case 'grind':
       return [{ text: `Grind until level ${s.untilLevel}` }];
     case 'gap':
-      return [{ text: 'Not routed yet: ' }, quest(s), { text: ` (${s.reason})` }];
+      return [{ text: 'Skip for now: ' }, quest(s), { text: `. ${gapReason(s.reason)}` }];
     case 'sethearth':
       return [{ text: `Set your hearthstone in ${zone(s)}` }];
     case 'train':
@@ -179,4 +206,36 @@ export function reportUrl(route: Pick<Route, 'id' | 'dataBuild'>, step: Step, n:
   ].filter((line) => line !== null).join('\n');
   const params = new URLSearchParams({ title: `[${route.id}] Step ${n}: ${text}`, body });
   return `${REPO_URL}/issues/new?${params}`;
+}
+
+const GAP_REASONS: [RegExp, string][] = [
+  [/prereq \d+ not in route/, 'It needs an earlier quest that this route skips.'],
+  [/prereq \d+ is a gap/, 'It needs an earlier quest that is not routed yet.'],
+  [/objective (unit|item|object) \d+ location unknown/, 'Where to do its objective is not known yet.'],
+  [/objective located only off-route/, 'Its objective is outside this route.'],
+  [/end location unknown|end type is unknown/, 'Where to turn it in is not known yet.'],
+  [/start location unknown|start type is unknown/, 'Where it starts is not known yet.'],
+  [/start type is \w+, not an NPC/, 'It starts from an item or object, which is not routed yet.'],
+  [/end type is \w+, not an NPC/, 'It ends at an item or object, which is not routed yet.'],
+];
+
+/** The generator's gap reason ("quest 1: prereq 2 not in route") in words a player understands. */
+export function gapReason(raw: string | undefined): string {
+  return GAP_REASONS.find(([re]) => re.test(raw ?? ''))?.[1] ?? 'Not routed yet.';
+}
+
+/** Lowest and highest estimated level of the steps, or null when the route has no levels. */
+export function levelRange(steps: Step[]): [number, number] | null {
+  const levels = steps.map((s) => s.level).filter((l): l is number => typeof l === 'number');
+  return levels.length ? [Math.min(...levels), Math.max(...levels)] : null;
+}
+
+/** Steps whose quest or NPC name contains the query (any case), starting at index `from` and wrapping. */
+export function searchSteps(steps: Step[], query: string, from: number, limit = 8): Step[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const ordered = [...steps.slice(from), ...steps.slice(0, from)];
+  return ordered
+    .filter((s) => [s.questName, s.npcName].some((name) => name?.toLowerCase().includes(q)))
+    .slice(0, limit);
 }
