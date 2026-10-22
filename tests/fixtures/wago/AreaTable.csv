@@ -1,0 +1,4 @@
+ID,ZoneName,AreaName_lang,ContinentID,ParentAreaID,AreaBit,SoundProviderPref,SoundProviderPrefUnderwater,AmbienceID,UwAmbience,ZoneMusic,UwZoneMusic,ExplorationLevel,IntroSound,UwIntroSound,FactionGroupMask,Ambient_multiplier,MountFlags,PvpCombatWorldStateID,WildBattlePetLevelMin,WildBattlePetLevelMax,WindSettingsID,ContentTuningID,Flags_0,Flags_1,LiquidTypeID_0,LiquidTypeID_1,LiquidTypeID_2,LiquidTypeID_3
+9,NorthshireValley,"Northshire Valley",0,12,125,0,11,2945,2172,1,0,0,0,0,0,0,1,-1,0,0,0,0,1073741888,0,0,0,0,0
+12,ElwynnForest,"Elwynn Forest",0,0,126,0,11,3051,2172,1,0,0,0,0,2,0,1,-1,0,0,0,0,64,0,0,0,0,0
+40,Westfall,Westfall,0,0,146,0,11,47,2172,9,0,0,0,0,2,0,1,-1,0,0,0,0,64,0,0,0,0,0

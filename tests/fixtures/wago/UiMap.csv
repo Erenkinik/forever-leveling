@@ -1,0 +1,7 @@
+Name_lang,ID,ParentUiMapID,Flags,System,Type,BountySetID,BountyDisplayLocation,VisibilityPlayerConditionID,HelpTextPosition,BkgAtlasID,AlternateUiMapGroup,ContentTuningID,AdventureMapTextureKitID,MapArtZoneTextPosition
+Azeroth,947,0,2304,0,1,0,0,0,0,0,0,0,0,0
+Kalimdor,1414,947,0,0,2,0,0,0,0,0,0,0,0,0
+"Eastern Kingdoms",1415,947,0,0,2,0,0,0,0,0,0,0,0,0
+"Elwynn Forest",1429,1415,2,0,3,0,0,0,0,0,0,0,0,0
+Westfall,1436,1415,2,0,3,0,0,0,0,0,0,0,0,0
+"Zephras Isle",2521,947,2,0,3,0,0,0,0,0,0,0,0,0
