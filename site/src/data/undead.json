@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:34:07Z",
+ "generatedAt": "2026-10-22T20:51:37Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -31442,72 +31442,16 @@
    "level": 27
   },
   {
-   "id": "travel-1440-1411",
-   "type": "travel",
-   "mapId": 1411,
-   "x": 42.5,
-   "y": 6.8,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 27
-  },
-  {
-   "id": "accept-235",
+   "id": "accept-6383",
    "type": "accept",
-   "mapId": 1411,
-   "x": 42.5,
-   "y": 6.8,
-   "confidence": "unverified",
-   "questId": 235,
-   "npcId": 10880,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Warcaller Gorlach",
-   "zoneName": "Durotar",
-   "level": 27
-  },
-  {
-   "id": "travel-1411-1412",
-   "type": "travel",
-   "mapId": 1412,
-   "x": 38.8,
-   "y": 28.8,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Mulgore",
-   "level": 27
-  },
-  {
-   "id": "accept-742",
-   "type": "accept",
-   "mapId": 1412,
-   "x": 38.8,
-   "y": 28.8,
-   "confidence": "unverified",
-   "questId": 742,
-   "npcId": 10881,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Bluff Runner Windstrider",
-   "zoneName": "Mulgore",
-   "level": 27
-  },
-  {
-   "id": "travel-1412-1440",
-   "type": "travel",
    "mapId": 1440,
-   "x": 73.1,
+   "x": 73.8,
    "y": 61.5,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
+   "questId": 6383,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
    "zoneName": "Ashenvale",
    "level": 27
   },
@@ -31814,27 +31758,13 @@
    ]
   },
   {
-   "id": "turnin-235",
+   "id": "turnin-6383",
    "type": "turnin",
    "mapId": 1440,
    "x": 73.8,
    "y": 61.5,
    "confidence": "unverified",
-   "questId": 235,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 27
-  },
-  {
-   "id": "turnin-742",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 742,
+   "questId": 6383,
    "npcId": 12696,
    "questName": "The Ashenvale Hunt",
    "npcName": "Senani Thunderheart",
@@ -31870,46 +31800,18 @@
    "level": 27
   },
   {
-   "id": "accept-6383",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 6383,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 27
-  },
-  {
-   "id": "turnin-6383",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 6383,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 27
-  },
-  {
    "id": "gap-1045",
    "type": "gap",
    "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
+   "x": 73.7,
+   "y": 60,
    "confidence": "unverified",
    "questId": 1045,
    "reason": "quest 1045: prereq 1030 not in route",
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 28
+   "level": 27
   },
   {
    "id": "travel-1440-1441",
@@ -31923,7 +31825,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Thousand Needles",
-   "level": 28
+   "level": 27
   },
   {
    "id": "accept-4542",
@@ -31937,7 +31839,7 @@
    "questName": "Message to Freewind Post",
    "npcName": "Brave Moonhorn",
    "zoneName": "Thousand Needles",
-   "level": 28
+   "level": 27
   },
   {
    "id": "turnin-4542",
@@ -31951,7 +31853,7 @@
    "questName": "Message to Freewind Post",
    "npcName": "Cliffwatcher Longhorn",
    "zoneName": "Thousand Needles",
-   "level": 28
+   "level": 27
   },
   {
    "id": "gap-1197",
@@ -33512,6 +33414,19 @@
    "npcId": 4453,
    "questName": "Hardened Shells",
    "npcName": "Wizzle Brassbolts",
+   "zoneName": "Thousand Needles",
+   "level": 28
+  },
+  {
+   "id": "grind-1441-29",
+   "type": "grind",
+   "mapId": 1441,
+   "x": 80.2,
+   "y": 75.9,
+   "confidence": "unverified",
+   "untilLevel": 29,
+   "questName": null,
+   "npcName": null,
    "zoneName": "Thousand Needles",
    "level": 28
   },

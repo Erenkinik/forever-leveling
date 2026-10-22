@@ -82,6 +82,10 @@
         "type": "integer"
       }
     },
+    "prereqsAny": {
+      "description": "true: the prereqs are alternatives and any one of them is enough (versions of one quest, or breadcrumbs to the same NPC); false or absent: all are required.",
+      "type": "boolean"
+    },
     "start": {
       "type": "object",
       "additionalProperties": false,

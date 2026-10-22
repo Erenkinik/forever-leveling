@@ -198,3 +198,53 @@ def test_prereq_on_another_continent_or_an_island_is_not_pulled_in():
     continents = {10: 1415, 20: 1415, 97: 1415, 99: 1414, 1438: 1414}
     sel = select_quests(quests, ORDER, continents)
     assert sel.pulled == {6}
+
+
+def test_alternative_prereqs_use_the_one_on_the_route():
+    # Quest 1 needs 2 or 3 (prereqsAny); 3 is on the route, so 2 (off route, located) is not pulled in.
+    quests = {
+        1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
+        2: _located(_q(2, map_id=99), 99),
+        3: _q(3),
+    }
+    sel = select_quests(quests, ORDER)
+    assert sel.quests[1]["prereqs"] == [3] and sel.pulled == set()
+    assert quests[1]["prereqs"] == [2, 3]  # the canonical record is untouched
+
+
+def test_alternative_prereqs_pull_one_when_none_is_on_the_route():
+    quests = {
+        1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
+        2: _located(_q(2, map_id=99), 99),
+        3: _located(_q(3, map_id=98), 98),
+    }
+    sel = select_quests(quests, ORDER)
+    assert sel.quests[1]["prereqs"] == [2] and sel.pulled == {2}
+
+
+def test_required_prereqs_are_all_kept():
+    quests = {1: _q(1, prereqs=[2, 3]), 2: _q(2), 3: _q(3)}
+    assert select_quests(quests, ORDER).quests[1]["prereqs"] == [2, 3]
+
+
+def test_alternative_prereqs_take_the_version_for_most_classes():
+    # "Vile Familiars": one version for every class but Warlock, one for Warlocks; the first joins the route.
+    most = ["Warrior", "Hunter", "Rogue", "Priest", "Shaman", "Mage", "Druid"]  # Horde: no Paladin either
+    quests = {
+        1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
+        2: _q(2, classes=most),
+        3: _q(3, classes=["Warlock"]),
+    }
+    sel = select_quests(quests, ORDER)
+    assert sel.quests[1]["prereqs"] == [2] and 2 in sel.quests and 3 not in sel.quests
+    assert sel.excluded["class"] == [3]
+
+
+def test_a_class_quest_for_few_classes_is_not_taken_as_a_version():
+    quests = {
+        1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
+        2: _q(2, classes=["Warrior", "Rogue"]),
+        3: _q(3, classes=["Warlock"]),
+    }
+    sel = select_quests(quests, ORDER)
+    assert sel.quests[1]["prereqs"] == [2, 3] and not {2, 3} & set(sel.quests)

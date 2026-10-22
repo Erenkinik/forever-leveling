@@ -174,3 +174,19 @@ def test_gap_steps_are_not_level_checked():
     route["steps"] = [{"id": "g", "type": "gap", "mapId": 1429, "x": 1.0, "y": 1.0, "confidence": "unverified",
                        "questId": 200, "reason": "quest 200: objective located only off-route"}]
     assert check_route(route, QUESTS, MAPS) == []
+
+
+def test_alternative_prereqs_need_only_one_turned_in():
+    route = json.loads((FIX / "valid.json").read_text(encoding="utf-8"))
+    base = {"mapId": 1429, "x": 1, "y": 1, "confidence": "cross-checked", "npcId": 5}
+    route["steps"] = [
+        {**base, "id": "a1", "type": "accept", "questId": 33},
+        {**base, "id": "t1", "type": "turnin", "questId": 33},
+        {**base, "id": "a2", "type": "accept", "questId": 500},
+        {**base, "id": "t2", "type": "turnin", "questId": 500},
+    ]
+    any_of = {**QUESTS, 500: {**_q(500, prereqs=[783, 33]), "prereqsAny": True}}
+    assert check_route(route, any_of, MAPS) == []
+    all_of = {**QUESTS, 500: _q(500, prereqs=[783, 33])}
+    issues = check_route(route, all_of, MAPS)
+    assert [(i.rule, i.stepId) for i in issues] == [("prereq-not-done", "a2")]

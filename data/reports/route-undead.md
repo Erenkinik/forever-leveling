@@ -8,13 +8,13 @@
 
 ## Adım sayıları
 
-- accept: 181
-- turnin: 181
+- accept: 179
+- turnin: 179
 - complete: 116
-- travel: 51
+- travel: 48
 - sethearth: 0
 - train: 0
-- grind: 5
+- grind: 6
 - gap: 45
 
 ## Elenen görevler (nedene göre)
@@ -25,12 +25,12 @@
 - not-in-forever: 771
 - over-cap: 2252
 - race: 203
-- zone: 233
+- zone: 235
 - zone-outlier: 21 (kimlikler: 441, 442, 446, 480, 846, 849, 873, 874, 879, 906, 1014, 1040, 1095, 1098, 1130, 1153, 1221, 3369, 7789, 8370, 8426)
 
 ## Rotaya çekilen önkoşullar (başka bölgede başlıyor)
 
-- 14 görev: 235, 450, 742, 806, 809, 823, 827, 828, 829, 840, 860, 861, 886, 1061
+- 12 görev: 450, 806, 809, 823, 827, 828, 829, 840, 860, 861, 886, 1061
 
 ## Boşluk nedenleri (sayıyla; N bir sayıyı gösterir)
 

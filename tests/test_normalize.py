@@ -303,3 +303,27 @@ def test_manual_endpoint_decides_faction():
     pf = _pf({1: {"name": "Q", "start": {"U": [5, 6]}}}, units={5: _fac_unit("A"), 6: _fac_unit("H")})
     q = _one(pf, manual={1: _manual(start={"type": "npc", "id": 6, "uiMapId": 1429, "x": 1.0, "y": 2.0})})
     assert q["factions"] == ["Horde"]
+
+
+def _alt(qid, name, start_map, end_id=9, objectives=False, start_type="npc"):
+    return {"id": qid, "name": name,
+            "start": {"type": start_type, "id": 100 + qid, "uiMapId": start_map},
+            "end": {"type": "npc", "id": end_id},
+            "objectives": {"units": [1] if objectives else [], "items": [], "objects": []}}
+
+
+def test_prereqs_are_alternatives_for_versions_and_breadcrumbs():
+    from pipeline.normalize.quests import prereqs_are_alternatives
+
+    # versions of one quest (orc and troll "Vile Familiars")
+    assert prereqs_are_alternatives([_alt(792, "Vile Familiars", 1411, objectives=True),
+                                     _alt(1499, "Vile Familiars", 1411, objectives=True)])
+    # breadcrumbs from Orgrimmar and Durotar to the same NPC
+    assert prereqs_are_alternatives([_alt(787, "The New Horde", 1454), _alt(4641, "Your Place In The World", 1411)])
+    # different quests with objectives: all are needed
+    assert not prereqs_are_alternatives([_alt(2, "Claw", 1440, objectives=True), _alt(23, "Paw", 1440, objectives=True)])
+    # breadcrumbs from one map, to different NPCs, or started by items: all are needed
+    assert not prereqs_are_alternatives([_alt(1, "A", 1440), _alt(2, "B", 1440)])
+    assert not prereqs_are_alternatives([_alt(1, "A", 1440, end_id=1), _alt(2, "B", 1441, end_id=2)])
+    assert not prereqs_are_alternatives([_alt(1, "A", 1440, start_type="item"), _alt(2, "B", 1441)])
+    assert not prereqs_are_alternatives([_alt(1, "A", 1440)])

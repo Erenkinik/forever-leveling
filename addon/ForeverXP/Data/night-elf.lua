@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["night-elf"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Alliance",
-  ["generatedAt"] = "2026-10-22T20:34:04Z",
+  ["generatedAt"] = "2026-10-22T20:51:35Z",
   ["id"] = "night-elf",
   ["levelRange"] = {1, 30},
   ["race"] = "Night Elf",
@@ -46,8 +46,8 @@ ForeverXP_Routes["night-elf"] = {
     {["confidence"]="unverified", ["id"]="gap-929", ["mapId"]=1438, ["questId"]=929, ["reason"]="quest 929: prereq 928 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
     {["confidence"]="unverified", ["id"]="gap-933", ["mapId"]=1438, ["questId"]=933, ["reason"]="quest 933: prereq 929 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
     {["confidence"]="unverified", ["id"]="gap-934", ["mapId"]=1438, ["questId"]=934, ["reason"]="quest 934: prereq 933 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
-    {["confidence"]="unverified", ["id"]="gap-7383", ["mapId"]=1438, ["questId"]=7383, ["reason"]="quest 7383: prereq 933 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
     {["confidence"]="unverified", ["id"]="gap-935", ["mapId"]=1438, ["questId"]=935, ["reason"]="quest 935: prereq 934 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
+    {["confidence"]="unverified", ["id"]="gap-7383", ["mapId"]=1438, ["questId"]=7383, ["reason"]="quest 7383: prereq 933 is a gap", ["type"]="gap", ["x"]=54.6, ["y"]=33},
     {["confidence"]="unverified", ["id"]="gap-1581", ["mapId"]=1438, ["questId"]=1581, ["reason"]="quest 1581: objective item 2454 location unknown", ["type"]="gap", ["x"]=54.6, ["y"]=33},
     {["confidence"]="unverified", ["id"]="accept-2438", ["mapId"]=1438, ["npcId"]=3567, ["questId"]=2438, ["type"]="accept", ["x"]=55.6, ["y"]=56.9},
     {["confidence"]="unverified", ["id"]="accept-4161", ["mapId"]=1438, ["npcId"]=6286, ["questId"]=4161, ["type"]="accept", ["x"]=57.1, ["y"]=61.3},

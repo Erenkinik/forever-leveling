@@ -3,6 +3,7 @@ import heapq
 import statistics
 from dataclasses import dataclass, field
 
+from pipeline.config import CLASS_BITS
 from pipeline.generate import GenerationError
 from pipeline.generate.config import ISLAND_MAPS, LEVEL_CAP, ZONE_OUTLIER_SPREAD
 from pipeline.generate.zone_order import ZoneOrder
@@ -76,6 +77,32 @@ def _short_detour(dependent: dict, prereq: dict, continents: dict[int, int] | No
     return continents.get(a) is not None and continents.get(a) == continents.get(b)
 
 
+def _for_most_classes(q: dict) -> bool:
+    """A class version every class but one can do (the one left has its own version of the quest). Data lists
+    a Horde quest without Paladins and an Alliance one without Shamans, so two classes may be missing."""
+    return q.get("classes") is not None and len(q["classes"]) >= len(CLASS_BITS) - 2
+
+
+def _choose_alternative(q: dict, quests: dict[int, dict], selected: dict[int, dict], off_route: set[int],
+                        class_out: set[int], continents: dict[int, int] | None) -> dict:
+    """For a quest whose prereqs are alternatives (prereqsAny), the quest with only the one this route does:
+    one already on the route (on the quest's own start map first), else the first that can be pulled in, else a
+    version for all classes but one that was left out for its class. Without any, the quest keeps all its
+    prereqs (and becomes a gap)."""
+    if not q.get("prereqsAny"):
+        return q
+    alternatives = [p for p in q["prereqs"] if p in quests]
+    on_route = [p for p in alternatives if p in selected]
+    here = q["start"].get("uiMapId")
+    on_route.sort(key=lambda p: (quests[p]["start"].get("uiMapId") != here, p))
+    pullable = [p for p in alternatives if p in off_route and _has_start_point(quests[p])
+                and _short_detour(q, quests[p], continents)]
+    class_versions = [p for p in alternatives if p in class_out and _for_most_classes(quests[p])
+                      and quests[p]["start"].get("uiMapId") == here]
+    chosen = (on_route or pullable or class_versions or [None])[0]
+    return q if chosen is None else {**q, "prereqs": [chosen]}
+
+
 def _pull_prereqs(quests: dict[int, dict], selected: dict[int, dict], excluded: dict[str, list[int]],
                   continents: dict[int, int] | None) -> set[int]:
     """Bring back prereqs of selected quests that were excluded only for starting outside the route zones.
@@ -84,20 +111,29 @@ def _pull_prereqs(quests: dict[int, dict], selected: dict[int, dict], excluded: 
     detour to them. Prereqs of pulled quests are pulled too.
     """
     off_route = set(excluded.get("zone", []))
+    class_out = set(excluded.get("class", []))
     pulled: set[int] = set()
+    for qid in list(selected):
+        before = selected[qid]
+        selected[qid] = _choose_alternative(before, quests, selected, off_route, class_out, continents)
+        chosen = selected[qid]["prereqs"]
+        if chosen != before["prereqs"] and chosen[0] in class_out:  # the chosen class version joins the route
+            class_out.discard(chosen[0])
+            selected[chosen[0]] = quests[chosen[0]]
     queue = list(selected)
     while queue:
-        dependent = quests[queue.pop()]
+        dependent = selected[queue.pop()]
         for p in dependent.get("prereqs") or []:
             if p in off_route and _has_start_point(quests[p]) and _short_detour(dependent, quests[p], continents):
                 off_route.discard(p)
-                selected[p] = quests[p]
+                selected[p] = _choose_alternative(quests[p], quests, selected, off_route, class_out, continents)
                 pulled.add(p)
                 queue.append(p)
-    if off_route:
-        excluded["zone"] = sorted(off_route)
-    else:
-        excluded.pop("zone", None)
+    for reason, left in (("zone", off_route), ("class", class_out)):
+        if left:
+            excluded[reason] = sorted(left)
+        else:
+            excluded.pop(reason, None)
     return pulled
 
 

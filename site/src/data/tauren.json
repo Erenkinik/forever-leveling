@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:34:08Z",
+ "generatedAt": "2026-10-22T20:51:38Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -23827,6 +23827,62 @@
    "level": 20
   },
   {
+   "id": "travel-1413-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "turnin-6382",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6382,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "turnin-6541",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 8582,
+   "questName": "Report to Kadrak",
+   "npcName": "Kadrak",
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "travel-1440-1413",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 62,
+   "y": 55,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 20
+  },
+  {
    "id": "accept-898",
    "type": "accept",
    "mapId": 1413,
@@ -25714,34 +25770,6 @@
    "level": 22
   },
   {
-   "id": "turnin-6541",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 8582,
-   "questName": "Report to Kadrak",
-   "npcName": "Kadrak",
-   "zoneName": "Ashenvale",
-   "level": 22
-  },
-  {
-   "id": "turnin-6382",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 6382,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 22
-  },
-  {
    "id": "turnin-6542",
    "type": "turnin",
    "mapId": 1440,
@@ -25767,7 +25795,20 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23
+   "level": 22
+  },
+  {
+   "id": "grind-1442-23",
+   "type": "grind",
+   "mapId": 1442,
+   "x": 47.4,
+   "y": 64.3,
+   "confidence": "unverified",
+   "untilLevel": 23,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 22
   },
   {
    "id": "accept-6393",
@@ -25794,6 +25835,20 @@
    "npcId": 4198,
    "questName": "Cenarius' Legacy",
    "npcName": "Braelyn Firehand",
+   "zoneName": "Stonetalon Mountains",
+   "level": 23
+  },
+  {
+   "id": "accept-6381",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 47.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "questId": 6381,
+   "npcId": 11864,
+   "questName": "New Life",
+   "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
    "level": 23
   },
@@ -25904,144 +25959,6 @@
      41
     ]
    ]
-  },
-  {
-   "id": "complete-1087",
-   "type": "complete",
-   "mapId": 1442,
-   "x": 36.34,
-   "y": 13.04,
-   "confidence": "unverified",
-   "questId": 1087,
-   "questName": "Cenarius' Legacy",
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 4051,
-     "name": "Cenarion Botanist"
-    },
-    {
-     "kind": "kill",
-     "id": 4053,
-     "name": "Daughter of Cenarius"
-    },
-    {
-     "kind": "kill",
-     "id": 4057,
-     "name": "Son of Cenarius"
-    }
-   ],
-   "area": [
-    [
-     34.7,
-     12.3
-    ],
-    [
-     35.3,
-     11
-    ],
-    [
-     35.3,
-     12.1
-    ],
-    [
-     35.4,
-     13.3
-    ],
-    [
-     35.4,
-     15.3
-    ],
-    [
-     35.8,
-     12.5
-    ],
-    [
-     35.9,
-     10.5
-    ],
-    [
-     36.1,
-     14.4
-    ],
-    [
-     36.3,
-     11.9
-    ],
-    [
-     36.5,
-     13.1
-    ],
-    [
-     36.7,
-     15.6
-    ],
-    [
-     37,
-     15
-    ],
-    [
-     37.2,
-     12.4
-    ],
-    [
-     37.5,
-     13.1
-    ],
-    [
-     38.2,
-     11.4
-    ],
-    [
-     38.3,
-     13.3
-    ]
-   ]
-  },
-  {
-   "id": "turnin-6393",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 47.4,
-   "y": 64.3,
-   "confidence": "unverified",
-   "questId": 6393,
-   "npcId": 11862,
-   "questName": "Elemental War",
-   "npcName": "Tsunaman",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23
-  },
-  {
-   "id": "turnin-1087",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 45.9,
-   "y": 60.4,
-   "confidence": "unverified",
-   "questId": 1087,
-   "npcId": 4198,
-   "questName": "Cenarius' Legacy",
-   "npcName": "Braelyn Firehand",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23
-  },
-  {
-   "id": "accept-6381",
-   "type": "accept",
-   "mapId": 1442,
-   "x": 47.5,
-   "y": 58.4,
-   "confidence": "unverified",
-   "questId": 6381,
-   "npcId": 11864,
-   "questName": "New Life",
-   "npcName": "Tammra Windfield",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23
   },
   {
    "id": "complete-6381",
@@ -26200,6 +26117,130 @@
      66.2
     ]
    ]
+  },
+  {
+   "id": "complete-1087",
+   "type": "complete",
+   "mapId": 1442,
+   "x": 36.34,
+   "y": 13.04,
+   "confidence": "unverified",
+   "questId": 1087,
+   "questName": "Cenarius' Legacy",
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 23,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 4051,
+     "name": "Cenarion Botanist"
+    },
+    {
+     "kind": "kill",
+     "id": 4053,
+     "name": "Daughter of Cenarius"
+    },
+    {
+     "kind": "kill",
+     "id": 4057,
+     "name": "Son of Cenarius"
+    }
+   ],
+   "area": [
+    [
+     34.7,
+     12.3
+    ],
+    [
+     35.3,
+     11
+    ],
+    [
+     35.3,
+     12.1
+    ],
+    [
+     35.4,
+     13.3
+    ],
+    [
+     35.4,
+     15.3
+    ],
+    [
+     35.8,
+     12.5
+    ],
+    [
+     35.9,
+     10.5
+    ],
+    [
+     36.1,
+     14.4
+    ],
+    [
+     36.3,
+     11.9
+    ],
+    [
+     36.5,
+     13.1
+    ],
+    [
+     36.7,
+     15.6
+    ],
+    [
+     37,
+     15
+    ],
+    [
+     37.2,
+     12.4
+    ],
+    [
+     37.5,
+     13.1
+    ],
+    [
+     38.2,
+     11.4
+    ],
+    [
+     38.3,
+     13.3
+    ]
+   ]
+  },
+  {
+   "id": "turnin-6393",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 47.4,
+   "y": 64.3,
+   "confidence": "unverified",
+   "questId": 6393,
+   "npcId": 11862,
+   "questName": "Elemental War",
+   "npcName": "Tsunaman",
+   "zoneName": "Stonetalon Mountains",
+   "level": 23
+  },
+  {
+   "id": "turnin-1087",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 45.9,
+   "y": 60.4,
+   "confidence": "unverified",
+   "questId": 1087,
+   "npcId": 4198,
+   "questName": "Cenarius' Legacy",
+   "npcName": "Braelyn Firehand",
+   "zoneName": "Stonetalon Mountains",
+   "level": 23
   },
   {
    "id": "turnin-6381",
@@ -27188,7 +27229,7 @@
    "level": 27
   },
   {
-   "id": "travel-1413-1440",
+   "id": "travel-1413-1440-2",
    "type": "travel",
    "mapId": 1440,
    "x": 11.75,
@@ -28443,20 +28484,6 @@
    "level": 27
   },
   {
-   "id": "gap-6383",
-   "type": "gap",
-   "mapId": 1440,
-   "x": 73,
-   "y": 62.5,
-   "confidence": "unverified",
-   "questId": 6383,
-   "reason": "quest 6383: prereq 235 not in route",
-   "questName": "The Ashenvale Hunt",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 27
-  },
-  {
    "id": "gap-824",
    "type": "gap",
    "mapId": 1440,
@@ -28467,6 +28494,20 @@
    "reason": "quest 824: prereq 1918 not in route",
    "questName": "Je'neu of the Earthen Ring",
    "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "accept-6383",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6383,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
    "zoneName": "Ashenvale",
    "level": 27
   },
@@ -28771,6 +28812,20 @@
      72.8
     ]
    ]
+  },
+  {
+   "id": "turnin-6383",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6383,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
+   "zoneName": "Ashenvale",
+   "level": 27
   },
   {
    "id": "turnin-6441",

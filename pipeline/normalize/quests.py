@@ -219,11 +219,38 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     return rec
 
 
+def _no_objectives(q: dict) -> bool:
+    return not any(q["objectives"].values())
+
+
+def prereqs_are_alternatives(alternatives: list[dict]) -> bool:
+    """True when a quest's prereqs are alternatives (any one is enough), not all required.
+
+    Two patterns: versions of one quest (all share a name, e.g. the orc and troll "Vile Familiars"), and
+    breadcrumbs from different places to the same NPC (no objectives, NPC starts on different maps, one end NPC,
+    e.g. "The New Horde" from Orgrimmar and "Your Place In The World" in Durotar, both to Gornek).
+    """
+    if len(alternatives) < 2:
+        return False
+    if len({q["name"] for q in alternatives}) == 1:
+        return True
+    starts = [q["start"] for q in alternatives]
+    return (all(_no_objectives(q) for q in alternatives)
+            and all(s["type"] == "npc" and s["uiMapId"] is not None for s in starts)
+            and len({s["uiMapId"] for s in starts}) == len(starts)
+            and len({(q["end"]["type"], q["end"]["id"]) for q in alternatives}) == 1)
+
+
 def build_canonical(
     pf: PfData, forever_ids: frozenset[int], zone_to_uimap: dict[int, int], manual: dict[int, dict]
 ) -> list[dict]:
     ids = sorted(set(pf.quests) | set(manual) | set(forever_ids))
-    return [_record(q, pf, forever_ids, zone_to_uimap, manual) for q in ids]
+    records = [_record(q, pf, forever_ids, zone_to_uimap, manual) for q in ids]
+    by_id = {r["id"]: r for r in records}
+    for r in records:
+        known = [by_id[p] for p in r["prereqs"] if p in by_id]
+        r["prereqsAny"] = len(known) == len(r["prereqs"]) and prereqs_are_alternatives(known)
+    return records
 
 
 def validation_errors(records: list[dict]) -> list[str]:

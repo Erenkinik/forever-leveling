@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:34:04Z",
+ "generatedAt": "2026-10-22T20:51:35Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -366,16 +366,6 @@
    "reason": "quest 934: prereq 933 is a gap"
   },
   {
-   "id": "gap-7383",
-   "type": "gap",
-   "mapId": 1438,
-   "x": 54.6,
-   "y": 33,
-   "confidence": "unverified",
-   "questId": 7383,
-   "reason": "quest 7383: prereq 933 is a gap"
-  },
-  {
    "id": "gap-935",
    "type": "gap",
    "mapId": 1438,
@@ -384,6 +374,16 @@
    "confidence": "unverified",
    "questId": 935,
    "reason": "quest 935: prereq 934 is a gap"
+  },
+  {
+   "id": "gap-7383",
+   "type": "gap",
+   "mapId": 1438,
+   "x": 54.6,
+   "y": 33,
+   "confidence": "unverified",
+   "questId": 7383,
+   "reason": "quest 7383: prereq 933 is a gap"
   },
   {
    "id": "gap-1581",

@@ -69,11 +69,20 @@ def check_route(
 
         if kind == "accept":
             if quest is not None:
-                for pre in quest.get("prereqs", []):
-                    if pre not in turned_in:
+                prereqs = quest.get("prereqs", [])
+                if quest.get("prereqsAny") and prereqs:
+                    # Alternatives: any one turned in is enough.
+                    if not any(pre in turned_in for pre in prereqs):
                         issues.append(Issue(
-                            "prereq-not-done", sid, f"quest {qid} requires quest {pre} turned in first"
+                            "prereq-not-done", sid,
+                            f"quest {qid} requires one of quests {', '.join(map(str, prereqs))} turned in first",
                         ))
+                else:
+                    for pre in prereqs:
+                        if pre not in turned_in:
+                            issues.append(Issue(
+                                "prereq-not-done", sid, f"quest {qid} requires quest {pre} turned in first"
+                            ))
             accepted.setdefault(qid, sid)
         elif kind == "complete":
             if qid not in accepted:

@@ -4,18 +4,18 @@
 - Yayın seviyesi: beta
 - Görevlerle ulaşılan tahmini seviye: 29 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
 - Tahmini son seviye: 30
-- Boşluk (gap) adımı: 41
+- Boşluk (gap) adımı: 40
 
 ## Adım sayıları
 
-- accept: 153
-- turnin: 153
+- accept: 154
+- turnin: 154
 - complete: 95
-- travel: 50
+- travel: 52
 - sethearth: 0
 - train: 0
-- grind: 9
-- gap: 41
+- grind: 10
+- gap: 40
 
 ## Elenen görevler (nedene göre)
 
@@ -38,7 +38,7 @@
 - quest N: objective item N location unknown: 12
 - quest N: objective unit N location unknown: 3
 - quest N: prereq N is a gap: 7
-- quest N: prereq N not in route: 14
+- quest N: prereq N not in route: 13
 
 ## Engellemeyen denetim bulguları (kurala göre)
 

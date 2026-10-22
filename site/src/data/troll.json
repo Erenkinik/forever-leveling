@@ -6,81 +6,11 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:34:06Z",
+ "generatedAt": "2026-10-22T20:52:43Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
  "steps": [
-  {
-   "id": "gap-794",
-   "type": "gap",
-   "mapId": 1411,
-   "x": 42.62,
-   "y": 67.31,
-   "confidence": "unverified",
-   "questId": 794,
-   "reason": "quest 794: prereq 792 not in route",
-   "questName": "Burning Blade Medallion",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 1
-  },
-  {
-   "id": "gap-805",
-   "type": "gap",
-   "mapId": 1411,
-   "x": 42.62,
-   "y": 67.31,
-   "confidence": "unverified",
-   "questId": 805,
-   "reason": "quest 805: prereq 794 is a gap",
-   "questName": "Report to Sen'jin Village",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 1
-  },
-  {
-   "id": "travel-1411-1454",
-   "type": "travel",
-   "mapId": 1454,
-   "x": 34.3,
-   "y": 39.4,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Orgrimmar",
-   "level": 1
-  },
-  {
-   "id": "accept-787",
-   "type": "accept",
-   "mapId": 1454,
-   "x": 34.3,
-   "y": 39.4,
-   "confidence": "unverified",
-   "questId": 787,
-   "npcId": 3144,
-   "questName": "The New Horde",
-   "npcName": "Eitrigg",
-   "zoneName": "Orgrimmar",
-   "level": 1
-  },
-  {
-   "id": "travel-1454-1411",
-   "type": "travel",
-   "mapId": 1411,
-   "x": 43.3,
-   "y": 68.5,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 1
-  },
   {
    "id": "accept-4641",
    "type": "accept",
@@ -92,20 +22,6 @@
    "npcId": 10176,
    "questName": "Your Place In The World",
    "npcName": "Kaltunk",
-   "zoneName": "Durotar",
-   "level": 1
-  },
-  {
-   "id": "turnin-787",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 42.1,
-   "y": 68.3,
-   "confidence": "unverified",
-   "questId": 787,
-   "npcId": 3143,
-   "questName": "The New Horde",
-   "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 1
   },
@@ -434,6 +350,512 @@
    "level": 2
   },
   {
+   "id": "accept-792",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 42.8,
+   "y": 69.1,
+   "confidence": "unverified",
+   "questId": 792,
+   "npcId": 3145,
+   "questName": "Vile Familiars",
+   "npcName": "Zureetha Fargaze",
+   "zoneName": "Durotar",
+   "level": 2
+  },
+  {
+   "id": "complete-792",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 44.42,
+   "y": 55.5,
+   "confidence": "unverified",
+   "questId": 792,
+   "questName": "Vile Familiars",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 2,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 3101,
+     "name": "Vile Familiar"
+    }
+   ],
+   "area": [
+    [
+     42.6,
+     54.6
+    ],
+    [
+     42.8,
+     52.3
+    ],
+    [
+     42.8,
+     52.5
+    ],
+    [
+     42.8,
+     52.7
+    ],
+    [
+     43,
+     53.6
+    ],
+    [
+     43.2,
+     54.3
+    ],
+    [
+     43.4,
+     55.6
+    ],
+    [
+     43.5,
+     53.5
+    ],
+    [
+     43.5,
+     55.6
+    ],
+    [
+     43.7,
+     52.6
+    ],
+    [
+     43.8,
+     55.7
+    ],
+    [
+     43.9,
+     53.5
+    ],
+    [
+     43.9,
+     53.8
+    ],
+    [
+     43.9,
+     54.3
+    ],
+    [
+     43.9,
+     55.3
+    ],
+    [
+     43.9,
+     58.5
+    ],
+    [
+     44.2,
+     55.3
+    ],
+    [
+     44.2,
+     57
+    ],
+    [
+     44.3,
+     54.3
+    ],
+    [
+     44.4,
+     52.7
+    ],
+    [
+     44.4,
+     57.2
+    ],
+    [
+     44.5,
+     58.5
+    ],
+    [
+     44.6,
+     56.1
+    ],
+    [
+     44.7,
+     53.7
+    ],
+    [
+     44.8,
+     57
+    ],
+    [
+     45,
+     58.2
+    ],
+    [
+     45.1,
+     55
+    ],
+    [
+     45.2,
+     57.5
+    ],
+    [
+     45.3,
+     55.7
+    ],
+    [
+     45.4,
+     56.3
+    ],
+    [
+     45.7,
+     56.8
+    ],
+    [
+     45.8,
+     57.4
+    ],
+    [
+     45.8,
+     58.4
+    ],
+    [
+     46.1,
+     57
+    ],
+    [
+     46.2,
+     56.1
+    ],
+    [
+     46.4,
+     57.5
+    ],
+    [
+     47,
+     57.3
+    ]
+   ]
+  },
+  {
+   "id": "turnin-792",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 42.8,
+   "y": 69.1,
+   "confidence": "unverified",
+   "questId": 792,
+   "npcId": 3145,
+   "questName": "Vile Familiars",
+   "npcName": "Zureetha Fargaze",
+   "zoneName": "Durotar",
+   "level": 3
+  },
+  {
+   "id": "accept-790",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 40.6,
+   "y": 62.6,
+   "confidence": "unverified",
+   "questId": 790,
+   "npcId": 3287,
+   "questName": "Sarkoth",
+   "npcName": "Hana'zua",
+   "zoneName": "Durotar",
+   "level": 3
+  },
+  {
+   "id": "accept-5441",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 44.6,
+   "y": 68.7,
+   "confidence": "unverified",
+   "questId": 5441,
+   "npcId": 11378,
+   "questName": "Lazy Peons",
+   "npcName": "Foreman Thazz'ril",
+   "zoneName": "Durotar",
+   "level": 3
+  },
+  {
+   "id": "accept-794",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 42.8,
+   "y": 69.1,
+   "confidence": "unverified",
+   "questId": 794,
+   "npcId": 3145,
+   "questName": "Burning Blade Medallion",
+   "npcName": "Zureetha Fargaze",
+   "zoneName": "Durotar",
+   "level": 3
+  },
+  {
+   "id": "complete-790",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 40.5,
+   "y": 66.8,
+   "confidence": "unverified",
+   "questId": 790,
+   "questName": "Sarkoth",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 4905,
+     "name": "Sarkoth's Mangled Claw",
+     "sources": [
+      "Sarkoth"
+     ],
+     "icon": 134294
+    }
+   ],
+   "area": [
+    [
+     40.5,
+     66.8
+    ]
+   ]
+  },
+  {
+   "id": "complete-5441",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 43.93,
+   "y": 64.51,
+   "confidence": "unverified",
+   "questId": 5441,
+   "questName": "Lazy Peons",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 10556,
+     "name": "Lazy Peon"
+    }
+   ],
+   "area": [
+    [
+     38.8,
+     61.8
+    ],
+    [
+     40.9,
+     60.4
+    ],
+    [
+     41.2,
+     72.7
+    ],
+    [
+     41.3,
+     58.8
+    ],
+    [
+     42.3,
+     73.2
+    ],
+    [
+     42.7,
+     57.4
+    ],
+    [
+     43.8,
+     57.8
+    ],
+    [
+     44.7,
+     72.8
+    ],
+    [
+     45,
+     69.1
+    ],
+    [
+     45.6,
+     65.7
+    ],
+    [
+     46.8,
+     60.8
+    ],
+    [
+     47.1,
+     57.9
+    ],
+    [
+     47.2,
+     65.4
+    ],
+    [
+     47.6,
+     69.4
+    ]
+   ]
+  },
+  {
+   "id": "complete-794",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 42.7,
+   "y": 53.0,
+   "confidence": "unverified",
+   "questId": 794,
+   "questName": "Burning Blade Medallion",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 4859,
+     "name": "Burning Blade Medallion",
+     "sources": [
+      "Yarrog Baneshadow"
+     ],
+     "icon": 133434
+    }
+   ],
+   "area": [
+    [
+     42.7,
+     53
+    ]
+   ]
+  },
+  {
+   "id": "turnin-790",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 40.6,
+   "y": 62.6,
+   "confidence": "unverified",
+   "questId": 790,
+   "npcId": 3287,
+   "questName": "Sarkoth",
+   "npcName": "Hana'zua",
+   "zoneName": "Durotar",
+   "level": 3
+  },
+  {
+   "id": "turnin-5441",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 44.6,
+   "y": 68.7,
+   "confidence": "unverified",
+   "questId": 5441,
+   "npcId": 11378,
+   "questName": "Lazy Peons",
+   "npcName": "Foreman Thazz'ril",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
+   "id": "turnin-794",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 42.8,
+   "y": 69.1,
+   "confidence": "unverified",
+   "questId": 794,
+   "npcId": 3145,
+   "questName": "Burning Blade Medallion",
+   "npcName": "Zureetha Fargaze",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
+   "id": "accept-804",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 40.6,
+   "y": 62.6,
+   "confidence": "unverified",
+   "questId": 804,
+   "npcId": 3287,
+   "questName": "Sarkoth",
+   "npcName": "Hana'zua",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
+   "id": "accept-6394",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 44.6,
+   "y": 68.7,
+   "confidence": "unverified",
+   "questId": 6394,
+   "npcId": 11378,
+   "questName": "Thazz'ril's Pick",
+   "npcName": "Foreman Thazz'ril",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
+   "id": "complete-6394",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 43.7,
+   "y": 53.8,
+   "confidence": "unverified",
+   "questId": 6394,
+   "questName": "Thazz'ril's Pick",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 4,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 16332,
+     "name": "Thazz'ril's Pick",
+     "sources": [
+      "Thazz'ril's Pick"
+     ],
+     "icon": 134707
+    }
+   ],
+   "area": [
+    [
+     43.7,
+     53.8
+    ]
+   ]
+  },
+  {
+   "id": "turnin-804",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 42.1,
+   "y": 68.3,
+   "confidence": "unverified",
+   "questId": 804,
+   "npcId": 3143,
+   "questName": "Sarkoth",
+   "npcName": "Gornek",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
+   "id": "turnin-6394",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 44.6,
+   "y": 68.7,
+   "confidence": "unverified",
+   "questId": 6394,
+   "npcId": 11378,
+   "questName": "Thazz'ril's Pick",
+   "npcName": "Foreman Thazz'ril",
+   "zoneName": "Durotar",
+   "level": 4
+  },
+  {
    "id": "accept-789",
    "type": "accept",
    "mapId": 1411,
@@ -445,7 +867,7 @@
    "questName": "Sting of the Scorpid",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 2
+   "level": 4
   },
   {
    "id": "accept-4402",
@@ -459,7 +881,21 @@
    "questName": "Galgar's Cactus Apple Surprise",
    "npcName": "Galgar",
    "zoneName": "Durotar",
-   "level": 2
+   "level": 4
+  },
+  {
+   "id": "accept-805",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 42.8,
+   "y": 69.1,
+   "confidence": "unverified",
+   "questId": 805,
+   "npcId": 3145,
+   "questName": "Report to Sen'jin Village",
+   "npcName": "Zureetha Fargaze",
+   "zoneName": "Durotar",
+   "level": 4
   },
   {
    "id": "complete-789",
@@ -472,7 +908,7 @@
    "questName": "Sting of the Scorpid",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 2,
+   "level": 4,
    "objectives": [
     {
      "kind": "collect",
@@ -723,7 +1159,7 @@
    "questName": "Galgar's Cactus Apple Surprise",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 3,
+   "level": 5,
    "objectives": [
     {
      "kind": "collect",
@@ -950,7 +1386,7 @@
    "questName": "Sting of the Scorpid",
    "npcName": "Gornek",
    "zoneName": "Durotar",
-   "level": 3
+   "level": 5
   },
   {
    "id": "turnin-4402",
@@ -964,271 +1400,35 @@
    "questName": "Galgar's Cactus Apple Surprise",
    "npcName": "Galgar",
    "zoneName": "Durotar",
-   "level": 3
+   "level": 5
   },
   {
-   "id": "accept-790",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 40.6,
-   "y": 62.6,
-   "confidence": "unverified",
-   "questId": 790,
-   "npcId": 3287,
-   "questName": "Sarkoth",
-   "npcName": "Hana'zua",
-   "zoneName": "Durotar",
-   "level": 3
-  },
-  {
-   "id": "accept-5441",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 44.6,
-   "y": 68.7,
-   "confidence": "unverified",
-   "questId": 5441,
-   "npcId": 11378,
-   "questName": "Lazy Peons",
-   "npcName": "Foreman Thazz'ril",
-   "zoneName": "Durotar",
-   "level": 3
-  },
-  {
-   "id": "complete-5441",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 43.93,
-   "y": 64.51,
-   "confidence": "unverified",
-   "questId": 5441,
-   "questName": "Lazy Peons",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 3,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 10556,
-     "name": "Lazy Peon"
-    }
-   ],
-   "area": [
-    [
-     38.8,
-     61.8
-    ],
-    [
-     40.9,
-     60.4
-    ],
-    [
-     41.2,
-     72.7
-    ],
-    [
-     41.3,
-     58.8
-    ],
-    [
-     42.3,
-     73.2
-    ],
-    [
-     42.7,
-     57.4
-    ],
-    [
-     43.8,
-     57.8
-    ],
-    [
-     44.7,
-     72.8
-    ],
-    [
-     45,
-     69.1
-    ],
-    [
-     45.6,
-     65.7
-    ],
-    [
-     46.8,
-     60.8
-    ],
-    [
-     47.1,
-     57.9
-    ],
-    [
-     47.2,
-     65.4
-    ],
-    [
-     47.6,
-     69.4
-    ]
-   ]
-  },
-  {
-   "id": "complete-790",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 40.5,
-   "y": 66.8,
-   "confidence": "unverified",
-   "questId": 790,
-   "questName": "Sarkoth",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 3,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 4905,
-     "name": "Sarkoth's Mangled Claw",
-     "sources": [
-      "Sarkoth"
-     ],
-     "icon": 134294
-    }
-   ],
-   "area": [
-    [
-     40.5,
-     66.8
-    ]
-   ]
-  },
-  {
-   "id": "turnin-790",
+   "id": "turnin-805",
    "type": "turnin",
    "mapId": 1411,
-   "x": 40.6,
-   "y": 62.6,
+   "x": 55.9,
+   "y": 74.7,
    "confidence": "unverified",
-   "questId": 790,
-   "npcId": 3287,
-   "questName": "Sarkoth",
-   "npcName": "Hana'zua",
+   "questId": 805,
+   "npcId": 3188,
+   "questName": "Report to Sen'jin Village",
+   "npcName": "Master Gadrin",
    "zoneName": "Durotar",
-   "level": 3
-  },
-  {
-   "id": "turnin-5441",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 44.6,
-   "y": 68.7,
-   "confidence": "unverified",
-   "questId": 5441,
-   "npcId": 11378,
-   "questName": "Lazy Peons",
-   "npcName": "Foreman Thazz'ril",
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "accept-804",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 40.6,
-   "y": 62.6,
-   "confidence": "unverified",
-   "questId": 804,
-   "npcId": 3287,
-   "questName": "Sarkoth",
-   "npcName": "Hana'zua",
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "accept-6394",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 44.6,
-   "y": 68.7,
-   "confidence": "unverified",
-   "questId": 6394,
-   "npcId": 11378,
-   "questName": "Thazz'ril's Pick",
-   "npcName": "Foreman Thazz'ril",
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "complete-6394",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 43.7,
-   "y": 53.8,
-   "confidence": "unverified",
-   "questId": 6394,
-   "questName": "Thazz'ril's Pick",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 4,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 16332,
-     "name": "Thazz'ril's Pick",
-     "sources": [
-      "Thazz'ril's Pick"
-     ],
-     "icon": 134707
-    }
-   ],
-   "area": [
-    [
-     43.7,
-     53.8
-    ]
-   ]
-  },
-  {
-   "id": "turnin-804",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 42.1,
-   "y": 68.3,
-   "confidence": "unverified",
-   "questId": 804,
-   "npcId": 3143,
-   "questName": "Sarkoth",
-   "npcName": "Gornek",
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "turnin-6394",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 44.6,
-   "y": 68.7,
-   "confidence": "unverified",
-   "questId": 6394,
-   "npcId": 11378,
-   "questName": "Thazz'ril's Pick",
-   "npcName": "Foreman Thazz'ril",
-   "zoneName": "Durotar",
-   "level": 4
+   "level": 5
   },
   {
    "id": "gap-786",
    "type": "gap",
    "mapId": 1411,
-   "x": 44.6,
-   "y": 68.7,
+   "x": 55.9,
+   "y": 74.7,
    "confidence": "unverified",
    "questId": 786,
    "reason": "quest 786: prereq 785 not in route",
    "questName": "Thwarting Kolkar Aggression",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 4
+   "level": 5
   },
   {
    "id": "accept-2161",
@@ -1242,62 +1442,7 @@
    "questName": "A Peon's Burden",
    "npcName": "Ukor",
    "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "turnin-2161",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 51.5,
-   "y": 41.6,
-   "confidence": "unverified",
-   "questId": 2161,
-   "npcId": 6928,
-   "questName": "A Peon's Burden",
-   "npcName": "Innkeeper Grosk",
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "gap-831",
-   "type": "gap",
-   "mapId": 1411,
-   "x": 51.5,
-   "y": 41.6,
-   "confidence": "unverified",
-   "questId": 831,
-   "reason": "quest 831: prereq 830 not in route",
-   "questName": "The Admiral's Orders",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "gap-812",
-   "type": "gap",
-   "mapId": 1411,
-   "x": 51.5,
-   "y": 41.6,
-   "confidence": "unverified",
-   "questId": 812,
-   "reason": "quest 812: objective item 4904 location unknown",
-   "questName": "Need for a Cure",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 4
-  },
-  {
-   "id": "grind-1411-5",
-   "type": "grind",
-   "mapId": 1411,
-   "x": 55.9,
-   "y": 74.7,
-   "confidence": "unverified",
-   "untilLevel": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 4
+   "level": 5
   },
   {
    "id": "accept-823",
@@ -1326,258 +1471,6 @@
    "npcName": "Master Vornal",
    "zoneName": "Durotar",
    "level": 5
-  },
-  {
-   "id": "accept-784",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 51.9,
-   "y": 43.5,
-   "confidence": "unverified",
-   "questId": 784,
-   "npcId": 3139,
-   "questName": "Vanquish the Betrayers",
-   "npcName": "Gar'Thok",
-   "zoneName": "Durotar",
-   "level": 5
-  },
-  {
-   "id": "accept-791",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 49.9,
-   "y": 40.4,
-   "confidence": "unverified",
-   "questId": 791,
-   "npcId": 3147,
-   "questName": "Carry Your Weight",
-   "npcName": "Furl Scornbrow",
-   "zoneName": "Durotar",
-   "level": 5
-  },
-  {
-   "id": "complete-784",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 58.25,
-   "y": 56.18,
-   "confidence": "unverified",
-   "questId": 784,
-   "questName": "Vanquish the Betrayers",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 5,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 3128,
-     "name": "Kul Tiras Sailor"
-    },
-    {
-     "kind": "kill",
-     "id": 3129,
-     "name": "Kul Tiras Marine"
-    },
-    {
-     "kind": "kill",
-     "id": 3192,
-     "name": "Lieutenant Benedict"
-    }
-   ],
-   "area": [
-    [
-     55.7,
-     57.5
-    ],
-    [
-     55.9,
-     51.8
-    ],
-    [
-     55.9,
-     53.7
-    ],
-    [
-     55.9,
-     59.1
-    ],
-    [
-     56.4,
-     58.5
-    ],
-    [
-     56.5,
-     50.8
-    ],
-    [
-     56.5,
-     56.5
-    ],
-    [
-     56.6,
-     53
-    ],
-    [
-     56.7,
-     52.8
-    ],
-    [
-     56.7,
-     53.1
-    ],
-    [
-     56.7,
-     54.9
-    ],
-    [
-     57.1,
-     51.7
-    ],
-    [
-     57.1,
-     53.1
-    ],
-    [
-     57.1,
-     54.6
-    ],
-    [
-     57.1,
-     57.2
-    ],
-    [
-     57.4,
-     56.8
-    ],
-    [
-     57.4,
-     58.2
-    ],
-    [
-     57.5,
-     55.3
-    ],
-    [
-     57.7,
-     53.7
-    ],
-    [
-     57.7,
-     58.5
-    ],
-    [
-     57.8,
-     52.7
-    ],
-    [
-     57.8,
-     58.7
-    ],
-    [
-     57.9,
-     57.2
-    ],
-    [
-     58.1,
-     55.6
-    ],
-    [
-     58.2,
-     56.8
-    ],
-    [
-     58.4,
-     53.7
-    ],
-    [
-     58.4,
-     57.5
-    ],
-    [
-     58.4,
-     58.4
-    ],
-    [
-     58.8,
-     60.2
-    ],
-    [
-     59,
-     52.8
-    ],
-    [
-     59,
-     55.6
-    ],
-    [
-     59.2,
-     56.7
-    ],
-    [
-     59.4,
-     58.5
-    ],
-    [
-     59.5,
-     55.5
-    ],
-    [
-     59.5,
-     56.3
-    ],
-    [
-     59.5,
-     58.9
-    ],
-    [
-     59.6,
-     53.7
-    ],
-    [
-     59.6,
-     56.7
-    ],
-    [
-     59.6,
-     58.2
-    ],
-    [
-     59.7,
-     58.3
-    ],
-    [
-     59.7,
-     58.5
-    ],
-    [
-     59.8,
-     57.8
-    ],
-    [
-     59.9,
-     54.7
-    ],
-    [
-     59.9,
-     58.9
-    ],
-    [
-     60.2,
-     59.2
-    ],
-    [
-     60.3,
-     60.3
-    ],
-    [
-     60.7,
-     59.4
-    ],
-    [
-     61,
-     58.7
-    ]
-   ]
   },
   {
    "id": "complete-818",
@@ -2331,6 +2224,502 @@
    ]
   },
   {
+   "id": "turnin-2161",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 51.5,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 2161,
+   "npcId": 6928,
+   "questName": "A Peon's Burden",
+   "npcName": "Innkeeper Grosk",
+   "zoneName": "Durotar",
+   "level": 5
+  },
+  {
+   "id": "turnin-823",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 52.2,
+   "y": 43.2,
+   "confidence": "unverified",
+   "questId": 823,
+   "npcId": 3142,
+   "questName": "Report to Orgnil",
+   "npcName": "Orgnil Soulscar",
+   "zoneName": "Durotar",
+   "level": 5
+  },
+  {
+   "id": "turnin-818",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 55.9,
+   "y": 74.4,
+   "confidence": "unverified",
+   "questId": 818,
+   "npcId": 3304,
+   "questName": "A Solvent Spirit",
+   "npcName": "Master Vornal",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "accept-817",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 56,
+   "y": 73.9,
+   "confidence": "unverified",
+   "questId": 817,
+   "npcId": 3194,
+   "questName": "Practical Prey",
+   "npcName": "Vel'rin Fang",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "complete-817",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 64.4,
+   "y": 84.28,
+   "confidence": "unverified",
+   "questId": 817,
+   "questName": "Practical Prey",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 6,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 4892,
+     "name": "Durotar Tiger Fur",
+     "sources": [
+      "Durotar Tiger"
+     ],
+     "icon": 134354
+    }
+   ],
+   "area": [
+    [
+     59,
+     90.5
+    ],
+    [
+     59.7,
+     84.8
+    ],
+    [
+     59.9,
+     83.4
+    ],
+    [
+     60.2,
+     80
+    ],
+    [
+     60.3,
+     91.5
+    ],
+    [
+     60.7,
+     82.3
+    ],
+    [
+     60.9,
+     88.7
+    ],
+    [
+     60.9,
+     90.5
+    ],
+    [
+     61.5,
+     89.6
+    ],
+    [
+     61.5,
+     91.4
+    ],
+    [
+     62.4,
+     95
+    ],
+    [
+     62.8,
+     97.1
+    ],
+    [
+     63.3,
+     96.2
+    ],
+    [
+     64,
+     97.3
+    ],
+    [
+     64.1,
+     95.4
+    ],
+    [
+     64.6,
+     85
+    ],
+    [
+     64.6,
+     88.5
+    ],
+    [
+     64.7,
+     81
+    ],
+    [
+     65.3,
+     80.2
+    ],
+    [
+     65.3,
+     87.7
+    ],
+    [
+     65.9,
+     81.1
+    ],
+    [
+     67.2,
+     70.7
+    ],
+    [
+     67.6,
+     73.9
+    ],
+    [
+     69,
+     72.3
+    ],
+    [
+     69.1,
+     80.2
+    ],
+    [
+     69.1,
+     84.8
+    ],
+    [
+     69.2,
+     69.7
+    ],
+    [
+     69.2,
+     73.6
+    ],
+    [
+     69.8,
+     72.6
+    ],
+    [
+     70.3,
+     73.4
+    ]
+   ]
+  },
+  {
+   "id": "turnin-817",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 56,
+   "y": 73.9,
+   "confidence": "unverified",
+   "questId": 817,
+   "npcId": 3194,
+   "questName": "Practical Prey",
+   "npcName": "Vel'rin Fang",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "gap-831",
+   "type": "gap",
+   "mapId": 1411,
+   "x": 56,
+   "y": 73.9,
+   "confidence": "unverified",
+   "questId": 831,
+   "reason": "quest 831: prereq 830 not in route",
+   "questName": "The Admiral's Orders",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "accept-784",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 51.9,
+   "y": 43.5,
+   "confidence": "unverified",
+   "questId": 784,
+   "npcId": 3139,
+   "questName": "Vanquish the Betrayers",
+   "npcName": "Gar'Thok",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "accept-791",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 49.9,
+   "y": 40.4,
+   "confidence": "unverified",
+   "questId": 791,
+   "npcId": 3147,
+   "questName": "Carry Your Weight",
+   "npcName": "Furl Scornbrow",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "accept-815",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 51.1,
+   "y": 42.4,
+   "confidence": "unverified",
+   "questId": 815,
+   "npcId": 3191,
+   "questName": "Break a Few Eggs",
+   "npcName": "Cook Torka",
+   "zoneName": "Durotar",
+   "level": 6
+  },
+  {
+   "id": "complete-784",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 58.25,
+   "y": 56.18,
+   "confidence": "unverified",
+   "questId": 784,
+   "questName": "Vanquish the Betrayers",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 6,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 3128,
+     "name": "Kul Tiras Sailor"
+    },
+    {
+     "kind": "kill",
+     "id": 3129,
+     "name": "Kul Tiras Marine"
+    },
+    {
+     "kind": "kill",
+     "id": 3192,
+     "name": "Lieutenant Benedict"
+    }
+   ],
+   "area": [
+    [
+     55.7,
+     57.5
+    ],
+    [
+     55.9,
+     51.8
+    ],
+    [
+     55.9,
+     53.7
+    ],
+    [
+     55.9,
+     59.1
+    ],
+    [
+     56.4,
+     58.5
+    ],
+    [
+     56.5,
+     50.8
+    ],
+    [
+     56.5,
+     56.5
+    ],
+    [
+     56.6,
+     53
+    ],
+    [
+     56.7,
+     52.8
+    ],
+    [
+     56.7,
+     53.1
+    ],
+    [
+     56.7,
+     54.9
+    ],
+    [
+     57.1,
+     51.7
+    ],
+    [
+     57.1,
+     53.1
+    ],
+    [
+     57.1,
+     54.6
+    ],
+    [
+     57.1,
+     57.2
+    ],
+    [
+     57.4,
+     56.8
+    ],
+    [
+     57.4,
+     58.2
+    ],
+    [
+     57.5,
+     55.3
+    ],
+    [
+     57.7,
+     53.7
+    ],
+    [
+     57.7,
+     58.5
+    ],
+    [
+     57.8,
+     52.7
+    ],
+    [
+     57.8,
+     58.7
+    ],
+    [
+     57.9,
+     57.2
+    ],
+    [
+     58.1,
+     55.6
+    ],
+    [
+     58.2,
+     56.8
+    ],
+    [
+     58.4,
+     53.7
+    ],
+    [
+     58.4,
+     57.5
+    ],
+    [
+     58.4,
+     58.4
+    ],
+    [
+     58.8,
+     60.2
+    ],
+    [
+     59,
+     52.8
+    ],
+    [
+     59,
+     55.6
+    ],
+    [
+     59.2,
+     56.7
+    ],
+    [
+     59.4,
+     58.5
+    ],
+    [
+     59.5,
+     55.5
+    ],
+    [
+     59.5,
+     56.3
+    ],
+    [
+     59.5,
+     58.9
+    ],
+    [
+     59.6,
+     53.7
+    ],
+    [
+     59.6,
+     56.7
+    ],
+    [
+     59.6,
+     58.2
+    ],
+    [
+     59.7,
+     58.3
+    ],
+    [
+     59.7,
+     58.5
+    ],
+    [
+     59.8,
+     57.8
+    ],
+    [
+     59.9,
+     54.7
+    ],
+    [
+     59.9,
+     58.9
+    ],
+    [
+     60.2,
+     59.2
+    ],
+    [
+     60.3,
+     60.3
+    ],
+    [
+     60.7,
+     59.4
+    ],
+    [
+     61,
+     58.7
+    ]
+   ]
+  },
+  {
    "id": "complete-791",
    "type": "complete",
    "mapId": 1411,
@@ -2341,7 +2730,7 @@
    "questName": "Carry Your Weight",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 5,
+   "level": 7,
    "objectives": [
     {
      "kind": "collect",
@@ -2555,214 +2944,6 @@
    ]
   },
   {
-   "id": "turnin-823",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 52.2,
-   "y": 43.2,
-   "confidence": "unverified",
-   "questId": 823,
-   "npcId": 3142,
-   "questName": "Report to Orgnil",
-   "npcName": "Orgnil Soulscar",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "turnin-818",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 55.9,
-   "y": 74.4,
-   "confidence": "unverified",
-   "questId": 818,
-   "npcId": 3304,
-   "questName": "A Solvent Spirit",
-   "npcName": "Master Vornal",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "turnin-784",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 51.9,
-   "y": 43.5,
-   "confidence": "unverified",
-   "questId": 784,
-   "npcId": 3139,
-   "questName": "Vanquish the Betrayers",
-   "npcName": "Gar'Thok",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "turnin-791",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 49.9,
-   "y": 40.4,
-   "confidence": "unverified",
-   "questId": 791,
-   "npcId": 3147,
-   "questName": "Carry Your Weight",
-   "npcName": "Furl Scornbrow",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "accept-817",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 56,
-   "y": 73.9,
-   "confidence": "unverified",
-   "questId": 817,
-   "npcId": 3194,
-   "questName": "Practical Prey",
-   "npcName": "Vel'rin Fang",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "accept-815",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 51.1,
-   "y": 42.4,
-   "confidence": "unverified",
-   "questId": 815,
-   "npcId": 3191,
-   "questName": "Break a Few Eggs",
-   "npcName": "Cook Torka",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "accept-825",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 51.9,
-   "y": 43.5,
-   "confidence": "unverified",
-   "questId": 825,
-   "npcId": 3139,
-   "questName": "From The Wreckage....",
-   "npcName": "Gar'Thok",
-   "zoneName": "Durotar",
-   "level": 6
-  },
-  {
-   "id": "complete-825",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 62.89,
-   "y": 52.2,
-   "confidence": "unverified",
-   "questId": 825,
-   "questName": "From The Wreckage....",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 6,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 4863,
-     "name": "Gnomish Tools",
-     "sources": [
-      "Gnomish Toolbox"
-     ],
-     "icon": 134520
-    }
-   ],
-   "area": [
-    [
-     61.4,
-     56.1
-    ],
-    [
-     61.8,
-     45.8
-    ],
-    [
-     61.9,
-     42.3
-    ],
-    [
-     61.9,
-     55.5
-    ],
-    [
-     62,
-     46.3
-    ],
-    [
-     62.1,
-     41.7
-    ],
-    [
-     62.1,
-     60.7
-    ],
-    [
-     62.2,
-     42.5
-    ],
-    [
-     62.3,
-     56.3
-    ],
-    [
-     62.4,
-     46
-    ],
-    [
-     62.4,
-     59.9
-    ],
-    [
-     62.5,
-     60.6
-    ],
-    [
-     63.2,
-     58.1
-    ],
-    [
-     63.3,
-     57.3
-    ],
-    [
-     63.6,
-     56.3
-    ],
-    [
-     63.8,
-     53
-    ],
-    [
-     63.9,
-     50.3
-    ],
-    [
-     64.2,
-     53.5
-    ],
-    [
-     64.4,
-     50.3
-    ],
-    [
-     64.6,
-     50
-    ],
-    [
-     64.7,
-     53.6
-    ]
-   ]
-  },
-  {
    "id": "complete-815",
    "type": "complete",
    "mapId": 1411,
@@ -2773,7 +2954,7 @@
    "questName": "Break a Few Eggs",
    "npcName": null,
    "zoneName": "Durotar",
-   "level": 6,
+   "level": 7,
    "objectives": [
     {
      "kind": "collect",
@@ -2897,164 +3078,32 @@
    ]
   },
   {
-   "id": "complete-817",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 64.4,
-   "y": 84.28,
-   "confidence": "unverified",
-   "questId": 817,
-   "questName": "Practical Prey",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 6,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 4892,
-     "name": "Durotar Tiger Fur",
-     "sources": [
-      "Durotar Tiger"
-     ],
-     "icon": 134354
-    }
-   ],
-   "area": [
-    [
-     59,
-     90.5
-    ],
-    [
-     59.7,
-     84.8
-    ],
-    [
-     59.9,
-     83.4
-    ],
-    [
-     60.2,
-     80
-    ],
-    [
-     60.3,
-     91.5
-    ],
-    [
-     60.7,
-     82.3
-    ],
-    [
-     60.9,
-     88.7
-    ],
-    [
-     60.9,
-     90.5
-    ],
-    [
-     61.5,
-     89.6
-    ],
-    [
-     61.5,
-     91.4
-    ],
-    [
-     62.4,
-     95
-    ],
-    [
-     62.8,
-     97.1
-    ],
-    [
-     63.3,
-     96.2
-    ],
-    [
-     64,
-     97.3
-    ],
-    [
-     64.1,
-     95.4
-    ],
-    [
-     64.6,
-     85
-    ],
-    [
-     64.6,
-     88.5
-    ],
-    [
-     64.7,
-     81
-    ],
-    [
-     65.3,
-     80.2
-    ],
-    [
-     65.3,
-     87.7
-    ],
-    [
-     65.9,
-     81.1
-    ],
-    [
-     67.2,
-     70.7
-    ],
-    [
-     67.6,
-     73.9
-    ],
-    [
-     69,
-     72.3
-    ],
-    [
-     69.1,
-     80.2
-    ],
-    [
-     69.1,
-     84.8
-    ],
-    [
-     69.2,
-     69.7
-    ],
-    [
-     69.2,
-     73.6
-    ],
-    [
-     69.8,
-     72.6
-    ],
-    [
-     70.3,
-     73.4
-    ]
-   ]
-  },
-  {
-   "id": "turnin-817",
+   "id": "turnin-784",
    "type": "turnin",
    "mapId": 1411,
-   "x": 56,
-   "y": 73.9,
+   "x": 51.9,
+   "y": 43.5,
    "confidence": "unverified",
-   "questId": 817,
-   "npcId": 3194,
-   "questName": "Practical Prey",
-   "npcName": "Vel'rin Fang",
+   "questId": 784,
+   "npcId": 3139,
+   "questName": "Vanquish the Betrayers",
+   "npcName": "Gar'Thok",
    "zoneName": "Durotar",
-   "level": 6
+   "level": 7
+  },
+  {
+   "id": "turnin-791",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 49.9,
+   "y": 40.4,
+   "confidence": "unverified",
+   "questId": 791,
+   "npcId": 3147,
+   "questName": "Carry Your Weight",
+   "npcName": "Furl Scornbrow",
+   "zoneName": "Durotar",
+   "level": 7
   },
   {
    "id": "turnin-815",
@@ -3071,8 +3120,70 @@
    "level": 7
   },
   {
-   "id": "turnin-825",
+   "id": "accept-808",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 55.9,
+   "y": 74.7,
+   "confidence": "unverified",
+   "questId": 808,
+   "npcId": 3188,
+   "questName": "Minshina's Skull",
+   "npcName": "Master Gadrin",
+   "zoneName": "Durotar",
+   "level": 7
+  },
+  {
+   "id": "complete-808",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 67.45,
+   "y": 87.8,
+   "confidence": "unverified",
+   "questId": 808,
+   "questName": "Minshina's Skull",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 7,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 4864,
+     "name": "Minshina's Skull",
+     "sources": [
+      "Imprisoned Darkspear"
+     ],
+     "icon": 133730
+    }
+   ],
+   "area": [
+    [
+     67.4,
+     87.8
+    ],
+    [
+     67.5,
+     87.8
+    ]
+   ]
+  },
+  {
+   "id": "turnin-808",
    "type": "turnin",
+   "mapId": 1411,
+   "x": 55.9,
+   "y": 74.7,
+   "confidence": "unverified",
+   "questId": 808,
+   "npcId": 3188,
+   "questName": "Minshina's Skull",
+   "npcName": "Master Gadrin",
+   "zoneName": "Durotar",
+   "level": 7
+  },
+  {
+   "id": "accept-825",
+   "type": "accept",
    "mapId": 1411,
    "x": 51.9,
    "y": 43.5,
@@ -3085,16 +3196,126 @@
    "level": 7
   },
   {
-   "id": "accept-808",
-   "type": "accept",
+   "id": "complete-825",
+   "type": "complete",
    "mapId": 1411,
-   "x": 55.9,
-   "y": 74.7,
+   "x": 62.89,
+   "y": 52.2,
    "confidence": "unverified",
-   "questId": 808,
-   "npcId": 3188,
-   "questName": "Minshina's Skull",
-   "npcName": "Master Gadrin",
+   "questId": 825,
+   "questName": "From The Wreckage....",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 7,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 4863,
+     "name": "Gnomish Tools",
+     "sources": [
+      "Gnomish Toolbox"
+     ],
+     "icon": 134520
+    }
+   ],
+   "area": [
+    [
+     61.4,
+     56.1
+    ],
+    [
+     61.8,
+     45.8
+    ],
+    [
+     61.9,
+     42.3
+    ],
+    [
+     61.9,
+     55.5
+    ],
+    [
+     62,
+     46.3
+    ],
+    [
+     62.1,
+     41.7
+    ],
+    [
+     62.1,
+     60.7
+    ],
+    [
+     62.2,
+     42.5
+    ],
+    [
+     62.3,
+     56.3
+    ],
+    [
+     62.4,
+     46
+    ],
+    [
+     62.4,
+     59.9
+    ],
+    [
+     62.5,
+     60.6
+    ],
+    [
+     63.2,
+     58.1
+    ],
+    [
+     63.3,
+     57.3
+    ],
+    [
+     63.6,
+     56.3
+    ],
+    [
+     63.8,
+     53
+    ],
+    [
+     63.9,
+     50.3
+    ],
+    [
+     64.2,
+     53.5
+    ],
+    [
+     64.4,
+     50.3
+    ],
+    [
+     64.6,
+     50
+    ],
+    [
+     64.7,
+     53.6
+    ]
+   ]
+  },
+  {
+   "id": "turnin-825",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 51.9,
+   "y": 43.5,
+   "confidence": "unverified",
+   "questId": 825,
+   "npcId": 3139,
+   "questName": "From The Wreckage....",
+   "npcName": "Gar'Thok",
    "zoneName": "Durotar",
    "level": 7
   },
@@ -3215,54 +3436,6 @@
    ]
   },
   {
-   "id": "complete-808",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 67.45,
-   "y": 87.8,
-   "confidence": "unverified",
-   "questId": 808,
-   "questName": "Minshina's Skull",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 7,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 4864,
-     "name": "Minshina's Skull",
-     "sources": [
-      "Imprisoned Darkspear"
-     ],
-     "icon": 133730
-    }
-   ],
-   "area": [
-    [
-     67.4,
-     87.8
-    ],
-    [
-     67.5,
-     87.8
-    ]
-   ]
-  },
-  {
-   "id": "turnin-808",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 55.9,
-   "y": 74.7,
-   "confidence": "unverified",
-   "questId": 808,
-   "npcId": 3188,
-   "questName": "Minshina's Skull",
-   "npcName": "Master Gadrin",
-   "zoneName": "Durotar",
-   "level": 7
-  },
-  {
    "id": "turnin-834",
    "type": "turnin",
    "mapId": 1411,
@@ -3273,19 +3446,6 @@
    "npcId": 3293,
    "questName": "Winds in the Desert",
    "npcName": "Rezlak",
-   "zoneName": "Durotar",
-   "level": 7
-  },
-  {
-   "id": "grind-1411-8",
-   "type": "grind",
-   "mapId": 1411,
-   "x": 55.9,
-   "y": 74.7,
-   "confidence": "unverified",
-   "untilLevel": 8,
-   "questName": null,
-   "npcName": null,
    "zoneName": "Durotar",
    "level": 7
   },
@@ -3316,179 +3476,6 @@
    "npcName": "Gar'Thok",
    "zoneName": "Durotar",
    "level": 8
-  },
-  {
-   "id": "accept-9263",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 46.2,
-   "y": 8.4,
-   "confidence": "unverified",
-   "questId": 9263,
-   "npcId": 16493,
-   "questName": "Investigate the Scourge of Orgrimmar",
-   "npcName": "Lieutenant Dagel",
-   "zoneName": "Durotar",
-   "level": 8
-  },
-  {
-   "id": "complete-9263",
-   "type": "complete",
-   "mapId": 1411,
-   "x": 44.82,
-   "y": 17.06,
-   "confidence": "unverified",
-   "questId": 9263,
-   "questName": "Investigate the Scourge of Orgrimmar",
-   "npcName": null,
-   "zoneName": "Durotar",
-   "level": 8,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 22892,
-     "name": "Dim Necrotic Stone",
-     "sources": [
-      "Spectral Spirit",
-      "Skeletal Trooper"
-     ],
-     "icon": 134085
-    }
-   ],
-   "area": [
-    [
-     43.9,
-     18
-    ],
-    [
-     44,
-     16.6
-    ],
-    [
-     44,
-     17
-    ],
-    [
-     44,
-     17.5
-    ],
-    [
-     44.3,
-     17.5
-    ],
-    [
-     44.4,
-     16.1
-    ],
-    [
-     44.4,
-     16.5
-    ],
-    [
-     44.4,
-     17
-    ],
-    [
-     44.4,
-     18
-    ],
-    [
-     44.4,
-     18.5
-    ],
-    [
-     44.6,
-     17
-    ],
-    [
-     44.6,
-     17.6
-    ],
-    [
-     44.7,
-     16.1
-    ],
-    [
-     44.7,
-     16.5
-    ],
-    [
-     44.7,
-     18
-    ],
-    [
-     44.7,
-     18.8
-    ],
-    [
-     44.8,
-     16.7
-    ],
-    [
-     44.9,
-     16.4
-    ],
-    [
-     44.9,
-     17.1
-    ],
-    [
-     45,
-     16.5
-    ],
-    [
-     45,
-     17.6
-    ],
-    [
-     45,
-     18.1
-    ],
-    [
-     45,
-     18.5
-    ],
-    [
-     45.1,
-     16.4
-    ],
-    [
-     45.3,
-     16
-    ],
-    [
-     45.3,
-     16.6
-    ],
-    [
-     45.3,
-     17
-    ],
-    [
-     45.3,
-     17.5
-    ],
-    [
-     45.3,
-     18
-    ],
-    [
-     45.6,
-     15.6
-    ],
-    [
-     45.6,
-     16
-    ],
-    [
-     45.6,
-     16.5
-    ],
-    [
-     45.8,
-     15.9
-    ]
-   ]
   },
   {
    "id": "complete-837",
@@ -4008,8 +3995,22 @@
    "level": 8
   },
   {
-   "id": "turnin-9263",
-   "type": "turnin",
+   "id": "gap-812",
+   "type": "gap",
+   "mapId": 1411,
+   "x": 51.9,
+   "y": 43.5,
+   "confidence": "unverified",
+   "questId": 812,
+   "reason": "quest 812: objective item 4904 location unknown",
+   "questName": "Need for a Cure",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 8
+  },
+  {
+   "id": "accept-9263",
+   "type": "accept",
    "mapId": 1411,
    "x": 46.2,
    "y": 8.4,
@@ -4022,6 +4023,179 @@
    "level": 8
   },
   {
+   "id": "complete-9263",
+   "type": "complete",
+   "mapId": 1411,
+   "x": 44.82,
+   "y": 17.06,
+   "confidence": "unverified",
+   "questId": 9263,
+   "questName": "Investigate the Scourge of Orgrimmar",
+   "npcName": null,
+   "zoneName": "Durotar",
+   "level": 8,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 22892,
+     "name": "Dim Necrotic Stone",
+     "sources": [
+      "Spectral Spirit",
+      "Skeletal Trooper"
+     ],
+     "icon": 134085
+    }
+   ],
+   "area": [
+    [
+     43.9,
+     18
+    ],
+    [
+     44,
+     16.6
+    ],
+    [
+     44,
+     17
+    ],
+    [
+     44,
+     17.5
+    ],
+    [
+     44.3,
+     17.5
+    ],
+    [
+     44.4,
+     16.1
+    ],
+    [
+     44.4,
+     16.5
+    ],
+    [
+     44.4,
+     17
+    ],
+    [
+     44.4,
+     18
+    ],
+    [
+     44.4,
+     18.5
+    ],
+    [
+     44.6,
+     17
+    ],
+    [
+     44.6,
+     17.6
+    ],
+    [
+     44.7,
+     16.1
+    ],
+    [
+     44.7,
+     16.5
+    ],
+    [
+     44.7,
+     18
+    ],
+    [
+     44.7,
+     18.8
+    ],
+    [
+     44.8,
+     16.7
+    ],
+    [
+     44.9,
+     16.4
+    ],
+    [
+     44.9,
+     17.1
+    ],
+    [
+     45,
+     16.5
+    ],
+    [
+     45,
+     17.6
+    ],
+    [
+     45,
+     18.1
+    ],
+    [
+     45,
+     18.5
+    ],
+    [
+     45.1,
+     16.4
+    ],
+    [
+     45.3,
+     16
+    ],
+    [
+     45.3,
+     16.6
+    ],
+    [
+     45.3,
+     17
+    ],
+    [
+     45.3,
+     17.5
+    ],
+    [
+     45.3,
+     18
+    ],
+    [
+     45.6,
+     15.6
+    ],
+    [
+     45.6,
+     16
+    ],
+    [
+     45.6,
+     16.5
+    ],
+    [
+     45.8,
+     15.9
+    ]
+   ]
+  },
+  {
+   "id": "turnin-9263",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 46.2,
+   "y": 8.4,
+   "confidence": "unverified",
+   "questId": 9263,
+   "npcId": 16493,
+   "questName": "Investigate the Scourge of Orgrimmar",
+   "npcName": "Lieutenant Dagel",
+   "zoneName": "Durotar",
+   "level": 9
+  },
+  {
    "id": "accept-835",
    "type": "accept",
    "mapId": 1411,
@@ -4032,20 +4206,6 @@
    "npcId": 3293,
    "questName": "Securing the Lines",
    "npcName": "Rezlak",
-   "zoneName": "Durotar",
-   "level": 9
-  },
-  {
-   "id": "accept-816",
-   "type": "accept",
-   "mapId": 1411,
-   "x": 43.1,
-   "y": 30.2,
-   "confidence": "unverified",
-   "questId": 816,
-   "npcId": 3193,
-   "questName": "Lost But Not Forgotten",
-   "npcName": "Misha Tor'kren",
    "zoneName": "Durotar",
    "level": 9
   },
@@ -4207,6 +4367,34 @@
      22.3
     ]
    ]
+  },
+  {
+   "id": "turnin-835",
+   "type": "turnin",
+   "mapId": 1411,
+   "x": 46.4,
+   "y": 22.9,
+   "confidence": "unverified",
+   "questId": 835,
+   "npcId": 3293,
+   "questName": "Securing the Lines",
+   "npcName": "Rezlak",
+   "zoneName": "Durotar",
+   "level": 9
+  },
+  {
+   "id": "accept-816",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 43.1,
+   "y": 30.2,
+   "confidence": "unverified",
+   "questId": 816,
+   "npcId": 3193,
+   "questName": "Lost But Not Forgotten",
+   "npcName": "Misha Tor'kren",
+   "zoneName": "Durotar",
+   "level": 9
   },
   {
    "id": "complete-816",
@@ -4434,20 +4622,6 @@
      71.5
     ]
    ]
-  },
-  {
-   "id": "turnin-835",
-   "type": "turnin",
-   "mapId": 1411,
-   "x": 46.4,
-   "y": 22.9,
-   "confidence": "unverified",
-   "questId": 835,
-   "npcId": 3293,
-   "questName": "Securing the Lines",
-   "npcName": "Rezlak",
-   "zoneName": "Durotar",
-   "level": 9
   },
   {
    "id": "turnin-816",
@@ -4869,7 +5043,7 @@
    "level": 10
   },
   {
-   "id": "travel-1411-1454-2",
+   "id": "travel-1411-1454",
    "type": "travel",
    "mapId": 1454,
    "x": 49.5,
@@ -20598,6 +20772,62 @@
    "level": 20
   },
   {
+   "id": "travel-1413-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "turnin-6382",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6382,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "turnin-6541",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 8582,
+   "questName": "Report to Kadrak",
+   "npcName": "Kadrak",
+   "zoneName": "Ashenvale",
+   "level": 20
+  },
+  {
+   "id": "travel-1440-1413",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 35.3,
+   "y": 27.9,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 20
+  },
+  {
    "id": "grind-1413-21",
    "type": "grind",
    "mapId": 1413,
@@ -22513,34 +22743,6 @@
    "level": 22
   },
   {
-   "id": "turnin-6541",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 8582,
-   "questName": "Report to Kadrak",
-   "npcName": "Kadrak",
-   "zoneName": "Ashenvale",
-   "level": 22
-  },
-  {
-   "id": "turnin-6382",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 6382,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 23
-  },
-  {
    "id": "turnin-6542",
    "type": "turnin",
    "mapId": 1440,
@@ -22552,7 +22754,7 @@
    "questName": "Report to Kadrak",
    "npcName": "Kadrak",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 22
   },
   {
    "id": "travel-1440-1442",
@@ -23987,7 +24189,7 @@
    "level": 27
   },
   {
-   "id": "travel-1413-1440",
+   "id": "travel-1413-1440-2",
    "type": "travel",
    "mapId": 1440,
    "x": 11.75,
@@ -25242,20 +25444,6 @@
    "level": 27
   },
   {
-   "id": "gap-6383",
-   "type": "gap",
-   "mapId": 1440,
-   "x": 73,
-   "y": 62.5,
-   "confidence": "unverified",
-   "questId": 6383,
-   "reason": "quest 6383: prereq 235 not in route",
-   "questName": "The Ashenvale Hunt",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 27
-  },
-  {
    "id": "gap-824",
    "type": "gap",
    "mapId": 1440,
@@ -25266,6 +25454,20 @@
    "reason": "quest 824: prereq 1918 not in route",
    "questName": "Je'neu of the Earthen Ring",
    "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "accept-6383",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6383,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
    "zoneName": "Ashenvale",
    "level": 27
   },
@@ -25570,6 +25772,20 @@
      72.8
     ]
    ]
+  },
+  {
+   "id": "turnin-6383",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6383,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
+   "zoneName": "Ashenvale",
+   "level": 27
   },
   {
    "id": "turnin-6441",
