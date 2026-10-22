@@ -30,6 +30,7 @@
 .step .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .xy { font: 14px var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
 .tag { font: 14px var(--font-mono); color: var(--muted); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0 6px; }
+.report { font: 14px var(--font-mono); color: var(--gold); min-height: 24px; display: inline-flex; align-items: center; }
 .tag.warn { color: var(--warn); border-color: var(--warn); }
 .quest { color: var(--quest); font-weight: 600; }
 .npc { color: var(--npc); }

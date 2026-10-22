@@ -160,3 +160,23 @@ export function saveSettings(store: KeyValueStore, settings: Settings): void {
     // Blocked storage: the setting lasts for this page only.
   }
 }
+
+export const REPO_URL = 'https://github.com/Erenkinik/forever-leveling';
+
+/** A new-issue link prefilled with everything needed to find and fix the step. */
+export function reportUrl(route: Pick<Route, 'id' | 'dataBuild'>, step: Step, n: number): string {
+  const text = describeStep(step).map((p) => p.text).join('');
+  const body = [
+    `Route: ${route.id}`,
+    `Step ${n} (${step.id}): ${text}`,
+    step.questId !== undefined ? `Quest: ${step.questId}` : null,
+    step.npcId !== undefined ? `NPC: ${step.npcId}` : null,
+    `Map ${step.mapId} at ${step.x}, ${step.y}`,
+    `Data build: ${route.dataBuild}`,
+    '',
+    'What is wrong? (wrong NPC, wrong place, quest not available, …)',
+    '',
+  ].filter((line) => line !== null).join('\n');
+  const params = new URLSearchParams({ title: `[${route.id}] Step ${n}: ${text}`, body });
+  return `${REPO_URL}/issues/new?${params}`;
+}

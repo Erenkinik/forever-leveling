@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, groupByZone, loadDone, loadSettings, safeStorage, saveDone, saveSettings, storageKey,
+  clusterPins, describeStep, groupByZone, loadDone, loadSettings, reportUrl, safeStorage, saveDone, saveSettings, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import './RouteView.css';
@@ -37,11 +37,13 @@ interface RowProps {
   n: number;
   isDone: boolean;
   isCurrent: boolean;
+  /** Only the current step gets a report link, so the list stays one tab stop per step. */
+  reportHref?: string;
   onToggle: (step: Step, e: MouseEvent<HTMLButtonElement>) => void;
   register: (id: string, el: HTMLLIElement | null) => void;
 }
 
-const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, onToggle, register }: RowProps) {
+const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, onToggle, register }: RowProps) {
   return (
     <li
       id={isCurrent ? 'current-step' : undefined}
@@ -62,6 +64,11 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, onToggle, re
           <span className="xy">{coords(step)}</span>
           {step.type === 'gap' && <span className="tag warn">Not routed</span>}
           {step.confidence === 'unverified' && step.type !== 'gap' && <span className="tag">Unverified</span>}
+          {reportHref && (
+            <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
+              Report this step<span className="sr-only"> (opens GitHub in a new tab)</span>
+            </a>
+          )}
         </span>
       </div>
     </li>
@@ -212,7 +219,8 @@ export default function RouteView({ route }: { route: Route }) {
               <ol>
                 {g.steps.map((s) => (
                   <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}
-                           isCurrent={s === current} onToggle={onRowToggle} register={register} />
+                           isCurrent={s === current} onToggle={onRowToggle} register={register}
+                           reportHref={s === current ? reportUrl(route, s, currentIndex + 1) : undefined} />
                 ))}
               </ol>
             </section>

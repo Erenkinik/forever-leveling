@@ -85,3 +85,17 @@ test('settings round-trip with defaults for missing or broken values', async () 
   mem.set(SETTINGS_KEY, '[1]');
   assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false });
 });
+
+test('reportUrl opens a prefilled GitHub issue for the step', async () => {
+  const { reportUrl } = await import('../../src/lib/steps.ts');
+  const step: Step = { ...base, id: 'accept-783', type: 'accept', questId: 783, questName: 'A Threat Within',
+    npcId: 823, npcName: 'Deputy Willem' };
+  const url = new URL(reportUrl({ id: 'human', dataBuild: '1.60.1.70532' }, step, 14));
+  assert.equal(url.origin + url.pathname, 'https://github.com/Erenkinik/forever-leveling/issues/new');
+  assert.equal(url.searchParams.get('title'), '[human] Step 14: Accept A Threat Within from Deputy Willem');
+  const body = url.searchParams.get('body')!;
+  for (const part of ['Route: human', 'Step 14 (accept-783)', 'Quest: 783', 'NPC: 823', 'Map 1429 at 48.2, 41.7',
+                      'Data build: 1.60.1.70532', 'What is wrong?']) {
+    assert.ok(body.includes(part), part);
+  }
+});

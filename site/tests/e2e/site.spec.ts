@@ -163,3 +163,32 @@ test('high contrast is remembered across pages and reloads', async ({ page }) =>
   await page.goto('/orc/');
   await expect(page.getByLabel('High contrast')).toBeChecked();
 });
+
+test('the current step has a report link to a prefilled GitHub issue', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const links = page.getByRole('link', { name: /Report this step/ });
+  await expect(links).toHaveCount(1);
+  const href = (await links.getAttribute('href'))!;
+  expect(href).toMatch(/^https:\/\/github\.com\/Erenkinik\/forever-leveling\/issues\/new\?title=%5Bhuman%5D\+Step\+1/);
+  await expect(page.locator('li.step.current .report')).toHaveCount(1);
+});
+
+test('pages work under the CSP from dist/_headers', async ({ page }) => {
+  const { readFileSync } = await import('node:fs');
+  const headers = readFileSync(new URL('../../dist/_headers', import.meta.url), 'utf8');
+  const csp = headers.match(/Content-Security-Policy: (.*)/)![1];
+  await page.route('**/*', async (route) => {
+    const res = await route.fetch();
+    await route.fulfill({ response: res, headers: { ...res.headers(), 'content-security-policy': csp } });
+  });
+  const violations: string[] = [];
+  page.on('console', (m) => { if (/Content Security Policy|Refused to/i.test(m.text())) violations.push(m.text()); });
+  await page.goto('/');
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await page.getByLabel('High contrast').check();
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
+  expect(violations).toEqual([]);
+});
