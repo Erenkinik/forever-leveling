@@ -13,9 +13,10 @@ def test_uimaps_has_known_zones():
 
 def test_uimaps_file_shape_is_sorted_numeric():
     doc = json.loads((DATA_DIR / "canonical" / "uimaps.json").read_text(encoding="utf-8"))
-    assert set(doc) == {"build", "maps"}
-    keys = [int(k) for k in doc["maps"]]
-    assert keys == sorted(keys)
+    assert set(doc) == {"build", "maps", "parents"}
+    for table in ("maps", "parents"):
+        keys = [int(k) for k in doc[table]]
+        assert keys == sorted(keys)
 
 
 def test_validate_all_runs_without_raw(tmp_path, monkeypatch):

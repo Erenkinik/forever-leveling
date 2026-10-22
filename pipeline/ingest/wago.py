@@ -46,6 +46,11 @@ def load_uimaps(dir: Path) -> dict[int, str]:
     return {int(r["ID"]): r["Name_lang"] for r in _rows(Path(dir) / "UiMap.csv")}
 
 
+def load_uimap_parents(dir: Path) -> dict[int, int]:
+    """UiMapID -> ParentUiMapID (0 for the root)."""
+    return {int(r["ID"]): int(r["ParentUiMapID"]) for r in _rows(Path(dir) / "UiMap.csv")}
+
+
 def load_quest_xp(dir: Path) -> dict[int, list[int]]:
     """QuestXP ID (quest level) -> [Difficulty_0 .. Difficulty_9]."""
     return {

@@ -139,7 +139,8 @@ def _generate_env(env, confidence="unverified"):
     _, data = env
     start = {"type": "npc", "id": 1001, "name": None, "uiMapId": 1429, "x": 10.0, "y": 10.0}
     quest = {
-        "id": 1, "name": "Q1", "level": 1, "minLevel": 1, "races": None, "classes": None, "prereqs": [],
+        "id": 1, "name": "Q1", "level": 1, "minLevel": 1, "races": None, "classes": None, "factions": None,
+        "prereqs": [],
         "start": start, "end": dict(start),
         "objectives": {"units": [], "items": [], "objects": []},
         "inForever": True, "confidence": confidence,
@@ -470,3 +471,60 @@ def test_route_report_lists_class_ids_and_counts_other_reasons(env):
     report = (data / "reports" / "route-t.md").read_text(encoding="utf-8")
     assert "- class: 2 (kimlikler: 11, 12)\n" in report
     assert "- race: 1\n" in report
+
+
+def test_normalize_writes_uimap_parents(env):
+    _, data = env
+    assert cli.main(["normalize"]) == 0
+    doc = json.loads((data / "canonical" / "uimaps.json").read_text(encoding="utf-8"))
+    assert doc["parents"]["1414"] == 947 and set(doc["parents"]) == set(doc["maps"])
+
+
+def _suggest_env(env):
+    _, data = env
+    canon = data / "canonical"
+    canon.mkdir(parents=True)
+    quests = [
+        {"id": i, "level": lvl, "minLevel": 1, "races": None, "classes": None, "factions": None, "prereqs": [],
+         "inForever": True, "start": {"uiMapId": map_id}}
+        for i, (map_id, lvl) in enumerate([(1429, 5)] * 10 + [(1436, 14)] * 10, start=1)
+    ]
+    (canon / "quests.json").write_text(json.dumps(quests), encoding="utf-8")
+    maps = {"1415": "Eastern Kingdoms", "1429": "Elwynn Forest", "1436": "Westfall"}
+    (canon / "uimaps.json").write_text(json.dumps(
+        {"build": DATA_BUILD, "maps": maps, "parents": {"1415": 947, "1429": 1415, "1436": 1415}}), encoding="utf-8")
+    return data / "zone-order" / "human.yaml"
+
+
+def test_suggest_zones_writes_draft_and_never_overwrites_without_force(env, capsys):
+    out = _suggest_env(env)
+    assert cli.main(["suggest-zones", "human"]) == 0
+    text = out.read_text(encoding="utf-8")
+    assert "- Elwynn Forest" in text and "- Westfall" in text and "reviewed: false" in text
+    assert b"\r\n" not in out.read_bytes()
+    out.write_text("keep me", encoding="utf-8")
+    capsys.readouterr()
+    assert cli.main(["suggest-zones", "human"]) == 1
+    assert "human.yaml" in capsys.readouterr().err and out.read_text(encoding="utf-8") == "keep me"
+    assert cli.main(["suggest-zones", "human", "--force"]) == 0
+    assert out.read_text(encoding="utf-8") == text
+
+
+def test_suggest_zones_rejects_unknown_route_and_missing_parents(env, capsys):
+    out = _suggest_env(env)
+    assert cli.main(["suggest-zones", "skyborne"]) == 1
+    assert "skyborne" in capsys.readouterr().err
+    uimaps = out.parent.parent / "canonical" / "uimaps.json"
+    uimaps.write_text(json.dumps({"build": DATA_BUILD, "maps": {}}), encoding="utf-8")
+    assert cli.main(["suggest-zones", "human"]) == 1
+    assert "normalize" in capsys.readouterr().err
+    assert not out.exists()
+
+
+def test_suggest_zones_never_overwrites_a_reviewed_order(env, capsys):
+    out = _suggest_env(env)
+    out.parent.mkdir(parents=True)
+    reviewed = "route: human\nrace: Human\nfaction: Alliance\nreviewed: true\nzones:\n  - Elwynn Forest\n"
+    out.write_text(reviewed, encoding="utf-8")
+    assert cli.main(["suggest-zones", "human", "--force"]) == 1
+    assert "reviewed" in capsys.readouterr().err and out.read_text(encoding="utf-8") == reviewed

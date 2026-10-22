@@ -1,0 +1,16 @@
+# TASLAK — veriden önerildi (python -m pipeline suggest-zones); Eren gözden geçirecek (§8.2)
+route: dwarf
+race: Dwarf
+faction: Alliance
+reviewed: false
+zones:
+  - Dun Morogh  # median 7, 38 quests, Eastern Kingdoms
+  - Loch Modan  # median 15, 30 quests, Eastern Kingdoms
+  - Westfall  # median 15, 21 quests, Eastern Kingdoms
+  - Redridge Mountains  # median 18, 24 quests, Eastern Kingdoms
+  - Darkshore  # median 16, 46 quests, Kalimdor
+  - The Barrens  # median 18, 17 quests, Kalimdor
+  - Stonetalon Mountains  # median 22, 18 quests, Kalimdor
+  - Ashenvale  # median 25, 36 quests, Kalimdor
+  - Duskwood  # median 25, 54 quests, Eastern Kingdoms
+  - Wetlands  # median 26, 32 quests, Eastern Kingdoms

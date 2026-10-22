@@ -1,0 +1,12 @@
+# TASLAK — veriden önerildi (python -m pipeline suggest-zones); Eren gözden geçirecek (§8.2)
+route: undead
+race: Undead
+faction: Horde
+reviewed: false
+zones:
+  - Tirisfal Glades  # median 8, 42 quests, Eastern Kingdoms
+  - Silverpine Forest  # median 14, 31 quests, Eastern Kingdoms
+  - The Barrens  # median 18, 74 quests, Kalimdor
+  - Stonetalon Mountains  # median 25, 25 quests, Kalimdor
+  - Ashenvale  # median 25, 21 quests, Kalimdor
+  - Thousand Needles  # median 29, 19 quests, Kalimdor

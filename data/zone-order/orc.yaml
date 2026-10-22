@@ -1,0 +1,11 @@
+# TASLAK — veriden önerildi (python -m pipeline suggest-zones); Eren gözden geçirecek (§8.2)
+route: orc
+race: Orc
+faction: Horde
+reviewed: false
+zones:
+  - Durotar  # median 8, 33 quests, Kalimdor
+  - The Barrens  # median 18, 75 quests, Kalimdor
+  - Stonetalon Mountains  # median 25, 25 quests, Kalimdor
+  - Ashenvale  # median 25, 21 quests, Kalimdor
+  - Thousand Needles  # median 29, 19 quests, Kalimdor

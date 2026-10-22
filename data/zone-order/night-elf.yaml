@@ -1,0 +1,13 @@
+# TASLAK — veriden önerildi (python -m pipeline suggest-zones); Eren gözden geçirecek (§8.2)
+route: night-elf
+race: Night Elf
+faction: Alliance
+reviewed: false
+zones:
+  - Teldrassil  # median 8, 54 quests, Kalimdor
+  - Darkshore  # median 16, 46 quests, Kalimdor
+  - The Barrens  # median 18, 17 quests, Kalimdor
+  - Stonetalon Mountains  # median 22, 18 quests, Kalimdor
+  - Ashenvale  # median 25, 36 quests, Kalimdor
+  - Duskwood  # median 25, 54 quests, Eastern Kingdoms
+  - Wetlands  # median 26, 32 quests, Eastern Kingdoms

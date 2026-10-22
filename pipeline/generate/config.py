@@ -36,3 +36,35 @@ BETA_BLOCKING_RULES = (
     "unknown-quest",
     "prereq-not-done",
 )
+
+# Zone order suggestions (pipeline/generate/zone_suggest.py). A draft for a human to review, spec 8.2.
+START_ZONES: dict[str, str] = {
+    "Human": "Elwynn Forest",
+    "Dwarf": "Dun Morogh",
+    "Gnome": "Dun Morogh",
+    "Night Elf": "Teldrassil",
+    "Orc": "Durotar",
+    "Troll": "Durotar",
+    "Undead": "Tirisfal Glades",
+    "Tauren": "Mulgore",
+}
+CITY_ZONES = frozenset({"Stormwind City", "Ironforge", "Darnassus", "Orgrimmar", "Undercity", "Thunder Bluff"})
+CONTINENTS: dict[int, str] = {1414: "Kalimdor", 1415: "Eastern Kingdoms"}
+# A zone needs at least this many usable quests of known level to be suggested.
+MIN_ZONE_QUESTS = 10
+# Picking the next zone: lowest median level, plus this many levels for a zone on the other continent.
+CONTINENT_SWITCH_PENALTY = 5
+# A zone whose median is more than this below the highest median reached so far is dropped (too low).
+ZONE_BEHIND = 2
+
+# Route id -> (race, faction) for routes whose zone order can be suggested. Skyborne needs manual data.
+ROUTES: dict[str, tuple[str, str]] = {
+    "human": ("Human", "Alliance"),
+    "dwarf": ("Dwarf", "Alliance"),
+    "gnome": ("Gnome", "Alliance"),
+    "night-elf": ("Night Elf", "Alliance"),
+    "orc": ("Orc", "Horde"),
+    "troll": ("Troll", "Horde"),
+    "undead": ("Undead", "Horde"),
+    "tauren": ("Tauren", "Horde"),
+}

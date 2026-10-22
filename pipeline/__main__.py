@@ -42,10 +42,15 @@ def _uimaps_path() -> Path:
 
 
 def _build_uimaps() -> str:
-    from pipeline.ingest.wago import load_uimaps
+    from pipeline.ingest.wago import load_uimap_parents, load_uimaps
 
     maps = load_uimaps(RAW_DIR / "wago" / DATA_BUILD)
-    doc = {"build": DATA_BUILD, "maps": {str(k): maps[k] for k in sorted(maps)}}
+    parents = load_uimap_parents(RAW_DIR / "wago" / DATA_BUILD)
+    doc = {
+        "build": DATA_BUILD,
+        "maps": {str(k): maps[k] for k in sorted(maps)},
+        "parents": {str(k): parents[k] for k in sorted(parents)},
+    }
     return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
 
 
@@ -137,8 +142,18 @@ def cmd_crosscheck(_args) -> int:
     return 0
 
 
+def _route_levels(route, quests: dict[int, dict], xp_table: dict[int, list[int]]) -> dict[str, int] | None:
+    """Shared level estimate for check_route; None for a route the schema rejects (check_route reports it)."""
+    from pipeline.generate.xpsim import estimate_levels
+    from pipeline.schema import validate as schema_validate
+
+    if schema_validate("route", route):
+        return None
+    return estimate_levels(route, quests, xp_table)
+
+
 def cmd_validate(args) -> int:
-    from pipeline.canonical import load_uimaps_canonical
+    from pipeline.canonical import load_questxp_canonical, load_uimaps_canonical
     from pipeline.generate.config import BETA_BLOCKING_RULES
     from pipeline.validate.semantic import check_route
 
@@ -154,11 +169,13 @@ def cmd_validate(args) -> int:
     if not quests_path.is_file():
         print(f"missing canonical quests: {quests_path} (run normalize)", file=sys.stderr)
         return 1
-    if not _uimaps_path().is_file():
-        print(f"missing canonical uimaps: {_uimaps_path()} (run normalize)", file=sys.stderr)
-        return 1
+    for label, path in (("uimaps", _uimaps_path()), ("questxp", _questxp_path())):
+        if not path.is_file():
+            print(f"missing canonical {label}: {path} (run normalize)", file=sys.stderr)
+            return 1
     quests = {q["id"]: q for q in json.loads(quests_path.read_text(encoding="utf-8"))}
     known_maps = frozenset(load_uimaps_canonical(DATA_DIR))
+    xp_table = load_questxp_canonical(DATA_DIR)
     total = 0
     blocking = 0
     for path in paths:
@@ -167,7 +184,7 @@ def cmd_validate(args) -> int:
         except (OSError, ValueError) as exc:
             print(f"cannot read route file {path}: {exc}", file=sys.stderr)
             return 1
-        issues = check_route(route, quests, known_maps)
+        issues = check_route(route, quests, known_maps, levels=_route_levels(route, quests, xp_table))
         # Tier-aware like cmd_generate; a missing or invalid tier is treated as full (strict).
         beta = isinstance(route, dict) and route.get("releaseTier") == "beta"
         for issue in issues:
@@ -292,10 +309,11 @@ def cmd_generate(args) -> int:
         print(str(exc), file=sys.stderr)
         return 1
     quests = {q["id"]: q for q in json.loads(quests_path.read_text(encoding="utf-8"))}
+    xp_table = load_questxp_canonical(DATA_DIR)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     try:
         generated, report = generate_route(
-            order, quests, load_spawns_canonical(DATA_DIR), load_questxp_canonical(DATA_DIR), args.tier, DATA_BUILD, now
+            order, quests, load_spawns_canonical(DATA_DIR), xp_table, args.tier, DATA_BUILD, now
         )
     except GenerationError as exc:
         print(str(exc), file=sys.stderr)
@@ -305,7 +323,7 @@ def cmd_generate(args) -> int:
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    issues = check_route(route, quests, frozenset(uimaps))
+    issues = check_route(route, quests, frozenset(uimaps), levels=_route_levels(route, quests, xp_table))
     blocking = issues if args.tier == "full" else [i for i in issues if i.rule in BETA_BLOCKING_RULES]
     if blocking:
         print("\n".join(f"[{i.rule}] {i.stepId or '-'}: {i.message}" for i in blocking), file=sys.stderr)
@@ -391,6 +409,58 @@ def cmd_export(args) -> int:
     return 0
 
 
+def _is_reviewed_order(path: Path) -> bool:
+    """True when a zone order file parses and says `reviewed: true`; unreadable files are not reviewed."""
+    import yaml
+
+    try:
+        doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError):
+        return False
+    return isinstance(doc, dict) and doc.get("reviewed") is True
+
+
+def cmd_suggest_zones(args) -> int:
+    from pipeline.canonical import load_uimap_parents_canonical, load_uimaps_canonical
+    from pipeline.generate.config import ROUTES
+    from pipeline.generate.zone_suggest import render_yaml, suggest_zones
+
+    routes = sorted(ROUTES) if args.all else args.routes
+    unknown = [r for r in routes if r not in ROUTES]
+    if not routes or unknown:
+        print(f"unknown or missing route {unknown}; known: {', '.join(sorted(ROUTES))}", file=sys.stderr)
+        return 1
+    for label, path in (("quests", _canonical_path()), ("uimaps", _uimaps_path())):
+        if not path.is_file():
+            print(f"missing canonical {label}: {path} (run normalize)", file=sys.stderr)
+            return 1
+    try:
+        quests = {q["id"]: q for q in json.loads(_canonical_path().read_text(encoding="utf-8"))}
+        names = load_uimaps_canonical(DATA_DIR)
+        parents = load_uimap_parents_canonical(DATA_DIR)
+        drafts = []
+        for route in routes:
+            race, faction = ROUTES[route]
+            stats = suggest_zones(quests, names, parents, race, faction)
+            drafts.append((route, stats, render_yaml(route, race, faction, stats)))
+    except ValueError as exc:
+        print(f"cannot suggest zones: {exc}", file=sys.stderr)
+        return 1
+    out_dir = DATA_DIR / "zone-order"
+    existing = [out_dir / f"{r}.yaml" for r, _, _ in drafts if (out_dir / f"{r}.yaml").exists()]
+    if existing and not args.force:
+        print(f"refusing to overwrite {', '.join(p.name for p in existing)} (use --force)", file=sys.stderr)
+        return 1
+    reviewed = [p for p in existing if _is_reviewed_order(p)]
+    if reviewed:
+        print(f"refusing to overwrite reviewed zone orders {', '.join(p.name for p in reviewed)}", file=sys.stderr)
+        return 1
+    for route, stats, text in drafts:
+        _write_text_atomic(out_dir / f"{route}.yaml", text)
+        print(f"{route}: " + " -> ".join(f"{s.name} ({s.median:g})" for s in stats))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -415,6 +485,11 @@ def main(argv: list[str] | None = None) -> int:
     exp.add_argument("--all", action="store_true", help="export every data/routes/*.json except *.generated.json")
     exp.add_argument("route", nargs="?", help="a single route name, e.g. human")
     exp.set_defaults(func=cmd_export)
+    sug = sub.add_parser("suggest-zones", help="write draft data/zone-order/<route>.yaml from quest data")
+    sug.add_argument("--all", action="store_true", help="every route in pipeline/generate/config.py ROUTES")
+    sug.add_argument("--force", action="store_true", help="overwrite existing zone order files")
+    sug.add_argument("routes", nargs="*", help="route ids, e.g. dwarf orc")
+    sug.set_defaults(func=cmd_suggest_zones)
     args = parser.parse_args(argv)
     return args.func(args)
 
