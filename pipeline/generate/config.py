@@ -68,3 +68,14 @@ ROUTES: dict[str, tuple[str, str]] = {
     "undead": ("Undead", "Horde"),
     "tauren": ("Tauren", "Horde"),
 }
+
+# Kill XP estimate (a guess; open data has no objective counts). A kill objective is taken as this many kills,
+# a collect objective as this many kills (drop chance), a use objective as none. Mob XP: vanilla same-level
+# formula 45 + 5 * level, with the mob at the quest's level.
+KILLS_PER_KILL_OBJECTIVE = 8
+KILLS_PER_COLLECT = 10
+
+# Travel: a map change across continents is a boat (Alliance) or zeppelin (Horde) trip. Teldrassil is an
+# island, so going to or from it is a boat even within Kalimdor. Flight paths are not modelled yet.
+CONTINENT_TRAVEL = {"Alliance": "boat", "Horde": "zeppelin"}
+ISLAND_MAPS = frozenset({1438})  # Teldrassil

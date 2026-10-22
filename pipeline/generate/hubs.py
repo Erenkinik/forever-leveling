@@ -38,9 +38,16 @@ def _level(qid: int, q: dict) -> float:
     return level
 
 
-def unplaced(quests: dict[int, dict], graph: QuestGraph, zones: list[int]) -> list[int]:
-    """Quests in route order that build_hubs does not place (missing x, y or uiMapId, or map not in zones)."""
-    return [qid for qid in graph.order if not _is_placed(quests[qid], zones)]
+def _is_pulled(qid: int, q: dict, pulled) -> bool:
+    start = q.get("start") or {}
+    return qid in pulled and all(start.get(k) is not None for k in ("uiMapId", "x", "y"))
+
+
+def unplaced(quests: dict[int, dict], graph: QuestGraph, zones: list[int], pulled=frozenset()) -> list[int]:
+    """Quests in route order that build_hubs does not place (missing x, y or uiMapId, or map not in zones and
+    not a located pulled-in prereq)."""
+    return [qid for qid in graph.order
+            if not _is_placed(quests[qid], zones) and not _is_pulled(qid, quests[qid], pulled)]
 
 
 def _cluster(ids: list[int], quests: dict[int, dict]) -> list[list[int]]:
@@ -81,11 +88,13 @@ def _order_zone(hubs: list[Hub], first_id: dict[int, int]) -> list[Hub]:
     return ordered
 
 
-def build_hubs(quests: dict[int, dict], graph: QuestGraph, zones: list[int]) -> list[Hub]:
+def build_hubs(quests: dict[int, dict], graph: QuestGraph, zones: list[int], pulled=frozenset()) -> list[Hub]:
     """Hubs in zone order, then level order. No quest precedes its prereq.
 
     Centre and avgLevel describe the cluster of start points before prereq moves, so the
     hub order stays fixed while quests move to later hubs. Hubs left empty by moves are dropped.
+    A pulled-in prereq (start outside the zones) joins the hub of its first dependent, or the first
+    hub when no dependent is placed; the route detours to it there.
     """
     pos_in_order = {qid: i for i, qid in enumerate(graph.order)}
     placed = [q for q in graph.order if _is_placed(quests[q], zones)]
@@ -106,6 +115,15 @@ def build_hubs(quests: dict[int, dict], graph: QuestGraph, zones: list[int]) -> 
         hubs.extend(_order_zone(zone_hubs, first_id))
 
     hub_index = {qid: n for n, hub in enumerate(hubs) for qid in hub.quests}
+    extra = [q for q in graph.order if _is_pulled(q, quests[q], pulled) and q not in hub_index]
+    if extra and hubs:
+        dependents: dict[int, list[int]] = {}
+        for qid in graph.order:
+            for p in quests[qid].get("prereqs") or []:
+                dependents.setdefault(p, []).append(qid)
+        for qid in reversed(extra):  # dependents first, so chains of pulled quests resolve
+            hub_index[qid] = min((hub_index[d] for d in dependents.get(qid, []) if d in hub_index), default=0)
+        placed = [q for q in graph.order if q in hub_index]
     changed = True
     while changed:
         changed = False

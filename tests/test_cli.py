@@ -148,7 +148,8 @@ def _generate_env(env, confidence="unverified"):
     canon = data / "canonical"
     canon.mkdir(parents=True)
     (canon / "quests.json").write_text(json.dumps([quest]), encoding="utf-8")
-    (canon / "uimaps.json").write_text(json.dumps({"build": DATA_BUILD, "maps": {"1429": "Elwynn Forest"}}),
+    uimaps = {"build": DATA_BUILD, "maps": {"1429": "Elwynn Forest"}, "parents": {"1429": 1415}}
+    (canon / "uimaps.json").write_text(json.dumps(uimaps),
                                        encoding="utf-8")
     (canon / "spawns.json").write_text(json.dumps({"units": {}, "objects": {}, "items": {}}), encoding="utf-8")
     (canon / "questxp.json").write_text(

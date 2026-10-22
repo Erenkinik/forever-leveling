@@ -165,3 +165,12 @@ def test_missing_level_and_min_level_raises_value_error_with_id():
     q["minLevel"] = None
     with pytest.raises(ValueError, match="quest 7"):
         build_hubs(_quests(q), _graph(_quests(q)), [10])
+
+
+def test_pulled_quest_joins_the_hub_of_its_first_dependent():
+    quests = _quests(_q(1, 10, 10, prereqs=[3]), _q(2, 80, 80, level=5, prereqs=[3]), _q(3, 50, 50, map_id=99))
+    graph = _graph(quests, [3, 1, 2])
+    hubs = build_hubs(quests, graph, [10], pulled={3})
+    assert [h.quests for h in hubs] == [[3, 1], [2]]
+    assert unplaced(quests, graph, [10], pulled={3}) == []
+    assert unplaced(quests, graph, [10]) == [3]

@@ -2,20 +2,20 @@
 
 - Veri sürümü: 1.60.1.70532
 - Yayın seviyesi: beta
-- Görevlerle ulaşılan tahmini seviye: 27 (yaratık XP'si hesaba katılmıyor)
+- Görevlerle ulaşılan tahmini seviye: 27 (görev XP'si + hedeflerdeki tahmini yaratık XP'si)
 - Tahmini son seviye: 30
-- Boşluk (gap) adımı: 46
+- Boşluk (gap) adımı: 41
 
 ## Adım sayıları
 
-- accept: 140
-- turnin: 140
-- complete: 90
+- accept: 153
+- turnin: 153
+- complete: 95
 - travel: 48
 - sethearth: 0
 - train: 0
-- grind: 7
-- gap: 46
+- grind: 3
+- gap: 41
 
 ## Elenen görevler (nedene göre)
 
@@ -25,16 +25,20 @@
 - not-in-forever: 771
 - over-cap: 2252
 - race: 200
-- zone: 271
+- zone: 263
 - zone-outlier: 26 (kimlikler: 742, 846, 849, 873, 874, 879, 906, 914, 962, 1040, 1064, 1065, 1086, 1095, 1130, 1131, 1153, 1195, 1196, 1221, 3369, 5088, 7789, 7821, 8370, 8426)
+
+## Rotaya çekilen önkoşullar (başka bölgede başlıyor)
+
+- 8 görev: 806, 809, 823, 827, 828, 829, 840, 1061
 
 ## Boşluk nedenleri (sayıyla; N bir sayıyı gösterir)
 
 - quest N: end location unknown: 5
 - quest N: objective item N location unknown: 12
 - quest N: objective unit N location unknown: 3
-- quest N: prereq N is a gap: 9
-- quest N: prereq N not in route: 17
+- quest N: prereq N is a gap: 7
+- quest N: prereq N not in route: 14
 
 ## Engellemeyen denetim bulguları (kurala göre)
 

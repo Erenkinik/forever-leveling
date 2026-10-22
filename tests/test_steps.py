@@ -255,10 +255,28 @@ def test_zone_change_emits_travel():
                       "mode": "walk", "radius": 5, "confidence": "unverified"}
 
 
-def test_turnin_on_other_map_emits_travel_both_ways():
-    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 90, 90, level=2))
+def test_off_map_turnin_of_a_needed_quest_happens_at_once():
+    # Quest 3 needs quest 1, so quest 1 is turned in on map 20 before the route goes on.
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 90, 90, level=2),
+                     _q(3, 92, 92, level=3, prereqs=[1]))
     route, _ = _gen(quests)
-    assert _ids(route) == ["accept-1", "travel-10-20", "turnin-1", "travel-20-10", "accept-2", "turnin-2"]
+    assert _ids(route)[:5] == ["accept-1", "travel-10-20", "turnin-1", "travel-20-10", "accept-2"]
+
+
+def test_off_map_turnin_of_a_leaf_quest_waits_until_the_zone_is_left():
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=99)), _q(2, 90, 90, level=2),
+                     _q(3, 10, 10, map_id=20, level=3))
+    route, report = _gen(quests)
+    assert _ids(route) == ["accept-1", "accept-2", "turnin-2", "travel-10-99", "turnin-1", "travel-99-20",
+                           "accept-3", "turnin-3"]
+    assert report["stepCounts"]["travel"] == 2
+
+
+def test_deferred_turnin_is_done_when_the_route_reaches_that_map_anyway():
+    # Quest 1 ends in zone 20, which the route visits next: no extra trip before leaving zone 10.
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 10, 10, map_id=20, level=2))
+    route, _ = _gen(quests)
+    assert _ids(route) == ["accept-1", "travel-10-20", "turnin-1", "accept-2", "turnin-2"]
 
 
 def test_grind_inserted_when_underleveled():
@@ -304,17 +322,18 @@ def test_step_ids_are_stable():
         qs = [
             _q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)),
             _q(2, 90, 90, level=2, end=_npc(9, 50, 50, map_id=20)),
+            _q(4, 30, 90, level=4, prereqs=[1, 2]),  # needs both, so their turn-ins are not deferred
         ]
         return _quests(*qs, *extra)
 
     route, _ = _gen(quests([]))
-    assert _ids(route) == [
+    assert _ids(route)[:7] == [
         "accept-1", "travel-10-20", "turnin-1", "travel-20-10", "accept-2", "travel-10-20-2", "turnin-2",
     ]
     assert route == _gen(quests([]))[0]
     # A quest in an unrelated later hub does not renumber the existing steps.
     bigger, _ = _gen(quests([_q(3, 60, 60, map_id=20, level=3)]))
-    assert _ids(bigger)[:7] == _ids(route)
+    assert _ids(bigger)[:7] == _ids(route)[:7]
 
 
 def test_step_confidence_follows_quest():
@@ -411,3 +430,80 @@ def test_no_final_grind_when_quests_reach_cap():
     route, report = generate_route(ORDER, _quests(_q(1)), _spawns(), rich, "beta", "1.60.1.70532", NOW)
     assert not any(s["type"] == "grind" for s in route["steps"])
     assert report["questLevel"] == report["estimatedFinalLevel"] == 30
+
+
+def test_off_route_prereq_is_done_before_its_dependent():
+    quests = _quests(_q(1, 10, 10, prereqs=[2]), _q(2, 40, 40, map_id=99))
+    route, report = _gen(quests)
+    ids = _ids(route)
+    assert ids == ["accept-2", "turnin-2", "travel-99-10", "accept-1", "turnin-1"]
+    assert report["pulledIn"] == [2]
+    assert report["gaps"] == 0
+
+
+def test_pulled_prereq_that_is_itself_a_gap_is_dropped_again():
+    # Quest 2 starts off route but its objective has no known location: pulling it in buys nothing.
+    quests = _quests(_q(1, 10, 10, prereqs=[2]), _q(2, 40, 40, map_id=99, units=[555]))
+    route, report = _gen(quests)
+    assert [s["id"] for s in route["steps"]] == ["gap-1"]
+    assert _step(route, "gap-1")["reason"] == "quest 1: prereq 2 not in route"
+    assert report["pulledIn"] == []
+
+
+def test_travel_across_continents_is_a_boat_or_zeppelin():
+    quests = _quests(_q(1, 10, 10), _q(2, 20, 20, map_id=20, level=2))
+    continents = {10: 1415, 20: 1414}
+    route, _ = generate_route(ORDER, quests, _spawns(), XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents=continents)
+    assert _step(route, "travel-10-20")["mode"] == "boat"
+    horde = ZoneOrder("t", "Orc", "Horde", False, [10, 20])
+    route, _ = generate_route(horde, quests, _spawns(), XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents=continents)
+    assert _step(route, "travel-10-20")["mode"] == "zeppelin"
+    route, _ = generate_route(ORDER, quests, _spawns(), XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents={10: 1415, 20: 1415})
+    assert _step(route, "travel-10-20")["mode"] == "walk"
+
+
+def test_travel_to_or_from_teldrassil_is_a_boat():
+    order = ZoneOrder("t", "Night Elf", "Alliance", False, [1438, 20])
+    quests = _quests(_q(1, 10, 10, map_id=1438), _q(2, 20, 20, map_id=20, level=2))
+    route, _ = generate_route(order, quests, _spawns(), XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents={1438: 1414, 20: 1414})
+    assert _step(route, "travel-1438-20")["mode"] == "boat"
+
+
+def test_complete_location_stays_on_the_quest_continent():
+    # Map 20 (another continent) has more points, but the quest starts on map 10's continent.
+    quests = _quests(_q(1, units=[100], end=_npc(9, 50, 50, map_id=30)))
+    spawns = _spawns(units={100: [[20, 1.0, 1.0], [20, 3.0, 3.0], [40, 5.0, 5.0]]})
+    wide = ZoneOrder("t", "Human", "Alliance", False, [10, 20, 40])
+    route, _ = generate_route(wide, quests, spawns, XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents={10: 1415, 30: 1415, 40: 1415, 20: 1414})
+    c = _step(route, "complete-1")
+    assert (c["mapId"], c["x"], c["y"]) == (40, 5.0, 5.0)
+    # Only points on the other continent: a gap, not an ocean crossing.
+    spawns = _spawns(units={100: [[20, 1.0, 1.0]]})
+    route, _ = generate_route(wide, quests, spawns, XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents={10: 1415, 30: 1415, 40: 1415, 20: 1414})
+    assert _step(route, "gap-1")["reason"] == "quest 1: objective located only off-route"
+
+
+def test_pulled_prereq_whose_dependents_are_all_gaps_is_dropped():
+    # Quest 1 needs 2 (pulled from map 99) and 3, which is not on the route: 1 stays a gap, so the detour
+    # to quest 2 buys nothing.
+    quests = _quests(_q(1, 10, 10, prereqs=[2, 3]), _q(2, 40, 40, map_id=99), _q(3, 5, 5, map_id=98))
+    quests[3]["start"]["uiMapId"] = None  # 3 cannot be pulled: start unknown
+    route, report = _gen(quests)
+    assert [s["id"] for s in route["steps"]] == ["gap-1"]
+    assert report["pulledIn"] == []
+
+
+def test_objective_of_an_island_quest_stays_on_the_island():
+    order = ZoneOrder("t", "Night Elf", "Alliance", False, [1438, 20])
+    quests = _quests(_q(1, 10, 10, map_id=1438, units=[100]))
+    # The objective is only on map 20, across the water: a gap, not two boat trips.
+    spawns = _spawns(units={100: [[20, 1.0, 1.0], [20, 3.0, 3.0]]})
+    route, _ = generate_route(order, quests, spawns, XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
+                              continents={1438: 1414, 20: 1414})
+    assert _step(route, "gap-1")["reason"] == "quest 1: objective located only off-route"

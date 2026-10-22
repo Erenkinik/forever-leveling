@@ -222,7 +222,8 @@ def _render_route_report(route: dict, report: dict, issues: list) -> str:
         "",
         f"- Veri sürümü: {route['dataBuild']}",
         f"- Yayın seviyesi: {route['releaseTier']}",
-        f"- Görevlerle ulaşılan tahmini seviye: {report['questLevel']} (yaratık XP'si hesaba katılmıyor)",
+        f"- Görevlerle ulaşılan tahmini seviye: {report['questLevel']} "
+        "(görev XP'si + hedeflerdeki tahmini yaratık XP'si)",
         f"- Tahmini son seviye: {report['estimatedFinalLevel']}",
         f"- Boşluk (gap) adımı: {report['gaps']}",
         "",
@@ -236,6 +237,9 @@ def _render_route_report(route: dict, report: dict, issues: list) -> str:
         f"- {reason}: {n}" + (f" (kimlikler: {', '.join(map(str, listed[reason]))})" if reason in listed else "")
         for reason, n in sorted(report["excluded"].items())
     ] or ["- yok"]
+    pulled = report.get("pulledIn", [])
+    lines += ["", "## Rotaya çekilen önkoşullar (başka bölgede başlıyor)", ""]
+    lines += [f"- {len(pulled)} görev: {', '.join(map(str, pulled))}"] if pulled else ["- yok"]
     lines += ["", "## Boşluk nedenleri (sayıyla; N bir sayıyı gösterir)", ""]
     lines += [f"- {reason}: {n}" for reason, n in sorted(gap_reasons.items())] or ["- yok"]
     lines += ["", "## Engellemeyen denetim bulguları (kurala göre)", ""]
@@ -282,7 +286,9 @@ def _keep_committed_generated_at(out: Path, text: str) -> str:
 def cmd_generate(args) -> int:
     from datetime import datetime, timezone
 
-    from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
+    from pipeline.canonical import (
+        load_questxp_canonical, load_spawns_canonical, load_uimap_parents_canonical, load_uimaps_canonical,
+    )
     from pipeline.generate import GenerationError
     from pipeline.generate.config import BETA_BLOCKING_RULES
     from pipeline.generate.overrides import apply_overrides, load_overrides
@@ -314,9 +320,10 @@ def cmd_generate(args) -> int:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     try:
         generated, report = generate_route(
-            order, quests, load_spawns_canonical(DATA_DIR), xp_table, args.tier, DATA_BUILD, now
+            order, quests, load_spawns_canonical(DATA_DIR), xp_table, args.tier, DATA_BUILD, now,
+            continents=load_uimap_parents_canonical(DATA_DIR),
         )
-    except GenerationError as exc:
+    except (GenerationError, ValueError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
 
@@ -367,7 +374,7 @@ def cmd_generate(args) -> int:
 
 
 def cmd_export(args) -> int:
-    from pipeline.canonical import load_spawns_canonical, load_uimaps_canonical
+    from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
     from pipeline.export.lua import to_lua
     from pipeline.export.site import to_site_json
 
@@ -383,13 +390,15 @@ def cmd_export(args) -> int:
     if not paths:
         print("0 routes exported")
         return 0
-    for label, path in (("quests", _canonical_path()), ("uimaps", _uimaps_path()), ("spawns", _spawns_path())):
+    for label, path in (("quests", _canonical_path()), ("uimaps", _uimaps_path()), ("spawns", _spawns_path()),
+                        ("questxp", _questxp_path())):
         if not path.is_file():
             print(f"missing canonical {label}: {path} (run normalize)", file=sys.stderr)
             return 1
     quests = {q["id"]: q for q in json.loads(_canonical_path().read_text(encoding="utf-8"))}
     uimaps = load_uimaps_canonical(DATA_DIR)
     spawns = load_spawns_canonical(DATA_DIR)
+    xp_table = load_questxp_canonical(DATA_DIR)
     root = DATA_DIR.parent
     outputs = []
     for path in paths:
@@ -399,7 +408,8 @@ def cmd_export(args) -> int:
             print(f"cannot read route file {path}: {exc}", file=sys.stderr)
             return 1
         try:
-            outputs.append((path.stem, _json_text(to_site_json(route, quests, spawns, uimaps)), to_lua(route)))
+            site = to_site_json(route, quests, spawns, uimaps, _route_levels(route, quests, xp_table))
+            outputs.append((path.stem, _json_text(site), to_lua(route)))
         except (ValueError, KeyError, TypeError, AttributeError) as exc:
             print(f"cannot export route file {path}: {type(exc).__name__}: {exc}", file=sys.stderr)
             return 1

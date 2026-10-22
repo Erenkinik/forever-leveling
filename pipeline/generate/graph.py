@@ -4,7 +4,7 @@ import statistics
 from dataclasses import dataclass, field
 
 from pipeline.generate import GenerationError
-from pipeline.generate.config import LEVEL_CAP, ZONE_OUTLIER_SPREAD
+from pipeline.generate.config import ISLAND_MAPS, LEVEL_CAP, ZONE_OUTLIER_SPREAD
 from pipeline.generate.zone_order import ZoneOrder
 
 REASONS = ("not-in-forever", "level-unknown", "over-cap", "race", "faction", "class", "zone", "zone-outlier")
@@ -14,6 +14,8 @@ REASONS = ("not-in-forever", "level-unknown", "over-cap", "race", "faction", "cl
 class Selection:
     quests: dict[int, dict]
     excluded: dict[str, list[int]] = field(default_factory=dict)
+    # Prereqs excluded only because they start outside the route zones, pulled back in (located starts).
+    pulled: set[int] = field(default_factory=set)
 
 
 @dataclass
@@ -59,10 +61,67 @@ def _zone_outliers(selected: dict[int, dict]) -> list[int]:
     ]
 
 
-def select_quests(quests: dict[int, dict], order: ZoneOrder) -> Selection:
+def _has_start_point(q: dict) -> bool:
+    start = q.get("start") or {}
+    return all(start.get(k) is not None for k in ("uiMapId", "x", "y"))
+
+
+def _short_detour(dependent: dict, prereq: dict, continents: dict[int, int] | None) -> bool:
+    """True when the prereq starts on the dependent's continent and not on an island (no boat trip)."""
+    a, b = dependent["start"].get("uiMapId"), prereq["start"]["uiMapId"]
+    if b in ISLAND_MAPS and a not in ISLAND_MAPS:
+        return False
+    if continents is None:
+        return True
+    return continents.get(a) is not None and continents.get(a) == continents.get(b)
+
+
+def _pull_prereqs(quests: dict[int, dict], selected: dict[int, dict], excluded: dict[str, list[int]],
+                  continents: dict[int, int] | None) -> set[int]:
+    """Bring back prereqs of selected quests that were excluded only for starting outside the route zones.
+
+    Without them the whole chain would be a gap; with a located start on the same continent the route can
+    detour to them. Prereqs of pulled quests are pulled too.
+    """
+    off_route = set(excluded.get("zone", []))
+    pulled: set[int] = set()
+    queue = list(selected)
+    while queue:
+        dependent = quests[queue.pop()]
+        for p in dependent.get("prereqs") or []:
+            if p in off_route and _has_start_point(quests[p]) and _short_detour(dependent, quests[p], continents):
+                off_route.discard(p)
+                selected[p] = quests[p]
+                pulled.add(p)
+                queue.append(p)
+    if off_route:
+        excluded["zone"] = sorted(off_route)
+    else:
+        excluded.pop("zone", None)
+    return pulled
+
+
+def drop_pulled(sel: Selection, drop: set[int]) -> Selection:
+    """Undo pulling `drop` back in, and any pulled quest that is then no selected quest's prereq."""
+    quests = dict(sel.quests)
+    pulled = set(sel.pulled)
+    excluded = {k: list(v) for k, v in sel.excluded.items()}
+    while drop:
+        for qid in drop:
+            quests.pop(qid, None)
+            pulled.discard(qid)
+            excluded.setdefault("zone", []).append(qid)
+        needed = {p for q in quests.values() for p in q.get("prereqs") or []}
+        drop = {qid for qid in pulled if qid not in needed}
+    excluded["zone"] = sorted(excluded["zone"])
+    return Selection(quests, excluded, pulled)
+
+
+def select_quests(quests: dict[int, dict], order: ZoneOrder, continents: dict[int, int] | None = None) -> Selection:
     """Keep quests usable on the route; each excluded quest is counted under its first failing reason.
 
-    The zone-outlier check runs last, over the quests that passed every other filter.
+    The zone-outlier check runs over the quests that passed every other filter; then located prereqs
+    that start outside the route zones are pulled back in (Selection.pulled).
     """
     selected: dict[int, dict] = {}
     excluded: dict[str, list[int]] = {}
@@ -77,7 +136,8 @@ def select_quests(quests: dict[int, dict], order: ZoneOrder) -> Selection:
         excluded["zone-outlier"] = outliers
         for qid in outliers:
             del selected[qid]
-    return Selection(selected, excluded)
+    pulled = _pull_prereqs(quests, selected, excluded, continents)
+    return Selection(dict(sorted(selected.items())), excluded, pulled)
 
 
 def _cycle_members(deps: dict[int, set[int]]) -> list[int]:

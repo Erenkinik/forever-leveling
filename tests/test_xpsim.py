@@ -73,3 +73,26 @@ def test_grind_never_lowers_the_level():
     route = {"levelRange": [1, 30], "steps": [_step("g1", "grind", untilLevel=8), _step("g2", "grind", untilLevel=4),
                                               _step("end", "travel")]}
     assert estimate_levels(route, {}, {})["end"] == 8
+
+
+def test_kill_xp_counts_kill_and_collect_objectives():
+    from pipeline.generate.config import KILLS_PER_COLLECT, KILLS_PER_KILL_OBJECTIVE
+    from pipeline.generate.xpsim import kill_xp, mob_xp
+
+    assert mob_xp(1) == 50 and mob_xp(10) == 95
+    q = {"level": 10, "minLevel": 8, "objectives": {"units": [1, 2], "items": [3], "objects": [4]}}
+    assert kill_xp(q) == (2 * KILLS_PER_KILL_OBJECTIVE + KILLS_PER_COLLECT) * mob_xp(10)
+    assert kill_xp({"level": None, "minLevel": 4, "objectives": {"units": [], "items": [], "objects": [7]}}) == 0
+    assert kill_xp({"level": 3, "minLevel": 1}) == 0
+
+
+def test_estimate_levels_adds_kill_xp_at_complete_steps():
+    from pipeline.generate.xpsim import estimate_levels, kill_xp
+
+    table = {5: [0] * 10}
+    quests = {1: {"level": 5, "minLevel": 1, "objectives": {"units": [9], "items": [], "objects": []}}}
+    route = {"levelRange": [1, 30], "steps": [
+        _step("a1", "accept", 1), _step("c1", "complete", 1), _step("t1", "turnin", 1), _step("end", "travel")]}
+    levels = estimate_levels(route, quests, table)
+    assert kill_xp(quests[1]) >= 400  # one level's worth at level 1
+    assert (levels["c1"], levels["t1"]) == (1, 2)

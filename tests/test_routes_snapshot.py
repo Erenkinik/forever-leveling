@@ -41,11 +41,13 @@ def test_committed_exports_match_routes():
     quests = _quests()
     uimaps = load_uimaps_canonical(DATA_DIR)
     spawns = load_spawns_canonical(DATA_DIR)
+    xp_table = load_questxp_canonical(DATA_DIR)
     for path in _route_paths():
         route = json.loads(path.read_text(encoding="utf-8"))
         site = ROOT / "site" / "src" / "data" / f"{path.stem}.json"
         lua = ROOT / "addon" / "ForeverXP" / "Data" / f"{path.stem}.lua"
-        assert site.read_bytes() == _json_text(to_site_json(route, quests, spawns, uimaps)).encode("utf-8"), site
+        expected = to_site_json(route, quests, spawns, uimaps, estimate_levels(route, quests, xp_table))
+        assert site.read_bytes() == _json_text(expected).encode("utf-8"), site
         assert lua.read_bytes() == to_lua(route).encode("utf-8"), lua
 
 

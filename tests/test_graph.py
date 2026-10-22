@@ -153,3 +153,48 @@ def test_other_faction_quest_excluded():
     assert sorted(sel.quests) == [2, 3]
     assert sel.excluded["faction"] == [1, 4, 6]
     assert sel.excluded["race"] == [5]
+
+
+def _located(q, map_id, x=50.0, y=50.0):
+    q["start"] = {"uiMapId": map_id, "x": x, "y": y}
+    return q
+
+
+def test_located_prereq_starting_off_route_is_pulled_in():
+    quests = {
+        1: _q(1, prereqs=[2]),                        # on route (map 10)
+        2: _located(_q(2, map_id=99, prereqs=[3]), 99),  # off route, located: pulled
+        3: _located(_q(3, map_id=98), 98),             # prereq of a pulled quest: pulled too
+        4: _q(4, prereqs=[5]),
+        5: _q(5, map_id=None),                        # start unknown: stays out
+        6: _q(6, prereqs=[7]),
+        7: _located(_q(7, map_id=99, races=["Orc"]), 99),  # excluded for race: stays out
+        8: _located(_q(8, map_id=97), 97),             # off route, nobody needs it: stays out
+    }
+    sel = select_quests(quests, ORDER)
+    assert sel.pulled == {2, 3}
+    assert {2, 3} <= set(sel.quests) and not {5, 7, 8} & set(sel.quests)
+    assert sel.excluded["zone"] == [5, 8] and sel.excluded["race"] == [7]
+
+
+def test_drop_pulled_also_drops_pulled_prereqs_nobody_needs_any_more():
+    from pipeline.generate.graph import drop_pulled
+
+    quests = {1: _q(1, prereqs=[2]), 2: _located(_q(2, map_id=99, prereqs=[3]), 99), 3: _located(_q(3, map_id=98), 98)}
+    sel = select_quests(quests, ORDER)
+    assert sel.pulled == {2, 3}
+    after = drop_pulled(sel, {2})
+    assert after.pulled == set() and sorted(after.quests) == [1]
+    assert after.excluded["zone"] == [2, 3]
+    assert sel.pulled == {2, 3}  # input untouched
+
+
+def test_prereq_on_another_continent_or_an_island_is_not_pulled_in():
+    quests = {
+        1: _q(1, prereqs=[2]), 2: _located(_q(2, map_id=99), 99),    # other continent
+        3: _q(3, prereqs=[4]), 4: _located(_q(4, map_id=1438), 1438),  # island
+        5: _q(5, prereqs=[6]), 6: _located(_q(6, map_id=97), 97),      # same continent: pulled
+    }
+    continents = {10: 1415, 20: 1415, 97: 1415, 99: 1414, 1438: 1414}
+    sel = select_quests(quests, ORDER, continents)
+    assert sel.pulled == {6}

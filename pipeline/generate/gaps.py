@@ -4,6 +4,7 @@ Spawn contract (spawns.json): an entity that is absent, or has empty points, has
 location. An item is located through its dropping units and objects; with none located it is
 unknown too. Unknown locations become gaps, never invented coordinates.
 """
+from pipeline.generate.config import ISLAND_MAPS
 from pipeline.generate.graph import QuestGraph
 
 _OBJECTIVE_KINDS = (("units", "unit"), ("objects", "object"), ("items", "item"))
@@ -28,12 +29,19 @@ def _objective_refs(q: dict) -> list[tuple[str, int]]:
     return [(kind, eid) for key, kind in _OBJECTIVE_KINDS for eid in obj.get(key, [])]
 
 
-def _allowed_maps(q: dict, zones) -> set:
-    """Maps a complete step may sit on: the quest's start and end maps plus the route zones."""
-    return {(q.get("start") or {}).get("uiMapId"), (q.get("end") or {}).get("uiMapId")} | set(zones)
+def _allowed_maps(q: dict, zones, continents: dict[int, int] | None = None) -> set:
+    """Maps a complete step may sit on: the quest's start and end maps plus the route zones; with
+    `continents`, only route zones on the start map's continent, and an island and the mainland never mix
+    (no boat trip for an objective)."""
+    start = (q.get("start") or {}).get("uiMapId")
+    home = (continents or {}).get(start)
+    if home is not None:
+        zones = [z for z in zones if continents.get(z) == home and (z in ISLAND_MAPS) == (start in ISLAND_MAPS)]
+    return {start, (q.get("end") or {}).get("uiMapId")} | set(zones)
 
 
-def complete_location(q: dict, spawns: dict, zones) -> tuple[int, float, float] | None:
+def complete_location(q: dict, spawns: dict, zones,
+                      continents: dict[int, int] | None = None) -> tuple[int, float, float] | None:
     """Mean of the objective spawn points on the quest's start map, else on the map with the most points.
 
     Only points on the quest's start map, end map or a route zone count. None when the quest has no
@@ -42,7 +50,7 @@ def complete_location(q: dict, spawns: dict, zones) -> tuple[int, float, float] 
     refs = _objective_refs(q)
     if not refs:
         return None
-    allowed = _allowed_maps(q, zones)
+    allowed = _allowed_maps(q, zones, continents)
     by_map: dict[int, list[tuple[float, float]]] = {}
     for kind, eid in refs:
         for map_id, x, y in _entity_points(kind, eid, spawns):
@@ -63,7 +71,7 @@ def _located(ref: dict) -> bool:
     return ref.get("uiMapId") is not None and ref.get("x") is not None and ref.get("y") is not None
 
 
-def _own_reason(q: dict, spawns: dict, zones) -> str | None:
+def _own_reason(q: dict, spawns: dict, zones, continents: dict[int, int] | None) -> str | None:
     start, end = q.get("start") or {}, q.get("end") or {}
     if start.get("type") != "npc" or start.get("id") is None:
         return f"start type is {start.get('type') or 'unknown'}, not an NPC"
@@ -74,13 +82,13 @@ def _own_reason(q: dict, spawns: dict, zones) -> str | None:
     for kind, eid in _objective_refs(q):
         if not _entity_points(kind, eid, spawns):
             return f"objective {kind} {eid} location unknown"
-    if _objective_refs(q) and complete_location(q, spawns, zones) is None:
+    if _objective_refs(q) and complete_location(q, spawns, zones, continents) is None:
         return "objective located only off-route"
     return None
 
 
 def quest_gaps(quests: dict[int, dict], graph: QuestGraph, unplaced: set[int], spawns: dict,
-               zones) -> dict[int, str]:
+               zones, continents: dict[int, int] | None = None) -> dict[int, str]:
     """Quest id -> gap reason, in graph order so a gap propagates to every (transitive) dependent."""
     gaps: dict[int, str] = {}
     for qid in graph.order:
@@ -93,7 +101,7 @@ def quest_gaps(quests: dict[int, dict], graph: QuestGraph, unplaced: set[int], s
         elif qid in unplaced:
             reason = "start location unknown"
         else:
-            reason = _own_reason(q, spawns, zones)
+            reason = _own_reason(q, spawns, zones, continents)
         if reason is not None:
             gaps[qid] = f"quest {qid}: {reason}"
     return gaps
