@@ -2,8 +2,8 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEven
 
 import {
   clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief, reportUrl,
-  safeStorage, saveDone, pinIcon,
-  saveSettings, searchSteps, storageKey,
+  routeClasses, safeStorage, saveDone, pinIcon,
+  saveSettings, searchSteps, stepsForClass, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import mapIndex from '../data/maps.json';
@@ -84,6 +84,7 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
         <span className="text"><Text parts={describeStep(step)} /></span>
         <span className="meta">
           <span className="xy">{coords(step)}</span>
+          {step.classOnly && <span className="tag class">{step.classOnly.join(', ')}</span>}
           {step.type === 'gap' && <span className="tag warn">Skipped</span>}
           {reportHref && (
             <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
@@ -122,17 +123,15 @@ function Settings({ settings, update }: { settings: Settings; update: (patch: Pa
 }
 
 export default function RouteView({ route, routes }: { route: Route; routes: RouteMeta[] }) {
-  const steps = route.steps;
-  const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
-  const validIds = useMemo(() => new Set(steps.map((s) => s.id)), [steps]);
-  const groups = useMemo(() => groupByZone(steps), [steps]);
+  const classes = useMemo(() => routeClasses(route.steps), [route.steps]);
+  const validIds = useMemo(() => new Set(route.steps.map((s) => s.id)), [route.steps]);
 
   const storeRef = useRef<KeyValueStore | null>(null);
   const store = () => (storeRef.current ??= safeStorage(() => window.localStorage));
 
   const [done, setDone] = useState<Set<string>>(() => new Set());
   const [loaded, setLoaded] = useState(false);
-  const [settings, setSettings] = useState<Settings>({ shortcuts: true, highContrast: false });
+  const [settings, setSettings] = useState<Settings>({ shortcuts: true, highContrast: false, playerClass: '' });
   const [zoom, setZoom] = useState(0);
   const [announcement, setAnnouncement] = useState('');
   const [query, setQuery] = useState('');
@@ -153,6 +152,12 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   useEffect(() => {
     document.documentElement.dataset.contrast = settings.highContrast ? 'high' : '';
   }, [settings.highContrast]);
+
+  // Only the chosen class's quests are shown (a class this race cannot play shows every class).
+  const playerClass = classes.includes(settings.playerClass) ? settings.playerClass : '';
+  const steps = useMemo(() => stepsForClass(route.steps, playerClass), [route.steps, playerClass]);
+  const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
+  const groups = useMemo(() => groupByZone(steps), [steps]);
 
   const updateSettings = (patch: Partial<Settings>) => {
     const next = { ...settings, ...patch };
@@ -249,7 +254,18 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   return (
     <div className="route-view">
       <div className="topbar">
-        <RaceSwitcher current={{ id: route.id, race: route.race, faction: route.faction }} routes={routes} />
+        <div className="who">
+          <RaceSwitcher current={{ id: route.id, race: route.race, faction: route.faction }} routes={routes} />
+          {classes.length > 0 && (
+            <label className="class-pick">
+              <span className="sr-only">Class</span>
+              <select value={playerClass} onChange={(e) => updateSettings({ playerClass: e.target.value })}>
+                <option value="">All classes</option>
+                {classes.map((c) => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </label>
+          )}
+        </div>
         <div className="progress">
           <label htmlFor="route-progress">
             <span className="progress-step">Step {position}<span className="of"> / {steps.length}</span></span>

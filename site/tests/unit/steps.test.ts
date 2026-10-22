@@ -87,12 +87,12 @@ test('settings round-trip with defaults for missing or broken values', async () 
   const { loadSettings, saveSettings, SETTINGS_KEY } = await import('../../src/lib/steps.ts');
   const mem = new Map<string, string>();
   const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) };
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false });
-  saveSettings(store, { shortcuts: false, highContrast: true });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '' });
+  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock' });
   assert.equal(SETTINGS_KEY, 'fxp:v1:settings');
-  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true });
+  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock' });
   mem.set(SETTINGS_KEY, '[1]');
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '' });
 });
 
 test('reportUrl opens a prefilled GitHub issue for the step', async () => {
@@ -264,4 +264,16 @@ test('flight steps: finding a flight master and flying between two', async () =>
   assert.equal(stepIcon(fly), 'flight');
   assert.equal(stepIcon({ ...fly, mode: 'walk' }), null);
   assert.equal(pinLabel(fly), 'Fly to Crossroads');
+});
+
+test('a class sees the steps for everyone and its own class quests', async () => {
+  const { routeClasses, stepsForClass } = await import('../../src/lib/steps.ts');
+  const all: Step = { ...base, id: 'a', type: 'accept' };
+  const lock: Step = { ...base, id: 'w', type: 'accept', classOnly: ['Warlock'] };
+  const war: Step = { ...base, id: 'r', type: 'accept', classOnly: ['Warrior', 'Rogue'] };
+  const steps = [all, lock, war];
+  assert.deepEqual(routeClasses(steps), ['Rogue', 'Warlock', 'Warrior']);
+  assert.deepEqual(stepsForClass(steps, 'Warlock'), [all, lock]);
+  assert.deepEqual(stepsForClass(steps, 'Rogue'), [all, war]);
+  assert.deepEqual(stepsForClass(steps, ''), steps);
 });

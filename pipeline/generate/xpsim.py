@@ -85,6 +85,12 @@ def kill_xp(q: dict, player_level: int | None = None) -> int:
     return kills * mob_xp(fallback_level, player_level) if kills else 0
 
 
+def shared_xp(q: dict) -> bool:
+    """Whether the quest's XP counts in the route's level estimate: class quests do not, so the estimate holds for
+    every class (a class doing its own quests is a little ahead of it)."""
+    return not q.get("classes")
+
+
 @dataclass(frozen=True)
 class XpState:
     level: int
@@ -103,8 +109,8 @@ def estimate_levels(route: dict, quests: dict[int, dict], table: dict[int, list[
     """Step id -> estimated level when the step starts, replaying the generator's model.
 
     Complete steps add kill XP and turn-ins add quest XP (both after the step, at the level the step starts at),
-    grind steps raise the level to untilLevel and reset XP, and quests missing from `quests` give no XP. The
-    generator and the validator share this estimate.
+    grind steps raise the level to untilLevel and reset XP, and quests missing from `quests` or for some classes
+    only (shared_xp) give no XP. The generator and the validator share this estimate.
     """
     state = XpState(route["levelRange"][0], 0)
     levels: dict[str, int] = {}
@@ -112,6 +118,8 @@ def estimate_levels(route: dict, quests: dict[int, dict], table: dict[int, list[
         levels[step["id"]] = state.level
         if step["type"] == "grind" and step["untilLevel"] > state.level:
             state = XpState(step["untilLevel"], 0)
+        elif step.get("questId") in quests and not shared_xp(quests[step["questId"]]):
+            continue
         elif step["type"] == "complete" and step.get("questId") in quests:
             state = state.gain(kill_xp(quests[step["questId"]], state.level))
         elif step["type"] == "turnin" and step.get("questId") in quests:

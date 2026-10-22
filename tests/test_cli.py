@@ -465,7 +465,7 @@ def test_route_report_lists_class_ids_and_counts_other_reasons(env):
     data = _generate_env(env)
     path = data / "canonical" / "quests.json"
     quests = json.loads(path.read_text(encoding="utf-8"))
-    quests += [{**quests[0], "id": 12, "classes": ["Mage"]}, {**quests[0], "id": 11, "classes": ["Rogue"]},
+    quests += [{**quests[0], "id": 12, "classes": ["Shaman"]}, {**quests[0], "id": 11, "classes": ["Druid"]},
                {**quests[0], "id": 13, "races": ["Orc"]}]
     path.write_text(json.dumps(quests), encoding="utf-8")
     assert cli.main(["generate", "t"]) == 0

@@ -324,18 +324,18 @@ def test_step_ids_are_stable():
         qs = [
             _q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)),
             _q(2, 90, 90, level=2, min_level=1, end=_npc(9, 50, 50, map_id=20)),
-            _q(4, 30, 90, level=4, prereqs=[1, 2]),  # needs both, so their turn-ins are not deferred
+            _q(4, 30, 90, level=4, prereqs=[1, 2]),  # needs both: their turn-ins happen before it
         ]
         return _quests(*qs, *extra)
 
     route, _ = _gen(quests([]))
-    assert _ids(route)[:7] == [
-        "accept-1", "travel-10-20", "turnin-1", "travel-20-10", "accept-2", "travel-10-20-2", "turnin-2",
-    ]
+    # Both off-map turn-ins wait and go in one trip, before quest 4 that needs them.
+    assert _ids(route)[:5] == ["accept-1", "accept-2", "travel-10-20", "turnin-1", "turnin-2"]
+    assert _ids(route).index("accept-4") > _ids(route).index("turnin-2")
     assert route == _gen(quests([]))[0]
     # A quest in an unrelated later hub does not renumber the existing steps.
     bigger, _ = _gen(quests([_q(3, 60, 60, map_id=20, level=3, min_level=1)]))
-    assert _ids(bigger)[:7] == _ids(route)[:7]
+    assert _ids(bigger)[:5] == _ids(route)[:5]
 
 
 def test_step_confidence_follows_quest():
@@ -394,7 +394,7 @@ def test_a_red_quest_needs_a_grind_even_with_a_low_min_level():
 
 def test_report_lists_ids_for_class_and_zone_outlier_only():
     quests = _quests(*(_q(i, level=5) for i in range(1, 6)), _q(6, level=28),
-                     dict(_q(8), classes=["Mage"]), dict(_q(7), classes=["Rogue"]), _q(9, map_id=99))
+                     dict(_q(8), classes=["Shaman"]), dict(_q(7), classes=["Druid"]), _q(9, map_id=99))
     _, report = _gen(quests)
     assert report["excluded"] == {"class": 2, "zone": 1, "zone-outlier": 1}
     assert report["excludedIds"] == {"class": [7, 8], "zone-outlier": [6]}
@@ -513,3 +513,15 @@ def test_objective_of_an_island_quest_stays_on_the_island():
     route, _ = generate_route(order, quests, spawns, XP, "beta", "1.60.1.70532", NOW, reach_cap=False,
                               continents={1438: 1414, 20: 1414})
     assert _step(route, "gap-1")["reason"] == "quest 1: objective located only off-route"
+
+
+def test_class_quest_steps_are_marked_and_give_no_shared_xp():
+    # Warlock quests on a Human route: their steps say which class, and their XP stays out of the level estimate.
+    def two(classes):
+        return _quests(*({**_q(i, 10 + i, 10, level=3, min_level=1), "classes": classes} for i in (1, 2)))
+    route, report = _gen(two(["Warlock", "Shaman"]))
+    assert {s["id"]: s.get("classOnly") for s in route["steps"]} == {
+        f"{kind}-{i}": ["Warlock"] for kind in ("accept", "turnin") for i in (1, 2)}  # Humans play no Shamans
+    assert report["questLevel"] == 1
+    everyone, report = _gen(two(None))
+    assert report["questLevel"] == 2 and "classOnly" not in everyone["steps"][0]  # 2 * 250 XP

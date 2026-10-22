@@ -202,6 +202,7 @@ test('pages work under the CSP from dist/_headers', async ({ page }) => {
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
   expect(violations).toEqual([]);
+  await page.unrouteAll({ behavior: 'ignoreErrors' });  // requests still in flight must not fail after the test
 });
 
 test('steps show objectives, levels and plain-language gap reasons', async ({ page }) => {
@@ -245,6 +246,7 @@ test('the map shows the zone art with a labelled current pin', async ({ page }) 
 
 test('the race switcher lists every race and moves to the chosen one', async ({ page }) => {
   await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();  // the island is hydrated
   const button = page.getByRole('button', { name: /Change race/ });
   await expect(button).toHaveAttribute('aria-expanded', 'false');
   await button.click();
@@ -323,4 +325,20 @@ test('the map shades where the current quest objectives are done', async ({ page
   const opacity = await page.locator('.areas .area.active').evaluate((el) => Number(getComputedStyle(el).opacity));
   expect(opacity).toBeGreaterThan(0.2);
   expect(opacity).toBeLessThan(0.6);
+});
+
+test('choosing a class shows only its own class quests, and the choice is remembered', async ({ page }) => {
+  await page.goto('/orc/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const pick = page.getByRole('combobox', { name: 'Class' });
+  await expect(pick).toHaveValue('');
+  const tags = page.locator('li.step .tag.class');
+  expect(await tags.allTextContents()).toEqual(expect.arrayContaining(['Warlock', 'Shaman']));
+  await pick.selectOption('Warlock');
+  const left = await tags.allTextContents();
+  expect(left.length).toBeGreaterThan(0);
+  expect(left.every((t) => t.split(', ').includes('Warlock'))).toBe(true);
+  await page.reload();
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.getByRole('combobox', { name: 'Class' })).toHaveValue('Warlock');
 });

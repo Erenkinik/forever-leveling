@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T21:14:30Z",
+ "generatedAt": "2026-10-22T22:02:03Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -246,6 +246,23 @@
    "npcId": 196,
    "questName": "Eagan Peltskinner",
    "npcName": "Eagan Peltskinner",
+   "zoneName": "Elwynn Forest",
+   "level": 2
+  },
+  {
+   "id": "accept-1598",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 49.9,
+   "y": 42.6,
+   "confidence": "unverified",
+   "questId": 1598,
+   "npcId": 459,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "The Stolen Tome",
+   "npcName": "Drusilla La Salle",
    "zoneName": "Elwynn Forest",
    "level": 2
   },
@@ -594,6 +611,56 @@
    ]
   },
   {
+   "id": "complete-1598",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 56.7,
+   "y": 44.0,
+   "confidence": "unverified",
+   "questId": 1598,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "The Stolen Tome",
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 6785,
+     "name": "Powers of the Void",
+     "sources": [
+      "Stolen Books"
+     ],
+     "icon": 133743
+    }
+   ],
+   "area": [
+    [
+     56.7,
+     44
+    ]
+   ]
+  },
+  {
+   "id": "turnin-1598",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 49.9,
+   "y": 42.6,
+   "confidence": "unverified",
+   "questId": 1598,
+   "npcId": 459,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "The Stolen Tome",
+   "npcName": "Drusilla La Salle",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
    "id": "turnin-18",
    "type": "turnin",
    "mapId": 1429,
@@ -645,6 +712,108 @@
    "questId": 15,
    "npcId": 197,
    "questName": "Investigate Echo Ridge",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3100",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3100,
+   "npcId": 197,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Simple Letter",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3101",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3101,
+   "npcId": 197,
+   "classOnly": [
+    "Paladin"
+   ],
+   "questName": "Consecrated Letter",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3102",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3102,
+   "npcId": 197,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Encrypted Letter",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3103",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3103,
+   "npcId": 197,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Hallowed Letter",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3104",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3104,
+   "npcId": 197,
+   "classOnly": [
+    "Mage"
+   ],
+   "questName": "Glyphic Letter",
+   "npcName": "Marshal McBride",
+   "zoneName": "Elwynn Forest",
+   "level": 3
+  },
+  {
+   "id": "accept-3105",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.9,
+   "y": 41.6,
+   "confidence": "unverified",
+   "questId": 3105,
+   "npcId": 197,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Tainted Letter",
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3
@@ -1259,6 +1428,108 @@
    "level": 4
   },
   {
+   "id": "turnin-3100",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 50.2,
+   "y": 42.3,
+   "confidence": "unverified",
+   "questId": 3100,
+   "npcId": 911,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Simple Letter",
+   "npcName": "Llane Beshere",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
+   "id": "turnin-3101",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 50.4,
+   "y": 42.1,
+   "confidence": "unverified",
+   "questId": 3101,
+   "npcId": 925,
+   "classOnly": [
+    "Paladin"
+   ],
+   "questName": "Consecrated Letter",
+   "npcName": "Brother Sammuel",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
+   "id": "turnin-3102",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 50.3,
+   "y": 39.9,
+   "confidence": "unverified",
+   "questId": 3102,
+   "npcId": 915,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Encrypted Letter",
+   "npcName": "Jorik Kerridan",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
+   "id": "turnin-3103",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 49.8,
+   "y": 39.5,
+   "confidence": "unverified",
+   "questId": 3103,
+   "npcId": 375,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Hallowed Letter",
+   "npcName": "Priestess Anetta",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
+   "id": "turnin-3104",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 49.7,
+   "y": 39.4,
+   "confidence": "unverified",
+   "questId": 3104,
+   "npcId": 198,
+   "classOnly": [
+    "Mage"
+   ],
+   "questName": "Glyphic Letter",
+   "npcName": "Khelden Bremen",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
+   "id": "turnin-3105",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 49.9,
+   "y": 42.6,
+   "confidence": "unverified",
+   "questId": 3105,
+   "npcId": 459,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Tainted Letter",
+   "npcName": "Drusilla La Salle",
+   "zoneName": "Elwynn Forest",
+   "level": 4
+  },
+  {
    "id": "turnin-33",
    "type": "turnin",
    "mapId": 1429,
@@ -1461,6 +1732,40 @@
    "npcId": 9296,
    "questName": "Milly Osworth",
    "npcName": "Milly Osworth",
+   "zoneName": "Elwynn Forest",
+   "level": 5
+  },
+  {
+   "id": "accept-5623",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 49.8,
+   "y": 39.5,
+   "confidence": "unverified",
+   "questId": 5623,
+   "npcId": 375,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "In Favor of the Light",
+   "npcName": "Priestess Anetta",
+   "zoneName": "Elwynn Forest",
+   "level": 5
+  },
+  {
+   "id": "turnin-5623",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 43.3,
+   "y": 65.7,
+   "confidence": "unverified",
+   "questId": 5623,
+   "npcId": 377,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "In Favor of the Light",
+   "npcName": "Priestess Josetta",
    "zoneName": "Elwynn Forest",
    "level": 5
   },
@@ -2693,6 +2998,52 @@
    "level": 7
   },
   {
+   "id": "accept-5624",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 43.3,
+   "y": 65.7,
+   "confidence": "unverified",
+   "questId": 5624,
+   "npcId": 377,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Garments of the Light",
+   "npcName": "Priestess Josetta",
+   "zoneName": "Elwynn Forest",
+   "level": 7
+  },
+  {
+   "id": "complete-5624",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 48.1,
+   "y": 68.0,
+   "confidence": "unverified",
+   "questId": 5624,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Garments of the Light",
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 7,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 12423,
+     "name": "Guard Roberts"
+    }
+   ],
+   "area": [
+    [
+     48.1,
+     68
+    ]
+   ]
+  },
+  {
    "id": "complete-60",
    "type": "complete",
    "mapId": 1429,
@@ -3744,6 +4095,23 @@
    "npcId": 253,
    "questName": "Collecting Kelp",
    "npcName": "William Pestle",
+   "zoneName": "Elwynn Forest",
+   "level": 8
+  },
+  {
+   "id": "turnin-5624",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 43.3,
+   "y": 65.7,
+   "confidence": "unverified",
+   "questId": 5624,
+   "npcId": 377,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Garments of the Light",
+   "npcName": "Priestess Josetta",
    "zoneName": "Elwynn Forest",
    "level": 8
   },
@@ -5383,6 +5751,91 @@
    "level": 10
   },
   {
+   "id": "accept-1638",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 41.1,
+   "y": 65.8,
+   "confidence": "unverified",
+   "questId": 1638,
+   "npcId": 913,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "A Warrior's Training",
+   "npcName": "Lyria Du Lac",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-1685",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 44.5,
+   "y": 66.3,
+   "confidence": "unverified",
+   "questId": 1685,
+   "npcId": 6121,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Gakin's Summons",
+   "npcName": "Remen Marcot",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-1860",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 43.2,
+   "y": 66.2,
+   "confidence": "unverified",
+   "questId": 1860,
+   "npcId": 328,
+   "classOnly": [
+    "Mage"
+   ],
+   "questName": "Speak with Jennea",
+   "npcName": "Zaldimar Wefhellt",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-2205",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 43.9,
+   "y": 65.9,
+   "confidence": "unverified",
+   "questId": 2205,
+   "npcId": 917,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Seek out SI: 7",
+   "npcName": "Keryn Sylvius",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-5635",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 43.3,
+   "y": 65.7,
+   "confidence": "unverified",
+   "questId": 5635,
+   "npcId": 377,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Desperate Prayer",
+   "npcName": "Priestess Josetta",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
    "id": "accept-83",
    "type": "accept",
    "mapId": 1429,
@@ -5411,146 +5864,49 @@
    "level": 10
   },
   {
-   "id": "complete-5545",
-   "type": "complete",
-   "mapId": 1429,
-   "x": 80.31,
-   "y": 59.66,
+   "id": "travel-1429-1453",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 37.3,
    "confidence": "unverified",
-   "questId": 5545,
-   "questName": "A Bundle of Trouble",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "accept-1639",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 37.3,
+   "confidence": "unverified",
+   "questId": 1639,
+   "npcId": 6089,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Bartleby the Drunk",
+   "npcName": "Harry Burlguard",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "travel-1453-1429",
+   "type": "travel",
+   "mapId": 1429,
+   "x": 58.66,
+   "y": 67.68,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
    "npcName": null,
    "zoneName": "Elwynn Forest",
-   "level": 10,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 13872,
-     "name": "Bundle of Wood",
-     "sources": [
-      "Bundle of Wood"
-     ],
-     "icon": 135437
-    }
-   ],
-   "area": [
-    [
-     76,
-     62.4
-    ],
-    [
-     76.7,
-     64.2
-    ],
-    [
-     76.8,
-     61.8
-    ],
-    [
-     77.1,
-     63
-    ],
-    [
-     77.2,
-     60.5
-    ],
-    [
-     77.3,
-     59.5
-    ],
-    [
-     78.4,
-     62.4
-    ],
-    [
-     78.9,
-     61.1
-    ],
-    [
-     79,
-     59.6
-    ],
-    [
-     79.3,
-     63.3
-    ],
-    [
-     79.7,
-     52.3
-    ],
-    [
-     79.8,
-     56.7
-    ],
-    [
-     80,
-     50.4
-    ],
-    [
-     80.2,
-     60
-    ],
-    [
-     80.2,
-     61.5
-    ],
-    [
-     80.5,
-     55.2
-    ],
-    [
-     80.6,
-     62.3
-    ],
-    [
-     80.9,
-     52.2
-    ],
-    [
-     80.9,
-     53.9
-    ],
-    [
-     81.3,
-     61.6
-    ],
-    [
-     81.6,
-     62.6
-    ],
-    [
-     81.8,
-     59.2
-    ],
-    [
-     82,
-     61
-    ],
-    [
-     82.8,
-     60.1
-    ],
-    [
-     83.3,
-     61.1
-    ],
-    [
-     83.5,
-     59.2
-    ],
-    [
-     83.9,
-     60.5
-    ],
-    [
-     84.2,
-     61.6
-    ],
-    [
-     85.2,
-     61
-    ]
-   ]
+   "level": 10
   },
   {
    "id": "complete-83",
@@ -5889,6 +6245,148 @@
    ]
   },
   {
+   "id": "complete-5545",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 80.31,
+   "y": 59.66,
+   "confidence": "unverified",
+   "questId": 5545,
+   "questName": "A Bundle of Trouble",
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 13872,
+     "name": "Bundle of Wood",
+     "sources": [
+      "Bundle of Wood"
+     ],
+     "icon": 135437
+    }
+   ],
+   "area": [
+    [
+     76,
+     62.4
+    ],
+    [
+     76.7,
+     64.2
+    ],
+    [
+     76.8,
+     61.8
+    ],
+    [
+     77.1,
+     63
+    ],
+    [
+     77.2,
+     60.5
+    ],
+    [
+     77.3,
+     59.5
+    ],
+    [
+     78.4,
+     62.4
+    ],
+    [
+     78.9,
+     61.1
+    ],
+    [
+     79,
+     59.6
+    ],
+    [
+     79.3,
+     63.3
+    ],
+    [
+     79.7,
+     52.3
+    ],
+    [
+     79.8,
+     56.7
+    ],
+    [
+     80,
+     50.4
+    ],
+    [
+     80.2,
+     60
+    ],
+    [
+     80.2,
+     61.5
+    ],
+    [
+     80.5,
+     55.2
+    ],
+    [
+     80.6,
+     62.3
+    ],
+    [
+     80.9,
+     52.2
+    ],
+    [
+     80.9,
+     53.9
+    ],
+    [
+     81.3,
+     61.6
+    ],
+    [
+     81.6,
+     62.6
+    ],
+    [
+     81.8,
+     59.2
+    ],
+    [
+     82,
+     61
+    ],
+    [
+     82.8,
+     60.1
+    ],
+    [
+     83.3,
+     61.1
+    ],
+    [
+     83.5,
+     59.2
+    ],
+    [
+     83.9,
+     60.5
+    ],
+    [
+     84.2,
+     61.6
+    ],
+    [
+     85.2,
+     61
+    ]
+   ]
+  },
+  {
    "id": "turnin-83",
    "type": "turnin",
    "mapId": 1429,
@@ -5917,7 +6415,7 @@
    "level": 10
   },
   {
-   "id": "travel-1429-1453",
+   "id": "travel-1429-1453-2",
    "type": "travel",
    "mapId": 1453,
    "x": 56.2,
@@ -5945,7 +6443,322 @@
    "level": 10
   },
   {
-   "id": "travel-1453-1436",
+   "id": "turnin-1638",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 37.3,
+   "confidence": "unverified",
+   "questId": 1638,
+   "npcId": 6089,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "A Warrior's Training",
+   "npcName": "Harry Burlguard",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-1685",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 25.3,
+   "y": 78.6,
+   "confidence": "unverified",
+   "questId": 1685,
+   "npcId": 6122,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Gakin's Summons",
+   "npcName": "Gakin the Darkbinder",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-1860",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 38.6,
+   "y": 79.3,
+   "confidence": "unverified",
+   "questId": 1860,
+   "npcId": 5497,
+   "classOnly": [
+    "Mage"
+   ],
+   "questName": "Speak with Jennea",
+   "npcName": "Jennea Cannon",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-2205",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 75.8,
+   "y": 59.8,
+   "confidence": "unverified",
+   "questId": 2205,
+   "npcId": 332,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Seek out SI: 7",
+   "npcName": "Master Mathias Shaw",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-5635",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 38.6,
+   "y": 26.1,
+   "confidence": "unverified",
+   "questId": 5635,
+   "npcId": 376,
+   "classOnly": [
+    "Priest"
+   ],
+   "questName": "Desperate Prayer",
+   "npcName": "High Priestess Laurena",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-1639",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 73.8,
+   "y": 36.3,
+   "confidence": "unverified",
+   "questId": 1639,
+   "npcId": 6090,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Bartleby the Drunk",
+   "npcName": "Bartleby",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "accept-1640",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 73.8,
+   "y": 36.3,
+   "confidence": "unverified",
+   "questId": 1640,
+   "npcId": 6090,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Beat Bartleby",
+   "npcName": "Bartleby",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-1640",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 73.8,
+   "y": 36.3,
+   "confidence": "unverified",
+   "questId": 1640,
+   "npcId": 6090,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Beat Bartleby",
+   "npcName": "Bartleby",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "accept-1665",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 73.8,
+   "y": 36.3,
+   "confidence": "unverified",
+   "questId": 1665,
+   "npcId": 6090,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Bartleby's Mug",
+   "npcName": "Bartleby",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "turnin-1665",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 37.3,
+   "confidence": "unverified",
+   "questId": 1665,
+   "npcId": 6089,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Bartleby's Mug",
+   "npcName": "Harry Burlguard",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "accept-1666",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 37.3,
+   "confidence": "unverified",
+   "questId": 1666,
+   "npcId": 6089,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Marshal Haggard",
+   "npcName": "Harry Burlguard",
+   "zoneName": "Stormwind City",
+   "level": 10
+  },
+  {
+   "id": "travel-1453-1429-2",
+   "type": "travel",
+   "mapId": 1429,
+   "x": 84.6,
+   "y": 69.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "turnin-1666",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 84.6,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 1666,
+   "npcId": 294,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Marshal Haggard",
+   "npcName": "Marshal Haggard",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-1667",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 84.6,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 1667,
+   "npcId": 294,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Dead-tooth Jack",
+   "npcName": "Marshal Haggard",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "complete-1667",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 89.3,
+   "y": 78.95,
+   "confidence": "unverified",
+   "questId": 1667,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Dead-tooth Jack",
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 6782,
+     "name": "Marshal Haggard's Badge",
+     "sources": [
+      "Dead-tooth's Strongbox"
+     ],
+     "icon": 133277
+    },
+    {
+     "kind": "collect",
+     "id": 6783,
+     "name": "Dead-tooth's Key",
+     "sources": [
+      "Dead-Tooth Jack"
+     ],
+     "icon": 134235
+    }
+   ],
+   "area": [
+    [
+     89.3,
+     78.9
+    ],
+    [
+     89.3,
+     79
+    ]
+   ]
+  },
+  {
+   "id": "turnin-1667",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 84.6,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 1667,
+   "npcId": 294,
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "Dead-tooth Jack",
+   "npcName": "Marshal Haggard",
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "gap-1787",
+   "type": "gap",
+   "mapId": 1429,
+   "x": 84.6,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 1787,
+   "reason": "quest 1787: prereq 1786 not in route",
+   "classOnly": [
+    "Paladin"
+   ],
+   "questName": "The Tome of Divinity",
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "travel-1429-1436",
    "type": "travel",
    "mapId": 1436,
    "x": 56.3,
@@ -5986,6 +6799,95 @@
    "level": 10
   },
   {
+   "id": "travel-1436-1429",
+   "type": "travel",
+   "mapId": 1429,
+   "x": 41.1,
+   "y": 66,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "grind-1429-12",
+   "type": "grind",
+   "mapId": 1429,
+   "x": 41.1,
+   "y": 66,
+   "confidence": "unverified",
+   "untilLevel": 12,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 10
+  },
+  {
+   "id": "accept-2998",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 41.1,
+   "y": 66,
+   "confidence": "unverified",
+   "questId": 2998,
+   "npcId": 927,
+   "classOnly": [
+    "Paladin"
+   ],
+   "questName": "Tome of Divinity",
+   "npcName": "Brother Wilhelm",
+   "zoneName": "Elwynn Forest",
+   "level": 12
+  },
+  {
+   "id": "travel-1429-1453-3",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 39.8,
+   "y": 29.8,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 12
+  },
+  {
+   "id": "turnin-2998",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 39.8,
+   "y": 29.8,
+   "confidence": "unverified",
+   "questId": 2998,
+   "npcId": 6171,
+   "classOnly": [
+    "Paladin"
+   ],
+   "questName": "Tome of Divinity",
+   "npcName": "Duthorian Rall",
+   "zoneName": "Stormwind City",
+   "level": 12
+  },
+  {
+   "id": "travel-1453-1436",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 59.9,
+   "y": 19.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Westfall",
+   "level": 12
+  },
+  {
    "id": "accept-36",
    "type": "accept",
    "mapId": 1436,
@@ -5997,7 +6899,7 @@
    "questName": "Westfall Stew",
    "npcName": "Verna Furlbrow",
    "zoneName": "Westfall",
-   "level": 10
+   "level": 12
   },
   {
    "id": "accept-64",
@@ -6011,7 +6913,21 @@
    "questName": "The Forgotten Heirloom",
    "npcName": "Farmer Furlbrow",
    "zoneName": "Westfall",
-   "level": 10
+   "level": 12
+  },
+  {
+   "id": "accept-151",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 59.9,
+   "y": 19.4,
+   "confidence": "unverified",
+   "questId": 151,
+   "npcId": 238,
+   "questName": "Poor Old Blanchy",
+   "npcName": "Verna Furlbrow",
+   "zoneName": "Westfall",
+   "level": 12
   },
   {
    "id": "complete-64",
@@ -6024,7 +6940,7 @@
    "questName": "The Forgotten Heirloom",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 10,
+   "level": 12,
    "objectives": [
     {
      "kind": "collect",
@@ -6044,6 +6960,628 @@
    ]
   },
   {
+   "id": "complete-151",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 47.95,
+   "y": 37.96,
+   "confidence": "unverified",
+   "questId": 151,
+   "questName": "Poor Old Blanchy",
+   "npcName": null,
+   "zoneName": "Westfall",
+   "level": 12,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 1528,
+     "name": "Handful of Oats",
+     "sources": [
+      "Sack of Oats"
+     ],
+     "icon": 134059
+    }
+   ],
+   "area": [
+    [
+     29.5,
+     65.6
+    ],
+    [
+     30.1,
+     49.6
+    ],
+    [
+     30.4,
+     52.2
+    ],
+    [
+     30.4,
+     52.3
+    ],
+    [
+     31.4,
+     34
+    ],
+    [
+     31.4,
+     72.4
+    ],
+    [
+     31.4,
+     72.6
+    ],
+    [
+     31.9,
+     33.9
+    ],
+    [
+     32.4,
+     68.5
+    ],
+    [
+     32.9,
+     36.4
+    ],
+    [
+     33.4,
+     56.4
+    ],
+    [
+     34.1,
+     27
+    ],
+    [
+     34.4,
+     26.5
+    ],
+    [
+     34.9,
+     53.8
+    ],
+    [
+     35,
+     53
+    ],
+    [
+     35,
+     54.1
+    ],
+    [
+     35.2,
+     54
+    ],
+    [
+     35.3,
+     85.1
+    ],
+    [
+     35.5,
+     45
+    ],
+    [
+     36,
+     55
+    ],
+    [
+     36.2,
+     54.8
+    ],
+    [
+     36.3,
+     31.4
+    ],
+    [
+     36.6,
+     82.5
+    ],
+    [
+     36.7,
+     53.8
+    ],
+    [
+     36.8,
+     56.7
+    ],
+    [
+     37.1,
+     75.7
+    ],
+    [
+     37.3,
+     51
+    ],
+    [
+     38,
+     57.2
+    ],
+    [
+     38.3,
+     52.5
+    ],
+    [
+     38.5,
+     58.1
+    ],
+    [
+     38.7,
+     69.2
+    ],
+    [
+     39,
+     57.1
+    ],
+    [
+     39.9,
+     39
+    ],
+    [
+     40.7,
+     17.6
+    ],
+    [
+     40.7,
+     40
+    ],
+    [
+     41.1,
+     40.7
+    ],
+    [
+     41.6,
+     20.7
+    ],
+    [
+     41.6,
+     40.6
+    ],
+    [
+     41.6,
+     41
+    ],
+    [
+     41.7,
+     70.6
+    ],
+    [
+     42.1,
+     20.6
+    ],
+    [
+     42.3,
+     71.7
+    ],
+    [
+     42.7,
+     36.8
+    ],
+    [
+     43,
+     37.2
+    ],
+    [
+     43.1,
+     36.6
+    ],
+    [
+     43.9,
+     35.1
+    ],
+    [
+     44.2,
+     68.4
+    ],
+    [
+     44.8,
+     25.3
+    ],
+    [
+     44.9,
+     35.2
+    ],
+    [
+     45,
+     13.5
+    ],
+    [
+     45,
+     31.6
+    ],
+    [
+     45.6,
+     69.8
+    ],
+    [
+     45.8,
+     38.4
+    ],
+    [
+     45.9,
+     38.8
+    ],
+    [
+     45.9,
+     39.2
+    ],
+    [
+     46,
+     38.2
+    ],
+    [
+     46.1,
+     32.9
+    ],
+    [
+     46.1,
+     39.3
+    ],
+    [
+     46.5,
+     36.8
+    ],
+    [
+     46.5,
+     37.8
+    ],
+    [
+     46.7,
+     37.5
+    ],
+    [
+     46.7,
+     53.4
+    ],
+    [
+     48.1,
+     47.3
+    ],
+    [
+     48.3,
+     20.1
+    ],
+    [
+     48.3,
+     20.4
+    ],
+    [
+     48.4,
+     32.8
+    ],
+    [
+     48.5,
+     20.6
+    ],
+    [
+     48.5,
+     60.8
+    ],
+    [
+     48.8,
+     20.3
+    ],
+    [
+     48.8,
+     20.6
+    ],
+    [
+     49,
+     34.2
+    ],
+    [
+     49.3,
+     17.9
+    ],
+    [
+     49.3,
+     20.8
+    ],
+    [
+     49.4,
+     20
+    ],
+    [
+     49.7,
+     19
+    ],
+    [
+     49.8,
+     33.6
+    ],
+    [
+     50.1,
+     19.6
+    ],
+    [
+     50.2,
+     18.2
+    ],
+    [
+     50.2,
+     18.6
+    ],
+    [
+     50.6,
+     25.2
+    ],
+    [
+     50.7,
+     27.2
+    ],
+    [
+     50.9,
+     39.2
+    ],
+    [
+     51.1,
+     39.2
+    ],
+    [
+     51.2,
+     21.9
+    ],
+    [
+     51.5,
+     31.9
+    ],
+    [
+     51.8,
+     14.4
+    ],
+    [
+     51.8,
+     15.2
+    ],
+    [
+     51.8,
+     19.2
+    ],
+    [
+     51.9,
+     15
+    ],
+    [
+     51.9,
+     32.4
+    ],
+    [
+     52,
+     22.1
+    ],
+    [
+     52,
+     25
+    ],
+    [
+     52,
+     33.3
+    ],
+    [
+     52.1,
+     33.4
+    ],
+    [
+     52.2,
+     14.1
+    ],
+    [
+     52.2,
+     14.7
+    ],
+    [
+     52.2,
+     30.5
+    ],
+    [
+     52.3,
+     14.9
+    ],
+    [
+     52.6,
+     34.4
+    ],
+    [
+     52.7,
+     23.9
+    ],
+    [
+     52.8,
+     62.9
+    ],
+    [
+     53,
+     79.2
+    ],
+    [
+     53.2,
+     29
+    ],
+    [
+     53.4,
+     35.3
+    ],
+    [
+     53.8,
+     36.5
+    ],
+    [
+     54,
+     25
+    ],
+    [
+     54.1,
+     25
+    ],
+    [
+     54.2,
+     25.1
+    ],
+    [
+     54.4,
+     32.5
+    ],
+    [
+     55.1,
+     30
+    ],
+    [
+     55.2,
+     27.6
+    ],
+    [
+     55.7,
+     31.2
+    ],
+    [
+     55.8,
+     30.7
+    ],
+    [
+     56.1,
+     30.2
+    ],
+    [
+     56.1,
+     34.5
+    ],
+    [
+     56.1,
+     35.4
+    ],
+    [
+     56.2,
+     17.8
+    ],
+    [
+     56.2,
+     19.2
+    ],
+    [
+     56.3,
+     13.4
+    ],
+    [
+     56.3,
+     14.2
+    ],
+    [
+     56.3,
+     74.6
+    ],
+    [
+     56.4,
+     33.9
+    ],
+    [
+     56.4,
+     70.3
+    ],
+    [
+     56.5,
+     12.8
+    ],
+    [
+     56.5,
+     13.7
+    ],
+    [
+     56.6,
+     18.6
+    ],
+    [
+     56.7,
+     19.4
+    ],
+    [
+     56.7,
+     70
+    ],
+    [
+     56.8,
+     19.3
+    ],
+    [
+     56.9,
+     20.6
+    ],
+    [
+     57,
+     19.3
+    ],
+    [
+     57.3,
+     19.5
+    ],
+    [
+     57.4,
+     17.3
+    ],
+    [
+     57.4,
+     18.8
+    ],
+    [
+     57.7,
+     20.5
+    ],
+    [
+     57.9,
+     13.3
+    ],
+    [
+     58.2,
+     18.2
+    ],
+    [
+     58.5,
+     15.9
+    ],
+    [
+     58.9,
+     16.9
+    ],
+    [
+     59.1,
+     18.9
+    ],
+    [
+     59.1,
+     44
+    ],
+    [
+     59.4,
+     73.9
+    ],
+    [
+     60.4,
+     59.3
+    ],
+    [
+     60.7,
+     58.5
+    ],
+    [
+     60.7,
+     70.5
+    ],
+    [
+     60.7,
+     74.6
+    ],
+    [
+     62.2,
+     61.8
+    ],
+    [
+     63.9,
+     69.9
+    ],
+    [
+     63.9,
+     73.2
+    ]
+   ]
+  },
+  {
    "id": "turnin-36",
    "type": "turnin",
    "mapId": 1436,
@@ -6055,7 +7593,7 @@
    "questName": "Westfall Stew",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 10
+   "level": 12
   },
   {
    "id": "turnin-64",
@@ -6069,7 +7607,21 @@
    "questName": "The Forgotten Heirloom",
    "npcName": "Farmer Furlbrow",
    "zoneName": "Westfall",
-   "level": 10
+   "level": 12
+  },
+  {
+   "id": "turnin-151",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 59.9,
+   "y": 19.4,
+   "confidence": "unverified",
+   "questId": 151,
+   "npcId": 238,
+   "questName": "Poor Old Blanchy",
+   "npcName": "Verna Furlbrow",
+   "zoneName": "Westfall",
+   "level": 12
   },
   {
    "id": "accept-22",
@@ -6083,7 +7635,21 @@
    "questName": "Goretusk Liver Pie",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 10
+   "level": 12
+  },
+  {
+   "id": "accept-38",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56.4,
+   "y": 30.5,
+   "confidence": "unverified",
+   "questId": 38,
+   "npcId": 235,
+   "questName": "Westfall Stew",
+   "npcName": "Salma Saldean",
+   "zoneName": "Westfall",
+   "level": 12
   },
   {
    "id": "complete-22",
@@ -6096,7 +7662,7 @@
    "questName": "Goretusk Liver Pie",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 10,
+   "level": 12,
    "objectives": [
     {
      "kind": "collect",
@@ -6578,34 +8144,6 @@
    ]
   },
   {
-   "id": "turnin-22",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 30.5,
-   "confidence": "unverified",
-   "questId": 22,
-   "npcId": 235,
-   "questName": "Goretusk Liver Pie",
-   "npcName": "Salma Saldean",
-   "zoneName": "Westfall",
-   "level": 11
-  },
-  {
-   "id": "accept-38",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 30.5,
-   "confidence": "unverified",
-   "questId": 38,
-   "npcId": 235,
-   "questName": "Westfall Stew",
-   "npcName": "Salma Saldean",
-   "zoneName": "Westfall",
-   "level": 11
-  },
-  {
    "id": "complete-38",
    "type": "complete",
    "mapId": 1436,
@@ -6616,7 +8154,7 @@
    "questName": "Westfall Stew",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 11,
+   "level": 12,
    "objectives": [
     {
      "kind": "collect",
@@ -7466,6 +9004,20 @@
    ]
   },
   {
+   "id": "turnin-22",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.4,
+   "y": 30.5,
+   "confidence": "unverified",
+   "questId": 22,
+   "npcId": 235,
+   "questName": "Goretusk Liver Pie",
+   "npcName": "Salma Saldean",
+   "zoneName": "Westfall",
+   "level": 12
+  },
+  {
    "id": "turnin-38",
    "type": "turnin",
    "mapId": 1436,
@@ -7477,436 +9029,197 @@
    "questName": "Westfall Stew",
    "npcName": "Salma Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 13
   },
   {
-   "id": "accept-12",
+   "id": "accept-9",
    "type": "accept",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56,
+   "y": 31.2,
    "confidence": "unverified",
-   "questId": 12,
-   "npcId": 234,
-   "questName": "The People's Militia",
-   "npcName": "Gryan Stoutmantle",
+   "questId": 9,
+   "npcId": 233,
+   "questName": "The Killing Fields",
+   "npcName": "Farmer Saldean",
    "zoneName": "Westfall",
-   "level": 11
+   "level": 13
   },
   {
-   "id": "accept-6181",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 57,
-   "y": 47.2,
-   "confidence": "unverified",
-   "questId": 6181,
-   "npcId": 491,
-   "questName": "A Swift Message",
-   "npcName": "Quartermaster Lewis",
-   "zoneName": "Westfall",
-   "level": 11
-  },
-  {
-   "id": "complete-12",
+   "id": "complete-9",
    "type": "complete",
    "mapId": 1436,
-   "x": 45.67,
-   "y": 32.81,
+   "x": 45.94,
+   "y": 37.39,
    "confidence": "unverified",
-   "questId": 12,
-   "questName": "The People's Militia",
+   "questId": 9,
+   "questName": "The Killing Fields",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 11,
+   "level": 13,
    "objectives": [
     {
      "kind": "kill",
-     "id": 95,
-     "name": "Defias Smuggler"
-    },
-    {
-     "kind": "kill",
-     "id": 504,
-     "name": "Defias Trapper"
+     "id": 114,
+     "name": "Harvest Watcher"
     }
    ],
    "area": [
     [
-     30.9,
-     33.1
+     36.2,
+     50.8
     ],
     [
-     30.9,
-     34.1
+     37.1,
+     52.2
     ],
     [
-     31.3,
-     33.6
+     37.2,
+     49.3
     ],
     [
-     31.3,
-     33.7
-    ],
-    [
-     31.4,
-     33.8
-    ],
-    [
-     31.7,
-     32.9
-    ],
-    [
-     31.7,
-     34.6
-    ],
-    [
-     32,
-     33.9
-    ],
-    [
-     32.2,
-     34.6
-    ],
-    [
-     32.5,
-     33.4
-    ],
-    [
-     40.8,
-     39.5
-    ],
-    [
-     40.8,
-     40.9
-    ],
-    [
-     41.1,
-     41.8
-    ],
-    [
-     41.4,
-     40.6
-    ],
-    [
-     41.5,
-     41.1
-    ],
-    [
-     41.8,
-     40.5
-    ],
-    [
-     43.8,
-     27
-    ],
-    [
-     43.9,
-     25.2
-    ],
-    [
-     44,
-     25.9
-    ],
-    [
-     44.1,
-     23.3
-    ],
-    [
-     44.2,
-     25.8
-    ],
-    [
-     44.5,
-     21.5
-    ],
-    [
-     44.5,
-     24.6
-    ],
-    [
-     44.6,
-     24
-    ],
-    [
-     44.6,
-     24.4
-    ],
-    [
-     44.7,
-     25.6
-    ],
-    [
-     44.7,
-     26.3
-    ],
-    [
-     44.8,
-     22
-    ],
-    [
-     44.9,
-     22.7
-    ],
-    [
-     44.9,
-     25.2
-    ],
-    [
-     45,
-     18.8
-    ],
-    [
-     45.3,
-     21.2
-    ],
-    [
-     45.3,
-     26.9
-    ],
-    [
-     45.5,
-     21.1
-    ],
-    [
-     45.5,
-     21.7
-    ],
-    [
-     45.6,
-     18
-    ],
-    [
-     45.6,
-     39.6
-    ],
-    [
-     45.7,
-     20.5
-    ],
-    [
-     45.9,
-     25.6
-    ],
-    [
-     46,
-     18.9
-    ],
-    [
-     46,
-     19.4
-    ],
-    [
-     46,
-     26.9
-    ],
-    [
-     46,
-     38.2
-    ],
-    [
-     46.1,
-     39.1
-    ],
-    [
-     46.2,
-     39.1
-    ],
-    [
-     46.4,
-     36.9
-    ],
-    [
-     46.5,
-     37.4
-    ],
-    [
-     46.5,
-     37.6
-    ],
-    [
-     46.5,
-     39.7
-    ],
-    [
-     46.6,
-     19.6
-    ],
-    [
-     46.6,
-     27.5
-    ],
-    [
-     46.6,
-     37.8
-    ],
-    [
-     46.6,
-     53.4
-    ],
-    [
-     46.7,
-     52.5
-    ],
-    [
-     47.2,
-     46.2
-    ],
-    [
-     47.5,
-     36.6
-    ],
-    [
-     47.7,
-     43.4
-    ],
-    [
-     47.8,
-     45.8
-    ],
-    [
-     48.2,
-     46.6
-    ],
-    [
-     48.2,
-     46.7
-    ],
-    [
-     48.2,
-     47
-    ],
-    [
-     48.4,
-     19.9
-    ],
-    [
-     48.4,
-     20.3
-    ],
-    [
-     48.5,
-     45.1
-    ],
-    [
-     48.6,
-     45.2
-    ],
-    [
-     48.6,
+     38,
      47.8
     ],
     [
-     48.7,
-     20.9
+     38.1,
+     50.7
     ],
     [
-     48.8,
-     20.4
+     38.1,
+     53.6
     ],
     [
-     48.8,
-     20.7
+     39,
+     49.3
     ],
     [
-     49.4,
-     19.2
+     39,
+     55
     ],
     [
-     49.5,
-     46.5
+     39.1,
+     52.1
     ],
     [
-     49.6,
+     39.9,
+     53.6
+    ],
+    [
+     40,
+     50.7
+    ],
+    [
+     40.8,
+     52.2
+    ],
+    [
+     43,
+     35.7
+    ],
+    [
+     43.8,
+     35
+    ],
+    [
+     43.8,
+     36.4
+    ],
+    [
+     44.7,
+     37.9
+    ],
+    [
+     45,
+     33.3
+    ],
+    [
+     45.7,
+     33.6
+    ],
+    [
+     45.9,
+     36.1
+    ],
+    [
+     46.7,
+     35
+    ],
+    [
+     50,
+     21.4
+    ],
+    [
+     50,
+     22.8
+    ],
+    [
+     51,
      20
     ],
     [
-     49.7,
-     42.1
+     51,
+     22.9
     ],
     [
-     49.8,
-     19.7
+     51.4,
+     24.9
     ],
     [
-     50.1,
-     18.4
+     51.9,
+     21.4
     ],
     [
-     50.6,
-     39.3
+     51.9,
+     23.5
     ],
     [
-     50.6,
-     47.3
+     52.5,
+     32.2
     ],
     [
-     50.7,
-     47.2
+     52.9,
+     22.9
     ],
     [
-     50.8,
-     40.1
+     53.3,
+     30.8
     ],
     [
-     51.2,
-     40.4
+     53.3,
+     33.6
     ],
     [
-     51.3,
-     39.2
+     53.9,
+     35.2
     ],
     [
-     51.5,
-     46.8
+     54,
+     31
     ],
     [
-     51.6,
-     46.6
+     54.3,
+     32.2
+    ],
+    [
+     55.3,
+     33.6
     ]
    ]
   },
   {
-   "id": "turnin-12",
+   "id": "turnin-9",
    "type": "turnin",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 56,
+   "y": 31.2,
    "confidence": "unverified",
-   "questId": 12,
-   "npcId": 234,
-   "questName": "The People's Militia",
-   "npcName": "Gryan Stoutmantle",
+   "questId": 9,
+   "npcId": 233,
+   "questName": "The Killing Fields",
+   "npcName": "Farmer Saldean",
    "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "turnin-6181",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.6,
-   "y": 52.6,
-   "confidence": "unverified",
-   "questId": 6181,
-   "npcId": 523,
-   "questName": "A Swift Message",
-   "npcName": "Thor",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "accept-151",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 59.9,
-   "y": 19.4,
-   "confidence": "unverified",
-   "questId": 151,
-   "npcId": 238,
-   "questName": "Poor Old Blanchy",
-   "npcName": "Verna Furlbrow",
-   "zoneName": "Westfall",
-   "level": 12
+   "level": 13
   },
   {
    "id": "accept-102",
@@ -7920,7 +9233,49 @@
    "questName": "Patrolling Westfall",
    "npcName": "Captain Danuvin",
    "zoneName": "Westfall",
-   "level": 12
+   "level": 13
+  },
+  {
+   "id": "accept-12",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 12,
+   "npcId": 234,
+   "questName": "The People's Militia",
+   "npcName": "Gryan Stoutmantle",
+   "zoneName": "Westfall",
+   "level": 13
+  },
+  {
+   "id": "accept-153",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 54,
+   "y": 53,
+   "confidence": "unverified",
+   "questId": 153,
+   "npcId": 878,
+   "questName": "Red Leather Bandanas",
+   "npcName": "Scout Galiaan",
+   "zoneName": "Westfall",
+   "level": 13
+  },
+  {
+   "id": "accept-6181",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 57,
+   "y": 47.2,
+   "confidence": "unverified",
+   "questId": 6181,
+   "npcId": 491,
+   "questName": "A Swift Message",
+   "npcName": "Quartermaster Lewis",
+   "zoneName": "Westfall",
+   "level": 13
   },
   {
    "id": "complete-102",
@@ -7933,7 +9288,7 @@
    "questName": "Patrolling Westfall",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 12,
+   "level": 13,
    "objectives": [
     {
      "kind": "collect",
@@ -8405,1089 +9760,6 @@
      73.2
     ]
    ]
-  },
-  {
-   "id": "complete-151",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 47.95,
-   "y": 37.96,
-   "confidence": "unverified",
-   "questId": 151,
-   "questName": "Poor Old Blanchy",
-   "npcName": null,
-   "zoneName": "Westfall",
-   "level": 12,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 1528,
-     "name": "Handful of Oats",
-     "sources": [
-      "Sack of Oats"
-     ],
-     "icon": 134059
-    }
-   ],
-   "area": [
-    [
-     29.5,
-     65.6
-    ],
-    [
-     30.1,
-     49.6
-    ],
-    [
-     30.4,
-     52.2
-    ],
-    [
-     30.4,
-     52.3
-    ],
-    [
-     31.4,
-     34
-    ],
-    [
-     31.4,
-     72.4
-    ],
-    [
-     31.4,
-     72.6
-    ],
-    [
-     31.9,
-     33.9
-    ],
-    [
-     32.4,
-     68.5
-    ],
-    [
-     32.9,
-     36.4
-    ],
-    [
-     33.4,
-     56.4
-    ],
-    [
-     34.1,
-     27
-    ],
-    [
-     34.4,
-     26.5
-    ],
-    [
-     34.9,
-     53.8
-    ],
-    [
-     35,
-     53
-    ],
-    [
-     35,
-     54.1
-    ],
-    [
-     35.2,
-     54
-    ],
-    [
-     35.3,
-     85.1
-    ],
-    [
-     35.5,
-     45
-    ],
-    [
-     36,
-     55
-    ],
-    [
-     36.2,
-     54.8
-    ],
-    [
-     36.3,
-     31.4
-    ],
-    [
-     36.6,
-     82.5
-    ],
-    [
-     36.7,
-     53.8
-    ],
-    [
-     36.8,
-     56.7
-    ],
-    [
-     37.1,
-     75.7
-    ],
-    [
-     37.3,
-     51
-    ],
-    [
-     38,
-     57.2
-    ],
-    [
-     38.3,
-     52.5
-    ],
-    [
-     38.5,
-     58.1
-    ],
-    [
-     38.7,
-     69.2
-    ],
-    [
-     39,
-     57.1
-    ],
-    [
-     39.9,
-     39
-    ],
-    [
-     40.7,
-     17.6
-    ],
-    [
-     40.7,
-     40
-    ],
-    [
-     41.1,
-     40.7
-    ],
-    [
-     41.6,
-     20.7
-    ],
-    [
-     41.6,
-     40.6
-    ],
-    [
-     41.6,
-     41
-    ],
-    [
-     41.7,
-     70.6
-    ],
-    [
-     42.1,
-     20.6
-    ],
-    [
-     42.3,
-     71.7
-    ],
-    [
-     42.7,
-     36.8
-    ],
-    [
-     43,
-     37.2
-    ],
-    [
-     43.1,
-     36.6
-    ],
-    [
-     43.9,
-     35.1
-    ],
-    [
-     44.2,
-     68.4
-    ],
-    [
-     44.8,
-     25.3
-    ],
-    [
-     44.9,
-     35.2
-    ],
-    [
-     45,
-     13.5
-    ],
-    [
-     45,
-     31.6
-    ],
-    [
-     45.6,
-     69.8
-    ],
-    [
-     45.8,
-     38.4
-    ],
-    [
-     45.9,
-     38.8
-    ],
-    [
-     45.9,
-     39.2
-    ],
-    [
-     46,
-     38.2
-    ],
-    [
-     46.1,
-     32.9
-    ],
-    [
-     46.1,
-     39.3
-    ],
-    [
-     46.5,
-     36.8
-    ],
-    [
-     46.5,
-     37.8
-    ],
-    [
-     46.7,
-     37.5
-    ],
-    [
-     46.7,
-     53.4
-    ],
-    [
-     48.1,
-     47.3
-    ],
-    [
-     48.3,
-     20.1
-    ],
-    [
-     48.3,
-     20.4
-    ],
-    [
-     48.4,
-     32.8
-    ],
-    [
-     48.5,
-     20.6
-    ],
-    [
-     48.5,
-     60.8
-    ],
-    [
-     48.8,
-     20.3
-    ],
-    [
-     48.8,
-     20.6
-    ],
-    [
-     49,
-     34.2
-    ],
-    [
-     49.3,
-     17.9
-    ],
-    [
-     49.3,
-     20.8
-    ],
-    [
-     49.4,
-     20
-    ],
-    [
-     49.7,
-     19
-    ],
-    [
-     49.8,
-     33.6
-    ],
-    [
-     50.1,
-     19.6
-    ],
-    [
-     50.2,
-     18.2
-    ],
-    [
-     50.2,
-     18.6
-    ],
-    [
-     50.6,
-     25.2
-    ],
-    [
-     50.7,
-     27.2
-    ],
-    [
-     50.9,
-     39.2
-    ],
-    [
-     51.1,
-     39.2
-    ],
-    [
-     51.2,
-     21.9
-    ],
-    [
-     51.5,
-     31.9
-    ],
-    [
-     51.8,
-     14.4
-    ],
-    [
-     51.8,
-     15.2
-    ],
-    [
-     51.8,
-     19.2
-    ],
-    [
-     51.9,
-     15
-    ],
-    [
-     51.9,
-     32.4
-    ],
-    [
-     52,
-     22.1
-    ],
-    [
-     52,
-     25
-    ],
-    [
-     52,
-     33.3
-    ],
-    [
-     52.1,
-     33.4
-    ],
-    [
-     52.2,
-     14.1
-    ],
-    [
-     52.2,
-     14.7
-    ],
-    [
-     52.2,
-     30.5
-    ],
-    [
-     52.3,
-     14.9
-    ],
-    [
-     52.6,
-     34.4
-    ],
-    [
-     52.7,
-     23.9
-    ],
-    [
-     52.8,
-     62.9
-    ],
-    [
-     53,
-     79.2
-    ],
-    [
-     53.2,
-     29
-    ],
-    [
-     53.4,
-     35.3
-    ],
-    [
-     53.8,
-     36.5
-    ],
-    [
-     54,
-     25
-    ],
-    [
-     54.1,
-     25
-    ],
-    [
-     54.2,
-     25.1
-    ],
-    [
-     54.4,
-     32.5
-    ],
-    [
-     55.1,
-     30
-    ],
-    [
-     55.2,
-     27.6
-    ],
-    [
-     55.7,
-     31.2
-    ],
-    [
-     55.8,
-     30.7
-    ],
-    [
-     56.1,
-     30.2
-    ],
-    [
-     56.1,
-     34.5
-    ],
-    [
-     56.1,
-     35.4
-    ],
-    [
-     56.2,
-     17.8
-    ],
-    [
-     56.2,
-     19.2
-    ],
-    [
-     56.3,
-     13.4
-    ],
-    [
-     56.3,
-     14.2
-    ],
-    [
-     56.3,
-     74.6
-    ],
-    [
-     56.4,
-     33.9
-    ],
-    [
-     56.4,
-     70.3
-    ],
-    [
-     56.5,
-     12.8
-    ],
-    [
-     56.5,
-     13.7
-    ],
-    [
-     56.6,
-     18.6
-    ],
-    [
-     56.7,
-     19.4
-    ],
-    [
-     56.7,
-     70
-    ],
-    [
-     56.8,
-     19.3
-    ],
-    [
-     56.9,
-     20.6
-    ],
-    [
-     57,
-     19.3
-    ],
-    [
-     57.3,
-     19.5
-    ],
-    [
-     57.4,
-     17.3
-    ],
-    [
-     57.4,
-     18.8
-    ],
-    [
-     57.7,
-     20.5
-    ],
-    [
-     57.9,
-     13.3
-    ],
-    [
-     58.2,
-     18.2
-    ],
-    [
-     58.5,
-     15.9
-    ],
-    [
-     58.9,
-     16.9
-    ],
-    [
-     59.1,
-     18.9
-    ],
-    [
-     59.1,
-     44
-    ],
-    [
-     59.4,
-     73.9
-    ],
-    [
-     60.4,
-     59.3
-    ],
-    [
-     60.7,
-     58.5
-    ],
-    [
-     60.7,
-     70.5
-    ],
-    [
-     60.7,
-     74.6
-    ],
-    [
-     62.2,
-     61.8
-    ],
-    [
-     63.9,
-     69.9
-    ],
-    [
-     63.9,
-     73.2
-    ]
-   ]
-  },
-  {
-   "id": "turnin-151",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 59.9,
-   "y": 19.4,
-   "confidence": "unverified",
-   "questId": 151,
-   "npcId": 238,
-   "questName": "Poor Old Blanchy",
-   "npcName": "Verna Furlbrow",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "turnin-102",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 47.6,
-   "confidence": "unverified",
-   "questId": 102,
-   "npcId": 821,
-   "questName": "Patrolling Westfall",
-   "npcName": "Captain Danuvin",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "accept-13",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 13,
-   "npcId": 234,
-   "questName": "The People's Militia",
-   "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "accept-6281",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56.6,
-   "y": 52.6,
-   "confidence": "unverified",
-   "questId": 6281,
-   "npcId": 523,
-   "questName": "Continue to Stormwind",
-   "npcName": "Thor",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "complete-13",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 38.47,
-   "y": 60.15,
-   "confidence": "unverified",
-   "questId": 13,
-   "questName": "The People's Militia",
-   "npcName": null,
-   "zoneName": "Westfall",
-   "level": 12,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 589,
-     "name": "Defias Pillager"
-    },
-    {
-     "kind": "kill",
-     "id": 590,
-     "name": "Defias Looter"
-    }
-   ],
-   "area": [
-    [
-     28.8,
-     49.5
-    ],
-    [
-     28.9,
-     50.1
-    ],
-    [
-     29.2,
-     51.1
-    ],
-    [
-     29.6,
-     49.9
-    ],
-    [
-     29.6,
-     50.2
-    ],
-    [
-     29.7,
-     47
-    ],
-    [
-     29.7,
-     47.3
-    ],
-    [
-     29.9,
-     45.7
-    ],
-    [
-     29.9,
-     46.1
-    ],
-    [
-     30.1,
-     49.7
-    ],
-    [
-     30.4,
-     45.9
-    ],
-    [
-     30.8,
-     48.4
-    ],
-    [
-     30.9,
-     43
-    ],
-    [
-     31.2,
-     44.6
-    ],
-    [
-     31.6,
-     44.1
-    ],
-    [
-     31.6,
-     44.9
-    ],
-    [
-     31.7,
-     43
-    ],
-    [
-     32.1,
-     44
-    ],
-    [
-     32.1,
-     57.7
-    ],
-    [
-     32.8,
-     56.7
-    ],
-    [
-     33.2,
-     56.6
-    ],
-    [
-     33.2,
-     58.6
-    ],
-    [
-     33.9,
-     57
-    ],
-    [
-     35,
-     53.8
-    ],
-    [
-     35.1,
-     53.8
-    ],
-    [
-     35.6,
-     53.5
-    ],
-    [
-     35.9,
-     53.1
-    ],
-    [
-     36,
-     53.1
-    ],
-    [
-     36,
-     54.6
-    ],
-    [
-     36,
-     54.7
-    ],
-    [
-     36.4,
-     55.4
-    ],
-    [
-     36.5,
-     54.1
-    ],
-    [
-     36.7,
-     53.8
-    ],
-    [
-     36.7,
-     54
-    ],
-    [
-     37.1,
-     55.9
-    ],
-    [
-     37.2,
-     54.5
-    ],
-    [
-     37.3,
-     57.9
-    ],
-    [
-     38.1,
-     57.4
-    ],
-    [
-     38.5,
-     57.6
-    ],
-    [
-     38.6,
-     58.1
-    ],
-    [
-     38.7,
-     56.8
-    ],
-    [
-     38.8,
-     56.9
-    ],
-    [
-     38.8,
-     57.7
-    ],
-    [
-     38.8,
-     58
-    ],
-    [
-     38.8,
-     69.6
-    ],
-    [
-     41.5,
-     69.9
-    ],
-    [
-     41.5,
-     71.2
-    ],
-    [
-     41.8,
-     69.5
-    ],
-    [
-     41.9,
-     69.6
-    ],
-    [
-     42,
-     69.6
-    ],
-    [
-     42.1,
-     69.5
-    ],
-    [
-     42.2,
-     69.4
-    ],
-    [
-     42.2,
-     70.5
-    ],
-    [
-     42.6,
-     69.3
-    ],
-    [
-     42.9,
-     68.2
-    ],
-    [
-     43,
-     70.8
-    ],
-    [
-     43.1,
-     70.1
-    ],
-    [
-     43.3,
-     69.6
-    ],
-    [
-     43.4,
-     68.1
-    ],
-    [
-     43.4,
-     68.8
-    ],
-    [
-     43.5,
-     66.9
-    ],
-    [
-     43.5,
-     70.8
-    ],
-    [
-     43.6,
-     68.1
-    ],
-    [
-     43.6,
-     68.2
-    ],
-    [
-     43.7,
-     66.4
-    ],
-    [
-     43.7,
-     67.5
-    ],
-    [
-     43.7,
-     69.3
-    ],
-    [
-     43.8,
-     67.7
-    ],
-    [
-     43.9,
-     68.1
-    ],
-    [
-     43.9,
-     68.4
-    ],
-    [
-     44,
-     69.2
-    ],
-    [
-     44.1,
-     68.2
-    ],
-    [
-     44.3,
-     68.6
-    ],
-    [
-     44.4,
-     67.4
-    ],
-    [
-     44.4,
-     67.7
-    ],
-    [
-     44.5,
-     65.7
-    ],
-    [
-     44.8,
-     68.7
-    ],
-    [
-     44.9,
-     67.1
-    ],
-    [
-     45.4,
-     70.3
-    ],
-    [
-     45.5,
-     70.4
-    ],
-    [
-     45.8,
-     69.3
-    ],
-    [
-     46,
-     70.7
-    ],
-    [
-     46,
-     71.1
-    ],
-    [
-     46.3,
-     67.2
-    ]
-   ]
-  },
-  {
-   "id": "turnin-13",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 13,
-   "npcId": 234,
-   "questName": "The People's Militia",
-   "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 12
-  },
-  {
-   "id": "accept-9",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56,
-   "y": 31.2,
-   "confidence": "unverified",
-   "questId": 9,
-   "npcId": 233,
-   "questName": "The Killing Fields",
-   "npcName": "Farmer Saldean",
-   "zoneName": "Westfall",
-   "level": 13
-  },
-  {
-   "id": "accept-153",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 54,
-   "y": 53,
-   "confidence": "unverified",
-   "questId": 153,
-   "npcId": 878,
-   "questName": "Red Leather Bandanas",
-   "npcName": "Scout Galiaan",
-   "zoneName": "Westfall",
-   "level": 13
   },
   {
    "id": "complete-153",
@@ -10186,178 +10458,389 @@
    ]
   },
   {
-   "id": "complete-9",
+   "id": "complete-12",
    "type": "complete",
    "mapId": 1436,
-   "x": 45.94,
-   "y": 37.39,
+   "x": 45.67,
+   "y": 32.81,
    "confidence": "unverified",
-   "questId": 9,
-   "questName": "The Killing Fields",
+   "questId": 12,
+   "questName": "The People's Militia",
    "npcName": null,
    "zoneName": "Westfall",
    "level": 13,
    "objectives": [
     {
      "kind": "kill",
-     "id": 114,
-     "name": "Harvest Watcher"
+     "id": 95,
+     "name": "Defias Smuggler"
+    },
+    {
+     "kind": "kill",
+     "id": 504,
+     "name": "Defias Trapper"
     }
    ],
    "area": [
     [
-     36.2,
-     50.8
+     30.9,
+     33.1
     ],
     [
-     37.1,
-     52.2
+     30.9,
+     34.1
     ],
     [
-     37.2,
-     49.3
+     31.3,
+     33.6
     ],
     [
-     38,
-     47.8
+     31.3,
+     33.7
     ],
     [
-     38.1,
-     50.7
+     31.4,
+     33.8
     ],
     [
-     38.1,
-     53.6
+     31.7,
+     32.9
     ],
     [
-     39,
-     49.3
+     31.7,
+     34.6
     ],
     [
-     39,
-     55
+     32,
+     33.9
     ],
     [
-     39.1,
-     52.1
+     32.2,
+     34.6
     ],
     [
-     39.9,
-     53.6
-    ],
-    [
-     40,
-     50.7
+     32.5,
+     33.4
     ],
     [
      40.8,
-     52.2
+     39.5
     ],
     [
-     43,
-     35.7
+     40.8,
+     40.9
+    ],
+    [
+     41.1,
+     41.8
+    ],
+    [
+     41.4,
+     40.6
+    ],
+    [
+     41.5,
+     41.1
+    ],
+    [
+     41.8,
+     40.5
     ],
     [
      43.8,
-     35
+     27
     ],
     [
-     43.8,
-     36.4
+     43.9,
+     25.2
+    ],
+    [
+     44,
+     25.9
+    ],
+    [
+     44.1,
+     23.3
+    ],
+    [
+     44.2,
+     25.8
+    ],
+    [
+     44.5,
+     21.5
+    ],
+    [
+     44.5,
+     24.6
+    ],
+    [
+     44.6,
+     24
+    ],
+    [
+     44.6,
+     24.4
     ],
     [
      44.7,
-     37.9
+     25.6
+    ],
+    [
+     44.7,
+     26.3
+    ],
+    [
+     44.8,
+     22
+    ],
+    [
+     44.9,
+     22.7
+    ],
+    [
+     44.9,
+     25.2
     ],
     [
      45,
-     33.3
+     18.8
+    ],
+    [
+     45.3,
+     21.2
+    ],
+    [
+     45.3,
+     26.9
+    ],
+    [
+     45.5,
+     21.1
+    ],
+    [
+     45.5,
+     21.7
+    ],
+    [
+     45.6,
+     18
+    ],
+    [
+     45.6,
+     39.6
     ],
     [
      45.7,
-     33.6
+     20.5
     ],
     [
      45.9,
-     36.1
+     25.6
+    ],
+    [
+     46,
+     18.9
+    ],
+    [
+     46,
+     19.4
+    ],
+    [
+     46,
+     26.9
+    ],
+    [
+     46,
+     38.2
+    ],
+    [
+     46.1,
+     39.1
+    ],
+    [
+     46.2,
+     39.1
+    ],
+    [
+     46.4,
+     36.9
+    ],
+    [
+     46.5,
+     37.4
+    ],
+    [
+     46.5,
+     37.6
+    ],
+    [
+     46.5,
+     39.7
+    ],
+    [
+     46.6,
+     19.6
+    ],
+    [
+     46.6,
+     27.5
+    ],
+    [
+     46.6,
+     37.8
+    ],
+    [
+     46.6,
+     53.4
     ],
     [
      46.7,
-     35
+     52.5
     ],
     [
-     50,
-     21.4
+     47.2,
+     46.2
     ],
     [
-     50,
-     22.8
+     47.5,
+     36.6
     ],
     [
-     51,
+     47.7,
+     43.4
+    ],
+    [
+     47.8,
+     45.8
+    ],
+    [
+     48.2,
+     46.6
+    ],
+    [
+     48.2,
+     46.7
+    ],
+    [
+     48.2,
+     47
+    ],
+    [
+     48.4,
+     19.9
+    ],
+    [
+     48.4,
+     20.3
+    ],
+    [
+     48.5,
+     45.1
+    ],
+    [
+     48.6,
+     45.2
+    ],
+    [
+     48.6,
+     47.8
+    ],
+    [
+     48.7,
+     20.9
+    ],
+    [
+     48.8,
+     20.4
+    ],
+    [
+     48.8,
+     20.7
+    ],
+    [
+     49.4,
+     19.2
+    ],
+    [
+     49.5,
+     46.5
+    ],
+    [
+     49.6,
      20
     ],
     [
-     51,
-     22.9
+     49.7,
+     42.1
     ],
     [
-     51.4,
-     24.9
+     49.8,
+     19.7
     ],
     [
-     51.9,
-     21.4
+     50.1,
+     18.4
     ],
     [
-     51.9,
-     23.5
+     50.6,
+     39.3
     ],
     [
-     52.5,
-     32.2
+     50.6,
+     47.3
     ],
     [
-     52.9,
-     22.9
+     50.7,
+     47.2
     ],
     [
-     53.3,
-     30.8
+     50.8,
+     40.1
     ],
     [
-     53.3,
-     33.6
+     51.2,
+     40.4
     ],
     [
-     53.9,
-     35.2
+     51.3,
+     39.2
     ],
     [
-     54,
-     31
+     51.5,
+     46.8
     ],
     [
-     54.3,
-     32.2
-    ],
-    [
-     55.3,
-     33.6
+     51.6,
+     46.6
     ]
    ]
   },
   {
-   "id": "turnin-9",
+   "id": "turnin-102",
    "type": "turnin",
    "mapId": 1436,
-   "x": 56,
-   "y": 31.2,
+   "x": 56.4,
+   "y": 47.6,
    "confidence": "unverified",
-   "questId": 9,
-   "npcId": 233,
-   "questName": "The Killing Fields",
-   "npcName": "Farmer Saldean",
+   "questId": 102,
+   "npcId": 821,
+   "questName": "Patrolling Westfall",
+   "npcName": "Captain Danuvin",
+   "zoneName": "Westfall",
+   "level": 13
+  },
+  {
+   "id": "turnin-12",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 12,
+   "npcId": 234,
+   "questName": "The People's Militia",
+   "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
    "level": 13
   },
@@ -10373,20 +10856,426 @@
    "questName": "Red Leather Bandanas",
    "npcName": "Scout Galiaan",
    "zoneName": "Westfall",
-   "level": 13
+   "level": 14
   },
   {
-   "id": "grind-1436-14",
-   "type": "grind",
+   "id": "turnin-6181",
+   "type": "turnin",
    "mapId": 1436,
-   "x": 30,
-   "y": 86,
+   "x": 56.6,
+   "y": 52.6,
    "confidence": "unverified",
-   "untilLevel": 14,
-   "questName": null,
+   "questId": 6181,
+   "npcId": 523,
+   "questName": "A Swift Message",
+   "npcName": "Thor",
+   "zoneName": "Westfall",
+   "level": 14
+  },
+  {
+   "id": "accept-13",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 13,
+   "npcId": 234,
+   "questName": "The People's Militia",
+   "npcName": "Gryan Stoutmantle",
+   "zoneName": "Westfall",
+   "level": 14
+  },
+  {
+   "id": "accept-6281",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.6,
+   "confidence": "unverified",
+   "questId": 6281,
+   "npcId": 523,
+   "questName": "Continue to Stormwind",
+   "npcName": "Thor",
+   "zoneName": "Westfall",
+   "level": 14
+  },
+  {
+   "id": "complete-13",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 38.47,
+   "y": 60.15,
+   "confidence": "unverified",
+   "questId": 13,
+   "questName": "The People's Militia",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 13
+   "level": 14,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 589,
+     "name": "Defias Pillager"
+    },
+    {
+     "kind": "kill",
+     "id": 590,
+     "name": "Defias Looter"
+    }
+   ],
+   "area": [
+    [
+     28.8,
+     49.5
+    ],
+    [
+     28.9,
+     50.1
+    ],
+    [
+     29.2,
+     51.1
+    ],
+    [
+     29.6,
+     49.9
+    ],
+    [
+     29.6,
+     50.2
+    ],
+    [
+     29.7,
+     47
+    ],
+    [
+     29.7,
+     47.3
+    ],
+    [
+     29.9,
+     45.7
+    ],
+    [
+     29.9,
+     46.1
+    ],
+    [
+     30.1,
+     49.7
+    ],
+    [
+     30.4,
+     45.9
+    ],
+    [
+     30.8,
+     48.4
+    ],
+    [
+     30.9,
+     43
+    ],
+    [
+     31.2,
+     44.6
+    ],
+    [
+     31.6,
+     44.1
+    ],
+    [
+     31.6,
+     44.9
+    ],
+    [
+     31.7,
+     43
+    ],
+    [
+     32.1,
+     44
+    ],
+    [
+     32.1,
+     57.7
+    ],
+    [
+     32.8,
+     56.7
+    ],
+    [
+     33.2,
+     56.6
+    ],
+    [
+     33.2,
+     58.6
+    ],
+    [
+     33.9,
+     57
+    ],
+    [
+     35,
+     53.8
+    ],
+    [
+     35.1,
+     53.8
+    ],
+    [
+     35.6,
+     53.5
+    ],
+    [
+     35.9,
+     53.1
+    ],
+    [
+     36,
+     53.1
+    ],
+    [
+     36,
+     54.6
+    ],
+    [
+     36,
+     54.7
+    ],
+    [
+     36.4,
+     55.4
+    ],
+    [
+     36.5,
+     54.1
+    ],
+    [
+     36.7,
+     53.8
+    ],
+    [
+     36.7,
+     54
+    ],
+    [
+     37.1,
+     55.9
+    ],
+    [
+     37.2,
+     54.5
+    ],
+    [
+     37.3,
+     57.9
+    ],
+    [
+     38.1,
+     57.4
+    ],
+    [
+     38.5,
+     57.6
+    ],
+    [
+     38.6,
+     58.1
+    ],
+    [
+     38.7,
+     56.8
+    ],
+    [
+     38.8,
+     56.9
+    ],
+    [
+     38.8,
+     57.7
+    ],
+    [
+     38.8,
+     58
+    ],
+    [
+     38.8,
+     69.6
+    ],
+    [
+     41.5,
+     69.9
+    ],
+    [
+     41.5,
+     71.2
+    ],
+    [
+     41.8,
+     69.5
+    ],
+    [
+     41.9,
+     69.6
+    ],
+    [
+     42,
+     69.6
+    ],
+    [
+     42.1,
+     69.5
+    ],
+    [
+     42.2,
+     69.4
+    ],
+    [
+     42.2,
+     70.5
+    ],
+    [
+     42.6,
+     69.3
+    ],
+    [
+     42.9,
+     68.2
+    ],
+    [
+     43,
+     70.8
+    ],
+    [
+     43.1,
+     70.1
+    ],
+    [
+     43.3,
+     69.6
+    ],
+    [
+     43.4,
+     68.1
+    ],
+    [
+     43.4,
+     68.8
+    ],
+    [
+     43.5,
+     66.9
+    ],
+    [
+     43.5,
+     70.8
+    ],
+    [
+     43.6,
+     68.1
+    ],
+    [
+     43.6,
+     68.2
+    ],
+    [
+     43.7,
+     66.4
+    ],
+    [
+     43.7,
+     67.5
+    ],
+    [
+     43.7,
+     69.3
+    ],
+    [
+     43.8,
+     67.7
+    ],
+    [
+     43.9,
+     68.1
+    ],
+    [
+     43.9,
+     68.4
+    ],
+    [
+     44,
+     69.2
+    ],
+    [
+     44.1,
+     68.2
+    ],
+    [
+     44.3,
+     68.6
+    ],
+    [
+     44.4,
+     67.4
+    ],
+    [
+     44.4,
+     67.7
+    ],
+    [
+     44.5,
+     65.7
+    ],
+    [
+     44.8,
+     68.7
+    ],
+    [
+     44.9,
+     67.1
+    ],
+    [
+     45.4,
+     70.3
+    ],
+    [
+     45.5,
+     70.4
+    ],
+    [
+     45.8,
+     69.3
+    ],
+    [
+     46,
+     70.7
+    ],
+    [
+     46,
+     71.1
+    ],
+    [
+     46.3,
+     67.2
+    ]
+   ]
+  },
+  {
+   "id": "turnin-13",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 13,
+   "npcId": 234,
+   "questName": "The People's Militia",
+   "npcName": "Gryan Stoutmantle",
+   "zoneName": "Westfall",
+   "level": 14
   },
   {
    "id": "accept-103",
@@ -10693,6 +11582,48 @@
    "npcId": 392,
    "questName": "Keeper of the Flame",
    "npcName": "Captain Grayson",
+   "zoneName": "Westfall",
+   "level": 14
+  },
+  {
+   "id": "travel-1436-1453",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 47.2,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 14
+  },
+  {
+   "id": "turnin-6281",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 74.3,
+   "y": 47.2,
+   "confidence": "unverified",
+   "questId": 6281,
+   "npcId": 1323,
+   "questName": "Continue to Stormwind",
+   "npcName": "Osric Strang",
+   "zoneName": "Stormwind City",
+   "level": 14
+  },
+  {
+   "id": "travel-1453-1436-2",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
    "zoneName": "Westfall",
    "level": 14
   },
@@ -11860,35 +12791,7 @@
    "level": 18
   },
   {
-   "id": "travel-1436-1453",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 74.3,
-   "y": 47.2,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 18
-  },
-  {
-   "id": "turnin-6281",
-   "type": "turnin",
-   "mapId": 1453,
-   "x": 74.3,
-   "y": 47.2,
-   "confidence": "unverified",
-   "questId": 6281,
-   "npcId": 1323,
-   "questName": "Continue to Stormwind",
-   "npcName": "Osric Strang",
-   "zoneName": "Stormwind City",
-   "level": 18
-  },
-  {
-   "id": "travel-1453-1432",
+   "id": "travel-1436-1432",
    "type": "travel",
    "mapId": 1432,
    "x": 22.1,
@@ -15852,7 +16755,7 @@
    "questName": "Vyrin's Revenge",
    "npcName": "Vyrin Swiftwind",
    "zoneName": "Loch Modan",
-   "level": 20
+   "level": 19
   },
   {
    "id": "complete-271",
@@ -15865,7 +16768,7 @@
    "questName": "Vyrin's Revenge",
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 20,
+   "level": 19,
    "objectives": [
     {
      "kind": "collect",
@@ -15896,7 +16799,7 @@
    "questName": "Vyrin's Revenge",
    "npcName": "Daryl the Youngling",
    "zoneName": "Loch Modan",
-   "level": 20
+   "level": 19
   },
   {
    "id": "accept-531",
@@ -16252,214 +17155,11 @@
    "level": 20
   },
   {
-   "id": "accept-246",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 30.7,
-   "y": 60,
-   "confidence": "unverified",
-   "questId": 246,
-   "npcId": 1070,
-   "questName": "Assessing the Threat",
-   "npcName": "Deputy Feldon",
-   "zoneName": "Redridge Mountains",
-   "level": 20
-  },
-  {
-   "id": "complete-246",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 29.83,
-   "y": 76.11,
-   "confidence": "unverified",
-   "questId": 246,
-   "questName": "Assessing the Threat",
-   "npcName": null,
-   "zoneName": "Redridge Mountains",
-   "level": 20,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 423,
-     "name": "Redridge Mongrel"
-    },
-    {
-     "kind": "kill",
-     "id": 424,
-     "name": "Redridge Poacher"
-    }
-   ],
-   "area": [
-    [
-     14.5,
-     65.8
-    ],
-    [
-     14.8,
-     61.5
-    ],
-    [
-     15.1,
-     61
-    ],
-    [
-     15.3,
-     63.9
-    ],
-    [
-     15.6,
-     59.5
-    ],
-    [
-     16.4,
-     62
-    ],
-    [
-     16.6,
-     66.7
-    ],
-    [
-     16.7,
-     63
-    ],
-    [
-     16.8,
-     65.1
-    ],
-    [
-     27.3,
-     80.4
-    ],
-    [
-     28.5,
-     79.5
-    ],
-    [
-     29.1,
-     84.4
-    ],
-    [
-     29.3,
-     83.7
-    ],
-    [
-     29.4,
-     84.4
-    ],
-    [
-     29.9,
-     84.1
-    ],
-    [
-     30.5,
-     81.3
-    ],
-    [
-     30.9,
-     84.2
-    ],
-    [
-     31,
-     79.5
-    ],
-    [
-     31.1,
-     84
-    ],
-    [
-     31.3,
-     81.1
-    ],
-    [
-     32.1,
-     82.4
-    ],
-    [
-     32.1,
-     82.5
-    ],
-    [
-     32.1,
-     82.9
-    ],
-    [
-     32.3,
-     82.3
-    ],
-    [
-     32.4,
-     82.8
-    ],
-    [
-     32.6,
-     79.6
-    ],
-    [
-     34.5,
-     82.9
-    ],
-    [
-     34.7,
-     82.8
-    ],
-    [
-     34.7,
-     83.1
-    ],
-    [
-     35.3,
-     83.8
-    ],
-    [
-     41.8,
-     71.8
-    ],
-    [
-     41.9,
-     71.7
-    ],
-    [
-     43.2,
-     70.6
-    ],
-    [
-     43.2,
-     72.1
-    ],
-    [
-     43.3,
-     71.3
-    ],
-    [
-     43.6,
-     71.1
-    ],
-    [
-     44.2,
-     71.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-246",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 30.7,
-   "y": 60,
-   "confidence": "unverified",
-   "questId": 246,
-   "npcId": 1070,
-   "questName": "Assessing the Threat",
-   "npcName": "Deputy Feldon",
-   "zoneName": "Redridge Mountains",
-   "level": 20
-  },
-  {
    "id": "gap-116",
    "type": "gap",
    "mapId": 1433,
-   "x": 30.7,
-   "y": 60,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
    "questId": 116,
    "reason": "quest 116: objective item 1262 location unknown",
@@ -16472,13 +17172,75 @@
    "id": "gap-347",
    "type": "gap",
    "mapId": 1433,
-   "x": 30.7,
-   "y": 60,
+   "x": 25.3,
+   "y": 59.0,
    "confidence": "unverified",
    "questId": 347,
    "reason": "quest 347: prereq 345 not in route",
    "questName": "Rethban Ore",
    "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
+   "id": "gap-1699",
+   "type": "gap",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "questId": 1699,
+   "reason": "quest 1699: prereq 1698 not in route",
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "The Rethban Gauntlet",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
+   "id": "gap-1702",
+   "type": "gap",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "questId": 1702,
+   "reason": "quest 1702: prereq 1699 is a gap",
+   "classOnly": [
+    "Warrior"
+   ],
+   "questName": "The Shieldsmith",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
+   "id": "gap-386",
+   "type": "gap",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "questId": 386,
+   "reason": "quest 386: objective item 3630 location unknown",
+   "questName": "What Comes Around...",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
+   "id": "accept-246",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 30.7,
+   "y": 60,
+   "confidence": "unverified",
+   "questId": 246,
+   "npcId": 1070,
+   "questName": "Assessing the Threat",
+   "npcName": "Deputy Feldon",
    "zoneName": "Redridge Mountains",
    "level": 20
   },
@@ -16591,6 +17353,51 @@
    "npcId": 381,
    "questName": "Selling Fish",
    "npcName": "Dockmaster Baren",
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
+   "id": "travel-1433-1426",
+   "type": "travel",
+   "mapId": 1426,
+   "x": 47.6,
+   "y": 52.6,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 20
+  },
+  {
+   "id": "accept-2299",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 47.6,
+   "y": 52.6,
+   "confidence": "unverified",
+   "questId": 2299,
+   "npcId": 1234,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "To Hulfdan!",
+   "npcName": "Hogral Bakkan",
+   "zoneName": "Dun Morogh",
+   "level": 20
+  },
+  {
+   "id": "travel-1426-1433",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
    "zoneName": "Redridge Mountains",
    "level": 20
   },
@@ -17870,6 +18677,195 @@
    ]
   },
   {
+   "id": "complete-246",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 29.83,
+   "y": 76.11,
+   "confidence": "unverified",
+   "questId": 246,
+   "questName": "Assessing the Threat",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 20,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 423,
+     "name": "Redridge Mongrel"
+    },
+    {
+     "kind": "kill",
+     "id": 424,
+     "name": "Redridge Poacher"
+    }
+   ],
+   "area": [
+    [
+     14.5,
+     65.8
+    ],
+    [
+     14.8,
+     61.5
+    ],
+    [
+     15.1,
+     61
+    ],
+    [
+     15.3,
+     63.9
+    ],
+    [
+     15.6,
+     59.5
+    ],
+    [
+     16.4,
+     62
+    ],
+    [
+     16.6,
+     66.7
+    ],
+    [
+     16.7,
+     63
+    ],
+    [
+     16.8,
+     65.1
+    ],
+    [
+     27.3,
+     80.4
+    ],
+    [
+     28.5,
+     79.5
+    ],
+    [
+     29.1,
+     84.4
+    ],
+    [
+     29.3,
+     83.7
+    ],
+    [
+     29.4,
+     84.4
+    ],
+    [
+     29.9,
+     84.1
+    ],
+    [
+     30.5,
+     81.3
+    ],
+    [
+     30.9,
+     84.2
+    ],
+    [
+     31,
+     79.5
+    ],
+    [
+     31.1,
+     84
+    ],
+    [
+     31.3,
+     81.1
+    ],
+    [
+     32.1,
+     82.4
+    ],
+    [
+     32.1,
+     82.5
+    ],
+    [
+     32.1,
+     82.9
+    ],
+    [
+     32.3,
+     82.3
+    ],
+    [
+     32.4,
+     82.8
+    ],
+    [
+     32.6,
+     79.6
+    ],
+    [
+     34.5,
+     82.9
+    ],
+    [
+     34.7,
+     82.8
+    ],
+    [
+     34.7,
+     83.1
+    ],
+    [
+     35.3,
+     83.8
+    ],
+    [
+     41.8,
+     71.8
+    ],
+    [
+     41.9,
+     71.7
+    ],
+    [
+     43.2,
+     70.6
+    ],
+    [
+     43.2,
+     72.1
+    ],
+    [
+     43.3,
+     71.3
+    ],
+    [
+     43.6,
+     71.1
+    ],
+    [
+     44.2,
+     71.1
+    ]
+   ]
+  },
+  {
+   "id": "turnin-246",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 30.7,
+   "y": 60,
+   "confidence": "unverified",
+   "questId": 246,
+   "npcId": 1070,
+   "questName": "Assessing the Threat",
+   "npcName": "Deputy Feldon",
+   "zoneName": "Redridge Mountains",
+   "level": 20
+  },
+  {
    "id": "turnin-129",
    "type": "turnin",
    "mapId": 1433,
@@ -17894,121 +18890,6 @@
    "npcId": 8962,
    "questName": "Hilary's Necklace",
    "npcName": "Hilary",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "travel-1433-1429",
-   "type": "travel",
-   "mapId": 1429,
-   "x": 41.7,
-   "y": 65.5,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Elwynn Forest",
-   "level": 21
-  },
-  {
-   "id": "turnin-118",
-   "type": "turnin",
-   "mapId": 1429,
-   "x": 41.7,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 118,
-   "npcId": 514,
-   "questName": "The Price of Shoes",
-   "npcName": "Smith Argus",
-   "zoneName": "Elwynn Forest",
-   "level": 21
-  },
-  {
-   "id": "travel-1429-1453-2",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 64,
-   "y": 75.3,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "turnin-120",
-   "type": "turnin",
-   "mapId": 1453,
-   "x": 64,
-   "y": 75.3,
-   "confidence": "unverified",
-   "questId": 120,
-   "npcId": 466,
-   "questName": "Messenger to Stormwind",
-   "npcName": "General Marcus Jonathan",
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "flightpath-2",
-   "type": "flightpath",
-   "mapId": 1453,
-   "x": 71.6,
-   "y": 72.3,
-   "confidence": "unverified",
-   "node": "Stormwind, Elwynn",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "travel-fly-2-4",
-   "type": "travel",
-   "mapId": 1436,
-   "x": 56.6,
-   "y": 52.7,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Stormwind, Elwynn",
-   "node": "Sentinel Hill, Westfall",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Westfall",
-   "level": 21
-  },
-  {
-   "id": "turnin-132",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 132,
-   "npcId": 234,
-   "questName": "The Defias Brotherhood",
-   "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 21
-  },
-  {
-   "id": "travel-fly-4-5",
-   "type": "travel",
-   "mapId": 1433,
-   "x": 25.3,
-   "y": 59.0,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Sentinel Hill, Westfall",
-   "node": "Lakeshire, Redridge",
-   "questName": null,
-   "npcName": null,
    "zoneName": "Redridge Mountains",
    "level": 21
   },
@@ -18367,6 +19248,154 @@
    "level": 21
   },
   {
+   "id": "travel-1433-1429",
+   "type": "travel",
+   "mapId": 1429,
+   "x": 41.7,
+   "y": 65.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 21
+  },
+  {
+   "id": "turnin-118",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 41.7,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 118,
+   "npcId": 514,
+   "questName": "The Price of Shoes",
+   "npcName": "Smith Argus",
+   "zoneName": "Elwynn Forest",
+   "level": 21
+  },
+  {
+   "id": "travel-1429-1453-4",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 64,
+   "y": 75.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 21
+  },
+  {
+   "id": "turnin-120",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 64,
+   "y": 75.3,
+   "confidence": "unverified",
+   "questId": 120,
+   "npcId": 466,
+   "questName": "Messenger to Stormwind",
+   "npcName": "General Marcus Jonathan",
+   "zoneName": "Stormwind City",
+   "level": 21
+  },
+  {
+   "id": "flightpath-2",
+   "type": "flightpath",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "node": "Stormwind, Elwynn",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 21
+  },
+  {
+   "id": "travel-fly-2-4",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Sentinel Hill, Westfall",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Westfall",
+   "level": 21
+  },
+  {
+   "id": "turnin-132",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 132,
+   "npcId": 234,
+   "questName": "The Defias Brotherhood",
+   "npcName": "Gryan Stoutmantle",
+   "zoneName": "Westfall",
+   "level": 21
+  },
+  {
+   "id": "travel-fly-4-6",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 55.9,
+   "y": 47.9,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Ironforge, Dun Morogh",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ironforge",
+   "level": 21
+  },
+  {
+   "id": "turnin-2299",
+   "type": "turnin",
+   "mapId": 1455,
+   "x": 52,
+   "y": 14.8,
+   "confidence": "unverified",
+   "questId": 2299,
+   "npcId": 5165,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "To Hulfdan!",
+   "npcName": "Hulfdan Blackbeard",
+   "zoneName": "Ironforge",
+   "level": 21
+  },
+  {
+   "id": "travel-fly-6-5",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Lakeshire, Redridge",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
    "id": "accept-130",
    "type": "accept",
    "mapId": 1433,
@@ -18471,7 +19500,7 @@
    "level": 21
   },
   {
-   "id": "travel-fly-4-5-2",
+   "id": "travel-fly-4-5",
    "type": "travel",
    "mapId": 1433,
    "x": 25.3,
@@ -18511,6 +19540,55 @@
    "npcId": 341,
    "questName": "The Everstill Bridge",
    "npcName": "Foreman Oslow",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "travel-fly-5-6",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 55.9,
+   "y": 47.9,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Ironforge, Dun Morogh",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ironforge",
+   "level": 21
+  },
+  {
+   "id": "accept-2298",
+   "type": "accept",
+   "mapId": 1455,
+   "x": 52,
+   "y": 14.8,
+   "confidence": "unverified",
+   "questId": 2298,
+   "npcId": 5165,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Kingly Shakedown",
+   "npcName": "Hulfdan Blackbeard",
+   "zoneName": "Ironforge",
+   "level": 21
+  },
+  {
+   "id": "travel-fly-6-5-2",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Lakeshire, Redridge",
+   "questName": null,
+   "npcName": null,
    "zoneName": "Redridge Mountains",
    "level": 21
   },
@@ -19394,52 +20472,6 @@
    "level": 21
   },
   {
-   "id": "travel-fly-5-2-2",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 71.6,
-   "y": 72.3,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Lakeshire, Redridge",
-   "node": "Stormwind, Elwynn",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "turnin-135",
-   "type": "turnin",
-   "mapId": 1453,
-   "x": 75.8,
-   "y": 59.8,
-   "confidence": "unverified",
-   "questId": 135,
-   "npcId": 332,
-   "questName": "The Defias Brotherhood",
-   "npcName": "Master Mathias Shaw",
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "travel-fly-2-5-2",
-   "type": "travel",
-   "mapId": 1433,
-   "x": 25.3,
-   "y": 59.0,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Stormwind, Elwynn",
-   "node": "Lakeshire, Redridge",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Redridge Mountains",
-   "level": 22
-  },
-  {
    "id": "turnin-124",
    "type": "turnin",
    "mapId": 1433,
@@ -19451,7 +20483,7 @@
    "questName": "A Baying of Gnolls",
    "npcName": "Verner Osgood",
    "zoneName": "Redridge Mountains",
-   "level": 22
+   "level": 21
   },
   {
    "id": "turnin-89",
@@ -19540,6 +20572,69 @@
    "level": 22
   },
   {
+   "id": "travel-fly-5-2-2",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "turnin-135",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 75.8,
+   "y": 59.8,
+   "confidence": "unverified",
+   "questId": 135,
+   "npcId": 332,
+   "questName": "The Defias Brotherhood",
+   "npcName": "Master Mathias Shaw",
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "turnin-2298",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 75.8,
+   "y": 60.4,
+   "confidence": "unverified",
+   "questId": 2298,
+   "npcId": 6946,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Kingly Shakedown",
+   "npcName": "Renzik \"The Shiv\"",
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "travel-fly-2-5-2",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
    "id": "accept-131",
    "type": "accept",
    "mapId": 1433,
@@ -19614,6 +20709,55 @@
    "level": 22
   },
   {
+   "id": "travel-fly-5-2-4",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "accept-2281",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 75.8,
+   "y": 60.4,
+   "confidence": "unverified",
+   "questId": 2281,
+   "npcId": 6946,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Redridge Rendezvous",
+   "npcName": "Renzik \"The Shiv\"",
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "travel-fly-2-5-4",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
    "id": "turnin-131",
    "type": "turnin",
    "mapId": 1433,
@@ -19624,6 +20768,23 @@
    "npcId": 379,
    "questName": "Delivering Daffodils",
    "npcName": "Darcy",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "turnin-2281",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 28.1,
+   "y": 52,
+   "confidence": "unverified",
+   "questId": 2281,
+   "npcId": 6966,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Redridge Rendezvous",
+   "npcName": "Lucius",
    "zoneName": "Redridge Mountains",
    "level": 22
   },
@@ -19700,6 +20861,88 @@
    "level": 22
   },
   {
+   "id": "travel-fly-4-5-2",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Sentinel Hill, Westfall",
+   "node": "Lakeshire, Redridge",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "accept-2282",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 28.1,
+   "y": 52,
+   "confidence": "unverified",
+   "questId": 2282,
+   "npcId": 6966,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Alther's Mill",
+   "npcName": "Lucius",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "complete-2282",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 52.0,
+   "y": 44.7,
+   "confidence": "unverified",
+   "questId": 2282,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Alther's Mill",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 7871,
+     "name": "Token of Thievery",
+     "sources": [
+      "Lucius's Lockbox"
+     ],
+     "icon": 134415
+    }
+   ],
+   "area": [
+    [
+     52,
+     44.7
+    ]
+   ]
+  },
+  {
+   "id": "travel-fly-5-4-3",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.6,
+   "y": 52.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Sentinel Hill, Westfall",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Westfall",
+   "level": 22
+  },
+  {
    "id": "complete-142",
    "type": "complete",
    "mapId": 1436,
@@ -19728,20 +20971,6 @@
      69.6
     ]
    ]
-  },
-  {
-   "id": "turnin-142",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 142,
-   "npcId": 234,
-   "questName": "The Defias Brotherhood",
-   "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 22
   },
   {
    "id": "travel-fly-4-5-3",
@@ -19774,7 +21003,24 @@
    "level": 22
   },
   {
-   "id": "travel-fly-5-4-3",
+   "id": "turnin-2282",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 28.1,
+   "y": 52,
+   "confidence": "unverified",
+   "questId": 2282,
+   "npcId": 6966,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Alther's Mill",
+   "npcName": "Lucius",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "travel-fly-5-4-4",
    "type": "travel",
    "mapId": 1436,
    "x": 56.6,
@@ -19786,6 +21032,20 @@
    "node": "Sentinel Hill, Westfall",
    "questName": null,
    "npcName": null,
+   "zoneName": "Westfall",
+   "level": 22
+  },
+  {
+   "id": "turnin-142",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 142,
+   "npcId": 234,
+   "questName": "The Defias Brotherhood",
+   "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
    "level": 22
   },
@@ -19820,6 +21080,23 @@
    "level": 22
   },
   {
+   "id": "accept-2358",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 28.1,
+   "y": 52.3,
+   "confidence": "unverified",
+   "questId": 2358,
+   "npcId": 7009,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Horns of Nez'ra",
+   "npcName": "Arantir",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
    "id": "accept-145",
    "type": "accept",
    "mapId": 1433,
@@ -19834,7 +21111,339 @@
    "level": 22
   },
   {
-   "id": "travel-fly-5-4-4",
+   "id": "complete-2358",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 55.78,
+   "y": 43.84,
+   "confidence": "unverified",
+   "questId": 2358,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Horns of Nez'ra",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 7906,
+     "name": "Horns of Nez'ra",
+     "sources": [
+      "Blackrock Grunt",
+      "Blackrock Outrunner",
+      "Blackrock Summoner"
+     ],
+     "icon": 134228
+    }
+   ],
+   "area": [
+    [
+     25.9,
+     14.8
+    ],
+    [
+     27.4,
+     10.9
+    ],
+    [
+     27.4,
+     15.9
+    ],
+    [
+     28.4,
+     11.8
+    ],
+    [
+     28.4,
+     14.7
+    ],
+    [
+     28.9,
+     12.8
+    ],
+    [
+     29.9,
+     16.5
+    ],
+    [
+     30.7,
+     12.3
+    ],
+    [
+     31.2,
+     9.4
+    ],
+    [
+     32,
+     6.4
+    ],
+    [
+     35.6,
+     8
+    ],
+    [
+     35.8,
+     10.3
+    ],
+    [
+     37.1,
+     45.2
+    ],
+    [
+     37.1,
+     45.6
+    ],
+    [
+     37.2,
+     45.7
+    ],
+    [
+     38.2,
+     41.2
+    ],
+    [
+     38.3,
+     41.2
+    ],
+    [
+     39.9,
+     40.1
+    ],
+    [
+     40.6,
+     41.4
+    ],
+    [
+     41.5,
+     10.9
+    ],
+    [
+     42.5,
+     17.9
+    ],
+    [
+     43,
+     12.3
+    ],
+    [
+     43.4,
+     40.2
+    ],
+    [
+     43.9,
+     19.6
+    ],
+    [
+     44.1,
+     12.7
+    ],
+    [
+     44.5,
+     19.4
+    ],
+    [
+     59,
+     43.7
+    ],
+    [
+     59.4,
+     44.3
+    ],
+    [
+     59.6,
+     42.2
+    ],
+    [
+     59.8,
+     42
+    ],
+    [
+     60.6,
+     43
+    ],
+    [
+     60.9,
+     43.7
+    ],
+    [
+     61,
+     42.8
+    ],
+    [
+     61.1,
+     43.4
+    ],
+    [
+     62.1,
+     44.5
+    ],
+    [
+     62.4,
+     41.4
+    ],
+    [
+     62.4,
+     45.3
+    ],
+    [
+     62.5,
+     45.6
+    ],
+    [
+     62.6,
+     41.4
+    ],
+    [
+     62.7,
+     45.5
+    ],
+    [
+     65.2,
+     61.6
+    ],
+    [
+     68.9,
+     78.4
+    ],
+    [
+     69.9,
+     76.7
+    ],
+    [
+     70.7,
+     78.7
+    ],
+    [
+     71.4,
+     74.8
+    ],
+    [
+     72.3,
+     81.7
+    ],
+    [
+     72.4,
+     80.1
+    ],
+    [
+     72.9,
+     74.6
+    ],
+    [
+     73.5,
+     78.5
+    ],
+    [
+     73.9,
+     78.3
+    ],
+    [
+     74,
+     79.3
+    ],
+    [
+     74.4,
+     78.8
+    ],
+    [
+     75,
+     81.4
+    ],
+    [
+     75.1,
+     74.3
+    ],
+    [
+     75.1,
+     83.8
+    ],
+    [
+     75.4,
+     72.6
+    ],
+    [
+     75.6,
+     83
+    ],
+    [
+     75.7,
+     63.6
+    ],
+    [
+     76,
+     84.6
+    ],
+    [
+     76.2,
+     80.5
+    ],
+    [
+     76.3,
+     82.7
+    ],
+    [
+     76.7,
+     74.4
+    ],
+    [
+     77,
+     83.4
+    ],
+    [
+     77.1,
+     66.5
+    ],
+    [
+     77.4,
+     85.7
+    ],
+    [
+     77.6,
+     86.1
+    ],
+    [
+     77.7,
+     67.3
+    ],
+    [
+     77.7,
+     69.4
+    ],
+    [
+     77.8,
+     85.7
+    ],
+    [
+     77.9,
+     73.3
+    ],
+    [
+     78,
+     67.4
+    ]
+   ]
+  },
+  {
+   "id": "turnin-2358",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 28.1,
+   "y": 52.3,
+   "confidence": "unverified",
+   "questId": 2358,
+   "npcId": 7009,
+   "classOnly": [
+    "Rogue"
+   ],
+   "questName": "Horns of Nez'ra",
+   "npcName": "Arantir",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "travel-fly-5-4-5",
    "type": "travel",
    "mapId": 1436,
    "x": 56.6,
@@ -19860,48 +21469,6 @@
    "npcId": 234,
    "questName": "The Defias Brotherhood",
    "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 22
-  },
-  {
-   "id": "travel-1436-1431",
-   "type": "travel",
-   "mapId": 1431,
-   "x": 71.9,
-   "y": 46.4,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Duskwood",
-   "level": 22
-  },
-  {
-   "id": "turnin-145",
-   "type": "turnin",
-   "mapId": 1431,
-   "x": 71.9,
-   "y": 46.4,
-   "confidence": "unverified",
-   "questId": 145,
-   "npcId": 263,
-   "questName": "Messenger to Darkshire",
-   "npcName": "Lord Ello Ebonlocke",
-   "zoneName": "Duskwood",
-   "level": 22
-  },
-  {
-   "id": "travel-1431-1436",
-   "type": "travel",
-   "mapId": 1436,
-   "x": 56.7,
-   "y": 47.3,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
    "zoneName": "Westfall",
    "level": 22
   },
@@ -20154,7 +21721,364 @@
    "level": 22
   },
   {
-   "id": "travel-1436-1439",
+   "id": "travel-1436-1431",
+   "type": "travel",
+   "mapId": 1431,
+   "x": 71.9,
+   "y": 46.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Duskwood",
+   "level": 22
+  },
+  {
+   "id": "turnin-145",
+   "type": "turnin",
+   "mapId": 1431,
+   "x": 71.9,
+   "y": 46.4,
+   "confidence": "unverified",
+   "questId": 145,
+   "npcId": 263,
+   "questName": "Messenger to Darkshire",
+   "npcName": "Lord Ello Ebonlocke",
+   "zoneName": "Duskwood",
+   "level": 22
+  },
+  {
+   "id": "travel-1431-1433",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 31.5,
+   "y": 57.9,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "grind-1433-23",
+   "type": "grind",
+   "mapId": 1433,
+   "x": 31.5,
+   "y": 57.9,
+   "confidence": "unverified",
+   "untilLevel": 23,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "accept-128",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 31.5,
+   "y": 57.9,
+   "confidence": "unverified",
+   "questId": 128,
+   "npcId": 903,
+   "questName": "Blackrock Bounty",
+   "npcName": "Guard Howe",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "accept-19",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "questId": 19,
+   "npcId": 382,
+   "questName": "Tharil'zun",
+   "npcName": "Marshal Marris",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "accept-126",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 31,
+   "y": 47.3,
+   "confidence": "unverified",
+   "questId": 126,
+   "npcId": 415,
+   "questName": "Howling in the Hills",
+   "npcName": "Verner Osgood",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "accept-219",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 28.4,
+   "y": 12.6,
+   "confidence": "unverified",
+   "questId": 219,
+   "npcId": 349,
+   "questName": "Missing In Action",
+   "npcName": "Corporal Keeshan",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "complete-128",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 30.27,
+   "y": 11.32,
+   "confidence": "unverified",
+   "questId": 128,
+   "questName": "Blackrock Bounty",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 23,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 435,
+     "name": "Blackrock Champion"
+    }
+   ],
+   "area": [
+    [
+     26.6,
+     8.2
+    ],
+    [
+     27,
+     9.7
+    ],
+    [
+     27.3,
+     16.4
+    ],
+    [
+     27.5,
+     16.3
+    ],
+    [
+     28.2,
+     16.8
+    ],
+    [
+     28.4,
+     17.6
+    ],
+    [
+     28.6,
+     11.5
+    ],
+    [
+     28.6,
+     11.7
+    ],
+    [
+     28.6,
+     15.4
+    ],
+    [
+     28.7,
+     13.9
+    ],
+    [
+     29.4,
+     12
+    ],
+    [
+     29.5,
+     8.6
+    ],
+    [
+     29.6,
+     11.2
+    ],
+    [
+     29.6,
+     14.1
+    ],
+    [
+     30.4,
+     9.9
+    ],
+    [
+     30.5,
+     8.8
+    ],
+    [
+     30.6,
+     15.5
+    ],
+    [
+     31,
+     7.2
+    ],
+    [
+     31.4,
+     5.7
+    ],
+    [
+     31.4,
+     11
+    ],
+    [
+     31.4,
+     12.8
+    ],
+    [
+     31.7,
+     13.1
+    ],
+    [
+     32.1,
+     7
+    ],
+    [
+     34.4,
+     6.7
+    ],
+    [
+     34.4,
+     7.8
+    ],
+    [
+     34.8,
+     9.1
+    ],
+    [
+     35.7,
+     7.7
+    ]
+   ]
+  },
+  {
+   "id": "complete-126",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 27.7,
+   "y": 21.4,
+   "confidence": "unverified",
+   "questId": 126,
+   "questName": "Howling in the Hills",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 23,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 3614,
+     "name": "Yowler's Paw",
+     "sources": [
+      "Yowler"
+     ],
+     "icon": 134297
+    }
+   ],
+   "area": [
+    [
+     27.7,
+     21.4
+    ]
+   ]
+  },
+  {
+   "id": "complete-19",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 69.6,
+   "y": 59.7,
+   "confidence": "unverified",
+   "questId": 19,
+   "questName": "Tharil'zun",
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 23,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 1260,
+     "name": "Tharil'zun's Head",
+     "sources": [
+      "Tharil'zun"
+     ],
+     "icon": 134170
+    }
+   ],
+   "area": [
+    [
+     69.6,
+     59.7
+    ]
+   ]
+  },
+  {
+   "id": "turnin-128",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 31.5,
+   "y": 57.9,
+   "confidence": "unverified",
+   "questId": 128,
+   "npcId": 903,
+   "questName": "Blackrock Bounty",
+   "npcName": "Guard Howe",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "turnin-19",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "questId": 19,
+   "npcId": 382,
+   "questName": "Tharil'zun",
+   "npcName": "Marshal Marris",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "turnin-126",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 31,
+   "y": 47.3,
+   "confidence": "unverified",
+   "questId": 126,
+   "npcId": 415,
+   "questName": "Howling in the Hills",
+   "npcName": "Verner Osgood",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "turnin-219",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "questId": 219,
+   "npcId": 382,
+   "questName": "Missing In Action",
+   "npcName": "Marshal Marris",
+   "zoneName": "Redridge Mountains",
+   "level": 23
+  },
+  {
+   "id": "travel-1433-1439",
    "type": "travel",
    "mapId": 1439,
    "x": 40.3,
@@ -20165,7 +22089,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-953",
@@ -20179,7 +22103,7 @@
    "questName": "The Fall of Ameth'Aran",
    "npcName": "Sentinel Tysha Moonblade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "complete-953",
@@ -20192,7 +22116,7 @@
    "questName": "The Fall of Ameth'Aran",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "use",
@@ -20228,7 +22152,7 @@
    "questName": "The Fall of Ameth'Aran",
    "npcName": "Sentinel Tysha Moonblade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-983",
@@ -20242,7 +22166,7 @@
    "questName": "Buzzbox 827",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-1141",
@@ -20256,7 +22180,7 @@
    "questName": "The Family and the Fishing Pole",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-1579",
@@ -20270,7 +22194,7 @@
    "questName": "Gaffer Jacks",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-1580",
@@ -20284,7 +22208,7 @@
    "questName": "Electropellers",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-2118",
@@ -20298,7 +22222,7 @@
    "questName": "Plagued Lands",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-2138",
@@ -20312,7 +22236,7 @@
    "questName": "Cleansing of the Infected",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-2139",
@@ -20326,7 +22250,7 @@
    "questName": "Tharnariun's Hope",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-6343",
@@ -20340,7 +22264,7 @@
    "questName": "Return to Nessa",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-4762",
@@ -20354,7 +22278,7 @@
    "questName": "The Cliffspring River",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-4812",
@@ -20368,7 +22292,7 @@
    "questName": "As Water Cascades",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-729",
@@ -20382,7 +22306,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "gap-4763",
@@ -20396,7 +22320,7 @@
    "questName": "The Blackwood Corrupted",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-954",
@@ -20410,7 +22334,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-958",
@@ -20424,7 +22348,7 @@
    "questName": "Tools of the Highborne",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-2178",
@@ -20438,7 +22362,7 @@
    "questName": "Easy Strider Living",
    "npcName": "Alanndarian Nightsong",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-984",
@@ -20452,7 +22376,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-963",
@@ -20466,7 +22390,7 @@
    "questName": "For Love Eternal",
    "npcName": "Cerellean Whiteclaw",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "flightpath-26",
@@ -20479,7 +22403,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-3524",
@@ -20493,7 +22417,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-947",
@@ -20507,7 +22431,7 @@
    "questName": "Cave Mushrooms",
    "npcName": "Barithras Moonshade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-4811",
@@ -20521,7 +22445,7 @@
    "questName": "The Red Crystal",
    "npcName": "Sentinel Glynda Nal'Shea",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-965",
@@ -20535,7 +22459,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Sentinel Elissa Starbreeze",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-982",
@@ -20549,7 +22473,7 @@
    "questName": "Deep Ocean, Vast Sea",
    "npcName": "Gorbold Steelhand",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-1138",
@@ -20563,7 +22487,7 @@
    "questName": "Fruit of the Sea",
    "npcName": "Gubber Blump",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "complete-3524",
@@ -20576,7 +22500,7 @@
    "questName": "Washed Ashore",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -20606,7 +22530,7 @@
    "questName": "Easy Strider Living",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -21434,7 +23358,7 @@
    "questName": "Tools of the Highborne",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -21658,7 +23582,7 @@
    "questName": "For Love Eternal",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -21688,7 +23612,7 @@
    "questName": "Fruit of the Sea",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -21847,7 +23771,7 @@
    "questName": "Cave Mushrooms",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -21978,7 +23902,7 @@
    "questName": "Deep Ocean, Vast Sea",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -22022,7 +23946,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-958",
@@ -22036,7 +23960,7 @@
    "questName": "Tools of the Highborne",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-2178",
@@ -22050,7 +23974,7 @@
    "questName": "Easy Strider Living",
    "npcName": "Alanndarian Nightsong",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-984",
@@ -22064,7 +23988,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-963",
@@ -22078,7 +24002,7 @@
    "questName": "For Love Eternal",
    "npcName": "Cerellean Whiteclaw",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-3524",
@@ -22092,7 +24016,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-947",
@@ -22106,7 +24030,7 @@
    "questName": "Cave Mushrooms",
    "npcName": "Barithras Moonshade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-4811",
@@ -22120,7 +24044,7 @@
    "questName": "The Red Crystal",
    "npcName": "Sentinel Glynda Nal'Shea",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-965",
@@ -22134,7 +24058,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-982",
@@ -22148,7 +24072,7 @@
    "questName": "Deep Ocean, Vast Sea",
    "npcName": "Gorbold Steelhand",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-1138",
@@ -22162,7 +24086,7 @@
    "questName": "Fruit of the Sea",
    "npcName": "Gubber Blump",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-955",
@@ -22176,7 +24100,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-985",
@@ -22190,7 +24114,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-4681",
@@ -22204,7 +24128,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-4761",
@@ -22218,7 +24142,7 @@
    "questName": "Thundris Windweaver",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-948",
@@ -22232,7 +24156,7 @@
    "questName": "Onu",
    "npcName": "Barithras Moonshade",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "complete-4681",
@@ -22245,7 +24169,7 @@
    "questName": "Washed Ashore",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -22275,7 +24199,7 @@
    "questName": "How Big a Threat?",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "kill",
@@ -22406,7 +24330,7 @@
    "questName": "Bashal'Aran",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -22594,7 +24518,7 @@
    "questName": "Bashal'Aran",
    "npcName": "Asterion",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-985",
@@ -22608,7 +24532,7 @@
    "questName": "How Big a Threat?",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-4681",
@@ -22622,7 +24546,7 @@
    "questName": "Washed Ashore",
    "npcName": "Gwennyth Bly'Leggonde",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-4761",
@@ -22636,7 +24560,7 @@
    "questName": "Thundris Windweaver",
    "npcName": "Thundris Windweaver",
    "zoneName": "Darkshore",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-948",
@@ -23176,48 +25100,6 @@
    "npcId": 3661,
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
-   "zoneName": "Darkshore",
-   "level": 23
-  },
-  {
-   "id": "travel-1439-1440",
-   "type": "travel",
-   "mapId": 1440,
-   "x": 26.2,
-   "y": 38.7,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 23
-  },
-  {
-   "id": "turnin-967",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 26.2,
-   "y": 38.7,
-   "confidence": "unverified",
-   "questId": 967,
-   "npcId": 3663,
-   "questName": "The Tower of Althalaxx",
-   "npcName": "Delgren the Purifier",
-   "zoneName": "Ashenvale",
-   "level": 23
-  },
-  {
-   "id": "travel-1440-1439",
-   "type": "travel",
-   "mapId": 1439,
-   "x": 56.7,
-   "y": 13.5,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
    "zoneName": "Darkshore",
    "level": 23
   },
@@ -23878,7 +25760,7 @@
    "questName": "Gyromast's Retrieval",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-2078",
@@ -23892,7 +25774,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-2078",
@@ -23905,7 +25787,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -23932,7 +25814,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-944",
@@ -23946,7 +25828,7 @@
    "questName": "The Master's Glaive",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-951",
@@ -23960,7 +25842,7 @@
    "questName": "Mathystra Relics",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-5321",
@@ -23974,7 +25856,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Kerlonian Evershade",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-5321",
@@ -23987,7 +25869,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -24018,7 +25900,7 @@
    "questName": "Escape Through Force",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-995",
@@ -24032,7 +25914,7 @@
    "questName": "Escape Through Stealth",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-5713",
@@ -24046,7 +25928,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Aynasha",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-994",
@@ -24060,7 +25942,7 @@
    "questName": "Escape Through Force",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-995",
@@ -24074,7 +25956,7 @@
    "questName": "Escape Through Stealth",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-731",
@@ -24088,7 +25970,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-741",
@@ -24102,7 +25984,7 @@
    "questName": "The Absent Minded Prospector",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-945",
@@ -24116,21 +25998,35 @@
    "questName": "Therylune's Escape",
    "npcName": "Therylune",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
-   "id": "travel-1439-1440-2",
+   "id": "travel-1439-1440",
    "type": "travel",
    "mapId": 1440,
-   "x": 27.3,
-   "y": 35.6,
+   "x": 26.2,
+   "y": 38.7,
    "confidence": "unverified",
    "mode": "walk",
    "radius": 5,
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
+  },
+  {
+   "id": "turnin-967",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 26.2,
+   "y": 38.7,
+   "confidence": "unverified",
+   "questId": 967,
+   "npcId": 3663,
+   "questName": "The Tower of Althalaxx",
+   "npcName": "Delgren the Purifier",
+   "zoneName": "Ashenvale",
+   "level": 24
   },
   {
    "id": "turnin-5321",
@@ -24144,7 +26040,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Liladris Moonriver",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-5713",
@@ -24158,7 +26054,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Onaeya",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-945",
@@ -24172,7 +26068,7 @@
    "questName": "Therylune's Escape",
    "npcName": "Therysil",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-1007",
@@ -24186,7 +26082,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-1007",
@@ -24199,7 +26095,7 @@
    "questName": "The Ancient Statuette",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -24230,7 +26126,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-1009",
@@ -24244,7 +26140,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-1009",
@@ -24257,7 +26153,7 @@
    "questName": "Ruuzel",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -24293,7 +26189,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-970",
@@ -24307,7 +26203,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-1010",
@@ -24321,7 +26217,7 @@
    "questName": "Bathran's Hair",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-970",
@@ -24334,7 +26230,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -25160,7 +27056,7 @@
    "questName": "Culling the Threat",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "turnin-1033",
@@ -25174,7 +27070,7 @@
    "questName": "Elune's Tear",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "accept-1023",
@@ -25188,7 +27084,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Teronis' Corpse",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "accept-1034",
@@ -25202,7 +27098,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "complete-1034",
@@ -25215,7 +27111,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -25313,7 +27209,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 25,
    "objectives": [
     {
      "kind": "collect",
@@ -25422,7 +27318,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "turnin-1034",
@@ -25436,7 +27332,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "accept-1024",
@@ -25450,7 +27346,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "accept-1025",
@@ -25464,7 +27360,7 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "complete-1025",
@@ -25477,7 +27373,7 @@
    "questName": "An Aggressive Defense",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 25,
    "objectives": [
     {
      "kind": "kill",
@@ -25691,7 +27587,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "turnin-1025",
@@ -25705,7 +27601,7 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1016",
@@ -25719,7 +27615,7 @@
    "questName": "Elemental Bracers",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1017",
@@ -25733,7 +27629,7 @@
    "questName": "Mage Summoner",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1027",
@@ -25747,7 +27643,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1028",
@@ -25761,7 +27657,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1029",
@@ -25775,7 +27671,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "gap-1030",
@@ -25789,62 +27685,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
-  },
-  {
-   "id": "gap-1045",
-   "type": "gap",
-   "mapId": 1440,
-   "x": 36.6,
-   "y": 49.6,
-   "confidence": "unverified",
-   "questId": 1045,
-   "reason": "quest 1045: prereq 1030 is a gap",
-   "questName": "Raene's Cleansing",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 24
-  },
-  {
-   "id": "gap-1046",
-   "type": "gap",
-   "mapId": 1440,
-   "x": 36.6,
-   "y": 49.6,
-   "confidence": "unverified",
-   "questId": 1046,
-   "reason": "quest 1046: prereq 1045 is a gap",
-   "questName": "Raene's Cleansing",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 24
-  },
-  {
-   "id": "gap-7788",
-   "type": "gap",
-   "mapId": 1440,
-   "x": 36.6,
-   "y": 49.6,
-   "confidence": "unverified",
-   "questId": 7788,
-   "reason": "quest 7788: objective item 20558 location unknown",
-   "questName": "Vanquish the Invaders!",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 24
-  },
-  {
-   "id": "grind-1440-25",
-   "type": "grind",
-   "mapId": 1440,
-   "x": 53.5,
-   "y": 46.2,
-   "confidence": "unverified",
-   "untilLevel": 25,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 24
+   "level": 25
   },
   {
    "id": "accept-1026",
@@ -25971,6 +27812,117 @@
    "level": 25
   },
   {
+   "id": "gap-1045",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 53.5,
+   "y": 46.2,
+   "confidence": "unverified",
+   "questId": 1045,
+   "reason": "quest 1045: prereq 1030 is a gap",
+   "questName": "Raene's Cleansing",
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25
+  },
+  {
+   "id": "gap-1046",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 53.5,
+   "y": 46.2,
+   "confidence": "unverified",
+   "questId": 1046,
+   "reason": "quest 1046: prereq 1045 is a gap",
+   "questName": "Raene's Cleansing",
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25
+  },
+  {
+   "id": "gap-7788",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 53.5,
+   "y": 46.2,
+   "confidence": "unverified",
+   "questId": 7788,
+   "reason": "quest 7788: objective item 20558 location unknown",
+   "questName": "Vanquish the Invaders!",
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25
+  },
+  {
+   "id": "travel-1440-1442",
+   "type": "travel",
+   "mapId": 1442,
+   "x": 59.9,
+   "y": 66.8,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25
+  },
+  {
+   "id": "turnin-1070",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 59.9,
+   "y": 66.8,
+   "confidence": "unverified",
+   "questId": 1070,
+   "npcId": 4080,
+   "questName": "On Guard in Stonetalon",
+   "npcName": "Kaela Shadowspear",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25
+  },
+  {
+   "id": "turnin-1056",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 37.1,
+   "y": 8.1,
+   "confidence": "unverified",
+   "questId": 1056,
+   "npcId": 3994,
+   "questName": "Journey to Stonetalon Peak",
+   "npcName": "Keeper Albagorm",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25
+  },
+  {
+   "id": "flightpath-33",
+   "type": "flightpath",
+   "mapId": 1442,
+   "x": 36.5,
+   "y": 7.2,
+   "confidence": "unverified",
+   "node": "Stonetalon Peak, Stonetalon Mountains",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25
+  },
+  {
+   "id": "travel-1442-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 26.2,
+   "y": 38.7,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25
+  },
+  {
    "id": "grind-1440-26",
    "type": "grind",
    "mapId": 1440,
@@ -26057,6 +28009,52 @@
    "npcId": 3663,
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
+   "zoneName": "Ashenvale",
+   "level": 26
+  },
+  {
+   "id": "travel-fly-28-26",
+   "type": "travel",
+   "mapId": 1439,
+   "x": 36.4,
+   "y": 45.6,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Astranaar, Ashenvale",
+   "node": "Auberdine, Darkshore",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Darkshore",
+   "level": 26
+  },
+  {
+   "id": "turnin-1167",
+   "type": "turnin",
+   "mapId": 1439,
+   "x": 55,
+   "y": 24.9,
+   "confidence": "unverified",
+   "questId": 1167,
+   "npcId": 3661,
+   "questName": "The Tower of Althalaxx",
+   "npcName": "Balthule Shadowstrike",
+   "zoneName": "Darkshore",
+   "level": 26
+  },
+  {
+   "id": "travel-fly-26-28",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 34.5,
+   "y": 48.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Auberdine, Darkshore",
+   "node": "Astranaar, Ashenvale",
+   "questName": null,
+   "npcName": null,
    "zoneName": "Ashenvale",
    "level": 26
   },
@@ -26307,92 +28305,7 @@
    "level": 28
   },
   {
-   "id": "travel-1440-1442",
-   "type": "travel",
-   "mapId": 1442,
-   "x": 59.9,
-   "y": 66.8,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 28
-  },
-  {
-   "id": "turnin-1070",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 59.9,
-   "y": 66.8,
-   "confidence": "unverified",
-   "questId": 1070,
-   "npcId": 4080,
-   "questName": "On Guard in Stonetalon",
-   "npcName": "Kaela Shadowspear",
-   "zoneName": "Stonetalon Mountains",
-   "level": 28
-  },
-  {
-   "id": "turnin-1056",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 37.1,
-   "y": 8.1,
-   "confidence": "unverified",
-   "questId": 1056,
-   "npcId": 3994,
-   "questName": "Journey to Stonetalon Peak",
-   "npcName": "Keeper Albagorm",
-   "zoneName": "Stonetalon Mountains",
-   "level": 28
-  },
-  {
-   "id": "flightpath-33",
-   "type": "flightpath",
-   "mapId": 1442,
-   "x": 36.5,
-   "y": 7.2,
-   "confidence": "unverified",
-   "node": "Stonetalon Peak, Stonetalon Mountains",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 28
-  },
-  {
-   "id": "travel-fly-33-26",
-   "type": "travel",
-   "mapId": 1439,
-   "x": 36.4,
-   "y": 45.6,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Stonetalon Peak, Stonetalon Mountains",
-   "node": "Auberdine, Darkshore",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Darkshore",
-   "level": 28
-  },
-  {
-   "id": "turnin-1167",
-   "type": "turnin",
-   "mapId": 1439,
-   "x": 55,
-   "y": 24.9,
-   "confidence": "unverified",
-   "questId": 1167,
-   "npcId": 3661,
-   "questName": "The Tower of Althalaxx",
-   "npcName": "Balthule Shadowstrike",
-   "zoneName": "Darkshore",
-   "level": 28
-  },
-  {
-   "id": "travel-1439-1438",
+   "id": "travel-1440-1438",
    "type": "travel",
    "mapId": 1438,
    "x": 30,
@@ -28530,7 +30443,7 @@
    "questName": "In Search of The Excavation Team",
    "npcName": "Merrin Rockweaver",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-473",
@@ -28544,7 +30457,7 @@
    "questName": "Report to Captain Stoutfist",
    "npcName": "Captain Stoutfist",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 28
   },
   {
    "id": "turnin-472",
@@ -32452,7 +34365,7 @@
    "questName": "Jitters' Growling Gut",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 29
   },
   {
    "id": "turnin-57",
@@ -32466,7 +34379,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 29
   },
   {
    "id": "turnin-221",
@@ -32480,7 +34393,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 30
+   "level": 29
   },
   {
    "id": "travel-fly-12-2-4",
@@ -34711,7 +36624,7 @@
    "level": 30
   },
   {
-   "id": "travel-fly-5-2-4",
+   "id": "travel-fly-5-2-5",
    "type": "travel",
    "mapId": 1453,
    "x": 71.6,

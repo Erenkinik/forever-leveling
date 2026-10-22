@@ -5,9 +5,9 @@ from pipeline.generate import GenerationError
 from pipeline.generate.config import CONTINENT_TRAVEL, ISLAND_MAPS, LEVEL_CAP, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
 from pipeline.generate.flight import Flights
 from pipeline.generate.gaps import complete_location, quest_gaps
-from pipeline.generate.graph import build_graph, drop_pulled, select_quests
+from pipeline.generate.graph import build_graph, class_only, drop_pulled, select_quests
 from pipeline.generate.hubs import Hub, build_hubs, unplaced
-from pipeline.generate.xpsim import XpState, kill_xp, quest_level, quest_xp
+from pipeline.generate.xpsim import XpState, kill_xp, quest_level, quest_xp, shared_xp
 from pipeline.generate.zone_order import ZoneOrder
 
 TIERS = ("beta", "full")
@@ -23,16 +23,18 @@ class _Steps:
     `continents` (map -> continent UiMap) decides the travel mode: across continents, or to or from an
     island, the faction's boat or zeppelin; otherwise walking. Unknown maps walk. With `flights`, a flight master
     near a step is found there (a flightpath step), and a walk to another map flies when that is much shorter.
+    Steps of the quests in `classes` (quest id -> classes) are marked classOnly.
     """
 
     def __init__(self, faction: str = "Alliance", continents: dict[int, int] | None = None,
-                 flights: Flights | None = None) -> None:
+                 flights: Flights | None = None, classes: dict[int, list[str]] | None = None) -> None:
         self.steps: list[dict] = []
         self._used: set[str] = set()
         self.pos: tuple[int, float, float] | None = None
         self._ship = CONTINENT_TRAVEL.get(faction, "boat")
         self._continents = continents or {}
         self._flights = flights
+        self._classes = classes or {}
 
     def _mode(self, src: int, dst: int) -> str:
         a, b = self._continents.get(src), self._continents.get(dst)
@@ -42,6 +44,8 @@ class _Steps:
 
     def add(self, base_id: str, kind: str, map_id: int, x: float, y: float,
             confidence: str = NON_QUEST_CONFIDENCE, **extra) -> None:
+        if extra.get("questId") in self._classes:
+            extra["classOnly"] = self._classes[extra["questId"]]
         if self.pos is not None and self.pos[0] != map_id:
             mode = self._mode(self.pos[0], map_id)
             hop = self._flights.plan(self.pos, (map_id, x, y)) if self._flights and mode == "walk" else None
@@ -94,25 +98,33 @@ def _turn_in(steps: _Steps, qid: int, quests: dict[int, dict], xp_table: dict[in
     q = quests[qid]
     e = q["end"]
     steps.add(f"turnin-{qid}", "turnin", e["uiMapId"], e["x"], e["y"], q["confidence"], questId=qid, npcId=e["id"])
-    return state.gain(quest_xp(quest_level(q), xp_table, state.level))
+    return state.gain(quest_xp(quest_level(q), xp_table, state.level)) if shared_xp(q) else state
 
 
 class _Deferred:
-    """Turn-ins of leaf quests (no quest on the route needs them) whose NPC is on another map.
+    """Turn-ins whose NPC is on another map than the hub's.
 
     They wait until the route is on that map anyway, until it leaves the zone (unless a later route zone
-    is that map), until the quest log would overflow, or until the route ends.
+    is that map), until a quest that needs one is about to be accepted, until a grind (their XP first), until
+    the quest log would overflow, or until the route ends.
     """
 
-    def __init__(self, leaves: set[int]) -> None:
-        self.leaves = leaves
+    def __init__(self) -> None:
         self.ids: list[int] = []
 
     def take(self, qid: int, quests: dict[int, dict], here: int) -> bool:
-        if qid in self.leaves and quests[qid]["end"]["uiMapId"] != here:
+        if quests[qid]["end"]["uiMapId"] != here:
             self.ids.append(qid)
             return True
         return False
+
+    def flush_needed(self, steps: _Steps, chunk: list[int], quests: dict[int, dict],
+                     xp_table: dict[int, list[int]], state: XpState) -> XpState:
+        """Turn in the waiting quests that a quest of `chunk` needs, so it can be accepted."""
+        needed = {p for qid in chunk for p in quests[qid].get("prereqs") or []}
+        keep = {quests[q]["end"]["uiMapId"] for q in self.ids if q not in needed}
+        due_maps = {quests[q]["end"]["uiMapId"] for q in self.ids if q in needed}
+        return self.flush(steps, quests, xp_table, state, keep_maps=keep - due_maps) if due_maps else state
 
     def flush(self, steps: _Steps, quests: dict[int, dict], xp_table: dict[int, list[int]], state: XpState,
               keep_maps=frozenset()) -> XpState:
@@ -138,8 +150,9 @@ def _run_chunk(steps: _Steps, chunk: list[int], quests: dict[int, dict], spawns:
                here: int, continents: dict[int, int] | None) -> XpState:
     """Accept every quest, complete objectives nearest-neighbour first, then turn every quest in.
 
-    Leaf quests ending on another map than `here` (the hub's map) are handed to `deferred` instead.
+    Quests ending on another map than `here` (the hub's map) are handed to `deferred` instead.
     """
+    state = deferred.flush_needed(steps, chunk, quests, xp_table, state)
     for qid in chunk:
         q = quests[qid]
         s = q["start"]
@@ -159,7 +172,8 @@ def _run_chunk(steps: _Steps, chunk: list[int], quests: dict[int, dict], spawns:
         qid = min(pending, key=key)
         map_id, x, y = pending.pop(qid)
         steps.add(f"complete-{qid}", "complete", map_id, x, y, quests[qid]["confidence"], questId=qid)
-        state = state.gain(kill_xp(quests[qid], state.level))
+        if shared_xp(quests[qid]):
+            state = state.gain(kill_xp(quests[qid], state.level))
 
     for qid in chunk:
         if not deferred.take(qid, quests, here):
@@ -186,6 +200,9 @@ def _run_doable(steps: _Steps, pending: list[int], quests: dict[int, dict], spaw
         if not ready:
             if not last:
                 return state, pending
+            if deferred.ids:  # turn in what waits first: its XP may be enough
+                state = deferred.flush(steps, quests, xp_table, state)
+                continue
             first = min(free, key=lambda qid: level_needed(quests[qid]))
             need, s = level_needed(quests[first]), quests[first]["start"]
             steps.add(f"grind-{s['uiMapId']}-{need}", "grind", s["uiMapId"], s["x"], s["y"], untilLevel=need)
@@ -242,10 +259,10 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
 
     position = {qid: i for i, qid in enumerate(graph.order)}
     attached = _attach_unplaced(no_start, sel.quests, hubs)
-    steps = _Steps(order.faction, continents, Flights(taxi, order.faction) if taxi else None)
+    classes = {qid: class_only(q, order.race) for qid, q in sel.quests.items() if q.get("classes")}
+    steps = _Steps(order.faction, continents, Flights(taxi, order.faction) if taxi else None, classes)
     state = XpState(1, 0)
-    needed = {p for qid in sel.quests if qid not in gaps for p in sel.quests[qid].get("prereqs") or []}
-    deferred = _Deferred({qid for qid in sel.quests if qid not in needed})
+    deferred = _Deferred()
     waiting: list[int] = []  # quests of this map not doable yet (level), tried again at the next hub
     for index, hub in enumerate(hubs):
         if index > 0 and hubs[index - 1].mapId != hub.mapId and deferred.ids:

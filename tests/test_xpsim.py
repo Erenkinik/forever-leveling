@@ -135,3 +135,14 @@ def test_kill_xp_uses_objective_counts_drop_chances_and_mob_levels():
     ]}
     assert kill_xp(q, 3) == 10 * mob_xp(2, 3) + 10 * mob_xp(4, 3)
     assert kill_xp({"level": 4, "minLevel": 2, "kills": []}, 3) == 0
+
+
+def test_estimate_levels_leaves_class_quests_out():
+    from pipeline.generate.xpsim import estimate_levels
+
+    table = {5: [0, 0, 0, 0, 0, 450]}
+    quests = {1: {"level": 5, "minLevel": 1, "classes": ["Mage"]}, 2: {"level": 5, "minLevel": 1}}
+    route = {"levelRange": [1, 30], "steps": [
+        _step("t1", "turnin", 1), _step("a", "travel"), _step("t2", "turnin", 2), _step("end", "travel")]}
+    levels = estimate_levels(route, quests, table)
+    assert (levels["a"], levels["end"]) == (1, 2)

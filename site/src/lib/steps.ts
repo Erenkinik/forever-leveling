@@ -32,6 +32,8 @@ export interface Step {
   node?: string;
   /** travel by flight: the flight master flown from */
   fromNode?: string;
+  /** class quests: the classes (of this race) that do the step; absent for everyone */
+  classOnly?: string[];
   objectives?: Objective[];
   /** estimated player level when the step starts (pipeline xpsim.estimate_levels) */
   level?: number;
@@ -102,6 +104,16 @@ export function describeStep(s: Step): Part[] {
     case 'train':
       return [{ text: 'Visit your class trainer' }];
   }
+}
+
+/** The classes that have quests on the route, alphabetically. */
+export function routeClasses(steps: Step[]): string[] {
+  return [...new Set(steps.flatMap((s) => s.classOnly ?? []))].sort();
+}
+
+/** The steps a player of this class does: everyone's steps and the class's own ('' keeps every step). */
+export function stepsForClass(steps: Step[], playerClass: string): Step[] {
+  return playerClass ? steps.filter((s) => !s.classOnly || s.classOnly.includes(playerClass)) : steps;
 }
 
 export interface ZoneGroup {
@@ -176,11 +188,13 @@ export function clusterPins(steps: Step[], threshold: number, yScale = 1): Step[
 export interface Settings {
   shortcuts: boolean;
   highContrast: boolean;
+  /** the player's class; '' shows every class's quests */
+  playerClass: string;
 }
 
 // Also read by the inline script in src/layouts/Base.astro, which applies high contrast before first paint.
 export const SETTINGS_KEY = 'fxp:v1:settings';
-const DEFAULT_SETTINGS: Settings = { shortcuts: true, highContrast: false };
+const DEFAULT_SETTINGS: Settings = { shortcuts: true, highContrast: false, playerClass: '' };
 
 export function loadSettings(store: KeyValueStore): Settings {
   try {
@@ -190,6 +204,7 @@ export function loadSettings(store: KeyValueStore): Settings {
     return {
       shortcuts: typeof r.shortcuts === 'boolean' ? r.shortcuts : DEFAULT_SETTINGS.shortcuts,
       highContrast: typeof r.highContrast === 'boolean' ? r.highContrast : DEFAULT_SETTINGS.highContrast,
+      playerClass: typeof r.playerClass === 'string' ? r.playerClass : DEFAULT_SETTINGS.playerClass,
     };
   } catch {
     return { ...DEFAULT_SETTINGS };

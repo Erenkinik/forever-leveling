@@ -48,17 +48,20 @@ def test_race_restricted_quest_excluded():
     assert sel.excluded["race"] == [1, 3]
 
 
-def test_class_restricted_quest_excluded():
+def test_class_quest_is_kept_when_the_race_can_play_one_of_its_classes():
+    # ORDER is a Human route: Humans play Warlocks and Warriors, never Shamans or Druids.
     quests = {
         1: _q(1, classes=["Warlock"]),
         2: _q(2, classes=["Warrior", "unknown-bit-32"]),
         3: _q(3, classes=None),
         4: _q(4, races=["Orc"], classes=["Mage"]),  # race is checked first
-        5: _q(5, classes=["Mage"], map_id=99),  # class is checked before zone
+        5: _q(5, classes=["Shaman"], map_id=99),  # class is checked before zone
+        6: _q(6, classes=["Shaman", "Druid"]),
+        7: _q(7, classes=["unknown-bit-32"]),
     }
     sel = select_quests(quests, ORDER)
-    assert list(sel.quests) == [3]
-    assert sel.excluded == {"class": [1, 2, 5], "race": [4]}
+    assert list(sel.quests) == [1, 2, 3]
+    assert sel.excluded == {"class": [5, 6, 7], "race": [4]}
 
 
 def test_exclusion_reasons_and_precedence():
@@ -69,7 +72,7 @@ def test_exclusion_reasons_and_precedence():
         4: _q(4, races=["Orc"], map_id=99),
         5: _q(5, map_id=99),
         6: _q(6, min_level=30),
-        7: _q(7, classes=["Warlock"], map_id=99),
+        7: _q(7, classes=["Shaman"], map_id=99),
     }
     sel = select_quests(quests, ORDER)
     assert sel.excluded == {
@@ -105,7 +108,7 @@ def test_zone_outlier_is_the_last_reason_and_counts_sum_to_total():
         5: _q(5, map_id=99, level=28),
         6: _q(6, level=28),
         **{i: _q(i, level=5) for i in range(7, 12)},
-        12: _q(12, classes=["Mage"], level=28),
+        12: _q(12, classes=["Druid"], level=28),
     }
     sel = select_quests(quests, ORDER)
     assert list(sel.excluded) == [
@@ -227,24 +230,12 @@ def test_required_prereqs_are_all_kept():
     assert select_quests(quests, ORDER).quests[1]["prereqs"] == [2, 3]
 
 
-def test_alternative_prereqs_take_the_version_for_most_classes():
-    # "Vile Familiars": one version for every class but Warlock, one for Warlocks; the first joins the route.
-    most = ["Warrior", "Hunter", "Rogue", "Priest", "Shaman", "Mage", "Druid"]  # Horde: no Paladin either
+def test_alternative_class_versions_on_the_route_all_stay():
+    # "Vile Familiars": one version for every class but Warlock, one for Warlocks; each class does its own.
     quests = {
         1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
-        2: _q(2, classes=most),
+        2: _q(2, classes=["Warrior", "Rogue", "Priest", "Mage"]),
         3: _q(3, classes=["Warlock"]),
     }
     sel = select_quests(quests, ORDER)
-    assert sel.quests[1]["prereqs"] == [2] and 2 in sel.quests and 3 not in sel.quests
-    assert sel.excluded["class"] == [3]
-
-
-def test_a_class_quest_for_few_classes_is_not_taken_as_a_version():
-    quests = {
-        1: {**_q(1, prereqs=[2, 3]), "prereqsAny": True},
-        2: _q(2, classes=["Warrior", "Rogue"]),
-        3: _q(3, classes=["Warlock"]),
-    }
-    sel = select_quests(quests, ORDER)
-    assert sel.quests[1]["prereqs"] == [2, 3] and not {2, 3} & set(sel.quests)
+    assert sel.quests[1]["prereqs"] == [2, 3] and {2, 3} <= set(sel.quests)

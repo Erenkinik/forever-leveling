@@ -71,6 +71,19 @@ ROUTES: dict[str, tuple[str, str]] = {
     "tauren": ("Tauren", "Horde"),
 }
 
+# Classes each race can play (vanilla), for class quests: a route keeps a class quest when its race can play one
+# of the quest's classes, and marks its steps classOnly with those classes.
+RACE_CLASSES: dict[str, tuple[str, ...]] = {
+    "Human": ("Warrior", "Paladin", "Rogue", "Priest", "Mage", "Warlock"),
+    "Dwarf": ("Warrior", "Paladin", "Hunter", "Rogue", "Priest"),
+    "Gnome": ("Warrior", "Rogue", "Mage", "Warlock"),
+    "Night Elf": ("Warrior", "Hunter", "Rogue", "Priest", "Druid"),
+    "Orc": ("Warrior", "Hunter", "Rogue", "Shaman", "Warlock"),
+    "Troll": ("Warrior", "Hunter", "Rogue", "Priest", "Shaman", "Mage"),
+    "Undead": ("Warrior", "Rogue", "Priest", "Mage", "Warlock"),
+    "Tauren": ("Warrior", "Hunter", "Shaman", "Druid"),
+}
+
 # Kill XP. Counts, drop chances and mob levels come from the quest's `kills` (pipeline/normalize/kills.py); these
 # fill in what the data does not say. A kill objective of unknown count is taken as this many kills, a collect
 # objective of unknown count and drop chance as this many kills, and an unknown drop chance as this percent.
