@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foreverxp/schema/quest.schema.json",
+  "title": "Quest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "level",
+    "minLevel",
+    "races",
+    "prereqs",
+    "start",
+    "end",
+    "objectives",
+    "inForever",
+    "sources",
+    "lineages",
+    "conflicts",
+    "confidence",
+    "verifiedBuild"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "level": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "minLevel": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "races": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "prereqs": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "name",
+        "uiMapId",
+        "x",
+        "y"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "npc",
+            "item",
+            "object",
+            null
+          ]
+        },
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uiMapId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "x": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "y": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "end": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "id",
+        "name",
+        "uiMapId",
+        "x",
+        "y"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "npc",
+            "item",
+            "object",
+            null
+          ]
+        },
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uiMapId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "x": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "y": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "objectives": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "units",
+        "items",
+        "objects"
+      ],
+      "properties": {
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "inForever": {
+      "type": "boolean"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "wago-db2",
+          "pfquest",
+          "cmangos",
+          "wowhead-manual",
+          "recorder",
+          "lodestar",
+          "mittenquest",
+          "evergreen",
+          "polestar",
+          "rxp-free",
+          "tugs"
+        ]
+      }
+    },
+    "lineages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "unverified",
+        "cross-checked",
+        "verified-ingame"
+      ]
+    },
+    "verifiedBuild": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foreverxp/schema/route.schema.json",
+  "title": "Route",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "race",
+    "faction",
+    "levelRange",
+    "generatedAt",
+    "dataBuild",
+    "reviewed",
+    "releaseTier",
+    "steps"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "race": {
+      "type": "string"
+    },
+    "faction": {
+      "enum": [
+        "Alliance",
+        "Horde"
+      ]
+    },
+    "levelRange": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+    },
+    "dataBuild": {
+      "type": "string"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "releaseTier": {
+      "enum": [
+        "beta",
+        "full"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/step"
+      }
+    }
+  },
+  "$defs": {
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "mapId",
+        "x",
+        "y",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "type": {
+          "enum": [
+            "accept",
+            "turnin",
+            "complete",
+            "travel",
+            "sethearth",
+            "train",
+            "grind",
+            "gap"
+          ]
+        },
+        "mapId": {
+          "type": "integer"
+        },
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "note": {
+          "type": "string"
+        },
+        "classOnly": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "enum": [
+            "unverified",
+            "cross-checked",
+            "verified-ingame"
+          ]
+        },
+        "questId": {
+          "type": "integer"
+        },
+        "npcId": {
+          "type": "integer"
+        },
+        "mode": {
+          "enum": [
+            "walk",
+            "flight",
+            "boat",
+            "zeppelin",
+            "hearth"
+          ]
+        },
+        "radius": {
+          "type": "number"
+        },
+        "untilLevel": {
+          "type": "integer"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "accept"
+            }
+          },
+          "required": [
+            "questId",
+            "npcId"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "turnin"
+            }
+          },
+          "required": [
+            "questId",
+            "npcId"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "complete"
+            }
+          },
+          "required": [
+            "questId"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "travel"
+            }
+          },
+          "required": [
+            "mode",
+            "radius"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "sethearth"
+            }
+          },
+          "required": [
+            "npcId"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "train"
+            }
+          },
+          "required": [
+            "npcId"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "grind"
+            }
+          },
+          "required": [
+            "untilLevel"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "gap"
+            }
+          },
+          "required": [
+            "reason"
+          ]
+        }
+      ]
+    }
+  }
+}
