@@ -47,8 +47,8 @@ def _spawns(units=None, objects=None, items=None):
     }
 
 
-def _gen(quests, spawns=None, tier="beta", order=ORDER):
-    return generate_route(order, quests, spawns or _spawns(), XP, tier, "1.60.1.70532", NOW)
+def _gen(quests, spawns=None, tier="beta", order=ORDER, reach_cap=False):
+    return generate_route(order, quests, spawns or _spawns(), XP, tier, "1.60.1.70532", NOW, reach_cap=reach_cap)
 
 
 def _ids(route):
@@ -71,7 +71,7 @@ def test_route_header_and_report():
     assert report["gaps"] == 0
     assert report["stepCounts"]["accept"] == 1 and report["stepCounts"]["turnin"] == 1
     assert report["stepCounts"]["gap"] == 0 and report["stepCounts"]["travel"] == 0
-    assert report["estimatedFinalLevel"] == 1
+    assert report["questLevel"] == report["estimatedFinalLevel"] == 1
 
 
 def test_report_counts_excluded_by_reason():
@@ -270,7 +270,7 @@ def test_grind_inserted_when_underleveled():
     assert (grind["untilLevel"], grind["mapId"], grind["x"], grind["y"]) == (6, 10, 80, 80)
     assert grind["confidence"] == "unverified"
     # After the grind the state is (6, 0); two level-8 quests give 2 * 700 XP, below the 3600 needed.
-    assert report["estimatedFinalLevel"] == 6
+    assert report["questLevel"] == 6
 
 
 def test_no_grind_when_level_is_close():
@@ -394,4 +394,20 @@ def test_estimate_levels_matches_generator_on_real_route():
     final = estimate_levels({**route, "steps": route["steps"] + [
         {"id": "end", "type": "travel", "mapId": zones[0], "x": 1.0, "y": 1.0, "confidence": "unverified"}]},
         quests, xp)["end"]
-    assert final == report["estimatedFinalLevel"]
+    assert final == report["estimatedFinalLevel"] == 30
+
+
+def test_route_ends_with_grind_to_cap_when_quests_fall_short():
+    route, report = _gen(_quests(_q(1, 10, 10), _q(2, 30, 40)), reach_cap=True)
+    last = route["steps"][-1]
+    assert last["id"] == "grind-10-30" and last["type"] == "grind" and last["untilLevel"] == 30
+    assert (last["mapId"], last["x"], last["y"]) == (10, 30, 40)  # where the route ended
+    assert report["questLevel"] == 1 and report["estimatedFinalLevel"] == 30
+    assert report["stepCounts"]["grind"] == 1
+
+
+def test_no_final_grind_when_quests_reach_cap():
+    rich = {1: [10 ** 7] * 10}
+    route, report = generate_route(ORDER, _quests(_q(1)), _spawns(), rich, "beta", "1.60.1.70532", NOW)
+    assert not any(s["type"] == "grind" for s in route["steps"])
+    assert report["questLevel"] == report["estimatedFinalLevel"] == 30

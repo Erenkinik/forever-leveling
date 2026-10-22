@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["dwarf"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Alliance",
-  ["generatedAt"] = "2026-10-22T12:04:16Z",
+  ["generatedAt"] = "2026-10-22T12:25:10Z",
   ["id"] = "dwarf",
   ["levelRange"] = {1, 30},
   ["race"] = "Dwarf",
@@ -774,5 +774,6 @@ ForeverXP_Routes["dwarf"] = {
     {["confidence"]="unverified", ["id"]="accept-647", ["mapId"]=1437, ["npcId"]=2696, ["questId"]=647, ["type"]="accept", ["x"]=49.2, ["y"]=7.6},
     {["confidence"]="unverified", ["id"]="travel-1437-1424", ["mapId"]=1424, ["mode"]="walk", ["radius"]=5, ["type"]="travel", ["x"]=52.1, ["y"]=58.7},
     {["confidence"]="unverified", ["id"]="turnin-647", ["mapId"]=1424, ["npcId"]=2705, ["questId"]=647, ["type"]="turnin", ["x"]=52.1, ["y"]=58.7},
+    {["confidence"]="unverified", ["id"]="grind-1424-30", ["mapId"]=1424, ["type"]="grind", ["untilLevel"]=30, ["x"]=52.1, ["y"]=58.7},
   },
 }

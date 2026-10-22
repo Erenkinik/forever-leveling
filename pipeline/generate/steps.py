@@ -110,8 +110,11 @@ def _attach_unplaced(ids: list[int], quests: dict[int, dict], hubs: list[Hub]) -
 
 
 def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_table: dict[int, list[int]],
-                   tier: str, data_build: str, now: str) -> tuple[dict, dict]:
-    """Build the route for a zone order and the generation report. XP is an estimate."""
+                   tier: str, data_build: str, now: str, reach_cap: bool = True) -> tuple[dict, dict]:
+    """Build the route for a zone order and the generation report. XP is an estimate.
+
+    reach_cap=False leaves out the closing grind to LEVEL_CAP (unit tests of the quest steps).
+    """
     if tier not in TIERS:
         raise GenerationError(f"unknown release tier {tier!r}; expected one of {TIERS}")
     sel = select_quests(quests, order)
@@ -138,6 +141,13 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
             state = _min_level_gate(steps, chunk, sel.quests, state)
             state = _run_chunk(steps, chunk, sel.quests, spawns, xp_table, state, order.zones)
 
+    # spec 2.5: the route reaches LEVEL_CAP. Kill XP is not modelled, so the shortfall is one closing grind.
+    quest_level_reached = state.level
+    if reach_cap and state.level < LEVEL_CAP and steps.pos is not None:
+        map_id, x, y = steps.pos
+        steps.add(f"grind-{map_id}-{LEVEL_CAP}", "grind", map_id, x, y, untilLevel=LEVEL_CAP)
+        state = XpState(LEVEL_CAP, 0)
+
     route = {
         "id": order.route,
         "race": order.race,
@@ -151,6 +161,7 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
     }
     counts = {t: sum(1 for s in steps.steps if s["type"] == t) for t in STEP_TYPES}
     report = {
+        "questLevel": quest_level_reached,
         "estimatedFinalLevel": state.level,
         "stepCounts": counts,
         "gaps": counts["gap"],

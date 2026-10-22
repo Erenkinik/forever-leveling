@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T12:04:19Z",
+ "generatedAt": "2026-10-22T12:25:17Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -6368,6 +6368,18 @@
    "npcId": 4630,
    "questName": "Load Lightening",
    "npcName": "Pozzik",
+   "zoneName": "Thousand Needles"
+  },
+  {
+   "id": "grind-1441-30",
+   "type": "grind",
+   "mapId": 1441,
+   "x": 80.2,
+   "y": 75.9,
+   "confidence": "unverified",
+   "untilLevel": 30,
+   "questName": null,
+   "npcName": null,
    "zoneName": "Thousand Needles"
   }
  ]

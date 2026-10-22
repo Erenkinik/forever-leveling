@@ -2,7 +2,8 @@
 
 - Veri sürümü: 1.60.1.70532
 - Yayın seviyesi: beta
-- Tahmini son seviye: 27
+- Görevlerle ulaşılan tahmini seviye: 27 (yaratık XP'si hesaba katılmıyor)
+- Tahmini son seviye: 30
 - Boşluk (gap) adımı: 46
 
 ## Adım sayıları
@@ -13,7 +14,7 @@
 - travel: 48
 - sethearth: 0
 - train: 0
-- grind: 6
+- grind: 7
 - gap: 46
 
 ## Elenen görevler (nedene göre)

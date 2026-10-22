@@ -222,6 +222,7 @@ def _render_route_report(route: dict, report: dict, issues: list) -> str:
         "",
         f"- Veri sürümü: {route['dataBuild']}",
         f"- Yayın seviyesi: {route['releaseTier']}",
+        f"- Görevlerle ulaşılan tahmini seviye: {report['questLevel']} (yaratık XP'si hesaba katılmıyor)",
         f"- Tahmini son seviye: {report['estimatedFinalLevel']}",
         f"- Boşluk (gap) adımı: {report['gaps']}",
         "",
@@ -360,7 +361,7 @@ def cmd_generate(args) -> int:
         _write_text_atomic(out, text)
     print(
         f"wrote {len(route['steps'])} steps to {targets[1][0]} "
-        f"(gaps={report['gaps']}, estimated final level={report['estimatedFinalLevel']})"
+        f"(gaps={report['gaps']}, quest level={report['questLevel']}, final level={report['estimatedFinalLevel']})"
     )
     return 0
 

@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["orc"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Horde",
-  ["generatedAt"] = "2026-10-22T12:04:18Z",
+  ["generatedAt"] = "2026-10-22T12:25:15Z",
   ["id"] = "orc",
   ["levelRange"] = {1, 30},
   ["race"] = "Orc",
@@ -415,5 +415,6 @@ ForeverXP_Routes["orc"] = {
     {["confidence"]="unverified", ["id"]="turnin-1104", ["mapId"]=1441, ["npcId"]=4454, ["questId"]=1104, ["type"]="turnin", ["x"]=78.1, ["y"]=77.1},
     {["confidence"]="unverified", ["id"]="turnin-1105", ["mapId"]=1441, ["npcId"]=4453, ["questId"]=1105, ["type"]="turnin", ["x"]=78.1, ["y"]=77.1},
     {["confidence"]="unverified", ["id"]="turnin-1176", ["mapId"]=1441, ["npcId"]=4630, ["questId"]=1176, ["type"]="turnin", ["x"]=80.2, ["y"]=75.9},
+    {["confidence"]="unverified", ["id"]="grind-1441-30", ["mapId"]=1441, ["type"]="grind", ["untilLevel"]=30, ["x"]=80.2, ["y"]=75.9},
   },
 }

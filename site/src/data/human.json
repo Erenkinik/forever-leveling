@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T11:57:57Z",
+ "generatedAt": "2026-10-22T12:25:09Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -8514,6 +8514,18 @@
    "npcId": 2228,
    "questName": "Down the Coast",
    "npcName": "Lieutenant Farren Orinelle",
+   "zoneName": "Hillsbrad Foothills"
+  },
+  {
+   "id": "grind-1424-30",
+   "type": "grind",
+   "mapId": 1424,
+   "x": 51.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "untilLevel": 30,
+   "questName": null,
+   "npcName": null,
    "zoneName": "Hillsbrad Foothills"
   }
  ]

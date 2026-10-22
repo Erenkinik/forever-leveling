@@ -3,7 +3,7 @@ ForeverXP_Routes = ForeverXP_Routes or {}
 ForeverXP_Routes["human"] = {
   ["dataBuild"] = "1.60.1.70532",
   ["faction"] = "Alliance",
-  ["generatedAt"] = "2026-10-22T11:57:57Z",
+  ["generatedAt"] = "2026-10-22T12:25:09Z",
   ["id"] = "human",
   ["levelRange"] = {1, 30},
   ["race"] = "Human",
@@ -674,5 +674,6 @@ ForeverXP_Routes["human"] = {
     {["confidence"]="unverified", ["id"]="accept-536", ["mapId"]=1424, ["npcId"]=2228, ["questId"]=536, ["type"]="accept", ["x"]=51.5, ["y"]=58.4},
     {["confidence"]="unverified", ["id"]="complete-536", ["mapId"]=1424, ["questId"]=536, ["type"]="complete", ["x"]=42.38, ["y"]=68.39},
     {["confidence"]="unverified", ["id"]="turnin-536", ["mapId"]=1424, ["npcId"]=2228, ["questId"]=536, ["type"]="turnin", ["x"]=51.5, ["y"]=58.4},
+    {["confidence"]="unverified", ["id"]="grind-1424-30", ["mapId"]=1424, ["type"]="grind", ["untilLevel"]=30, ["x"]=51.5, ["y"]=58.4},
   },
 }

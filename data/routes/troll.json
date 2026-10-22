@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T12:04:19Z",
+ "generatedAt": "2026-10-22T12:25:16Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -3976,6 +3976,15 @@
    "confidence": "unverified",
    "questId": 1176,
    "npcId": 4630
+  },
+  {
+   "id": "grind-1441-30",
+   "type": "grind",
+   "mapId": 1441,
+   "x": 80.2,
+   "y": 75.9,
+   "confidence": "unverified",
+   "untilLevel": 30
   }
  ]
 }
