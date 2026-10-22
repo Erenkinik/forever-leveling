@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T14:15:29Z",
+ "generatedAt": "2026-10-22T20:34:02Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -36,34 +36,6 @@
    "npcId": 658,
    "questName": "Coldridge Valley Mail Delivery",
    "npcName": "Sten Stoutarm",
-   "zoneName": "Dun Morogh",
-   "level": 1
-  },
-  {
-   "id": "accept-2160",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 33.8,
-   "y": 72.2,
-   "confidence": "unverified",
-   "questId": 2160,
-   "npcId": 6782,
-   "questName": "Supplies to Tannok",
-   "npcName": "Hands Springsprocket",
-   "zoneName": "Dun Morogh",
-   "level": 1
-  },
-  {
-   "id": "accept-3361",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 28.5,
-   "y": 67.6,
-   "confidence": "unverified",
-   "questId": 3361,
-   "npcId": 8416,
-   "questName": "A Refugee's Quandary",
-   "npcName": "Felix Whindlebolt",
    "zoneName": "Dun Morogh",
    "level": 1
   },
@@ -363,62 +335,6 @@
    ]
   },
   {
-   "id": "complete-3361",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 23.33,
-   "y": 78.47,
-   "confidence": "unverified",
-   "questId": 3361,
-   "questName": "A Refugee's Quandary",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 2,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 10438,
-     "name": "Felix's Box",
-     "sources": [
-      "Felix's Box"
-     ],
-     "icon": 132594
-    },
-    {
-     "kind": "collect",
-     "id": 16313,
-     "name": "Felix's Chest",
-     "sources": [
-      "Felix's Chest"
-     ],
-     "icon": 132597
-    },
-    {
-     "kind": "collect",
-     "id": 16314,
-     "name": "Felix's Bucket of Bolts",
-     "sources": [
-      "Felix's Bucket of Bolts"
-     ],
-     "icon": 134068
-    }
-   ],
-   "area": [
-    [
-     20.9,
-     76.1
-    ],
-    [
-     22.8,
-     80
-    ],
-    [
-     26.3,
-     79.3
-    ]
-   ]
-  },
-  {
    "id": "turnin-179",
    "type": "turnin",
    "mapId": 1426,
@@ -447,34 +363,6 @@
    "level": 2
   },
   {
-   "id": "turnin-2160",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 47.2,
-   "y": 52.2,
-   "confidence": "unverified",
-   "questId": 2160,
-   "npcId": 6806,
-   "questName": "Supplies to Tannok",
-   "npcName": "Tannok Frosthammer",
-   "zoneName": "Dun Morogh",
-   "level": 2
-  },
-  {
-   "id": "turnin-3361",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 28.5,
-   "y": 67.6,
-   "confidence": "unverified",
-   "questId": 3361,
-   "npcId": 8416,
-   "questName": "A Refugee's Quandary",
-   "npcName": "Felix Whindlebolt",
-   "zoneName": "Dun Morogh",
-   "level": 3
-  },
-  {
    "id": "accept-170",
    "type": "accept",
    "mapId": 1426,
@@ -486,7 +374,7 @@
    "questName": "A New Threat",
    "npcName": "Balir Frosthammer",
    "zoneName": "Dun Morogh",
-   "level": 3
+   "level": 2
   },
   {
    "id": "complete-170",
@@ -499,7 +387,7 @@
    "questName": "A New Threat",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 3,
+   "level": 2,
    "objectives": [
     {
      "kind": "kill",
@@ -938,6 +826,118 @@
    "level": 3
   },
   {
+   "id": "accept-2160",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 33.8,
+   "y": 72.2,
+   "confidence": "unverified",
+   "questId": 2160,
+   "npcId": 6782,
+   "questName": "Supplies to Tannok",
+   "npcName": "Hands Springsprocket",
+   "zoneName": "Dun Morogh",
+   "level": 3
+  },
+  {
+   "id": "accept-3361",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 28.5,
+   "y": 67.6,
+   "confidence": "unverified",
+   "questId": 3361,
+   "npcId": 8416,
+   "questName": "A Refugee's Quandary",
+   "npcName": "Felix Whindlebolt",
+   "zoneName": "Dun Morogh",
+   "level": 3
+  },
+  {
+   "id": "complete-3361",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 23.33,
+   "y": 78.47,
+   "confidence": "unverified",
+   "questId": 3361,
+   "questName": "A Refugee's Quandary",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 10438,
+     "name": "Felix's Box",
+     "sources": [
+      "Felix's Box"
+     ],
+     "icon": 132594
+    },
+    {
+     "kind": "collect",
+     "id": 16313,
+     "name": "Felix's Chest",
+     "sources": [
+      "Felix's Chest"
+     ],
+     "icon": 132597
+    },
+    {
+     "kind": "collect",
+     "id": 16314,
+     "name": "Felix's Bucket of Bolts",
+     "sources": [
+      "Felix's Bucket of Bolts"
+     ],
+     "icon": 134068
+    }
+   ],
+   "area": [
+    [
+     20.9,
+     76.1
+    ],
+    [
+     22.8,
+     80
+    ],
+    [
+     26.3,
+     79.3
+    ]
+   ]
+  },
+  {
+   "id": "turnin-2160",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 47.2,
+   "y": 52.2,
+   "confidence": "unverified",
+   "questId": 2160,
+   "npcId": 6806,
+   "questName": "Supplies to Tannok",
+   "npcName": "Tannok Frosthammer",
+   "zoneName": "Dun Morogh",
+   "level": 3
+  },
+  {
+   "id": "turnin-3361",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 28.5,
+   "y": 67.6,
+   "confidence": "unverified",
+   "questId": 3361,
+   "npcId": 8416,
+   "questName": "A Refugee's Quandary",
+   "npcName": "Felix Whindlebolt",
+   "zoneName": "Dun Morogh",
+   "level": 3
+  },
+  {
    "id": "accept-182",
    "type": "accept",
    "mapId": 1426,
@@ -980,18 +980,250 @@
    "level": 3
   },
   {
-   "id": "accept-3364",
-   "type": "accept",
+   "id": "complete-183",
+   "type": "complete",
    "mapId": 1426,
-   "x": 25,
-   "y": 76,
+   "x": 23.01,
+   "y": 71.9,
    "confidence": "unverified",
-   "questId": 3364,
-   "npcId": 12738,
-   "questName": "Scalding Mornbrew Delivery",
-   "npcName": "Nori Pridedrift",
+   "questId": 183,
+   "questName": "The Boar Hunter",
+   "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 3
+   "level": 3,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 708,
+     "name": "Small Crag Boar"
+    }
+   ],
+   "area": [
+    [
+     19.5,
+     75.2
+    ],
+    [
+     19.7,
+     76.4
+    ],
+    [
+     19.9,
+     72.3
+    ],
+    [
+     19.9,
+     73.4
+    ],
+    [
+     20.1,
+     71.1
+    ],
+    [
+     20.1,
+     71.4
+    ],
+    [
+     20.1,
+     73.3
+    ],
+    [
+     20.1,
+     74.3
+    ],
+    [
+     20.4,
+     74.2
+    ],
+    [
+     20.7,
+     69.1
+    ],
+    [
+     20.7,
+     69.2
+    ],
+    [
+     20.7,
+     70.3
+    ],
+    [
+     20.7,
+     73.3
+    ],
+    [
+     20.7,
+     74.1
+    ],
+    [
+     20.7,
+     75.3
+    ],
+    [
+     20.8,
+     73.4
+    ],
+    [
+     21.3,
+     69.1
+    ],
+    [
+     21.3,
+     72.2
+    ],
+    [
+     21.4,
+     70.2
+    ],
+    [
+     21.4,
+     71.3
+    ],
+    [
+     21.5,
+     78
+    ],
+    [
+     21.8,
+     71.4
+    ],
+    [
+     21.9,
+     70
+    ],
+    [
+     22,
+     69.2
+    ],
+    [
+     22,
+     71.2
+    ],
+    [
+     22,
+     72.3
+    ],
+    [
+     22.1,
+     72.3
+    ],
+    [
+     22.2,
+     69.5
+    ],
+    [
+     22.4,
+     71.6
+    ],
+    [
+     22.6,
+     69.3
+    ],
+    [
+     22.6,
+     70.1
+    ],
+    [
+     22.7,
+     69.6
+    ],
+    [
+     22.7,
+     70.1
+    ],
+    [
+     22.7,
+     72.3
+    ],
+    [
+     22.8,
+     72.5
+    ],
+    [
+     23.4,
+     69.2
+    ],
+    [
+     23.5,
+     68.5
+    ],
+    [
+     23.5,
+     78.8
+    ],
+    [
+     24,
+     78.8
+    ],
+    [
+     24.1,
+     72.3
+    ],
+    [
+     24.1,
+     76.3
+    ],
+    [
+     24.4,
+     68.1
+    ],
+    [
+     24.7,
+     69.2
+    ],
+    [
+     24.7,
+     70.9
+    ],
+    [
+     24.7,
+     79.3
+    ],
+    [
+     25.4,
+     68.4
+    ],
+    [
+     25.5,
+     70.2
+    ],
+    [
+     26,
+     69.2
+    ],
+    [
+     26.1,
+     71.3
+    ],
+    [
+     26.6,
+     68.6
+    ],
+    [
+     26.6,
+     69.7
+    ],
+    [
+     27.4,
+     71.6
+    ],
+    [
+     28,
+     73.1
+    ],
+    [
+     28.1,
+     73.2
+    ],
+    [
+     31.4,
+     69.3
+    ],
+    [
+     32.2,
+     71.7
+    ]
+   ]
   },
   {
    "id": "complete-182",
@@ -1004,7 +1236,7 @@
    "questName": "The Troll Cave",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 3,
+   "level": 4,
    "objectives": [
     {
      "kind": "kill",
@@ -1260,252 +1492,6 @@
    ]
   },
   {
-   "id": "complete-183",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 23.01,
-   "y": 71.9,
-   "confidence": "unverified",
-   "questId": 183,
-   "questName": "The Boar Hunter",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 4,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 708,
-     "name": "Small Crag Boar"
-    }
-   ],
-   "area": [
-    [
-     19.5,
-     75.2
-    ],
-    [
-     19.7,
-     76.4
-    ],
-    [
-     19.9,
-     72.3
-    ],
-    [
-     19.9,
-     73.4
-    ],
-    [
-     20.1,
-     71.1
-    ],
-    [
-     20.1,
-     71.4
-    ],
-    [
-     20.1,
-     73.3
-    ],
-    [
-     20.1,
-     74.3
-    ],
-    [
-     20.4,
-     74.2
-    ],
-    [
-     20.7,
-     69.1
-    ],
-    [
-     20.7,
-     69.2
-    ],
-    [
-     20.7,
-     70.3
-    ],
-    [
-     20.7,
-     73.3
-    ],
-    [
-     20.7,
-     74.1
-    ],
-    [
-     20.7,
-     75.3
-    ],
-    [
-     20.8,
-     73.4
-    ],
-    [
-     21.3,
-     69.1
-    ],
-    [
-     21.3,
-     72.2
-    ],
-    [
-     21.4,
-     70.2
-    ],
-    [
-     21.4,
-     71.3
-    ],
-    [
-     21.5,
-     78
-    ],
-    [
-     21.8,
-     71.4
-    ],
-    [
-     21.9,
-     70
-    ],
-    [
-     22,
-     69.2
-    ],
-    [
-     22,
-     71.2
-    ],
-    [
-     22,
-     72.3
-    ],
-    [
-     22.1,
-     72.3
-    ],
-    [
-     22.2,
-     69.5
-    ],
-    [
-     22.4,
-     71.6
-    ],
-    [
-     22.6,
-     69.3
-    ],
-    [
-     22.6,
-     70.1
-    ],
-    [
-     22.7,
-     69.6
-    ],
-    [
-     22.7,
-     70.1
-    ],
-    [
-     22.7,
-     72.3
-    ],
-    [
-     22.8,
-     72.5
-    ],
-    [
-     23.4,
-     69.2
-    ],
-    [
-     23.5,
-     68.5
-    ],
-    [
-     23.5,
-     78.8
-    ],
-    [
-     24,
-     78.8
-    ],
-    [
-     24.1,
-     72.3
-    ],
-    [
-     24.1,
-     76.3
-    ],
-    [
-     24.4,
-     68.1
-    ],
-    [
-     24.7,
-     69.2
-    ],
-    [
-     24.7,
-     70.9
-    ],
-    [
-     24.7,
-     79.3
-    ],
-    [
-     25.4,
-     68.4
-    ],
-    [
-     25.5,
-     70.2
-    ],
-    [
-     26,
-     69.2
-    ],
-    [
-     26.1,
-     71.3
-    ],
-    [
-     26.6,
-     68.6
-    ],
-    [
-     26.6,
-     69.7
-    ],
-    [
-     27.4,
-     71.6
-    ],
-    [
-     28,
-     73.1
-    ],
-    [
-     28.1,
-     73.2
-    ],
-    [
-     31.4,
-     69.3
-    ],
-    [
-     32.2,
-     71.7
-    ]
-   ]
-  },
-  {
    "id": "turnin-182",
    "type": "turnin",
    "mapId": 1426,
@@ -1548,6 +1534,20 @@
    "level": 4
   },
   {
+   "id": "accept-3364",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 25,
+   "y": 76,
+   "confidence": "unverified",
+   "questId": 3364,
+   "npcId": 12738,
+   "questName": "Scalding Mornbrew Delivery",
+   "npcName": "Nori Pridedrift",
+   "zoneName": "Dun Morogh",
+   "level": 5
+  },
+  {
    "id": "turnin-3364",
    "type": "turnin",
    "mapId": 1426,
@@ -1559,7 +1559,7 @@
    "questName": "Scalding Mornbrew Delivery",
    "npcName": "Durnan Furcutter",
    "zoneName": "Dun Morogh",
-   "level": 4
+   "level": 5
   },
   {
    "id": "accept-218",
@@ -1718,193 +1718,18 @@
    "level": 5
   },
   {
-   "id": "accept-9261",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 53,
-   "y": 35,
-   "confidence": "unverified",
-   "questId": 9261,
-   "npcId": 16484,
-   "questName": "Investigate the Scourge of Ironforge",
-   "npcName": "Lieutenant Nevell",
-   "zoneName": "Dun Morogh",
-   "level": 5
-  },
-  {
-   "id": "complete-9261",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 49.03,
-   "y": 39.31,
-   "confidence": "unverified",
-   "questId": 9261,
-   "questName": "Investigate the Scourge of Ironforge",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 5,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 22892,
-     "name": "Dim Necrotic Stone",
-     "sources": [
-      "Skeletal Trooper",
-      "Spectral Spirit"
-     ],
-     "icon": 134085
-    }
-   ],
-   "area": [
-    [
-     47.8,
-     39.6
-    ],
-    [
-     47.9,
-     40.1
-    ],
-    [
-     48.2,
-     38
-    ],
-    [
-     48.3,
-     39
-    ],
-    [
-     48.3,
-     39.5
-    ],
-    [
-     48.3,
-     40.1
-    ],
-    [
-     48.3,
-     40.6
-    ],
-    [
-     48.5,
-     38.6
-    ],
-    [
-     48.6,
-     39
-    ],
-    [
-     48.6,
-     39.6
-    ],
-    [
-     48.6,
-     40.1
-    ],
-    [
-     48.9,
-     38
-    ],
-    [
-     48.9,
-     39.1
-    ],
-    [
-     48.9,
-     39.4
-    ],
-    [
-     48.9,
-     40.1
-    ],
-    [
-     49,
-     38.6
-    ],
-    [
-     49,
-     40.6
-    ],
-    [
-     49.3,
-     38.5
-    ],
-    [
-     49.3,
-     39
-    ],
-    [
-     49.3,
-     39.6
-    ],
-    [
-     49.3,
-     40
-    ],
-    [
-     49.6,
-     38.4
-    ],
-    [
-     49.6,
-     39
-    ],
-    [
-     49.6,
-     40.1
-    ],
-    [
-     49.7,
-     39.6
-    ],
-    [
-     50,
-     38.5
-    ],
-    [
-     50,
-     39
-    ],
-    [
-     50,
-     40.1
-    ],
-    [
-     50.1,
-     39.5
-    ],
-    [
-     50.2,
-     38.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-9261",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 53,
-   "y": 35,
-   "confidence": "unverified",
-   "questId": 9261,
-   "npcId": 16484,
-   "questName": "Investigate the Scourge of Ironforge",
-   "npcName": "Lieutenant Nevell",
-   "zoneName": "Dun Morogh",
-   "level": 6
-  },
-  {
    "id": "gap-384",
    "type": "gap",
    "mapId": 1426,
-   "x": 53,
-   "y": 35,
+   "x": 53.2,
+   "y": 35.6,
    "confidence": "unverified",
    "questId": 384,
    "reason": "quest 384: objective item 2894 location unknown",
    "questName": "Beer Basted Boar Ribs",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-317",
@@ -1918,7 +1743,7 @@
    "questName": "Stocking Jetsteam",
    "npcName": "Pilot Bellowfiz",
    "zoneName": "Dun Morogh",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-400",
@@ -1932,7 +1757,7 @@
    "questName": "Tools for Steelgrill",
    "npcName": "Tharek Blackstone",
    "zoneName": "Dun Morogh",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-313",
@@ -1946,7 +1771,7 @@
    "questName": "The Grizzled Den",
    "npcName": "Pilot Stonegear",
    "zoneName": "Dun Morogh",
-   "level": 6
+   "level": 5
   },
   {
    "id": "accept-5541",
@@ -1960,263 +1785,7 @@
    "questName": "Ammo for Rumbleshot",
    "npcName": "Loslor Rudge",
    "zoneName": "Dun Morogh",
-   "level": 6
-  },
-  {
-   "id": "accept-287",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 46.7,
-   "y": 53.8,
-   "confidence": "unverified",
-   "questId": 287,
-   "npcId": 1252,
-   "questName": "Frostmane Hold",
-   "npcName": "Senir Whitebeard",
-   "zoneName": "Dun Morogh",
-   "level": 6
-  },
-  {
-   "id": "accept-412",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 45.8,
-   "y": 49.4,
-   "confidence": "unverified",
-   "questId": 412,
-   "npcId": 1269,
-   "questName": "Operation Recombobulation",
-   "npcName": "Razzle Sprysprocket",
-   "zoneName": "Dun Morogh",
-   "level": 6
-  },
-  {
-   "id": "complete-313",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 41.81,
-   "y": 49.5,
-   "confidence": "unverified",
-   "questId": 313,
-   "questName": "The Grizzled Den",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 6,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 2671,
-     "name": "Wendigo Mane",
-     "sources": [
-      "Wendigo",
-      "Young Wendigo",
-      "Edan the Howler"
-     ],
-     "icon": 134367
-    }
-   ],
-   "area": [
-    [
-     38.9,
-     48.3
-    ],
-    [
-     39,
-     47.5
-    ],
-    [
-     39.1,
-     48.8
-    ],
-    [
-     39.2,
-     46.4
-    ],
-    [
-     39.2,
-     49.5
-    ],
-    [
-     39.3,
-     47.4
-    ],
-    [
-     39.5,
-     48.1
-    ],
-    [
-     39.7,
-     47.7
-    ],
-    [
-     39.7,
-     48.8
-    ],
-    [
-     39.9,
-     47.2
-    ],
-    [
-     40.2,
-     53.3
-    ],
-    [
-     40.3,
-     47.8
-    ],
-    [
-     40.5,
-     46.6
-    ],
-    [
-     40.5,
-     46.9
-    ],
-    [
-     40.9,
-     49.2
-    ],
-    [
-     41.1,
-     47.2
-    ],
-    [
-     41.1,
-     49.8
-    ],
-    [
-     41.2,
-     49.3
-    ],
-    [
-     41.3,
-     45.3
-    ],
-    [
-     41.4,
-     51.1
-    ],
-    [
-     41.6,
-     48.4
-    ],
-    [
-     41.8,
-     54.5
-    ],
-    [
-     41.9,
-     45.2
-    ],
-    [
-     41.9,
-     46
-    ],
-    [
-     41.9,
-     51.4
-    ],
-    [
-     41.9,
-     52.7
-    ],
-    [
-     41.9,
-     54
-    ],
-    [
-     42,
-     47
-    ],
-    [
-     42,
-     48.4
-    ],
-    [
-     42.1,
-     46.3
-    ],
-    [
-     42.1,
-     47.6
-    ],
-    [
-     42.1,
-     54.9
-    ],
-    [
-     42.2,
-     46.1
-    ],
-    [
-     42.2,
-     48.5
-    ],
-    [
-     42.2,
-     52.7
-    ],
-    [
-     42.2,
-     53.3
-    ],
-    [
-     42.4,
-     49.2
-    ],
-    [
-     42.4,
-     52
-    ],
-    [
-     42.5,
-     53.7
-    ],
-    [
-     42.5,
-     55
-    ],
-    [
-     42.6,
-     47
-    ],
-    [
-     42.6,
-     49.3
-    ],
-    [
-     42.6,
-     50.4
-    ],
-    [
-     42.7,
-     51.8
-    ],
-    [
-     42.8,
-     49.9
-    ],
-    [
-     42.9,
-     54.8
-    ],
-    [
-     43,
-     50
-    ],
-    [
-     43.2,
-     48.9
-    ],
-    [
-     43.3,
-     49.2
-    ],
-    [
-     43.6,
-     49.6
-    ]
-   ]
+   "level": 5
   },
   {
    "id": "complete-317",
@@ -2229,7 +1798,7 @@
    "questName": "Stocking Jetsteam",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 6,
+   "level": 5,
    "objectives": [
     {
      "kind": "collect",
@@ -3087,6 +2656,332 @@
    ]
   },
   {
+   "id": "complete-313",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 41.81,
+   "y": 49.5,
+   "confidence": "unverified",
+   "questId": 313,
+   "questName": "The Grizzled Den",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 6,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 2671,
+     "name": "Wendigo Mane",
+     "sources": [
+      "Wendigo",
+      "Young Wendigo",
+      "Edan the Howler"
+     ],
+     "icon": 134367
+    }
+   ],
+   "area": [
+    [
+     38.9,
+     48.3
+    ],
+    [
+     39,
+     47.5
+    ],
+    [
+     39.1,
+     48.8
+    ],
+    [
+     39.2,
+     46.4
+    ],
+    [
+     39.2,
+     49.5
+    ],
+    [
+     39.3,
+     47.4
+    ],
+    [
+     39.5,
+     48.1
+    ],
+    [
+     39.7,
+     47.7
+    ],
+    [
+     39.7,
+     48.8
+    ],
+    [
+     39.9,
+     47.2
+    ],
+    [
+     40.2,
+     53.3
+    ],
+    [
+     40.3,
+     47.8
+    ],
+    [
+     40.5,
+     46.6
+    ],
+    [
+     40.5,
+     46.9
+    ],
+    [
+     40.9,
+     49.2
+    ],
+    [
+     41.1,
+     47.2
+    ],
+    [
+     41.1,
+     49.8
+    ],
+    [
+     41.2,
+     49.3
+    ],
+    [
+     41.3,
+     45.3
+    ],
+    [
+     41.4,
+     51.1
+    ],
+    [
+     41.6,
+     48.4
+    ],
+    [
+     41.8,
+     54.5
+    ],
+    [
+     41.9,
+     45.2
+    ],
+    [
+     41.9,
+     46
+    ],
+    [
+     41.9,
+     51.4
+    ],
+    [
+     41.9,
+     52.7
+    ],
+    [
+     41.9,
+     54
+    ],
+    [
+     42,
+     47
+    ],
+    [
+     42,
+     48.4
+    ],
+    [
+     42.1,
+     46.3
+    ],
+    [
+     42.1,
+     47.6
+    ],
+    [
+     42.1,
+     54.9
+    ],
+    [
+     42.2,
+     46.1
+    ],
+    [
+     42.2,
+     48.5
+    ],
+    [
+     42.2,
+     52.7
+    ],
+    [
+     42.2,
+     53.3
+    ],
+    [
+     42.4,
+     49.2
+    ],
+    [
+     42.4,
+     52
+    ],
+    [
+     42.5,
+     53.7
+    ],
+    [
+     42.5,
+     55
+    ],
+    [
+     42.6,
+     47
+    ],
+    [
+     42.6,
+     49.3
+    ],
+    [
+     42.6,
+     50.4
+    ],
+    [
+     42.7,
+     51.8
+    ],
+    [
+     42.8,
+     49.9
+    ],
+    [
+     42.9,
+     54.8
+    ],
+    [
+     43,
+     50
+    ],
+    [
+     43.2,
+     48.9
+    ],
+    [
+     43.3,
+     49.2
+    ],
+    [
+     43.6,
+     49.6
+    ]
+   ]
+  },
+  {
+   "id": "turnin-317",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 49.4,
+   "y": 48.4,
+   "confidence": "unverified",
+   "questId": 317,
+   "npcId": 1378,
+   "questName": "Stocking Jetsteam",
+   "npcName": "Pilot Bellowfiz",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "turnin-400",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 50.4,
+   "y": 49.1,
+   "confidence": "unverified",
+   "questId": 400,
+   "npcId": 1376,
+   "questName": "Tools for Steelgrill",
+   "npcName": "Beldin Steelgrill",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "turnin-313",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 49.6,
+   "y": 48.6,
+   "confidence": "unverified",
+   "questId": 313,
+   "npcId": 1377,
+   "questName": "The Grizzled Den",
+   "npcName": "Pilot Stonegear",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "turnin-5541",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 40.7,
+   "y": 65.1,
+   "confidence": "unverified",
+   "questId": 5541,
+   "npcId": 1243,
+   "questName": "Ammo for Rumbleshot",
+   "npcName": "Hegnar Rumbleshot",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "accept-318",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 49.4,
+   "y": 48.4,
+   "confidence": "unverified",
+   "questId": 318,
+   "npcId": 1378,
+   "questName": "Evershine",
+   "npcName": "Pilot Bellowfiz",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "turnin-318",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 30.2,
+   "y": 45.7,
+   "confidence": "unverified",
+   "questId": 318,
+   "npcId": 1374,
+   "questName": "Evershine",
+   "npcName": "Rejold Barleybrew",
+   "zoneName": "Dun Morogh",
+   "level": 6
+  },
+  {
+   "id": "accept-287",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 46.7,
+   "y": 53.8,
+   "confidence": "unverified",
+   "questId": 287,
+   "npcId": 1252,
+   "questName": "Frostmane Hold",
+   "npcName": "Senir Whitebeard",
+   "zoneName": "Dun Morogh",
+   "level": 7
+  },
+  {
    "id": "complete-287",
    "type": "complete",
    "mapId": 1426,
@@ -3097,7 +2992,7 @@
    "questName": "Frostmane Hold",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 6,
+   "level": 7,
    "objectives": [
     {
      "kind": "kill",
@@ -3181,263 +3076,6 @@
    ]
   },
   {
-   "id": "complete-412",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 25.97,
-   "y": 40.39,
-   "confidence": "unverified",
-   "questId": 412,
-   "questName": "Operation Recombobulation",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 6,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 3083,
-     "name": "Restabilization Cog",
-     "sources": [
-      "Leper Gnome",
-      "Gibblewilt"
-     ],
-     "icon": 134064
-    },
-    {
-     "kind": "collect",
-     "id": 3084,
-     "name": "Gyromechanic Gear",
-     "sources": [
-      "Leper Gnome",
-      "Gibblewilt"
-     ],
-     "icon": 134063
-    }
-   ],
-   "area": [
-    [
-     24,
-     43.3
-    ],
-    [
-     24.2,
-     39.6
-    ],
-    [
-     24.2,
-     39.8
-    ],
-    [
-     24.4,
-     43.6
-    ],
-    [
-     24.5,
-     43.2
-    ],
-    [
-     24.7,
-     39.4
-    ],
-    [
-     24.7,
-     41.8
-    ],
-    [
-     24.7,
-     43
-    ],
-    [
-     24.8,
-     42.8
-    ],
-    [
-     24.8,
-     42.9
-    ],
-    [
-     24.8,
-     43.8
-    ],
-    [
-     24.8,
-     44.8
-    ],
-    [
-     24.9,
-     40.1
-    ],
-    [
-     25.2,
-     44.4
-    ],
-    [
-     25.3,
-     39.8
-    ],
-    [
-     25.4,
-     43.8
-    ],
-    [
-     25.4,
-     44.9
-    ],
-    [
-     25.6,
-     45.4
-    ],
-    [
-     25.7,
-     43
-    ],
-    [
-     25.9,
-     37.9
-    ],
-    [
-     26.1,
-     37
-    ],
-    [
-     26.1,
-     40.7
-    ],
-    [
-     26.1,
-     42.8
-    ],
-    [
-     26.1,
-     43.8
-    ],
-    [
-     26.3,
-     35.6
-    ],
-    [
-     26.7,
-     36.6
-    ],
-    [
-     26.7,
-     41.8
-    ],
-    [
-     26.8,
-     36.3
-    ],
-    [
-     26.8,
-     42.8
-    ],
-    [
-     26.8,
-     43.8
-    ],
-    [
-     26.9,
-     35.7
-    ],
-    [
-     27.2,
-     37
-    ],
-    [
-     27.2,
-     43
-    ],
-    [
-     27.3,
-     36.4
-    ],
-    [
-     27.3,
-     37.3
-    ],
-    [
-     27.4,
-     35.9
-    ],
-    [
-     27.4,
-     36.2
-    ],
-    [
-     27.6,
-     36.4
-    ],
-    [
-     27.7,
-     37
-    ],
-    [
-     28,
-     36.7
-    ],
-    [
-     28.1,
-     35.9
-    ]
-   ]
-  },
-  {
-   "id": "turnin-317",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 49.4,
-   "y": 48.4,
-   "confidence": "unverified",
-   "questId": 317,
-   "npcId": 1378,
-   "questName": "Stocking Jetsteam",
-   "npcName": "Pilot Bellowfiz",
-   "zoneName": "Dun Morogh",
-   "level": 7
-  },
-  {
-   "id": "turnin-400",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 50.4,
-   "y": 49.1,
-   "confidence": "unverified",
-   "questId": 400,
-   "npcId": 1376,
-   "questName": "Tools for Steelgrill",
-   "npcName": "Beldin Steelgrill",
-   "zoneName": "Dun Morogh",
-   "level": 7
-  },
-  {
-   "id": "turnin-313",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 49.6,
-   "y": 48.6,
-   "confidence": "unverified",
-   "questId": 313,
-   "npcId": 1377,
-   "questName": "The Grizzled Den",
-   "npcName": "Pilot Stonegear",
-   "zoneName": "Dun Morogh",
-   "level": 7
-  },
-  {
-   "id": "turnin-5541",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 40.7,
-   "y": 65.1,
-   "confidence": "unverified",
-   "questId": 5541,
-   "npcId": 1243,
-   "questName": "Ammo for Rumbleshot",
-   "npcName": "Hegnar Rumbleshot",
-   "zoneName": "Dun Morogh",
-   "level": 7
-  },
-  {
    "id": "turnin-287",
    "type": "turnin",
    "mapId": 1426,
@@ -3452,74 +3090,18 @@
    "level": 7
   },
   {
-   "id": "turnin-412",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 45.8,
-   "y": 49.4,
-   "confidence": "unverified",
-   "questId": 412,
-   "npcId": 1269,
-   "questName": "Operation Recombobulation",
-   "npcName": "Razzle Sprysprocket",
-   "zoneName": "Dun Morogh",
-   "level": 7
-  },
-  {
-   "id": "accept-318",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 49.4,
-   "y": 48.4,
-   "confidence": "unverified",
-   "questId": 318,
-   "npcId": 1378,
-   "questName": "Evershine",
-   "npcName": "Pilot Bellowfiz",
-   "zoneName": "Dun Morogh",
-   "level": 8
-  },
-  {
-   "id": "accept-291",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 46.7,
-   "y": 53.8,
-   "confidence": "unverified",
-   "questId": 291,
-   "npcId": 1252,
-   "questName": "The Reports",
-   "npcName": "Senir Whitebeard",
-   "zoneName": "Dun Morogh",
-   "level": 8
-  },
-  {
-   "id": "turnin-318",
-   "type": "turnin",
-   "mapId": 1426,
-   "x": 30.2,
-   "y": 45.7,
-   "confidence": "unverified",
-   "questId": 318,
-   "npcId": 1374,
-   "questName": "Evershine",
-   "npcName": "Rejold Barleybrew",
-   "zoneName": "Dun Morogh",
-   "level": 8
-  },
-  {
    "id": "gap-310",
    "type": "gap",
    "mapId": 1426,
-   "x": 30.2,
-   "y": 45.7,
+   "x": 46.7,
+   "y": 53.8,
    "confidence": "unverified",
    "questId": 310,
    "reason": "quest 310: end location unknown",
    "questName": "Bitter Rivals",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 8
+   "level": 7
   },
   {
    "id": "accept-319",
@@ -3533,7 +3115,7 @@
    "questName": "A Favor for Evershine",
    "npcName": "Rejold Barleybrew",
    "zoneName": "Dun Morogh",
-   "level": 8
+   "level": 7
   },
   {
    "id": "accept-315",
@@ -3547,7 +3129,7 @@
    "questName": "The Perfect Stout",
    "npcName": "Rejold Barleybrew",
    "zoneName": "Dun Morogh",
-   "level": 8
+   "level": 7
   },
   {
    "id": "complete-315",
@@ -3560,7 +3142,7 @@
    "questName": "The Perfect Stout",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 8,
+   "level": 7,
    "objectives": [
     {
      "kind": "collect",
@@ -3755,7 +3337,7 @@
    "questName": "A Favor for Evershine",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 8,
+   "level": 7,
    "objectives": [
     {
      "kind": "kill",
@@ -4588,7 +4170,7 @@
    "questName": "A Favor for Evershine",
    "npcName": "Rejold Barleybrew",
    "zoneName": "Dun Morogh",
-   "level": 8
+   "level": 7
   },
   {
    "id": "turnin-315",
@@ -4601,6 +4183,424 @@
    "npcId": 1374,
    "questName": "The Perfect Stout",
    "npcName": "Rejold Barleybrew",
+   "zoneName": "Dun Morogh",
+   "level": 8
+  },
+  {
+   "id": "accept-9261",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 53,
+   "y": 35,
+   "confidence": "unverified",
+   "questId": 9261,
+   "npcId": 16484,
+   "questName": "Investigate the Scourge of Ironforge",
+   "npcName": "Lieutenant Nevell",
+   "zoneName": "Dun Morogh",
+   "level": 8
+  },
+  {
+   "id": "accept-412",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 45.8,
+   "y": 49.4,
+   "confidence": "unverified",
+   "questId": 412,
+   "npcId": 1269,
+   "questName": "Operation Recombobulation",
+   "npcName": "Razzle Sprysprocket",
+   "zoneName": "Dun Morogh",
+   "level": 8
+  },
+  {
+   "id": "accept-291",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 46.7,
+   "y": 53.8,
+   "confidence": "unverified",
+   "questId": 291,
+   "npcId": 1252,
+   "questName": "The Reports",
+   "npcName": "Senir Whitebeard",
+   "zoneName": "Dun Morogh",
+   "level": 8
+  },
+  {
+   "id": "complete-9261",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 49.03,
+   "y": 39.31,
+   "confidence": "unverified",
+   "questId": 9261,
+   "questName": "Investigate the Scourge of Ironforge",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 8,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 22892,
+     "name": "Dim Necrotic Stone",
+     "sources": [
+      "Skeletal Trooper",
+      "Spectral Spirit"
+     ],
+     "icon": 134085
+    }
+   ],
+   "area": [
+    [
+     47.8,
+     39.6
+    ],
+    [
+     47.9,
+     40.1
+    ],
+    [
+     48.2,
+     38
+    ],
+    [
+     48.3,
+     39
+    ],
+    [
+     48.3,
+     39.5
+    ],
+    [
+     48.3,
+     40.1
+    ],
+    [
+     48.3,
+     40.6
+    ],
+    [
+     48.5,
+     38.6
+    ],
+    [
+     48.6,
+     39
+    ],
+    [
+     48.6,
+     39.6
+    ],
+    [
+     48.6,
+     40.1
+    ],
+    [
+     48.9,
+     38
+    ],
+    [
+     48.9,
+     39.1
+    ],
+    [
+     48.9,
+     39.4
+    ],
+    [
+     48.9,
+     40.1
+    ],
+    [
+     49,
+     38.6
+    ],
+    [
+     49,
+     40.6
+    ],
+    [
+     49.3,
+     38.5
+    ],
+    [
+     49.3,
+     39
+    ],
+    [
+     49.3,
+     39.6
+    ],
+    [
+     49.3,
+     40
+    ],
+    [
+     49.6,
+     38.4
+    ],
+    [
+     49.6,
+     39
+    ],
+    [
+     49.6,
+     40.1
+    ],
+    [
+     49.7,
+     39.6
+    ],
+    [
+     50,
+     38.5
+    ],
+    [
+     50,
+     39
+    ],
+    [
+     50,
+     40.1
+    ],
+    [
+     50.1,
+     39.5
+    ],
+    [
+     50.2,
+     38.1
+    ]
+   ]
+  },
+  {
+   "id": "complete-412",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 25.97,
+   "y": 40.39,
+   "confidence": "unverified",
+   "questId": 412,
+   "questName": "Operation Recombobulation",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 8,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 3083,
+     "name": "Restabilization Cog",
+     "sources": [
+      "Leper Gnome",
+      "Gibblewilt"
+     ],
+     "icon": 134064
+    },
+    {
+     "kind": "collect",
+     "id": 3084,
+     "name": "Gyromechanic Gear",
+     "sources": [
+      "Leper Gnome",
+      "Gibblewilt"
+     ],
+     "icon": 134063
+    }
+   ],
+   "area": [
+    [
+     24,
+     43.3
+    ],
+    [
+     24.2,
+     39.6
+    ],
+    [
+     24.2,
+     39.8
+    ],
+    [
+     24.4,
+     43.6
+    ],
+    [
+     24.5,
+     43.2
+    ],
+    [
+     24.7,
+     39.4
+    ],
+    [
+     24.7,
+     41.8
+    ],
+    [
+     24.7,
+     43
+    ],
+    [
+     24.8,
+     42.8
+    ],
+    [
+     24.8,
+     42.9
+    ],
+    [
+     24.8,
+     43.8
+    ],
+    [
+     24.8,
+     44.8
+    ],
+    [
+     24.9,
+     40.1
+    ],
+    [
+     25.2,
+     44.4
+    ],
+    [
+     25.3,
+     39.8
+    ],
+    [
+     25.4,
+     43.8
+    ],
+    [
+     25.4,
+     44.9
+    ],
+    [
+     25.6,
+     45.4
+    ],
+    [
+     25.7,
+     43
+    ],
+    [
+     25.9,
+     37.9
+    ],
+    [
+     26.1,
+     37
+    ],
+    [
+     26.1,
+     40.7
+    ],
+    [
+     26.1,
+     42.8
+    ],
+    [
+     26.1,
+     43.8
+    ],
+    [
+     26.3,
+     35.6
+    ],
+    [
+     26.7,
+     36.6
+    ],
+    [
+     26.7,
+     41.8
+    ],
+    [
+     26.8,
+     36.3
+    ],
+    [
+     26.8,
+     42.8
+    ],
+    [
+     26.8,
+     43.8
+    ],
+    [
+     26.9,
+     35.7
+    ],
+    [
+     27.2,
+     37
+    ],
+    [
+     27.2,
+     43
+    ],
+    [
+     27.3,
+     36.4
+    ],
+    [
+     27.3,
+     37.3
+    ],
+    [
+     27.4,
+     35.9
+    ],
+    [
+     27.4,
+     36.2
+    ],
+    [
+     27.6,
+     36.4
+    ],
+    [
+     27.7,
+     37
+    ],
+    [
+     28,
+     36.7
+    ],
+    [
+     28.1,
+     35.9
+    ]
+   ]
+  },
+  {
+   "id": "turnin-9261",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 53,
+   "y": 35,
+   "confidence": "unverified",
+   "questId": 9261,
+   "npcId": 16484,
+   "questName": "Investigate the Scourge of Ironforge",
+   "npcName": "Lieutenant Nevell",
+   "zoneName": "Dun Morogh",
+   "level": 8
+  },
+  {
+   "id": "turnin-412",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 45.8,
+   "y": 49.4,
+   "confidence": "unverified",
+   "questId": 412,
+   "npcId": 1269,
+   "questName": "Operation Recombobulation",
+   "npcName": "Razzle Sprysprocket",
    "zoneName": "Dun Morogh",
    "level": 8
   },
@@ -5241,6 +5241,33 @@
    "level": 9
   },
   {
+   "id": "gap-419",
+   "type": "gap",
+   "mapId": 1426,
+   "x": 95.4,
+   "y": 46.5,
+   "confidence": "unverified",
+   "questId": 419,
+   "reason": "quest 419: end location unknown",
+   "questName": "The Lost Pilot",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 9
+  },
+  {
+   "id": "grind-1426-10",
+   "type": "grind",
+   "mapId": 1426,
+   "x": 95.4,
+   "y": 46.5,
+   "confidence": "unverified",
+   "untilLevel": 10,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 9
+  },
+  {
    "id": "accept-416",
    "type": "accept",
    "mapId": 1426,
@@ -5252,7 +5279,95 @@
    "questName": "Rat Catching",
    "npcName": "Mountaineer Kadrell",
    "zoneName": "Dun Morogh",
-   "level": 9
+   "level": 10
+  },
+  {
+   "id": "accept-314",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 63.1,
+   "y": 49.8,
+   "confidence": "unverified",
+   "questId": 314,
+   "npcId": 1265,
+   "questName": "Protecting the Herd",
+   "npcName": "Rudra Amberstill",
+   "zoneName": "Dun Morogh",
+   "level": 10
+  },
+  {
+   "id": "accept-312",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 34.6,
+   "y": 51.7,
+   "confidence": "unverified",
+   "questId": 312,
+   "npcId": 1266,
+   "questName": "Tundra MacGrann's Stolen Stash",
+   "npcName": "Tundra MacGrann",
+   "zoneName": "Dun Morogh",
+   "level": 10
+  },
+  {
+   "id": "complete-312",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 38.5,
+   "y": 53.9,
+   "confidence": "unverified",
+   "questId": 312,
+   "questName": "Tundra MacGrann's Stolen Stash",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 10,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 2667,
+     "name": "MacGrann's Dried Meats",
+     "sources": [
+      "MacGrann's Meat Locker"
+     ],
+     "icon": 133970
+    }
+   ],
+   "area": [
+    [
+     38.5,
+     53.9
+    ]
+   ]
+  },
+  {
+   "id": "complete-314",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 62.6,
+   "y": 46.0,
+   "confidence": "unverified",
+   "questId": 314,
+   "questName": "Protecting the Herd",
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 10,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 3627,
+     "name": "Fang of Vagash",
+     "sources": [
+      "Vagash"
+     ],
+     "icon": 133723
+    }
+   ],
+   "area": [
+    [
+     62.6,
+     46
+    ]
+   ]
   },
   {
    "id": "travel-1426-1432",
@@ -5266,7 +5381,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 9
+   "level": 10
   },
   {
    "id": "complete-416",
@@ -5279,7 +5394,7 @@
    "questName": "Rat Catching",
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 9,
+   "level": 10,
    "objectives": [
     {
      "kind": "collect",
@@ -5429,64 +5544,6 @@
    "level": 10
   },
   {
-   "id": "gap-419",
-   "type": "gap",
-   "mapId": 1426,
-   "x": 95.4,
-   "y": 46.5,
-   "confidence": "unverified",
-   "questId": 419,
-   "reason": "quest 419: end location unknown",
-   "questName": "The Lost Pilot",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 10
-  },
-  {
-   "id": "accept-314",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 63.1,
-   "y": 49.8,
-   "confidence": "unverified",
-   "questId": 314,
-   "npcId": 1265,
-   "questName": "Protecting the Herd",
-   "npcName": "Rudra Amberstill",
-   "zoneName": "Dun Morogh",
-   "level": 10
-  },
-  {
-   "id": "complete-314",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 62.6,
-   "y": 46.0,
-   "confidence": "unverified",
-   "questId": 314,
-   "questName": "Protecting the Herd",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 10,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 3627,
-     "name": "Fang of Vagash",
-     "sources": [
-      "Vagash"
-     ],
-     "icon": 133723
-    }
-   ],
-   "area": [
-    [
-     62.6,
-     46
-    ]
-   ]
-  },
-  {
    "id": "turnin-314",
    "type": "turnin",
    "mapId": 1426,
@@ -5499,50 +5556,6 @@
    "npcName": "Rudra Amberstill",
    "zoneName": "Dun Morogh",
    "level": 10
-  },
-  {
-   "id": "accept-312",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 34.6,
-   "y": 51.7,
-   "confidence": "unverified",
-   "questId": 312,
-   "npcId": 1266,
-   "questName": "Tundra MacGrann's Stolen Stash",
-   "npcName": "Tundra MacGrann",
-   "zoneName": "Dun Morogh",
-   "level": 10
-  },
-  {
-   "id": "complete-312",
-   "type": "complete",
-   "mapId": 1426,
-   "x": 38.5,
-   "y": 53.9,
-   "confidence": "unverified",
-   "questId": 312,
-   "questName": "Tundra MacGrann's Stolen Stash",
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 10,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 2667,
-     "name": "MacGrann's Dried Meats",
-     "sources": [
-      "MacGrann's Meat Locker"
-     ],
-     "icon": 133970
-    }
-   ],
-   "area": [
-    [
-     38.5,
-     53.9
-    ]
-   ]
   },
   {
    "id": "turnin-312",
@@ -6606,629 +6619,6 @@
    "level": 11
   },
   {
-   "id": "accept-237",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 23.5,
-   "y": 76.4,
-   "confidence": "unverified",
-   "questId": 237,
-   "npcId": 1091,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Mountaineer Gravelgaw",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "complete-237",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 37.66,
-   "y": 67.21,
-   "confidence": "unverified",
-   "questId": 237,
-   "questName": "In Defense of the King's Lands",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 11,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 1163,
-     "name": "Stonesplinter Skullthumper"
-    },
-    {
-     "kind": "kill",
-     "id": 1166,
-     "name": "Stonesplinter Seer"
-    }
-   ],
-   "area": [
-    [
-     27.4,
-     85.6
-    ],
-    [
-     27.5,
-     85.9
-    ],
-    [
-     27.9,
-     81.5
-    ],
-    [
-     27.9,
-     83.4
-    ],
-    [
-     28,
-     81.2
-    ],
-    [
-     28,
-     86
-    ],
-    [
-     28.1,
-     83.5
-    ],
-    [
-     28.2,
-     86.9
-    ],
-    [
-     28.3,
-     87
-    ],
-    [
-     28.5,
-     83.7
-    ],
-    [
-     28.7,
-     86.2
-    ],
-    [
-     28.9,
-     84.9
-    ],
-    [
-     29,
-     80.9
-    ],
-    [
-     29,
-     81.2
-    ],
-    [
-     29,
-     87.7
-    ],
-    [
-     29.2,
-     87.6
-    ],
-    [
-     29.4,
-     86.7
-    ],
-    [
-     29.6,
-     81.5
-    ],
-    [
-     30.1,
-     83.7
-    ],
-    [
-     31.3,
-     85.4
-    ],
-    [
-     32.8,
-     89.9
-    ],
-    [
-     33.6,
-     88.3
-    ],
-    [
-     33.7,
-     87.3
-    ],
-    [
-     33.7,
-     89
-    ],
-    [
-     34,
-     85.1
-    ],
-    [
-     34.2,
-     81.7
-    ],
-    [
-     34.2,
-     85.9
-    ],
-    [
-     34.4,
-     87.6
-    ],
-    [
-     34.6,
-     89.7
-    ],
-    [
-     34.7,
-     82.4
-    ],
-    [
-     34.7,
-     84.9
-    ],
-    [
-     34.9,
-     88.7
-    ],
-    [
-     34.9,
-     90.1
-    ],
-    [
-     35,
-     90.9
-    ],
-    [
-     35.1,
-     84.1
-    ],
-    [
-     35.2,
-     87.5
-    ],
-    [
-     35.3,
-     82.6
-    ],
-    [
-     35.3,
-     82.9
-    ],
-    [
-     35.5,
-     80.2
-    ],
-    [
-     35.5,
-     87.5
-    ],
-    [
-     35.6,
-     80.9
-    ],
-    [
-     35.6,
-     89.4
-    ],
-    [
-     35.9,
-     84.2
-    ],
-    [
-     36,
-     84.9
-    ],
-    [
-     36.1,
-     83.6
-    ],
-    [
-     36.2,
-     86.5
-    ],
-    [
-     36.3,
-     82.9
-    ],
-    [
-     36.3,
-     83.6
-    ],
-    [
-     36.3,
-     86.1
-    ],
-    [
-     36.3,
-     88.4
-    ],
-    [
-     36.5,
-     81.4
-    ],
-    [
-     36.6,
-     79.7
-    ],
-    [
-     36.7,
-     84.4
-    ],
-    [
-     36.8,
-     77.7
-    ],
-    [
-     37.1,
-     85.2
-    ],
-    [
-     46.5,
-     21.2
-    ],
-    [
-     47.7,
-     21.1
-    ],
-    [
-     47.8,
-     28.5
-    ],
-    [
-     48,
-     19.1
-    ],
-    [
-     48,
-     23.3
-    ],
-    [
-     48.1,
-     20.9
-    ],
-    [
-     48.1,
-     29.1
-    ],
-    [
-     48.2,
-     20.7
-    ],
-    [
-     48.3,
-     21.2
-    ],
-    [
-     48.6,
-     29.9
-    ],
-    [
-     48.7,
-     21
-    ],
-    [
-     48.7,
-     28.9
-    ],
-    [
-     48.8,
-     29.5
-    ],
-    [
-     48.9,
-     29.9
-    ],
-    [
-     49,
-     22
-    ],
-    [
-     49.6,
-     30
-    ],
-    [
-     50,
-     23.6
-    ],
-    [
-     50.4,
-     26.9
-    ],
-    [
-     50.5,
-     23.9
-    ],
-    [
-     50.6,
-     25
-    ],
-    [
-     50.8,
-     24
-    ],
-    [
-     51,
-     23.3
-    ],
-    [
-     51.3,
-     23.7
-    ]
-   ]
-  },
-  {
-   "id": "turnin-237",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 23.5,
-   "y": 76.4,
-   "confidence": "unverified",
-   "questId": 237,
-   "npcId": 1091,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Mountaineer Gravelgaw",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "accept-263",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 23.5,
-   "y": 74.5,
-   "confidence": "unverified",
-   "questId": 263,
-   "npcId": 1090,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Mountaineer Wallbang",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "complete-263",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 45.57,
-   "y": 54.27,
-   "confidence": "unverified",
-   "questId": 263,
-   "questName": "In Defense of the King's Lands",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 11,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 1164,
-     "name": "Stonesplinter Bonesnapper"
-    },
-    {
-     "kind": "kill",
-     "id": 1197,
-     "name": "Stonesplinter Shaman"
-    }
-   ],
-   "area": [
-    [
-     33,
-     91.2
-    ],
-    [
-     33.3,
-     91
-    ],
-    [
-     34.3,
-     91.6
-    ],
-    [
-     34.6,
-     91.5
-    ],
-    [
-     35.1,
-     91.4
-    ],
-    [
-     35.9,
-     92.2
-    ],
-    [
-     36.2,
-     90.9
-    ],
-    [
-     37.3,
-     92.4
-    ],
-    [
-     37.5,
-     86.1
-    ],
-    [
-     37.5,
-     90.1
-    ],
-    [
-     38.1,
-     87.4
-    ],
-    [
-     38.1,
-     87.7
-    ],
-    [
-     38.3,
-     87.7
-    ],
-    [
-     51.7,
-     24.5
-    ],
-    [
-     51.9,
-     23.6
-    ],
-    [
-     52.2,
-     21.8
-    ],
-    [
-     52.2,
-     24.1
-    ],
-    [
-     52.2,
-     24.7
-    ],
-    [
-     52.6,
-     23.9
-    ],
-    [
-     52.7,
-     25
-    ],
-    [
-     52.9,
-     26.9
-    ],
-    [
-     53.1,
-     22.8
-    ],
-    [
-     54,
-     25
-    ],
-    [
-     54,
-     27.2
-    ],
-    [
-     54.2,
-     26
-    ],
-    [
-     54.4,
-     26.7
-    ],
-    [
-     54.5,
-     26.4
-    ],
-    [
-     54.6,
-     27
-    ],
-    [
-     55.2,
-     27
-    ]
-   ]
-  },
-  {
-   "id": "turnin-263",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 23.5,
-   "y": 74.5,
-   "confidence": "unverified",
-   "questId": 263,
-   "npcId": 1090,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Mountaineer Wallbang",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "accept-217",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 23.2,
-   "y": 73.7,
-   "confidence": "unverified",
-   "questId": 217,
-   "npcId": 1092,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Captain Rugelfuss",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "complete-217",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 34.7,
-   "y": 90.63,
-   "confidence": "unverified",
-   "questId": 217,
-   "questName": "In Defense of the King's Lands",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 11,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 1205,
-     "name": "Grawmug"
-    },
-    {
-     "kind": "kill",
-     "id": 1206,
-     "name": "Gnasher"
-    },
-    {
-     "kind": "kill",
-     "id": 1207,
-     "name": "Brawler"
-    }
-   ],
-   "area": [
-    [
-     34.6,
-     90.6
-    ],
-    [
-     34.7,
-     90.8
-    ],
-    [
-     34.8,
-     90.5
-    ]
-   ]
-  },
-  {
-   "id": "turnin-217",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 23.2,
-   "y": 73.7,
-   "confidence": "unverified",
-   "questId": 217,
-   "npcId": 1092,
-   "questName": "In Defense of the King's Lands",
-   "npcName": "Captain Rugelfuss",
-   "zoneName": "Loch Modan",
-   "level": 11
-  },
-  {
-   "id": "grind-1432-17",
-   "type": "grind",
-   "mapId": 1432,
-   "x": 34.8,
-   "y": 49.3,
-   "confidence": "unverified",
-   "untilLevel": 17,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 12
-  },
-  {
    "id": "accept-418",
    "type": "accept",
    "mapId": 1432,
@@ -7240,21 +6630,7 @@
    "questName": "Thelsamar Blood Sausages",
    "npcName": "Vidra Hearthstove",
    "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-1339",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 32.7,
-   "y": 49.7,
-   "confidence": "unverified",
-   "questId": 1339,
-   "npcId": 1340,
-   "questName": "Mountaineer Stormpike's Task",
-   "npcName": "Mountaineer Kadrell",
-   "zoneName": "Loch Modan",
-   "level": 17
+   "level": 11
   },
   {
    "id": "accept-6387",
@@ -7268,49 +6644,7 @@
    "questName": "Honor Students",
    "npcName": "Brock Stoneseeker",
    "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-436",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 436,
-   "npcId": 1105,
-   "questName": "Ironband's Excavation",
-   "npcName": "Jern Hornhelm",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-255",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 34.6,
-   "y": 44.5,
-   "confidence": "unverified",
-   "questId": 255,
-   "npcId": 1139,
-   "questName": "Mercenaries",
-   "npcName": "Magistrate Bluntnose",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-468",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 32.7,
-   "y": 49.7,
-   "confidence": "unverified",
-   "questId": 468,
-   "npcId": 1340,
-   "questName": "Report to Mountaineer Rockgar",
-   "npcName": "Mountaineer Kadrell",
-   "zoneName": "Loch Modan",
-   "level": 17
+   "level": 11
   },
   {
    "id": "complete-418",
@@ -7323,7 +6657,7 @@
    "questName": "Thelsamar Blood Sausages",
    "npcName": null,
    "zoneName": "Loch Modan",
-   "level": 17,
+   "level": 11,
    "objectives": [
     {
      "kind": "collect",
@@ -8163,6 +7497,1956 @@
    ]
   },
   {
+   "id": "turnin-418",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 34.8,
+   "y": 49.3,
+   "confidence": "unverified",
+   "questId": 418,
+   "npcId": 1963,
+   "questName": "Thelsamar Blood Sausages",
+   "npcName": "Vidra Hearthstove",
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "turnin-6387",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 51,
+   "confidence": "unverified",
+   "questId": 6387,
+   "npcId": 1572,
+   "questName": "Honor Students",
+   "npcName": "Thorgrum Borrelson",
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "travel-1432-1426-2",
+   "type": "travel",
+   "mapId": 1426,
+   "x": 96.1,
+   "y": 47.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Dun Morogh",
+   "level": 11
+  },
+  {
+   "id": "accept-6391",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 96.1,
+   "y": 47.1,
+   "confidence": "unverified",
+   "questId": 6391,
+   "npcId": 1572,
+   "questName": "Ride to Ironforge",
+   "npcName": "Thorgrum Borrelson",
+   "zoneName": "Dun Morogh",
+   "level": 11
+  },
+  {
+   "id": "travel-1426-1432-2",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 46.0,
+   "y": 13.6,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "gap-161",
+   "type": "gap",
+   "mapId": 1432,
+   "x": 46.0,
+   "y": 13.6,
+   "confidence": "unverified",
+   "questId": 161,
+   "reason": "quest 161: prereq 199 not in route",
+   "questName": "A Dark Threat Looms",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "gap-250",
+   "type": "gap",
+   "mapId": 1432,
+   "x": 46.0,
+   "y": 13.6,
+   "confidence": "unverified",
+   "questId": 250,
+   "reason": "quest 250: end location unknown",
+   "questName": "A Dark Threat Looms",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "grind-1432-13",
+   "type": "grind",
+   "mapId": 1432,
+   "x": 23.5,
+   "y": 76.4,
+   "confidence": "unverified",
+   "untilLevel": 13,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 11
+  },
+  {
+   "id": "accept-237",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 23.5,
+   "y": 76.4,
+   "confidence": "unverified",
+   "questId": 237,
+   "npcId": 1091,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Mountaineer Gravelgaw",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-1339",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 32.7,
+   "y": 49.7,
+   "confidence": "unverified",
+   "questId": 1339,
+   "npcId": 1340,
+   "questName": "Mountaineer Stormpike's Task",
+   "npcName": "Mountaineer Kadrell",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "travel-1432-1455",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 69.2,
+   "y": 50.6,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ironforge",
+   "level": 13
+  },
+  {
+   "id": "accept-2039",
+   "type": "accept",
+   "mapId": 1455,
+   "x": 69.2,
+   "y": 50.6,
+   "confidence": "unverified",
+   "questId": 2039,
+   "npcId": 6569,
+   "questName": "Find Bingles",
+   "npcName": "Gnoarn",
+   "zoneName": "Ironforge",
+   "level": 13
+  },
+  {
+   "id": "travel-1455-1432-2",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 24.8,
+   "y": 18.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-307",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 24.8,
+   "y": 18.4,
+   "confidence": "unverified",
+   "questId": 307,
+   "npcId": 1343,
+   "questName": "Filthy Paws",
+   "npcName": "Mountaineer Stormpike",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-298",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 65.9,
+   "y": 65.6,
+   "confidence": "unverified",
+   "questId": 298,
+   "npcId": 1344,
+   "questName": "Excavation Progress Report",
+   "npcName": "Prospector Ironband",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-385",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 81.8,
+   "y": 61.7,
+   "confidence": "unverified",
+   "questId": 385,
+   "npcId": 1154,
+   "questName": "Crocolisk Hunting",
+   "npcName": "Marek Ironheart",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "complete-385",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 56.55,
+   "y": 41.49,
+   "confidence": "unverified",
+   "questId": 385,
+   "questName": "Crocolisk Hunting",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 13,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 2924,
+     "name": "Crocolisk Meat",
+     "sources": [
+      "Loch Crocolisk",
+      "Large Loch Crocolisk"
+     ],
+     "icon": 133970
+    },
+    {
+     "kind": "collect",
+     "id": 2925,
+     "name": "Crocolisk Skin",
+     "sources": [
+      "Loch Crocolisk",
+      "Large Loch Crocolisk"
+     ],
+     "icon": 134304
+    }
+   ],
+   "area": [
+    [
+     51.5,
+     35
+    ],
+    [
+     53.1,
+     39.2
+    ],
+    [
+     53.6,
+     37.4
+    ],
+    [
+     53.8,
+     40.4
+    ],
+    [
+     53.9,
+     39.6
+    ],
+    [
+     54,
+     55.2
+    ],
+    [
+     54.2,
+     56.2
+    ],
+    [
+     54.5,
+     41.7
+    ],
+    [
+     55.1,
+     52.9
+    ],
+    [
+     55.3,
+     52.7
+    ],
+    [
+     55.5,
+     33.8
+    ],
+    [
+     55.5,
+     53.5
+    ],
+    [
+     55.7,
+     36
+    ],
+    [
+     56.1,
+     37.8
+    ],
+    [
+     56.4,
+     35.9
+    ],
+    [
+     56.4,
+     37.8
+    ],
+    [
+     56.5,
+     52.6
+    ],
+    [
+     56.9,
+     39.1
+    ],
+    [
+     57.4,
+     21.9
+    ],
+    [
+     57.4,
+     31.6
+    ],
+    [
+     58.4,
+     24.1
+    ],
+    [
+     58.8,
+     30.9
+    ],
+    [
+     58.8,
+     36.8
+    ],
+    [
+     58.8,
+     57.8
+    ],
+    [
+     60.1,
+     41.6
+    ],
+    [
+     61.3,
+     43.3
+    ],
+    [
+     61.9,
+     45.4
+    ],
+    [
+     62.4,
+     51.5
+    ]
+   ]
+  },
+  {
+   "id": "complete-307",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 35.49,
+   "y": 24.31,
+   "confidence": "unverified",
+   "questId": 307,
+   "questName": "Filthy Paws",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 13,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 2640,
+     "name": "Miners' Gear",
+     "sources": [
+      "Miners' League Crates"
+     ],
+     "icon": 133622
+    }
+   ],
+   "area": [
+    [
+     34.2,
+     26.5
+    ],
+    [
+     34.8,
+     26.7
+    ],
+    [
+     34.9,
+     23.4
+    ],
+    [
+     34.9,
+     24.9
+    ],
+    [
+     35.1,
+     26.9
+    ],
+    [
+     35.3,
+     22
+    ],
+    [
+     35.3,
+     24.4
+    ],
+    [
+     35.5,
+     19.9
+    ],
+    [
+     35.7,
+     24.3
+    ],
+    [
+     35.9,
+     22.1
+    ],
+    [
+     35.9,
+     27.7
+    ],
+    [
+     36.3,
+     24.8
+    ],
+    [
+     36.4,
+     20.7
+    ],
+    [
+     36.7,
+     26.1
+    ]
+   ]
+  },
+  {
+   "id": "complete-237",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 37.66,
+   "y": 67.21,
+   "confidence": "unverified",
+   "questId": 237,
+   "questName": "In Defense of the King's Lands",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 13,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 1163,
+     "name": "Stonesplinter Skullthumper"
+    },
+    {
+     "kind": "kill",
+     "id": 1166,
+     "name": "Stonesplinter Seer"
+    }
+   ],
+   "area": [
+    [
+     27.4,
+     85.6
+    ],
+    [
+     27.5,
+     85.9
+    ],
+    [
+     27.9,
+     81.5
+    ],
+    [
+     27.9,
+     83.4
+    ],
+    [
+     28,
+     81.2
+    ],
+    [
+     28,
+     86
+    ],
+    [
+     28.1,
+     83.5
+    ],
+    [
+     28.2,
+     86.9
+    ],
+    [
+     28.3,
+     87
+    ],
+    [
+     28.5,
+     83.7
+    ],
+    [
+     28.7,
+     86.2
+    ],
+    [
+     28.9,
+     84.9
+    ],
+    [
+     29,
+     80.9
+    ],
+    [
+     29,
+     81.2
+    ],
+    [
+     29,
+     87.7
+    ],
+    [
+     29.2,
+     87.6
+    ],
+    [
+     29.4,
+     86.7
+    ],
+    [
+     29.6,
+     81.5
+    ],
+    [
+     30.1,
+     83.7
+    ],
+    [
+     31.3,
+     85.4
+    ],
+    [
+     32.8,
+     89.9
+    ],
+    [
+     33.6,
+     88.3
+    ],
+    [
+     33.7,
+     87.3
+    ],
+    [
+     33.7,
+     89
+    ],
+    [
+     34,
+     85.1
+    ],
+    [
+     34.2,
+     81.7
+    ],
+    [
+     34.2,
+     85.9
+    ],
+    [
+     34.4,
+     87.6
+    ],
+    [
+     34.6,
+     89.7
+    ],
+    [
+     34.7,
+     82.4
+    ],
+    [
+     34.7,
+     84.9
+    ],
+    [
+     34.9,
+     88.7
+    ],
+    [
+     34.9,
+     90.1
+    ],
+    [
+     35,
+     90.9
+    ],
+    [
+     35.1,
+     84.1
+    ],
+    [
+     35.2,
+     87.5
+    ],
+    [
+     35.3,
+     82.6
+    ],
+    [
+     35.3,
+     82.9
+    ],
+    [
+     35.5,
+     80.2
+    ],
+    [
+     35.5,
+     87.5
+    ],
+    [
+     35.6,
+     80.9
+    ],
+    [
+     35.6,
+     89.4
+    ],
+    [
+     35.9,
+     84.2
+    ],
+    [
+     36,
+     84.9
+    ],
+    [
+     36.1,
+     83.6
+    ],
+    [
+     36.2,
+     86.5
+    ],
+    [
+     36.3,
+     82.9
+    ],
+    [
+     36.3,
+     83.6
+    ],
+    [
+     36.3,
+     86.1
+    ],
+    [
+     36.3,
+     88.4
+    ],
+    [
+     36.5,
+     81.4
+    ],
+    [
+     36.6,
+     79.7
+    ],
+    [
+     36.7,
+     84.4
+    ],
+    [
+     36.8,
+     77.7
+    ],
+    [
+     37.1,
+     85.2
+    ],
+    [
+     46.5,
+     21.2
+    ],
+    [
+     47.7,
+     21.1
+    ],
+    [
+     47.8,
+     28.5
+    ],
+    [
+     48,
+     19.1
+    ],
+    [
+     48,
+     23.3
+    ],
+    [
+     48.1,
+     20.9
+    ],
+    [
+     48.1,
+     29.1
+    ],
+    [
+     48.2,
+     20.7
+    ],
+    [
+     48.3,
+     21.2
+    ],
+    [
+     48.6,
+     29.9
+    ],
+    [
+     48.7,
+     21
+    ],
+    [
+     48.7,
+     28.9
+    ],
+    [
+     48.8,
+     29.5
+    ],
+    [
+     48.9,
+     29.9
+    ],
+    [
+     49,
+     22
+    ],
+    [
+     49.6,
+     30
+    ],
+    [
+     50,
+     23.6
+    ],
+    [
+     50.4,
+     26.9
+    ],
+    [
+     50.5,
+     23.9
+    ],
+    [
+     50.6,
+     25
+    ],
+    [
+     50.8,
+     24
+    ],
+    [
+     51,
+     23.3
+    ],
+    [
+     51.3,
+     23.7
+    ]
+   ]
+  },
+  {
+   "id": "turnin-237",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 23.5,
+   "y": 76.4,
+   "confidence": "unverified",
+   "questId": 237,
+   "npcId": 1091,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Mountaineer Gravelgaw",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "turnin-1339",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 24.8,
+   "y": 18.4,
+   "confidence": "unverified",
+   "questId": 1339,
+   "npcId": 1343,
+   "questName": "Mountaineer Stormpike's Task",
+   "npcName": "Mountaineer Stormpike",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "turnin-2039",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 63.6,
+   "y": 47.9,
+   "confidence": "unverified",
+   "questId": 2039,
+   "npcId": 6577,
+   "questName": "Find Bingles",
+   "npcName": "Bingles Blastenheimer",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "turnin-307",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 24.8,
+   "y": 18.4,
+   "confidence": "unverified",
+   "questId": 307,
+   "npcId": 1343,
+   "questName": "Filthy Paws",
+   "npcName": "Mountaineer Stormpike",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "turnin-298",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 298,
+   "npcId": 1105,
+   "questName": "Excavation Progress Report",
+   "npcName": "Jern Hornhelm",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "turnin-385",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 81.8,
+   "y": 61.7,
+   "confidence": "unverified",
+   "questId": 385,
+   "npcId": 1154,
+   "questName": "Crocolisk Hunting",
+   "npcName": "Marek Ironheart",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-263",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 23.5,
+   "y": 74.5,
+   "confidence": "unverified",
+   "questId": 263,
+   "npcId": 1090,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Mountaineer Wallbang",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-2038",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 63.6,
+   "y": 47.9,
+   "confidence": "unverified",
+   "questId": 2038,
+   "npcId": 6577,
+   "questName": "Bingles' Missing Supplies",
+   "npcName": "Bingles Blastenheimer",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-1338",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 24.8,
+   "y": 18.4,
+   "confidence": "unverified",
+   "questId": 1338,
+   "npcId": 1343,
+   "questName": "Stormpike's Order",
+   "npcName": "Mountaineer Stormpike",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "accept-301",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 301,
+   "npcId": 1105,
+   "questName": "Report to Ironforge",
+   "npcName": "Jern Hornhelm",
+   "zoneName": "Loch Modan",
+   "level": 13
+  },
+  {
+   "id": "complete-263",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 45.57,
+   "y": 54.27,
+   "confidence": "unverified",
+   "questId": 263,
+   "questName": "In Defense of the King's Lands",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 13,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 1164,
+     "name": "Stonesplinter Bonesnapper"
+    },
+    {
+     "kind": "kill",
+     "id": 1197,
+     "name": "Stonesplinter Shaman"
+    }
+   ],
+   "area": [
+    [
+     33,
+     91.2
+    ],
+    [
+     33.3,
+     91
+    ],
+    [
+     34.3,
+     91.6
+    ],
+    [
+     34.6,
+     91.5
+    ],
+    [
+     35.1,
+     91.4
+    ],
+    [
+     35.9,
+     92.2
+    ],
+    [
+     36.2,
+     90.9
+    ],
+    [
+     37.3,
+     92.4
+    ],
+    [
+     37.5,
+     86.1
+    ],
+    [
+     37.5,
+     90.1
+    ],
+    [
+     38.1,
+     87.4
+    ],
+    [
+     38.1,
+     87.7
+    ],
+    [
+     38.3,
+     87.7
+    ],
+    [
+     51.7,
+     24.5
+    ],
+    [
+     51.9,
+     23.6
+    ],
+    [
+     52.2,
+     21.8
+    ],
+    [
+     52.2,
+     24.1
+    ],
+    [
+     52.2,
+     24.7
+    ],
+    [
+     52.6,
+     23.9
+    ],
+    [
+     52.7,
+     25
+    ],
+    [
+     52.9,
+     26.9
+    ],
+    [
+     53.1,
+     22.8
+    ],
+    [
+     54,
+     25
+    ],
+    [
+     54,
+     27.2
+    ],
+    [
+     54.2,
+     26
+    ],
+    [
+     54.4,
+     26.7
+    ],
+    [
+     54.5,
+     26.4
+    ],
+    [
+     54.6,
+     27
+    ],
+    [
+     55.2,
+     27
+    ]
+   ]
+  },
+  {
+   "id": "complete-2038",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 50.77,
+   "y": 25.33,
+   "confidence": "unverified",
+   "questId": 2038,
+   "questName": "Bingles' Missing Supplies",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 14,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 7343,
+     "name": "Bingles' Wrench",
+     "sources": [
+      "Bingles's Toolbucket"
+     ],
+     "icon": 134520
+    },
+    {
+     "kind": "collect",
+     "id": 7345,
+     "name": "Bingles' Screwdriver",
+     "sources": [
+      "Bingles's Toolbucket"
+     ],
+     "icon": 134428
+    },
+    {
+     "kind": "collect",
+     "id": 7346,
+     "name": "Bingles' Hammer",
+     "sources": [
+      "Bingles's Toolbucket"
+     ],
+     "icon": 133057
+    },
+    {
+     "kind": "collect",
+     "id": 7376,
+     "name": "Bingles' Blastencapper",
+     "sources": [
+      "Bingles's Blastencapper"
+     ],
+     "icon": 133714
+    }
+   ],
+   "area": [
+    [
+     48.4,
+     20.5
+    ],
+    [
+     48.7,
+     30.1
+    ],
+    [
+     51.8,
+     24.1
+    ],
+    [
+     54.2,
+     26.6
+    ]
+   ]
+  },
+  {
+   "id": "turnin-263",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 23.5,
+   "y": 74.5,
+   "confidence": "unverified",
+   "questId": 263,
+   "npcId": 1090,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Mountaineer Wallbang",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "turnin-2038",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 63.6,
+   "y": 47.9,
+   "confidence": "unverified",
+   "questId": 2038,
+   "npcId": 6577,
+   "questName": "Bingles' Missing Supplies",
+   "npcName": "Bingles Blastenheimer",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "travel-1432-1455-2",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 74.6,
+   "y": 11.7,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ironforge",
+   "level": 14
+  },
+  {
+   "id": "turnin-301",
+   "type": "turnin",
+   "mapId": 1455,
+   "x": 74.6,
+   "y": 11.7,
+   "confidence": "unverified",
+   "questId": 301,
+   "npcId": 1356,
+   "questName": "Report to Ironforge",
+   "npcName": "Prospector Stormpike",
+   "zoneName": "Ironforge",
+   "level": 14
+  },
+  {
+   "id": "turnin-6391",
+   "type": "turnin",
+   "mapId": 1455,
+   "x": 51.5,
+   "y": 26.3,
+   "confidence": "unverified",
+   "questId": 6391,
+   "npcId": 4256,
+   "questName": "Ride to Ironforge",
+   "npcName": "Golnir Bouldertoe",
+   "zoneName": "Ironforge",
+   "level": 14
+  },
+  {
+   "id": "accept-302",
+   "type": "accept",
+   "mapId": 1455,
+   "x": 74.6,
+   "y": 11.7,
+   "confidence": "unverified",
+   "questId": 302,
+   "npcId": 1356,
+   "questName": "Powder to Ironband",
+   "npcName": "Prospector Stormpike",
+   "zoneName": "Ironforge",
+   "level": 14
+  },
+  {
+   "id": "travel-1455-1432-3",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 83.5,
+   "y": 65.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "accept-257",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 83.5,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 257,
+   "npcId": 1187,
+   "questName": "A Hunter's Boast",
+   "npcName": "Daryl the Youngling",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "complete-257",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 75.42,
+   "y": 67.16,
+   "confidence": "unverified",
+   "questId": 257,
+   "questName": "A Hunter's Boast",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 14,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 1194,
+     "name": "Mountain Buzzard"
+    }
+   ],
+   "area": [
+    [
+     68.4,
+     50.5
+    ],
+    [
+     68.5,
+     75.8
+    ],
+    [
+     70.6,
+     74.1
+    ],
+    [
+     70.9,
+     52.6
+    ],
+    [
+     71.1,
+     72.4
+    ],
+    [
+     71.1,
+     74.8
+    ],
+    [
+     74.4,
+     72.5
+    ],
+    [
+     74.5,
+     64.3
+    ],
+    [
+     74.7,
+     67.7
+    ],
+    [
+     75.8,
+     70.5
+    ],
+    [
+     75.9,
+     72.3
+    ],
+    [
+     76.3,
+     74.8
+    ],
+    [
+     76.8,
+     63.7
+    ],
+    [
+     76.9,
+     55.6
+    ],
+    [
+     77,
+     74
+    ],
+    [
+     77.1,
+     58.3
+    ],
+    [
+     77.2,
+     57.3
+    ],
+    [
+     77.3,
+     75.3
+    ],
+    [
+     78,
+     72.4
+    ],
+    [
+     78.2,
+     76
+    ],
+    [
+     78.5,
+     58
+    ],
+    [
+     78.6,
+     76.9
+    ],
+    [
+     78.9,
+     59.2
+    ],
+    [
+     79.3,
+     63.3
+    ],
+    [
+     79.4,
+     66.8
+    ]
+   ]
+  },
+  {
+   "id": "turnin-302",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 302,
+   "npcId": 1105,
+   "questName": "Powder to Ironband",
+   "npcName": "Jern Hornhelm",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "turnin-257",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 83.5,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 257,
+   "npcId": 1187,
+   "questName": "A Hunter's Boast",
+   "npcName": "Daryl the Youngling",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "accept-273",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 273,
+   "npcId": 1105,
+   "questName": "Resupplying the Excavation",
+   "npcName": "Jern Hornhelm",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "turnin-273",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 52.2,
+   "y": 69.3,
+   "confidence": "unverified",
+   "questId": 273,
+   "npcId": 2057,
+   "questName": "Resupplying the Excavation",
+   "npcName": "Huldar",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "accept-454",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 52.2,
+   "y": 69.3,
+   "confidence": "unverified",
+   "questId": 454,
+   "npcId": 2057,
+   "questName": "After the Ambush",
+   "npcName": "Huldar",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "turnin-454",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 52.2,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 454,
+   "npcId": 1379,
+   "questName": "After the Ambush",
+   "npcName": "Miran",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "accept-309",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 52.2,
+   "y": 69.4,
+   "confidence": "unverified",
+   "questId": 309,
+   "npcId": 1379,
+   "questName": "Protecting the Shipment",
+   "npcName": "Miran",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "turnin-309",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 65.9,
+   "y": 65.6,
+   "confidence": "unverified",
+   "questId": 309,
+   "npcId": 1344,
+   "questName": "Protecting the Shipment",
+   "npcName": "Prospector Ironband",
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "grind-1432-15",
+   "type": "grind",
+   "mapId": 1432,
+   "x": 23.2,
+   "y": 73.7,
+   "confidence": "unverified",
+   "untilLevel": 15,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 14
+  },
+  {
+   "id": "accept-217",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 23.2,
+   "y": 73.7,
+   "confidence": "unverified",
+   "questId": 217,
+   "npcId": 1092,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Captain Rugelfuss",
+   "zoneName": "Loch Modan",
+   "level": 15
+  },
+  {
+   "id": "accept-258",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 83.5,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 258,
+   "npcId": 1187,
+   "questName": "A Hunter's Challenge",
+   "npcName": "Daryl the Youngling",
+   "zoneName": "Loch Modan",
+   "level": 15
+  },
+  {
+   "id": "complete-258",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 66.41,
+   "y": 40.36,
+   "confidence": "unverified",
+   "questId": 258,
+   "questName": "A Hunter's Challenge",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 15,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 1192,
+     "name": "Elder Mountain Boar"
+    }
+   ],
+   "area": [
+    [
+     60.1,
+     37.9
+    ],
+    [
+     60.2,
+     34.3
+    ],
+    [
+     60.4,
+     36.2
+    ],
+    [
+     61.2,
+     39.6
+    ],
+    [
+     61.3,
+     41.4
+    ],
+    [
+     62.4,
+     38.4
+    ],
+    [
+     63,
+     39.9
+    ],
+    [
+     63.2,
+     35.1
+    ],
+    [
+     64.9,
+     38.8
+    ],
+    [
+     65.4,
+     41.9
+    ],
+    [
+     66.1,
+     38.3
+    ],
+    [
+     66.3,
+     40.1
+    ],
+    [
+     67.1,
+     39.4
+    ],
+    [
+     67.4,
+     41.3
+    ],
+    [
+     70.1,
+     37.8
+    ],
+    [
+     74.8,
+     42.1
+    ],
+    [
+     74.8,
+     50.7
+    ],
+    [
+     75.7,
+     46.6
+    ],
+    [
+     77.3,
+     47.1
+    ]
+   ]
+  },
+  {
+   "id": "complete-217",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 34.7,
+   "y": 90.63,
+   "confidence": "unverified",
+   "questId": 217,
+   "questName": "In Defense of the King's Lands",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 15,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 1205,
+     "name": "Grawmug"
+    },
+    {
+     "kind": "kill",
+     "id": 1206,
+     "name": "Gnasher"
+    },
+    {
+     "kind": "kill",
+     "id": 1207,
+     "name": "Brawler"
+    }
+   ],
+   "area": [
+    [
+     34.6,
+     90.6
+    ],
+    [
+     34.7,
+     90.8
+    ],
+    [
+     34.8,
+     90.5
+    ]
+   ]
+  },
+  {
+   "id": "turnin-217",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 23.2,
+   "y": 73.7,
+   "confidence": "unverified",
+   "questId": 217,
+   "npcId": 1092,
+   "questName": "In Defense of the King's Lands",
+   "npcName": "Captain Rugelfuss",
+   "zoneName": "Loch Modan",
+   "level": 15
+  },
+  {
+   "id": "turnin-258",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 83.5,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 258,
+   "npcId": 1187,
+   "questName": "A Hunter's Challenge",
+   "npcName": "Daryl the Youngling",
+   "zoneName": "Loch Modan",
+   "level": 15
+  },
+  {
+   "id": "grind-1432-16",
+   "type": "grind",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "untilLevel": 16,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 15
+  },
+  {
+   "id": "accept-436",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 37.2,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 436,
+   "npcId": 1105,
+   "questName": "Ironband's Excavation",
+   "npcName": "Jern Hornhelm",
+   "zoneName": "Loch Modan",
+   "level": 16
+  },
+  {
+   "id": "turnin-436",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 64.9,
+   "y": 66.7,
+   "confidence": "unverified",
+   "questId": 436,
+   "npcId": 1345,
+   "questName": "Ironband's Excavation",
+   "npcName": "Magmar Fellhew",
+   "zoneName": "Loch Modan",
+   "level": 16
+  },
+  {
+   "id": "accept-297",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 64.9,
+   "y": 66.7,
+   "confidence": "unverified",
+   "questId": 297,
+   "npcId": 1345,
+   "questName": "Gathering Idols",
+   "npcName": "Magmar Fellhew",
+   "zoneName": "Loch Modan",
+   "level": 16
+  },
+  {
+   "id": "complete-297",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 70.1,
+   "y": 64.22,
+   "confidence": "unverified",
+   "questId": 297,
+   "questName": "Gathering Idols",
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 16,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 2636,
+     "name": "Carved Stone Idol",
+     "sources": [
+      "Berserk Trogg",
+      "Stonesplinter Digger",
+      "Stonesplinter Geomancer"
+     ],
+     "icon": 134230
+    }
+   ],
+   "area": [
+    [
+     67.3,
+     59.6
+    ],
+    [
+     68,
+     65.8
+    ],
+    [
+     68,
+     66.1
+    ],
+    [
+     68.2,
+     59
+    ],
+    [
+     68.2,
+     62.6
+    ],
+    [
+     68.3,
+     62.6
+    ],
+    [
+     68.7,
+     62.4
+    ],
+    [
+     68.9,
+     60
+    ],
+    [
+     69,
+     63.3
+    ],
+    [
+     69.1,
+     63.3
+    ],
+    [
+     69.1,
+     66.1
+    ],
+    [
+     69.2,
+     66
+    ],
+    [
+     69.4,
+     67.2
+    ],
+    [
+     69.6,
+     59.3
+    ],
+    [
+     70,
+     66.5
+    ],
+    [
+     70.1,
+     62.7
+    ],
+    [
+     70.1,
+     66.1
+    ],
+    [
+     70.1,
+     67.4
+    ],
+    [
+     70.6,
+     60
+    ],
+    [
+     70.6,
+     64.8
+    ],
+    [
+     70.8,
+     63.5
+    ],
+    [
+     70.9,
+     64.3
+    ],
+    [
+     70.9,
+     66
+    ],
+    [
+     71.2,
+     68.5
+    ],
+    [
+     71.6,
+     68.5
+    ],
+    [
+     72.3,
+     68.2
+    ],
+    [
+     72.5,
+     64.2
+    ],
+    [
+     72.6,
+     63.4
+    ],
+    [
+     72.6,
+     64.7
+    ],
+    [
+     72.6,
+     66.8
+    ],
+    [
+     72.7,
+     62
+    ]
+   ]
+  },
+  {
+   "id": "turnin-297",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 64.9,
+   "y": 66.7,
+   "confidence": "unverified",
+   "questId": 297,
+   "npcId": 1345,
+   "questName": "Gathering Idols",
+   "npcName": "Magmar Fellhew",
+   "zoneName": "Loch Modan",
+   "level": 16
+  },
+  {
+   "id": "grind-1432-17",
+   "type": "grind",
+   "mapId": 1432,
+   "x": 34.6,
+   "y": 44.5,
+   "confidence": "unverified",
+   "untilLevel": 17,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Loch Modan",
+   "level": 16
+  },
+  {
+   "id": "accept-255",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 34.6,
+   "y": 44.5,
+   "confidence": "unverified",
+   "questId": 255,
+   "npcId": 1139,
+   "questName": "Mercenaries",
+   "npcName": "Magistrate Bluntnose",
+   "zoneName": "Loch Modan",
+   "level": 17
+  },
+  {
    "id": "complete-255",
    "type": "complete",
    "mapId": 1432,
@@ -8375,62 +9659,6 @@
    ]
   },
   {
-   "id": "turnin-418",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 34.8,
-   "y": 49.3,
-   "confidence": "unverified",
-   "questId": 418,
-   "npcId": 1963,
-   "questName": "Thelsamar Blood Sausages",
-   "npcName": "Vidra Hearthstove",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "turnin-1339",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 24.8,
-   "y": 18.4,
-   "confidence": "unverified",
-   "questId": 1339,
-   "npcId": 1343,
-   "questName": "Mountaineer Stormpike's Task",
-   "npcName": "Mountaineer Stormpike",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "turnin-6387",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 33.9,
-   "y": 51,
-   "confidence": "unverified",
-   "questId": 6387,
-   "npcId": 1572,
-   "questName": "Honor Students",
-   "npcName": "Thorgrum Borrelson",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "turnin-436",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 64.9,
-   "y": 66.7,
-   "confidence": "unverified",
-   "questId": 436,
-   "npcId": 1345,
-   "questName": "Ironband's Excavation",
-   "npcName": "Magmar Fellhew",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
    "id": "turnin-255",
    "type": "turnin",
    "mapId": 1432,
@@ -8445,1166 +9673,17 @@
    "level": 17
   },
   {
-   "id": "turnin-468",
-   "type": "turnin",
+   "id": "grind-1432-18",
+   "type": "grind",
    "mapId": 1432,
-   "x": 25.4,
-   "y": 10.4,
+   "x": 81.7,
+   "y": 64.1,
    "confidence": "unverified",
-   "questId": 468,
-   "npcId": 1342,
-   "questName": "Report to Mountaineer Rockgar",
-   "npcName": "Mountaineer Rockgar",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "travel-1432-1426-2",
-   "type": "travel",
-   "mapId": 1426,
-   "x": 96.1,
-   "y": 47.1,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Dun Morogh",
-   "level": 17
-  },
-  {
-   "id": "accept-6391",
-   "type": "accept",
-   "mapId": 1426,
-   "x": 96.1,
-   "y": 47.1,
-   "confidence": "unverified",
-   "questId": 6391,
-   "npcId": 1572,
-   "questName": "Ride to Ironforge",
-   "npcName": "Thorgrum Borrelson",
-   "zoneName": "Dun Morogh",
-   "level": 17
-  },
-  {
-   "id": "travel-1426-1455-2",
-   "type": "travel",
-   "mapId": 1455,
-   "x": 69.2,
-   "y": 50.6,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ironforge",
-   "level": 17
-  },
-  {
-   "id": "accept-2039",
-   "type": "accept",
-   "mapId": 1455,
-   "x": 69.2,
-   "y": 50.6,
-   "confidence": "unverified",
-   "questId": 2039,
-   "npcId": 6569,
-   "questName": "Find Bingles",
-   "npcName": "Gnoarn",
-   "zoneName": "Ironforge",
-   "level": 17
-  },
-  {
-   "id": "travel-1455-1432-2",
-   "type": "travel",
-   "mapId": 1432,
-   "x": 63.6,
-   "y": 47.9,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
+   "untilLevel": 18,
    "questName": null,
    "npcName": null,
    "zoneName": "Loch Modan",
    "level": 17
-  },
-  {
-   "id": "turnin-2039",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 63.6,
-   "y": 47.9,
-   "confidence": "unverified",
-   "questId": 2039,
-   "npcId": 6577,
-   "questName": "Find Bingles",
-   "npcName": "Bingles Blastenheimer",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-2038",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 63.6,
-   "y": 47.9,
-   "confidence": "unverified",
-   "questId": 2038,
-   "npcId": 6577,
-   "questName": "Bingles' Missing Supplies",
-   "npcName": "Bingles Blastenheimer",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "complete-2038",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 50.77,
-   "y": 25.33,
-   "confidence": "unverified",
-   "questId": 2038,
-   "questName": "Bingles' Missing Supplies",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 17,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 7343,
-     "name": "Bingles' Wrench",
-     "sources": [
-      "Bingles's Toolbucket"
-     ],
-     "icon": 134520
-    },
-    {
-     "kind": "collect",
-     "id": 7345,
-     "name": "Bingles' Screwdriver",
-     "sources": [
-      "Bingles's Toolbucket"
-     ],
-     "icon": 134428
-    },
-    {
-     "kind": "collect",
-     "id": 7346,
-     "name": "Bingles' Hammer",
-     "sources": [
-      "Bingles's Toolbucket"
-     ],
-     "icon": 133057
-    },
-    {
-     "kind": "collect",
-     "id": 7376,
-     "name": "Bingles' Blastencapper",
-     "sources": [
-      "Bingles's Blastencapper"
-     ],
-     "icon": 133714
-    }
-   ],
-   "area": [
-    [
-     48.4,
-     20.5
-    ],
-    [
-     48.7,
-     30.1
-    ],
-    [
-     51.8,
-     24.1
-    ],
-    [
-     54.2,
-     26.6
-    ]
-   ]
-  },
-  {
-   "id": "turnin-2038",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 63.6,
-   "y": 47.9,
-   "confidence": "unverified",
-   "questId": 2038,
-   "npcId": 6577,
-   "questName": "Bingles' Missing Supplies",
-   "npcName": "Bingles Blastenheimer",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-307",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 24.8,
-   "y": 18.4,
-   "confidence": "unverified",
-   "questId": 307,
-   "npcId": 1343,
-   "questName": "Filthy Paws",
-   "npcName": "Mountaineer Stormpike",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-1338",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 24.8,
-   "y": 18.4,
-   "confidence": "unverified",
-   "questId": 1338,
-   "npcId": 1343,
-   "questName": "Stormpike's Order",
-   "npcName": "Mountaineer Stormpike",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "complete-307",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 35.49,
-   "y": 24.31,
-   "confidence": "unverified",
-   "questId": 307,
-   "questName": "Filthy Paws",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 17,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 2640,
-     "name": "Miners' Gear",
-     "sources": [
-      "Miners' League Crates"
-     ],
-     "icon": 133622
-    }
-   ],
-   "area": [
-    [
-     34.2,
-     26.5
-    ],
-    [
-     34.8,
-     26.7
-    ],
-    [
-     34.9,
-     23.4
-    ],
-    [
-     34.9,
-     24.9
-    ],
-    [
-     35.1,
-     26.9
-    ],
-    [
-     35.3,
-     22
-    ],
-    [
-     35.3,
-     24.4
-    ],
-    [
-     35.5,
-     19.9
-    ],
-    [
-     35.7,
-     24.3
-    ],
-    [
-     35.9,
-     22.1
-    ],
-    [
-     35.9,
-     27.7
-    ],
-    [
-     36.3,
-     24.8
-    ],
-    [
-     36.4,
-     20.7
-    ],
-    [
-     36.7,
-     26.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-307",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 24.8,
-   "y": 18.4,
-   "confidence": "unverified",
-   "questId": 307,
-   "npcId": 1343,
-   "questName": "Filthy Paws",
-   "npcName": "Mountaineer Stormpike",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-298",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 65.9,
-   "y": 65.6,
-   "confidence": "unverified",
-   "questId": 298,
-   "npcId": 1344,
-   "questName": "Excavation Progress Report",
-   "npcName": "Prospector Ironband",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-297",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 64.9,
-   "y": 66.7,
-   "confidence": "unverified",
-   "questId": 297,
-   "npcId": 1345,
-   "questName": "Gathering Idols",
-   "npcName": "Magmar Fellhew",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "complete-297",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 70.1,
-   "y": 64.22,
-   "confidence": "unverified",
-   "questId": 297,
-   "questName": "Gathering Idols",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 17,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 2636,
-     "name": "Carved Stone Idol",
-     "sources": [
-      "Berserk Trogg",
-      "Stonesplinter Digger",
-      "Stonesplinter Geomancer"
-     ],
-     "icon": 134230
-    }
-   ],
-   "area": [
-    [
-     67.3,
-     59.6
-    ],
-    [
-     68,
-     65.8
-    ],
-    [
-     68,
-     66.1
-    ],
-    [
-     68.2,
-     59
-    ],
-    [
-     68.2,
-     62.6
-    ],
-    [
-     68.3,
-     62.6
-    ],
-    [
-     68.7,
-     62.4
-    ],
-    [
-     68.9,
-     60
-    ],
-    [
-     69,
-     63.3
-    ],
-    [
-     69.1,
-     63.3
-    ],
-    [
-     69.1,
-     66.1
-    ],
-    [
-     69.2,
-     66
-    ],
-    [
-     69.4,
-     67.2
-    ],
-    [
-     69.6,
-     59.3
-    ],
-    [
-     70,
-     66.5
-    ],
-    [
-     70.1,
-     62.7
-    ],
-    [
-     70.1,
-     66.1
-    ],
-    [
-     70.1,
-     67.4
-    ],
-    [
-     70.6,
-     60
-    ],
-    [
-     70.6,
-     64.8
-    ],
-    [
-     70.8,
-     63.5
-    ],
-    [
-     70.9,
-     64.3
-    ],
-    [
-     70.9,
-     66
-    ],
-    [
-     71.2,
-     68.5
-    ],
-    [
-     71.6,
-     68.5
-    ],
-    [
-     72.3,
-     68.2
-    ],
-    [
-     72.5,
-     64.2
-    ],
-    [
-     72.6,
-     63.4
-    ],
-    [
-     72.6,
-     64.7
-    ],
-    [
-     72.6,
-     66.8
-    ],
-    [
-     72.7,
-     62
-    ]
-   ]
-  },
-  {
-   "id": "turnin-298",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 298,
-   "npcId": 1105,
-   "questName": "Excavation Progress Report",
-   "npcName": "Jern Hornhelm",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "turnin-297",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 64.9,
-   "y": 66.7,
-   "confidence": "unverified",
-   "questId": 297,
-   "npcId": 1345,
-   "questName": "Gathering Idols",
-   "npcName": "Magmar Fellhew",
-   "zoneName": "Loch Modan",
-   "level": 17
-  },
-  {
-   "id": "accept-301",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 301,
-   "npcId": 1105,
-   "questName": "Report to Ironforge",
-   "npcName": "Jern Hornhelm",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "travel-1432-1455",
-   "type": "travel",
-   "mapId": 1455,
-   "x": 74.6,
-   "y": 11.7,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ironforge",
-   "level": 18
-  },
-  {
-   "id": "turnin-301",
-   "type": "turnin",
-   "mapId": 1455,
-   "x": 74.6,
-   "y": 11.7,
-   "confidence": "unverified",
-   "questId": 301,
-   "npcId": 1356,
-   "questName": "Report to Ironforge",
-   "npcName": "Prospector Stormpike",
-   "zoneName": "Ironforge",
-   "level": 18
-  },
-  {
-   "id": "turnin-6391",
-   "type": "turnin",
-   "mapId": 1455,
-   "x": 51.5,
-   "y": 26.3,
-   "confidence": "unverified",
-   "questId": 6391,
-   "npcId": 4256,
-   "questName": "Ride to Ironforge",
-   "npcName": "Golnir Bouldertoe",
-   "zoneName": "Ironforge",
-   "level": 18
-  },
-  {
-   "id": "accept-302",
-   "type": "accept",
-   "mapId": 1455,
-   "x": 74.6,
-   "y": 11.7,
-   "confidence": "unverified",
-   "questId": 302,
-   "npcId": 1356,
-   "questName": "Powder to Ironband",
-   "npcName": "Prospector Stormpike",
-   "zoneName": "Ironforge",
-   "level": 18
-  },
-  {
-   "id": "travel-1455-1432-3",
-   "type": "travel",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "turnin-302",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 302,
-   "npcId": 1105,
-   "questName": "Powder to Ironband",
-   "npcName": "Jern Hornhelm",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-273",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 37.2,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 273,
-   "npcId": 1105,
-   "questName": "Resupplying the Excavation",
-   "npcName": "Jern Hornhelm",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "turnin-273",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 52.2,
-   "y": 69.3,
-   "confidence": "unverified",
-   "questId": 273,
-   "npcId": 2057,
-   "questName": "Resupplying the Excavation",
-   "npcName": "Huldar",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-454",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 52.2,
-   "y": 69.3,
-   "confidence": "unverified",
-   "questId": 454,
-   "npcId": 2057,
-   "questName": "After the Ambush",
-   "npcName": "Huldar",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "turnin-454",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 52.2,
-   "y": 69.4,
-   "confidence": "unverified",
-   "questId": 454,
-   "npcId": 1379,
-   "questName": "After the Ambush",
-   "npcName": "Miran",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-309",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 52.2,
-   "y": 69.4,
-   "confidence": "unverified",
-   "questId": 309,
-   "npcId": 1379,
-   "questName": "Protecting the Shipment",
-   "npcName": "Miran",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "turnin-309",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 65.9,
-   "y": 65.6,
-   "confidence": "unverified",
-   "questId": 309,
-   "npcId": 1344,
-   "questName": "Protecting the Shipment",
-   "npcName": "Prospector Ironband",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-385",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 81.8,
-   "y": 61.7,
-   "confidence": "unverified",
-   "questId": 385,
-   "npcId": 1154,
-   "questName": "Crocolisk Hunting",
-   "npcName": "Marek Ironheart",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-257",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 83.5,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 257,
-   "npcId": 1187,
-   "questName": "A Hunter's Boast",
-   "npcName": "Daryl the Youngling",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "complete-257",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 75.42,
-   "y": 67.16,
-   "confidence": "unverified",
-   "questId": 257,
-   "questName": "A Hunter's Boast",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 18,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 1194,
-     "name": "Mountain Buzzard"
-    }
-   ],
-   "area": [
-    [
-     68.4,
-     50.5
-    ],
-    [
-     68.5,
-     75.8
-    ],
-    [
-     70.6,
-     74.1
-    ],
-    [
-     70.9,
-     52.6
-    ],
-    [
-     71.1,
-     72.4
-    ],
-    [
-     71.1,
-     74.8
-    ],
-    [
-     74.4,
-     72.5
-    ],
-    [
-     74.5,
-     64.3
-    ],
-    [
-     74.7,
-     67.7
-    ],
-    [
-     75.8,
-     70.5
-    ],
-    [
-     75.9,
-     72.3
-    ],
-    [
-     76.3,
-     74.8
-    ],
-    [
-     76.8,
-     63.7
-    ],
-    [
-     76.9,
-     55.6
-    ],
-    [
-     77,
-     74
-    ],
-    [
-     77.1,
-     58.3
-    ],
-    [
-     77.2,
-     57.3
-    ],
-    [
-     77.3,
-     75.3
-    ],
-    [
-     78,
-     72.4
-    ],
-    [
-     78.2,
-     76
-    ],
-    [
-     78.5,
-     58
-    ],
-    [
-     78.6,
-     76.9
-    ],
-    [
-     78.9,
-     59.2
-    ],
-    [
-     79.3,
-     63.3
-    ],
-    [
-     79.4,
-     66.8
-    ]
-   ]
-  },
-  {
-   "id": "complete-385",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 56.55,
-   "y": 41.49,
-   "confidence": "unverified",
-   "questId": 385,
-   "questName": "Crocolisk Hunting",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 18,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 2924,
-     "name": "Crocolisk Meat",
-     "sources": [
-      "Loch Crocolisk",
-      "Large Loch Crocolisk"
-     ],
-     "icon": 133970
-    },
-    {
-     "kind": "collect",
-     "id": 2925,
-     "name": "Crocolisk Skin",
-     "sources": [
-      "Loch Crocolisk",
-      "Large Loch Crocolisk"
-     ],
-     "icon": 134304
-    }
-   ],
-   "area": [
-    [
-     51.5,
-     35
-    ],
-    [
-     53.1,
-     39.2
-    ],
-    [
-     53.6,
-     37.4
-    ],
-    [
-     53.8,
-     40.4
-    ],
-    [
-     53.9,
-     39.6
-    ],
-    [
-     54,
-     55.2
-    ],
-    [
-     54.2,
-     56.2
-    ],
-    [
-     54.5,
-     41.7
-    ],
-    [
-     55.1,
-     52.9
-    ],
-    [
-     55.3,
-     52.7
-    ],
-    [
-     55.5,
-     33.8
-    ],
-    [
-     55.5,
-     53.5
-    ],
-    [
-     55.7,
-     36
-    ],
-    [
-     56.1,
-     37.8
-    ],
-    [
-     56.4,
-     35.9
-    ],
-    [
-     56.4,
-     37.8
-    ],
-    [
-     56.5,
-     52.6
-    ],
-    [
-     56.9,
-     39.1
-    ],
-    [
-     57.4,
-     21.9
-    ],
-    [
-     57.4,
-     31.6
-    ],
-    [
-     58.4,
-     24.1
-    ],
-    [
-     58.8,
-     30.9
-    ],
-    [
-     58.8,
-     36.8
-    ],
-    [
-     58.8,
-     57.8
-    ],
-    [
-     60.1,
-     41.6
-    ],
-    [
-     61.3,
-     43.3
-    ],
-    [
-     61.9,
-     45.4
-    ],
-    [
-     62.4,
-     51.5
-    ]
-   ]
-  },
-  {
-   "id": "turnin-385",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 81.8,
-   "y": 61.7,
-   "confidence": "unverified",
-   "questId": 385,
-   "npcId": 1154,
-   "questName": "Crocolisk Hunting",
-   "npcName": "Marek Ironheart",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "turnin-257",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 83.5,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 257,
-   "npcId": 1187,
-   "questName": "A Hunter's Boast",
-   "npcName": "Daryl the Youngling",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "accept-258",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 83.5,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 258,
-   "npcId": 1187,
-   "questName": "A Hunter's Challenge",
-   "npcName": "Daryl the Youngling",
-   "zoneName": "Loch Modan",
-   "level": 18
-  },
-  {
-   "id": "complete-258",
-   "type": "complete",
-   "mapId": 1432,
-   "x": 66.41,
-   "y": 40.36,
-   "confidence": "unverified",
-   "questId": 258,
-   "questName": "A Hunter's Challenge",
-   "npcName": null,
-   "zoneName": "Loch Modan",
-   "level": 18,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 1192,
-     "name": "Elder Mountain Boar"
-    }
-   ],
-   "area": [
-    [
-     60.1,
-     37.9
-    ],
-    [
-     60.2,
-     34.3
-    ],
-    [
-     60.4,
-     36.2
-    ],
-    [
-     61.2,
-     39.6
-    ],
-    [
-     61.3,
-     41.4
-    ],
-    [
-     62.4,
-     38.4
-    ],
-    [
-     63,
-     39.9
-    ],
-    [
-     63.2,
-     35.1
-    ],
-    [
-     64.9,
-     38.8
-    ],
-    [
-     65.4,
-     41.9
-    ],
-    [
-     66.1,
-     38.3
-    ],
-    [
-     66.3,
-     40.1
-    ],
-    [
-     67.1,
-     39.4
-    ],
-    [
-     67.4,
-     41.3
-    ],
-    [
-     70.1,
-     37.8
-    ],
-    [
-     74.8,
-     42.1
-    ],
-    [
-     74.8,
-     50.7
-    ],
-    [
-     75.7,
-     46.6
-    ],
-    [
-     77.3,
-     47.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-258",
-   "type": "turnin",
-   "mapId": 1432,
-   "x": 83.5,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 258,
-   "npcId": 1187,
-   "questName": "A Hunter's Challenge",
-   "npcName": "Daryl the Youngling",
-   "zoneName": "Loch Modan",
-   "level": 18
   },
   {
    "id": "accept-271",
@@ -9693,32 +9772,45 @@
    "level": 18
   },
   {
-   "id": "gap-161",
-   "type": "gap",
+   "id": "grind-1432-19",
+   "type": "grind",
    "mapId": 1432,
-   "x": 81.7,
-   "y": 64.1,
+   "x": 32.7,
+   "y": 49.7,
    "confidence": "unverified",
-   "questId": 161,
-   "reason": "quest 161: prereq 199 not in route",
-   "questName": "A Dark Threat Looms",
+   "untilLevel": 19,
+   "questName": null,
    "npcName": null,
    "zoneName": "Loch Modan",
    "level": 18
   },
   {
-   "id": "gap-250",
-   "type": "gap",
+   "id": "accept-468",
+   "type": "accept",
    "mapId": 1432,
-   "x": 81.7,
-   "y": 64.1,
+   "x": 32.7,
+   "y": 49.7,
    "confidence": "unverified",
-   "questId": 250,
-   "reason": "quest 250: end location unknown",
-   "questName": "A Dark Threat Looms",
-   "npcName": null,
+   "questId": 468,
+   "npcId": 1340,
+   "questName": "Report to Mountaineer Rockgar",
+   "npcName": "Mountaineer Kadrell",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 19
+  },
+  {
+   "id": "turnin-468",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 25.4,
+   "y": 10.4,
+   "confidence": "unverified",
+   "questId": 468,
+   "npcId": 1342,
+   "questName": "Report to Mountaineer Rockgar",
+   "npcName": "Mountaineer Rockgar",
+   "zoneName": "Loch Modan",
+   "level": 19
   },
   {
    "id": "accept-455",
@@ -9732,7 +9824,7 @@
    "questName": "The Algaz Gauntlet",
    "npcName": "Mountaineer Rockgar",
    "zoneName": "Loch Modan",
-   "level": 18
+   "level": 19
   },
   {
    "id": "travel-1432-1437",
@@ -9746,7 +9838,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 18
+   "level": 19
   },
   {
    "id": "complete-455",
@@ -9759,7 +9851,7 @@
    "questName": "The Algaz Gauntlet",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 18,
+   "level": 19,
    "objectives": [
     {
      "kind": "kill",
@@ -9919,7 +10011,7 @@
    "questName": "The Algaz Gauntlet",
    "npcName": "Valstag Ironjaw",
    "zoneName": "Wetlands",
-   "level": 18
+   "level": 19
   },
   {
    "id": "travel-1437-1453",
@@ -13932,7 +14024,7 @@
    "questName": "The People's Militia",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 19
+   "level": 20
   },
   {
    "id": "turnin-153",
@@ -13946,7 +14038,7 @@
    "questName": "Red Leather Bandanas",
    "npcName": "Scout Galiaan",
    "zoneName": "Westfall",
-   "level": 19
+   "level": 20
   },
   {
    "id": "travel-1436-1433",
@@ -13960,7 +14052,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 20
   },
   {
    "id": "turnin-65",
@@ -13974,7 +14066,7 @@
    "questName": "The Defias Brotherhood",
    "npcName": "Wiley the Black",
    "zoneName": "Redridge Mountains",
-   "level": 19
+   "level": 20
   },
   {
    "id": "travel-1433-1436",
@@ -13988,7 +14080,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 19
+   "level": 20
   },
   {
    "id": "accept-13",
@@ -14002,7 +14094,7 @@
    "questName": "The People's Militia",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 19
+   "level": 20
   },
   {
    "id": "complete-13",
@@ -14015,7 +14107,7 @@
    "questName": "The People's Militia",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 19,
+   "level": 20,
    "objectives": [
     {
      "kind": "kill",
@@ -16116,20 +16208,6 @@
    "level": 20
   },
   {
-   "id": "accept-91",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
-   "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900,
-   "questName": "Solomon's Law",
-   "npcName": "Bailiff Conacher",
-   "zoneName": "Redridge Mountains",
-   "level": 20
-  },
-  {
    "id": "accept-20",
    "type": "accept",
    "mapId": 1433,
@@ -16144,20 +16222,6 @@
    "level": 20
   },
   {
-   "id": "accept-34",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 21.9,
-   "y": 46.3,
-   "confidence": "unverified",
-   "questId": 34,
-   "npcId": 342,
-   "questName": "An Unwelcome Guest",
-   "npcName": "Martie Jainrose",
-   "zoneName": "Redridge Mountains",
-   "level": 20
-  },
-  {
    "id": "accept-150",
    "type": "accept",
    "mapId": 1433,
@@ -16168,48 +16232,6 @@
    "npcId": 381,
    "questName": "Murloc Poachers",
    "npcName": "Dockmaster Baren",
-   "zoneName": "Redridge Mountains",
-   "level": 20
-  },
-  {
-   "id": "travel-1433-1453",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 45.7,
-   "y": 38.4,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 20
-  },
-  {
-   "id": "accept-343",
-   "type": "accept",
-   "mapId": 1453,
-   "x": 45.7,
-   "y": 38.4,
-   "confidence": "unverified",
-   "questId": 343,
-   "npcId": 1444,
-   "questName": "Speaking of Fortitude",
-   "npcName": "Brother Kristoff",
-   "zoneName": "Stormwind City",
-   "level": 20
-  },
-  {
-   "id": "travel-1453-1433",
-   "type": "travel",
-   "mapId": 1433,
-   "x": 28.47,
-   "y": 53.92,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
    "zoneName": "Redridge Mountains",
    "level": 20
   },
@@ -16689,7 +16711,7 @@
    "questName": "The Lost Tools",
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 20,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -16719,7 +16741,7 @@
    "questName": "Selling Fish",
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 20,
+   "level": 21,
    "objectives": [
     {
      "kind": "collect",
@@ -17461,6 +17483,216 @@
    ]
   },
   {
+   "id": "turnin-129",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 15.3,
+   "y": 71.5,
+   "confidence": "unverified",
+   "questId": 129,
+   "npcId": 464,
+   "questName": "A Free Lunch",
+   "npcName": "Guard Parker",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-3741",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 29.2,
+   "y": 53.6,
+   "confidence": "unverified",
+   "questId": 3741,
+   "npcId": 8962,
+   "questName": "Hilary's Necklace",
+   "npcName": "Hilary",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "travel-1433-1429",
+   "type": "travel",
+   "mapId": 1429,
+   "x": 41.7,
+   "y": 65.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Elwynn Forest",
+   "level": 21
+  },
+  {
+   "id": "turnin-118",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 41.7,
+   "y": 65.5,
+   "confidence": "unverified",
+   "questId": 118,
+   "npcId": 514,
+   "questName": "The Price of Shoes",
+   "npcName": "Smith Argus",
+   "zoneName": "Elwynn Forest",
+   "level": 21
+  },
+  {
+   "id": "travel-1429-1453",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 64,
+   "y": 75.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 21
+  },
+  {
+   "id": "turnin-120",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 64,
+   "y": 75.3,
+   "confidence": "unverified",
+   "questId": 120,
+   "npcId": 466,
+   "questName": "Messenger to Stormwind",
+   "npcName": "General Marcus Jonathan",
+   "zoneName": "Stormwind City",
+   "level": 21
+  },
+  {
+   "id": "travel-1453-1436-2",
+   "type": "travel",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Westfall",
+   "level": 21
+  },
+  {
+   "id": "turnin-132",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 132,
+   "npcId": 234,
+   "questName": "The Defias Brotherhood",
+   "npcName": "Gryan Stoutmantle",
+   "zoneName": "Westfall",
+   "level": 21
+  },
+  {
+   "id": "travel-1436-1433-3",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 22.7,
+   "y": 43.8,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-92",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 22.7,
+   "y": 43.8,
+   "confidence": "unverified",
+   "questId": 92,
+   "npcId": 343,
+   "questName": "Redridge Goulash",
+   "npcName": "Chef Breanna",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-125",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 32.1,
+   "y": 48.6,
+   "confidence": "unverified",
+   "questId": 125,
+   "npcId": 341,
+   "questName": "The Lost Tools",
+   "npcName": "Foreman Oslow",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-127",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 27.7,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 127,
+   "npcId": 381,
+   "questName": "Selling Fish",
+   "npcName": "Dockmaster Baren",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-20",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "questId": 20,
+   "npcId": 382,
+   "questName": "Blackrock Menace",
+   "npcName": "Marshal Marris",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "turnin-150",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 27.7,
+   "y": 47.4,
+   "confidence": "unverified",
+   "questId": 150,
+   "npcId": 381,
+   "questName": "Murloc Poachers",
+   "npcName": "Dockmaster Baren",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "accept-91",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900,
+   "questName": "Solomon's Law",
+   "npcName": "Bailiff Conacher",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
    "id": "complete-91",
    "type": "complete",
    "mapId": 1433,
@@ -17717,6 +17949,76 @@
    ]
   },
   {
+   "id": "turnin-91",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900,
+   "questName": "Solomon's Law",
+   "npcName": "Bailiff Conacher",
+   "zoneName": "Redridge Mountains",
+   "level": 21
+  },
+  {
+   "id": "accept-34",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 21.9,
+   "y": 46.3,
+   "confidence": "unverified",
+   "questId": 34,
+   "npcId": 342,
+   "questName": "An Unwelcome Guest",
+   "npcName": "Martie Jainrose",
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
+   "id": "travel-1433-1453",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 45.7,
+   "y": 38.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "accept-343",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 45.7,
+   "y": 38.4,
+   "confidence": "unverified",
+   "questId": 343,
+   "npcId": 1444,
+   "questName": "Speaking of Fortitude",
+   "npcName": "Brother Kristoff",
+   "zoneName": "Stormwind City",
+   "level": 22
+  },
+  {
+   "id": "travel-1453-1433",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 16.0,
+   "y": 49.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Redridge Mountains",
+   "level": 22
+  },
+  {
    "id": "complete-34",
    "type": "complete",
    "mapId": 1433,
@@ -17727,7 +18029,7 @@
    "questName": "An Unwelcome Guest",
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 21,
+   "level": 22,
    "objectives": [
     {
      "kind": "collect",
@@ -17747,202 +18049,6 @@
    ]
   },
   {
-   "id": "turnin-129",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 15.3,
-   "y": 71.5,
-   "confidence": "unverified",
-   "questId": 129,
-   "npcId": 464,
-   "questName": "A Free Lunch",
-   "npcName": "Guard Parker",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-3741",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 29.2,
-   "y": 53.6,
-   "confidence": "unverified",
-   "questId": 3741,
-   "npcId": 8962,
-   "questName": "Hilary's Necklace",
-   "npcName": "Hilary",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "travel-1433-1429",
-   "type": "travel",
-   "mapId": 1429,
-   "x": 41.7,
-   "y": 65.5,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Elwynn Forest",
-   "level": 21
-  },
-  {
-   "id": "turnin-118",
-   "type": "turnin",
-   "mapId": 1429,
-   "x": 41.7,
-   "y": 65.5,
-   "confidence": "unverified",
-   "questId": 118,
-   "npcId": 514,
-   "questName": "The Price of Shoes",
-   "npcName": "Smith Argus",
-   "zoneName": "Elwynn Forest",
-   "level": 21
-  },
-  {
-   "id": "travel-1429-1453",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 64,
-   "y": 75.3,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "turnin-120",
-   "type": "turnin",
-   "mapId": 1453,
-   "x": 64,
-   "y": 75.3,
-   "confidence": "unverified",
-   "questId": 120,
-   "npcId": 466,
-   "questName": "Messenger to Stormwind",
-   "npcName": "General Marcus Jonathan",
-   "zoneName": "Stormwind City",
-   "level": 21
-  },
-  {
-   "id": "travel-1453-1436-2",
-   "type": "travel",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Westfall",
-   "level": 21
-  },
-  {
-   "id": "turnin-132",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 132,
-   "npcId": 234,
-   "questName": "The Defias Brotherhood",
-   "npcName": "Gryan Stoutmantle",
-   "zoneName": "Westfall",
-   "level": 21
-  },
-  {
-   "id": "travel-1436-1433-3",
-   "type": "travel",
-   "mapId": 1433,
-   "x": 22.7,
-   "y": 43.8,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-92",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 22.7,
-   "y": 43.8,
-   "confidence": "unverified",
-   "questId": 92,
-   "npcId": 343,
-   "questName": "Redridge Goulash",
-   "npcName": "Chef Breanna",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-125",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 32.1,
-   "y": 48.6,
-   "confidence": "unverified",
-   "questId": 125,
-   "npcId": 341,
-   "questName": "The Lost Tools",
-   "npcName": "Foreman Oslow",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-127",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 27.7,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 127,
-   "npcId": 381,
-   "questName": "Selling Fish",
-   "npcName": "Dockmaster Baren",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-91",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
-   "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900,
-   "questName": "Solomon's Law",
-   "npcName": "Bailiff Conacher",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-20",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 33.5,
-   "y": 49,
-   "confidence": "unverified",
-   "questId": 20,
-   "npcId": 382,
-   "questName": "Blackrock Menace",
-   "npcName": "Marshal Marris",
-   "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
    "id": "turnin-34",
    "type": "turnin",
    "mapId": 1433,
@@ -17954,21 +18060,7 @@
    "questName": "An Unwelcome Guest",
    "npcName": "Martie Jainrose",
    "zoneName": "Redridge Mountains",
-   "level": 21
-  },
-  {
-   "id": "turnin-150",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 27.7,
-   "y": 47.4,
-   "confidence": "unverified",
-   "questId": 150,
-   "npcId": 381,
-   "questName": "Murloc Poachers",
-   "npcName": "Dockmaster Baren",
-   "zoneName": "Redridge Mountains",
-   "level": 21
+   "level": 22
   },
   {
    "id": "travel-1433-1453-2",
@@ -17982,7 +18074,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 21
+   "level": 22
   },
   {
    "id": "turnin-343",
@@ -17996,7 +18088,7 @@
    "questName": "Speaking of Fortitude",
    "npcName": "Milton Sheaf",
    "zoneName": "Stormwind City",
-   "level": 21
+   "level": 22
   },
   {
    "id": "travel-1453-1433-2",
@@ -19655,7 +19747,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-144",
@@ -19669,7 +19761,7 @@
    "questName": "Messenger to Westfall",
    "npcName": "Magistrate Solomon",
    "zoneName": "Redridge Mountains",
-   "level": 22
+   "level": 23
   },
   {
    "id": "travel-1433-1436-6",
@@ -19683,7 +19775,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-155",
@@ -19697,7 +19789,7 @@
    "questName": "The Defias Brotherhood",
    "npcName": "The Defias Traitor",
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "travel-1436-1433-8",
@@ -19711,7 +19803,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-145",
@@ -19725,7 +19817,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Magistrate Solomon",
    "zoneName": "Redridge Mountains",
-   "level": 22
+   "level": 23
   },
   {
    "id": "travel-1433-1436-7",
@@ -19739,7 +19831,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-155",
@@ -19753,7 +19845,7 @@
    "questName": "The Defias Brotherhood",
    "npcName": "Gryan Stoutmantle",
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "travel-1436-1431",
@@ -19767,7 +19859,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 22
+   "level": 23
   },
   {
    "id": "turnin-145",
@@ -19781,7 +19873,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 22
+   "level": 23
   },
   {
    "id": "travel-1431-1436",
@@ -19795,7 +19887,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "accept-214",
@@ -19809,7 +19901,7 @@
    "questName": "Red Silk Bandanas",
    "npcName": "Scout Riell",
    "zoneName": "Westfall",
-   "level": 22
+   "level": 23
   },
   {
    "id": "complete-214",
@@ -19822,7 +19914,7 @@
    "questName": "Red Silk Bandanas",
    "npcName": null,
    "zoneName": "Westfall",
-   "level": 22,
+   "level": 23,
    "objectives": [
     {
      "kind": "collect",
@@ -23799,7 +23891,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-2078",
@@ -23812,7 +23904,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "kill",
@@ -23839,7 +23931,7 @@
    "questName": "Gyromast's Revenge",
    "npcName": "Gelkak Gyromast",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-944",
@@ -23853,7 +23945,7 @@
    "questName": "The Master's Glaive",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "gap-951",
@@ -23867,7 +23959,7 @@
    "questName": "Mathystra Relics",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-5321",
@@ -23881,7 +23973,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Kerlonian Evershade",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "complete-5321",
@@ -23894,7 +23986,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 23,
+   "level": 24,
    "objectives": [
     {
      "kind": "collect",
@@ -23925,7 +24017,7 @@
    "questName": "Escape Through Force",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-995",
@@ -23939,7 +24031,7 @@
    "questName": "Escape Through Stealth",
    "npcName": "Volcor",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "accept-5713",
@@ -23953,7 +24045,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Aynasha",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-994",
@@ -23967,7 +24059,7 @@
    "questName": "Escape Through Force",
    "npcName": "Terenthis",
    "zoneName": "Darkshore",
-   "level": 23
+   "level": 24
   },
   {
    "id": "turnin-995",
@@ -26878,20 +26970,6 @@
    "level": 24
   },
   {
-   "id": "accept-2931",
-   "type": "accept",
-   "mapId": 1442,
-   "x": 59.5,
-   "y": 67.1,
-   "confidence": "unverified",
-   "questId": 2931,
-   "npcId": 4077,
-   "questName": "Castpipe's Task",
-   "npcName": "Gaxim Rustfizzle",
-   "zoneName": "Stonetalon Mountains",
-   "level": 24
-  },
-  {
    "id": "complete-1080",
    "type": "complete",
    "mapId": 1442,
@@ -27086,46 +27164,45 @@
    "level": 24
   },
   {
-   "id": "travel-1442-1455",
-   "type": "travel",
-   "mapId": 1455,
-   "x": 69.8,
-   "y": 48.1,
+   "id": "grind-1442-26",
+   "type": "grind",
+   "mapId": 1442,
+   "x": 59.5,
+   "y": 67.1,
    "confidence": "unverified",
-   "mode": "boat",
-   "radius": 5,
+   "untilLevel": 26,
    "questName": null,
    "npcName": null,
-   "zoneName": "Ironforge",
+   "zoneName": "Stonetalon Mountains",
    "level": 24
   },
   {
-   "id": "turnin-2931",
-   "type": "turnin",
-   "mapId": 1455,
-   "x": 69.8,
-   "y": 48.1,
+   "id": "accept-2931",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 59.5,
+   "y": 67.1,
    "confidence": "unverified",
    "questId": 2931,
-   "npcId": 7950,
+   "npcId": 4077,
    "questName": "Castpipe's Task",
-   "npcName": "Master Mechanic Castpipe",
-   "zoneName": "Ironforge",
-   "level": 24
+   "npcName": "Gaxim Rustfizzle",
+   "zoneName": "Stonetalon Mountains",
+   "level": 26
   },
   {
-   "id": "travel-1455-1413",
+   "id": "travel-1442-1413-3",
    "type": "travel",
    "mapId": 1413,
    "x": 63,
    "y": 37.2,
    "confidence": "unverified",
-   "mode": "boat",
+   "mode": "walk",
    "radius": 5,
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 24
+   "level": 26
   },
   {
    "id": "turnin-1094",
@@ -27139,21 +27216,49 @@
    "questName": "Further Instructions",
    "npcName": "Sputtervalve",
    "zoneName": "The Barrens",
-   "level": 24
+   "level": 26
   },
   {
-   "id": "travel-1413-1440",
+   "id": "travel-1413-1455",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 69.8,
+   "y": 48.1,
+   "confidence": "unverified",
+   "mode": "boat",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ironforge",
+   "level": 26
+  },
+  {
+   "id": "turnin-2931",
+   "type": "turnin",
+   "mapId": 1455,
+   "x": 69.8,
+   "y": 48.1,
+   "confidence": "unverified",
+   "questId": 2931,
+   "npcId": 7950,
+   "questName": "Castpipe's Task",
+   "npcName": "Master Mechanic Castpipe",
+   "zoneName": "Ironforge",
+   "level": 26
+  },
+  {
+   "id": "travel-1455-1440",
    "type": "travel",
    "mapId": 1440,
    "x": 27.3,
    "y": 35.6,
    "confidence": "unverified",
-   "mode": "walk",
+   "mode": "boat",
    "radius": 5,
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "turnin-5321",
@@ -27167,7 +27272,7 @@
    "questName": "The Sleeper Has Awakened",
    "npcName": "Liladris Moonriver",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "turnin-5713",
@@ -27181,7 +27286,7 @@
    "questName": "One Shot.  One Kill.",
    "npcName": "Sentinel Onaeya",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "turnin-945",
@@ -27195,7 +27300,7 @@
    "questName": "Therylune's Escape",
    "npcName": "Therysil",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "accept-1007",
@@ -27209,7 +27314,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "complete-1007",
@@ -27222,7 +27327,7 @@
    "questName": "The Ancient Statuette",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27253,7 +27358,7 @@
    "questName": "The Ancient Statuette",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "accept-1009",
@@ -27267,7 +27372,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "complete-1009",
@@ -27280,7 +27385,7 @@
    "questName": "Ruuzel",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 24,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27316,7 +27421,7 @@
    "questName": "Ruuzel",
    "npcName": "Talen",
    "zoneName": "Ashenvale",
-   "level": 24
+   "level": 26
   },
   {
    "id": "accept-970",
@@ -27330,7 +27435,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1010",
@@ -27344,7 +27449,7 @@
    "questName": "Bathran's Hair",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "complete-970",
@@ -27357,7 +27462,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27449,7 +27554,7 @@
    "questName": "Bathran's Hair",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27552,7 +27657,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1010",
@@ -27566,7 +27671,7 @@
    "questName": "Bathran's Hair",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-973",
@@ -27580,7 +27685,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1020",
@@ -27594,7 +27699,7 @@
    "questName": "Orendil's Cure",
    "npcName": "Orendil Broadleaf",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "complete-973",
@@ -27607,7 +27712,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27638,7 +27743,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1020",
@@ -27652,7 +27757,7 @@
    "questName": "Orendil's Cure",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1140",
@@ -27666,7 +27771,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-976",
@@ -27680,7 +27785,7 @@
    "questName": "Supplies to Auberdine",
    "npcName": "Feero Ironhand",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "complete-1140",
@@ -27693,7 +27798,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "use",
@@ -27729,7 +27834,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-976",
@@ -27743,7 +27848,7 @@
    "questName": "Supplies to Auberdine",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1167",
@@ -27757,7 +27862,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Delgren the Purifier",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "gap-1081",
@@ -27771,7 +27876,7 @@
    "questName": "Reception from Tyrande",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1008",
@@ -27785,7 +27890,7 @@
    "questName": "The Zoram Strand",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1070",
@@ -27799,7 +27904,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Sentinel Thenysil",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-991",
@@ -27813,7 +27918,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1054",
@@ -27827,7 +27932,7 @@
    "questName": "Culling the Threat",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1056",
@@ -27841,7 +27946,7 @@
    "questName": "Journey to Stonetalon Peak",
    "npcName": "Faldreas Goeth'Shael",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1033",
@@ -27855,21 +27960,7 @@
    "questName": "Elune's Tear",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
-  },
-  {
-   "id": "accept-4581",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 34.7,
-   "y": 48.8,
-   "confidence": "unverified",
-   "questId": 4581,
-   "npcId": 3845,
-   "questName": "Kayneth Stillwind",
-   "npcName": "Shindrell Swiftfire",
-   "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "complete-1033",
@@ -27882,7 +27973,7 @@
    "questName": "Elune's Tear",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27940,7 +28031,7 @@
    "questName": "Culling the Threat",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -27970,7 +28061,7 @@
    "questName": "The Zoram Strand",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -28219,7 +28310,7 @@
    "questName": "The Zoram Strand",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1440-1442",
@@ -28233,7 +28324,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1070",
@@ -28247,7 +28338,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Kaela Shadowspear",
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1442-1440",
@@ -28261,7 +28352,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-991",
@@ -28275,7 +28366,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Teronis' Corpse",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1054",
@@ -28289,7 +28380,7 @@
    "questName": "Culling the Threat",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1440-1442-2",
@@ -28303,7 +28394,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1056",
@@ -28317,7 +28408,7 @@
    "questName": "Journey to Stonetalon Peak",
    "npcName": "Keeper Albagorm",
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1442-1440-2",
@@ -28331,7 +28422,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "turnin-1033",
@@ -28345,21 +28436,7 @@
    "questName": "Elune's Tear",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
-  },
-  {
-   "id": "turnin-4581",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 85.3,
-   "y": 44.7,
-   "confidence": "unverified",
-   "questId": 4581,
-   "npcId": 3848,
-   "questName": "Kayneth Stillwind",
-   "npcName": "Kayneth Stillwind",
-   "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1440-1442-3",
@@ -28373,7 +28450,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1085",
@@ -28387,7 +28464,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Kaela Shadowspear",
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1442-1440-3",
@@ -28401,7 +28478,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1023",
@@ -28415,7 +28492,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Teronis' Corpse",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1134",
@@ -28429,7 +28506,7 @@
    "questName": "Pridewings of Stonetalon",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1034",
@@ -28443,7 +28520,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 26
   },
   {
    "id": "travel-1440-1442-4",
@@ -28457,7 +28534,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "accept-1057",
@@ -28471,7 +28548,7 @@
    "questName": "Reclaiming the Charred Vale",
    "npcName": "Keeper Albagorm",
    "zoneName": "Stonetalon Mountains",
-   "level": 25
+   "level": 26
   },
   {
    "id": "complete-1134",
@@ -28484,7 +28561,7 @@
    "questName": "Pridewings of Stonetalon",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "collect",
@@ -28664,7 +28741,7 @@
    "questName": "Reclaiming the Charred Vale",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 25,
+   "level": 26,
    "objectives": [
     {
      "kind": "kill",
@@ -29026,7 +29103,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25
+   "level": 27
   },
   {
    "id": "complete-1023",
@@ -29039,7 +29116,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 25,
+   "level": 27,
    "objectives": [
     {
      "kind": "collect",
@@ -29147,7 +29224,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 27,
    "objectives": [
     {
      "kind": "collect",
@@ -29246,7 +29323,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1085",
@@ -29260,7 +29337,7 @@
    "questName": "On Guard in Stonetalon",
    "npcName": "Gaxim Rustfizzle",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "travel-1442-1440-5",
@@ -29274,7 +29351,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1023",
@@ -29288,7 +29365,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1134",
@@ -29302,7 +29379,7 @@
    "questName": "Pridewings of Stonetalon",
    "npcName": "Shindrell Swiftfire",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1034",
@@ -29316,7 +29393,7 @@
    "questName": "The Ruins of Stardust",
    "npcName": "Pelturas Whitemoon",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "travel-1440-1442-6",
@@ -29330,7 +29407,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1057",
@@ -29344,7 +29421,63 @@
    "questName": "Reclaiming the Charred Vale",
    "npcName": "Keeper Albagorm",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
+  },
+  {
+   "id": "travel-1442-1440-6",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 34.7,
+   "y": 48.8,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "accept-4581",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 34.7,
+   "y": 48.8,
+   "confidence": "unverified",
+   "questId": 4581,
+   "npcId": 3845,
+   "questName": "Kayneth Stillwind",
+   "npcName": "Shindrell Swiftfire",
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "turnin-4581",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 85.3,
+   "y": 44.7,
+   "confidence": "unverified",
+   "questId": 4581,
+   "npcId": 3848,
+   "questName": "Kayneth Stillwind",
+   "npcName": "Kayneth Stillwind",
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "travel-1440-1442-7",
+   "type": "travel",
+   "mapId": 1442,
+   "x": 59.5,
+   "y": 67.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 27
   },
   {
    "id": "accept-1071",
@@ -29358,10 +29491,10 @@
    "questName": "A Gnome's Respite",
    "npcName": "Gaxim Rustfizzle",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
-   "id": "travel-1442-1440-6",
+   "id": "travel-1442-1440-7",
    "type": "travel",
    "mapId": 1440,
    "x": 36.6,
@@ -29372,7 +29505,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1024",
@@ -29386,7 +29519,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1025",
@@ -29400,24 +29533,10 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
-   "id": "accept-1035",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
-   "confidence": "unverified",
-   "questId": 1035,
-   "npcId": 3894,
-   "questName": "Fallen Sky Lake",
-   "npcName": "Pelturas Whitemoon",
-   "zoneName": "Ashenvale",
-   "level": 26
-  },
-  {
-   "id": "travel-1440-1442-7",
+   "id": "travel-1440-1442-8",
    "type": "travel",
    "mapId": 1442,
    "x": 37.1,
@@ -29428,7 +29547,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1059",
@@ -29442,7 +29561,7 @@
    "questName": "Reclaiming the Charred Vale",
    "npcName": "Keeper Albagorm",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "complete-1071",
@@ -29455,7 +29574,7 @@
    "questName": "A Gnome's Respite",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26,
+   "level": 27,
    "objectives": [
     {
      "kind": "kill",
@@ -29884,7 +30003,7 @@
    ]
   },
   {
-   "id": "travel-1442-1440-7",
+   "id": "travel-1442-1440-8",
    "type": "travel",
    "mapId": 1440,
    "x": 53.65,
@@ -29895,7 +30014,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "complete-1025",
@@ -29908,7 +30027,7 @@
    "questName": "An Aggressive Defense",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 27,
    "objectives": [
     {
      "kind": "kill",
@@ -30111,37 +30230,7 @@
    ]
   },
   {
-   "id": "complete-1035",
-   "type": "complete",
-   "mapId": 1440,
-   "x": 66.7,
-   "y": 82.2,
-   "confidence": "unverified",
-   "questId": 1035,
-   "questName": "Fallen Sky Lake",
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 26,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 5508,
-     "name": "Fallen Moonstone",
-     "sources": [
-      "Shadethicket Oracle"
-     ],
-     "icon": 134333
-    }
-   ],
-   "area": [
-    [
-     66.7,
-     82.2
-    ]
-   ]
-  },
-  {
-   "id": "travel-1440-1442-8",
+   "id": "travel-1440-1442-9",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -30152,7 +30241,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1071",
@@ -30166,10 +30255,10 @@
    "questName": "A Gnome's Respite",
    "npcName": "Gaxim Rustfizzle",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
-   "id": "travel-1442-1440-8",
+   "id": "travel-1442-1440-9",
    "type": "travel",
    "mapId": 1440,
    "x": 53.5,
@@ -30180,7 +30269,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1024",
@@ -30194,7 +30283,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "turnin-1025",
@@ -30208,24 +30297,10 @@
    "questName": "An Aggressive Defense",
    "npcName": "Raene Wolfrunner",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
-   "id": "turnin-1035",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
-   "confidence": "unverified",
-   "questId": 1035,
-   "npcId": 3894,
-   "questName": "Fallen Sky Lake",
-   "npcName": "Pelturas Whitemoon",
-   "zoneName": "Ashenvale",
-   "level": 26
-  },
-  {
-   "id": "travel-1440-1442-9",
+   "id": "travel-1440-1442-10",
    "type": "travel",
    "mapId": 1442,
    "x": 59.5,
@@ -30236,7 +30311,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1072",
@@ -30250,7 +30325,7 @@
    "questName": "An Old Colleague",
    "npcName": "Gaxim Rustfizzle",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1075",
@@ -30264,10 +30339,10 @@
    "questName": "A Scroll from Mauren",
    "npcName": "Gaxim Rustfizzle",
    "zoneName": "Stonetalon Mountains",
-   "level": 26
+   "level": 27
   },
   {
-   "id": "travel-1442-1440-9",
+   "id": "travel-1442-1440-10",
    "type": "travel",
    "mapId": 1440,
    "x": 49.8,
@@ -30278,7 +30353,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1016",
@@ -30292,7 +30367,7 @@
    "questName": "Elemental Bracers",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1017",
@@ -30306,7 +30381,7 @@
    "questName": "Mage Summoner",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1027",
@@ -30320,7 +30395,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1028",
@@ -30334,7 +30409,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1029",
@@ -30348,7 +30423,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1030",
@@ -30362,7 +30437,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1026",
@@ -30376,7 +30451,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "complete-1026",
@@ -30389,7 +30464,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 27,
    "objectives": [
     {
      "kind": "collect",
@@ -30486,7 +30561,7 @@
    "questName": "Raene's Cleansing",
    "npcName": "Shael'dryn",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1045",
@@ -30500,7 +30575,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-1046",
@@ -30514,7 +30589,7 @@
    "questName": "Raene's Cleansing",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "gap-7788",
@@ -30528,7 +30603,7 @@
    "questName": "Vanquish the Invaders!",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "accept-1011",
@@ -30542,7 +30617,7 @@
    "questName": "Forsaken Diseases",
    "npcName": "Kayneth Stillwind",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
   },
   {
    "id": "complete-1011",
@@ -30555,7 +30630,7 @@
    "questName": "Forsaken Diseases",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 27,
    "objectives": [
     {
      "kind": "collect",
@@ -30594,7 +30669,34 @@
    "questName": "Forsaken Diseases",
    "npcName": "Kayneth Stillwind",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 27
+  },
+  {
+   "id": "grind-1440-28",
+   "type": "grind",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "untilLevel": 28,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 27
+  },
+  {
+   "id": "accept-1035",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "questId": 1035,
+   "npcId": 3894,
+   "questName": "Fallen Sky Lake",
+   "npcName": "Pelturas Whitemoon",
+   "zoneName": "Ashenvale",
+   "level": 28
   },
   {
    "id": "accept-1022",
@@ -30608,7 +30710,7 @@
    "questName": "The Howling Vale",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 28
   },
   {
    "id": "complete-1022",
@@ -30621,7 +30723,7 @@
    "questName": "The Howling Vale",
    "npcName": null,
    "zoneName": "Ashenvale",
-   "level": 26,
+   "level": 28,
    "objectives": [
     {
      "kind": "use",
@@ -30637,6 +30739,50 @@
    ]
   },
   {
+   "id": "complete-1035",
+   "type": "complete",
+   "mapId": 1440,
+   "x": 66.7,
+   "y": 82.2,
+   "confidence": "unverified",
+   "questId": 1035,
+   "questName": "Fallen Sky Lake",
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 28,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 5508,
+     "name": "Fallen Moonstone",
+     "sources": [
+      "Shadethicket Oracle"
+     ],
+     "icon": 134333
+    }
+   ],
+   "area": [
+    [
+     66.7,
+     82.2
+    ]
+   ]
+  },
+  {
+   "id": "turnin-1035",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "questId": 1035,
+   "npcId": 3894,
+   "questName": "Fallen Sky Lake",
+   "npcName": "Pelturas Whitemoon",
+   "zoneName": "Ashenvale",
+   "level": 28
+  },
+  {
    "id": "turnin-1022",
    "type": "turnin",
    "mapId": 1440,
@@ -30648,7 +30794,7 @@
    "questName": "The Howling Vale",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 28
   },
   {
    "id": "accept-1037",
@@ -30662,7 +30808,7 @@
    "questName": "Velinde Starsong",
    "npcName": "Sentinel Melyria Frostshadow",
    "zoneName": "Ashenvale",
-   "level": 26
+   "level": 28
   },
   {
    "id": "travel-1440-1439-2",
@@ -30676,7 +30822,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Darkshore",
-   "level": 26
+   "level": 28
   },
   {
    "id": "turnin-1167",
@@ -30690,7 +30836,7 @@
    "questName": "The Tower of Althalaxx",
    "npcName": "Balthule Shadowstrike",
    "zoneName": "Darkshore",
-   "level": 26
+   "level": 28
   },
   {
    "id": "travel-1439-1444",
@@ -30704,7 +30850,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Feralas",
-   "level": 26
+   "level": 28
   },
   {
    "id": "turnin-1059",
@@ -30718,7 +30864,7 @@
    "questName": "Reclaiming the Charred Vale",
    "npcName": "Falfindel Waywarder",
    "zoneName": "Feralas",
-   "level": 26
+   "level": 28
   },
   {
    "id": "travel-1444-1455",
@@ -30732,7 +30878,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Ironforge",
-   "level": 26
+   "level": 28
   },
   {
    "id": "turnin-1072",
@@ -30746,7 +30892,7 @@
    "questName": "An Old Colleague",
    "npcName": "Lomac Gearstrip",
    "zoneName": "Ironforge",
-   "level": 26
+   "level": 28
   },
   {
    "id": "travel-1455-1453",
@@ -30760,7 +30906,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 26
+   "level": 28
   },
   {
    "id": "turnin-1075",
@@ -30774,7 +30920,7 @@
    "questName": "A Scroll from Mauren",
    "npcName": "Collin Mauren",
    "zoneName": "Stormwind City",
-   "level": 26
+   "level": 28
   },
   {
    "id": "travel-1453-1438",
@@ -30788,7 +30934,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-1037",
@@ -30802,7 +30948,7 @@
    "questName": "Velinde Starsong",
    "npcName": "Thyn'tel Bladeweaver",
    "zoneName": "Teldrassil",
-   "level": 27
+   "level": 28
   },
   {
    "id": "travel-1438-1431",
@@ -30816,7 +30962,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-245",
@@ -30830,7 +30976,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": "Watcher Dodds",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "complete-245",
@@ -30843,7 +30989,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27,
+   "level": 28,
    "objectives": [
     {
      "kind": "kill",
@@ -31010,7 +31156,7 @@
    "questName": "Eight-Legged Menaces",
    "npcName": "Watcher Dodds",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-90",
@@ -31024,7 +31170,7 @@
    "questName": "Seasoned Wolf Kabobs",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-67",
@@ -31038,7 +31184,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-69",
@@ -31052,7 +31198,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-79",
@@ -31066,7 +31212,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-80",
@@ -31080,7 +31226,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-97",
@@ -31094,7 +31240,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-377",
@@ -31108,7 +31254,7 @@
    "questName": "Crime and Punishment",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-1042",
@@ -31122,7 +31268,7 @@
    "questName": "The Carevin Family",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-1043",
@@ -31136,7 +31282,7 @@
    "questName": "The Scythe of Elune",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "gap-1044",
@@ -31150,7 +31296,7 @@
    "questName": "Answered Questions",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-163",
@@ -31164,7 +31310,7 @@
    "questName": "Raven Hill",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-164",
@@ -31178,7 +31324,7 @@
    "questName": "Deliveries to Sven",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-165",
@@ -31192,7 +31338,7 @@
    "questName": "The Hermit",
    "npcName": "Elaine Carevin",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-56",
@@ -31206,7 +31352,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-101",
@@ -31220,7 +31366,7 @@
    "questName": "The Totem of Infliction",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-146",
@@ -31234,7 +31380,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-174",
@@ -31248,7 +31394,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-66",
@@ -31262,7 +31408,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-173",
@@ -31276,7 +31422,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "travel-1431-1453",
@@ -31290,7 +31436,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 28
   },
   {
    "id": "accept-1274",
@@ -31304,7 +31450,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Thomas",
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 28
   },
   {
    "id": "travel-1453-1431",
@@ -31318,7 +31464,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "complete-56",
@@ -31331,7 +31477,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27,
+   "level": 28,
    "objectives": [
     {
      "kind": "kill",
@@ -31466,7 +31612,7 @@
    "questName": "Worgen in the Woods",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27,
+   "level": 28,
    "objectives": [
     {
      "kind": "kill",
@@ -31620,7 +31766,7 @@
    "questName": "The Totem of Infliction",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -32471,7 +32617,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 27
+   "level": 28
   },
   {
    "id": "complete-174",
@@ -32484,7 +32630,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Dun Morogh",
-   "level": 27,
+   "level": 28,
    "objectives": [
     {
      "kind": "collect",
@@ -32515,7 +32661,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-163",
@@ -32529,7 +32675,7 @@
    "questName": "Raven Hill",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-164",
@@ -32543,7 +32689,7 @@
    "questName": "Deliveries to Sven",
    "npcName": "Sven Yorgen",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-165",
@@ -32557,7 +32703,7 @@
    "questName": "The Hermit",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-56",
@@ -32571,7 +32717,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-101",
@@ -32585,7 +32731,7 @@
    "questName": "The Totem of Infliction",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-174",
@@ -32599,7 +32745,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-66",
@@ -32613,7 +32759,7 @@
    "questName": "The Legend of Stalvan",
    "npcName": "Clerk Daltry",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "turnin-173",
@@ -32627,7 +32773,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 28
   },
   {
    "id": "travel-1431-1453-2",
@@ -32641,7 +32787,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 29
   },
   {
    "id": "turnin-1274",
@@ -32655,7 +32801,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Bishop DeLavey",
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 29
   },
   {
    "id": "travel-1453-1431-2",
@@ -32669,7 +32815,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "accept-5",
@@ -32683,7 +32829,7 @@
    "questName": "Jitters' Growling Gut",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "accept-57",
@@ -32697,7 +32843,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "accept-175",
@@ -32711,7 +32857,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "accept-221",
@@ -32725,7 +32871,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "travel-1431-1453-3",
@@ -32739,7 +32885,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 29
   },
   {
    "id": "accept-1241",
@@ -32753,7 +32899,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Bishop DeLavey",
    "zoneName": "Stormwind City",
-   "level": 27
+   "level": 29
   },
   {
    "id": "travel-1453-1431-3",
@@ -32767,7 +32913,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27
+   "level": 29
   },
   {
    "id": "complete-57",
@@ -32780,7 +32926,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 27,
+   "level": 29,
    "objectives": [
     {
      "kind": "kill",
@@ -32959,7 +33105,7 @@
    "questName": "Worgen in the Woods",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "kill",
@@ -33222,7 +33368,7 @@
    "questName": "Jitters' Growling Gut",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-57",
@@ -33236,7 +33382,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-175",
@@ -33250,7 +33396,7 @@
    "questName": "Look To The Stars",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-221",
@@ -33264,7 +33410,7 @@
    "questName": "Worgen in the Woods",
    "npcName": "Calor",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1431-1453-4",
@@ -33278,7 +33424,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-1241",
@@ -33292,7 +33438,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Jorgen",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1453-1431-4",
@@ -33306,7 +33452,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-93",
@@ -33320,7 +33466,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-58",
@@ -33334,7 +33480,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-177",
@@ -33348,7 +33494,7 @@
    "questName": "Look To The Stars",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1431-1453-5",
@@ -33362,7 +33508,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-1242",
@@ -33376,7 +33522,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Jorgen",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1453-1431-5",
@@ -33390,7 +33536,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "complete-93",
@@ -33403,7 +33549,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "collect",
@@ -33931,7 +34077,7 @@
    "questName": "The Night Watch",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "kill",
@@ -34065,7 +34211,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "collect",
@@ -34096,7 +34242,7 @@
    "questName": "Dusky Crab Cakes",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-58",
@@ -34110,7 +34256,7 @@
    "questName": "The Night Watch",
    "npcName": "Commander Althea Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-177",
@@ -34124,7 +34270,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1431-1453-6",
@@ -34138,7 +34284,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-1242",
@@ -34152,7 +34298,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1453-1431-6",
@@ -34166,7 +34312,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-240",
@@ -34180,7 +34326,7 @@
    "questName": "Return to Jitters",
    "npcName": "Chef Grual",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-181",
@@ -34194,7 +34340,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1431-1453-7",
@@ -34208,7 +34354,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-1243",
@@ -34222,7 +34368,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 28
+   "level": 29
   },
   {
    "id": "travel-1453-1431-7",
@@ -34236,7 +34382,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "complete-181",
@@ -34249,7 +34395,7 @@
    "questName": "Look To The Stars",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "collect",
@@ -34280,7 +34426,7 @@
    "questName": "Return to Jitters",
    "npcName": "Jitters",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-181",
@@ -34294,7 +34440,7 @@
    "questName": "Look To The Stars",
    "npcName": "Viktori Prism'Antras",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-1243",
@@ -34308,7 +34454,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-1244",
@@ -34322,7 +34468,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "complete-1244",
@@ -34335,7 +34481,7 @@
    "questName": "The Missing Diplomat",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "collect",
@@ -34366,7 +34512,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-1245",
@@ -34380,7 +34526,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Watcher Backus",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-95",
@@ -34394,7 +34540,7 @@
    "questName": "Sven's Revenge",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-262",
@@ -34408,7 +34554,7 @@
    "questName": "The Shadowy Figure",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-265",
@@ -34422,7 +34568,7 @@
    "questName": "The Shadowy Search Continues",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-266",
@@ -34436,7 +34582,7 @@
    "questName": "Inquire at the Inn",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-453",
@@ -34450,7 +34596,7 @@
    "questName": "Finding the Shadowy Figure",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-268",
@@ -34464,7 +34610,7 @@
    "questName": "Return to Sven",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-323",
@@ -34478,7 +34624,7 @@
    "questName": "Proving Your Worth",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-269",
@@ -34492,7 +34638,7 @@
    "questName": "Seeking Wisdom",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-226",
@@ -34506,7 +34652,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": "Lars",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "complete-226",
@@ -34519,7 +34665,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28,
+   "level": 29,
    "objectives": [
     {
      "kind": "kill",
@@ -34831,7 +34977,7 @@
    "questName": "Wolves at Our Heels",
    "npcName": "Lars",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "gap-253",
@@ -34845,7 +34991,7 @@
    "questName": "Bride of the Embalmer",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-148",
@@ -34859,7 +35005,7 @@
    "questName": "Supplies from Darkshire",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-148",
@@ -34873,7 +35019,7 @@
    "questName": "Supplies from Darkshire",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-149",
@@ -34887,7 +35033,7 @@
    "questName": "Ghost Hair Thread",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-149",
@@ -34901,7 +35047,7 @@
    "questName": "Ghost Hair Thread",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-154",
@@ -34915,7 +35061,7 @@
    "questName": "Return the Comb",
    "npcName": "Blind Mary",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "turnin-154",
@@ -34929,7 +35075,7 @@
    "questName": "Return the Comb",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 28
+   "level": 29
   },
   {
    "id": "accept-157",
@@ -34943,7 +35089,7 @@
    "questName": "Deliver the Thread",
    "npcName": "Madame Eva",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-157",
@@ -34957,7 +35103,7 @@
    "questName": "Deliver the Thread",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-158",
@@ -34971,7 +35117,7 @@
    "questName": "Zombie Juice",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-158",
@@ -34985,7 +35131,7 @@
    "questName": "Zombie Juice",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-156",
@@ -34999,7 +35145,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-156",
@@ -35012,7 +35158,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "collect",
@@ -35192,7 +35338,7 @@
    "questName": "Gather Rot Blossoms",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-159",
@@ -35206,7 +35352,7 @@
    "questName": "Juice Delivery",
    "npcName": "Tavernkeep Smitts",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-159",
@@ -35220,7 +35366,7 @@
    "questName": "Juice Delivery",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-133",
@@ -35234,7 +35380,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-133",
@@ -35247,7 +35393,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "collect",
@@ -35380,7 +35526,7 @@
    "questName": "Ghoulish Effigy",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-134",
@@ -35394,7 +35540,7 @@
    "questName": "Ogre Thieves",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-134",
@@ -35407,7 +35553,7 @@
    "questName": "Ogre Thieves",
    "npcName": null,
    "zoneName": "Duskwood",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "collect",
@@ -35438,7 +35584,7 @@
    "questName": "Ogre Thieves",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-160",
@@ -35452,7 +35598,7 @@
    "questName": "Note to the Mayor",
    "npcName": "Abercrombie",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-160",
@@ -35466,7 +35612,7 @@
    "questName": "Note to the Mayor",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-251",
@@ -35480,7 +35626,7 @@
    "questName": "Translate Abercrombie's Note",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-251",
@@ -35494,7 +35640,7 @@
    "questName": "Translate Abercrombie's Note",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-401",
@@ -35508,7 +35654,7 @@
    "questName": "Wait for Sirra to Finish",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-401",
@@ -35522,7 +35668,7 @@
    "questName": "Wait for Sirra to Finish",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-252",
@@ -35536,7 +35682,7 @@
    "questName": "Translation to Ello",
    "npcName": "Sirra Von'Indi",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-252",
@@ -35550,7 +35696,7 @@
    "questName": "Translation to Ello",
    "npcName": "Lord Ello Ebonlocke",
    "zoneName": "Duskwood",
-   "level": 29
+   "level": 30
   },
   {
    "id": "travel-1431-1433",
@@ -35564,7 +35710,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Redridge Mountains",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-146",
@@ -35578,7 +35724,7 @@
    "questName": "Messenger to Darkshire",
    "npcName": "Magistrate Solomon",
    "zoneName": "Redridge Mountains",
-   "level": 29
+   "level": 30
   },
   {
    "id": "travel-1433-1453-7",
@@ -35592,7 +35738,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-1245",
@@ -35606,7 +35752,7 @@
    "questName": "The Missing Diplomat",
    "npcName": "Elling Trias",
    "zoneName": "Stormwind City",
-   "level": 29
+   "level": 30
   },
   {
    "id": "travel-1453-1437",
@@ -35620,7 +35766,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-469",
@@ -35634,7 +35780,7 @@
    "questName": "Daily Delivery",
    "npcName": "Einar Stonegrip",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-469",
@@ -35648,7 +35794,7 @@
    "questName": "Daily Delivery",
    "npcName": "James Halloran",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "gap-274",
@@ -35662,7 +35808,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "gap-278",
@@ -35676,7 +35822,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "gap-280",
@@ -35690,7 +35836,7 @@
    "questName": "A Dark Threat Looms",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "gap-378",
@@ -35704,7 +35850,7 @@
    "questName": "The Fury Runs Deep",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-303",
@@ -35718,7 +35864,7 @@
    "questName": "The Dark Iron War",
    "npcName": "Motley Garmason",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-303",
@@ -35731,7 +35877,7 @@
    "questName": "The Dark Iron War",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "kill",
@@ -36029,7 +36175,7 @@
    "questName": "The Dark Iron War",
    "npcName": "Motley Garmason",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-294",
@@ -36043,7 +36189,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-299",
@@ -36057,7 +36203,7 @@
    "questName": "Uncovering the Past",
    "npcName": "Prospector Whelgar",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-299",
@@ -36070,7 +36216,7 @@
    "questName": "Uncovering the Past",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "collect",
@@ -36235,7 +36381,7 @@
    "questName": "Ormer's Revenge",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "kill",
@@ -36435,7 +36581,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "turnin-299",
@@ -36449,7 +36595,7 @@
    "questName": "Uncovering the Past",
    "npcName": "Prospector Whelgar",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-295",
@@ -36463,7 +36609,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "complete-295",
@@ -36476,7 +36622,7 @@
    "questName": "Ormer's Revenge",
    "npcName": null,
    "zoneName": "Wetlands",
-   "level": 29,
+   "level": 30,
    "objectives": [
     {
      "kind": "kill",
@@ -36596,7 +36742,7 @@
    "questName": "Ormer's Revenge",
    "npcName": "Ormer Ironbraid",
    "zoneName": "Wetlands",
-   "level": 29
+   "level": 30
   },
   {
    "id": "accept-296",

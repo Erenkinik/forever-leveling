@@ -2,10 +2,12 @@
 
 LEVEL_CAP = 30
 HUB_RADIUS = 6.0
-# spec 6.4-6: the only grind rule. Before a chunk of quests is accepted, the estimated level must be
-# at least max(minLevel) - GRIND_TRIGGER, else a grind step is inserted. This is stricter than the
-# validator's over-level slack (LEVEL_SLACK = 3 in pipeline/validate/semantic.py); keep it below that.
-GRIND_TRIGGER = 2
+# spec 6.4-6: the only grind rule. A quest is taken only when the estimated level is at least its minLevel (the
+# game refuses it before) and at most QUEST_LEVEL_MARGIN below its level (yellow or orange, not red). A hub's
+# quests that are not doable yet wait for the XP of the doable ones; when none is doable, a grind step goes to the
+# lowest level that makes one doable. Stricter than the validator's over-level slack (LEVEL_SLACK = 3 in
+# pipeline/validate/semantic.py); keep it so.
+QUEST_LEVEL_MARGIN = 2
 
 # v1 rule: a quest whose level is more than this above its start zone's median level is
 # excluded as a zone outlier (event quests, high chains starting in low zones).

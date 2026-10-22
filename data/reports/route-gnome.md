@@ -11,10 +11,10 @@
 - accept: 253
 - turnin: 253
 - complete: 141
-- travel: 106
+- travel: 109
 - sethearth: 0
 - train: 0
-- grind: 1
+- grind: 9
 - gap: 74
 
 ## Elenen görevler (nedene göre)

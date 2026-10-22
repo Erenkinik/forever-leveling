@@ -2,7 +2,7 @@
 import math
 
 from pipeline.generate import GenerationError
-from pipeline.generate.config import CONTINENT_TRAVEL, GRIND_TRIGGER, ISLAND_MAPS, LEVEL_CAP, QUEST_LOG_LIMIT
+from pipeline.generate.config import CONTINENT_TRAVEL, ISLAND_MAPS, LEVEL_CAP, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
 from pipeline.generate.gaps import complete_location, quest_gaps
 from pipeline.generate.graph import build_graph, drop_pulled, select_quests
 from pipeline.generate.hubs import Hub, build_hubs, unplaced
@@ -146,14 +146,36 @@ def _run_chunk(steps: _Steps, chunk: list[int], quests: dict[int, dict], spawns:
     return deferred.flush_here(steps, quests, xp_table, state)
 
 
-def _min_level_gate(steps: _Steps, chunk: list[int], quests: dict[int, dict], state: XpState) -> XpState:
-    """Grind at the first quest's start until every quest in the chunk is within GRIND_TRIGGER of its minLevel."""
-    need = max(quests[qid]["minLevel"] for qid in chunk) - GRIND_TRIGGER
-    if state.level >= need:
-        return state
-    s = quests[chunk[0]]["start"]
-    steps.add(f"grind-{s['uiMapId']}-{need}", "grind", s["uiMapId"], s["x"], s["y"], untilLevel=need)
-    return XpState(need, 0)
+def level_needed(q: dict) -> int:
+    """The level a quest is taken at: its minLevel, and at most QUEST_LEVEL_MARGIN below its level."""
+    return max(q["minLevel"] or 1, quest_level(q) - QUEST_LEVEL_MARGIN)
+
+
+def _run_doable(steps: _Steps, pending: list[int], quests: dict[int, dict], spawns: dict,
+                xp_table: dict[int, list[int]], state: XpState, zones: list[int], deferred: "_Deferred",
+                here: int, continents: dict[int, int] | None, last: bool) -> tuple[XpState, list[int]]:
+    """Run the quests that are doable (level_needed reached, no prereq still pending), again as their XP makes more
+    doable. The rest wait for the next hub on this map; on the map's `last` chunk a grind at the start of the one
+    needing the lowest level makes it doable. Returns the state and the quests still waiting."""
+    pending = list(pending)
+    while pending:
+        waiting = set(pending)
+        free = [qid for qid in pending if not waiting & set(quests[qid].get("prereqs") or [])]
+        ready = [qid for qid in free if level_needed(quests[qid]) <= state.level]
+        if not ready:
+            if not last:
+                return state, pending
+            first = min(free, key=lambda qid: level_needed(quests[qid]))
+            need, s = level_needed(quests[first]), quests[first]["start"]
+            steps.add(f"grind-{s['uiMapId']}-{need}", "grind", s["uiMapId"], s["x"], s["y"], untilLevel=need)
+            state = XpState(need, 0)
+            continue
+        for part in _chunks(ready, quests):  # the quest log limit still holds
+            if len(deferred.ids) + len(part) > QUEST_LOG_LIMIT:
+                state = deferred.flush(steps, quests, xp_table, state)
+            state = _run_chunk(steps, part, quests, spawns, xp_table, state, zones, deferred, here, continents)
+        pending = [qid for qid in pending if qid not in ready]
+    return state, []
 
 
 def _attach_unplaced(ids: list[int], quests: dict[int, dict], hubs: list[Hub]) -> dict[int, list[int]]:
@@ -202,6 +224,7 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
     state = XpState(1, 0)
     needed = {p for qid in sel.quests if qid not in gaps for p in sel.quests[qid].get("prereqs") or []}
     deferred = _Deferred({qid for qid in sel.quests if qid not in needed})
+    waiting: list[int] = []  # quests of this map not doable yet (level), tried again at the next hub
     for index, hub in enumerate(hubs):
         if index > 0 and hubs[index - 1].mapId != hub.mapId and deferred.ids:
             # Leaving a zone: turn in what waits elsewhere, unless a later route zone is that map.
@@ -217,12 +240,11 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
             x, y = (steps.pos[1], steps.pos[2]) if on_map else (hub.x, hub.y)
             steps.add(f"gap-{qid}", "gap", hub.mapId, x, y, questId=qid, reason=gaps[qid])
 
-        for chunk in _chunks([q for q in hub.quests if q not in gaps], sel.quests):
-            if len(deferred.ids) + len(chunk) > QUEST_LOG_LIMIT:
-                state = deferred.flush(steps, sel.quests, xp_table, state)
-            state = _min_level_gate(steps, chunk, sel.quests, state)
-            state = _run_chunk(steps, chunk, sel.quests, spawns, xp_table, state, order.zones, deferred, hub.mapId,
-                               continents)
+        chunks = _chunks([q for q in hub.quests if q not in gaps], sel.quests) or [[]]
+        last_on_map = index == len(hubs) - 1 or hubs[index + 1].mapId != hub.mapId
+        for n, chunk in enumerate(chunks):
+            state, waiting = _run_doable(steps, waiting + chunk, sel.quests, spawns, xp_table, state, order.zones,
+                                         deferred, hub.mapId, continents, last_on_map and n == len(chunks) - 1)
     state = deferred.flush(steps, sel.quests, xp_table, state)
 
     # spec 2.5: the route reaches LEVEL_CAP. Kill XP is only a rough estimate, so any shortfall is one closing

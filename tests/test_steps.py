@@ -6,7 +6,7 @@ import pytest
 from pipeline.canonical import load_spawns_canonical, load_uimaps_canonical
 from pipeline.config import DATA_DIR
 from pipeline.generate import GenerationError
-from pipeline.generate.config import BETA_BLOCKING_RULES, GRIND_TRIGGER, QUEST_LOG_LIMIT
+from pipeline.generate.config import BETA_BLOCKING_RULES, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
 from pipeline.generate.steps import generate_route
 from pipeline.generate.zone_order import ZoneOrder
 from pipeline.ingest.wago import load_quest_xp
@@ -25,10 +25,10 @@ def _npc(npc_id, x, y, map_id=10):
 
 
 def _q(qid, x=10.0, y=10.0, map_id=10, level=1, prereqs=(), units=(), items=(), objects=(),
-       start=None, end=None, confidence="unverified"):
+       start=None, end=None, confidence="unverified", min_level=None):
     start = start or _npc(1000 + qid, x, y, map_id)
     return {
-        "id": qid, "name": f"Q{qid}", "level": level, "minLevel": level, "races": None,
+        "id": qid, "name": f"Q{qid}", "level": level, "minLevel": min_level or level, "races": None,
         "prereqs": list(prereqs), "start": start, "end": end or dict(start),
         "objectives": {"units": list(units), "items": list(items), "objects": list(objects)},
         "inForever": True, "confidence": confidence,
@@ -257,15 +257,15 @@ def test_zone_change_emits_travel():
 
 def test_off_map_turnin_of_a_needed_quest_happens_at_once():
     # Quest 3 needs quest 1, so quest 1 is turned in on map 20 before the route goes on.
-    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 90, 90, level=2),
-                     _q(3, 92, 92, level=3, prereqs=[1]))
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 90, 90, level=2, min_level=1),
+                     _q(3, 92, 92, level=3, min_level=1, prereqs=[1]))
     route, _ = _gen(quests)
     assert _ids(route)[:5] == ["accept-1", "travel-10-20", "turnin-1", "travel-20-10", "accept-2"]
 
 
 def test_off_map_turnin_of_a_leaf_quest_waits_until_the_zone_is_left():
-    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=99)), _q(2, 90, 90, level=2),
-                     _q(3, 10, 10, map_id=20, level=3))
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=99)), _q(2, 90, 90, level=2, min_level=1),
+                     _q(3, 10, 10, map_id=20, level=3, min_level=1))
     route, report = _gen(quests)
     assert _ids(route) == ["accept-1", "accept-2", "turnin-2", "travel-10-99", "turnin-1", "travel-99-20",
                            "accept-3", "turnin-3"]
@@ -274,26 +274,28 @@ def test_off_map_turnin_of_a_leaf_quest_waits_until_the_zone_is_left():
 
 def test_deferred_turnin_is_done_when_the_route_reaches_that_map_anyway():
     # Quest 1 ends in zone 20, which the route visits next: no extra trip before leaving zone 10.
-    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 10, 10, map_id=20, level=2))
+    quests = _quests(_q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)), _q(2, 10, 10, map_id=20, level=2, min_level=1))
     route, _ = _gen(quests)
     assert _ids(route) == ["accept-1", "travel-10-20", "turnin-1", "accept-2", "turnin-2"]
 
 
 def test_grind_inserted_when_underleveled():
-    # The level-8 chunk needs minLevel 8 - GRIND_TRIGGER = 6; the grind sits at its first quest's start.
+    # The minLevel-8 quests cannot be taken before level 8; the grind sits at the first one's start.
     quests = _quests(_q(1, 10, 10, level=1), _q(2, 80, 80, level=8), _q(3, 82, 82, level=8))
     route, report = _gen(quests)
-    assert _ids(route)[:4] == ["accept-1", "turnin-1", "grind-10-6", "accept-2"]
-    grind = _step(route, "grind-10-6")
-    assert (grind["untilLevel"], grind["mapId"], grind["x"], grind["y"]) == (6, 10, 80, 80)
+    assert _ids(route)[:4] == ["accept-1", "turnin-1", "grind-10-8", "accept-2"]
+    grind = _step(route, "grind-10-8")
+    assert (grind["untilLevel"], grind["mapId"], grind["x"], grind["y"]) == (8, 10, 80, 80)
     assert grind["confidence"] == "unverified"
-    # After the grind the state is (6, 0); two level-8 quests give 2 * 700 XP, below the 3600 needed.
-    assert report["questLevel"] == 6
+    # After the grind the state is (8, 0); two level-8 quests give 2 * 700 XP, below the 4500 needed.
+    assert report["questLevel"] == 8
 
 
-def test_no_grind_when_level_is_close():
-    quests = _quests(_q(1, 10, 10, level=1), _q(2, 80, 80, level=3))
+def test_no_grind_when_quest_is_within_the_margin():
+    # Level 3 with minLevel 1 is doable at level 1 (QUEST_LEVEL_MARGIN = 2: orange, not red).
+    quests = _quests(_q(1, 10, 10, level=1), dict(_q(2, 80, 80, level=3, min_level=1), minLevel=1))
     route, _ = _gen(quests)
+    assert QUEST_LEVEL_MARGIN == 2
     assert not any(s["type"] == "grind" for s in route["steps"])
 
 
@@ -321,7 +323,7 @@ def test_step_ids_are_stable():
     def quests(extra):
         qs = [
             _q(1, 10, 10, end=_npc(9, 50, 50, map_id=20)),
-            _q(2, 90, 90, level=2, end=_npc(9, 50, 50, map_id=20)),
+            _q(2, 90, 90, level=2, min_level=1, end=_npc(9, 50, 50, map_id=20)),
             _q(4, 30, 90, level=4, prereqs=[1, 2]),  # needs both, so their turn-ins are not deferred
         ]
         return _quests(*qs, *extra)
@@ -332,7 +334,7 @@ def test_step_ids_are_stable():
     ]
     assert route == _gen(quests([]))[0]
     # A quest in an unrelated later hub does not renumber the existing steps.
-    bigger, _ = _gen(quests([_q(3, 60, 60, map_id=20, level=3)]))
+    bigger, _ = _gen(quests([_q(3, 60, 60, map_id=20, level=3, min_level=1)]))
     assert _ids(bigger)[:7] == _ids(route)[:7]
 
 
@@ -359,31 +361,35 @@ def test_generated_elwynn_route_passes_beta_blocking_rules():
     assert blocking == []
 
 
-def test_min_level_gate_grinds_before_chunk_with_high_quest():
-    # One chunk; the minLevel-6 quest needs 6 - GRIND_TRIGGER = 4 before the chunk is accepted.
+def test_doable_quests_go_first_then_a_grind_for_the_rest():
+    # One hub: the level-1 quests are done first; the minLevel-6 quest then needs a grind at its start.
     quests = _quests(_q(1, 10, 10), _q(2, 11, 11), _q(3, 12, 12), _q(4, 13, 13, level=6))
     route, report = _gen(quests)
-    assert GRIND_TRIGGER == 2 and GRIND_TRIGGER < SEMANTIC_LEVEL_SLACK  # stricter than the validator
-    assert _ids(route)[:2] == ["grind-10-4", "accept-1"]
-    grind = _step(route, "grind-10-4")
-    assert (grind["untilLevel"], grind["mapId"], grind["x"], grind["y"]) == (4, 10, 10.0, 10.0)
+    assert QUEST_LEVEL_MARGIN < SEMANTIC_LEVEL_SLACK  # stricter than the validator
+    ids = _ids(route)
+    assert ids.index("grind-10-6") > max(ids.index(f"turnin-{q}") for q in (1, 2, 3))
+    assert ids.index("grind-10-6") < ids.index("accept-4")
+    grind = _step(route, "grind-10-6")
+    assert (grind["untilLevel"], grind["mapId"], grind["x"], grind["y"]) == (6, 10, 13.0, 13.0)
     assert grind["confidence"] == "unverified"
     over = [i for i in check_route(route, quests, frozenset({10, 20})) if i.rule == "over-level"]
     assert over == []
 
 
-def test_min_level_gate_does_not_grind_when_close_enough():
-    quests = _quests(_q(1, 10, 10), _q(2, 11, 11, level=3))
+def test_a_quest_waits_for_the_xp_of_the_doable_ones_instead_of_a_grind():
+    # Quest 3 (level 4) is red at level 1; quests 1 and 2 (2 * 250 XP) bring the player to level 2 first.
+    quests = _quests(_q(1, 10, 10, level=3, min_level=1), _q(2, 11, 11, level=3, min_level=1),
+                     _q(3, 12, 12, level=4, min_level=1))
     route, _ = _gen(quests)
     assert not any(s["type"] == "grind" for s in route["steps"])
+    assert _ids(route).index("accept-3") > _ids(route).index("turnin-2")
 
 
-def test_hub_with_high_avg_level_but_low_min_levels_gets_no_grind():
-    # Quest level 10 (hub avgLevel 10) but minLevel 1: only minLevel decides a grind.
+def test_a_red_quest_needs_a_grind_even_with_a_low_min_level():
+    # Quest level 10 but minLevel 1: still taken only from level 10 - QUEST_LEVEL_MARGIN = 8.
     quests = _quests(*(dict(_q(i, 10 + i, 10, level=10), minLevel=1) for i in range(1, 4)))
-    route, report = _gen(quests)
-    assert not any(s["type"] == "grind" for s in route["steps"])
-    assert route["steps"][0]["id"] == "accept-1"
+    route, _ = _gen(quests)
+    assert route["steps"][0]["id"] == "grind-10-8"
 
 
 def test_report_lists_ids_for_class_and_zone_outlier_only():

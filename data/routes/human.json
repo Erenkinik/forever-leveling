@@ -6,7 +6,7 @@
   1,
   30
  ],
- "generatedAt": "2026-10-22T20:13:29Z",
+ "generatedAt": "2026-10-22T20:34:01Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -22,16 +22,6 @@
    "npcId": 823
   },
   {
-   "id": "accept-2158",
-   "type": "accept",
-   "mapId": 1429,
-   "x": 45.6,
-   "y": 47.7,
-   "confidence": "unverified",
-   "questId": 2158,
-   "npcId": 6774
-  },
-  {
    "id": "turnin-783",
    "type": "turnin",
    "mapId": 1429,
@@ -40,16 +30,6 @@
    "confidence": "unverified",
    "questId": 783,
    "npcId": 197
-  },
-  {
-   "id": "turnin-2158",
-   "type": "turnin",
-   "mapId": 1429,
-   "x": 43.8,
-   "y": 65.8,
-   "confidence": "unverified",
-   "questId": 2158,
-   "npcId": 295
   },
   {
    "id": "accept-7",
@@ -72,16 +52,6 @@
    "npcId": 823
   },
   {
-   "id": "accept-18",
-   "type": "accept",
-   "mapId": 1429,
-   "x": 48.2,
-   "y": 42.9,
-   "confidence": "unverified",
-   "questId": 18,
-   "npcId": 823
-  },
-  {
    "id": "complete-7",
    "type": "complete",
    "mapId": 1429,
@@ -89,15 +59,6 @@
    "y": 36.25,
    "confidence": "unverified",
    "questId": 7
-  },
-  {
-   "id": "complete-18",
-   "type": "complete",
-   "mapId": 1429,
-   "x": 54.26,
-   "y": 47.07,
-   "confidence": "unverified",
-   "questId": 18
   },
   {
    "id": "turnin-7",
@@ -120,6 +81,25 @@
    "npcId": 196
   },
   {
+   "id": "accept-18",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 48.2,
+   "y": 42.9,
+   "confidence": "unverified",
+   "questId": 18,
+   "npcId": 823
+  },
+  {
+   "id": "complete-18",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 54.26,
+   "y": 47.07,
+   "confidence": "unverified",
+   "questId": 18
+  },
+  {
    "id": "turnin-18",
    "type": "turnin",
    "mapId": 1429,
@@ -128,6 +108,26 @@
    "confidence": "unverified",
    "questId": 18,
    "npcId": 823
+  },
+  {
+   "id": "accept-2158",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 45.6,
+   "y": 47.7,
+   "confidence": "unverified",
+   "questId": 2158,
+   "npcId": 6774
+  },
+  {
+   "id": "turnin-2158",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 43.8,
+   "y": 65.8,
+   "confidence": "unverified",
+   "questId": 2158,
+   "npcId": 295
   },
   {
    "id": "accept-15",
@@ -345,25 +345,6 @@
    "npcId": 246
   },
   {
-   "id": "accept-88",
-   "type": "accept",
-   "mapId": 1429,
-   "x": 34.7,
-   "y": 84.5,
-   "confidence": "unverified",
-   "questId": 88,
-   "npcId": 244
-  },
-  {
-   "id": "complete-88",
-   "type": "complete",
-   "mapId": 1429,
-   "x": 69.7,
-   "y": 79.6,
-   "confidence": "unverified",
-   "questId": 88
-  },
-  {
    "id": "turnin-85",
    "type": "turnin",
    "mapId": 1429,
@@ -372,16 +353,6 @@
    "confidence": "unverified",
    "questId": 85,
    "npcId": 247
-  },
-  {
-   "id": "turnin-88",
-   "type": "turnin",
-   "mapId": 1429,
-   "x": 34.7,
-   "y": 84.5,
-   "confidence": "unverified",
-   "questId": 88,
-   "npcId": 244
   },
   {
    "id": "accept-86",
@@ -522,11 +493,40 @@
    "npcId": 253
   },
   {
+   "id": "accept-88",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 34.7,
+   "y": 84.5,
+   "confidence": "unverified",
+   "questId": 88,
+   "npcId": 244
+  },
+  {
+   "id": "complete-88",
+   "type": "complete",
+   "mapId": 1429,
+   "x": 69.7,
+   "y": 79.6,
+   "confidence": "unverified",
+   "questId": 88
+  },
+  {
+   "id": "turnin-88",
+   "type": "turnin",
+   "mapId": 1429,
+   "x": 34.7,
+   "y": 84.5,
+   "confidence": "unverified",
+   "questId": 88,
+   "npcId": 244
+  },
+  {
    "id": "gap-147",
    "type": "gap",
    "mapId": 1429,
-   "x": 43.3,
-   "y": 65.7,
+   "x": 34.7,
+   "y": 84.5,
    "confidence": "unverified",
    "questId": 147,
    "reason": "quest 147: prereq 123 not in route"
@@ -570,16 +570,6 @@
    "confidence": "unverified",
    "questId": 112,
    "npcId": 253
-  },
-  {
-   "id": "accept-40",
-   "type": "accept",
-   "mapId": 1429,
-   "x": 42.1,
-   "y": 67.3,
-   "confidence": "unverified",
-   "questId": 40,
-   "npcId": 241
   },
   {
    "id": "complete-60",
@@ -647,6 +637,16 @@
    "confidence": "unverified",
    "questId": 112,
    "npcId": 253
+  },
+  {
+   "id": "accept-40",
+   "type": "accept",
+   "mapId": 1429,
+   "x": 42.1,
+   "y": 67.3,
+   "confidence": "unverified",
+   "questId": 40,
+   "npcId": 241
   },
   {
    "id": "turnin-40",
@@ -994,16 +994,6 @@
    "npcId": 237
   },
   {
-   "id": "accept-151",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 59.9,
-   "y": 19.4,
-   "confidence": "unverified",
-   "questId": 151,
-   "npcId": 238
-  },
-  {
    "id": "complete-64",
    "type": "complete",
    "mapId": 1436,
@@ -1011,15 +1001,6 @@
    "y": 19.3,
    "confidence": "unverified",
    "questId": 64
-  },
-  {
-   "id": "complete-151",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 47.95,
-   "y": 37.96,
-   "confidence": "unverified",
-   "questId": 151
   },
   {
    "id": "turnin-36",
@@ -1042,28 +1023,27 @@
    "npcId": 237
   },
   {
-   "id": "turnin-151",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 59.9,
-   "y": 19.4,
-   "confidence": "unverified",
-   "questId": 151,
-   "npcId": 238
-  },
-  {
-   "id": "accept-9",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56,
-   "y": 31.2,
-   "confidence": "unverified",
-   "questId": 9,
-   "npcId": 233
-  },
-  {
    "id": "accept-22",
    "type": "accept",
+   "mapId": 1436,
+   "x": 56.4,
+   "y": 30.5,
+   "confidence": "unverified",
+   "questId": 22,
+   "npcId": 235
+  },
+  {
+   "id": "complete-22",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 49.07,
+   "y": 46.31,
+   "confidence": "unverified",
+   "questId": 22
+  },
+  {
+   "id": "turnin-22",
+   "type": "turnin",
    "mapId": 1436,
    "x": 56.4,
    "y": 30.5,
@@ -1082,15 +1062,6 @@
    "npcId": 235
   },
   {
-   "id": "complete-9",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 45.94,
-   "y": 37.39,
-   "confidence": "unverified",
-   "questId": 9
-  },
-  {
    "id": "complete-38",
    "type": "complete",
    "mapId": 1436,
@@ -1098,35 +1069,6 @@
    "y": 39.43,
    "confidence": "unverified",
    "questId": 38
-  },
-  {
-   "id": "complete-22",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 49.07,
-   "y": 46.31,
-   "confidence": "unverified",
-   "questId": 22
-  },
-  {
-   "id": "turnin-9",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56,
-   "y": 31.2,
-   "confidence": "unverified",
-   "questId": 9,
-   "npcId": 233
-  },
-  {
-   "id": "turnin-22",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 30.5,
-   "confidence": "unverified",
-   "questId": 22,
-   "npcId": 235
   },
   {
    "id": "turnin-38",
@@ -1139,16 +1081,6 @@
    "npcId": 235
   },
   {
-   "id": "accept-102",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 47.6,
-   "confidence": "unverified",
-   "questId": 102,
-   "npcId": 821
-  },
-  {
    "id": "accept-12",
    "type": "accept",
    "mapId": 1436,
@@ -1157,16 +1089,6 @@
    "confidence": "unverified",
    "questId": 12,
    "npcId": 234
-  },
-  {
-   "id": "accept-153",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 54,
-   "y": 53,
-   "confidence": "unverified",
-   "questId": 153,
-   "npcId": 878
   },
   {
    "id": "accept-6181",
@@ -1179,34 +1101,6 @@
    "npcId": 491
   },
   {
-   "id": "accept-65",
-   "type": "accept",
-   "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
-   "confidence": "unverified",
-   "questId": 65,
-   "npcId": 234
-  },
-  {
-   "id": "complete-102",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 46.75,
-   "y": 54.34,
-   "confidence": "unverified",
-   "questId": 102
-  },
-  {
-   "id": "complete-153",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 42.73,
-   "y": 51.01,
-   "confidence": "unverified",
-   "questId": 153
-  },
-  {
    "id": "complete-12",
    "type": "complete",
    "mapId": 1436,
@@ -1214,16 +1108,6 @@
    "y": 32.81,
    "confidence": "unverified",
    "questId": 12
-  },
-  {
-   "id": "turnin-102",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 56.4,
-   "y": 47.6,
-   "confidence": "unverified",
-   "questId": 102,
-   "npcId": 821
   },
   {
    "id": "turnin-12",
@@ -1236,16 +1120,6 @@
    "npcId": 234
   },
   {
-   "id": "turnin-153",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 54,
-   "y": 53,
-   "confidence": "unverified",
-   "questId": 153,
-   "npcId": 878
-  },
-  {
    "id": "turnin-6181",
    "type": "turnin",
    "mapId": 1436,
@@ -1256,34 +1130,62 @@
    "npcId": 523
   },
   {
-   "id": "travel-1436-1433",
-   "type": "travel",
-   "mapId": 1433,
-   "x": 26.5,
-   "y": 45.3,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
-  },
-  {
-   "id": "turnin-65",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 26.5,
-   "y": 45.3,
-   "confidence": "unverified",
-   "questId": 65,
-   "npcId": 266
-  },
-  {
-   "id": "travel-1433-1436",
-   "type": "travel",
+   "id": "accept-151",
+   "type": "accept",
    "mapId": 1436,
-   "x": 56.3,
-   "y": 47.5,
+   "x": 59.9,
+   "y": 19.4,
    "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
+   "questId": 151,
+   "npcId": 238
+  },
+  {
+   "id": "accept-102",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56.4,
+   "y": 47.6,
+   "confidence": "unverified",
+   "questId": 102,
+   "npcId": 821
+  },
+  {
+   "id": "complete-102",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 46.75,
+   "y": 54.34,
+   "confidence": "unverified",
+   "questId": 102
+  },
+  {
+   "id": "complete-151",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 47.95,
+   "y": 37.96,
+   "confidence": "unverified",
+   "questId": 151
+  },
+  {
+   "id": "turnin-151",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 59.9,
+   "y": 19.4,
+   "confidence": "unverified",
+   "questId": 151,
+   "npcId": 238
+  },
+  {
+   "id": "turnin-102",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56.4,
+   "y": 47.6,
+   "confidence": "unverified",
+   "questId": 102,
+   "npcId": 821
   },
   {
    "id": "accept-13",
@@ -1325,6 +1227,111 @@
    "npcId": 234
   },
   {
+   "id": "accept-9",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 56,
+   "y": 31.2,
+   "confidence": "unverified",
+   "questId": 9,
+   "npcId": 233
+  },
+  {
+   "id": "accept-153",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 54,
+   "y": 53,
+   "confidence": "unverified",
+   "questId": 153,
+   "npcId": 878
+  },
+  {
+   "id": "complete-153",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 42.73,
+   "y": 51.01,
+   "confidence": "unverified",
+   "questId": 153
+  },
+  {
+   "id": "complete-9",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 45.94,
+   "y": 37.39,
+   "confidence": "unverified",
+   "questId": 9
+  },
+  {
+   "id": "turnin-9",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 56,
+   "y": 31.2,
+   "confidence": "unverified",
+   "questId": 9,
+   "npcId": 233
+  },
+  {
+   "id": "turnin-153",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 54,
+   "y": 53,
+   "confidence": "unverified",
+   "questId": 153,
+   "npcId": 878
+  },
+  {
+   "id": "grind-1436-14",
+   "type": "grind",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "untilLevel": 14
+  },
+  {
+   "id": "accept-103",
+   "type": "accept",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "questId": 103,
+   "npcId": 392
+  },
+  {
+   "id": "complete-103",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 49.53,
+   "y": 39.06,
+   "confidence": "unverified",
+   "questId": 103
+  },
+  {
+   "id": "turnin-103",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "questId": 103,
+   "npcId": 392
+  },
+  {
+   "id": "grind-1436-15",
+   "type": "grind",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "untilLevel": 15
+  },
+  {
    "id": "accept-14",
    "type": "accept",
    "mapId": 1436,
@@ -1354,14 +1361,62 @@
    "npcId": 234
   },
   {
-   "id": "accept-103",
+   "id": "grind-1436-16",
+   "type": "grind",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "untilLevel": 16
+  },
+  {
+   "id": "accept-65",
    "type": "accept",
+   "mapId": 1436,
+   "x": 56.3,
+   "y": 47.5,
+   "confidence": "unverified",
+   "questId": 65,
+   "npcId": 234
+  },
+  {
+   "id": "travel-1436-1433",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 26.5,
+   "y": 45.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "turnin-65",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 26.5,
+   "y": 45.3,
+   "confidence": "unverified",
+   "questId": 65,
+   "npcId": 266
+  },
+  {
+   "id": "travel-1433-1436",
+   "type": "travel",
    "mapId": 1436,
    "x": 30,
    "y": 86,
    "confidence": "unverified",
-   "questId": 103,
-   "npcId": 392
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "grind-1436-17",
+   "type": "grind",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "untilLevel": 17
   },
   {
    "id": "accept-152",
@@ -1372,6 +1427,34 @@
    "confidence": "unverified",
    "questId": 152,
    "npcId": 392
+  },
+  {
+   "id": "complete-152",
+   "type": "complete",
+   "mapId": 1436,
+   "x": 33.02,
+   "y": 47.52,
+   "confidence": "unverified",
+   "questId": 152
+  },
+  {
+   "id": "turnin-152",
+   "type": "turnin",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "questId": 152,
+   "npcId": 392
+  },
+  {
+   "id": "grind-1436-18",
+   "type": "grind",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "untilLevel": 18
   },
   {
    "id": "accept-104",
@@ -1391,44 +1474,6 @@
    "y": 75.9,
    "confidence": "unverified",
    "questId": 104
-  },
-  {
-   "id": "complete-152",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 33.02,
-   "y": 47.52,
-   "confidence": "unverified",
-   "questId": 152
-  },
-  {
-   "id": "complete-103",
-   "type": "complete",
-   "mapId": 1436,
-   "x": 49.53,
-   "y": 39.06,
-   "confidence": "unverified",
-   "questId": 103
-  },
-  {
-   "id": "turnin-103",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 30,
-   "y": 86,
-   "confidence": "unverified",
-   "questId": 103,
-   "npcId": 392
-  },
-  {
-   "id": "turnin-152",
-   "type": "turnin",
-   "mapId": 1436,
-   "x": 30,
-   "y": 86,
-   "confidence": "unverified",
-   "questId": 152,
-   "npcId": 392
   },
   {
    "id": "turnin-104",
@@ -1714,15 +1759,6 @@
    "npcId": 1343
   },
   {
-   "id": "grind-1432-17",
-   "type": "grind",
-   "mapId": 1432,
-   "x": 34.8,
-   "y": 49.3,
-   "confidence": "unverified",
-   "untilLevel": 17
-  },
-  {
    "id": "accept-418",
    "type": "accept",
    "mapId": 1432,
@@ -1761,16 +1797,6 @@
    "confidence": "unverified",
    "questId": 255,
    "npcId": 1139
-  },
-  {
-   "id": "accept-468",
-   "type": "accept",
-   "mapId": 1432,
-   "x": 32.7,
-   "y": 49.7,
-   "confidence": "unverified",
-   "questId": 468,
-   "npcId": 1340
   },
   {
    "id": "complete-418",
@@ -1829,6 +1855,16 @@
    "confidence": "unverified",
    "questId": 255,
    "npcId": 1139
+  },
+  {
+   "id": "accept-468",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 32.7,
+   "y": 49.7,
+   "confidence": "unverified",
+   "questId": 468,
+   "npcId": 1340
   },
   {
    "id": "turnin-468",
@@ -2394,16 +2430,6 @@
    "npcId": 381
   },
   {
-   "id": "accept-91",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
-   "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900
-  },
-  {
    "id": "accept-20",
    "type": "accept",
    "mapId": 1433,
@@ -2412,16 +2438,6 @@
    "confidence": "unverified",
    "questId": 20,
    "npcId": 382
-  },
-  {
-   "id": "accept-34",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 21.9,
-   "y": 46.3,
-   "confidence": "unverified",
-   "questId": 34,
-   "npcId": 342
   },
   {
    "id": "accept-150",
@@ -2486,24 +2502,6 @@
    "y": 43.84,
    "confidence": "unverified",
    "questId": 20
-  },
-  {
-   "id": "complete-91",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 77.99,
-   "y": 46.52,
-   "confidence": "unverified",
-   "questId": 91
-  },
-  {
-   "id": "complete-34",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 16.0,
-   "y": 49.3,
-   "confidence": "unverified",
-   "questId": 34
   },
   {
    "id": "turnin-129",
@@ -2626,16 +2624,6 @@
    "npcId": 381
   },
   {
-   "id": "turnin-91",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
-   "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900
-  },
-  {
    "id": "turnin-20",
    "type": "turnin",
    "mapId": 1433,
@@ -2646,16 +2634,6 @@
    "npcId": 382
   },
   {
-   "id": "turnin-34",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 21.9,
-   "y": 46.3,
-   "confidence": "unverified",
-   "questId": 34,
-   "npcId": 342
-  },
-  {
    "id": "turnin-150",
    "type": "turnin",
    "mapId": 1433,
@@ -2664,6 +2642,35 @@
    "confidence": "unverified",
    "questId": 150,
    "npcId": 381
+  },
+  {
+   "id": "accept-91",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900
+  },
+  {
+   "id": "complete-91",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 77.99,
+   "y": 46.52,
+   "confidence": "unverified",
+   "questId": 91
+  },
+  {
+   "id": "turnin-91",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900
   },
   {
    "id": "accept-130",
@@ -2900,6 +2907,35 @@
    "confidence": "unverified",
    "questId": 115,
    "npcId": 382
+  },
+  {
+   "id": "accept-34",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 21.9,
+   "y": 46.3,
+   "confidence": "unverified",
+   "questId": 34,
+   "npcId": 342
+  },
+  {
+   "id": "complete-34",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 16.0,
+   "y": 49.3,
+   "confidence": "unverified",
+   "questId": 34
+  },
+  {
+   "id": "turnin-34",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 21.9,
+   "y": 46.3,
+   "confidence": "unverified",
+   "questId": 34,
+   "npcId": 342
   },
   {
    "id": "accept-131",
@@ -4297,16 +4333,6 @@
    "npcId": 3894
   },
   {
-   "id": "accept-1140",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 26.2,
-   "y": 38.7,
-   "confidence": "unverified",
-   "questId": 1140,
-   "npcId": 3663
-  },
-  {
    "id": "accept-976",
    "type": "accept",
    "mapId": 1440,
@@ -4317,25 +4343,6 @@
    "npcId": 4484
   },
   {
-   "id": "complete-1140",
-   "type": "complete",
-   "mapId": 1440,
-   "x": 74.1,
-   "y": 52.8,
-   "confidence": "unverified",
-   "questId": 1140
-  },
-  {
-   "id": "turnin-1140",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 26.2,
-   "y": 38.7,
-   "confidence": "unverified",
-   "questId": 1140,
-   "npcId": 3663
-  },
-  {
    "id": "turnin-976",
    "type": "turnin",
    "mapId": 1440,
@@ -4343,16 +4350,6 @@
    "y": 38.7,
    "confidence": "unverified",
    "questId": 976,
-   "npcId": 3663
-  },
-  {
-   "id": "accept-1167",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 26.2,
-   "y": 38.7,
-   "confidence": "unverified",
-   "questId": 1167,
    "npcId": 3663
   },
   {
@@ -4436,16 +4433,6 @@
    "npcId": 3894
   },
   {
-   "id": "accept-4581",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 34.7,
-   "y": 48.8,
-   "confidence": "unverified",
-   "questId": 4581,
-   "npcId": 3845
-  },
-  {
    "id": "complete-1033",
    "type": "complete",
    "mapId": 1440,
@@ -4511,16 +4498,6 @@
    "confidence": "unverified",
    "questId": 1033,
    "npcId": 3894
-  },
-  {
-   "id": "turnin-4581",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 85.3,
-   "y": 44.7,
-   "confidence": "unverified",
-   "questId": 4581,
-   "npcId": 3848
   },
   {
    "id": "accept-1023",
@@ -4601,16 +4578,6 @@
    "npcId": 3691
   },
   {
-   "id": "accept-1035",
-   "type": "accept",
-   "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
-   "confidence": "unverified",
-   "questId": 1035,
-   "npcId": 3894
-  },
-  {
    "id": "complete-1025",
    "type": "complete",
    "mapId": 1440,
@@ -4618,15 +4585,6 @@
    "y": 62.36,
    "confidence": "unverified",
    "questId": 1025
-  },
-  {
-   "id": "complete-1035",
-   "type": "complete",
-   "mapId": 1440,
-   "x": 66.7,
-   "y": 82.2,
-   "confidence": "unverified",
-   "questId": 1035
   },
   {
    "id": "turnin-1024",
@@ -4649,21 +4607,11 @@
    "npcId": 3691
   },
   {
-   "id": "turnin-1035",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
-   "confidence": "unverified",
-   "questId": 1035,
-   "npcId": 3894
-  },
-  {
    "id": "gap-1016",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1016,
    "reason": "quest 1016: objective item 5455 location unknown"
@@ -4672,8 +4620,8 @@
    "id": "gap-1017",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1017,
    "reason": "quest 1017: prereq 1016 is a gap"
@@ -4682,8 +4630,8 @@
    "id": "gap-1027",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1027,
    "reason": "quest 1027: objective item 5519 location unknown"
@@ -4692,8 +4640,8 @@
    "id": "gap-1028",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1028,
    "reason": "quest 1028: prereq 1027 is a gap"
@@ -4702,8 +4650,8 @@
    "id": "gap-1029",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1029,
    "reason": "quest 1029: prereq 1055 not in route"
@@ -4712,11 +4660,50 @@
    "id": "gap-1030",
    "type": "gap",
    "mapId": 1440,
-   "x": 37.4,
-   "y": 51.8,
+   "x": 36.6,
+   "y": 49.6,
    "confidence": "unverified",
    "questId": 1030,
    "reason": "quest 1030: prereq 1029 is a gap"
+  },
+  {
+   "id": "gap-1045",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 36.6,
+   "y": 49.6,
+   "confidence": "unverified",
+   "questId": 1045,
+   "reason": "quest 1045: prereq 1030 is a gap"
+  },
+  {
+   "id": "gap-1046",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 36.6,
+   "y": 49.6,
+   "confidence": "unverified",
+   "questId": 1046,
+   "reason": "quest 1046: prereq 1045 is a gap"
+  },
+  {
+   "id": "gap-7788",
+   "type": "gap",
+   "mapId": 1440,
+   "x": 36.6,
+   "y": 49.6,
+   "confidence": "unverified",
+   "questId": 7788,
+   "reason": "quest 7788: objective item 20558 location unknown"
+  },
+  {
+   "id": "grind-1440-25",
+   "type": "grind",
+   "mapId": 1440,
+   "x": 53.5,
+   "y": 46.2,
+   "confidence": "unverified",
+   "untilLevel": 25
   },
   {
    "id": "accept-1026",
@@ -4748,34 +4735,81 @@
    "npcId": 3916
   },
   {
-   "id": "gap-1045",
-   "type": "gap",
+   "id": "grind-1440-26",
+   "type": "grind",
    "mapId": 1440,
-   "x": 53.5,
-   "y": 46.2,
+   "x": 26.2,
+   "y": 38.7,
    "confidence": "unverified",
-   "questId": 1045,
-   "reason": "quest 1045: prereq 1030 is a gap"
+   "untilLevel": 26
   },
   {
-   "id": "gap-1046",
-   "type": "gap",
+   "id": "accept-1140",
+   "type": "accept",
    "mapId": 1440,
-   "x": 53.5,
-   "y": 46.2,
+   "x": 26.2,
+   "y": 38.7,
    "confidence": "unverified",
-   "questId": 1046,
-   "reason": "quest 1046: prereq 1045 is a gap"
+   "questId": 1140,
+   "npcId": 3663
   },
   {
-   "id": "gap-7788",
-   "type": "gap",
+   "id": "complete-1140",
+   "type": "complete",
    "mapId": 1440,
-   "x": 53.5,
-   "y": 46.2,
+   "x": 74.1,
+   "y": 52.8,
    "confidence": "unverified",
-   "questId": 7788,
-   "reason": "quest 7788: objective item 20558 location unknown"
+   "questId": 1140
+  },
+  {
+   "id": "turnin-1140",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 26.2,
+   "y": 38.7,
+   "confidence": "unverified",
+   "questId": 1140,
+   "npcId": 3663
+  },
+  {
+   "id": "accept-1167",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 26.2,
+   "y": 38.7,
+   "confidence": "unverified",
+   "questId": 1167,
+   "npcId": 3663
+  },
+  {
+   "id": "grind-1440-27",
+   "type": "grind",
+   "mapId": 1440,
+   "x": 34.7,
+   "y": 48.8,
+   "confidence": "unverified",
+   "untilLevel": 27
+  },
+  {
+   "id": "accept-4581",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 34.7,
+   "y": 48.8,
+   "confidence": "unverified",
+   "questId": 4581,
+   "npcId": 3845
+  },
+  {
+   "id": "turnin-4581",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 85.3,
+   "y": 44.7,
+   "confidence": "unverified",
+   "questId": 4581,
+   "npcId": 3848
   },
   {
    "id": "accept-1011",
@@ -4807,6 +4841,25 @@
    "npcId": 3848
   },
   {
+   "id": "grind-1440-28",
+   "type": "grind",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "untilLevel": 28
+  },
+  {
+   "id": "accept-1035",
+   "type": "accept",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "questId": 1035,
+   "npcId": 3894
+  },
+  {
    "id": "accept-1022",
    "type": "accept",
    "mapId": 1440,
@@ -4824,6 +4877,25 @@
    "y": 39.1,
    "confidence": "unverified",
    "questId": 1022
+  },
+  {
+   "id": "complete-1035",
+   "type": "complete",
+   "mapId": 1440,
+   "x": 66.7,
+   "y": 82.2,
+   "confidence": "unverified",
+   "questId": 1035
+  },
+  {
+   "id": "turnin-1035",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 37.4,
+   "y": 51.8,
+   "confidence": "unverified",
+   "questId": 1035,
+   "npcId": 3894
   },
   {
    "id": "turnin-1022",
@@ -4846,27 +4918,7 @@
    "npcId": 3880
   },
   {
-   "id": "travel-1440-1439-2",
-   "type": "travel",
-   "mapId": 1439,
-   "x": 55,
-   "y": 24.9,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5
-  },
-  {
-   "id": "turnin-1167",
-   "type": "turnin",
-   "mapId": 1439,
-   "x": 55,
-   "y": 24.9,
-   "confidence": "unverified",
-   "questId": 1167,
-   "npcId": 3661
-  },
-  {
-   "id": "travel-1439-1442",
+   "id": "travel-1440-1442",
    "type": "travel",
    "mapId": 1442,
    "x": 59.9,
@@ -4896,7 +4948,27 @@
    "npcId": 3994
   },
   {
-   "id": "travel-1442-1438",
+   "id": "travel-1442-1439",
+   "type": "travel",
+   "mapId": 1439,
+   "x": 55,
+   "y": 24.9,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "turnin-1167",
+   "type": "turnin",
+   "mapId": 1439,
+   "x": 55,
+   "y": 24.9,
+   "confidence": "unverified",
+   "questId": 1167,
+   "npcId": 3661
+  },
+  {
+   "id": "travel-1439-1438",
    "type": "travel",
    "mapId": 1438,
    "x": 30,
@@ -6857,15 +6929,6 @@
    "confidence": "unverified",
    "questId": 536,
    "npcId": 2228
-  },
-  {
-   "id": "grind-1424-30",
-   "type": "grind",
-   "mapId": 1424,
-   "x": 51.5,
-   "y": 58.4,
-   "confidence": "unverified",
-   "untilLevel": 30
   }
  ]
 }
