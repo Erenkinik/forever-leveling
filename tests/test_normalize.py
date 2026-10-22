@@ -240,3 +240,66 @@ def test_class_mask_carried_into_canonical_classes():
     assert out[1]["classes"] == ["Warlock"]
     assert out[2]["classes"] is None
     assert validate("quest", out[1]) == [] and validate("quest", out[2]) == []
+
+
+def _fac_unit(fac):
+    return {"coords": [(1.0, 2.0, 12)], "fac": fac, "name": "N"}
+
+
+def test_factions_from_races_mask():
+    from pipeline.normalize.quests import factions_for
+
+    assert factions_for(["Human", "Dwarf"], []) == ["Alliance"]
+    assert factions_for(["Orc"], []) == ["Horde"]
+    assert factions_for(["Human", "Orc"], []) is None
+    assert factions_for(["unknown-bit-256"], []) is None
+    assert factions_for(None, []) is None
+
+
+def test_factions_from_endpoint_npc_faction():
+    from pipeline.normalize.quests import factions_for
+
+    assert factions_for(None, ["H"]) == ["Horde"]
+    assert factions_for(None, ["A", "AH"]) == ["Alliance"]
+    assert factions_for(None, ["AH", None]) is None
+    assert factions_for(None, ["A", "H"]) == []  # nobody can do both ends
+    assert factions_for(["Human"], ["H"]) == []
+
+
+def test_horde_npc_quest_gets_horde_faction():
+    pf = _pf(
+        {1: {"name": "Q", "start": {"U": [5]}, "end": {"U": [6]}},
+         2: {"name": "R", "start": {"U": [6]}, "end": {"U": [6]}},
+         3: {"name": "S", "start": {"I": [9]}, "end": {"O": [7]}}},
+        units={5: _fac_unit("AH"), 6: _fac_unit("H")},
+        objects={7: {"coords": [(1.0, 2.0, 12)], "fac": "A"}},
+    )
+    out = {r["id"]: r for r in build_canonical(pf, frozenset(), Z, {})}
+    assert out[1]["factions"] == ["Horde"]  # Alliance can take it but not turn it in
+    assert out[2]["factions"] == ["Horde"]
+    assert out[3]["factions"] == ["Alliance"]
+    assert all(validate("quest", r) == [] for r in out.values())
+
+
+def test_quest_without_faction_data_is_open():
+    pf = _pf({1: {"name": "Q", "start": {"U": [5]}}}, units={5: _fac_unit(None)})
+    assert _one(pf)["factions"] is None
+
+
+def test_several_givers_union_their_factions():
+    pf = _pf(
+        {1: {"name": "Q", "start": {"U": [5, 6]}, "end": {"U": [5]}},
+         2: {"name": "R", "start": {"U": [5, 6]}, "end": {"U": [5, 6]}},
+         3: {"name": "S", "start": {"U": [6, 6]}}},
+        units={5: _fac_unit("A"), 6: _fac_unit("H")},
+    )
+    out = {r["id"]: r for r in build_canonical(pf, frozenset(), Z, {})}
+    assert out[1]["factions"] == ["Alliance"]  # either faction takes it; only Alliance turns it in
+    assert out[2]["factions"] is None
+    assert out[3]["factions"] == ["Horde"]
+
+
+def test_manual_endpoint_decides_faction():
+    pf = _pf({1: {"name": "Q", "start": {"U": [5, 6]}}}, units={5: _fac_unit("A"), 6: _fac_unit("H")})
+    q = _one(pf, manual={1: _manual(start={"type": "npc", "id": 6, "uiMapId": 1429, "x": 1.0, "y": 2.0})})
+    assert q["factions"] == ["Horde"]

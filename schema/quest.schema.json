@@ -11,6 +11,7 @@
     "minLevel",
     "races",
     "classes",
+    "factions",
     "prereqs",
     "start",
     "end",
@@ -61,6 +62,19 @@
       "items": {
         "type": "string"
       }
+    },
+    "factions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "enum": [
+          "Alliance",
+          "Horde"
+        ]
+      },
+      "uniqueItems": true
     },
     "prereqs": {
       "type": "array",

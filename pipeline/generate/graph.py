@@ -7,7 +7,7 @@ from pipeline.generate import GenerationError
 from pipeline.generate.config import LEVEL_CAP, ZONE_OUTLIER_SPREAD
 from pipeline.generate.zone_order import ZoneOrder
 
-REASONS = ("not-in-forever", "level-unknown", "over-cap", "race", "class", "zone", "zone-outlier")
+REASONS = ("not-in-forever", "level-unknown", "over-cap", "race", "faction", "class", "zone", "zone-outlier")
 
 
 @dataclass
@@ -35,6 +35,9 @@ def _exclusion_reason(q: dict, order: ZoneOrder) -> str | None:
         # Unknown race bits cannot be matched to a race, so the quest is not safe to include.
         if any(r.startswith("unknown-bit-") for r in races) or order.race not in races:
             return "race"
+    factions = q.get("factions")
+    if factions is not None and order.faction not in factions:
+        return "faction"
     if q.get("classes") is not None:
         # Ruling (Phase 2a): the v1 route is class-agnostic; classOnly steps come later.
         return "class"

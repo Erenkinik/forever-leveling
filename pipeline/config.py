@@ -33,6 +33,18 @@ RACE_BITS: dict[str, int] = {
     "Troll": 128,
 }
 
+# Faction of each playable race in RACE_BITS.
+RACE_FACTION: dict[str, str] = {
+    "Human": "Alliance",
+    "Dwarf": "Alliance",
+    "Night Elf": "Alliance",
+    "Gnome": "Alliance",
+    "Orc": "Horde",
+    "Undead": "Horde",
+    "Tauren": "Horde",
+    "Troll": "Horde",
+}
+
 # Vanilla class bit mask (pfQuest `class`). Bits not listed here become "unknown-bit-<n>".
 CLASS_BITS: dict[str, int] = {
     "Warrior": 1,

@@ -10,9 +10,11 @@ HUMAN = DATA_DIR / "zone-order" / "human.yaml"
 ORDER = ZoneOrder("t", "Human", "Alliance", False, [10, 20])
 
 
-def _q(qid, min_level=1, races=None, prereqs=(), map_id=10, in_forever=True, level=None, classes=None):
+def _q(qid, min_level=1, races=None, prereqs=(), map_id=10, in_forever=True, level=None, classes=None,
+       factions=None):
     q = {
-        "id": qid, "minLevel": min_level, "races": races, "classes": classes, "prereqs": list(prereqs),
+        "id": qid, "minLevel": min_level, "races": races, "classes": classes, "factions": factions,
+        "prereqs": list(prereqs),
         "start": {"uiMapId": map_id}, "inForever": in_forever,
     }
     if level is not None:
@@ -136,3 +138,18 @@ def test_topological_order_is_deterministic():
     expected = [3, 1, 2, 5, 4]
     for perm in (quests, quests[::-1], quests[2:] + quests[:2]):
         assert build_graph(_sel(*perm), "beta").order == expected
+
+
+def test_other_faction_quest_excluded():
+    quests = {
+        1: _q(1, factions=["Horde"]),
+        2: _q(2, factions=["Alliance"]),
+        3: _q(3, factions=None),
+        4: _q(4, factions=[]),
+        5: _q(5, races=["Orc"], factions=["Horde"]),  # race is checked first
+        6: _q(6, factions=["Horde"], classes=["Mage"]),  # faction is checked before class
+    }
+    sel = select_quests(quests, ORDER)
+    assert sorted(sel.quests) == [2, 3]
+    assert sel.excluded["faction"] == [1, 4, 6]
+    assert sel.excluded["race"] == [5]

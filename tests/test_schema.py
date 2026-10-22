@@ -18,7 +18,7 @@ def make_quest():
     point = {"type": "npc", "id": 823, "name": "Deputy Willem", "uiMapId": 1429, "x": 48.2, "y": 41.7}
     return {
         "id": 783, "name": "A Threat Within", "level": 1, "minLevel": 1, "races": None, "classes": None,
-        "prereqs": [], "start": dict(point), "end": dict(point),
+        "factions": None, "prereqs": [], "start": dict(point), "end": dict(point),
         "objectives": {"units": [], "items": [], "objects": []},
         "inForever": True, "sources": ["wago-db2", "pfquest"], "lineages": ["blizzard-client", "vanilla-emu"],
         "conflicts": [], "confidence": "cross-checked", "seenInBuild": None,
@@ -97,3 +97,15 @@ def test_quest_requires_classes():
     assert validate("quest", q) == []
     q["classes"] = "Warlock"
     assert validate("quest", q) != []
+
+
+def test_quest_requires_factions():
+    q = make_quest()
+    del q["factions"]
+    assert any("factions" in e for e in validate("quest", q))
+    for ok in (None, [], ["Alliance"], ["Horde"]):
+        q["factions"] = ok
+        assert validate("quest", q) == []
+    for bad in ("Alliance", ["Neutral"]):
+        q["factions"] = bad
+        assert validate("quest", q) != []

@@ -1,5 +1,5 @@
 """Build the canonical quest database from pfQuest, wago DB2 ids and manual entries."""
-from pipeline.config import CLASS_BITS, DATA_BUILD, RACE_BITS, SOURCE_LINEAGE
+from pipeline.config import CLASS_BITS, DATA_BUILD, RACE_BITS, RACE_FACTION, SOURCE_LINEAGE
 from pipeline.ingest.pfquest import PfData
 from pipeline.schema import validate
 
@@ -37,6 +37,42 @@ def classes_from_mask(mask: int | None) -> list[str] | None:
     if not mask:
         return None
     return _names_from_mask(mask, CLASS_BITS)
+
+
+FACTIONS = ("Alliance", "Horde")
+_FAC_CODES = {"A": {"Alliance"}, "H": {"Horde"}}  # pfQuest unit/object `fac`; "AH" or none = both
+
+
+def factions_for(races: list[str] | None, endpoint_facs: list[str | None]) -> list[str] | None:
+    """Factions that can do the quest: races mask ∩ start/end NPC or object faction.
+
+    None means no restriction is known (both factions); [] means no faction can do both ends.
+    """
+    allowed = set(FACTIONS)
+    if races is not None:
+        known = {RACE_FACTION[r] for r in races if r in RACE_FACTION}
+        if known:
+            allowed &= known
+    for fac in endpoint_facs:
+        allowed &= _FAC_CODES.get(fac, set(FACTIONS))
+    return None if allowed == set(FACTIONS) else [f for f in FACTIONS if f in allowed]
+
+
+def _endpoint_fac(pf: PfData, raw: dict | None, point: dict) -> str | None:
+    """pfQuest faction code for one quest end: the union over every NPC/object pfQuest lists for it.
+
+    `raw` is None when a manual entry names the endpoint; then only that endpoint counts.
+    """
+    tables = {"npc": pf.units, "object": pf.objects}
+    refs = [(type_, i) for key, type_ in _TYPES if type_ in tables for i in (raw or {}).get(key) or []]
+    if raw is None or (point["type"], point["id"]) not in refs:
+        refs = [(point["type"], point["id"])] if point["type"] in tables else []
+    allowed: set[str] = set()
+    for type_, i in refs:
+        allowed |= _FAC_CODES.get(tables[type_].get(i, {}).get("fac"), set(FACTIONS))
+    if not allowed:
+        return None
+    return {frozenset({"Alliance"}): "A", frozenset({"Horde"}): "H"}.get(frozenset(allowed), "AH")
 
 
 def confidence_for(lineages: set[str], conflicts: list[str]) -> str:
@@ -159,6 +195,13 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
                 if all(k in given for k in ("x", "y", "uiMapId")):
                     conflicts[:] = [c for c in conflicts if c != f"{label}.coords"]
             rec[label] = {**rec[label], **{k: v for k, v in given.items() if k in rec[label]}}
+    raw_ends = {
+        label: None if m is not None and ({"type", "id"} & set(m.get(label) or {})) else (pq or {}).get(label)
+        for label in ("start", "end")
+    }
+    rec["factions"] = factions_for(
+        rec["races"], [_endpoint_fac(pf, raw_ends[label], rec[label]) for label in ("start", "end")]
+    )
     lineages = sorted({SOURCE_LINEAGE[s] for s in sources})
     conflicts = sorted(set(conflicts))
     in_forever = qid in forever_ids
