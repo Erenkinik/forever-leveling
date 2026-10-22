@@ -50,7 +50,7 @@ Başarı ölçütü: bir oyuncu siteyi ya da addon'u kullanarak, rehberden kopma
 | Rehber sayfa düzeni | **A: liste + harita.** Solda adım listesi, sağda bölge haritası ve pinler. Tamamlanan adımlar sönük ve üstü çizili, aktif adım belirgin. |
 | Görsel stil | **A: oyunun kendisi gibi.** Koyu sıcak zemin, altın başlıklar, serif yazı. |
 | Addon penceresi | **A: küçük köşe penceresi + ok.** Sağ üstte şu anki adım ve sıradaki adım, ilerleme çubuğu. Ekranın ortasında yön oku ve mesafe. |
-| Son birleşik taslak | `.superpowers/brainstorm/.../content/son-taslak.html`. Görsel referans budur. **Ayrıca açık onay alınmadı**; inşaatın ilk adımında yeniden gösterilecek. |
+| Son birleşik taslak | `.superpowers/brainstorm/.../content/son-taslak.html`. Görsel referans budur. Eren, 22 Ekim 2026'da çalışan siteyle karşılaştırıp **onayladı** (kenar rengi kontrast için #857452). |
 
 Taslak dosyaları: `C:\Users\eren\Projects\forever-leveling\.superpowers\brainstorm\1061-1792635874\content\`
 
