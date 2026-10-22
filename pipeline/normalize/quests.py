@@ -6,6 +6,8 @@ from pipeline.schema import validate
 ALL_RACES = 255
 _TRUSTED = {"blizzard-client", "vanilla-emu", "ingame"}
 _TYPES = (("U", "npc"), ("O", "object"), ("I", "item"))  # precedence when several are present
+# Sources that only confirm a quest exists and supply no values (docs/spike-wago.md).
+PRESENCE_ONLY_SOURCES = frozenset({"wago-db2"})
 _MANUAL_COMPARED = ("name", "level", "minLevel", "races", "prereqs")
 
 
@@ -92,11 +94,6 @@ def _differs(field: str, ours, theirs) -> bool:
     return ours != theirs
 
 
-def _manual_point(raw: dict | None) -> dict:
-    raw = raw or {}
-    return _point(*(raw.get(k) for k in ("type", "id", "name", "uiMapId", "x", "y")))
-
-
 def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     pq = pf.quests.get(qid)
     conflicts: list[str] = []
@@ -133,6 +130,14 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
             if label not in m:
                 continue
             given = m[label] or {}
+            changed = ("type" in given and given["type"] != rec[label]["type"]) or (
+                "id" in given and given["id"] != rec[label]["id"]
+            )
+            if changed and rec[label]["type"] is not None:
+                # A different endpoint: pfQuest's name and position belong to the old one.
+                rec[label] = {**rec[label], "name": None, "uiMapId": None, "x": None, "y": None}
+                if not all(given.get(k) is not None for k in ("x", "y", "uiMapId")):
+                    conflicts.append(f"{label}.coords")
             if pq is not None:
                 if "type" in given or "id" in given:
                     theirs = (given.get("type", rec[label]["type"]), given.get("id", rec[label]["id"]))
@@ -144,7 +149,8 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     lineages = sorted({SOURCE_LINEAGE[s] for s in sources})
     conflicts = sorted(set(conflicts))
     in_forever = qid in forever_ids
-    confidence = confidence_for(set(lineages), conflicts)
+    value_lineages = {SOURCE_LINEAGE[s] for s in sources if s not in PRESENCE_ONLY_SOURCES}
+    confidence = confidence_for(value_lineages, conflicts)
     if "wowhead-manual" in sources and confidence == "cross-checked":
         confidence = "unverified"  # spec 8.2: manual entries never count as cross-checked
     rec.update(

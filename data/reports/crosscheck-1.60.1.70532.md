@@ -12,8 +12,7 @@
 
 | confidence | count |
 |---|---|
-| cross-checked | 3472 |
-| unverified | 3915 |
+| unverified | 7387 |
 
 ## Conflicts
 

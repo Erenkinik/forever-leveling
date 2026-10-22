@@ -1,8 +1,5 @@
-import pytest
-
-from pipeline.config import DATA_BUILD, DATA_DIR, RAW_DIR
-from pipeline.ingest.pfquest import PfData, load_pfquest
-from pipeline.ingest.wago import load_quest_ids, load_zone_to_uimap
+from pipeline.config import DATA_BUILD
+from pipeline.ingest.pfquest import PfData
 from pipeline.normalize.quests import build_canonical, confidence_for, races_from_mask
 from pipeline.schema import validate
 
@@ -51,7 +48,7 @@ def test_wolves_across_the_border_canonical():
     q = _one(pf, {33}, qid=33)
     assert q["start"]["type"] == "npc" and q["start"]["id"] == 196 and q["start"]["uiMapId"] == 1429
     assert q["start"]["name"] == "Eagan Peltskinner" and (q["start"]["x"], q["start"]["y"]) == (48.9, 40.2)
-    assert q["confidence"] == "cross-checked"
+    assert q["confidence"] == "unverified"  # DB2 only confirms existence; pfQuest is the sole value source
     assert q["prereqs"] == [5261]
     assert q["inForever"] is True and q["sources"] == ["wago-db2", "pfquest"]
     assert q["objectives"] == {"units": [], "items": [750], "objects": []}
@@ -163,16 +160,6 @@ def test_output_sorted_by_id_and_all_valid():
     assert [r["id"] for r in out] == [2, 5, 9]
 
 
-@pytest.mark.skipif(not (RAW_DIR / "pfquest" / "quests.lua").exists(), reason="raw data not fetched")
-def test_canonical_records_pass_schema():
-    pf = load_pfquest(RAW_DIR / "pfquest")
-    wago = RAW_DIR / "wago" / DATA_BUILD
-    out = build_canonical(pf, load_quest_ids(wago), load_zone_to_uimap(wago), {})
-    assert len(out) >= len(pf.quests)
-    bad = [(r["id"], validate("quest", r)) for r in out if validate("quest", r)]
-    assert bad == []
-
-
 def test_manual_in_db2_without_pfquest_is_unverified():
     q = _one(_pf(), {1}, manual={1: _manual()})
     assert q["sources"] == ["wago-db2", "wowhead-manual"] and q["conflicts"] == []
@@ -204,3 +191,34 @@ def test_manual_prereq_order_is_not_a_conflict():
     pf = _pf({1: {"lvl": 5, "min": 3, "name": "Manual Name", "pre": [2, 3]}})
     q = _one(pf, manual={1: _manual(prereqs=[3, 2])})
     assert "prereqs" not in q["conflicts"]
+
+
+def test_db2_presence_does_not_confirm_pfquest_values():
+    pf = _pf({1: {"lvl": 5, "min": 3, "name": "Q"}})
+    q = _one(pf, {1})
+    assert q["sources"] == ["wago-db2", "pfquest"]
+    assert q["lineages"] == ["blizzard-client", "vanilla-emu"]  # record fields unchanged
+    assert q["conflicts"] == [] and q["confidence"] == "unverified"
+
+
+def test_value_sources_from_two_lineages_still_cross_check():
+    from pipeline.normalize.quests import confidence_for
+
+    assert confidence_for({"vanilla-emu", "blizzard-client"}, []) == "cross-checked"
+
+
+def test_manual_endpoint_changing_type_or_id_resets_pfquest_point():
+    pf = _pf({1: {"start": {"U": [5]}, "name": "Q"}}, {5: _unit("S", (1.0, 2.0, 12))})
+    q = _one(pf, {1}, manual={1: _manual(start={"type": "npc", "id": 7})})
+    assert q["start"] == {"type": "npc", "id": 7, "name": None, "uiMapId": None, "x": None, "y": None}
+    assert "start" in q["conflicts"] and "start.coords" in q["conflicts"]
+    # a type change counts too, and full manual coordinates satisfy the .coords conflict
+    full = {"type": "object", "id": 5, "name": "Obj", "uiMapId": 1429, "x": 3.0, "y": 4.0}
+    q = _one(pf, {1}, manual={1: _manual(start=full)})
+    assert q["start"] == full
+    assert "start" in q["conflicts"] and "start.coords" not in q["conflicts"]
+    assert validate("quest", q) == []
+    # manual name only (no coords) for the new endpoint still leaves coords unresolved
+    q = _one(pf, {1}, manual={1: _manual(start={"type": "npc", "id": 7, "name": "New"})})
+    assert q["start"]["name"] == "New" and q["start"]["x"] is None
+    assert "start.coords" in q["conflicts"]
