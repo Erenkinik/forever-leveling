@@ -36,10 +36,30 @@ def cmd_normalize(_args) -> int:
     return 0
 
 
+def cmd_crosscheck(_args) -> int:
+    from pipeline.crosscheck.report import render_markdown, summarize
+
+    src = DATA_DIR / "canonical" / "quests.json"
+    summary = summarize(json.loads(src.read_text(encoding="utf-8")))
+    out = DATA_DIR / "reports" / f"crosscheck-{DATA_BUILD}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out.with_name(out.name + ".tmp")
+    try:
+        tmp.write_text(render_markdown(summary, DATA_BUILD), encoding="utf-8")
+        os.replace(tmp, out)
+    finally:
+        tmp.unlink(missing_ok=True)
+    print(f"wrote {out}: needs_manual={len(summary.needs_manual)} in_scope={summary.in_scope}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("normalize", help="build data/canonical/quests.json").set_defaults(func=cmd_normalize)
+    sub.add_parser("crosscheck", help="write data/reports/crosscheck-<build>.md").set_defaults(
+        func=cmd_crosscheck
+    )
     args = parser.parse_args(argv)
     return args.func(args)
 
