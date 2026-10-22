@@ -158,3 +158,19 @@ def test_unaccepted_turnin_does_not_satisfy_prereq():
         ("turnin-before-accept", "a1"),
         ("prereq-not-done", "a2"),
     }
+
+
+def test_over_level_uses_given_level_estimate():
+    route = json.loads((FIX / "over-level.json").read_text(encoding="utf-8"))
+    sids = [s["id"] for s in route["steps"]]
+    assert "over-level" in _rules(check_route(route, QUESTS, MAPS))
+    assert check_route(route, QUESTS, MAPS, levels={sid: 17 for sid in sids}) == []
+    issues = check_route(route, QUESTS, MAPS, levels={sid: 16 for sid in sids})
+    assert "estimated level is 16" in next(i.message for i in issues if i.rule == "over-level")
+
+
+def test_gap_steps_are_not_level_checked():
+    route = json.loads((FIX / "over-level.json").read_text(encoding="utf-8"))
+    route["steps"] = [{"id": "g", "type": "gap", "mapId": 1429, "x": 1.0, "y": 1.0, "confidence": "unverified",
+                       "questId": 200, "reason": "quest 200: objective located only off-route"}]
+    assert check_route(route, QUESTS, MAPS) == []

@@ -5,11 +5,12 @@ import re
 import pytest
 
 from pipeline.__main__ import _json_text
-from pipeline.canonical import load_spawns_canonical, load_uimaps_canonical
+from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
 from pipeline.config import DATA_DIR, ROOT
 from pipeline.export.lua import to_lua
 from pipeline.export.site import to_site_json
 from pipeline.generate.config import BETA_BLOCKING_RULES
+from pipeline.generate.xpsim import estimate_levels
 from pipeline.validate.semantic import check_route
 
 ROUTES_DIR = DATA_DIR / "routes"
@@ -30,7 +31,9 @@ def test_committed_routes_pass_beta_blocking_rules():
     known_maps = frozenset(load_uimaps_canonical(DATA_DIR))
     for path in _route_paths():
         route = json.loads(path.read_text(encoding="utf-8"))
-        blocking = [i for i in check_route(route, quests, known_maps) if i.rule in BETA_BLOCKING_RULES]
+        levels = estimate_levels(route, quests, load_questxp_canonical(DATA_DIR))
+        issues = check_route(route, quests, known_maps, levels=levels)
+        blocking = [i for i in issues if i.rule in BETA_BLOCKING_RULES]
         assert blocking == [], f"{path.name}: {blocking}"
 
 
@@ -68,3 +71,27 @@ def test_committed_routes_are_regenerable(monkeypatch, tmp_path, capsys):
     assert orders, "no zone orders under data/zone-order"
     for order in orders:
         assert cli.main(["generate", order.stem, "--check"]) == 0, capsys.readouterr().err
+
+
+def test_committed_routes_only_use_quests_of_their_faction():
+    quests = _quests()
+    for path in _route_paths():
+        route = json.loads(path.read_text(encoding="utf-8"))
+        wrong = sorted({
+            s["questId"] for s in route["steps"]
+            if s.get("questId") in quests and quests[s["questId"]]["factions"] is not None
+            and route["faction"] not in quests[s["questId"]]["factions"]
+        })
+        assert wrong == [], f"{path.name}: quests of another faction {wrong}"
+
+
+def test_committed_routes_have_no_over_level_with_shared_estimate():
+    """The validator replays the generator's own level model, so this mainly guards override-added steps."""
+    quests = _quests()
+    known_maps = frozenset(load_uimaps_canonical(DATA_DIR))
+    xp_table = load_questxp_canonical(DATA_DIR)
+    for path in _route_paths():
+        route = json.loads(path.read_text(encoding="utf-8"))
+        issues = check_route(route, quests, known_maps, levels=estimate_levels(route, quests, xp_table))
+        over = [i for i in issues if i.rule == "over-level"]
+        assert over == [], f"{path.name}: {over[:3]}"

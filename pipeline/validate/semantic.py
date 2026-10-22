@@ -20,7 +20,11 @@ def check_route(
     quests: dict[int, dict],
     known_maps: frozenset[int],
     xp_reaches_target: Callable[[dict], bool] | None = None,
+    levels: dict[str, int] | None = None,
 ) -> list[Issue]:
+    """Semantic rules over a route. `levels` (step id -> estimated level, from
+    pipeline.generate.xpsim.estimate_levels) drives the over-level rule; without it the level only
+    follows grind steps."""
     errors = schema_validate("route", route)
     if errors:
         # Semantic rules assume a structurally valid route.
@@ -44,7 +48,9 @@ def check_route(
         if step["mapId"] not in known_maps:
             issues.append(Issue("unknown-map", sid, f"mapId {step['mapId']} is not a known UiMap"))
 
-        if kind == "grind":
+        if levels is not None:
+            level = levels.get(sid, level)
+        elif kind == "grind":
             level = step["untilLevel"]
 
         if qid is not None:
@@ -55,7 +61,7 @@ def check_route(
                 issues.append(Issue("not-in-forever", sid, f"quest {qid} is not in Forever"))
             elif quest["minLevel"] is None:
                 issues.append(Issue("level-unknown", sid, f"quest {qid} level unknown"))
-            elif quest["minLevel"] > level + LEVEL_SLACK:
+            elif kind != "gap" and quest["minLevel"] > level + LEVEL_SLACK:  # a gap quest is not taken
                 issues.append(Issue(
                     "over-level", sid,
                     f"quest {qid} needs level {quest['minLevel']}, estimated level is {level}",

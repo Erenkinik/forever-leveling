@@ -373,3 +373,25 @@ def test_report_lists_ids_for_class_and_zone_outlier_only():
     _, report = _gen(quests)
     assert report["excluded"] == {"class": 2, "zone": 1, "zone-outlier": 1}
     assert report["excludedIds"] == {"class": [7, 8], "zone-outlier": [6]}
+
+
+def test_estimate_levels_matches_generator_on_real_route():
+    from pipeline.generate.xpsim import estimate_levels
+
+    quests = {q["id"]: q for q in json.loads((DATA_DIR / "canonical" / "quests.json").read_text(encoding="utf-8"))}
+    uimaps = load_uimaps_canonical()
+    zones = [i for i, n in uimaps.items() if n in ("Elwynn Forest", "Westfall")]
+    order = ZoneOrder("human", "Human", "Alliance", False, zones)
+    from pipeline.canonical import load_questxp_canonical
+
+    xp = load_questxp_canonical()
+    route, report = generate_route(order, quests, load_spawns_canonical(), xp, "beta", "1.60.1.70532", NOW)
+    levels = estimate_levels(route, quests, xp)
+    assert set(levels) == {s["id"] for s in route["steps"]}
+    assert all(levels[s["id"]] < s["untilLevel"] for s in route["steps"] if s["type"] == "grind")
+    issues = check_route(route, quests, frozenset(uimaps), levels=levels)
+    assert [i for i in issues if i.rule == "over-level"] == []
+    final = estimate_levels({**route, "steps": route["steps"] + [
+        {"id": "end", "type": "travel", "mapId": zones[0], "x": 1.0, "y": 1.0, "confidence": "unverified"}]},
+        quests, xp)["end"]
+    assert final == report["estimatedFinalLevel"]

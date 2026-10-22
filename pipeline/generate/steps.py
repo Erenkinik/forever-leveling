@@ -6,7 +6,7 @@ from pipeline.generate.config import GRIND_TRIGGER, LEVEL_CAP, QUEST_LOG_LIMIT
 from pipeline.generate.gaps import complete_location, quest_gaps
 from pipeline.generate.graph import build_graph, select_quests
 from pipeline.generate.hubs import Hub, build_hubs, unplaced
-from pipeline.generate.xpsim import XpState, quest_xp
+from pipeline.generate.xpsim import XpState, quest_level, quest_xp
 from pipeline.generate.zone_order import ZoneOrder
 
 TIERS = ("beta", "full")
@@ -39,10 +39,6 @@ class _Steps:
         self._used.add(sid)
         self.steps.append({"id": sid, "type": kind, "mapId": map_id, "x": x, "y": y, "confidence": confidence, **extra})
         self.pos = (map_id, x, y)
-
-
-def _quest_level(q: dict) -> int:
-    return q["level"] if q.get("level") is not None else q["minLevel"]
 
 
 def _chunks(ids: list[int], quests: dict[int, dict]) -> list[list[int]]:
@@ -86,7 +82,7 @@ def _run_chunk(steps: _Steps, chunk: list[int], quests: dict[int, dict], spawns:
         q = quests[qid]
         e = q["end"]
         steps.add(f"turnin-{qid}", "turnin", e["uiMapId"], e["x"], e["y"], q["confidence"], questId=qid, npcId=e["id"])
-        state = state.gain(quest_xp(_quest_level(q), xp_table))
+        state = state.gain(quest_xp(quest_level(q), xp_table))
     return state
 
 
@@ -108,7 +104,7 @@ def _attach_unplaced(ids: list[int], quests: dict[int, dict], hubs: list[Hub]) -
     for qid in ids:
         q = quests[qid]
         candidates = [i for i, h in enumerate(hubs) if h.mapId == q["start"].get("uiMapId")] or list(range(len(hubs)))
-        best = min(candidates, key=lambda i: (abs(hubs[i].avgLevel - _quest_level(q)), i))
+        best = min(candidates, key=lambda i: (abs(hubs[i].avgLevel - quest_level(q)), i))
         out.setdefault(best, []).append(qid)
     return out
 
