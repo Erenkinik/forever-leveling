@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEven
 
 import {
   clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief, reportUrl,
-  safeStorage, saveDone, stepIcon,
+  safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
@@ -23,6 +23,8 @@ const MAP_AHEAD = 6;
 // Pins are 28px with a mouse and 44px on touch screens (RouteView.css); pins whose centres are closer than
 // the pin size plus a small gap are merged so targets never overlap (WCAG 2.5.8).
 const PIN_SPACING_PX = { fine: 32, coarse: 48 };
+// Objective areas: each spawn point is a soft circle of this radius (map x units); overlaps merge into one area.
+const AREA_RADIUS = 2.2;
 
 const isTodo = (s: Step, done: Set<string>) => s.type !== 'gap' && !done.has(s.id);
 const plain = (s: Step) => describeStep(s).map((p) => p.text).join('');
@@ -224,10 +226,12 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   const mapSteps = current
     ? steps.slice(Math.max(0, currentIndex - MAP_BEHIND), currentIndex + MAP_AHEAD + 1).filter((s) => s.mapId === current.mapId)
     : [];
-  // The current step leads its cluster, so a merged pin is drawn where the player has to go.
+  // The current step leads its cluster, so a merged pin is drawn where the player has to go; steps still to do come
+  // before done ones, so a merged pin shows what is left there (e.g. the grey "?" of a turn-in) rather than a done step.
   const art = current ? MAP_ART[String(current.mapId)] ?? null : null;
+  const others = mapSteps.filter((s) => s !== current);
   const pins = current
-    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)],
+    ? clusterPins([current, ...others.filter((s) => !done.has(s.id)), ...others.filter((s) => done.has(s.id))],
       (PIN_SPACING_PX[coarse ? 'coarse' : 'fine'] / (frameWidth * ZOOMS[zoom])) * 100,
       art ? art.height / art.width : 1)
     : [];
@@ -249,7 +253,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
         <div className="progress">
           <label htmlFor="route-progress">
             <span className="progress-step">Step {position}<span className="of"> / {steps.length}</span></span>
-            {current?.level !== undefined && <span className="progress-level">Level ~{current.level}</span>}
+            {current?.level !== undefined && <span className="progress-level" title="Estimated level">Level {current.level}</span>}
           </label>
           <progress id="route-progress" max={steps.length} value={doneCount} />
         </div>
@@ -311,6 +315,23 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                         backgroundImage: `url(/maps/${current.mapId}.webp)` }
                     : { width: `${ZOOMS[zoom] * 100}%` }}
                 >
+                  {(() => {
+                    // Where to kill / collect / use: the current quest strongly, upcoming quests on this map faintly.
+                    const ry = AREA_RADIUS * (art ? art.width / art.height : 1);
+                    const onMap = (s: Step) => s.type === 'complete' && s.mapId === current.mapId && !!s.area?.length;
+                    const active = steps.filter((s) => onMap(s) && s.questId === current.questId && !done.has(s.id));
+                    const upcoming = mapSteps.filter((s) => onMap(s) && !done.has(s.id) && !active.includes(s));
+                    const blobs = (list: Step[]) => list.flatMap((s) => (s.area ?? []).map(([x, y]) => (
+                      <ellipse key={`${s.id}-${x}-${y}`} cx={x} cy={y} rx={AREA_RADIUS} ry={ry} />
+                    )));
+                    return (
+                      <svg className="areas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+                           focusable="false">
+                        <g className="area upcoming">{blobs(upcoming)}</g>
+                        <g className="area active">{blobs(active)}</g>
+                      </svg>
+                    );
+                  })()}
                   {!art && (
                     <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="grid">
                       {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
@@ -326,7 +347,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                     const numbers = group.map((s) => (index.get(s.id) ?? 0) + 1).sort((a, b) => a - b);
                     const state = lead === current ? 'current' : group.every((s) => done.has(s.id)) ? 'done' : 'todo';
                     const n = (index.get(lead.id) ?? 0) + 1;
-                    const icon = stepIcon(lead);
+                    const icon = pinIcon(lead, steps, done);
                     // Starts with the visible text (number, label) so the name matches what is seen (WCAG 2.5.3).
                     const label = `${n} ${pinLabel(lead)}, ` + (group.length === 1
                       ? `step ${n} at ${coords(lead)}: ${plain(lead)}`
@@ -335,7 +356,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       <button
                         key={lead.id}
                         type="button"
-                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}${icon ? ' has-icon' : ''}`}
+                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}${icon ? ' has-icon' : ''}${icon === 'progress' ? ' progress' : ''}`}
                         style={{ left: `${lead.x}%`, top: `${lead.y}%` }}
                         aria-label={label}
                         onClick={() => focusStep(lead)}

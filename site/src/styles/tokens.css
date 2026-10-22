@@ -1,4 +1,10 @@
 /* Design tokens, docs/plan.md §3.1. Contrast ratios are on --bg; tests/contrast.test.mjs checks them. */
+
+/* The game's UI fonts (python -m pipeline maps -> site/public/fonts). Friz Quadrata is licensed to Blizzard by
+   ITC/Monotype; to switch fonts, change only the --font-* tokens below. */
+@font-face { font-family: "Friz Quadrata"; src: url(/fonts/frizqt.ttf) format("truetype"); font-display: swap; }
+@font-face { font-family: "Morpheus"; src: url(/fonts/morpheus.ttf) format("truetype"); font-display: swap; }
+
 :root {
   --bg: #0f0c08;
   --surface: #1c1710;
@@ -16,9 +22,11 @@
   --warn: #f0a050;
   --on-gold: #0f0c08;
 
-  --font-display: "Cinzel", Georgia, serif;
-  --font-body: "Source Serif 4", Georgia, serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Friz Quadrata", Georgia, serif;
+  --font-body: "Friz Quadrata", Georgia, serif;
+  /* numbers (coordinates, steps, levels): the same game font, with lining figures */
+  --font-mono: "Friz Quadrata", Georgia, serif;
+  --font-quest: "Morpheus", "Friz Quadrata", Georgia, serif;
 }
 
 :root[data-contrast="high"] {
@@ -40,6 +48,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 16px/1.5 var(--font-body);
+  /* The game fonts have one weight; emphasis is colour, as in the game, never a synthetic bold. */
+  font-synthesis: none;
 }
 
 a { color: var(--gold); }

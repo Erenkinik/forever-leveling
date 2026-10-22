@@ -518,6 +518,9 @@ def cmd_maps(args) -> int:
                      if index.get(str(m)) and not (out_dir / f"{m}.webp").is_file()]
         problems += [f"art {name}: image missing: {art_dir / f'{name}.webp'}" for name in doc.get("art", [])
                      if not (art_dir / f"{name}.webp").is_file()]
+        fonts_dir = site / "public" / "fonts"
+        problems += [f"font {name}: missing: {fonts_dir / f'{name}.ttf'}" for name in doc.get("fonts", [])
+                     if not (fonts_dir / f"{name}.ttf").is_file()]
         if icons_path.is_file():
             icons = json.loads(icons_path.read_text(encoding="utf-8")).get("items", {})
             problems += [f"item {i}: icon not built (run python -m pipeline maps)" for i in _route_collect_items()
@@ -529,16 +532,17 @@ def cmd_maps(args) -> int:
             return 1
         print(f"up to date: {len(map_ids)} maps")
         return 0
-    from pipeline.export.maps import build_art, build_item_icons, build_maps
+    from pipeline.export.maps import build_art, build_fonts, build_item_icons, build_maps
 
     try:
         index = build_maps(map_ids, DATA_BUILD, RAW_DIR, out_dir)
         art = build_art(RAW_DIR, art_dir)
         icons = build_item_icons(_route_collect_items(), DATA_BUILD, RAW_DIR, art_dir / "items")
+        fonts = build_fonts(RAW_DIR, site / "public" / "fonts")
     except (RuntimeError, OSError, ValueError) as exc:
         print(f"cannot build maps: {exc}", file=sys.stderr)
         return 1
-    _write_text_atomic(index_path, _json_text({"build": DATA_BUILD, "maps": index, "art": art}))
+    _write_text_atomic(index_path, _json_text({"build": DATA_BUILD, "maps": index, "art": art, "fonts": fonts}))
     _write_text_atomic(icons_path, _json_text({"build": DATA_BUILD, "items": icons}))
     built = sum(1 for v in index.values() if v)
     print(f"wrote {built} map images to {out_dir} ({len(index) - built} maps have no art)")

@@ -229,6 +229,17 @@ test('stepIcon picks the game icon for the step', async () => {
   assert.equal(stepIcon(s('gap')), null);
 });
 
+test('pinIcon greys the turn-in "?" while the quest has unfinished steps', async () => {
+  const { pinIcon } = await import('../../src/lib/steps.ts');
+  const q = (id: string, type: Step['type'], questId = 7): Step => ({ ...base, id, type, questId });
+  const route = [q('a', 'accept'), q('c', 'complete'), q('other', 'complete', 8), q('t', 'turnin')];
+  const turnin = route[3];
+  assert.equal(pinIcon(turnin, route, new Set()), 'progress');
+  assert.equal(pinIcon(turnin, route, new Set(['a'])), 'progress');
+  assert.equal(pinIcon(turnin, route, new Set(['a', 'c'])), 'turnin'); // another quest's step does not matter
+  assert.equal(pinIcon(route[0], route, new Set()), 'accept');
+});
+
 test('collect objectives carry the item icon into the text parts', async () => {
   const { questBrief } = await import('../../src/lib/steps.ts');
   const step: Step = { ...base, id: 'complete-5', type: 'complete', questId: 5, questName: 'Q', objectives: [

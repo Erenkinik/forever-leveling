@@ -170,3 +170,23 @@ def test_site_json_collect_objectives_carry_the_item_icon_when_known():
     out = to_site_json(route, quests, spawns, {}, item_icons={"750": 133972, "751": None})
     kill, meat, other = out["steps"][0]["objectives"]
     assert "icon" not in kill and meat["icon"] == 133972 and other["icon"] is None
+
+
+def test_site_json_complete_step_carries_the_objective_area_on_its_map():
+    route = {"id": "t", "steps": [{"id": "complete-5", "type": "complete", "questId": 5, "mapId": 1429,
+                                   "x": 50.0, "y": 50.0}]}
+    quests = {5: {"name": "Q", "objectives": {"units": [10], "items": [750], "objects": [31]}}}
+    spawns = {
+        "units": {
+            "10": {"name": "Kobold", "points": [[1429, 52.04, 50.01], [1429, 52.0, 50.0], [1436, 1.0, 1.0]]},
+            "11": {"name": "Near Wolf", "points": [[1429, 51.0, 50.0]]},
+            "12": {"name": "Mid Wolf", "points": [[1429, 55.0, 50.0]]},
+            "13": {"name": "Far Wolf", "points": [[1429, 60.0, 50.0]]},
+            "14": {"name": "Farther Wolf", "points": [[1429, 90.0, 90.0]]},
+        },
+        "objects": {"31": {"name": "Statue", "points": [[1429, 20.0, 20.0]]}},
+        "items": {"750": {"name": "Meat", "units": [11, 12, 13, 14], "objects": []}},
+    }
+    step = to_site_json(route, quests, spawns, {})["steps"][0]
+    # Kobold points on this map (rounded, deduplicated), the three nearest droppers, the statue; sorted.
+    assert step["area"] == [[20.0, 20.0], [51.0, 50.0], [52.0, 50.0], [55.0, 50.0], [60.0, 50.0]]

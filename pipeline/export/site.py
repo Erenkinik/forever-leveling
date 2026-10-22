@@ -4,21 +4,44 @@ import math
 
 # How many item sources (dropping units/objects) a collect objective names: the nearest ones on the step map.
 MAX_SOURCES = 3
+# The objective area drawn on the site map: at most this many spawn points, the ones nearest the step.
+MAX_AREA_POINTS = 200
 _KINDS = (("units", "kill"), ("items", "collect"), ("objects", "use"))
 
 
-def _nearest_sources(item: dict, spawns: dict, step: dict) -> list[str]:
-    """Names of the item's droppers on the step's map, nearest to the step first (ties by name)."""
-    ranked: dict[str, float] = {}
+def _on_map(entity: dict, step: dict) -> list[tuple[float, float]]:
+    return [(x, y) for m, x, y in entity.get("points", []) if m == step["mapId"]]
+
+
+def _nearest_droppers(item: dict, spawns: dict, step: dict) -> list[dict]:
+    """The item's dropping units/objects on the step's map, nearest to the step first (ties by name), at most
+    MAX_SOURCES distinct names."""
+    best: dict[str, tuple[float, list[dict]]] = {}
     for table, ids in (("units", item.get("units", [])), ("objects", item.get("objects", []))):
         for eid in ids:
             entity = spawns.get(table, {}).get(str(eid)) or {}
-            dists = [math.dist((x, y), (step["x"], step["y"])) for m, x, y in entity.get("points", [])
-                     if m == step["mapId"]]
-            name = entity.get("name")
-            if dists and name:
-                ranked[name] = min(min(dists), ranked.get(name, math.inf))
-    return [name for name, _ in sorted(ranked.items(), key=lambda kv: (kv[1], kv[0]))][:MAX_SOURCES]
+            points, name = _on_map(entity, step), entity.get("name")
+            if not points or not name:
+                continue
+            dist = min(math.dist(p, (step["x"], step["y"])) for p in points)
+            prev = best.get(name)
+            best[name] = (min(dist, prev[0]), prev[1] + [entity]) if prev else (dist, [entity])
+    ranked = sorted(best.items(), key=lambda kv: (kv[1][0], kv[0]))[:MAX_SOURCES]
+    return [{"name": name, "entities": entities} for name, (_, entities) in ranked]
+
+
+def _area(quest: dict, spawns: dict, step: dict) -> list[list[float]]:
+    """Spawn points on the step's map where the objectives are done: the units to kill, the nearest droppers of
+    items to collect and the objects to use; rounded to 0.1, deduplicated, nearest MAX_AREA_POINTS, sorted."""
+    objectives = quest.get("objectives") or {}
+    entities = [spawns.get("units", {}).get(str(u)) or {} for u in objectives.get("units", [])]
+    entities += [spawns.get("objects", {}).get(str(o)) or {} for o in objectives.get("objects", [])]
+    for i in objectives.get("items", []):
+        item = spawns.get("items", {}).get(str(i)) or {}
+        entities += [e for d in _nearest_droppers(item, spawns, step) for e in d["entities"]]
+    points = {(round(x, 1), round(y, 1)) for e in entities for x, y in _on_map(e, step)}
+    nearest = sorted(points, key=lambda p: (math.dist(p, (step["x"], step["y"])), p))[:MAX_AREA_POINTS]
+    return [list(p) for p in sorted(nearest)]
 
 
 def _objectives(quest: dict, spawns: dict, step: dict, item_icons: dict[str, int | None] | None) -> list[dict]:
@@ -31,7 +54,7 @@ def _objectives(quest: dict, spawns: dict, step: dict, item_icons: dict[str, int
             entry = table.get(str(eid)) or {}
             obj = {"kind": kind, "id": eid, "name": entry.get("name")}
             if kind == "collect":
-                obj["sources"] = _nearest_sources(entry, spawns, step)
+                obj["sources"] = [d["name"] for d in _nearest_droppers(entry, spawns, step)]
                 if item_icons is not None:
                     obj["icon"] = item_icons.get(str(eid))
             out.append(obj)
@@ -55,4 +78,5 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
             step["level"] = levels[step["id"]]
         if step.get("type") == "complete" and quest_id in quests:
             step["objectives"] = _objectives(quests[quest_id], spawns, step, item_icons)
+            step["area"] = _area(quests[quest_id], spawns, step)
     return out

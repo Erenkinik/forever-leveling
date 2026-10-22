@@ -1,9 +1,4 @@
 ---
-import '@fontsource/cinzel/600.css';
-import '@fontsource/cinzel/700.css';
-import '@fontsource/source-serif-4/400.css';
-import '@fontsource/source-serif-4/600.css';
-import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/tokens.css';
 import Emblem from '../components/Emblem.astro';
 import type { RaceTheme } from '../lib/races.ts';
@@ -81,6 +76,7 @@ const themeStyle = theme ? `--race: ${theme.accent}; --race-deep: ${theme.deep};
     background-clip: text; color: var(--gold); -webkit-text-fill-color: transparent;
   }
   :root[data-contrast="high"] .brand .xp { -webkit-text-fill-color: var(--gold); background: none; }
-  h1, h2 { font-family: var(--font-display); color: var(--gold); letter-spacing: .02em; }
+  h1, h2 { font-family: var(--font-display); font-weight: 400; color: var(--gold); letter-spacing: .02em;
+    text-shadow: 1px 1px 0 #000, 0 0 6px rgba(0, 0, 0, .6); }
   .site-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-subtle); color: var(--muted); font-size: 14px; }
 </style>

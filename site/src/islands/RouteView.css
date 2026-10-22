@@ -178,7 +178,7 @@ svg.step-icon.grind { stroke: var(--gold); }
   background: #e2c48a url(/art/parchment.webp) center / 100% 100% no-repeat;
   border-radius: 4px; box-shadow: 0 8px 20px rgba(0, 0, 0, .5), inset 0 0 30px rgba(90, 50, 10, .35);
 }
-.quest-scroll h3 { margin: 0; font: 700 22px/1.2 var(--font-display); color: #3c1f00; letter-spacing: .02em; }
+.quest-scroll h3 { margin: 0; font: 400 26px/1.2 var(--font-quest); color: #3c1f00; letter-spacing: .01em; }
 .quest-zone { margin: 2px 0 12px; font: 14px var(--font-mono); color: #4d3818; }
 .quest-scroll ol { margin: 0; padding-left: 26px; display: grid; gap: 8px; font-size: 16px; line-height: 1.45; }
 .quest-scroll li::marker { font: 700 15px var(--font-display); color: #3c1f00; }
@@ -194,20 +194,24 @@ svg.step-icon.grind { stroke: var(--gold); }
 .coords-details { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .coords-details summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--text); }
 
-/* Game icon pins: the icon itself is the marker, the step number sits in a small badge. */
+/* Game icon pins: the icon is the marker, the step number sits beside it
+   in the game's outlined yellow lettering, with no frame. */
 .pin.has-icon {
   width: 34px; height: 34px; background: none; border: 0; outline: 0; padding: 0;
 }
-.pin.has-icon img { width: 32px; height: 32px; filter: drop-shadow(0 0 1px #000) drop-shadow(0 2px 3px rgba(0, 0, 0, .8)); }
+.pin.has-icon img { width: 32px; height: 32px; filter: drop-shadow(0 0 2px #000); }
 .pin.has-icon .pin-num {
-  position: absolute; right: -8px; bottom: -6px; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 10px;
-  display: grid; place-items: center; font: 600 14px/1 var(--font-mono); letter-spacing: 0;
-  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  position: absolute; left: 80%; top: 50%; white-space: nowrap; letter-spacing: 0;
+  font: 400 18px/1 var(--font-display); color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 3px #000;
 }
-.pin.has-icon.current img { width: 40px; height: 40px; filter: drop-shadow(0 0 6px rgba(255, 209, 0, .95)) drop-shadow(0 2px 3px #000); }
-.pin.has-icon.current .pin-num { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+.pin.has-icon.current img { width: 42px; height: 42px; filter: drop-shadow(0 0 2px #000) drop-shadow(0 0 8px rgba(255, 209, 0, .8)); }
+.pin.has-icon.current .pin-num { font-size: 22px; color: #ffd100; }
 .pin.has-icon.done img { filter: grayscale(1) brightness(.8) drop-shadow(0 1px 2px #000); }
-.pin.has-icon.done .pin-num { color: var(--success); }
+.pin.has-icon.done .pin-num { color: #b5b5b5; }
+/* A turn-in whose quest is not done yet: faint, so the blue objective area stays the thing to look at. */
+.pin.has-icon.progress img { opacity: .5; }
+.pin.has-icon.progress:not(.current) .pin-num { color: #b5b5b5; opacity: .7; }
 @media (pointer: coarse) { .pin.has-icon { width: 44px; height: 44px; } }
 .step-icon.game { width: 28px; height: 28px; margin-top: 8px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .8)); }
 
@@ -218,3 +222,24 @@ svg.step-icon.grind { stroke: var(--gold); }
 }
 .quest-scroll .item-icon { width: 26px; height: 26px; vertical-align: -7px; box-shadow: 0 0 0 1px #3c1f00; }
 .step.done .item-icon { filter: grayscale(1); opacity: .7; }
+
+/* Objective areas: translucent blue where the quest's mobs, droppers and objects are. */
+.areas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.area { fill: #2f7dff; }
+.area.active { opacity: .42; }
+.area.upcoming { opacity: .16; }
+
+/* Yellow (current) circles get a black rim, like the game's quest markers. */
+.pin.current:not(.has-icon) { border: 2px solid #000; box-shadow: 0 0 0 1px var(--gold); }
+
+/* Step numbers are coins: embossed gold for the current step, dark bronze for the rest. */
+.step .mark {
+  border: 2px solid #000; font: 400 18px/1 var(--font-display); color: var(--text);
+  background: radial-gradient(circle at 35% 30%, #4a3a22, #1c1710); box-shadow: 0 0 0 1px var(--border);
+}
+.step.done .mark { color: var(--success); box-shadow: 0 0 0 1px var(--success); }
+.step.current .mark {
+  border: 3px solid #000; font-size: 20px; color: #3c1f00;
+  background: radial-gradient(circle at 35% 30%, #ffe7a3, #f0c060 45%, #a87824);
+  box-shadow: 0 0 0 2px #f0c060, inset 0 -2px 3px rgba(0, 0, 0, .35);
+}

@@ -209,7 +209,7 @@ test('steps show objectives, levels and plain-language gap reasons', async ({ pa
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step.complete').first()).toContainText(/: (kill|collect|use) /);
   await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+$/);
-  await expect(page.locator('.progress-level')).toHaveText('Level ~1');
+  await expect(page.locator('.progress-level')).toHaveText('Level 1');
   const gap = page.locator('li.step.gap').first();
   await expect(gap).toContainText('Skip for now:');
   await expect(gap).not.toContainText(/quest \d+:/);
@@ -296,6 +296,10 @@ test('items to collect show their game icon, and map pins use the game quest ico
   expect(src).toMatch(/^\/art\/items\/\d+\.webp$/);
   expect((await page.request.get(src)).status()).toBe(200);
   await expect(page.locator('.pin.current img')).toHaveAttribute('src', '/art/icon-accept.webp');
+  // Turn-ins of quests not done yet show the faint grey "?".
+  const progress = page.locator('.pin.progress img').first();
+  await expect(progress).toHaveAttribute('src', '/art/icon-progress.webp');
+  expect((await page.request.get('/art/icon-progress.webp')).status()).toBe(200);
 });
 
 test('high contrast keeps the quest parchment', async ({ page }) => {
@@ -305,4 +309,14 @@ test('high contrast keeps the quest parchment', async ({ page }) => {
   await page.getByLabel('High contrast').check();
   const bg = await page.locator('.quest-scroll').evaluate((el) => getComputedStyle(el).backgroundImage);
   expect(bg).toContain('parchment.webp');
+});
+
+test('the map shades where the current quest objectives are done', async ({ page }) => {
+  await page.goto('/tauren/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  // The Hunt Begins: the plainstrider area belongs to the current quest.
+  expect(await page.locator('.areas .area.active ellipse').count()).toBeGreaterThan(3);
+  const opacity = await page.locator('.areas .area.active').evaluate((el) => Number(getComputedStyle(el).opacity));
+  expect(opacity).toBeGreaterThan(0.2);
+  expect(opacity).toBeLessThan(0.6);
 });

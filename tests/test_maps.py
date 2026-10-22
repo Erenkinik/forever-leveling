@@ -141,6 +141,34 @@ def test_atlas_icon_is_the_32px_cell_at_column_and_row():
     assert set(ATLAS_ICONS) == {"accept", "turnin", "kill", "collect", "use", "grind"}
 
 
+def _mark() -> Image.Image:
+    """A 32px test mark: a yellow bar inside a black outline."""
+    icon = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    icon.paste(Image.new("RGBA", (12, 28), (0, 0, 0, 255)), (10, 2))
+    icon.paste(Image.new("RGBA", (8, 24), (255, 210, 0, 255)), (12, 4))
+    return icon
+
+
+def test_thin_icon_squeezes_the_mark_to_a_narrower_centred_one():
+    from pipeline.export.maps import DERIVED_SIZE, thin_icon
+
+    thin = thin_icon(_mark())
+    box = thin.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()  # ignore resampling fringe
+    assert thin.size == (DERIVED_SIZE, DERIVED_SIZE)
+    assert box[2] - box[0] < 12 * 2 * 0.7  # the 12px-wide mark at 2x, now under 70% as wide
+    assert abs((box[0] + box[2]) / 2 - DERIVED_SIZE / 2) <= 1
+
+
+def test_hollow_icon_is_grey_with_an_empty_middle_and_a_kept_outline():
+    from pipeline.export.maps import hollow_icon
+
+    hollow = hollow_icon(_mark())
+    assert hollow.getpixel((32, 32))[3] == 0  # the middle of the yellow bar is empty
+    r, g, b, a = hollow.getpixel((25, 32))  # just inside the bar's left edge: grey rim
+    assert a > 200 and r == g == b and r > 120
+    assert max(hollow.getpixel((21, 32))[:3]) < 20  # the black outline stays
+
+
 def test_item_icon_ids_maps_items_to_their_icon_file():
     from pipeline.export.maps import item_icon_ids
 
@@ -160,3 +188,15 @@ def test_route_collect_items_are_the_collect_objectives_of_completed_quests(tmp_
         {"id": 2, "objectives": {"units": [], "items": [999], "objects": []}}]), encoding="utf-8")
     monkeypatch.setattr(cli, "DATA_DIR", data)
     assert cli._route_collect_items() == [750, 751]
+
+
+def test_maps_check_needs_the_game_fonts(tmp_path, monkeypatch, capsys):
+    site = _env(tmp_path, monkeypatch, {"1429": None, "1436": None})
+    index = json.loads((site / "src" / "data" / "maps.json").read_text(encoding="utf-8"))
+    index["fonts"] = ["frizqt"]
+    (site / "src" / "data" / "maps.json").write_text(json.dumps(index), encoding="utf-8")
+    assert cli.main(["maps", "--check"]) == 1
+    assert "frizqt" in capsys.readouterr().err
+    (site / "public" / "fonts").mkdir(parents=True)
+    (site / "public" / "fonts" / "frizqt.ttf").write_bytes(b"x")
+    assert cli.main(["maps", "--check"]) == 0

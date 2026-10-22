@@ -30,6 +30,8 @@ export interface Step {
   objectives?: Objective[];
   /** estimated player level when the step starts (pipeline xpsim.estimate_levels) */
   level?: number;
+  /** complete steps: spawn points (x, y on this map) where the objectives are done */
+  area?: [number, number][];
 }
 
 export interface Route {
@@ -315,7 +317,7 @@ export function questBrief(steps: Step[], current: Step, done: Set<string>): Que
   return { title, zone: zone(current), items };
 }
 
-export type IconName = 'accept' | 'turnin' | 'kill' | 'collect' | 'use' | 'grind';
+export type IconName = 'accept' | 'turnin' | 'progress' | 'kill' | 'collect' | 'use' | 'grind';
 
 /** The game icon for a step (site/public/art/icon-<name>.webp, from the minimap icon atlas), or null. */
 export function stepIcon(s: Step): IconName | null {
@@ -329,4 +331,14 @@ export function stepIcon(s: Step): IconName | null {
     default:
       return null;
   }
+}
+
+/** The map icon: like stepIcon, but a turn-in whose quest still has earlier unfinished steps shows the grey,
+ *  hollow "?" the game puts over a quest that is not done yet. */
+export function pinIcon(s: Step, steps: Step[], done: ReadonlySet<string>): IconName | null {
+  const icon = stepIcon(s);
+  if (icon !== 'turnin' || s.questId === undefined) return icon;
+  const at = steps.indexOf(s);
+  const open = steps.some((o, i) => i < at && o.questId === s.questId && !done.has(o.id));
+  return open ? 'progress' : 'turnin';
 }

@@ -117,6 +117,11 @@
   "icon-kill",
   "icon-collect",
   "icon-use",
-  "icon-grind"
+  "icon-grind",
+  "icon-progress"
+ ],
+ "fonts": [
+  "frizqt",
+  "morpheus"
  ]
 }

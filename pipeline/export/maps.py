@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageFilter
 
 from pipeline.ingest.wago import USER_AGENT, fetch_tables
 
@@ -176,6 +176,34 @@ def atlas_icon(atlas: Image.Image, col: int, row: int) -> Image.Image:
     return atlas.convert("RGBA").crop((col * ICON_SIZE, row * ICON_SIZE, (col + 1) * ICON_SIZE, (row + 1) * ICON_SIZE))
 
 
+DERIVED_SIZE = 64  # the reshaped icons are drawn at 4x and kept at 2x so their thin edges stay smooth
+THIN_WIDTH = 0.62  # width of the slim "!" relative to the game's
+
+
+def thin_icon(icon: Image.Image) -> Image.Image:
+    """The icon squeezed horizontally to THIN_WIDTH, centred on a square canvas (the slim "!" of unaccepted quests)."""
+    big = icon.convert("RGBA").resize((DERIVED_SIZE * 2, DERIVED_SIZE * 2), Image.LANCZOS)
+    w = round(big.width * THIN_WIDTH)
+    canvas = Image.new("RGBA", big.size, (0, 0, 0, 0))
+    canvas.alpha_composite(big.resize((w, big.height), Image.LANCZOS), ((big.width - w) // 2, 0))
+    return canvas.resize((DERIVED_SIZE, DERIVED_SIZE), Image.LANCZOS)
+
+
+def hollow_icon(icon: Image.Image, grey: int = 175, wall: int = 9) -> Image.Image:
+    """The icon in grey with its bright fill emptied, keeping a rim `wall` pixels (at 4x) wide inside the outline:
+    the hollow "?" the game shows over a quest that is accepted but not yet done."""
+    big = icon.convert("RGBA").resize((DERIVED_SIZE * 2, DERIVED_SIZE * 2), Image.LANCZOS)
+    opaque = big.getchannel("A").point(lambda v: 255 if v > 128 else 0)
+    fill = ImageChops.multiply(big.convert("L").point(lambda v: 255 if v > 90 else 0), opaque)
+    inside = fill.filter(ImageFilter.MinFilter(wall))
+    out = big.convert("LA").convert("RGBA")
+    rim = Image.new("RGBA", big.size, (grey, grey, grey, 255))
+    rim.putalpha(big.getchannel("A"))
+    out.paste(rim, mask=fill)
+    out.paste((0, 0, 0, 0), mask=inside)
+    return out.resize((DERIVED_SIZE, DERIVED_SIZE), Image.LANCZOS)
+
+
 def build_art(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.urlopen) -> list[str]:
     """Write <out_dir>/<name>.webp for the race crests, the quest parchment and the icons; returns the names."""
     cache = Path(raw_dir) / "art"
@@ -195,8 +223,13 @@ def build_art(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.ur
     names.append("parchment")
     atlas = _tile(ICON_ATLAS, cache, opener)
     for name, (col, row) in ATLAS_ICONS.items():
-        atlas_icon(atlas, col, row).save(out_dir / f"icon-{name}.webp", "WEBP", lossless=True)
+        icon = atlas_icon(atlas, col, row)
+        if name == "accept":
+            icon = thin_icon(icon)
+        icon.save(out_dir / f"icon-{name}.webp", "WEBP", lossless=True)
         names.append(f"icon-{name}")
+    hollow_icon(atlas_icon(atlas, *ATLAS_ICONS["turnin"])).save(out_dir / "icon-progress.webp", "WEBP", lossless=True)
+    names.append("icon-progress")
     return names
 
 
@@ -219,3 +252,25 @@ def build_item_icons(item_ids: list[int], build: str, raw_dir: Path, out_dir: Pa
         _tile(fdid, Path(raw_dir) / "icons", opener).convert("RGBA").save(out_dir / f"{fdid}.webp", "WEBP",
                                                                           quality=90)
     return index
+
+
+# The game's UI fonts (fonts/*.ttf in the client). Friz Quadrata is licensed to Blizzard by ITC/Monotype.
+GAME_FONTS: dict[str, int] = {"frizqt": 615960, "morpheus": 615962}
+
+
+def build_fonts(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.urlopen) -> list[str]:
+    """Copy the game fonts to <out_dir>/<name>.ttf; returns the names."""
+    cache = Path(raw_dir) / "fonts"
+    cache.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for name, fdid in GAME_FONTS.items():
+        path = cache / f"{fdid}.ttf"
+        if not path.is_file():
+            req = urllib.request.Request(CASC_URL.format(fdid=fdid), headers={"User-Agent": USER_AGENT})
+            with opener(req, timeout=60) as resp:
+                data = resp.read()
+            if not data.startswith((b"\x00\x01\x00\x00", b"true", b"OTTO")):
+                raise RuntimeError(f"font {name}: not a TrueType file")
+            path.write_bytes(data)
+        (out_dir / f"{name}.ttf").write_bytes(path.read_bytes())
+    return list(GAME_FONTS)
