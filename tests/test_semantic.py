@@ -17,6 +17,7 @@ QUESTS = {
     100: _q(100, prereqs=[783]),
     200: _q(200, minLevel=20),
     300: _q(300, confidence="unverified"),
+    400: {**_q(400), "inForever": False},
 }
 
 
@@ -72,6 +73,21 @@ def test_rule_duplicate_step_id():
 def test_rule_over_level():
     issues = _check("over-level")
     assert {(i.rule, i.stepId) for i in issues} == {("over-level", "s1"), ("over-level", "s2")}
+
+
+def test_rule_not_in_forever():
+    issues = _check("not-in-forever")
+    assert [(i.rule, i.stepId) for i in issues] == [
+        ("not-in-forever", "s1"), ("not-in-forever", "s2"),
+    ]
+    assert "quest 400 is not in Forever" in issues[0].message
+
+
+def test_in_forever_flag_true_or_absent_is_fine():
+    quests = {**QUESTS, 400: {**_q(400), "inForever": True}}
+    assert _check("not-in-forever", quests=quests) == []
+    quests = {**QUESTS, 400: _q(400)}
+    assert _check("not-in-forever", quests=quests) == []
 
 
 def test_over_level_uses_last_grind_untillevel():
