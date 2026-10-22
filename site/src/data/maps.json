@@ -101,5 +101,22 @@
    "width": 1002,
    "height": 668
   }
- }
+ },
+ "art": [
+  "crest-human",
+  "crest-gnome",
+  "crest-dwarf",
+  "crest-night-elf",
+  "crest-orc",
+  "crest-troll",
+  "crest-undead",
+  "crest-tauren",
+  "parchment",
+  "icon-accept",
+  "icon-turnin",
+  "icon-kill",
+  "icon-collect",
+  "icon-use",
+  "icon-grind"
+ ]
 }

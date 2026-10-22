@@ -358,7 +358,7 @@ Not: Aşama 1–3 çıkıştan önce beta verisiyle yapılır ve site "beta veri
 | 3.3 | RouteView listesi + `fxp:v1:<race>` | `site/src/islands/RouteView.tsx` | Playwright: işaretle, yenile, işaret duruyor | Test yeşil | 3.2, 2.7 | ecc:typescript-reviewer, ecc:react-reviewer |
 | 3.4 | Sade koordinat ızgarası haritası (Leaflet `CRS.Simple`), `<button>` pinler, +/−, koordinat listesi | `RouteView.tsx` | Pine klavyeyle erişim testi | Blizzard dokusu yok | 3.3 | ecc:react-reviewer |
 | 3.5 | Skip link, Space, live region, reduced motion, yüksek kontrast, 900/320px | `site/src/` | axe + 320px Playwright | axe 0 ihlal | 3.4 | impeccable |
-| 3.6 | "Beta" / "tam sürüm" etiketi, `unverified` ve `gap` adım işaretleri, "bu adımı bildir", meta etiketleri | `site/src/layouts/` | Playwright etiket kontrolü | Lighthouse SEO ≥ 90 | 3.3 ∥ | ecc:seo-specialist |
+| 3.6 | "Beta" / "tam sürüm" etiketi, `unverified` ve `gap` adım işaretleri, "bu adımı bildir", meta etiketleri (22 Ekim 2026, Eren: beta ve `unverified` işaretleri sitede gösterilmez; `gap` adımları "Skipped" olarak kalır) | `site/src/layouts/` | Playwright etiket kontrolü | Lighthouse SEO ≥ 90 | 3.3 ∥ | ecc:seo-specialist |
 | 3.7 | Cloudflare Pages dağıtımı, CSP (hesap kurulumu Eren'in onayıyla) | `.github/workflows/`, `site/public/_headers` | Başlık testi | Canlı URL açılıyor | 3.5 | ecc:security-reviewer |
 
 ### Aşama 4 · Çıkış günü

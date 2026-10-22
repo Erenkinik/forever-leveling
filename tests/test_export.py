@@ -161,3 +161,12 @@ def test_site_json_adds_estimated_levels_when_given():
     out = to_site_json(ROUTE, *args, levels={"accept-1": 1, "gap-2": 3})
     assert [s["level"] for s in out["steps"]] == [1, 3]
     assert "level" not in to_site_json(ROUTE, *args)["steps"][0]
+
+
+def test_site_json_collect_objectives_carry_the_item_icon_when_known():
+    route = {"id": "t", "steps": [{"id": "complete-5", "type": "complete", "questId": 5, "mapId": 1429, "x": 1.0, "y": 1.0}]}
+    quests = {5: {"name": "Q", "objectives": {"units": [10], "items": [750, 751], "objects": []}}}
+    spawns = {"units": {}, "objects": {}, "items": {}}
+    out = to_site_json(route, quests, spawns, {}, item_icons={"750": 133972, "751": None})
+    kill, meat, other = out["steps"][0]["objectives"]
+    assert "icon" not in kill and meat["icon"] == 133972 and other["icon"] is None

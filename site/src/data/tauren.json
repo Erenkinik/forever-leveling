@@ -72,7 +72,8 @@
      "name": "Plainstrider Meat",
      "sources": [
       "Plainstrider"
-     ]
+     ],
+     "icon": 133970
     },
     {
      "kind": "collect",
@@ -80,7 +81,8 @@
      "name": "Plainstrider Feather",
      "sources": [
       "Plainstrider"
-     ]
+     ],
+     "icon": 132918
     }
    ]
   },
@@ -103,7 +105,8 @@
      "name": "Chief Sharptusk Thornmantle's Head",
      "sources": [
       "Chief Sharptusk Thornmantle"
-     ]
+     ],
+     "icon": 134172
     }
    ]
   },
@@ -196,7 +199,8 @@
      "name": "Water Pitcher",
      "sources": [
       "Water Pitcher"
-     ]
+     ],
+     "icon": 132795
     }
    ]
   },
@@ -219,7 +223,8 @@
      "name": "Mountain Cougar Pelt",
      "sources": [
       "Mountain Cougar"
-     ]
+     ],
+     "icon": 134353
     }
    ]
   },
@@ -299,7 +304,8 @@
      "sources": [
       "Battleboar",
       "Bristleback Battleboar"
-     ]
+     ],
+     "icon": 135997
     },
     {
      "kind": "collect",
@@ -308,7 +314,8 @@
      "sources": [
       "Battleboar",
       "Bristleback Battleboar"
-     ]
+     ],
+     "icon": 133970
     }
    ]
   },
@@ -402,7 +409,8 @@
      "sources": [
       "Bristleback Quilboar",
       "Bristleback Shaman"
-     ]
+     ],
+     "icon": 132494
     }
    ]
   },
@@ -635,7 +643,8 @@
      "sources": [
       "Windfury Harpy",
       "Windfury Wind Witch"
-     ]
+     ],
+     "icon": 136063
     }
    ]
   },
@@ -660,7 +669,8 @@
       "Prairie Stalker",
       "Prairie Wolf",
       "Prairie Wolf Alpha"
-     ]
+     ],
+     "icon": 134338
     },
     {
      "kind": "collect",
@@ -668,7 +678,8 @@
      "name": "Flatland Cougar Femur",
      "sources": [
       "Flatland Cougar"
-     ]
+     ],
+     "icon": 133718
     },
     {
      "kind": "collect",
@@ -678,7 +689,8 @@
       "Adult Plainstrider",
       "Elder Plainstrider",
       "Mazzranache"
-     ]
+     ],
+     "icon": 134305
     },
     {
      "kind": "collect",
@@ -688,7 +700,8 @@
       "Swoop",
       "Wiry Swoop",
       "Taloned Swoop"
-     ]
+     ],
+     "icon": 134341
     }
    ]
   },
@@ -713,7 +726,8 @@
       "Prairie Stalker",
       "Prairie Wolf",
       "Prairie Wolf Alpha"
-     ]
+     ],
+     "icon": 134297
     },
     {
      "kind": "collect",
@@ -723,7 +737,8 @@
       "Adult Plainstrider",
       "Elder Plainstrider",
       "Mazzranache"
-     ]
+     ],
+     "icon": 136063
     }
    ]
   },
@@ -748,7 +763,8 @@
       "Swoop",
       "Wiry Swoop",
       "Taloned Swoop"
-     ]
+     ],
+     "icon": 135992
     }
    ]
   },
@@ -801,7 +817,8 @@
      "name": "Flatland Prowler Claw",
      "sources": [
       "Flatland Prowler"
-     ]
+     ],
+     "icon": 134297
     }
    ]
   },
@@ -950,7 +967,8 @@
      "name": "Well Stone",
      "sources": [
       "Well Stone"
-     ]
+     ],
+     "icon": 135238
     },
     {
      "kind": "collect",
@@ -958,7 +976,8 @@
      "name": "Ambercorn",
      "sources": [
       "Ambercorn"
-     ]
+     ],
+     "icon": 133944
     }
    ]
   },
@@ -1037,7 +1056,8 @@
      "name": "Stalker Claws",
      "sources": [
       "Prairie Stalker"
-     ]
+     ],
+     "icon": 134296
     },
     {
      "kind": "collect",
@@ -1045,7 +1065,8 @@
      "name": "Cougar Claws",
      "sources": [
       "Flatland Cougar"
-     ]
+     ],
+     "icon": 134297
     }
    ]
   },
@@ -1138,7 +1159,8 @@
      "name": "Prairie Alpha Tooth",
      "sources": [
       "Prairie Wolf Alpha"
-     ]
+     ],
+     "icon": 133725
     }
    ]
   },
@@ -1371,7 +1393,8 @@
      "name": "Azure Feather",
      "sources": [
       "Windfury Sorceress"
-     ]
+     ],
+     "icon": 132926
     },
     {
      "kind": "collect",
@@ -1379,7 +1402,8 @@
      "name": "Bronze Feather",
      "sources": [
       "Windfury Matriarch"
-     ]
+     ],
+     "icon": 132927
     }
    ]
   },
@@ -1403,7 +1427,8 @@
      "sources": [
       "Skeletal Trooper",
       "Spectral Spirit"
-     ]
+     ],
+     "icon": 134085
     }
    ]
   },
@@ -1442,7 +1467,8 @@
       "Laughing Sister",
       "Foulweald Totemic",
       "Foulweald Warrior"
-     ]
+     ],
+     "icon": 132911
     }
    ]
   },
@@ -1633,7 +1659,8 @@
      "name": "Horn of Arra'chea",
      "sources": [
       "Arra'chea"
-     ]
+     ],
+     "icon": 133722
     }
    ]
   },
@@ -1914,7 +1941,8 @@
      "name": "Fizzle's Claw",
      "sources": [
       "Fizzle Darkstorm"
-     ]
+     ],
+     "icon": 134294
     }
    ]
   },
@@ -2037,7 +2065,8 @@
       "Burning Blade Fanatic",
       "Burning Blade Apprentice",
       "Burning Blade Cultist"
-     ]
+     ],
+     "icon": 132519
     }
    ]
   },
@@ -2473,7 +2502,8 @@
       "Sunscale Lashtail",
       "Sunscale Screecher",
       "Ishamuhale"
-     ]
+     ],
+     "icon": 136217
     }
    ]
   },
@@ -2498,7 +2528,8 @@
       "Greater Plainstrider",
       "Fleeting Plainstrider",
       "Ornery Plainstrider"
-     ]
+     ],
+     "icon": 133707
     }
    ]
   },
@@ -2551,7 +2582,8 @@
      "name": "Crossroads' Supply Crates",
      "sources": [
       "Crossroads' Supply Crates"
-     ]
+     ],
+     "icon": 132761
     }
    ]
   },
@@ -2576,7 +2608,8 @@
       "Kolkar Stormer",
       "Kolkar Pack Runner",
       "Kolkar Wrangler"
-     ]
+     ],
+     "icon": 132607
     }
    ]
   },
@@ -2599,7 +2632,8 @@
      "name": "Fungal Spores",
      "sources": [
       "Laden Mushroom"
-     ]
+     ],
+     "icon": 133848
     }
    ]
   },
@@ -2622,7 +2656,8 @@
      "name": "Barak's Head",
      "sources": [
       "Barak Kodobane"
-     ]
+     ],
+     "icon": 134151
     }
    ]
   },
@@ -2647,7 +2682,8 @@
       "Witchwing Slayer",
       "Witchwing Roguefeather",
       "Witchwing Harpy"
-     ]
+     ],
+     "icon": 136063
     }
    ]
   },
@@ -2692,7 +2728,8 @@
       "Bristleback Water Seeker",
       "Bristleback Hunter",
       "Bristleback Thornweaver"
-     ]
+     ],
+     "icon": 133721
     }
    ]
   },
@@ -2715,7 +2752,8 @@
      "name": "Silithid Egg",
      "sources": [
       "Silithid Mound"
-     ]
+     ],
+     "icon": 132834
     }
    ]
   },
@@ -3048,7 +3086,8 @@
       "Zhevra Runner",
       "Zhevra Charger",
       "Swiftmane"
-     ]
+     ],
+     "icon": 132368
     }
    ]
   },
@@ -3071,7 +3110,8 @@
      "name": "Verog's Head",
      "sources": [
       "Verog the Dervish"
-     ]
+     ],
+     "icon": 134151
     }
    ]
   },
@@ -3114,7 +3154,8 @@
      "name": "Stolen Silver",
      "sources": [
       "Stolen Silver"
-     ]
+     ],
+     "icon": 133787
     }
    ]
   },
@@ -3147,7 +3188,8 @@
      "name": "Kreenig Snarlsnout's Tusk",
      "sources": [
       "Kreenig Snarlsnout"
-     ]
+     ],
+     "icon": 133722
     }
    ]
   },
@@ -3170,7 +3212,8 @@
      "name": "Harpy Lieutenant Ring",
      "sources": [
       "Witchwing Slayer"
-     ]
+     ],
+     "icon": 133344
     }
    ]
   },
@@ -3417,7 +3460,8 @@
      "name": "Prowler Claws",
      "sources": [
       "Savannah Prowler"
-     ]
+     ],
+     "icon": 132935
     }
    ]
   },
@@ -3440,7 +3484,8 @@
      "name": "Serena's Head",
      "sources": [
       "Serena Bloodfeather"
-     ]
+     ],
+     "icon": 136220
     }
    ]
   },
@@ -3463,7 +3508,8 @@
      "name": "Hezrul's Head",
      "sources": [
       "Hezrul Bloodmark"
-     ]
+     ],
+     "icon": 134151
     }
    ]
   },
@@ -3486,7 +3532,8 @@
      "name": "Altered Snapjaw Shell",
      "sources": [
       "Oasis Snapjaw"
-     ]
+     ],
+     "icon": 134303
     }
    ]
   },
@@ -3705,7 +3752,8 @@
      "name": "Echeyakee's Hide",
      "sources": [
       "Echeyakee"
-     ]
+     ],
+     "icon": 134371
     }
    ]
   },
@@ -3856,7 +3904,8 @@
       "Sunscale Lashtail",
       "Sunscale Screecher",
       "Sunscale Scytheclaw"
-     ]
+     ],
+     "icon": 132914
     },
     {
      "kind": "use",
@@ -4132,7 +4181,8 @@
       "Captain Fairmount",
       "Theramore Preserver",
       "Theramore Marine"
-     ]
+     ],
+     "icon": 133277
     }
    ]
   },
@@ -4157,7 +4207,8 @@
       "Mageroyal",
       "Silverleaf",
       "Peacebloom"
-     ]
+     ],
+     "icon": 134187
     }
    ]
   },
@@ -4182,7 +4233,8 @@
       "Sunscale Scytheclaw",
       "Ishamuhale",
       "Takk the Leaper"
-     ]
+     ],
+     "icon": 133723
     }
    ]
   },
@@ -4205,7 +4257,8 @@
      "name": "99-Year-Old Port",
      "sources": [
       "Mad Magglish"
-     ]
+     ],
+     "icon": 132797
     }
    ]
   },
@@ -4230,7 +4283,8 @@
       "Venture Co. Enforcer",
       "Venture Co. Overseer",
       "Boss Copperplug"
-     ]
+     ],
+     "icon": 134104
     }
    ]
   },
@@ -4267,7 +4321,8 @@
      "name": "Deepmoss Egg",
      "sources": [
       "Deepmoss Eggs"
-     ]
+     ],
+     "icon": 132834
     }
    ]
   },
@@ -4486,7 +4541,8 @@
      "name": "Wailing Essence",
      "sources": [
       "Devouring Ectoplasm"
-     ]
+     ],
+     "icon": 136016
     }
    ]
   },
@@ -4579,7 +4635,8 @@
      "name": "Shipment of Boots",
      "sources": [
       "Drizzlik's Emporium"
-     ]
+     ],
+     "icon": 134143
     },
     {
      "kind": "collect",
@@ -4587,7 +4644,8 @@
      "name": "Telescopic Lens",
      "sources": [
       "Fragile - Do Not Drop"
-     ]
+     ],
+     "icon": 134442
     }
    ]
   },
@@ -4638,7 +4696,8 @@
      "name": "Ignition Key",
      "sources": [
       "Supervisor Lugwizzle"
-     ]
+     ],
+     "icon": 134240
     }
    ]
   },
@@ -5108,7 +5167,8 @@
       "Deviate Stinglash",
       "Deviate Slayer",
       "Deviate Lurker"
-     ]
+     ],
+     "icon": 134370
     }
    ]
   },
@@ -5245,7 +5305,8 @@
      "name": "Ishamuhale's Fang",
      "sources": [
       "Ishamuhale"
-     ]
+     ],
+     "icon": 134298
     },
     {
      "kind": "collect",
@@ -5255,7 +5316,8 @@
       "Zhevra Runner",
       "Zhevra Charger",
       "Zhevra Courser"
-     ]
+     ],
+     "icon": 134368
     }
    ]
   },
@@ -5278,7 +5340,8 @@
      "name": "Charred Razormane Wand",
      "sources": [
       "Razormane Seer"
-     ]
+     ],
+     "icon": 135139
     },
     {
      "kind": "collect",
@@ -5287,7 +5350,8 @@
      "sources": [
       "Razormane Stalker",
       "Razormane Pathfinder"
-     ]
+     ],
+     "icon": 135640
     },
     {
      "kind": "collect",
@@ -5295,7 +5359,8 @@
      "name": "Razormane War Shield",
      "sources": [
       "Razormane Warfrenzy"
-     ]
+     ],
+     "icon": 134955
     }
    ]
   },
@@ -5404,7 +5469,8 @@
       "Thunderhead",
       "Stormsnout",
       "Stormhide"
-     ]
+     ],
+     "icon": 134719
     }
    ]
   },
@@ -5429,7 +5495,8 @@
       "Tin Vein",
       "Bristleback Hunter",
       "Bristleback Thornweaver"
-     ]
+     ],
+     "icon": 134128
     }
    ]
   },
@@ -5496,7 +5563,8 @@
       "Thunderhawk Cloudscraper",
       "Thunderhawk Hatchling",
       "Greater Thunderhawk"
-     ]
+     ],
+     "icon": 134303
     }
    ]
   },
@@ -5585,7 +5653,8 @@
      "name": "Khazgorm's Journal",
      "sources": [
       "Prospector Khazgorm"
-     ]
+     ],
+     "icon": 133741
     }
    ]
   },
@@ -5843,7 +5912,8 @@
      "name": "Stonetalon Sap",
      "sources": [
       "Sap Beast"
-     ]
+     ],
+     "icon": 134437
     },
     {
      "kind": "collect",
@@ -5853,7 +5923,8 @@
       "Fey Dragon",
       "Wily Fey Dragon",
       "Nal'taszar"
-     ]
+     ],
+     "icon": 134303
     },
     {
      "kind": "collect",
@@ -5861,7 +5932,8 @@
      "name": "Twilight Whisker",
      "sources": [
       "Twilight Runner"
-     ]
+     ],
+     "icon": 134324
     },
     {
      "kind": "collect",
@@ -5870,7 +5942,8 @@
      "sources": [
       "Antlered Courser",
       "Great Courser"
-     ]
+     ],
+     "icon": 133884
     }
    ]
   },
@@ -6005,7 +6078,8 @@
      "name": "Super Reaper 6000 Blueprints",
      "sources": [
       "Venture Co. Operator"
-     ]
+     ],
+     "icon": 134330
     }
    ]
   },
@@ -6184,7 +6258,8 @@
       "Rogue Flame Spirit",
       "Burning Ravager",
       "Burning Destroyer"
-     ]
+     ],
+     "icon": 134117
     }
    ]
   },
@@ -6242,7 +6317,8 @@
      "name": "Gaea Seed",
      "sources": [
       "Gaea Seed"
-     ]
+     ],
+     "icon": 133944
     }
    ]
   },
@@ -6295,7 +6371,8 @@
      "name": "Resonite Crystal",
      "sources": [
       "Resonite Crystal"
-     ]
+     ],
+     "icon": 134076
     }
    ]
   },
@@ -6492,7 +6569,8 @@
      "name": "Bloodfury Ripper's Remains",
      "sources": [
       "Bloodfury Ripper"
-     ]
+     ],
+     "icon": 134339
     }
    ]
   },
@@ -6529,7 +6607,8 @@
      "name": "Ordanus' Head",
      "sources": [
       "Keeper Ordanus"
-     ]
+     ],
+     "icon": 134161
     }
    ]
   },
@@ -6820,7 +6899,8 @@
       "Wrathtail Sorceress",
       "Wrathtail Wave Rider",
       "Wrathtail Myrmidon"
-     ]
+     ],
+     "icon": 134300
     }
    ]
   },
@@ -6843,7 +6923,8 @@
      "name": "Sapphire of Aku'Mai",
      "sources": [
       "Sapphire of Aku'Mai"
-     ]
+     ],
+     "icon": 134133
     }
    ]
   },
@@ -6891,7 +6972,8 @@
      "name": "Troll Charm",
      "sources": [
       "Troll Chest"
-     ]
+     ],
+     "icon": 133447
     }
    ]
   },
@@ -7216,7 +7298,8 @@
       "Xavian Betrayer",
       "Xavian Felsworn",
       "Bleakheart Hellcaller"
-     ]
+     ],
+     "icon": 133721
     }
    ]
   },
@@ -7399,7 +7482,8 @@
      "name": "Alien Egg",
      "sources": [
       "Alien Egg"
-     ]
+     ],
+     "icon": 135231
     }
    ]
   },
@@ -7452,7 +7536,8 @@
      "name": "Highperch Wyvern Egg",
      "sources": [
       "Highperch Wyvern Egg"
-     ]
+     ],
+     "icon": 132833
     }
    ]
   },
@@ -7545,7 +7630,8 @@
      "name": "Secret Note #1",
      "sources": [
       "Document Chest"
-     ]
+     ],
+     "icon": 134943
     },
     {
      "kind": "collect",
@@ -7553,7 +7639,8 @@
      "name": "Secret Note #2",
      "sources": [
       "Document Chest"
-     ]
+     ],
+     "icon": 134943
     },
     {
      "kind": "collect",
@@ -7561,7 +7648,8 @@
      "name": "Secret Note #3",
      "sources": [
       "Document Chest"
-     ]
+     ],
+     "icon": 134943
     }
    ]
   },
@@ -7794,7 +7882,8 @@
      "name": "Hypercapacitor Gizmo",
      "sources": [
       "Enraged Panther"
-     ]
+     ],
+     "icon": 133002
     }
    ]
   },
@@ -7817,7 +7906,8 @@
      "name": "Incendia Agave",
      "sources": [
       "Incendia Agave"
-     ]
+     ],
+     "icon": 134196
     }
    ]
   },
@@ -7925,7 +8015,8 @@
      "sources": [
       "Salt Flats Vulture",
       "Salt Flats Scavenger"
-     ]
+     ],
+     "icon": 133718
     }
    ]
   },
@@ -7950,7 +8041,8 @@
       "Scorpid Reaver",
       "Vile Sting",
       "Scorpid Terror"
-     ]
+     ],
+     "icon": 134797
     }
    ]
   },
@@ -7975,7 +8067,8 @@
       "Sparkleshell Snapper",
       "Sparkleshell Tortoise",
       "Sparkleshell Borer"
-     ]
+     ],
+     "icon": 134305
     }
    ]
   },

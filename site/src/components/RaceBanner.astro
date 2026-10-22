@@ -1,0 +1,34 @@
+---
+// A hanging banner in the race colours with the race crest, drawn behind the page content (decorative).
+import type { RaceTheme } from '../lib/races.ts';
+
+interface Props {
+  theme: RaceTheme;
+  /** route id; the banner shows the race crest from the game (site/public/art/crest-<id>.webp) */
+  routeId: string;
+}
+const { theme, routeId } = Astro.props;
+---
+<div class="race-banner" aria-hidden="true">
+  <svg viewBox="0 0 200 380" preserveAspectRatio="xMidYMin meet">
+    <defs>
+      <linearGradient id="banner-cloth" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color={theme.accent} stop-opacity=".9" />
+        <stop offset="1" stop-color={theme.deep} />
+      </linearGradient>
+    </defs>
+    <rect x="-6" y="0" width="212" height="12" rx="6" fill="#b8862e" />
+    <path d="M8 12h184v290l-92 64-92-64z" fill="url(#banner-cloth)" stroke="#f0c060" stroke-width="4" />
+    <path d="M20 24h160v270l-80 56-80-56z" fill="none" stroke="#f0c060" stroke-opacity=".45" stroke-width="2" />
+    <image href={`/art/crest-${routeId}.webp`} x="30" y="22" width="140" height="150" preserveAspectRatio="xMidYMid meet" />
+  </svg>
+</div>
+
+<style>
+  .race-banner {
+    position: absolute; top: 0; right: max(16px, calc((100vw - 1200px) / 2 - 40px)); width: 200px; z-index: 0;
+    pointer-events: none; opacity: .6;
+  }
+  .race-banner svg { width: 100%; height: auto; display: block; }
+  @media (max-width: 900px) { .race-banner { width: 120px; right: 8px; opacity: .35; } }
+</style>

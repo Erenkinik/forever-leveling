@@ -65,3 +65,98 @@ def test_maps_check_fails_for_a_map_never_built(tmp_path, monkeypatch, capsys):
     _env(tmp_path, monkeypatch, {"1429": None})
     assert cli.main(["maps", "--check"]) == 1
     assert "1436" in capsys.readouterr().err
+
+
+def test_stitch_quad_places_four_tiles_and_trims_transparent_edges():
+    from pipeline.export.maps import stitch_quad
+
+    clear = Image.new("RGBA", (4, 4), (0, 0, 0, 0))
+    solid = Image.new("RGBA", (4, 4), (200, 10, 10, 255))
+    img = stitch_quad([clear, solid, clear, solid])  # right column only
+    assert img.size == (4, 8)
+    assert img.getpixel((0, 0)) == (200, 10, 10, 255)
+
+
+def test_art_list_covers_every_route_race():
+    from pipeline.export.maps import ART_QUADS
+    from pipeline.generate.config import ROUTES
+
+    assert {f"crest-{r}" for r in ROUTES} <= set(ART_QUADS)
+
+
+def test_maps_check_needs_the_game_art_too(tmp_path, monkeypatch, capsys):
+    site = _env(tmp_path, monkeypatch, {"1429": None, "1436": None})
+    index = json.loads((site / "src" / "data" / "maps.json").read_text(encoding="utf-8"))
+    index["art"] = ["parchment"]
+    (site / "src" / "data" / "maps.json").write_text(json.dumps(index), encoding="utf-8")
+    (site / "public" / "art").mkdir(parents=True)
+    assert cli.main(["maps", "--check"]) == 1
+    assert "parchment" in capsys.readouterr().err
+    (site / "public" / "art" / "parchment.webp").write_bytes(b"x")
+    assert cli.main(["maps", "--check"]) == 0
+
+
+OVERLAY_TABLES = {
+    **TABLES,
+    "WorldMapOverlay": [
+        {"ID": "7", "UiMapArtID": "50", "TextureWidth": "6", "TextureHeight": "3", "OffsetX": "2", "OffsetY": "1",
+         "PlayerConditionID": "0"},
+        {"ID": "8", "UiMapArtID": "50", "TextureWidth": "4", "TextureHeight": "4", "OffsetX": "0", "OffsetY": "0",
+         "PlayerConditionID": "123"},  # conditional (phased) overlay: left out
+        {"ID": "9", "UiMapArtID": "99", "TextureWidth": "4", "TextureHeight": "4", "OffsetX": "0", "OffsetY": "0",
+         "PlayerConditionID": "0"},  # another map
+    ],
+    "WorldMapOverlayTile": [
+        {"ID": "1", "RowIndex": "0", "ColIndex": "1", "LayerIndex": "0", "FileDataID": "701", "WorldMapOverlayID": "7"},
+        {"ID": "2", "RowIndex": "0", "ColIndex": "0", "LayerIndex": "0", "FileDataID": "700", "WorldMapOverlayID": "7"},
+        {"ID": "3", "RowIndex": "0", "ColIndex": "0", "LayerIndex": "0", "FileDataID": "800", "WorldMapOverlayID": "8"},
+    ],
+}
+
+
+def test_map_art_carries_its_unconditional_explored_overlays():
+    art = map_art(1429, OVERLAY_TABLES)
+    assert [(o.x, o.y, o.width, o.height, o.tiles) for o in art.overlays] == [(2, 1, 6, 3, [(0, 0, 700), (0, 1, 701)])]
+
+
+def test_overlay_is_pasted_at_its_offset_through_its_alpha():
+    from pipeline.export.maps import paste_overlay
+
+    base = Image.new("RGB", (10, 6), (10, 10, 10))
+    left = Image.new("RGBA", (4, 4), (0, 200, 0, 255))
+    right = Image.new("RGBA", (4, 4), (0, 0, 0, 0))  # transparent: base shows through
+    paste_overlay(base, [(0, 0, left), (0, 1, right)], tile=4, x=2, y=1, width=6, height=3)
+    assert base.getpixel((2, 1)) == (0, 200, 0)
+    assert base.getpixel((7, 1)) == (10, 10, 10)
+    assert base.getpixel((2, 4)) == (10, 10, 10)  # below the overlay's 3-pixel height
+
+
+def test_atlas_icon_is_the_32px_cell_at_column_and_row():
+    from pipeline.export.maps import ATLAS_ICONS, atlas_icon
+
+    atlas = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    atlas.paste(Image.new("RGBA", (32, 32), (255, 210, 0, 255)), (32, 32))  # column 1, row 1
+    icon = atlas_icon(atlas, 1, 1)
+    assert icon.size == (32, 32) and icon.getpixel((0, 0)) == (255, 210, 0, 255)
+    assert set(ATLAS_ICONS) == {"accept", "turnin", "kill", "collect", "use", "grind"}
+
+
+def test_item_icon_ids_maps_items_to_their_icon_file():
+    from pipeline.export.maps import item_icon_ids
+
+    rows = [{"ID": "750", "IconFileDataID": "133972"}, {"ID": "17", "IconFileDataID": "0"}, {"ID": "9", "IconFileDataID": "5"}]
+    assert item_icon_ids([750, 17, 404], rows) == {"750": 133972, "17": None, "404": None}
+
+
+def test_route_collect_items_are_the_collect_objectives_of_completed_quests(tmp_path, monkeypatch):
+    data = tmp_path / "data"
+    (data / "routes").mkdir(parents=True)
+    (data / "canonical").mkdir()
+    (data / "routes" / "t.json").write_text(json.dumps({"steps": [
+        {"id": "complete-1", "type": "complete", "questId": 1, "mapId": 1429},
+        {"id": "accept-2", "type": "accept", "questId": 2, "mapId": 1429}]}), encoding="utf-8")
+    (data / "canonical" / "quests.json").write_text(json.dumps([
+        {"id": 1, "objectives": {"units": [5], "items": [750, 751], "objects": []}},
+        {"id": 2, "objectives": {"units": [], "items": [999], "objects": []}}]), encoding="utf-8")
+    monkeypatch.setattr(cli, "DATA_DIR", data)
+    assert cli._route_collect_items() == [750, 751]

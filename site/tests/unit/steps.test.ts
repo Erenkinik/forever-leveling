@@ -179,3 +179,64 @@ test('pinLabel names who or what is at the pin', async () => {
   assert.equal(pinLabel({ ...base, id: 't', type: 'travel', mode: 'walk' }), 'Elwynn Forest');
   assert.equal(pinLabel({ ...base, id: 'g', type: 'grind', untilLevel: 8 }), 'Grind to 8');
 });
+
+test('questBrief lists the current quest as numbered things to do, marking done and current ones', async () => {
+  const { questBrief } = await import('../../src/lib/steps.ts');
+  const q = { questId: 5, questName: 'Wolves Across the Border' };
+  const steps: Step[] = [
+    { ...base, id: 'accept-5', type: 'accept', ...q, npcName: 'Eagan Peltskinner', x: 48.9, y: 40.2 },
+    { ...base, id: 'accept-6', type: 'accept', questId: 6, questName: 'Other', npcName: 'X' },
+    { ...base, id: 'complete-5', type: 'complete', ...q, x: 47.0, y: 36.5, objectives: [
+      { kind: 'collect', id: 750, name: 'Tough Wolf Meat', sources: ['Young Wolf', 'Timber Wolf'] },
+      { kind: 'kill', id: 10, name: 'Kobold Vermin' },
+    ] },
+    { ...base, id: 'turnin-5', type: 'turnin', ...q, npcName: 'Eagan Peltskinner', x: 48.9, y: 40.2 },
+  ];
+  const brief = questBrief(steps, steps[2], new Set(['accept-5']));
+  assert.equal(brief.title, 'Wolves Across the Border');
+  const text = (parts: { text: string }[]) => parts.map((p) => p.text).join('');
+  assert.deepEqual(brief.items.map((i) => [text(i.parts), i.state]), [
+    ['Talk to Eagan Peltskinner at 48.9, 40.2 and accept the quest.', 'done'],
+    ['Collect Tough Wolf Meat from Young Wolf, Timber Wolf around 47.0, 36.5.', 'current'],
+    ['Kill Kobold Vermin around 47.0, 36.5.', 'current'],
+    ['Return to Eagan Peltskinner at 48.9, 40.2 and turn the quest in.', 'todo'],
+  ]);
+  assert.equal(brief.zone, 'Elwynn Forest');
+});
+
+test('questBrief for a step without a quest describes the stop', async () => {
+  const { questBrief } = await import('../../src/lib/steps.ts');
+  const travel: Step = { ...base, id: 't', type: 'travel', mode: 'boat', zoneName: 'Darkshore' };
+  const brief = questBrief([travel], travel, new Set());
+  assert.equal(brief.title, 'Darkshore');
+  assert.deepEqual(brief.items.map((i) => i.parts.map((p) => p.text).join('')), ['Take the boat to Darkshore.']);
+  const grind: Step = { ...base, id: 'g', type: 'grind', untilLevel: 12 };
+  assert.deepEqual(questBrief([grind], grind, new Set()).items.map((i) => i.parts.map((p) => p.text).join('')),
+    ['Kill monsters around 48.2, 41.7 until you reach level 12.']);
+});
+
+test('stepIcon picks the game icon for the step', async () => {
+  const { stepIcon } = await import('../../src/lib/steps.ts');
+  const s = (type: Step['type'], extra: Partial<Step> = {}): Step => ({ ...base, id: type, type, ...extra });
+  assert.equal(stepIcon(s('accept')), 'accept');
+  assert.equal(stepIcon(s('turnin')), 'turnin');
+  assert.equal(stepIcon(s('complete', { objectives: [{ kind: 'kill', id: 1, name: 'A' }] })), 'kill');
+  assert.equal(stepIcon(s('complete', { objectives: [{ kind: 'collect', id: 1, name: 'A', sources: [] }] })), 'collect');
+  assert.equal(stepIcon(s('complete', { objectives: [{ kind: 'use', id: 1, name: 'A' }] })), 'use');
+  assert.equal(stepIcon(s('complete')), 'kill');
+  assert.equal(stepIcon(s('grind', { untilLevel: 5 })), 'grind');
+  assert.equal(stepIcon(s('travel', { mode: 'walk' })), null);
+  assert.equal(stepIcon(s('gap')), null);
+});
+
+test('collect objectives carry the item icon into the text parts', async () => {
+  const { questBrief } = await import('../../src/lib/steps.ts');
+  const step: Step = { ...base, id: 'complete-5', type: 'complete', questId: 5, questName: 'Q', objectives: [
+    { kind: 'collect', id: 750, name: 'Tough Wolf Meat', sources: ['Young Wolf'], icon: 133972 },
+    { kind: 'collect', id: 751, name: 'No Icon', sources: [], icon: null },
+  ] };
+  const items = questBrief([step], step, new Set()).items;
+  assert.equal(items[0].parts.find((p) => p.kind === 'item')?.icon, '/art/items/133972.webp');
+  assert.equal(items[1].parts.find((p) => p.kind === 'item')?.icon, undefined);
+  assert.equal(describeStep(step).find((p) => p.kind === 'item')?.icon, '/art/items/133972.webp');
+});

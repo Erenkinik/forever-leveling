@@ -5,15 +5,20 @@ import '@fontsource/source-serif-4/400.css';
 import '@fontsource/source-serif-4/600.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/tokens.css';
+import Emblem from '../components/Emblem.astro';
+import type { RaceTheme } from '../lib/races.ts';
 
 interface Props {
   title: string;
   description: string;
+  /** A race page: its colours tint the page background and accents. */
+  theme?: RaceTheme;
 }
-const { title, description } = Astro.props;
+const { title, description, theme } = Astro.props;
+const themeStyle = theme ? `--race: ${theme.accent}; --race-deep: ${theme.deep};` : undefined;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" style={themeStyle}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +27,7 @@ const { title, description } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta name="theme-color" content="#0f0c08" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script is:inline>
       // High contrast before first paint; the key and shape match SETTINGS_KEY in src/lib/steps.ts.
       try {
@@ -33,29 +39,48 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <slot name="skip" />
+    <slot name="backdrop" />
     <div class="wrap">
       <header class="site-header">
-        <a class="brand" href="/">ForeverXP</a>
+        <a class="brand" href="/" aria-label="ForeverXP home">
+          <Emblem size={40} />
+          <span class="wordmark">Forever<span class="xp">XP</span></span>
+        </a>
         <slot name="header" />
       </header>
       <slot />
       <footer class="site-footer">
-        Free WoW Forever leveling guide. Routes are generated from open data and are not yet verified in game.
+        ForeverXP is a free, fan-made leveling guide for WoW Forever. Spotted a wrong step? Use “Report this step”.
+        World of Warcraft is a trademark of Blizzard Entertainment; this site is not affiliated with Blizzard.
       </footer>
     </div>
   </body>
 </html>
 
 <style is:global>
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 16px; }
+  :root { --race: #b8862e; --race-deep: #2a2216; }
+  body {
+    position: relative; min-height: 100vh;
+    background:
+      radial-gradient(1100px 520px at 78% -8%, color-mix(in srgb, var(--race-deep) 90%, transparent), transparent 70%),
+      radial-gradient(700px 420px at 0% 0%, color-mix(in srgb, var(--race) 10%, transparent), transparent 70%),
+      var(--bg);
+  }
+  :root[data-contrast="high"] body { background: var(--bg); }
+  .wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 16px; }
   .site-header {
     display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
-    padding: 12px 0 16px; border-bottom: 1px solid var(--border-subtle);
+    padding: 12px 0 16px; border-bottom: 1px solid color-mix(in srgb, var(--race) 45%, var(--border-subtle));
   }
   .brand {
-    font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--gold);
-    letter-spacing: .02em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center;
+    font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--text);
+    letter-spacing: .04em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; gap: 10px;
   }
+  .brand .xp {
+    background: linear-gradient(180deg, #ffe7a3, #f0c060 55%, #b8862e); -webkit-background-clip: text;
+    background-clip: text; color: var(--gold); -webkit-text-fill-color: transparent;
+  }
+  :root[data-contrast="high"] .brand .xp { -webkit-text-fill-color: var(--gold); background: none; }
   h1, h2 { font-family: var(--font-display); color: var(--gold); letter-spacing: .02em; }
   .site-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-subtle); color: var(--muted); font-size: 14px; }
 </style>

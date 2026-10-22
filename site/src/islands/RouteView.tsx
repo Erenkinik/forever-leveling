@@ -1,11 +1,15 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, reportUrl, safeStorage, saveDone,
+  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief, reportUrl,
+  safeStorage, saveDone, stepIcon,
   saveSettings, searchSteps, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import mapIndex from '../data/maps.json';
+import RaceSwitcher, { type RouteMeta } from './RaceSwitcher.tsx';
+import StepIcon from './StepIcon.tsx';
+import { useDisclosure } from './useDisclosure.ts';
 import './RouteView.css';
 
 // Zone map art (python -m pipeline maps): size per UiMap id, or null when the game has no art for it.
@@ -20,13 +24,21 @@ const MAP_AHEAD = 6;
 // the pin size plus a small gap are merged so targets never overlap (WCAG 2.5.8).
 const PIN_SPACING_PX = { fine: 32, coarse: 48 };
 
+const isTodo = (s: Step, done: Set<string>) => s.type !== 'gap' && !done.has(s.id);
 const plain = (s: Step) => describeStep(s).map((p) => p.text).join('');
 const coords = (s: Step) => `${s.x.toFixed(1)}, ${s.y.toFixed(1)}`;
 
 function Text({ parts }: { parts: Part[] }) {
   return (
     <>
-      {parts.map((p, i) => (p.kind ? <span key={i} className={p.kind}>{p.text}</span> : <span key={i}>{p.text}</span>))}
+      {parts.map((p, i) => (p.kind
+        ? (
+          <span key={i} className={p.kind}>
+            {p.icon && <img className="item-icon" src={p.icon} alt="" width={22} height={22} loading="lazy" />}
+            {p.text}
+          </span>
+        )
+        : <span key={i}>{p.text}</span>))}
     </>
   );
 }
@@ -64,13 +76,13 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
               onClick={(e) => onToggle(step, e)}>
         {isDone ? '✓' : n}
       </button>
+      <StepIcon step={step} />
       <div className="body">
         {isCurrent && <span className="now">Now</span>}
         <span className="text"><Text parts={describeStep(step)} /></span>
         <span className="meta">
           <span className="xy">{coords(step)}</span>
-          {step.type === 'gap' && <span className="tag warn">Not routed</span>}
-          {step.confidence === 'unverified' && step.type !== 'gap' && <span className="tag">Unverified</span>}
+          {step.type === 'gap' && <span className="tag warn">Skipped</span>}
           {reportHref && (
             <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
               Report this step<span className="sr-only"> (opens GitHub in a new tab)</span>
@@ -82,7 +94,32 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
   );
 });
 
-export default function RouteView({ route }: { route: Route }) {
+function Settings({ settings, update }: { settings: Settings; update: (patch: Partial<Settings>) => void }) {
+  const { open, setOpen, buttonRef, rootRef } = useDisclosure();
+  return (
+    <div className="settings" ref={rootRef}>
+      <button ref={buttonRef} type="button" className="icon-button" aria-expanded={open}
+              aria-controls="settings-panel" onClick={() => setOpen(!open)}>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM19.4 13.5l1.8 1.4-2 3.4-2.1-.8a7 7 0 0 1-1.9 1.1L14.9 21h-4l-.3-2.4a7 7 0 0 1-1.9-1.1l-2.1.8-2-3.4 1.8-1.4a7 7 0 0 1 0-3L4.6 9.1l2-3.4 2.1.8a7 7 0 0 1 1.9-1.1L10.9 3h4l.3 2.4a7 7 0 0 1 1.9 1.1l2.1-.8 2 3.4-1.8 1.4a7 7 0 0 1 0 3z" />
+        </svg>
+        <span className="sr-only">Settings</span>
+      </button>
+      <div id="settings-panel" className="settings-panel" hidden={!open}>
+        <label>
+          <input type="checkbox" checked={settings.shortcuts} onChange={(e) => update({ shortcuts: e.target.checked })} />
+          Space marks the current step done
+        </label>
+        <label>
+          <input type="checkbox" checked={settings.highContrast} onChange={(e) => update({ highContrast: e.target.checked })} />
+          High contrast
+        </label>
+      </div>
+    </div>
+  );
+}
+
+export default function RouteView({ route, routes }: { route: Route; routes: RouteMeta[] }) {
   const steps = route.steps;
   const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
   const validIds = useMemo(() => new Set(steps.map((s) => s.id)), [steps]);
@@ -121,7 +158,8 @@ export default function RouteView({ route }: { route: Route }) {
     saveSettings(store(), next);
   };
 
-  const currentIndex = steps.findIndex((s) => !done.has(s.id));
+  // Skipped (gap) steps are information, not something to do: they never become the current step.
+  const currentIndex = steps.findIndex((s) => isTodo(s, done));
   const current = currentIndex >= 0 ? steps[currentIndex] : undefined;
 
   const toggle = (step: Step) => {
@@ -132,7 +170,7 @@ export default function RouteView({ route }: { route: Route }) {
     setDone(next);
     saveDone(store(), route.id, next);
     const n = (index.get(step.id) ?? 0) + 1;
-    const following = steps.find((s) => !next.has(s.id));
+    const following = steps.find((s) => isTodo(s, next));
     setAnnouncement(wasDone
       ? `Step ${n} marked not done.`
       : `Step ${n} done.${following ? ` Next: ${plain(following)}.` : ' Route complete.'}`);
@@ -156,7 +194,7 @@ export default function RouteView({ route }: { route: Route }) {
       if (e.key !== ' ' || e.ctrlKey || e.metaKey || e.altKey || spaceBelongsToTarget(e.target)) return;
       e.preventDefault();
       if (e.repeat) return; // holding Space must not run through the route
-      const cur = steps.find((s) => !done.has(s.id));
+      const cur = steps.find((s) => isTodo(s, done));
       if (cur) toggleRef.current(cur);
     };
     window.addEventListener('keydown', onKey);
@@ -206,34 +244,28 @@ export default function RouteView({ route }: { route: Route }) {
 
   return (
     <div className="route-view">
-      <div className="route-bar">
-        <div className="route-title">
-          <span className={`pill ${route.faction.toLowerCase()}`}>
-            <span aria-hidden="true">{route.faction === 'Alliance' ? '◆' : '▲'}</span> {route.faction} · {route.race}
-          </span>
-          <span className="pill">Levels {route.levelRange[0]}–{route.levelRange[1]}</span>
-          {route.releaseTier === 'beta' && <span className="pill beta">Beta · not verified in game</span>}
-          <a className="pill" href="/">Change race</a>
-        </div>
+      <div className="topbar">
+        <RaceSwitcher current={{ id: route.id, race: route.race, faction: route.faction }} routes={routes} />
         <div className="progress">
           <label htmlFor="route-progress">
-            Step {position} of {steps.length} · {doneCount} done
-            {current?.level !== undefined && <> · about level {current.level}</>}
+            <span className="progress-step">Step {position}<span className="of"> / {steps.length}</span></span>
+            {current?.level !== undefined && <span className="progress-level">Level ~{current.level}</span>}
           </label>
           <progress id="route-progress" max={steps.length} value={doneCount} />
         </div>
         <div className="search">
-          <label htmlFor="step-search">Find a quest or NPC</label>
-          <input id="step-search" type="search" value={query} autoComplete="off"
+          <label htmlFor="step-search" className="sr-only">Find a quest or NPC</label>
+          <input id="step-search" type="search" value={query} autoComplete="off" placeholder="Find a quest or NPC"
                  onChange={(e) => setQuery(e.target.value)} aria-describedby="step-search-count" />
-          <p id="step-search-count" className="search-count" aria-live="polite">
+          <p id="step-search-count" className="sr-only" aria-live="polite">
             {query.trim() ? `${found.length > SEARCH_LIMIT ? `${SEARCH_LIMIT}+` : found.length} found` : ''}
           </p>
-          {matches.length > 0 && (
+          {query.trim() !== '' && (
             <ul className="search-results">
+              {matches.length === 0 && <li className="search-empty">No quest or NPC matches.</li>}
               {matches.map((s) => (
                 <li key={s.id}>
-                  <button type="button" onClick={() => focusStep(s)}>
+                  <button type="button" onClick={() => { focusStep(s); setQuery(''); }}>
                     <strong>{(index.get(s.id) ?? 0) + 1}</strong> {plain(s)}
                   </button>
                 </li>
@@ -241,17 +273,7 @@ export default function RouteView({ route }: { route: Route }) {
             </ul>
           )}
         </div>
-        <div className="settings">
-          <label>
-            <input type="checkbox" checked={settings.shortcuts} onChange={(e) => updateSettings({ shortcuts: e.target.checked })} />
-            Space marks the current step done
-          </label>
-          <label>
-            <input type="checkbox" checked={settings.highContrast}
-                   onChange={(e) => updateSettings({ highContrast: e.target.checked })} />
-            High contrast
-          </label>
-        </div>
+        <Settings settings={settings} update={updateSettings} />
       </div>
       <p id="announcer" className="sr-only" aria-live="polite">{announcement}</p>
 
@@ -304,6 +326,7 @@ export default function RouteView({ route }: { route: Route }) {
                     const numbers = group.map((s) => (index.get(s.id) ?? 0) + 1).sort((a, b) => a - b);
                     const state = lead === current ? 'current' : group.every((s) => done.has(s.id)) ? 'done' : 'todo';
                     const n = (index.get(lead.id) ?? 0) + 1;
+                    const icon = stepIcon(lead);
                     // Starts with the visible text (number, label) so the name matches what is seen (WCAG 2.5.3).
                     const label = `${n} ${pinLabel(lead)}, ` + (group.length === 1
                       ? `step ${n} at ${coords(lead)}: ${plain(lead)}`
@@ -312,12 +335,13 @@ export default function RouteView({ route }: { route: Route }) {
                       <button
                         key={lead.id}
                         type="button"
-                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}`}
+                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}${icon ? ' has-icon' : ''}`}
                         style={{ left: `${lead.x}%`, top: `${lead.y}%` }}
                         aria-label={label}
                         onClick={() => focusStep(lead)}
                       >
-                        {state === 'done' ? '✓' : n}{' '}
+                        {icon && <img src={`/art/icon-${icon}.webp`} alt="" width={32} height={32} />}
+                        <span className="pin-num">{state === 'done' ? '✓' : n}</span>{' '}
                         <span className="pin-label">{pinLabel(lead)}</span>
                       </button>
                     );
@@ -330,11 +354,32 @@ export default function RouteView({ route }: { route: Route }) {
                 <button type="button" aria-label="Zoom out" disabled={zoom === 0}
                         onClick={() => setZoom((z) => Math.max(0, z - 1))}>−</button>
               </div>
-              <ol className="coords" aria-label="Coordinates of the steps on the map">
-                {mapSteps.map((s) => (
-                  <li key={s.id}><strong>{(index.get(s.id) ?? 0) + 1}</strong> {coords(s)} · {plain(s)}</li>
-                ))}
-              </ol>
+              {(() => {
+                const brief = questBrief(steps, current, done);
+                return (
+                  <section className="quest-scroll" aria-labelledby="quest-title">
+                    <h3 id="quest-title">{brief.title}</h3>
+                    <p className="quest-zone">{brief.zone}</p>
+                    <ol>
+                      {brief.items.map((item, i) => (
+                        <li key={`${item.stepId}-${i}`} className={item.state}
+                            aria-current={item.state === 'current' ? 'step' : undefined}>
+                          <Text parts={item.parts} />
+                          {item.state === 'done' && <span className="sr-only"> (done)</span>}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                );
+              })()}
+              <details className="coords-details">
+                <summary>All pins on this map</summary>
+                <ol className="coords" aria-label="Coordinates of the steps on the map">
+                  {mapSteps.map((s) => (
+                    <li key={s.id}><strong>{(index.get(s.id) ?? 0) + 1}</strong> {coords(s)} · {plain(s)}</li>
+                  ))}
+                </ol>
+              </details>
               <p className="map-note">
                 {art ? 'Map art © Blizzard Entertainment. ' : 'Simple coordinate grid (0–100). '}
                 Coordinates match the in-game map.

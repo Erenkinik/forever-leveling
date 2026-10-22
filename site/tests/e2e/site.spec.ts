@@ -1,18 +1,24 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+
+/** The settings live behind the gear button. */
+async function openSettings(page: Page) {
+  const gear = page.getByRole('button', { name: 'Settings' });
+  if ((await gear.getAttribute('aria-expanded')) !== 'true') await gear.click();
+}
 
 const ROUTES = ['dwarf', 'gnome', 'human', 'night-elf', 'orc', 'tauren', 'troll', 'undead'];
 
 test('race picker reaches every route and marks Skyborne as coming soon', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Choose your race');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Level 1 to 30, the fast way');
   const hrefs = await page.locator('a.race').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
   expect(hrefs.sort()).toEqual(ROUTES.map((r) => `/${r}/`).sort());
   await expect(page.getByText('Coming soon')).toHaveCount(2);
   for (const route of ROUTES) {
     const res = await page.goto(`/${route}/`);
     expect(res?.status()).toBe(200);
-    await expect(page.locator('[aria-current="step"]')).toHaveCount(1);
+    await expect(page.locator('li.step[aria-current="step"]')).toHaveCount(1);
   }
 });
 
@@ -26,7 +32,7 @@ test('a marked step stays marked after reload', async ({ page }) => {
   await page.reload();
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step').first()).toHaveClass(/done/);
-  await expect(page.getByText('Step 2 of')).toBeVisible();
+  await expect(page.locator('.progress-step')).toHaveText('Step 2 / 697');
   // Progress is per route.
   await page.goto('/orc/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
@@ -39,6 +45,7 @@ test('Space marks the current step done and is announced; the shortcut can be tu
   await page.keyboard.press('Space');
   await expect(page.locator('li.step').first()).toHaveClass(/done/);
   await expect(page.locator('#announcer')).toContainText('Step 1 done. Next:');
+  await openSettings(page);
   await page.getByLabel('Space marks the current step done').uncheck();
   await page.locator('h2.zone').first().click();
   await page.keyboard.press('Space');
@@ -70,6 +77,7 @@ test('map pins are keyboard buttons that lead to their step', async ({ page }) =
 test('high contrast switch sets the contrast theme', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await openSettings(page);
   await page.getByLabel('High contrast').check();
   await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
 });
@@ -152,12 +160,13 @@ test('the current pin sits on the current step coordinates', async ({ page }) =>
 test('route page has one main landmark and one h1', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('main')).toHaveCount(1);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Human 1–30 route');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Human 1–30 leveling route');
 });
 
 test('high contrast is remembered across pages and reloads', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await openSettings(page);
   await page.getByLabel('High contrast').check();
   await page.goto('/');
   await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
@@ -188,6 +197,7 @@ test('pages work under the CSP from dist/_headers', async ({ page }) => {
   await page.goto('/');
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await openSettings(page);
   await page.getByLabel('High contrast').check();
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-contrast', 'high');
@@ -199,7 +209,7 @@ test('steps show objectives, levels and plain-language gap reasons', async ({ pa
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step.complete').first()).toContainText(/: (kill|collect|use) /);
   await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+$/);
-  await expect(page.locator('label[for="route-progress"]')).toContainText('about level 1');
+  await expect(page.locator('.progress-level')).toHaveText('Level ~1');
   const gap = page.locator('li.step.gap').first();
   await expect(gap).toContainText('Skip for now:');
   await expect(gap).not.toContainText(/quest \d+:/);
@@ -231,4 +241,68 @@ test('the map shows the zone art with a labelled current pin', async ({ page }) 
   expect(res.headers()['content-type']).toContain('image/webp');
   await expect(page.locator('.pin.current .pin-label')).toHaveText('Deputy Willem');
   await expect(page.locator('.map-note')).toContainText('Blizzard Entertainment');
+});
+
+test('the race switcher lists every race and moves to the chosen one', async ({ page }) => {
+  await page.goto('/human/');
+  const button = page.getByRole('button', { name: /Change race/ });
+  await expect(button).toHaveAttribute('aria-expanded', 'false');
+  await button.click();
+  await expect(button).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.race-panel a')).toHaveCount(8);
+  await expect(page.locator('.race-panel a[aria-current="page"]')).toHaveText('Human');
+  await page.keyboard.press('Escape');
+  await expect(button).toHaveAttribute('aria-expanded', 'false');
+  await expect(button).toBeFocused();
+  await button.click();
+  await page.locator('.race-panel').getByRole('link', { name: 'Orc' }).click();
+  await expect(page).toHaveURL(/\/orc\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Orc');
+});
+
+test('skipped steps are never the current step', async ({ page }) => {
+  await page.goto('/orc/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.locator('li.step.current')).not.toHaveClass(/gap/);
+  await expect(page.locator('.tag', { hasText: 'Unverified' })).toHaveCount(0);
+});
+
+test('the quest scroll under the map lists what to do for the current quest', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const scroll = page.locator('.quest-scroll');
+  await expect(scroll.locator('h3')).toHaveText('A Threat Within');
+  const items = scroll.locator('ol > li');
+  await expect(items.first()).toContainText('Talk to Deputy Willem at 48.2, 42.9 and accept the quest.');
+  await expect(items.first()).toHaveAttribute('aria-current', 'step');
+  await expect(items.last()).toContainText('turn the quest in.');
+  await page.getByRole('button', { name: 'Step 1 done' }).click();
+  await expect(scroll.locator('h3')).toHaveText('Rest and Relaxation');
+});
+
+test('race crests and the parchment are served', async ({ page }) => {
+  for (const path of ['/art/crest-human.webp', '/art/crest-orc.webp', '/art/parchment.webp']) {
+    const res = await page.request.get(path);
+    expect(res.status(), path).toBe(200);
+  }
+});
+
+test('items to collect show their game icon, and map pins use the game quest icons', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const icon = page.locator('li.step .item img.item-icon').first();
+  await expect(icon).toBeVisible();
+  const src = (await icon.getAttribute('src'))!;
+  expect(src).toMatch(/^\/art\/items\/\d+\.webp$/);
+  expect((await page.request.get(src)).status()).toBe(200);
+  await expect(page.locator('.pin.current img')).toHaveAttribute('src', '/art/icon-accept.webp');
+});
+
+test('high contrast keeps the quest parchment', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await openSettings(page);
+  await page.getByLabel('High contrast').check();
+  const bg = await page.locator('.quest-scroll').evaluate((el) => getComputedStyle(el).backgroundImage);
+  expect(bg).toContain('parchment.webp');
 });

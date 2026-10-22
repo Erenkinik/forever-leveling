@@ -8,6 +8,8 @@ export interface Objective {
   name: string | null;
   /** collect only: nearest units/objects on the step's map that drop the item */
   sources?: string[];
+  /** collect only: the item's icon FileDataID (site/public/art/items/<id>.webp), null when it has none */
+  icon?: number | null;
 }
 
 export interface Step {
@@ -45,6 +47,8 @@ export interface Route {
 export interface Part {
   text: string;
   kind?: 'quest' | 'npc' | 'item';
+  /** an image shown before the text (item icons) */
+  icon?: string;
 }
 
 const TRAVEL_VERB: Record<string, string> = {
@@ -58,6 +62,7 @@ const zone = (s: Step): string => s.zoneName ?? `map #${s.mapId}`;
 function objectiveParts(o: Objective): Part[] {
   if (o.kind === 'kill') return [{ text: 'kill ' }, { text: o.name ?? `NPC #${o.id}`, kind: 'npc' }];
   const thing: Part = { text: o.name ?? (o.kind === 'use' ? `object #${o.id}` : `item #${o.id}`), kind: 'item' };
+  if (o.icon) thing.icon = `/art/items/${o.icon}.webp`;
   if (o.kind === 'use') return [{ text: 'use ' }, thing];
   const from = (o.sources ?? []).flatMap((name, i): Part[] => [
     { text: i === 0 ? ' from ' : ', ' }, { text: name, kind: 'npc' }]);
@@ -255,5 +260,73 @@ export function pinLabel(s: Step): string {
       return `Grind to ${s.untilLevel}`;
     default:
       return s.questName ?? zone(s);
+  }
+}
+
+export interface BriefItem {
+  stepId: string;
+  parts: Part[];
+  state: 'done' | 'current' | 'todo';
+}
+
+export interface QuestBrief {
+  title: string;
+  zone: string;
+  items: BriefItem[];
+}
+
+const xy = (s: Step) => `${s.x.toFixed(1)}, ${s.y.toFixed(1)}`;
+
+function briefParts(s: Step, here: Step): Part[][] {
+  const where = s.zoneName && s.zoneName !== here.zoneName ? ` in ${s.zoneName}` : '';
+  switch (s.type) {
+    case 'accept':
+      return [[{ text: 'Talk to ' }, npc(s), { text: ` at ${xy(s)}${where} and accept the quest.` }]];
+    case 'turnin':
+      return [[{ text: 'Return to ' }, npc(s), { text: ` at ${xy(s)}${where} and turn the quest in.` }]];
+    case 'complete':
+      if (!s.objectives?.length) return [[{ text: `Complete the objectives around ${xy(s)}${where}.` }]];
+      return s.objectives.map((o) => {
+        const parts = objectiveParts(o);
+        const [verb, ...rest] = parts;
+        const capital = { ...verb, text: verb.text.charAt(0).toUpperCase() + verb.text.slice(1) };
+        const at = o.kind === 'use' ? ` at ${xy(s)}${where}.` : ` around ${xy(s)}${where}.`;
+        return [capital, ...rest, { text: at }];
+      });
+    case 'travel':
+      return [[{ text: `${TRAVEL_VERB[s.mode ?? 'walk'] ?? 'Travel to'} ${zone(s)}.` }]];
+    case 'grind':
+      return [[{ text: `Kill monsters around ${xy(s)} until you reach level ${s.untilLevel}.` }]];
+    default:
+      return [[...describeStep(s), { text: '.' }]];
+  }
+}
+
+/** What to do for the current step's quest, step by step in route order; a step without a quest describes itself. */
+export function questBrief(steps: Step[], current: Step, done: Set<string>): QuestBrief {
+  const own = current.questId === undefined
+    ? [current]
+    : steps.filter((s) => s.questId === current.questId && s.type !== 'gap');
+  const items = own.flatMap((s) => {
+    const state = done.has(s.id) ? 'done' : s === current ? 'current' : 'todo';
+    return briefParts(s, current).map((parts) => ({ stepId: s.id, parts, state }) as BriefItem);
+  });
+  const title = current.questId === undefined ? zone(current) : current.questName ?? `quest #${current.questId}`;
+  return { title, zone: zone(current), items };
+}
+
+export type IconName = 'accept' | 'turnin' | 'kill' | 'collect' | 'use' | 'grind';
+
+/** The game icon for a step (site/public/art/icon-<name>.webp, from the minimap icon atlas), or null. */
+export function stepIcon(s: Step): IconName | null {
+  switch (s.type) {
+    case 'accept':
+    case 'turnin':
+    case 'grind':
+      return s.type;
+    case 'complete':
+      return s.objectives?.[0]?.kind ?? 'kill';
+    default:
+      return null;
   }
 }

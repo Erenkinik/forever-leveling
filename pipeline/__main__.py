@@ -373,6 +373,12 @@ def cmd_generate(args) -> int:
     return 0
 
 
+def _item_icons(root: Path) -> dict[str, int | None] | None:
+    """Item id -> icon FileDataID written by `maps` (site/src/data/item-icons.json); None before maps ran."""
+    path = root / "site" / "src" / "data" / "item-icons.json"
+    return json.loads(path.read_text(encoding="utf-8"))["items"] if path.is_file() else None
+
+
 def cmd_export(args) -> int:
     from pipeline.canonical import load_questxp_canonical, load_spawns_canonical, load_uimaps_canonical
     from pipeline.export.lua import to_lua
@@ -400,6 +406,7 @@ def cmd_export(args) -> int:
     spawns = load_spawns_canonical(DATA_DIR)
     xp_table = load_questxp_canonical(DATA_DIR)
     root = DATA_DIR.parent
+    item_icons = _item_icons(root)
     outputs = []
     for path in paths:
         try:
@@ -408,7 +415,7 @@ def cmd_export(args) -> int:
             print(f"cannot read route file {path}: {exc}", file=sys.stderr)
             return 1
         try:
-            site = to_site_json(route, quests, spawns, uimaps, _route_levels(route, quests, xp_table))
+            site = to_site_json(route, quests, spawns, uimaps, _route_levels(route, quests, xp_table), item_icons)
             outputs.append((path.stem, _json_text(site), to_lua(route)))
         except (ValueError, KeyError, TypeError, AttributeError) as exc:
             print(f"cannot export route file {path}: {type(exc).__name__}: {exc}", file=sys.stderr)
@@ -481,30 +488,58 @@ def _route_map_ids() -> list[int]:
     return sorted(ids)
 
 
+def _route_collect_items() -> list[int]:
+    """Items that the routes' complete steps ask to collect (their icons show in the quest text)."""
+    quests = {q["id"]: q for q in json.loads(_canonical_path().read_text(encoding="utf-8"))}
+    items: set[int] = set()
+    for path in sorted((DATA_DIR / "routes").glob("*.json")):
+        if path.name.endswith(".generated.json"):
+            continue
+        for step in json.loads(path.read_text(encoding="utf-8")).get("steps", []):
+            if step.get("type") == "complete" and step.get("questId") in quests:
+                items.update((quests[step["questId"]].get("objectives") or {}).get("items", []))
+    return sorted(items)
+
+
 def cmd_maps(args) -> int:
-    """Zone map images for every map a route visits; --check needs no raw data."""
+    """Zone map images for every map a route visits, plus race crests and the quest parchment (site/public/art);
+    --check needs no raw data."""
     site = DATA_DIR.parent / "site"
     index_path = site / "src" / "data" / "maps.json"
     out_dir = site / "public" / "maps"
+    art_dir = site / "public" / "art"
+    icons_path = site / "src" / "data" / "item-icons.json"
     map_ids = _route_map_ids()
     if args.check:
-        index = json.loads(index_path.read_text(encoding="utf-8")).get("maps", {}) if index_path.is_file() else {}
+        doc = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else {}
+        index = doc.get("maps", {})
         problems = [f"map {m}: not built (run python -m pipeline maps)" for m in map_ids if str(m) not in index]
         problems += [f"map {m}: image missing: {out_dir / f'{m}.webp'}" for m in map_ids
                      if index.get(str(m)) and not (out_dir / f"{m}.webp").is_file()]
+        problems += [f"art {name}: image missing: {art_dir / f'{name}.webp'}" for name in doc.get("art", [])
+                     if not (art_dir / f"{name}.webp").is_file()]
+        if icons_path.is_file():
+            icons = json.loads(icons_path.read_text(encoding="utf-8")).get("items", {})
+            problems += [f"item {i}: icon not built (run python -m pipeline maps)" for i in _route_collect_items()
+                         if str(i) not in icons]
+            problems += [f"item icon {f}: image missing" for f in sorted({f for f in icons.values() if f})
+                         if not (art_dir / "items" / f"{f}.webp").is_file()]
         if problems:
             print("\n".join(problems), file=sys.stderr)
             return 1
         print(f"up to date: {len(map_ids)} maps")
         return 0
-    from pipeline.export.maps import build_maps
+    from pipeline.export.maps import build_art, build_item_icons, build_maps
 
     try:
         index = build_maps(map_ids, DATA_BUILD, RAW_DIR, out_dir)
+        art = build_art(RAW_DIR, art_dir)
+        icons = build_item_icons(_route_collect_items(), DATA_BUILD, RAW_DIR, art_dir / "items")
     except (RuntimeError, OSError, ValueError) as exc:
         print(f"cannot build maps: {exc}", file=sys.stderr)
         return 1
-    _write_text_atomic(index_path, _json_text({"build": DATA_BUILD, "maps": index}))
+    _write_text_atomic(index_path, _json_text({"build": DATA_BUILD, "maps": index, "art": art}))
+    _write_text_atomic(icons_path, _json_text({"build": DATA_BUILD, "items": icons}))
     built = sum(1 for v in index.values() if v)
     print(f"wrote {built} map images to {out_dir} ({len(index) - built} maps have no art)")
     return 0

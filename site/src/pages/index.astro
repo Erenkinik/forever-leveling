@@ -1,48 +1,77 @@
 ---
+import Emblem from '../components/Emblem.astro';
 import Base from '../layouts/Base.astro';
 import { routes } from '../lib/data.ts';
+import { themeFor } from '../lib/races.ts';
 
 const factions = ['Alliance', 'Horde'] as const;
 ---
 <Base title="ForeverXP: free WoW Forever 1–30 leveling routes"
       description="Pick your race and follow a free step-by-step quest route from level 1 to 30 in WoW Forever.">
   <main id="main">
-    <h1>Choose your race</h1>
-    <p class="lead">Every route runs from level 1 to 30. Your progress is saved in this browser.</p>
-    <p class="beta-note"><strong>Beta:</strong> routes come from open quest data and have not been played through yet.</p>
+    <section class="hero">
+      <Emblem size={96} class="hero-emblem" />
+      <div>
+        <h1>Level 1 to 30, the fast way</h1>
+        <p class="lead">A free step-by-step quest route for every race in WoW Forever, with the map, the NPCs and
+          what to do at each stop. Your progress is saved in this browser.</p>
+      </div>
+    </section>
     {factions.map((faction) => (
       <section aria-labelledby={`f-${faction}`} class="faction">
         <h2 id={`f-${faction}`} class={faction.toLowerCase()}>
           <span aria-hidden="true">{faction === 'Alliance' ? '◆' : '▲'}</span> {faction}
         </h2>
         <ul class="races">
-          {routes.filter((r) => r.faction === faction).map((r) => (
-            <li><a class="race" href={`/${r.id}/`}>{r.race}<span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]}</span></a></li>
-          ))}
+          {routes.filter((r) => r.faction === faction).map((r) => {
+            const theme = themeFor(r.id);
+            return (
+              <li>
+                <a class="race" href={`/${r.id}/`} style={`--race: ${theme.accent}; --race-deep: ${theme.deep};`}>
+                  <img class="race-crest" src={`/art/crest-${r.id}.webp`} alt="" width="56" height="56" />
+                  <span class="race-text">
+                    <span class="race-name">{r.race}</span>
+                    <span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]} · {r.steps.length} steps</span>
+                  </span>
+                </a>
+              </li>
+            );
+          })}
           <li>
-            <span class="race soon" aria-disabled="true">Skyborne<span class="sub">Coming soon</span></span>
+            <span class="race soon" aria-disabled="true">
+              <span class="race-text"><span class="race-name">Skyborne</span><span class="sub">Coming soon</span></span>
+            </span>
           </li>
         </ul>
       </section>
     ))}
-    <p class="note">Skyborne starts on Zephras Isle, which is new in Forever and not in the open data yet. Its routes follow once the quests are recorded.</p>
+    <p class="note">Skyborne starts on Zephras Isle, which is new in Forever. Its routes follow once the quests are recorded.</p>
   </main>
 </Base>
 
 <style>
-  .lead { font-size: 18px; }
-  .beta-note, .note { color: var(--muted); }
-  .beta-note strong { color: var(--warn); }
-  .faction h2 { font-size: 24px; }
+  .hero { display: flex; gap: 24px; align-items: center; margin: 28px 0 12px; }
+  .hero h1 { font-size: 40px; margin: 0 0 8px; }
+  .lead { font-size: 18px; max-width: 60ch; margin: 0; }
+  @media (max-width: 600px) { .hero { flex-direction: column; align-items: flex-start; } .hero h1 { font-size: 30px; } }
+  .note { color: var(--muted); }
+  .faction h2 { font-size: 24px; margin-top: 32px; }
   .faction h2.alliance { color: var(--alliance); }
   .faction h2.horde { color: var(--horde); }
-  .races { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .races { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
   .race {
-    display: flex; flex-direction: column; gap: 2px; min-height: 64px; padding: 12px 16px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-    color: var(--text); text-decoration: none; font-size: 18px; font-weight: 600;
+    display: flex; align-items: center; gap: 14px; min-height: 84px; padding: 14px 16px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--race-deep) 85%, var(--surface)), var(--surface) 70%);
+    border: 1px solid color-mix(in srgb, var(--race) 55%, var(--border-subtle)); border-left: 4px solid var(--race);
+    border-radius: 10px; color: var(--text); text-decoration: none;
+    transition: transform .15s, border-color .15s, box-shadow .15s;
   }
-  a.race:hover { border-color: var(--gold); background: var(--raised); }
-  .race .sub { font: 14px var(--font-mono); color: var(--muted); font-weight: 400; }
-  .race.soon { border-style: dashed; color: var(--muted); }
+  a.race:hover, a.race:focus-visible {
+    transform: translateY(-2px); border-color: var(--race); box-shadow: 0 10px 24px rgba(0, 0, 0, .45);
+  }
+  .race-crest { flex: none; width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); }
+  .race-text { display: grid; gap: 2px; }
+  .race-name { font: 700 20px var(--font-display); letter-spacing: .03em; }
+  .race .sub { font: 14px var(--font-mono); color: var(--muted); }
+  .race.soon { border-style: dashed; border-left-width: 1px; color: var(--muted); background: var(--surface); }
 </style>

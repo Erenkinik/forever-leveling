@@ -148,7 +148,8 @@
      "name": "Red Burlap Bandana",
      "sources": [
       "Defias Thug"
-     ]
+     ],
+     "icon": 133694
     }
    ]
   },
@@ -256,7 +257,8 @@
      "sources": [
       "Young Wolf",
       "Timber Wolf"
-     ]
+     ],
+     "icon": 133972
     }
    ]
   },
@@ -299,7 +301,8 @@
      "name": "Garrick's Head",
      "sources": [
       "Garrick Padfoot"
-     ]
+     ],
+     "icon": 134166
     }
    ]
   },
@@ -468,7 +471,8 @@
      "name": "Milly's Harvest",
      "sources": [
       "Milly's Harvest"
-     ]
+     ],
+     "icon": 134014
     }
    ]
   },
@@ -575,7 +579,8 @@
      "name": "Brass Collar",
      "sources": [
       "Princess"
-     ]
+     ],
+     "icon": 133345
     }
    ]
   },
@@ -656,7 +661,8 @@
       "Rockhide Boar",
       "Stonetusk Boar",
       "Porcine Entourage"
-     ]
+     ],
+     "icon": 133970
     }
    ]
   },
@@ -791,7 +797,8 @@
      "name": "Bernice's Necklace",
      "sources": [
       "Goldtooth"
-     ]
+     ],
+     "icon": 133280
     }
    ]
   },
@@ -928,7 +935,8 @@
       "Goldtooth",
       "Kobold Miner",
       "Kobold Tunneler"
-     ]
+     ],
+     "icon": 133750
     }
    ]
   },
@@ -953,7 +961,8 @@
       "Goldtooth",
       "Kobold Miner",
       "Kobold Tunneler"
-     ]
+     ],
+     "icon": 133848
     }
    ]
   },
@@ -977,7 +986,8 @@
      "sources": [
       "Murloc",
       "Murloc Streamrunner"
-     ]
+     ],
+     "icon": 134184
     }
    ]
   },
@@ -1211,7 +1221,8 @@
      "sources": [
       "Riverpaw Runt",
       "Riverpaw Outrunner"
-     ]
+     ],
+     "icon": 133693
     }
    ]
   },
@@ -1358,7 +1369,8 @@
      "sources": [
       "Murloc Lurker",
       "Murloc Forager"
-     ]
+     ],
+     "icon": 134304
     }
    ]
   },
@@ -1437,7 +1449,8 @@
      "name": "Bundle of Wood",
      "sources": [
       "Bundle of Wood"
-     ]
+     ],
+     "icon": 135437
     }
    ]
   },
@@ -1462,7 +1475,8 @@
       "Defias Bandit",
       "Defias Rogue Wizard",
       "Erlan Drudgemoor"
-     ]
+     ],
+     "icon": 133694
     }
    ]
   },
@@ -1611,7 +1625,8 @@
      "name": "Furlbrow's Pocket Watch",
      "sources": [
       "Furlbrow's Wardrobe"
-     ]
+     ],
+     "icon": 134377
     }
    ]
   },
@@ -1634,7 +1649,8 @@
      "name": "Handful of Oats",
      "sources": [
       "Sack of Oats"
-     ]
+     ],
+     "icon": 134059
     }
    ]
   },
@@ -1763,7 +1779,8 @@
       "Fleshripper",
       "Young Fleshripper",
       "Vultros"
-     ]
+     ],
+     "icon": 133972
     },
     {
      "kind": "collect",
@@ -1773,7 +1790,8 @@
       "Murloc Hunter",
       "Murloc Warrior",
       "Murloc Netter"
-     ]
+     ],
+     "icon": 133884
     },
     {
      "kind": "collect",
@@ -1782,7 +1800,8 @@
      "sources": [
       "Goretusk",
       "Young Goretusk"
-     ]
+     ],
+     "icon": 135997
     },
     {
      "kind": "collect",
@@ -1792,7 +1811,8 @@
       "Harvest Watcher",
       "Foe Reaper 4000",
       "Harvest Golem"
-     ]
+     ],
+     "icon": 134185
     }
    ]
   },
@@ -1817,7 +1837,8 @@
       "Young Goretusk",
       "Goretusk",
       "Great Goretusk"
-     ]
+     ],
+     "icon": 134341
     }
    ]
   },
@@ -1954,7 +1975,8 @@
       "Riverpaw Brute",
       "Riverpaw Bandit",
       "Riverpaw Herbalist"
-     ]
+     ],
+     "icon": 134297
     }
    ]
   },
@@ -1979,7 +2001,8 @@
       "Defias Smuggler",
       "Defias Trapper",
       "Defias Looter"
-     ]
+     ],
+     "icon": 133694
     }
    ]
   },
@@ -2292,7 +2315,8 @@
      "name": "Scale of Old Murk-Eye",
      "sources": [
       "Old Murk-Eye"
-     ]
+     ],
+     "icon": 134303
     }
    ]
   },
@@ -2352,7 +2376,8 @@
       "Harvest Watcher",
       "Harvest Golem",
       "Foe Reaper 4000"
-     ]
+     ],
+     "icon": 132794
     }
    ]
   },
@@ -2514,7 +2539,8 @@
       "Stonesplinter Scout",
       "Stonesplinter Trogg",
       "Stonesplinter Seer"
-     ]
+     ],
+     "icon": 133725
     }
    ]
   },
@@ -2799,7 +2825,8 @@
      "name": "Bingles' Wrench",
      "sources": [
       "Bingles's Toolbucket"
-     ]
+     ],
+     "icon": 134520
     },
     {
      "kind": "collect",
@@ -2807,7 +2834,8 @@
      "name": "Bingles' Screwdriver",
      "sources": [
       "Bingles's Toolbucket"
-     ]
+     ],
+     "icon": 134428
     },
     {
      "kind": "collect",
@@ -2815,7 +2843,8 @@
      "name": "Bingles' Hammer",
      "sources": [
       "Bingles's Toolbucket"
-     ]
+     ],
+     "icon": 133057
     },
     {
      "kind": "collect",
@@ -2823,7 +2852,8 @@
      "name": "Bingles' Blastencapper",
      "sources": [
       "Bingles's Blastencapper"
-     ]
+     ],
+     "icon": 133714
     }
    ]
   },
@@ -2874,7 +2904,8 @@
      "name": "Miners' Gear",
      "sources": [
       "Miners' League Crates"
-     ]
+     ],
+     "icon": 133622
     }
    ]
   },
@@ -2996,7 +3027,8 @@
       "Elder Mountain Boar",
       "Mangy Mountain Boar",
       "Mountain Boar"
-     ]
+     ],
+     "icon": 134342
     },
     {
      "kind": "collect",
@@ -3006,7 +3038,8 @@
       "Elder Black Bear",
       "Grizzled Black Bear",
       "Black Bear Patriarch"
-     ]
+     ],
+     "icon": 134027
     },
     {
      "kind": "collect",
@@ -3016,7 +3049,8 @@
       "Cliff Lurker",
       "Forest Lurker",
       "Wood Lurker"
-     ]
+     ],
+     "icon": 134437
     }
    ]
   },
@@ -3183,7 +3217,8 @@
       "Berserk Trogg",
       "Stonesplinter Digger",
       "Stonesplinter Geomancer"
-     ]
+     ],
+     "icon": 134230
     }
    ]
   },
@@ -3451,7 +3486,8 @@
      "sources": [
       "Loch Crocolisk",
       "Large Loch Crocolisk"
-     ]
+     ],
+     "icon": 133970
     },
     {
      "kind": "collect",
@@ -3460,7 +3496,8 @@
      "sources": [
       "Loch Crocolisk",
       "Large Loch Crocolisk"
-     ]
+     ],
+     "icon": 134304
     }
    ]
   },
@@ -3573,7 +3610,8 @@
      "name": "Ol' Sooty's Head",
      "sources": [
       "Ol' Sooty"
-     ]
+     ],
+     "icon": 132183
     }
    ]
   },
@@ -4052,7 +4090,8 @@
      "name": "Hilary's Necklace",
      "sources": [
       "Glinting Mud"
-     ]
+     ],
+     "icon": 133298
     }
    ]
   },
@@ -4075,7 +4114,8 @@
      "name": "Tough Condor Meat",
      "sources": [
       "Dire Condor"
-     ]
+     ],
+     "icon": 134028
     },
     {
      "kind": "collect",
@@ -4085,7 +4125,8 @@
       "Tarantula",
       "Greater Tarantula",
       "Chatter"
-     ]
+     ],
+     "icon": 134321
     },
     {
      "kind": "collect",
@@ -4094,7 +4135,8 @@
      "sources": [
       "Great Goretusk",
       "Bellygrub"
-     ]
+     ],
+     "icon": 134172
     }
    ]
   },
@@ -4117,7 +4159,8 @@
      "name": "Oslow's Toolbox",
      "sources": [
       "Sunken Chest"
-     ]
+     ],
+     "icon": 132596
     }
    ]
   },
@@ -4142,7 +4185,8 @@
       "Murloc Minor Tidecaller",
       "Murloc Flesheater",
       "Murloc Tidecaller"
-     ]
+     ],
+     "icon": 133888
     }
    ]
   },
@@ -4167,7 +4211,8 @@
       "Murloc Minor Tidecaller",
       "Murloc Flesheater",
       "Murloc Tidecaller"
-     ]
+     ],
+     "icon": 134304
     }
    ]
   },
@@ -4192,7 +4237,8 @@
       "Blackrock Grunt",
       "Blackrock Outrunner",
       "Blackrock Summoner"
-     ]
+     ],
+     "icon": 132392
     }
    ]
   },
@@ -4217,7 +4263,8 @@
       "Shadowhide Warrior",
       "Shadowhide Brute",
       "Shadowhide Gnoll"
-     ]
+     ],
+     "icon": 133437
     }
    ]
   },
@@ -4240,7 +4287,8 @@
      "name": "Bellygrub's Tusk",
      "sources": [
       "Bellygrub"
-     ]
+     ],
+     "icon": 133721
     }
    ]
   },
@@ -4668,7 +4716,8 @@
       "Redridge Basher",
       "Redridge Mystic",
       "Redridge Brute"
-     ]
+     ],
+     "icon": 134068
     },
     {
      "kind": "collect",
@@ -4678,7 +4727,8 @@
       "Redridge Basher",
       "Redridge Mystic",
       "Redridge Brute"
-     ]
+     ],
+     "icon": 135128
     }
    ]
   },
@@ -4702,7 +4752,8 @@
      "sources": [
       "Black Dragon Whelp",
       "Snarlflare"
-     ]
+     ],
+     "icon": 134305
     }
    ]
   },
@@ -4725,7 +4776,8 @@
      "name": "Midnight Orb",
      "sources": [
       "Blackrock Shadowcaster"
-     ]
+     ],
+     "icon": 134336
     }
    ]
   },
@@ -5028,7 +5080,8 @@
      "name": "A Mysterious Message",
      "sources": [
       "Defias Messenger"
-     ]
+     ],
+     "icon": 133468
     }
    ]
   },
@@ -5235,7 +5288,8 @@
       "Defias Digger",
       "Defias Conjurer",
       "Defias Henchman"
-     ]
+     ],
+     "icon": 133694
     }
    ]
   },
@@ -5661,7 +5715,8 @@
      "name": "Sea Creature Bones",
      "sources": [
       "Beached Sea Creature"
-     ]
+     ],
+     "icon": 133719
     }
    ]
   },
@@ -5686,7 +5741,8 @@
       "Foreststrider Fledgling",
       "Foreststrider",
       "Giant Foreststrider"
-     ]
+     ],
+     "icon": 133972
     }
    ]
   },
@@ -5711,7 +5767,8 @@
       "Wailing Highborne",
       "Writhing Highborne",
       "Cursed Highborne"
-     ]
+     ],
+     "icon": 134459
     }
    ]
   },
@@ -5734,7 +5791,8 @@
      "name": "Anaya's Pendant",
      "sources": [
       "Anaya Dawnrunner"
-     ]
+     ],
+     "icon": 133279
     }
    ]
   },
@@ -5758,7 +5816,8 @@
      "sources": [
       "Encrusted Tide Crawler",
       "Reef Crawler"
-     ]
+     ],
+     "icon": 134007
     }
    ]
   },
@@ -5781,7 +5840,8 @@
      "name": "Death Cap",
      "sources": [
       "Death Cap"
-     ]
+     ],
+     "icon": 134523
     },
     {
      "kind": "collect",
@@ -5789,7 +5849,8 @@
      "name": "Scaber Stalk",
      "sources": [
       "Scaber Stalk"
-     ]
+     ],
+     "icon": 134531
     }
    ]
   },
@@ -5812,7 +5873,8 @@
      "name": "Silver Dawning's Lockbox",
      "sources": [
       "Silver Dawning's Lockbox"
-     ]
+     ],
+     "icon": 132596
     },
     {
      "kind": "collect",
@@ -5820,7 +5882,8 @@
      "name": "Mist Veil's Lockbox",
      "sources": [
       "Mist Veil's Lockbox"
-     ]
+     ],
+     "icon": 132597
     }
    ]
   },
@@ -6067,7 +6130,8 @@
      "name": "Sea Turtle Remains",
      "sources": [
       "Skeletal Sea Turtle"
-     ]
+     ],
+     "icon": 133724
     }
    ]
   },
@@ -6116,7 +6180,8 @@
      "sources": [
       "Wild Grell",
       "Vile Sprite"
-     ]
+     ],
+     "icon": 133348
     }
    ]
   },
@@ -6237,7 +6302,8 @@
      "name": "Ancient Moonstone Seal",
      "sources": [
       "Deth'ryll Satyr"
-     ]
+     ],
+     "icon": 134457
     }
    ]
   },
@@ -6261,7 +6327,8 @@
      "sources": [
       "Moonstalker Sire",
       "Moonstalker Matriarch"
-     ]
+     ],
+     "icon": 134366
     }
    ]
   },
@@ -6402,7 +6469,8 @@
      "name": "Worn Parchment",
      "sources": [
       "Dark Strand Fanatic"
-     ]
+     ],
+     "icon": 134938
     }
    ]
   },
@@ -6509,7 +6577,8 @@
      "name": "Top of Gelkak's Key",
      "sources": [
       "Giant Foreststrider"
-     ]
+     ],
+     "icon": 134235
     },
     {
      "kind": "collect",
@@ -6519,7 +6588,8 @@
       "Greymist Coastrunner",
       "Greymist Raider",
       "Greymist Seer"
-     ]
+     ],
+     "icon": 134236
     },
     {
      "kind": "collect",
@@ -6528,7 +6598,8 @@
      "sources": [
       "Encrusted Tide Crawler",
       "Raging Reef Crawler"
-     ]
+     ],
+     "icon": 134237
     }
    ]
   },
@@ -6655,7 +6726,8 @@
      "name": "Horn of Awakening",
      "sources": [
       "Kerlonian's Chest"
-     ]
+     ],
+     "icon": 134229
     }
    ]
   },
@@ -6860,7 +6932,8 @@
      "name": "Ancient Statuette",
      "sources": [
       "Ancient Statuette"
-     ]
+     ],
+     "icon": 134230
     }
    ]
   },
@@ -6912,7 +6985,8 @@
      "sources": [
       "Lady Vespia",
       "Ruuzel"
-     ]
+     ],
+     "icon": 133352
     }
    ]
   },
@@ -6979,7 +7053,8 @@
       "Dark Strand Enforcer",
       "Dark Strand Excavator",
       "Dark Strand Adept"
-     ]
+     ],
+     "icon": 134335
     }
    ]
   },
@@ -7002,7 +7077,8 @@
      "name": "Bathran's Hair",
      "sources": [
       "Plant Bundle"
-     ]
+     ],
+     "icon": 134185
     }
    ]
   },
@@ -7081,7 +7157,8 @@
      "name": "Ilkrud Magthrull's Tome",
      "sources": [
       "Ilkrud Magthrull"
-     ]
+     ],
+     "icon": 133733
     }
    ]
   },
@@ -7353,7 +7430,8 @@
      "name": "Elune's Tear",
      "sources": [
       "Elune's Tear"
-     ]
+     ],
+     "icon": 134564
     }
    ]
   },
@@ -7376,7 +7454,8 @@
      "name": "Dal Bloodclaw's Skull",
      "sources": [
       "Dal Bloodclaw"
-     ]
+     ],
+     "icon": 133731
     }
    ]
   },
@@ -7401,7 +7480,8 @@
       "Wrathtail Sorceress",
       "Wrathtail Wave Rider",
       "Wrathtail Myrmidon"
-     ]
+     ],
+     "icon": 134300
     }
    ]
   },
@@ -7522,7 +7602,8 @@
      "name": "Handful of Stardust",
      "sources": [
       "Stardust Covered Bush"
-     ]
+     ],
+     "icon": 133849
     }
    ]
   },
@@ -7547,7 +7628,8 @@
       "Saltspittle Muckdweller",
       "Saltspittle Oracle",
       "Saltspittle Puddlejumper"
-     ]
+     ],
+     "icon": 134132
     }
    ]
   },
@@ -7675,7 +7757,8 @@
      "name": "Fallen Moonstone",
      "sources": [
       "Shadethicket Oracle"
-     ]
+     ],
+     "icon": 134333
     }
    ]
   },
@@ -7838,7 +7921,8 @@
      "name": "Iron Shaft",
      "sources": [
       "Worn Chest"
-     ]
+     ],
+     "icon": 135138
     },
     {
      "kind": "collect",
@@ -7847,7 +7931,8 @@
      "sources": [
       "Crazed Ancient",
       "Withered Ancient"
-     ]
+     ],
+     "icon": 134239
     }
    ]
   },
@@ -7940,7 +8025,8 @@
      "name": "Bottle of Disease",
      "sources": [
       "Bottle of Disease"
-     ]
+     ],
+     "icon": 134799
     }
    ]
   },
@@ -8326,7 +8412,8 @@
      "name": "Ados Fragment",
      "sources": [
       "Ancient Relic"
-     ]
+     ],
+     "icon": 135235
     },
     {
      "kind": "collect",
@@ -8334,7 +8421,8 @@
      "name": "Modr Fragment",
      "sources": [
       "Ancient Relic"
-     ]
+     ],
+     "icon": 135237
     },
     {
      "kind": "collect",
@@ -8342,7 +8430,8 @@
      "name": "Golm Fragment",
      "sources": [
       "Ancient Relic"
-     ]
+     ],
+     "icon": 135236
     },
     {
      "kind": "collect",
@@ -8350,7 +8439,8 @@
      "name": "Neru Fragment",
      "sources": [
       "Loose Soil"
-     ]
+     ],
+     "icon": 135238
     }
    ]
   },
@@ -8493,7 +8583,8 @@
      "name": "Sarltooth's Talon",
      "sources": [
       "Sarltooth"
-     ]
+     ],
+     "icon": 133723
     }
    ]
   },
@@ -8773,7 +8864,8 @@
      "name": "Gobbler's Head",
      "sources": [
       "Gobbler"
-     ]
+     ],
+     "icon": 134299
     }
    ]
   },
@@ -8796,7 +8888,8 @@
      "name": "Young Crocolisk Skin",
      "sources": [
       "Young Wetlands Crocolisk"
-     ]
+     ],
+     "icon": 134304
     }
    ]
   },
@@ -8821,7 +8914,8 @@
       "Black Ooze",
       "Crimson Ooze",
       "Monstrous Ooze"
-     ]
+     ],
+     "icon": 133624
     }
    ]
   },
@@ -8998,7 +9092,8 @@
      "name": "Giant Crocolisk Skin",
      "sources": [
       "Giant Wetlands Crocolisk"
-     ]
+     ],
+     "icon": 134305
     }
    ]
   },
@@ -9023,7 +9118,8 @@
       "Dragonmaw Raider",
       "Dragonmaw Bonewarder",
       "Dragonmaw Swamprunner"
-     ]
+     ],
+     "icon": 132484
     }
    ]
   },
@@ -9143,7 +9239,8 @@
       "Mosshide Fenrunner",
       "Mosshide Trapper",
       "Mosshide Brute"
-     ]
+     ],
+     "icon": 135242
     }
    ]
   },
@@ -9729,7 +9826,8 @@
       "Flesh Eater",
       "Brain Eater",
       "Rotted One"
-     ]
+     ],
+     "icon": 134298
     },
     {
      "kind": "collect",
@@ -9739,7 +9837,8 @@
       "Black Widow Hatchling",
       "Carrion Recluse",
       "Venom Web Spider"
-     ]
+     ],
+     "icon": 134799
     },
     {
      "kind": "collect",
@@ -9749,7 +9848,8 @@
       "Skeletal Horror",
       "Skeletal Fiend",
       "Skeletal Raider"
-     ]
+     ],
+     "icon": 133718
     }
    ]
   },
@@ -10197,7 +10297,8 @@
       "Black Widow Hatchling",
       "Venom Web Spider",
       "Pygmy Venom Web Spider"
-     ]
+     ],
+     "icon": 134321
     }
    ]
   },
@@ -10408,7 +10509,8 @@
      "name": "Defias Docket",
      "sources": [
       "Defias Strongbox"
-     ]
+     ],
+     "icon": 133466
     }
    ]
   },
@@ -10793,7 +10895,8 @@
      "sources": [
       "Skeletal Horror",
       "Skeletal Fiend"
-     ]
+     ],
+     "icon": 134187
     }
    ]
   },
@@ -10874,7 +10977,8 @@
       "Bone Chewer",
       "Rotted One",
       "Flesh Eater"
-     ]
+     ],
+     "icon": 134232
     }
    ]
   },
@@ -10925,7 +11029,8 @@
      "name": "Abercrombie's Crate",
      "sources": [
       "Abercrombie's Crate"
-     ]
+     ],
+     "icon": 132766
     }
    ]
   },

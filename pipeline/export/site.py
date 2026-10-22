@@ -21,7 +21,7 @@ def _nearest_sources(item: dict, spawns: dict, step: dict) -> list[str]:
     return [name for name, _ in sorted(ranked.items(), key=lambda kv: (kv[1], kv[0]))][:MAX_SOURCES]
 
 
-def _objectives(quest: dict, spawns: dict, step: dict) -> list[dict]:
+def _objectives(quest: dict, spawns: dict, step: dict, item_icons: dict[str, int | None] | None) -> list[dict]:
     """What a complete step asks for: units to kill, items to collect (with nearby sources), objects to use."""
     out: list[dict] = []
     objectives = quest.get("objectives") or {}
@@ -32,15 +32,18 @@ def _objectives(quest: dict, spawns: dict, step: dict) -> list[dict]:
             obj = {"kind": kind, "id": eid, "name": entry.get("name")}
             if kind == "collect":
                 obj["sources"] = _nearest_sources(entry, spawns, step)
+                if item_icons is not None:
+                    obj["icon"] = item_icons.get(str(eid))
             out.append(obj)
     return out
 
 
 def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dict[int, str],
-                 levels: dict[str, int] | None = None) -> dict:
+                 levels: dict[str, int] | None = None, item_icons: dict[str, int | None] | None = None) -> dict:
     """Return a copy of route whose steps also carry questName, npcName and zoneName (None when unknown);
     complete steps also carry their objectives, and with `levels` (xpsim.estimate_levels) every step
-    carries its estimated player level."""
+    carries its estimated player level; with `item_icons` (site/src/data/item-icons.json) collect objectives
+    carry their item's icon FileDataID."""
     out = copy.deepcopy(route)
     units = spawns.get("units", {})
     for step in out.get("steps", []):
@@ -51,5 +54,5 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
         if levels is not None and step.get("id") in levels:
             step["level"] = levels[step["id"]]
         if step.get("type") == "complete" and quest_id in quests:
-            step["objectives"] = _objectives(quests[quest_id], spawns, step)
+            step["objectives"] = _objectives(quests[quest_id], spawns, step, item_icons)
     return out
