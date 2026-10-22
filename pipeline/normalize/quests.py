@@ -45,6 +45,12 @@ def _endpoint(raw: dict | None) -> tuple[str | None, int | None]:
     return None, None
 
 
+def _is_multiple(raw: dict | None) -> bool:
+    """True when pfQuest lists more than one distinct id or more than one type."""
+    found = [(key, i) for key, _ in _TYPES for i in dict.fromkeys((raw or {}).get(key) or [])]
+    return len(found) > 1
+
+
 def _unit_zones(pf: PfData, ref: tuple[str | None, int | None]) -> set[int]:
     if ref[0] != "npc":
         return set()
@@ -64,11 +70,11 @@ def _build_point(pf: PfData, ref, other_zones: set[int], zone_to_uimap, conflict
         conflicts.append(f"{label}.coords")
         return point
     chosen = next((c for c in coords if c[2] in other_zones), coords[0])
-    point["x"], point["y"] = chosen[0], chosen[1]
     ui = zone_to_uimap.get(chosen[2])
     if ui is None:
         conflicts.append(f"{label}.coords")
-    point["uiMapId"] = ui
+        return point
+    point["x"], point["y"], point["uiMapId"] = chosen[0], chosen[1], ui
     return point
 
 
@@ -78,6 +84,12 @@ def _objectives(raw: dict | None) -> dict:
         out: list(dict.fromkeys(raw.get(key, [])))
         for out, key in (("units", "U"), ("items", "I"), ("objects", "O"))
     }
+
+
+def _differs(field: str, ours, theirs) -> bool:
+    if field == "prereqs":
+        return sorted(ours or []) != sorted(theirs or [])
+    return ours != theirs
 
 
 def _manual_point(raw: dict | None) -> dict:
@@ -98,6 +110,9 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     if pq is not None:
         sources.append("pfquest")
         s_ref, e_ref = _endpoint(pq.get("start")), _endpoint(pq.get("end"))
+        for label in ("start", "end"):
+            if _is_multiple(pq.get(label)):
+                conflicts.append(f"{label}.multiple")
         rec.update(
             name=pq.get("name"), level=pq.get("lvl"), minLevel=pq.get("min"),
             races=races_from_mask(pq.get("race")), prereqs=list(pq.get("pre") or []),
@@ -111,23 +126,30 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
         for field in _MANUAL_COMPARED:
             if field not in m:
                 continue
-            if pq is not None and rec[field] != m[field]:
+            if pq is not None and _differs(field, rec[field], m[field]):
                 conflicts.append(field)
             rec[field] = m[field]
         for label in ("start", "end"):
-            if label in m:
-                theirs = _manual_point(m[label])
-                if pq is not None and (rec[label]["type"], rec[label]["id"]) != (theirs["type"], theirs["id"]):
-                    conflicts.append(label)
-                if pq is not None:  # manual point replaces pfQuest's, so its coords problems no longer apply
+            if label not in m:
+                continue
+            given = m[label] or {}
+            if pq is not None:
+                if "type" in given or "id" in given:
+                    theirs = (given.get("type", rec[label]["type"]), given.get("id", rec[label]["id"]))
+                    if theirs != (rec[label]["type"], rec[label]["id"]):
+                        conflicts.append(label)
+                if all(k in given for k in ("x", "y", "uiMapId")):
                     conflicts[:] = [c for c in conflicts if c != f"{label}.coords"]
-                rec[label] = theirs
+            rec[label] = {**rec[label], **{k: v for k, v in given.items() if k in rec[label]}}
     lineages = sorted({SOURCE_LINEAGE[s] for s in sources})
     conflicts = sorted(set(conflicts))
     in_forever = qid in forever_ids
+    confidence = confidence_for(set(lineages), conflicts)
+    if "wowhead-manual" in sources and confidence == "cross-checked":
+        confidence = "unverified"  # spec 8.2: manual entries never count as cross-checked
     rec.update(
         inForever=in_forever, sources=sources, lineages=lineages, conflicts=conflicts,
-        confidence=confidence_for(set(lineages), conflicts),
+        confidence=confidence,
         verifiedBuild=DATA_BUILD if in_forever else None,
     )
     return rec

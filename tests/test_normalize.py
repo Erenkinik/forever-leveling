@@ -106,6 +106,7 @@ def test_unmapped_zone_marks_conflict():
     pf = _pf({1: {"start": {"U": [5]}, "name": "Q"}}, {5: _unit("S", (1.0, 1.0, 777))})
     q = _one(pf)
     assert q["start"]["uiMapId"] is None and "start.coords" in q["conflicts"]
+    assert q["start"]["x"] is None and q["start"]["y"] is None
 
 
 def test_quest_missing_from_forever_flagged():
@@ -144,7 +145,7 @@ def test_manual_overrides_pfquest_and_records_conflict():
 def test_manual_agreeing_with_pfquest_has_no_conflict():
     pf = _pf({1: {"lvl": 5, "min": 3, "name": "Manual Name"}})
     q = _one(pf, {1}, manual={1: _manual()})
-    assert q["conflicts"] == [] and q["confidence"] == "cross-checked"
+    assert q["conflicts"] == [] and q["confidence"] == "unverified"  # manual is capped
 
 
 def test_manual_only_quest_with_points_and_races():
@@ -170,3 +171,36 @@ def test_canonical_records_pass_schema():
     assert len(out) >= len(pf.quests)
     bad = [(r["id"], validate("quest", r)) for r in out if validate("quest", r)]
     assert bad == []
+
+
+def test_manual_in_db2_without_pfquest_is_unverified():
+    q = _one(_pf(), {1}, manual={1: _manual()})
+    assert q["sources"] == ["wago-db2", "wowhead-manual"] and q["conflicts"] == []
+    assert q["confidence"] == "unverified"
+
+
+def test_multiple_start_ids_and_types_flagged():
+    pf = _pf({1: {"start": {"U": [5, 6]}, "end": {"U": [5], "O": [9]}, "name": "Q"}},
+             {5: _unit("S", (1.0, 1.0, 12))})
+    q = _one(pf, {1})
+    assert q["start"]["id"] == 5 and q["end"]["type"] == "npc"
+    assert "start.multiple" in q["conflicts"] and "end.multiple" in q["conflicts"]
+    dup = _one(_pf({1: {"start": {"U": [5, 5]}, "name": "Q"}}, {5: _unit("S", (1.0, 1.0, 12))}), {1})
+    assert "start.multiple" not in dup["conflicts"]
+
+
+def test_partial_manual_endpoint_merges_over_pfquest():
+    pf = _pf({1: {"start": {"U": [5]}, "name": "Q"}}, {5: _unit("S", (1.0, 2.0, 777))})
+    q = _one(pf, {1}, manual={1: _manual(start={"type": "npc", "id": 5})})
+    assert q["start"]["name"] == "S" and "start" not in q["conflicts"]
+    assert "start.coords" in q["conflicts"]
+    q = _one(pf, {1}, manual={1: _manual(start={"x": 3.0, "y": 4.0, "uiMapId": 1429})})
+    assert q["start"] == {"type": "npc", "id": 5, "name": "S", "uiMapId": 1429, "x": 3.0, "y": 4.0}
+    assert "start.coords" not in q["conflicts"]
+    assert validate("quest", q) == []
+
+
+def test_manual_prereq_order_is_not_a_conflict():
+    pf = _pf({1: {"lvl": 5, "min": 3, "name": "Manual Name", "pre": [2, 3]}})
+    q = _one(pf, manual={1: _manual(prereqs=[3, 2])})
+    assert "prereqs" not in q["conflicts"]

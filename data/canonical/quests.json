@@ -4518,8 +4518,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -7216,8 +7218,11 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "end.multiple",
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -7259,8 +7264,11 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "end.multiple",
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -7436,8 +7444,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -10644,8 +10654,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -17733,8 +17745,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -19999,8 +20013,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -21855,8 +21871,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -21896,8 +21914,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -29773,8 +29793,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -32005,8 +32027,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -40214,7 +40238,10 @@
   "lineages": [
    "vanilla-emu"
   ],
-  "conflicts": [],
+  "conflicts": [
+   "end.multiple",
+   "start.multiple"
+  ],
   "confidence": "unverified",
   "verifiedBuild": null
  },
@@ -42957,8 +42984,8 @@
    "id": 3694,
    "name": "Sentinel Selarin",
    "uiMapId": null,
-   "x": 39.2,
-   "y": 43.4
+   "x": null,
+   "y": null
   },
   "end": {
    "type": "npc",
@@ -47653,8 +47680,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -53679,8 +53708,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -54316,8 +54347,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -54488,8 +54521,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -55622,8 +55657,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -59816,8 +59853,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -60689,8 +60728,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -62634,8 +62675,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -64170,8 +64213,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -64617,8 +64662,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -65498,8 +65545,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -67234,8 +67283,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -68236,8 +68287,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -68541,8 +68594,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -68720,8 +68775,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -69066,8 +69123,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -69329,8 +69388,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -69593,8 +69654,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -70950,6 +71013,7 @@
    "vanilla-emu"
   ],
   "conflicts": [
+   "end.multiple",
    "start.coords"
   ],
   "confidence": "unverified",
@@ -71101,8 +71165,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -76416,8 +76482,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -77622,8 +77690,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -78226,8 +78296,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -79170,8 +79242,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -79301,8 +79375,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "end.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -88375,7 +88451,9 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "end.multiple",
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
@@ -106759,8 +106837,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -107067,8 +107147,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "end.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -131596,7 +131678,8 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
@@ -131642,7 +131725,8 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
@@ -134362,8 +134446,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "end.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -138657,8 +138743,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -138741,8 +138829,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -139343,7 +139433,8 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
@@ -139601,8 +139692,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -153519,8 +153612,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -155444,8 +155539,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -155692,8 +155789,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -156329,8 +156428,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -156505,8 +156606,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -162510,8 +162613,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -162736,8 +162841,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -162820,8 +162927,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -162910,8 +163019,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -177795,8 +177906,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -177918,8 +178031,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -189458,8 +189573,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -192568,8 +192685,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -195879,7 +195998,9 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "end.multiple",
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": null
@@ -197417,7 +197538,9 @@
   ],
   "conflicts": [
    "end.coords",
-   "start.coords"
+   "end.multiple",
+   "start.coords",
+   "start.multiple"
   ],
   "confidence": "unverified",
   "verifiedBuild": null
@@ -197779,8 +197902,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
@@ -197825,8 +197950,10 @@
    "blizzard-client",
    "vanilla-emu"
   ],
-  "conflicts": [],
-  "confidence": "cross-checked",
+  "conflicts": [
+   "start.multiple"
+  ],
+  "confidence": "unverified",
   "verifiedBuild": "1.60.1.70532"
  },
  {
