@@ -1,0 +1,28 @@
+- id: 90001
+  name: Test Forever Quest
+  level: 5
+  minLevel: 3
+  races: [Human, Dwarf]
+  prereqs: [90000]
+  start:
+    type: npc
+    id: 1234
+    name: Test Giver
+    uiMapId: 1429
+    x: 45.2
+    y: 60.1
+  end:
+    type: npc
+    id: 1235
+    name: Test Receiver
+    uiMapId: 1429
+    x: 40.0
+    y: 62.5
+  wowheadUrl: https://www.wowhead.com/forever/quest=90001/test-forever-quest
+  checkedOn: 2026-10-22
+- id: 90002
+  name: Minimal Quest
+  level: 7
+  minLevel: 7
+  wowheadUrl: https://www.wowhead.com/forever/quest=90002
+  checkedOn: "2026-10-21"
