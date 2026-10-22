@@ -46,6 +46,14 @@ def load_uimaps(dir: Path) -> dict[int, str]:
     return {int(r["ID"]): r["Name_lang"] for r in _rows(Path(dir) / "UiMap.csv")}
 
 
+def load_quest_xp(dir: Path) -> dict[int, list[int]]:
+    """QuestXP ID (quest level) -> [Difficulty_0 .. Difficulty_9]."""
+    return {
+        int(r["ID"]): [int(r[f"Difficulty_{i}"]) for i in range(10)]
+        for r in _rows(Path(dir) / "QuestXP.csv")
+    }
+
+
 def load_zone_to_uimap(dir: Path) -> dict[int, int]:
     """AreaTable ID -> UiMapID, using the matching assignment with the smallest OrderIndex."""
     best: dict[int, tuple[int, int]] = {}  # area -> (order, uimap)
