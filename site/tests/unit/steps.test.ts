@@ -277,3 +277,27 @@ test('a class sees the steps for everyone and its own class quests', async () =>
   assert.deepEqual(stepsForClass(steps, 'Rogue'), [all, war]);
   assert.deepEqual(stepsForClass(steps, ''), steps);
 });
+
+test('the map shows what is left of every quest in the log, wherever it is in the route', async () => {
+  const { mapStepsFor, openQuests, pinIcon } = await import('../../src/lib/steps.ts');
+  const q = (id: string, type: Step['type'], questId: number, mapId = 1): Step => ({ ...base, id, type, questId, mapId });
+  const route = [
+    q('a1', 'accept', 1), q('a2', 'accept', 2), q('c1', 'complete', 1),
+    ...Array.from({ length: 12 }, (_, i) => q(`x${i}`, 'accept', 10 + i)),  // far ahead
+    q('c2', 'complete', 2), q('t2', 'turnin', 2), q('t1', 'turnin', 1), q('t9', 'turnin', 9, 2),
+  ];
+  const done = new Set(['a1', 'a2']);
+  assert.deepEqual([...openQuests(route, done)].sort(), [1, 2]);
+  const ids = mapStepsFor(route, 2, done, 2, 3).map((s) => s.id);
+  // Done steps leave the map; t9 is on another map.
+  assert.deepEqual(ids, ['c1', 'x0', 'x1', 'x2', 'c2', 't2', 't1']);
+  const t1 = route.find((s) => s.id === 't1')!;
+  assert.equal(pinIcon(t1, route, done), 'progress');  // objectives left: the grey "?"
+  assert.equal(pinIcon(t1, route, new Set([...done, 'c1', ...route.slice(3, 15).map((s) => s.id)])), 'turnin');
+  assert.deepEqual([...openQuests(route, new Set([...done, 't2']))], [1]);
+  // Not accepted yet: only its "!" is on the map, not its turn-in.
+  const fresh = [q('b1', 'accept', 5), q('b2', 'turnin', 5)];
+  assert.deepEqual(mapStepsFor(fresh, 0, new Set(), 2, 3).map((s) => s.id), ['b1']);
+  // Accepted: the "!" goes, the turn-in "?" comes.
+  assert.deepEqual(mapStepsFor(fresh, 1, new Set(['b1']), 2, 3).map((s) => s.id), ['b2']);
+});

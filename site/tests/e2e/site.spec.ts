@@ -300,9 +300,9 @@ test('items to collect show their game icon, and map pins use the game quest ico
   expect(src).toMatch(/^\/art\/items\/\d+\.webp$/);
   expect((await page.request.get(src)).status()).toBe(200);
   await expect(page.locator('.pin.current img')).toHaveAttribute('src', '/art/icon-accept.webp');
-  // Turn-ins of quests not done yet show the faint grey "?": with the first eight steps done the player is out
+  // Turn-ins of quests not done yet show the faint grey "?": with the first nine steps done the player is out
   // collecting, and the quest's turn-in back at the start shows the grey "?".
-  for (let n = 1; n <= 8; n++) await page.getByRole('button', { name: `Step ${n} done` }).click();
+  for (let n = 1; n <= 9; n++) await page.getByRole('button', { name: `Step ${n} done` }).click();
   const progress = page.locator('.pin.progress img').first();
   await expect(progress).toHaveAttribute('src', '/art/icon-progress.webp');
   expect((await page.request.get('/art/icon-progress.webp')).status()).toBe(200);

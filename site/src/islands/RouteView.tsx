@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEven
 
 import {
   clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief, reportUrl,
-  routeClasses, safeStorage, saveDone, pinIcon,
+  mapStepsFor, openQuests, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
@@ -17,7 +17,7 @@ const MAP_ART = mapIndex.maps as Record<string, { width: number; height: number 
 
 const ZOOMS = [1, 1.5, 2, 3];
 const SEARCH_LIMIT = 8;
-// Steps shown on the map: a few behind and ahead of the current step, on its map only.
+// Steps shown on the map: a few behind and ahead of the current step, on its map only (plus the quest log's).
 const MAP_BEHIND = 2;
 const MAP_AHEAD = 6;
 // Pins are 28px with a mouse and 44px on touch screens (RouteView.css); pins whose centres are closer than
@@ -228,15 +228,13 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     observerRef.current.observe(el);
   }, []);
 
-  const mapSteps = current
-    ? steps.slice(Math.max(0, currentIndex - MAP_BEHIND), currentIndex + MAP_AHEAD + 1).filter((s) => s.mapId === current.mapId)
-    : [];
-  // The current step leads its cluster, so a merged pin is drawn where the player has to go; steps still to do come
-  // before done ones, so a merged pin shows what is left there (e.g. the grey "?" of a turn-in) rather than a done step.
+  const mapSteps = mapStepsFor(steps, currentIndex, done, MAP_BEHIND, MAP_AHEAD);
+  const inLog = openQuests(steps, done);
+  // The current step leads its cluster, so a merged pin is drawn where the player has to go (done steps are off the
+  // map, so a merged pin always shows what is left there, e.g. the grey "?" of a turn-in).
   const art = current ? MAP_ART[String(current.mapId)] ?? null : null;
-  const others = mapSteps.filter((s) => s !== current);
   const pins = current
-    ? clusterPins([current, ...others.filter((s) => !done.has(s.id)), ...others.filter((s) => done.has(s.id))],
+    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)],
       (PIN_SPACING_PX[coarse ? 'coarse' : 'fine'] / (frameWidth * ZOOMS[zoom])) * 100,
       art ? art.height / art.width : 1)
     : [];
@@ -332,11 +330,15 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                     : { width: `${ZOOMS[zoom] * 100}%` }}
                 >
                   {(() => {
-                    // Where to kill / collect / use: the current quest strongly, upcoming quests on this map faintly.
+                    // Where to kill / collect / use: the current quest strongly, the other quests in the log clearly,
+                    // upcoming quests on this map faintly.
                     const ry = AREA_RADIUS * (art ? art.width / art.height : 1);
                     const onMap = (s: Step) => s.type === 'complete' && s.mapId === current.mapId && !!s.area?.length;
                     const active = steps.filter((s) => onMap(s) && s.questId === current.questId && !done.has(s.id));
-                    const upcoming = mapSteps.filter((s) => onMap(s) && !done.has(s.id) && !active.includes(s));
+                    const logged = mapSteps.filter((s) => onMap(s) && !done.has(s.id) && !active.includes(s)
+                      && s.questId !== undefined && inLog.has(s.questId));
+                    const upcoming = mapSteps.filter((s) => onMap(s) && !done.has(s.id) && !active.includes(s)
+                      && !logged.includes(s));
                     const blobs = (list: Step[]) => list.flatMap((s) => (s.area ?? []).map(([x, y]) => (
                       <ellipse key={`${s.id}-${x}-${y}`} cx={x} cy={y} rx={AREA_RADIUS} ry={ry} />
                     )));
@@ -344,6 +346,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       <svg className="areas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
                            focusable="false">
                         <g className="area upcoming">{blobs(upcoming)}</g>
+                        <g className="area logged">{blobs(logged)}</g>
                         <g className="area active">{blobs(active)}</g>
                       </svg>
                     );
@@ -364,6 +367,9 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                     const state = lead === current ? 'current' : group.every((s) => done.has(s.id)) ? 'done' : 'todo';
                     const n = (index.get(lead.id) ?? 0) + 1;
                     const icon = pinIcon(lead, steps, done);
+                    // A turn-in merged under another step still shows its "?" (grey while the quest is not done).
+                    const turnIn = group.slice(1).map((s) => pinIcon(s, steps, done))
+                      .find((i) => (i === 'progress' || i === 'turnin') && i !== icon);
                     // Starts with the visible text (number, label) so the name matches what is seen (WCAG 2.5.3).
                     const label = `${n} ${pinLabel(lead)}, ` + (group.length === 1
                       ? `step ${n} at ${coords(lead)}: ${plain(lead)}`
@@ -378,6 +384,10 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                         onClick={() => focusStep(lead)}
                       >
                         {icon && <img src={`/art/icon-${icon}.webp`} alt="" width={32} height={32} />}
+                        {icon && turnIn && (
+                          <img className={`pin-extra ${turnIn}`} src={`/art/icon-${turnIn}.webp`} alt="" width={20}
+                               height={20} />
+                        )}
                         <span className="pin-num">{state === 'done' ? '✓' : n}</span>{' '}
                         <span className="pin-label">{pinLabel(lead)}</span>
                       </button>

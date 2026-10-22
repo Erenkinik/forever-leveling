@@ -224,6 +224,9 @@ svg.step-icon.grind { stroke: var(--gold); }
 .pin.has-icon.done .pin-num { color: #b5b5b5; }
 /* A turn-in whose quest is not done yet: faint, so the blue objective area stays the thing to look at. */
 .pin.has-icon.progress img { opacity: .5; }
+/* The "?" of a turn-in merged into this pin, small at its top-left corner. */
+.pin.has-icon img.pin-extra { position: absolute; left: -12px; top: -10px; width: 22px; height: 22px; }
+.pin.has-icon img.pin-extra.progress { opacity: .6; }
 .pin.has-icon.progress:not(.current) .pin-num { color: #b5b5b5; opacity: .7; }
 @media (pointer: coarse) { .pin.has-icon { width: 44px; height: 44px; } }
 .step-icon.game { width: 28px; height: 28px; margin-top: 8px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .8)); }
@@ -241,6 +244,7 @@ svg.step-icon.grind { stroke: var(--gold); }
 .area { fill: #2f7dff; }
 .area.active { opacity: .42; }
 .area.upcoming { opacity: .16; }
+.area.logged { opacity: .28; }  /* other quests already in the log */
 
 /* Yellow (current) circles get a black rim, like the game's quest markers. */
 .pin.current:not(.has-icon) { border: 2px solid #000; box-shadow: 0 0 0 1px var(--gold); }

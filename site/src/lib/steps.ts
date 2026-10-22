@@ -369,6 +369,35 @@ export function stepIcon(s: Step): IconName | null {
   }
 }
 
+/** Quests in the log: accepted (accept step done) and not turned in yet, as in the game's quest log. */
+export function openQuests(steps: Step[], done: ReadonlySet<string>): Set<number> {
+  const open = new Set<number>();
+  for (const s of steps) {
+    if (s.questId === undefined) continue;
+    if (s.type === 'accept' && done.has(s.id)) open.add(s.questId);
+    if (s.type === 'turnin' && done.has(s.id)) open.delete(s.questId);
+  }
+  return open;
+}
+
+/** The steps a map shows: the window around the current step, plus what is left of every quest in the log on
+ *  this map (its objectives and its turn-in, where the game puts the grey "?"), in route order. As in the game,
+ *  a quest not accepted yet shows only its "!" (its turn-in is not on the map), and what is done leaves the map:
+ *  accepting a quest takes its "!" away and puts the grey "?" over the NPC to turn it in to. */
+export function mapStepsFor(steps: Step[], currentIndex: number, done: ReadonlySet<string>, behind: number,
+                            ahead: number): Step[] {
+  const current = steps[currentIndex];
+  if (!current) return [];
+  const open = openQuests(steps, done);
+  const inLog = (s: Step) => s.questId !== undefined && open.has(s.questId);
+  const near = new Set(steps.slice(Math.max(0, currentIndex - behind), currentIndex + ahead + 1));
+  return steps.filter((s) => {
+    if (s.mapId !== current.mapId || done.has(s.id)) return false;
+    if (s.type === 'turnin' && s !== current && !inLog(s)) return false;
+    return near.has(s) || (inLog(s) && !done.has(s.id) && (s.type === 'complete' || s.type === 'turnin'));
+  });
+}
+
 /** The map icon: like stepIcon, but a turn-in whose quest still has earlier unfinished steps shows the grey,
  *  hollow "?" the game puts over a quest that is not done yet. */
 export function pinIcon(s: Step, steps: Step[], done: ReadonlySet<string>): IconName | null {
