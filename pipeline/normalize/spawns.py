@@ -54,7 +54,8 @@ def build_spawns(pf: PfData, quests: list[dict], zone_to_uimap: dict[int, int]) 
         for i in sorted(units) if i in pf.units
     }
     out_objects = {
-        str(i): {"points": points(pf.objects[i]["coords"])} for i in sorted(objects) if i in pf.objects
+        str(i): {"name": pf.objects[i].get("name"), "points": points(pf.objects[i]["coords"])}
+        for i in sorted(objects) if i in pf.objects
     }
     return {
         "build": DATA_BUILD,
@@ -66,7 +67,7 @@ def build_spawns(pf: PfData, quests: list[dict], zone_to_uimap: dict[int, int]) 
         "units": out_units,
         "objects": out_objects,
         "items": {
-            str(i): {"units": sorted(set(s["units"])), "objects": sorted(set(s["objects"]))}
+            str(i): {"units": sorted(set(s["units"])), "objects": sorted(set(s["objects"])), "name": s.get("name")}
             for i, s in item_sources.items()
         },
         "droppedPoints": dropped,

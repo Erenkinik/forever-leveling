@@ -124,3 +124,40 @@ def test_export_is_deterministic():
     assert to_lua(ROUTE) == to_lua(json.loads(json.dumps(ROUTE)))
     args = ({1: {"name": "Q1"}}, {"units": {}}, {1429: "Elwynn Forest"})
     assert to_site_json(ROUTE, *args) == to_site_json(ROUTE, *args)
+
+
+def test_site_json_complete_step_lists_objectives_with_nearby_sources():
+    route = {"id": "t", "steps": [
+        {"id": "complete-5", "type": "complete", "questId": 5, "mapId": 1429, "x": 50.0, "y": 50.0},
+        {"id": "accept-5", "type": "accept", "questId": 5, "npcId": 1001, "mapId": 1429, "x": 1.0, "y": 1.0},
+    ]}
+    quests = {5: {"name": "Wolves", "objectives": {"units": [10], "items": [750, 999], "objects": [31]}}}
+    spawns = {
+        "units": {
+            "10": {"name": "Kobold Vermin", "points": [[1429, 52.0, 50.0]]},
+            "11": {"name": "Young Wolf", "points": [[1429, 51.0, 50.0]]},
+            "12": {"name": "Timber Wolf", "points": [[1429, 60.0, 50.0], [1429, 49.0, 50.0]]},
+            "13": {"name": "Far Wolf", "points": [[1429, 90.0, 90.0]]},
+            "14": {"name": "Other Map Wolf", "points": [[1436, 50.0, 50.0]]},
+            "15": {"name": "Prowler", "points": [[1429, 70.0, 50.0]]},
+            "1001": {"name": "Guard", "points": []},
+        },
+        "objects": {"31": {"name": "Old Lion Statue", "points": [[1429, 1.0, 1.0]]}},
+        "items": {"750": {"name": "Tough Wolf Meat", "units": [11, 12, 13, 14, 15], "objects": []}},
+    }
+    out = to_site_json(route, quests, spawns, {1429: "Elwynn Forest"})
+    complete, accept = out["steps"]
+    assert complete["objectives"] == [
+        {"kind": "kill", "id": 10, "name": "Kobold Vermin"},
+        {"kind": "collect", "id": 750, "name": "Tough Wolf Meat", "sources": ["Timber Wolf", "Young Wolf", "Prowler"]},
+        {"kind": "collect", "id": 999, "name": None, "sources": []},
+        {"kind": "use", "id": 31, "name": "Old Lion Statue"},
+    ]
+    assert "objectives" not in accept
+
+
+def test_site_json_adds_estimated_levels_when_given():
+    args = ({1: {"name": "Q1"}}, {"units": {}}, {1429: "Elwynn Forest"})
+    out = to_site_json(ROUTE, *args, levels={"accept-1": 1, "gap-2": 3})
+    assert [s["level"] for s in out["steps"]] == [1, 3]
+    assert "level" not in to_site_json(ROUTE, *args)["steps"][0]

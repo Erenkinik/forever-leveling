@@ -25,7 +25,7 @@ def _pf(units=None, objects=None, items=None):
     return PfData(
         quests={},
         units={k: {"coords": v[1], "fac": None, "name": v[0]} for k, v in (units or {}).items()},
-        objects={k: {"coords": v, "fac": None} for k, v in (objects or {}).items()},
+        objects={k: {"coords": v, "fac": None, "name": f"Object {k}"} for k, v in (objects or {}).items()},
         items=items or {},
     )
 
@@ -45,7 +45,7 @@ def test_spawns_only_referenced_entities():
     assert out["units"]["1"] == {"name": "Start", "points": [[1429, 10.0, 20.0]]}
     assert out["units"]["3"]["points"] == [[1411, 5.0, 6.0]]
     assert list(out["objects"]) == ["7"]
-    assert out["objects"]["7"] == {"points": [[1429, 50.0, 60.0]]}
+    assert out["objects"]["7"] == {"name": "Object 7", "points": [[1429, 50.0, 60.0]]}
     assert out["items"] == {} and out["droppedPoints"] == 0
 
 
@@ -57,7 +57,7 @@ def test_item_sources_listed():
     )
     q = _quest(2, end=("npc", 5), items=[750])
     out = build_spawns(pf, [q], ZONES)
-    assert out["items"] == {"750": {"units": [5], "objects": [8]}}
+    assert out["items"] == {"750": {"units": [5], "objects": [8], "name": None}}
     assert "8" in out["objects"] and out["objects"]["8"]["points"] == [[1429, 7.0, 8.0]]
     assert "6" not in out["units"]
 
@@ -65,7 +65,7 @@ def test_item_sources_listed():
 def test_item_start_and_end_refs_included():
     pf = _pf(units={5: ("D", [(1.0, 2.0, 12)])}, items={6497: {"units": [5], "objects": []}})
     out = build_spawns(pf, [_quest(3, start=("item", 6497))], ZONES)
-    assert out["items"] == {"6497": {"units": [5], "objects": []}}
+    assert out["items"] == {"6497": {"units": [5], "objects": [], "name": None}}
     assert "5" in out["units"]
 
 
@@ -89,9 +89,10 @@ def test_duplicate_points_collapsed_and_ids_numeric_sorted():
 
 def test_load_pfquest_reads_items():
     data = load_pfquest(FIX / "pfquest")
-    assert data.items[750] == {"units": [197], "objects": [31]}
-    assert data.items[17] == {"units": [], "objects": []}
-    assert data.items[6497] == {"units": [], "objects": []}  # vendors ("V") are not drop sources
+    assert data.items[750] == {"units": [197], "objects": [31], "name": "Tough Wolf Meat"}
+    assert data.items[17] == {"units": [], "objects": [], "name": "Martin Fury"}
+    assert data.items[6497] == {"units": [], "objects": [], "name": None}  # vendors ("V") are not drop sources
+    assert data.objects[31]["name"] == "Old Lion Statue" and data.objects[4]["name"] is None
 
 
 def test_pfdata_items_default_empty():
@@ -159,3 +160,21 @@ def test_load_pfquest_require_items(tmp_path):
     assert load_pfquest(tmp_path / "pf").items == {}
     with pytest.raises(FileNotFoundError):
         load_pfquest(tmp_path / "pf", require_items=True)
+
+
+@pytest.mark.parametrize("name_file", ["enUS/items.lua", "enUS/objects.lua"])
+def test_require_items_also_requires_name_files(tmp_path, name_file):
+    import shutil as sh
+    sh.copytree(FIX / "pfquest", tmp_path / "pf")
+    (tmp_path / "pf" / name_file).unlink()
+    assert load_pfquest(tmp_path / "pf") is not None
+    with pytest.raises(FileNotFoundError, match=name_file.split("/")[-1]):
+        load_pfquest(tmp_path / "pf", require_items=True)
+
+
+def test_spawns_carry_object_and_item_names():
+    pf = _pf(units={5: ("Wolf", [(1.0, 2.0, 12)])}, objects={31: [(3.0, 4.0, 12)]},
+             items={750: {"units": [5], "objects": [], "name": "Tough Wolf Meat"}})
+    out = build_spawns(pf, [_quest(1, items=[750], objects=[31])], ZONES)
+    assert out["objects"]["31"]["name"] == "Object 31"
+    assert out["items"]["750"] == {"units": [5], "objects": [], "name": "Tough Wolf Meat"}

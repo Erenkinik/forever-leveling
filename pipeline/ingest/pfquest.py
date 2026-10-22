@@ -9,7 +9,8 @@ from typing import Callable
 from .luatable import parse_lua_table
 
 BASE_URL = "https://raw.githubusercontent.com/shagu/pfQuest/master/db/"
-FILES = ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua", "items.lua")
+FILES = ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua", "items.lua",
+         "enUS/items.lua", "enUS/objects.lua")
 
 
 def fetch_pfquest(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> None:
@@ -33,7 +34,7 @@ class PfData:
     quests: dict[int, dict]
     units: dict[int, dict]
     objects: dict[int, dict]
-    items: dict[int, dict] = field(default_factory=dict)  # itemId -> {"units": [ids], "objects": [ids]}
+    items: dict[int, dict] = field(default_factory=dict)  # itemId -> {"units": [ids], "objects": [ids], "name"}
 
 
 def _read(path: Path):
@@ -59,16 +60,29 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
     return out
 
 
-def _items(src: dict) -> dict[int, dict]:
+def _items(src: dict, names: dict) -> dict[int, dict]:
     """Drop sources per item: only unit ("U") and object ("O") ids; chances, vendors and refs are ignored."""
     out: dict[int, dict] = {}
     for iid, entry in src.items():
         entry = _dict(entry)
-        out[iid] = {"units": list(_dict(entry.get("U"))), "objects": list(_dict(entry.get("O")))}
+        out[iid] = {
+            "units": list(_dict(entry.get("U"))), "objects": list(_dict(entry.get("O"))), "name": names.get(iid),
+        }
     return out
 
 
+def _names(path: Path, required: bool) -> dict:
+    """An enUS id -> name table; {} when the optional file is absent."""
+    if not path.is_file():
+        if required:
+            raise FileNotFoundError(2, "No such file", str(path))
+        return {}
+    return _dict(_read(path))
+
+
 def load_pfquest(src_dir: Path, require_items: bool = False) -> PfData:
+    """Load the pfQuest tables. require_items (normalize) also requires items.lua and the enUS item and
+    object name files; otherwise missing optional files give empty tables."""
     src = Path(src_dir)
     quest_names = _dict(_read(src / "enUS" / "quests.lua"))
     quests: dict[int, dict] = {}
@@ -83,10 +97,12 @@ def load_pfquest(src_dir: Path, require_items: bool = False) -> PfData:
     items_path = src / "items.lua"
     if require_items and not items_path.is_file():
         raise FileNotFoundError(2, "No such file", str(items_path))
-    items = _items(_dict(_read(items_path))) if items_path.is_file() else {}
+    item_names = _names(src / "enUS" / "items.lua", require_items)
+    object_names = _names(src / "enUS" / "objects.lua", require_items)
+    items = _items(_dict(_read(items_path)), item_names) if items_path.is_file() else {}
     return PfData(
         quests=quests,
         units=_spawns(_dict(_read(src / "units.lua")), unit_names),
-        objects=_spawns(_dict(_read(src / "objects.lua")), None),
+        objects=_spawns(_dict(_read(src / "objects.lua")), object_names),
         items=items,
     )

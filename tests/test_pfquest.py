@@ -56,7 +56,8 @@ class _Resp(io.BytesIO):
 def test_fetch_writes_all_files_and_no_part(tmp_path):
     fetch_pfquest(tmp_path, opener=lambda url, timeout=None: _Resp(b"pfDB = {}"))
     base = tmp_path / "pfquest"
-    for rel in ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua"):
+    for rel in ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua", "items.lua",
+                "enUS/items.lua", "enUS/objects.lua"):
         assert (base / rel).read_bytes() == b"pfDB = {}"
     assert not list(base.rglob("*.part"))
 
@@ -89,7 +90,7 @@ def test_empty_entries_load_without_error(tmp_path):
     assert d.quests[5]["name"] is None
     assert d.quests[6]["start"] == {}
     assert d.units[9] == {"coords": [], "fac": None, "name": "X"}
-    assert d.objects[2] == {"coords": [], "fac": None}
+    assert d.objects[2] == {"coords": [], "fac": None, "name": None}
 
 
 def test_fetch_incomplete_read_cleans_up(tmp_path):
