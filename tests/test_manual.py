@@ -80,3 +80,14 @@ def test_manual_non_list_rejected(tmp_path):
     p.write_text("id: 1\n", encoding="utf-8")
     with pytest.raises(ValueError):
         load_manual(p)
+
+
+@pytest.mark.parametrize("bad_id", ["5", True, [5], 5.0])
+def test_manual_rejects_non_int_id(tmp_path, bad_id):
+    with pytest.raises(ValueError, match="id must be an integer"):
+        load_manual(_write(tmp_path, [_entry(id=bad_id)]))
+
+
+def test_manual_rejects_impossible_date(tmp_path):
+    with pytest.raises(ValueError, match="782"):
+        load_manual(_write(tmp_path, [_entry(id=782, checkedOn="2026-13-45")]))

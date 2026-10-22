@@ -23,6 +23,8 @@ def load_manual(path: Path) -> dict[int, dict]:
         if not isinstance(entry, dict) or "id" not in entry:
             raise ValueError(f"{path}: entry #{index} is not a mapping with an id")
         qid = entry["id"]
+        if type(qid) is not int:  # excludes bool, str, list
+            raise ValueError(f"quest {qid!r}: id must be an integer")
         missing = [k for k in REQUIRED if entry.get(k) is None]
         if missing:
             raise ValueError(f"quest {qid}: missing required field(s): {', '.join(missing)}")
@@ -36,5 +38,9 @@ def load_manual(path: Path) -> dict[int, dict]:
             checked = checked.isoformat()
         if not isinstance(checked, str) or not _DATE_RE.fullmatch(checked):
             raise ValueError(f"quest {qid}: checkedOn must be YYYY-MM-DD")
+        try:
+            datetime.date.fromisoformat(checked)
+        except ValueError:
+            raise ValueError(f"quest {qid}: checkedOn {checked!r} is not a real date") from None
         quests[qid] = {**entry, "checkedOn": checked, "source": SOURCE}
     return quests
