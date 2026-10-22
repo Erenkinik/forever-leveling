@@ -1,0 +1,15 @@
+# TASLAK — Eren onaylayacak (§8.2)
+route: human
+race: Human
+faction: Alliance
+reviewed: false
+zones:
+  - Elwynn Forest
+  - Westfall
+  - Loch Modan
+  - Redridge Mountains
+  - Darkshore
+  - Ashenvale
+  - Wetlands
+  - Duskwood
+  - Hillsbrad Foothills
