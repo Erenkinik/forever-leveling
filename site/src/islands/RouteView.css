@@ -1,0 +1,70 @@
+.route-bar { display: grid; gap: 12px; margin: 16px 0; }
+.route-title { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; min-height: 44px;
+  display: inline-flex; align-items: center; gap: 6px; font: 14px var(--font-mono); color: var(--text); text-decoration: none;
+}
+.pill.alliance { color: var(--alliance); }
+.pill.horde { color: var(--horde); }
+.pill.beta { color: var(--warn); border-color: var(--warn); }
+.progress { display: grid; gap: 4px; max-width: 420px; font: 14px var(--font-mono); color: var(--muted); }
+.progress progress { width: 100%; height: 10px; accent-color: var(--gold); }
+.settings { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.settings label { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+.settings input { width: 20px; height: 20px; accent-color: var(--gold); }
+
+.route-main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 900px) { .route-main { grid-template-columns: 1fr; } }
+
+.zone { font-size: 24px; margin: 24px 0 12px; }
+.steps ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.step {
+  display: flex; gap: 12px; align-items: flex-start; background: var(--surface);
+  border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px; scroll-margin: 96px;
+}
+.step .mark {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); font: 600 14px var(--font-mono); cursor: pointer;
+}
+.step .body { display: grid; gap: 2px; padding-top: 4px; min-width: 0; overflow-wrap: anywhere; }
+.step .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.xy { font: 14px var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+.tag { font: 14px var(--font-mono); color: var(--muted); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0 6px; }
+.tag.warn { color: var(--warn); border-color: var(--warn); }
+.quest { color: var(--quest); font-weight: 600; }
+.npc { color: var(--npc); }
+.step.done { color: var(--muted); }
+.step.done .text { text-decoration: line-through; }
+.step.done .quest, .step.done .npc { color: var(--muted); }
+.step.done .mark { border-color: var(--success); color: var(--success); }
+.step.current { background: var(--raised); border-color: var(--gold); }
+.step.current .mark { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+.step.gap { border-style: dashed; }
+.now {
+  justify-self: start; font: 600 14px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em;
+  background: var(--gold); color: var(--on-gold); border-radius: 4px; padding: 4px 6px;
+}
+
+.mapbox { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; position: sticky; top: 12px; }
+@media (max-width: 900px) { .mapbox { position: static; } }
+.map-title { font-size: 24px; margin: 0 0 8px; }
+.map-frame { overflow: auto; border-radius: 6px; border: 1px solid var(--border-subtle); max-height: 70vh; }
+.map { position: relative; aspect-ratio: 1 / 1; background: #1b2414; min-width: 100%; }
+.map .grid { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map .grid line { stroke: #34402a; stroke-width: .3; }
+.pin {
+  position: absolute; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; font: 600 14px var(--font-mono); border: 2px solid var(--bg); cursor: pointer;
+}
+.pin.done { background: var(--success); color: var(--on-gold); }
+.pin.current { background: var(--gold); color: var(--on-gold); z-index: 1; }
+.pin.todo { background: var(--surface); color: var(--text); outline: 2px solid var(--border); }
+.zoom { display: flex; gap: 8px; margin-top: 8px; }
+.zoom button {
+  width: 44px; height: 44px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); font: 600 20px var(--font-mono); cursor: pointer;
+}
+.zoom button:disabled { color: var(--muted); cursor: default; }
+.coords { margin: 12px 0 0; padding-left: 0; list-style: none; font-size: 14px; color: var(--muted); display: grid; gap: 4px; }
+.coords strong { color: var(--text); font-family: var(--font-mono); }
+.map-note { font-size: 14px; color: var(--muted); margin: 8px 0 0; }

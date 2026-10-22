@@ -1,0 +1,279 @@
+import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
+
+import {
+  clusterPins, describeStep, groupByZone, loadDone, loadSettings, safeStorage, saveDone, saveSettings, storageKey,
+  type KeyValueStore, type Part, type Route, type Settings, type Step,
+} from '../lib/steps.ts';
+import './RouteView.css';
+
+const ZOOMS = [1, 1.5, 2, 3];
+// Steps shown on the map: a few behind and ahead of the current step, on its map only.
+const MAP_BEHIND = 2;
+const MAP_AHEAD = 6;
+// Pins are 44px; pins whose centres are closer than this are merged so targets never overlap (WCAG 2.5.8).
+const PIN_SPACING_PX = 48;
+
+const plain = (s: Step) => describeStep(s).map((p) => p.text).join('');
+const coords = (s: Step) => `${s.x.toFixed(1)}, ${s.y.toFixed(1)}`;
+
+function Text({ parts }: { parts: Part[] }) {
+  return (
+    <>
+      {parts.map((p, i) => (p.kind ? <span key={i} className={p.kind}>{p.text}</span> : <span key={i}>{p.text}</span>))}
+    </>
+  );
+}
+
+/** Space is a page shortcut unless the user is typing or on a control that Space itself activates. */
+function spaceBelongsToTarget(target: EventTarget | null): boolean {
+  const el = target as HTMLElement | null;
+  if (!el) return false;
+  if (el.classList.contains('mark')) return false; // the step buttons: Space means "mark the current step"
+  return el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(el.tagName);
+}
+
+interface RowProps {
+  step: Step;
+  n: number;
+  isDone: boolean;
+  isCurrent: boolean;
+  onToggle: (step: Step, e: MouseEvent<HTMLButtonElement>) => void;
+  register: (id: string, el: HTMLLIElement | null) => void;
+}
+
+const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, onToggle, register }: RowProps) {
+  return (
+    <li
+      id={isCurrent ? 'current-step' : undefined}
+      ref={(el) => register(step.id, el)}
+      tabIndex={-1}
+      className={`step ${step.type}${isDone ? ' done' : ''}${isCurrent ? ' current' : ''}`}
+      aria-current={isCurrent ? 'step' : undefined}
+      data-step-id={step.id}
+    >
+      <button type="button" className="mark" aria-pressed={isDone} aria-label={`Step ${n} done`}
+              onClick={(e) => onToggle(step, e)}>
+        {isDone ? '✓' : n}
+      </button>
+      <div className="body">
+        {isCurrent && <span className="now">Now</span>}
+        <span className="text"><Text parts={describeStep(step)} /></span>
+        <span className="meta">
+          <span className="xy">{coords(step)}</span>
+          {step.type === 'gap' && <span className="tag warn">Not routed</span>}
+          {step.confidence === 'unverified' && step.type !== 'gap' && <span className="tag">Unverified</span>}
+        </span>
+      </div>
+    </li>
+  );
+});
+
+export default function RouteView({ route }: { route: Route }) {
+  const steps = route.steps;
+  const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
+  const validIds = useMemo(() => new Set(steps.map((s) => s.id)), [steps]);
+  const groups = useMemo(() => groupByZone(steps), [steps]);
+
+  const storeRef = useRef<KeyValueStore | null>(null);
+  const store = () => (storeRef.current ??= safeStorage(() => window.localStorage));
+
+  const [done, setDone] = useState<Set<string>>(() => new Set());
+  const [loaded, setLoaded] = useState(false);
+  const [settings, setSettings] = useState<Settings>({ shortcuts: true, highContrast: false });
+  const [zoom, setZoom] = useState(0);
+  const [announcement, setAnnouncement] = useState('');
+  const itemRefs = useRef(new Map<string, HTMLLIElement>());
+
+  useEffect(() => {
+    setDone(loadDone(store(), route.id, validIds));
+    setSettings(loadSettings(store()));
+    setLoaded(true);
+    // Another tab of the same route saved progress: take it over instead of overwriting it later.
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === storageKey(route.id)) setDone(loadDone(store(), route.id, validIds));
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, [route.id, validIds]);
+
+  useEffect(() => {
+    document.documentElement.dataset.contrast = settings.highContrast ? 'high' : '';
+  }, [settings.highContrast]);
+
+  const updateSettings = (patch: Partial<Settings>) => {
+    const next = { ...settings, ...patch };
+    setSettings(next);
+    saveSettings(store(), next);
+  };
+
+  const currentIndex = steps.findIndex((s) => !done.has(s.id));
+  const current = currentIndex >= 0 ? steps[currentIndex] : undefined;
+
+  const toggle = (step: Step) => {
+    const next = new Set(done);
+    const wasDone = next.has(step.id);
+    if (wasDone) next.delete(step.id);
+    else next.add(step.id);
+    setDone(next);
+    saveDone(store(), route.id, next);
+    const n = (index.get(step.id) ?? 0) + 1;
+    const following = steps.find((s) => !next.has(s.id));
+    setAnnouncement(wasDone
+      ? `Step ${n} marked not done.`
+      : `Step ${n} done.${following ? ` Next: ${plain(following)}.` : ' Route complete.'}`);
+  };
+  // Stable callbacks for the memoised rows; they always call the latest toggle.
+  const toggleRef = useRef(toggle);
+  toggleRef.current = toggle;
+  const onRowToggle = useCallback((step: Step, e: MouseEvent<HTMLButtonElement>) => {
+    toggleRef.current(step);
+    // A mouse click leaves focus on the button, where Space would click it again; move focus to the row.
+    if (e.detail > 0) (e.currentTarget.closest('li') as HTMLLIElement | null)?.focus({ preventScroll: true });
+  }, []);
+  const register = useCallback((id: string, el: HTMLLIElement | null) => {
+    if (el) itemRefs.current.set(id, el);
+    else itemRefs.current.delete(id);
+  }, []);
+
+  useEffect(() => {
+    if (!settings.shortcuts) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== ' ' || e.ctrlKey || e.metaKey || e.altKey || spaceBelongsToTarget(e.target)) return;
+      e.preventDefault();
+      if (e.repeat) return; // holding Space must not run through the route
+      const cur = steps.find((s) => !done.has(s.id));
+      if (cur) toggleRef.current(cur);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [settings.shortcuts, steps, done]);
+
+  // Map frame width for pin merging; a callback ref so a frame that remounts is observed again.
+  const [frameWidth, setFrameWidth] = useState(400);
+  const observerRef = useRef<ResizeObserver | null>(null);
+  const frameRef = useCallback((el: HTMLDivElement | null) => {
+    observerRef.current?.disconnect();
+    if (!el) return;
+    observerRef.current = new ResizeObserver(([entry]) => {
+      setFrameWidth(Math.max(100, Math.round(entry.contentRect.width / 20) * 20));
+    });
+    observerRef.current.observe(el);
+  }, []);
+
+  const mapSteps = current
+    ? steps.slice(Math.max(0, currentIndex - MAP_BEHIND), currentIndex + MAP_AHEAD + 1).filter((s) => s.mapId === current.mapId)
+    : [];
+  // The current step leads its cluster, so a merged pin is drawn where the player has to go.
+  const pins = current
+    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)], (PIN_SPACING_PX / (frameWidth * ZOOMS[zoom])) * 100)
+    : [];
+  const focusStep = (s: Step) => {
+    const el = itemRefs.current.get(s.id);
+    el?.scrollIntoView({ block: 'center' });
+    el?.focus();
+  };
+  const position = current ? currentIndex + 1 : steps.length;
+  const doneCount = steps.reduce((n, s) => n + (done.has(s.id) ? 1 : 0), 0);
+
+  return (
+    <div className="route-view">
+      <div className="route-bar">
+        <div className="route-title">
+          <span className={`pill ${route.faction.toLowerCase()}`}>
+            <span aria-hidden="true">{route.faction === 'Alliance' ? '◆' : '▲'}</span> {route.faction} · {route.race}
+          </span>
+          <span className="pill">Levels {route.levelRange[0]}–{route.levelRange[1]}</span>
+          {route.releaseTier === 'beta' && <span className="pill beta">Beta · not verified in game</span>}
+          <a className="pill" href="/">Change race</a>
+        </div>
+        <div className="progress">
+          <label htmlFor="route-progress">Step {position} of {steps.length} · {doneCount} done</label>
+          <progress id="route-progress" max={steps.length} value={doneCount} />
+        </div>
+        <div className="settings">
+          <label>
+            <input type="checkbox" checked={settings.shortcuts} onChange={(e) => updateSettings({ shortcuts: e.target.checked })} />
+            Space marks the current step done
+          </label>
+          <label>
+            <input type="checkbox" checked={settings.highContrast}
+                   onChange={(e) => updateSettings({ highContrast: e.target.checked })} />
+            High contrast
+          </label>
+        </div>
+      </div>
+      <p className="sr-only" aria-live="polite">{announcement}</p>
+
+      <div className="route-main">
+        <section aria-label="Route steps" className="steps" data-loaded={loaded ? 'true' : 'false'}>
+          {groups.map((g) => (
+            <section key={g.key}>
+              <h2 className="zone">{g.zoneName}</h2>
+              <ol>
+                {g.steps.map((s) => (
+                  <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}
+                           isCurrent={s === current} onToggle={onRowToggle} register={register} />
+                ))}
+              </ol>
+            </section>
+          ))}
+        </section>
+
+        <aside className="mapbox" aria-label={current ? `Map of ${current.zoneName ?? 'the current zone'}` : 'Map'}>
+          {current ? (
+            <>
+              <h2 className="map-title">{current.zoneName ?? `map #${current.mapId}`}</h2>
+              <div className="map-frame" ref={frameRef}>
+                <div className="map" style={{ width: `${ZOOMS[zoom] * 100}%` }}>
+                  <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="grid">
+                    {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
+                      <g key={v}>
+                        <line x1={v} y1={0} x2={v} y2={100} />
+                        <line x1={0} y1={v} x2={100} y2={v} />
+                      </g>
+                    ))}
+                  </svg>
+                  {pins.map((group) => {
+                    const lead = group[0];
+                    const numbers = group.map((s) => (index.get(s.id) ?? 0) + 1).sort((a, b) => a - b);
+                    const state = lead === current ? 'current' : group.every((s) => done.has(s.id)) ? 'done' : 'todo';
+                    const label = group.length === 1
+                      ? `Step ${numbers[0]} at ${coords(lead)}: ${plain(lead)}`
+                      : `Steps ${numbers.join(', ')} near ${coords(lead)}`;
+                    return (
+                      <button
+                        key={lead.id}
+                        type="button"
+                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}`}
+                        style={{ left: `${lead.x}%`, top: `${lead.y}%` }}
+                        aria-label={label}
+                        onClick={() => focusStep(lead)}
+                      >
+                        {state === 'done' ? '✓' : (index.get(lead.id) ?? 0) + 1}
+                        {group.length > 1 && <span aria-hidden="true">+</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="zoom" role="group" aria-label="Map zoom">
+                <button type="button" aria-label="Zoom in" disabled={zoom === ZOOMS.length - 1}
+                        onClick={() => setZoom((z) => Math.min(ZOOMS.length - 1, z + 1))}>+</button>
+                <button type="button" aria-label="Zoom out" disabled={zoom === 0}
+                        onClick={() => setZoom((z) => Math.max(0, z - 1))}>−</button>
+              </div>
+              <ol className="coords" aria-label="Coordinates of the steps on the map">
+                {mapSteps.map((s) => (
+                  <li key={s.id}><strong>{(index.get(s.id) ?? 0) + 1}</strong> {coords(s)} · {plain(s)}</li>
+                ))}
+              </ol>
+              <p className="map-note">Simple coordinate grid (0–100). Coordinates match the in-game map.</p>
+            </>
+          ) : (
+            <p id="current-step" tabIndex={-1}>Route complete. Well done!</p>
+          )}
+        </aside>
+      </div>
+    </div>
+  );
+}

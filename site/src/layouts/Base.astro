@@ -1,0 +1,61 @@
+---
+import '@fontsource/cinzel/600.css';
+import '@fontsource/cinzel/700.css';
+import '@fontsource/source-serif-4/400.css';
+import '@fontsource/source-serif-4/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/tokens.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#0f0c08" />
+    <script is:inline>
+      // High contrast before first paint; the key and shape match SETTINGS_KEY in src/lib/steps.ts.
+      try {
+        if (JSON.parse(localStorage.getItem('fxp:v1:settings') || '{}').highContrast === true) {
+          document.documentElement.dataset.contrast = 'high';
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <slot name="skip" />
+    <div class="wrap">
+      <header class="site-header">
+        <a class="brand" href="/">ForeverXP</a>
+        <slot name="header" />
+      </header>
+      <slot />
+      <footer class="site-footer">
+        Free WoW Forever leveling guide. Routes are generated from open data and are not yet verified in game.
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 16px; }
+  .site-header {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    padding: 12px 0 16px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .brand {
+    font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--gold);
+    letter-spacing: .02em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center;
+  }
+  h1, h2 { font-family: var(--font-display); color: var(--gold); letter-spacing: .02em; }
+  .site-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-subtle); color: var(--muted); font-size: 14px; }
+</style>

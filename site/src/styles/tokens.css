@@ -1,0 +1,62 @@
+/* Design tokens, docs/plan.md §3.1. Contrast ratios are on --bg; tests/contrast.test.mjs checks them. */
+:root {
+  --bg: #0f0c08;
+  --surface: #1c1710;
+  --raised: #2a2216;
+  --border: #857452; /* §3.1 said #7a6a4a; lightened to keep 3:1 on --raised */
+  --border-subtle: #3a3022;
+  --text: #e8dcc4;
+  --muted: #a89c84;
+  --gold: #f0c060;
+  --quest: #ffd100;
+  --npc: #7fd0ff;
+  --alliance: #6aa6ff;
+  --horde: #ff6b5e;
+  --success: #6fcf7f;
+  --warn: #f0a050;
+  --on-gold: #0f0c08;
+
+  --font-display: "Cinzel", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root[data-contrast="high"] {
+  --surface: #000000;
+  --raised: #1a1a1a;
+  --bg: #000000;
+  --border: #e8dcc4;
+  --border-subtle: #a89c84;
+  --text: #ffffff;
+  --muted: #e8dcc4;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 var(--font-body);
+}
+
+a { color: var(--gold); }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 10;
+  background: var(--gold); color: var(--on-gold); padding: 8px 12px; border-radius: 4px; font-weight: 600;
+}
+.skip-link:focus { top: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
