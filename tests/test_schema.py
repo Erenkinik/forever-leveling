@@ -21,7 +21,7 @@ def make_quest():
         "prereqs": [], "start": dict(point), "end": dict(point),
         "objectives": {"units": [], "items": [], "objects": []},
         "inForever": True, "sources": ["wago-db2", "pfquest"], "lineages": ["blizzard-client", "vanilla-emu"],
-        "conflicts": [], "confidence": "cross-checked", "verifiedBuild": None,
+        "conflicts": [], "confidence": "cross-checked", "seenInBuild": None,
     }
 
 

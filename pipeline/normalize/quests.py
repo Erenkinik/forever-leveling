@@ -156,7 +156,7 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     rec.update(
         inForever=in_forever, sources=sources, lineages=lineages, conflicts=conflicts,
         confidence=confidence,
-        verifiedBuild=DATA_BUILD if in_forever else None,
+        seenInBuild=DATA_BUILD if in_forever else None,
     )
     return rec
 

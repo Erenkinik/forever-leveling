@@ -37,6 +37,18 @@ def _build_records() -> list[dict]:
     )
 
 
+def _uimaps_path() -> Path:
+    return DATA_DIR / "canonical" / "uimaps.json"
+
+
+def _build_uimaps() -> str:
+    from pipeline.ingest.wago import load_uimaps
+
+    maps = load_uimaps(RAW_DIR / "wago" / DATA_BUILD)
+    doc = {"build": DATA_BUILD, "maps": {str(k): maps[k] for k in sorted(maps)}}
+    return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
+
+
 def _serialize(records: list[dict]) -> str:
     return json.dumps(records, indent=1, ensure_ascii=False) + "\n"
 
@@ -46,6 +58,7 @@ def cmd_normalize(args) -> int:
 
     try:
         records = _build_records()
+        uimaps_text = _build_uimaps()
     except FileNotFoundError as exc:
         print(f"missing raw data: {exc.filename} (run the fetch step first)", file=sys.stderr)
         return 1
@@ -53,19 +66,23 @@ def cmd_normalize(args) -> int:
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    out = _canonical_path()
-    text = _serialize(records)
+    targets = [
+        ("quests", _canonical_path(), _serialize(records)),
+        ("uimaps", _uimaps_path(), uimaps_text),
+    ]
     if args.check:
-        if not out.is_file():
-            print(f"missing canonical quests: {out} (run normalize)", file=sys.stderr)
-            return 1
-        if out.read_bytes() != text.encode("utf-8"):
-            print(f"{out} is out of date; run python -m pipeline normalize", file=sys.stderr)
-            return 1
-        print(f"up to date: {out}")
+        for label, out, text in targets:
+            if not out.is_file():
+                print(f"missing canonical {label}: {out} (run normalize)", file=sys.stderr)
+                return 1
+            if out.read_bytes() != text.encode("utf-8"):
+                print(f"{out} is out of date; run python -m pipeline normalize", file=sys.stderr)
+                return 1
+        print("up to date: " + ", ".join(str(out) for _, out, _t in targets))
         return 0
-    _write_text_atomic(out, text)
-    print(f"wrote {len(records)} quests to {out}")
+    for _, out, text in targets:
+        _write_text_atomic(out, text)
+    print(f"wrote {len(records)} quests to {targets[0][1]} and uimaps to {targets[1][1]}")
     return 0
 
 
@@ -87,7 +104,7 @@ def cmd_crosscheck(_args) -> int:
 
 
 def cmd_validate(args) -> int:
-    from pipeline.ingest.wago import load_uimaps
+    from pipeline.canonical import load_uimaps_canonical
     from pipeline.validate.semantic import check_route
 
     if args.all == bool(args.route):
@@ -95,15 +112,14 @@ def cmd_validate(args) -> int:
         return 1
     paths = sorted((DATA_DIR / "routes").glob("*.json")) if args.all else [Path(args.route)]
     quests_path = _canonical_path()
-    wago = RAW_DIR / "wago" / DATA_BUILD
     if not quests_path.is_file():
         print(f"missing canonical quests: {quests_path} (run normalize)", file=sys.stderr)
         return 1
-    if not (wago / "UiMap.csv").is_file():
-        print(f"missing raw wago data: {wago / 'UiMap.csv'}", file=sys.stderr)
+    if not _uimaps_path().is_file():
+        print(f"missing canonical uimaps: {_uimaps_path()} (run normalize)", file=sys.stderr)
         return 1
     quests = {q["id"]: q for q in json.loads(quests_path.read_text(encoding="utf-8"))}
-    known_maps = frozenset(load_uimaps(wago))
+    known_maps = frozenset(load_uimaps_canonical(DATA_DIR))
     total = 0
     for path in paths:
         try:
@@ -121,7 +137,7 @@ def cmd_validate(args) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
-    norm = sub.add_parser("normalize", help="build data/canonical/quests.json")
+    norm = sub.add_parser("normalize", help="build data/canonical/quests.json and uimaps.json")
     norm.add_argument("--check", action="store_true", help="compare with the committed file; never writes")
     norm.set_defaults(func=cmd_normalize)
     sub.add_parser("crosscheck", help="write data/reports/crosscheck-<build>.md").set_defaults(

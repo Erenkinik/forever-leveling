@@ -52,7 +52,7 @@ def test_wolves_across_the_border_canonical():
     assert q["prereqs"] == [5261]
     assert q["inForever"] is True and q["sources"] == ["wago-db2", "pfquest"]
     assert q["objectives"] == {"units": [], "items": [750], "objects": []}
-    assert q["verifiedBuild"] == DATA_BUILD
+    assert q["seenInBuild"] == DATA_BUILD
 
 
 def test_quest_started_by_item():
@@ -110,7 +110,7 @@ def test_quest_missing_from_forever_flagged():
     pf = _pf({1: {"lvl": 3, "min": 1, "name": "Q"}})
     q = _one(pf, forever={2})
     assert q["inForever"] is False and q["sources"] == ["pfquest"]
-    assert q["confidence"] == "unverified" and q["verifiedBuild"] is None
+    assert q["confidence"] == "unverified" and q["seenInBuild"] is None
 
 
 def test_forever_only_quest_kept():

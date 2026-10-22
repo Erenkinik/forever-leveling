@@ -19,7 +19,7 @@
     "lineages",
     "conflicts",
     "confidence",
-    "verifiedBuild"
+    "seenInBuild"
   ],
   "properties": {
     "id": {
@@ -231,7 +231,7 @@
         "verified-ingame"
       ]
     },
-    "verifiedBuild": {
+    "seenInBuild": {
       "type": [
         "string",
         "null"

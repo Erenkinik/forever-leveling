@@ -111,3 +111,24 @@ def test_validate_all_with_zero_routes(env, capsys):
     capsys.readouterr()
     assert cli.main(["validate", "--all"]) == 0
     assert "0 routes checked, 0 issues" in capsys.readouterr().out
+
+
+def test_normalize_writes_uimaps_and_check_compares_it(env, capsys):
+    _, data = env
+    assert cli.main(["normalize"]) == 0
+    uimaps = data / "canonical" / "uimaps.json"
+    doc = json.loads(uimaps.read_text(encoding="utf-8"))
+    assert doc["build"] == DATA_BUILD and doc["maps"]
+    assert b"\r\n" not in uimaps.read_bytes()
+    assert cli.main(["normalize", "--check"]) == 0
+    uimaps.write_text(uimaps.read_text(encoding="utf-8") + " ", encoding="utf-8")
+    capsys.readouterr()
+    assert cli.main(["normalize", "--check"]) == 1
+    assert "uimaps.json" in capsys.readouterr().err
+
+
+def test_validate_uses_committed_uimaps_not_raw(env):
+    raw, _ = env
+    cli.main(["normalize"])
+    shutil.rmtree(raw)
+    assert cli.main(["validate", "--all"]) == 0
