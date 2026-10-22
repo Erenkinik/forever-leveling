@@ -44,3 +44,17 @@ def test_render_markdown_has_build_and_table():
     md = render_markdown(s, "1.60.1.70532")
     assert "1.60.1.70532" in md
     assert "| cross-checked |" in md
+
+
+def test_scope_split_known_vs_unknown_level():
+    s = summarize([
+        q(1, ["wago-db2"], "unverified", min_level=None),
+        q(2, ["wago-db2", "pfquest"], "cross-checked", min_level=10),
+        q(3, ["wago-db2", "pfquest"], "cross-checked", min_level=45),
+        q(4, ["wago-db2", "pfquest"], "cross-checked", min_level=None),
+    ])
+    assert s.in_scope_known == 1
+    assert s.in_scope_unknown_level == 2
+    assert s.in_scope == 3
+    assert s.needs_manual == [1]
+    assert s.needs_manual_unknown_level == 1

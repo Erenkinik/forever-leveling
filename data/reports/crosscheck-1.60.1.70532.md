@@ -2,8 +2,11 @@
 
 - total quests: 7387
 - not in Forever: 771
-- in scope (inForever, minLevel <= level max): 4933
+- inForever, level known and within range: 1965
+- inForever, level unknown (upper bound: some may be outside the level range): 2968
+- in_scope total (known + unknown level, upper bound): 4933
 - needs manual entry: 2954
+- needs manual entry, level unknown (upper bound: some may be outside the level range): 2954
 
 ## Confidence
 
