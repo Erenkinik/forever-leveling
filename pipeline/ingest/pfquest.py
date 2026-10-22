@@ -2,14 +2,14 @@
 import http.client
 import urllib.error
 import urllib.request
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
 from .luatable import parse_lua_table
 
 BASE_URL = "https://raw.githubusercontent.com/shagu/pfQuest/master/db/"
-FILES = ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua")
+FILES = ("quests.lua", "units.lua", "objects.lua", "enUS/quests.lua", "enUS/units.lua", "items.lua")
 
 
 def fetch_pfquest(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> None:
@@ -33,6 +33,7 @@ class PfData:
     quests: dict[int, dict]
     units: dict[int, dict]
     objects: dict[int, dict]
+    items: dict[int, dict] = field(default_factory=dict)  # itemId -> {"units": [ids], "objects": [ids]}
 
 
 def _read(path: Path):
@@ -58,7 +59,16 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
     return out
 
 
-def load_pfquest(src_dir: Path) -> PfData:
+def _items(src: dict) -> dict[int, dict]:
+    """Drop sources per item: only unit ("U") and object ("O") ids; chances, vendors and refs are ignored."""
+    out: dict[int, dict] = {}
+    for iid, entry in src.items():
+        entry = _dict(entry)
+        out[iid] = {"units": list(_dict(entry.get("U"))), "objects": list(_dict(entry.get("O")))}
+    return out
+
+
+def load_pfquest(src_dir: Path, require_items: bool = False) -> PfData:
     src = Path(src_dir)
     quest_names = _dict(_read(src / "enUS" / "quests.lua"))
     quests: dict[int, dict] = {}
@@ -70,8 +80,13 @@ def load_pfquest(src_dir: Path) -> PfData:
         rec["name"] = _dict(quest_names.get(qid)).get("T")
         quests[qid] = rec
     unit_names = _dict(_read(src / "enUS" / "units.lua"))
+    items_path = src / "items.lua"
+    if require_items and not items_path.is_file():
+        raise FileNotFoundError(2, "No such file", str(items_path))
+    items = _items(_dict(_read(items_path))) if items_path.is_file() else {}
     return PfData(
         quests=quests,
         units=_spawns(_dict(_read(src / "units.lua")), unit_names),
         objects=_spawns(_dict(_read(src / "objects.lua")), None),
+        items=items,
     )
