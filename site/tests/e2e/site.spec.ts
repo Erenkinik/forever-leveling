@@ -59,7 +59,7 @@ test('map pins are keyboard buttons that lead to their step', async ({ page }) =
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   const pin = page.locator('.pin.current');
   await expect(pin).toHaveCount(1);
-  await expect(pin).toHaveAttribute('aria-label', /^Steps? 1[ ,]/);
+  await expect(pin).toHaveAttribute('aria-label', /^1 .*, steps? 1[ ,]/);
   await pin.focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('li.step').first()).toBeFocused();
@@ -218,4 +218,17 @@ test('search finds a quest and jumps to its step', async ({ page }) => {
   await page.getByLabel('Find a quest or NPC').fill('');
   await page.getByLabel('Find a quest or NPC').press('Space');
   await expect(page.locator('li.step.done')).toHaveCount(0);
+});
+
+test('the map shows the zone art with a labelled current pin', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const map = page.locator('.map.art');
+  await expect(map).toHaveCount(1);
+  await expect(map).toHaveAttribute('style', /url\("?\/maps\/1429\.webp"?\)/);
+  const res = await page.request.get('/maps/1429.webp');
+  expect(res.status()).toBe(200);
+  expect(res.headers()['content-type']).toContain('image/webp');
+  await expect(page.locator('.pin.current .pin-label')).toHaveText('Deputy Willem');
+  await expect(page.locator('.map-note')).toContainText('Blizzard Entertainment');
 });

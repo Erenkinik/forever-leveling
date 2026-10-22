@@ -11,11 +11,12 @@ URL_TEMPLATE = "https://wago.tools/db2/{table}/csv?build={build}"
 WAGO_TABLES = ("QuestV2", "UiMap", "UiMapAssignment", "AreaTable", "QuestXP")
 
 
-def fetch_tables(build: str, raw_dir: Path, opener: Callable = urllib.request.urlopen) -> None:
+def fetch_tables(build: str, raw_dir: Path, opener: Callable = urllib.request.urlopen,
+                 tables: tuple[str, ...] = WAGO_TABLES) -> None:
     """Download the wago tables into raw_dir/wago/<build>; never leaves a partial .csv."""
     out = Path(raw_dir) / "wago" / build
     out.mkdir(parents=True, exist_ok=True)
-    for table in WAGO_TABLES:
+    for table in tables:
         dest = out / f"{table}.csv"
         part = dest.with_name(dest.name + ".part")
         try:

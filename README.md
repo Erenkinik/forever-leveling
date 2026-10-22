@@ -16,7 +16,7 @@ A free leveling guide for WoW Forever: a step-by-step quest route from level 1 t
 
 ```powershell
 python -m venv .venv
-.venv\Scripts\pip install pytest jsonschema PyYAML
+.venv\Scripts\pip install pytest jsonschema PyYAML pillow
 .venv\Scripts\python -m pytest -q
 .venv\Scripts\python -m pipeline validate --all
 

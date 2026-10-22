@@ -146,11 +146,12 @@ export function saveDone(store: KeyValueStore, routeId: string, done: Set<string
   }
 }
 
-/** Groups map pins whose centres are closer than `threshold` (map units) to the group's first pin. */
-export function clusterPins(steps: Step[], threshold: number): Step[][] {
+/** Groups map pins whose centres are closer than `threshold` (x map units) to the group's first pin.
+ *  `yScale` is the map's height / width, so y distances are measured in x units. */
+export function clusterPins(steps: Step[], threshold: number, yScale = 1): Step[][] {
   const clusters: Step[][] = [];
   for (const s of steps) {
-    const near = clusters.find((c) => Math.hypot(c[0].x - s.x, c[0].y - s.y) < threshold);
+    const near = clusters.find((c) => Math.hypot(c[0].x - s.x, (c[0].y - s.y) * yScale) < threshold);
     if (near) near.push(s);
     else clusters.push([s]);
   }
@@ -238,4 +239,21 @@ export function searchSteps(steps: Step[], query: string, from: number, limit = 
   return ordered
     .filter((s) => [s.questName, s.npcName].some((name) => name?.toLowerCase().includes(q)))
     .slice(0, limit);
+}
+
+/** Short text for a map pin: the NPC to talk to, the mob or source of the objective, or the destination. */
+export function pinLabel(s: Step): string {
+  switch (s.type) {
+    case 'accept':
+    case 'turnin':
+      return s.npcName ?? s.questName ?? `quest #${s.questId}`;
+    case 'complete': {
+      const o = s.objectives?.[0];
+      return (o?.kind === 'collect' ? o.sources?.[0] : undefined) ?? o?.name ?? s.questName ?? `quest #${s.questId}`;
+    }
+    case 'grind':
+      return `Grind to ${s.untilLevel}`;
+    default:
+      return s.questName ?? zone(s);
+  }
 }

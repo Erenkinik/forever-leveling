@@ -1,11 +1,15 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, reportUrl, safeStorage, saveDone,
+  clusterPins, describeStep, groupByZone, levelRange, loadDone, loadSettings, pinLabel, reportUrl, safeStorage, saveDone,
   saveSettings, searchSteps, storageKey,
   type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
+import mapIndex from '../data/maps.json';
 import './RouteView.css';
+
+// Zone map art (python -m pipeline maps): size per UiMap id, or null when the game has no art for it.
+const MAP_ART = mapIndex.maps as Record<string, { width: number; height: number } | null>;
 
 const ZOOMS = [1, 1.5, 2, 3];
 const SEARCH_LIMIT = 8;
@@ -183,8 +187,11 @@ export default function RouteView({ route }: { route: Route }) {
     ? steps.slice(Math.max(0, currentIndex - MAP_BEHIND), currentIndex + MAP_AHEAD + 1).filter((s) => s.mapId === current.mapId)
     : [];
   // The current step leads its cluster, so a merged pin is drawn where the player has to go.
+  const art = current ? MAP_ART[String(current.mapId)] ?? null : null;
   const pins = current
-    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)], (PIN_SPACING_PX[coarse ? 'coarse' : 'fine'] / (frameWidth * ZOOMS[zoom])) * 100)
+    ? clusterPins([current, ...mapSteps.filter((s) => s !== current)],
+      (PIN_SPACING_PX[coarse ? 'coarse' : 'fine'] / (frameWidth * ZOOMS[zoom])) * 100,
+      art ? art.height / art.width : 1)
     : [];
   const focusStep = (s: Step) => {
     const el = itemRefs.current.get(s.id);
@@ -275,22 +282,32 @@ export default function RouteView({ route }: { route: Route }) {
             <>
               <h2 className="map-title">{current.zoneName ?? `map #${current.mapId}`}</h2>
               <div className="map-frame" ref={frameRef}>
-                <div className="map" style={{ width: `${ZOOMS[zoom] * 100}%` }}>
-                  <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="grid">
-                    {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
-                      <g key={v}>
-                        <line x1={v} y1={0} x2={v} y2={100} />
-                        <line x1={0} y1={v} x2={100} y2={v} />
-                      </g>
-                    ))}
-                  </svg>
+                <div
+                  className={`map${art ? ' art' : ''}`}
+                  style={art
+                    ? { width: `${ZOOMS[zoom] * 100}%`, aspectRatio: `${art.width} / ${art.height}`,
+                        backgroundImage: `url(/maps/${current.mapId}.webp)` }
+                    : { width: `${ZOOMS[zoom] * 100}%` }}
+                >
+                  {!art && (
+                    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" className="grid">
+                      {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
+                        <g key={v}>
+                          <line x1={v} y1={0} x2={v} y2={100} />
+                          <line x1={0} y1={v} x2={100} y2={v} />
+                        </g>
+                      ))}
+                    </svg>
+                  )}
                   {pins.map((group) => {
                     const lead = group[0];
                     const numbers = group.map((s) => (index.get(s.id) ?? 0) + 1).sort((a, b) => a - b);
                     const state = lead === current ? 'current' : group.every((s) => done.has(s.id)) ? 'done' : 'todo';
-                    const label = group.length === 1
-                      ? `Step ${numbers[0]} at ${coords(lead)}: ${plain(lead)}`
-                      : `Steps ${numbers.join(', ')} near ${coords(lead)}`;
+                    const n = (index.get(lead.id) ?? 0) + 1;
+                    // Starts with the visible text (number, label) so the name matches what is seen (WCAG 2.5.3).
+                    const label = `${n} ${pinLabel(lead)}, ` + (group.length === 1
+                      ? `step ${n} at ${coords(lead)}: ${plain(lead)}`
+                      : `steps ${numbers.join(', ')} near ${coords(lead)}`);
                     return (
                       <button
                         key={lead.id}
@@ -300,8 +317,8 @@ export default function RouteView({ route }: { route: Route }) {
                         aria-label={label}
                         onClick={() => focusStep(lead)}
                       >
-                        {state === 'done' ? '✓' : (index.get(lead.id) ?? 0) + 1}
-                        {group.length > 1 && <span aria-hidden="true">+</span>}
+                        {state === 'done' ? '✓' : n}{' '}
+                        <span className="pin-label">{pinLabel(lead)}</span>
                       </button>
                     );
                   })}
@@ -318,7 +335,10 @@ export default function RouteView({ route }: { route: Route }) {
                   <li key={s.id}><strong>{(index.get(s.id) ?? 0) + 1}</strong> {coords(s)} · {plain(s)}</li>
                 ))}
               </ol>
-              <p className="map-note">Simple coordinate grid (0–100). Coordinates match the in-game map.</p>
+              <p className="map-note">
+                {art ? 'Map art © Blizzard Entertainment. ' : 'Simple coordinate grid (0–100). '}
+                Coordinates match the in-game map.
+              </p>
             </>
           ) : (
             <p id="current-step" tabIndex={-1}>Route complete. Well done!</p>

@@ -97,3 +97,9 @@ def test_committed_routes_have_no_over_level_with_shared_estimate():
         issues = check_route(route, quests, known_maps, levels=estimate_levels(route, quests, xp_table))
         over = [i for i in issues if i.rule == "over-level"]
         assert over == [], f"{path.name}: {over[:3]}"
+
+
+def test_every_route_map_has_its_image_or_a_recorded_absence():
+    import pipeline.__main__ as cli
+
+    assert cli.main(["maps", "--check"]) == 0

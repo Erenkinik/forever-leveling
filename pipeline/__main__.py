@@ -472,6 +472,44 @@ def cmd_suggest_zones(args) -> int:
     return 0
 
 
+def _route_map_ids() -> list[int]:
+    ids: set[int] = set()
+    for path in sorted((DATA_DIR / "routes").glob("*.json")):
+        if path.name.endswith(".generated.json"):
+            continue
+        ids.update(s["mapId"] for s in json.loads(path.read_text(encoding="utf-8")).get("steps", []))
+    return sorted(ids)
+
+
+def cmd_maps(args) -> int:
+    """Zone map images for every map a route visits; --check needs no raw data."""
+    site = DATA_DIR.parent / "site"
+    index_path = site / "src" / "data" / "maps.json"
+    out_dir = site / "public" / "maps"
+    map_ids = _route_map_ids()
+    if args.check:
+        index = json.loads(index_path.read_text(encoding="utf-8")).get("maps", {}) if index_path.is_file() else {}
+        problems = [f"map {m}: not built (run python -m pipeline maps)" for m in map_ids if str(m) not in index]
+        problems += [f"map {m}: image missing: {out_dir / f'{m}.webp'}" for m in map_ids
+                     if index.get(str(m)) and not (out_dir / f"{m}.webp").is_file()]
+        if problems:
+            print("\n".join(problems), file=sys.stderr)
+            return 1
+        print(f"up to date: {len(map_ids)} maps")
+        return 0
+    from pipeline.export.maps import build_maps
+
+    try:
+        index = build_maps(map_ids, DATA_BUILD, RAW_DIR, out_dir)
+    except (RuntimeError, OSError, ValueError) as exc:
+        print(f"cannot build maps: {exc}", file=sys.stderr)
+        return 1
+    _write_text_atomic(index_path, _json_text({"build": DATA_BUILD, "maps": index}))
+    built = sum(1 for v in index.values() if v)
+    print(f"wrote {built} map images to {out_dir} ({len(index) - built} maps have no art)")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -496,6 +534,9 @@ def main(argv: list[str] | None = None) -> int:
     exp.add_argument("--all", action="store_true", help="export every data/routes/*.json except *.generated.json")
     exp.add_argument("route", nargs="?", help="a single route name, e.g. human")
     exp.set_defaults(func=cmd_export)
+    mp = sub.add_parser("maps", help="write site/public/maps/<uiMapId>.webp from the game's map art")
+    mp.add_argument("--check", action="store_true", help="every route map has an image or a recorded absence")
+    mp.set_defaults(func=cmd_maps)
     sug = sub.add_parser("suggest-zones", help="write draft data/zone-order/<route>.yaml from quest data")
     sug.add_argument("--all", action="store_true", help="every route in pipeline/generate/config.py ROUTES")
     sug.add_argument("--force", action="store_true", help="overwrite existing zone order files")

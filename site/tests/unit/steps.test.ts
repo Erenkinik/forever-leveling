@@ -63,6 +63,9 @@ test('clusterPins merges pins closer than the threshold, in step order', async (
   const clusters = clusterPins([s('a', 10, 10), s('b', 12, 11), s('c', 50, 50), s('d', 10.5, 9)], 5);
   assert.deepEqual(clusters.map((c) => c.map((x) => x.id)), [['a', 'b', 'd'], ['c']]);
   assert.deepEqual(clusterPins([s('a', 10, 10), s('b', 12, 11)], 1).map((c) => c.length), [1, 1]);
+  // On a map 2/3 as tall as wide, a y step counts 2/3 of an x step.
+  assert.deepEqual(clusterPins([s('a', 10, 10), s('b', 10, 16)], 4.5, 2 / 3).map((c) => c.length), [2]);
+  assert.deepEqual(clusterPins([s('a', 10, 10), s('b', 10, 16)], 4.5).map((c) => c.length), [1, 1]);
 });
 
 test('safeStorage falls back to memory when the browser blocks storage', async () => {
@@ -161,4 +164,18 @@ test('searchSteps finds quests and NPCs from the current step on, then wraps', a
   assert.deepEqual(searchSteps(steps, 'wolf', 0, 1).map((s) => s.id), ['a']);
   assert.equal(searchSteps(steps, 'mcbride', 0, 2).length, 2);
   assert.equal(searchSteps(steps, 'mcbride', 0, 3).length, 2);
+});
+
+test('pinLabel names who or what is at the pin', async () => {
+  const { pinLabel } = await import('../../src/lib/steps.ts');
+  const accept: Step = { ...base, id: 'a', type: 'accept', questId: 1, questName: 'Q', npcName: 'Deputy Willem' };
+  assert.equal(pinLabel(accept), 'Deputy Willem');
+  assert.equal(pinLabel({ ...accept, npcName: null }), 'Q');
+  const complete: Step = { ...base, id: 'c', type: 'complete', questId: 1, questName: 'Q',
+    objectives: [{ kind: 'collect', id: 5, name: 'Tough Wolf Meat', sources: ['Young Wolf'] }] };
+  assert.equal(pinLabel(complete), 'Young Wolf');
+  assert.equal(pinLabel({ ...complete, objectives: [{ kind: 'kill', id: 9, name: 'Kobold Vermin' }] }), 'Kobold Vermin');
+  assert.equal(pinLabel({ ...complete, objectives: [] }), 'Q');
+  assert.equal(pinLabel({ ...base, id: 't', type: 'travel', mode: 'walk' }), 'Elwynn Forest');
+  assert.equal(pinLabel({ ...base, id: 'g', type: 'grind', untilLevel: 8 }), 'Grind to 8');
 });
