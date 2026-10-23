@@ -562,6 +562,10 @@ def cmd_suggest_zones(args) -> int:
     return 0
 
 
+# The Azeroth world map (UiMap), the home page's backdrop.
+WORLD_MAP = 947
+
+
 def _route_map_ids() -> list[int]:
     ids: set[int] = set()
     for path in sorted((DATA_DIR / "routes").glob("*.json")):
@@ -620,7 +624,7 @@ def cmd_maps(args) -> int:
     out_dir = site / "public" / "maps"
     art_dir = site / "public" / "art"
     icons_path = site / "src" / "data" / "item-icons.json"
-    map_ids = _route_map_ids()
+    map_ids = sorted({*_route_map_ids(), WORLD_MAP})
     if args.check:
         doc = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else {}
         index = doc.get("maps", {})

@@ -15,6 +15,8 @@ const STEPS = [
 ---
 <Base title={`ForeverXP: free WoW Forever 1–${cap} leveling routes`}
       description={`Pick your race and follow a free step-by-step quest route from level 1 to ${cap} in WoW Forever.`}>
+  {/* The Azeroth world map behind the page, blurred and dark, like the zone map behind each route (decorative). */}
+  <div slot="backdrop" class="home-backdrop" aria-hidden="true"><div class="world-art"></div></div>
   <main id="main">
     <section class="hero">
       <Emblem size={64} class="hero-emblem" />
@@ -71,6 +73,22 @@ const STEPS = [
 </Base>
 
 <style>
+  .home-backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .world-art {
+    position: absolute; inset: -40px; background: url(/maps/947.webp) center / cover no-repeat;
+    /* as faint as the zone map behind each route (RaceBanner.astro) */
+    filter: blur(4px) saturate(.7) brightness(.55); opacity: .5;
+  }
+  /* a warm gold glow from the top; the middle falls to the page colour so the text stays on dark */
+  .home-backdrop::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(1100px 520px at 50% -12%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 70%),
+      radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--bg) 55%, transparent) 0%, color-mix(in srgb, var(--bg) 80%, transparent) 100%);
+  }
+  :root[data-contrast="high"] .home-backdrop { display: none; }
+  @media (max-width: 900px) { .world-art { opacity: .22; } }
+
   /* The hero: centred, short, so the race choice is on the first screen. */
   .hero { display: grid; justify-items: center; text-align: center; gap: 8px; margin: 12px auto 0; max-width: 760px; }
   .hero h1 { font-size: 40px; margin: 0; }

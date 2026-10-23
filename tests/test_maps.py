@@ -47,6 +47,8 @@ def _env(tmp_path, monkeypatch, maps):
     site = tmp_path / "site"
     (site / "public" / "maps").mkdir(parents=True)
     (site / "src" / "data").mkdir(parents=True)
+    # the world map (the home page's backdrop) is recorded unless a test gives its own entry for it
+    maps = {str(cli.WORLD_MAP): None, **maps}
     (site / "src" / "data" / "maps.json").write_text(json.dumps({"build": DATA_BUILD, "maps": maps}), encoding="utf-8")
     monkeypatch.setattr(cli, "DATA_DIR", data)
     return site
@@ -59,6 +61,14 @@ def test_maps_check_needs_an_image_or_a_recorded_absence_for_every_route_map(tmp
     (site / "public" / "maps" / "1429.webp").unlink()
     assert cli.main(["maps", "--check"]) == 1
     assert "1429" in capsys.readouterr().err
+
+
+def test_maps_check_needs_the_world_map_for_the_home_page(tmp_path, monkeypatch, capsys):
+    site = _env(tmp_path, monkeypatch, {"1429": None, "1436": None, "947": {"width": 1002, "height": 668}})
+    assert cli.main(["maps", "--check"]) == 1
+    assert "947" in capsys.readouterr().err
+    (site / "public" / "maps" / "947.webp").write_bytes(b"x")
+    assert cli.main(["maps", "--check"]) == 0
 
 
 def test_maps_check_fails_for_a_map_never_built(tmp_path, monkeypatch, capsys):
