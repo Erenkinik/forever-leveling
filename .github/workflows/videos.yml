@@ -1,0 +1,39 @@
+# Each day: search YouTube for the next quests' videos (one day's free quota), export the site data and push it to
+# main, which deploys the site. Stops having work to do once every quest name is searched.
+name: videos
+on:
+  schedule:
+    # The YouTube quota resets at midnight Pacific time (07:00 or 08:00 UTC).
+    - cron: "30 9 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: videos
+jobs:
+  videos:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: pip install pytest jsonschema PyYAML pillow
+      - run: python -m pipeline videos
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          PYTHONIOENCODING: utf-8
+      - run: python -m pipeline export --all
+      # Pushes made with the workflow token do not start the ci workflow, so the tests run here.
+      - run: python -m pytest -q
+      - name: Commit and push the new videos
+        run: |
+          if git diff --quiet; then echo "no new videos"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/videos.json site/src/data addon/ForeverXP/Data
+          git commit -m "data: more quest videos"
+          git pull --rebase
+          git push
