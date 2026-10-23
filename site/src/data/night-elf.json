@@ -6,41 +6,11 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:26:37Z",
+ "generatedAt": "2026-10-23T14:21:08Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
  "steps": [
-  {
-   "id": "gap-921",
-   "type": "gap",
-   "mapId": 1438,
-   "x": 59.1,
-   "y": 42.805,
-   "confidence": "unverified",
-   "questId": 921,
-   "reason": "quest 921: objective item 5184 location unknown",
-   "questName": "Crown of the Earth",
-   "npcName": null,
-   "zoneName": "Teldrassil",
-   "level": 1,
-   "seconds": 0
-  },
-  {
-   "id": "gap-928",
-   "type": "gap",
-   "mapId": 1438,
-   "x": 59.1,
-   "y": 42.805,
-   "confidence": "unverified",
-   "questId": 928,
-   "reason": "quest 928: prereq 921 is a gap",
-   "questName": "Crown of the Earth",
-   "npcName": null,
-   "zoneName": "Teldrassil",
-   "level": 1,
-   "seconds": 0
-  },
   {
    "id": "accept-456",
    "type": "accept",
@@ -1457,6 +1427,97 @@
    "seconds": 25
   },
   {
+   "id": "accept-921",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 59.1,
+   "y": 39.4,
+   "confidence": "unverified",
+   "questId": 921,
+   "npcId": 3514,
+   "questName": "Crown of the Earth",
+   "npcName": "Tenaron Stormgrip",
+   "zoneName": "Teldrassil",
+   "level": 5,
+   "seconds": 10
+  },
+  {
+   "id": "complete-921",
+   "type": "complete",
+   "mapId": 1438,
+   "x": 59.9,
+   "y": 33.0,
+   "confidence": "unverified",
+   "questId": 921,
+   "questName": "Crown of the Earth",
+   "npcName": null,
+   "zoneName": "Teldrassil",
+   "level": 5,
+   "seconds": 32,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 5184,
+     "name": "Filled Crystal Phial",
+     "sources": [
+      "Shadowglen Moonwell"
+     ],
+     "icon": 134797
+    }
+   ],
+   "area": [
+    [
+     59.9,
+     33
+    ]
+   ]
+  },
+  {
+   "id": "turnin-921",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 59.1,
+   "y": 39.4,
+   "confidence": "unverified",
+   "questId": 921,
+   "npcId": 3514,
+   "questName": "Crown of the Earth",
+   "npcName": "Tenaron Stormgrip",
+   "zoneName": "Teldrassil",
+   "level": 5,
+   "seconds": 42
+  },
+  {
+   "id": "accept-928",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 59.1,
+   "y": 39.4,
+   "confidence": "unverified",
+   "questId": 928,
+   "npcId": 3514,
+   "questName": "Crown of the Earth",
+   "npcName": "Tenaron Stormgrip",
+   "zoneName": "Teldrassil",
+   "level": 5,
+   "seconds": 10
+  },
+  {
+   "id": "turnin-928",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 56.1,
+   "y": 61.7,
+   "confidence": "unverified",
+   "questId": 928,
+   "npcId": 3515,
+   "questName": "Crown of the Earth",
+   "npcName": "Corithras Moonrage",
+   "zoneName": "Teldrassil",
+   "level": 5,
+   "seconds": 120
+  },
+  {
    "id": "accept-3519",
    "type": "accept",
    "mapId": 1438,
@@ -1469,7 +1530,7 @@
    "npcName": "Iverron",
    "zoneName": "Teldrassil",
    "level": 5,
-   "seconds": 55
+   "seconds": 150
   },
   {
    "id": "turnin-3519",
@@ -2214,7 +2275,7 @@
    "questName": "Iverron's Antidote",
    "npcName": "Dirania Silvershine",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 10
   },
   {
@@ -2229,7 +2290,7 @@
    "questName": "Iverron's Antidote",
    "npcName": "Iverron",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 73
   },
   {
@@ -2244,7 +2305,7 @@
    "questName": "Ferocitas the Dream Eater",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2255,11 +2316,11 @@
    "y": 33,
    "confidence": "unverified",
    "questId": 929,
-   "reason": "quest 929: prereq 928 is a gap",
+   "reason": "quest 929: objective item 5639 location unknown",
    "questName": "Crown of the Earth",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2274,7 +2335,7 @@
    "questName": "Crown of the Earth",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2289,7 +2350,7 @@
    "questName": "Crown of the Earth",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2304,7 +2365,7 @@
    "questName": "Crown of the Earth",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2319,7 +2380,7 @@
    "questName": "Crown of the Earth",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2334,7 +2395,7 @@
    "questName": "Elixirs for the Bladeleafs",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 0
   },
   {
@@ -2349,7 +2410,7 @@
    "questName": "The Emerald Dreamcatcher",
    "npcName": "Tallonkai Swiftroot",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 126
   },
   {
@@ -2364,7 +2425,7 @@
    "questName": "Recipe of the Kaldorei",
    "npcName": "Zarrin",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 34
   },
   {
@@ -2379,7 +2440,7 @@
    "questName": "A Troubling Breeze",
    "npcName": "Athridas Bearmantle",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 31
   },
   {
@@ -2394,7 +2455,7 @@
    "questName": "Zenn's Bidding",
    "npcName": "Zenn Foulhoof",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 43
   },
   {
@@ -2409,7 +2470,7 @@
    "questName": "Twisted Hatred",
    "npcName": "Tallonkai Swiftroot",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 45
   },
   {
@@ -2424,8 +2485,23 @@
    "questName": "Denalan's Earth",
    "npcName": "Syral Bladeleaf",
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 15
+  },
+  {
+   "id": "accept-487",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 55.9,
+   "y": 58.8,
+   "confidence": "unverified",
+   "questId": 487,
+   "npcId": 2151,
+   "questName": "The Road to Darnassus",
+   "npcName": "Moon Priestess Amara",
+   "zoneName": "Teldrassil",
+   "level": 6,
+   "seconds": 16
   },
   {
    "id": "accept-5621",
@@ -2442,8 +2518,8 @@
    "questName": "Garments of the Moon",
    "npcName": "Laurna Morninglight",
    "zoneName": "Teldrassil",
-   "level": 5,
-   "seconds": 16
+   "level": 6,
+   "seconds": 20
   },
   {
    "id": "complete-4161",
@@ -2456,7 +2532,7 @@
    "questName": "Recipe of the Kaldorei",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 5,
+   "level": 6,
    "seconds": 235,
    "objectives": [
     {
@@ -3658,6 +3734,89 @@
    ]
   },
   {
+   "id": "complete-487",
+   "type": "complete",
+   "mapId": 1438,
+   "x": 46.53,
+   "y": 53.31,
+   "confidence": "unverified",
+   "questId": 487,
+   "questName": "The Road to Darnassus",
+   "npcName": null,
+   "zoneName": "Teldrassil",
+   "level": 6,
+   "seconds": 188,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 2152,
+     "name": "Gnarlpine Ambusher"
+    }
+   ],
+   "area": [
+    [
+     45.2,
+     54.5
+    ],
+    [
+     45.5,
+     52.9
+    ],
+    [
+     45.8,
+     53.5
+    ],
+    [
+     45.8,
+     54.5
+    ],
+    [
+     45.9,
+     52.5
+    ],
+    [
+     46.3,
+     51.2
+    ],
+    [
+     46.3,
+     52.2
+    ],
+    [
+     46.3,
+     52.7
+    ],
+    [
+     46.3,
+     54.2
+    ],
+    [
+     46.5,
+     53.4
+    ],
+    [
+     46.7,
+     52.5
+    ],
+    [
+     46.8,
+     54.4
+    ],
+    [
+     47.9,
+     53.2
+    ],
+    [
+     48.3,
+     53.5
+    ],
+    [
+     48.4,
+     54.4
+    ]
+   ]
+  },
+  {
    "id": "complete-932",
    "type": "complete",
    "mapId": 1438,
@@ -3669,7 +3828,7 @@
    "npcName": null,
    "zoneName": "Teldrassil",
    "level": 6,
-   "seconds": 61,
+   "seconds": 66,
    "objectives": [
     {
      "kind": "collect",
@@ -3799,7 +3958,7 @@
    "questName": "A Troubling Breeze",
    "npcName": "Gaerolas Talvethren",
    "zoneName": "Teldrassil",
-   "level": 6,
+   "level": 7,
    "seconds": 78
   },
   {
@@ -3814,7 +3973,7 @@
    "questName": "Zenn's Bidding",
    "npcName": "Zenn Foulhoof",
    "zoneName": "Teldrassil",
-   "level": 6,
+   "level": 7,
    "seconds": 54
   },
   {
@@ -3829,7 +3988,7 @@
    "questName": "Twisted Hatred",
    "npcName": "Tallonkai Swiftroot",
    "zoneName": "Teldrassil",
-   "level": 6,
+   "level": 7,
    "seconds": 45
   },
   {
@@ -3848,6 +4007,21 @@
    "seconds": 78
   },
   {
+   "id": "turnin-487",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 55.9,
+   "y": 58.8,
+   "confidence": "unverified",
+   "questId": 487,
+   "npcId": 2151,
+   "questName": "The Road to Darnassus",
+   "npcName": "Moon Priestess Amara",
+   "zoneName": "Teldrassil",
+   "level": 7,
+   "seconds": 69
+  },
+  {
    "id": "turnin-5621",
    "type": "turnin",
    "mapId": 1438,
@@ -3863,120 +4037,7 @@
    "npcName": "Laurna Morninglight",
    "zoneName": "Teldrassil",
    "level": 7,
-   "seconds": 79
-  },
-  {
-   "id": "accept-487",
-   "type": "accept",
-   "mapId": 1438,
-   "x": 55.9,
-   "y": 58.8,
-   "confidence": "unverified",
-   "questId": 487,
-   "npcId": 2151,
-   "questName": "The Road to Darnassus",
-   "npcName": "Moon Priestess Amara",
-   "zoneName": "Teldrassil",
-   "level": 7,
    "seconds": 20
-  },
-  {
-   "id": "complete-487",
-   "type": "complete",
-   "mapId": 1438,
-   "x": 46.53,
-   "y": 53.31,
-   "confidence": "unverified",
-   "questId": 487,
-   "questName": "The Road to Darnassus",
-   "npcName": null,
-   "zoneName": "Teldrassil",
-   "level": 7,
-   "seconds": 223,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 2152,
-     "name": "Gnarlpine Ambusher"
-    }
-   ],
-   "area": [
-    [
-     45.2,
-     54.5
-    ],
-    [
-     45.5,
-     52.9
-    ],
-    [
-     45.8,
-     53.5
-    ],
-    [
-     45.8,
-     54.5
-    ],
-    [
-     45.9,
-     52.5
-    ],
-    [
-     46.3,
-     51.2
-    ],
-    [
-     46.3,
-     52.2
-    ],
-    [
-     46.3,
-     52.7
-    ],
-    [
-     46.3,
-     54.2
-    ],
-    [
-     46.5,
-     53.4
-    ],
-    [
-     46.7,
-     52.5
-    ],
-    [
-     46.8,
-     54.4
-    ],
-    [
-     47.9,
-     53.2
-    ],
-    [
-     48.3,
-     53.5
-    ],
-    [
-     48.4,
-     54.4
-    ]
-   ]
-  },
-  {
-   "id": "turnin-487",
-   "type": "turnin",
-   "mapId": 1438,
-   "x": 55.9,
-   "y": 58.8,
-   "confidence": "unverified",
-   "questId": 487,
-   "npcId": 2151,
-   "questName": "The Road to Darnassus",
-   "npcName": "Moon Priestess Amara",
-   "zoneName": "Teldrassil",
-   "level": 7,
-   "seconds": 83
   },
   {
    "id": "accept-476",
@@ -3991,7 +4052,7 @@
    "npcName": "Gaerolas Talvethren",
    "zoneName": "Teldrassil",
    "level": 7,
-   "seconds": 86
+   "seconds": 88
   },
   {
    "id": "accept-489",
@@ -4533,7 +4594,7 @@
    "questName": "Planting the Heart",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 7,
+   "level": 8,
    "seconds": 0
   },
   {
@@ -4548,7 +4609,7 @@
    "questName": "Timberling Seeds",
    "npcName": "Denalan",
    "zoneName": "Teldrassil",
-   "level": 7,
+   "level": 8,
    "seconds": 75
   },
   {
@@ -4563,7 +4624,7 @@
    "questName": "Timberling Sprouts",
    "npcName": "Denalan",
    "zoneName": "Teldrassil",
-   "level": 7,
+   "level": 8,
    "seconds": 10
   },
   {
@@ -4577,7 +4638,7 @@
    "questName": "Timberling Sprouts",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 7,
+   "level": 8,
    "seconds": 31,
    "objectives": [
     {
@@ -4808,7 +4869,7 @@
    "questName": "Timberling Seeds",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 7,
+   "level": 8,
    "seconds": 268,
    "objectives": [
     {
@@ -5892,7 +5953,7 @@
    "questName": "Tumors",
    "npcName": null,
    "zoneName": "Teldrassil",
-   "level": 8,
+   "level": 9,
    "seconds": 346,
    "objectives": [
     {
@@ -6309,112 +6370,6 @@
    "seconds": 133
   },
   {
-   "id": "accept-952",
-   "type": "accept",
-   "mapId": 1438,
-   "x": 24.4,
-   "y": 48.9,
-   "confidence": "unverified",
-   "questId": 952,
-   "npcId": 3516,
-   "questName": "Grove of the Ancients",
-   "npcName": "Arch Druid Fandral Staghelm",
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 10
-  },
-  {
-   "id": "accept-2498",
-   "type": "accept",
-   "mapId": 1438,
-   "x": 25.1,
-   "y": 51.4,
-   "confidence": "unverified",
-   "questId": 2498,
-   "npcId": 3517,
-   "questName": "Return to Denalan",
-   "npcName": "Rellian Greenspyre",
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 23
-  },
-  {
-   "id": "turnin-2498",
-   "type": "turnin",
-   "mapId": 1438,
-   "x": 60.9,
-   "y": 68.5,
-   "confidence": "unverified",
-   "questId": 2498,
-   "npcId": 2080,
-   "questName": "Return to Denalan",
-   "npcName": "Denalan",
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 283
-  },
-  {
-   "id": "accept-2499",
-   "type": "accept",
-   "mapId": 1438,
-   "x": 60.9,
-   "y": 68.5,
-   "confidence": "unverified",
-   "questId": 2499,
-   "npcId": 2080,
-   "questName": "Oakenscowl",
-   "npcName": "Denalan",
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 10
-  },
-  {
-   "id": "complete-2499",
-   "type": "complete",
-   "mapId": 1438,
-   "x": 53.8,
-   "y": 75.1,
-   "confidence": "unverified",
-   "questId": 2499,
-   "questName": "Oakenscowl",
-   "npcName": null,
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 86,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 8136,
-     "name": "Gargantuan Tumor",
-     "sources": [
-      "Oakenscowl"
-     ],
-     "icon": 134343
-    }
-   ],
-   "area": [
-    [
-     53.8,
-     75.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-2499",
-   "type": "turnin",
-   "mapId": 1438,
-   "x": 60.9,
-   "y": 68.5,
-   "confidence": "unverified",
-   "questId": 2499,
-   "npcId": 2080,
-   "questName": "Oakenscowl",
-   "npcName": "Denalan",
-   "zoneName": "Teldrassil",
-   "level": 9,
-   "seconds": 71
-  },
-  {
    "id": "accept-6072",
    "type": "accept",
    "mapId": 1438,
@@ -6430,7 +6385,7 @@
    "npcName": "Ayanna Everstride",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 147
+   "seconds": 263
   },
   {
    "id": "accept-1684",
@@ -6538,6 +6493,21 @@
    "seconds": 235
   },
   {
+   "id": "accept-952",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 24.4,
+   "y": 48.9,
+   "confidence": "unverified",
+   "questId": 952,
+   "npcId": 3516,
+   "questName": "Grove of the Ancients",
+   "npcName": "Arch Druid Fandral Staghelm",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 83
+  },
+  {
    "id": "accept-1683",
    "type": "accept",
    "mapId": 1438,
@@ -6553,7 +6523,7 @@
    "npcName": "Elanaria",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 64
+   "seconds": 52
   },
   {
    "id": "accept-5923",
@@ -6607,48 +6577,6 @@
    "seconds": 69
   },
   {
-   "id": "accept-2518",
-   "type": "accept",
-   "mapId": 1438,
-   "x": 24.8,
-   "y": 64.8,
-   "confidence": "unverified",
-   "questId": 2518,
-   "npcId": 7313,
-   "questName": "Tears of the Moon",
-   "npcName": "Priestess A'moora",
-   "zoneName": "Teldrassil",
-   "level": 10,
-   "seconds": 76
-  },
-  {
-   "id": "complete-486",
-   "type": "complete",
-   "mapId": 1438,
-   "x": 38.8,
-   "y": 79.8,
-   "confidence": "unverified",
-   "questId": 486,
-   "questName": "Ursal the Mauler",
-   "npcName": null,
-   "zoneName": "Teldrassil",
-   "level": 10,
-   "seconds": 150,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 2039,
-     "name": "Ursal the Mauler"
-    }
-   ],
-   "area": [
-    [
-     38.8,
-     79.8
-    ]
-   ]
-  },
-  {
    "id": "complete-1683",
    "type": "complete",
    "mapId": 1438,
@@ -6663,7 +6591,7 @@
    "npcName": null,
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 125,
+   "seconds": 142,
    "objectives": [
     {
      "kind": "collect",
@@ -6683,41 +6611,29 @@
    ]
   },
   {
-   "id": "complete-2518",
+   "id": "complete-486",
    "type": "complete",
    "mapId": 1438,
-   "x": 45.7,
-   "y": 25.4,
+   "x": 38.8,
+   "y": 79.8,
    "confidence": "unverified",
-   "questId": 2518,
-   "questName": "Tears of the Moon",
+   "questId": 486,
+   "questName": "Ursal the Mauler",
    "npcName": null,
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 211,
+   "seconds": 125,
    "objectives": [
     {
-     "kind": "collect",
-     "id": 8344,
-     "name": "Silvery Spinnerets",
-     "sources": [
-      "Lady Sathrah"
-     ],
-     "icon": 135652
+     "kind": "kill",
+     "id": 2039,
+     "name": "Ursal the Mauler"
     }
    ],
    "area": [
     [
-     41.5,
-     25.1
-    ],
-    [
-     47.5,
-     26
-    ],
-    [
-     48.1,
-     25.1
+     38.8,
+     79.8
     ]
    ]
   },
@@ -6737,7 +6653,7 @@
    "npcName": "Dazalar",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 194
+   "seconds": 173
   },
   {
    "id": "turnin-1684",
@@ -6928,8 +6844,23 @@
    "seconds": 27
   },
   {
-   "id": "turnin-2518",
-   "type": "turnin",
+   "id": "accept-2498",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 25.1,
+   "y": 51.4,
+   "confidence": "unverified",
+   "questId": 2498,
+   "npcId": 3517,
+   "questName": "Return to Denalan",
+   "npcName": "Rellian Greenspyre",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 328
+  },
+  {
+   "id": "accept-2518",
+   "type": "accept",
    "mapId": 1438,
    "x": 24.8,
    "y": 64.8,
@@ -6940,7 +6871,7 @@
    "npcName": "Priestess A'moora",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 292
+   "seconds": 75
   },
   {
    "id": "accept-5921",
@@ -6994,19 +6925,73 @@
    "seconds": 170
   },
   {
-   "id": "accept-2520",
-   "type": "accept",
+   "id": "complete-2518",
+   "type": "complete",
+   "mapId": 1438,
+   "x": 45.7,
+   "y": 25.4,
+   "confidence": "unverified",
+   "questId": 2518,
+   "questName": "Tears of the Moon",
+   "npcName": null,
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 359,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 8344,
+     "name": "Silvery Spinnerets",
+     "sources": [
+      "Lady Sathrah"
+     ],
+     "icon": 135652
+    }
+   ],
+   "area": [
+    [
+     41.5,
+     25.1
+    ],
+    [
+     47.5,
+     26
+    ],
+    [
+     48.1,
+     25.1
+    ]
+   ]
+  },
+  {
+   "id": "turnin-2498",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 60.9,
+   "y": 68.5,
+   "confidence": "unverified",
+   "questId": 2498,
+   "npcId": 2080,
+   "questName": "Return to Denalan",
+   "npcName": "Denalan",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 246
+  },
+  {
+   "id": "turnin-2518",
+   "type": "turnin",
    "mapId": 1438,
    "x": 24.8,
    "y": 64.8,
    "confidence": "unverified",
-   "questId": 2520,
+   "questId": 2518,
    "npcId": 7313,
-   "questName": "Sathrah's Sacrifice",
+   "questName": "Tears of the Moon",
    "npcName": "Priestess A'moora",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 275
+   "seconds": 273
   },
   {
    "id": "turnin-6063",
@@ -7042,21 +7027,6 @@
    "seconds": 178
   },
   {
-   "id": "turnin-2520",
-   "type": "turnin",
-   "mapId": 1438,
-   "x": 24.8,
-   "y": 64.8,
-   "confidence": "unverified",
-   "questId": 2520,
-   "npcId": 7313,
-   "questName": "Sathrah's Sacrifice",
-   "npcName": "Priestess A'moora",
-   "zoneName": "Teldrassil",
-   "level": 10,
-   "seconds": 292
-  },
-  {
    "id": "travel-1438-1450",
    "type": "travel",
    "mapId": 1450,
@@ -7090,6 +7060,66 @@
    "seconds": 10
   },
   {
+   "id": "travel-1450-1438",
+   "type": "travel",
+   "mapId": 1438,
+   "x": 60.9,
+   "y": 68.5,
+   "confidence": "unverified",
+   "mode": "boat",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 180
+  },
+  {
+   "id": "accept-2499",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 60.9,
+   "y": 68.5,
+   "confidence": "unverified",
+   "questId": 2499,
+   "npcId": 2080,
+   "questName": "Oakenscowl",
+   "npcName": "Denalan",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 10
+  },
+  {
+   "id": "accept-2520",
+   "type": "accept",
+   "mapId": 1438,
+   "x": 24.8,
+   "y": 64.8,
+   "confidence": "unverified",
+   "questId": 2520,
+   "npcId": 7313,
+   "questName": "Sathrah's Sacrifice",
+   "npcName": "Priestess A'moora",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 273
+  },
+  {
+   "id": "travel-1438-1450-2",
+   "type": "travel",
+   "mapId": 1450,
+   "x": 56.2,
+   "y": 30.6,
+   "confidence": "unverified",
+   "mode": "boat",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Moonglade",
+   "level": 10,
+   "seconds": 180
+  },
+  {
    "id": "accept-5929",
    "type": "accept",
    "mapId": 1450,
@@ -7108,7 +7138,7 @@
    "seconds": 10
   },
   {
-   "id": "travel-1450-1438",
+   "id": "travel-1450-1438-2",
    "type": "travel",
    "mapId": 1438,
    "x": 56.7,
@@ -7156,6 +7186,67 @@
    "seconds": 178
   },
   {
+   "id": "complete-2499",
+   "type": "complete",
+   "mapId": 1438,
+   "x": 53.8,
+   "y": 75.1,
+   "confidence": "unverified",
+   "questId": 2499,
+   "questName": "Oakenscowl",
+   "npcName": null,
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 123,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 8136,
+     "name": "Gargantuan Tumor",
+     "sources": [
+      "Oakenscowl"
+     ],
+     "icon": 134343
+    }
+   ],
+   "area": [
+    [
+     53.8,
+     75.1
+    ]
+   ]
+  },
+  {
+   "id": "turnin-2499",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 60.9,
+   "y": 68.5,
+   "confidence": "unverified",
+   "questId": 2499,
+   "npcId": 2080,
+   "questName": "Oakenscowl",
+   "npcName": "Denalan",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 71
+  },
+  {
+   "id": "turnin-2520",
+   "type": "turnin",
+   "mapId": 1438,
+   "x": 24.8,
+   "y": 64.8,
+   "confidence": "unverified",
+   "questId": 2520,
+   "npcId": 7313,
+   "questName": "Sathrah's Sacrifice",
+   "npcName": "Priestess A'moora",
+   "zoneName": "Teldrassil",
+   "level": 10,
+   "seconds": 273
+  },
+  {
    "id": "turnin-6101",
    "type": "turnin",
    "mapId": 1438,
@@ -7171,10 +7262,10 @@
    "npcName": "Dazalar",
    "zoneName": "Teldrassil",
    "level": 10,
-   "seconds": 178
+   "seconds": 243
   },
   {
-   "id": "travel-1438-1450-2",
+   "id": "travel-1438-1450-3",
    "type": "travel",
    "mapId": 1450,
    "x": 56.2,
@@ -7225,7 +7316,7 @@
    "seconds": 10
   },
   {
-   "id": "travel-1450-1438-2",
+   "id": "travel-1450-1438-3",
    "type": "travel",
    "mapId": 1438,
    "x": 56.7,
@@ -7437,7 +7528,7 @@
    "questName": "Flight to Auberdine",
    "npcName": "Laird",
    "zoneName": "Darkshore",
-   "level": 10,
+   "level": 11,
    "seconds": 220
   },
   {
@@ -7580,7 +7671,7 @@
    "seconds": 10
   },
   {
-   "id": "travel-1450-1438-3",
+   "id": "travel-1450-1438-4",
    "type": "travel",
    "mapId": 1438,
    "x": 56.4,
@@ -7681,7 +7772,7 @@
    "seconds": 10
   },
   {
-   "id": "travel-1438-1450-3",
+   "id": "travel-1438-1450-4",
    "type": "travel",
    "mapId": 1450,
    "x": 56.2,

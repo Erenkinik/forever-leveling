@@ -4,7 +4,7 @@ import statistics
 from dataclasses import dataclass, field
 
 from pipeline.generate import GenerationError
-from pipeline.generate.config import ISLAND_MAPS, LEVEL_CAP, RACE_CLASSES, ZONE_OUTLIER_SPREAD
+from pipeline.generate.config import FACTION_RACE_CLASSES, ISLAND_MAPS, LEVEL_CAP, RACE_CLASSES, ZONE_OUTLIER_SPREAD
 from pipeline.generate.zone_order import ZoneOrder
 
 REASONS = ("not-in-forever", "level-unknown", "over-cap", "race", "faction", "class", "zone", "zone-outlier")
@@ -40,7 +40,7 @@ def _exclusion_reason(q: dict, order: ZoneOrder) -> str | None:
     factions = q.get("factions")
     if factions is not None and order.faction not in factions:
         return "faction"
-    if q.get("classes") is not None and not class_only(q, order.race):
+    if q.get("classes") is not None and not class_only(q, order.race, order.faction):
         return "class"  # none of the quest's classes is playable by the race
     if (q.get("start") or {}).get("uiMapId") not in order.zones:
         return "zone"
@@ -75,9 +75,10 @@ def _short_detour(dependent: dict, prereq: dict, continents: dict[int, int] | No
     return continents.get(a) is not None and continents.get(a) == continents.get(b)
 
 
-def class_only(q: dict, race: str) -> list[str]:
-    """The quest's classes that the race can play (RACE_CLASSES); [] for a quest of any class."""
-    playable = RACE_CLASSES.get(race, ())
+def class_only(q: dict, race: str, faction: str | None = None) -> list[str]:
+    """The quest's classes that the race (of that faction) can play (FACTION_RACE_CLASSES, else RACE_CLASSES); []
+    for a quest of any class."""
+    playable = FACTION_RACE_CLASSES.get((race, faction)) or RACE_CLASSES.get(race, ())
     return [c for c in q.get("classes") or [] if c in playable]
 
 

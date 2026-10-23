@@ -105,7 +105,7 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
 });
 
 /** The quest's video on parchment, where a quest starts. Nothing loads from YouTube but the thumbnail until the
- * viewer presses play; then the player (privacy-enhanced mode) takes its place. */
+ * viewer presses the seal; then the player (privacy-enhanced mode, with YouTube's own controls) takes its place. */
 function VideoScroll({ video }: { video: QuestVideo }) {
   const [playing, setPlaying] = useState(false);
   return (
@@ -118,9 +118,12 @@ function VideoScroll({ video }: { video: QuestVideo }) {
                   allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
         ) : (
           <button type="button" className="video-play" onClick={() => setPlaying(true)}
-                  aria-label={`Play video: ${video.title}`}>
+                  aria-label={`Watch the quest: ${video.title}`}>
             <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
-            <span className="video-play-icon" aria-hidden="true" />
+            <span className="video-seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M8 4.5v15l12-7.5z" /></svg>
+            </span>
+            <span className="video-cta" aria-hidden="true">Watch the quest</span>
           </button>
         )}
       </div>
@@ -152,8 +155,24 @@ function QuestList({ quests, index }: { quests: DungeonQuest[]; index: Map<strin
   );
 }
 
-function Settings({ settings, update }: { settings: Settings; update: (patch: Partial<Settings>) => void }) {
+interface SettingsProps {
+  settings: Settings;
+  update: (patch: Partial<Settings>) => void;
+  /** steps marked done on this route; resetting clears them, after a second press to confirm */
+  doneCount: number;
+  onReset: () => void;
+}
+
+function Settings({ settings, update, doneCount, onReset }: SettingsProps) {
   const { open, setOpen, buttonRef, rootRef } = useDisclosure();
+  const [confirming, setConfirming] = useState(false);
+  const confirmRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (!open) setConfirming(false);
+  }, [open]);
+  useEffect(() => {
+    if (confirming) confirmRef.current?.focus();
+  }, [confirming]);
   return (
     <div className="settings" ref={rootRef}>
       <button ref={buttonRef} type="button" className="icon-button" aria-expanded={open}
@@ -172,6 +191,20 @@ function Settings({ settings, update }: { settings: Settings; update: (patch: Pa
           <input type="checkbox" checked={settings.highContrast} onChange={(e) => update({ highContrast: e.target.checked })} />
           High contrast
         </label>
+        <div className="reset">
+          {confirming ? (
+            <div role="group" aria-labelledby="reset-question" className="reset-confirm">
+              <p id="reset-question">Clear all {doneCount} done steps on this route?</p>
+              <button ref={confirmRef} type="button" className="danger"
+                      onClick={() => { onReset(); setConfirming(false); }}>Reset</button>
+              <button type="button" onClick={() => setConfirming(false)}>Cancel</button>
+            </div>
+          ) : (
+            <button type="button" disabled={doneCount === 0} onClick={() => setConfirming(true)}>
+              Reset progress
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -253,6 +286,12 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     setAnnouncement(wasDone
       ? `Step ${n} marked not done.`
       : `Step ${n} done.${following ? ` Next: ${plain(following)}.` : ' Route complete.'}`);
+  };
+  const resetDone = () => {
+    const next = new Set<string>();
+    setDone(next);
+    saveDone(store(), route.id, next);
+    setAnnouncement('Progress reset. Back to step 1.');
   };
   // Stable callbacks for the memoised rows; they always call the latest toggle.
   const toggleRef = useRef(toggle);
@@ -396,7 +435,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
             </ul>
           )}
         </div>
-        <Settings settings={settings} update={updateSettings} />
+        <Settings settings={settings} update={updateSettings} doneCount={doneCount} onReset={resetDone} />
       </div>
       <p id="announcer" className="sr-only" aria-live="polite">{announcement}</p>
 

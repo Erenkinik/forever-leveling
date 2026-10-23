@@ -263,7 +263,7 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
 
     position = {qid: i for i, qid in enumerate(graph.order)}
     attached = _attach_unplaced(no_start, sel.quests, hubs)
-    classes = {qid: class_only(q, order.race) for qid, q in sel.quests.items() if q.get("classes")}
+    classes = {qid: class_only(q, order.race, order.faction) for qid, q in sel.quests.items() if q.get("classes")}
     steps = _Steps(order.faction, continents, Flights(taxi, order.faction) if taxi else None, classes)
     state = XpState(1, 0)
     deferred = _Deferred()

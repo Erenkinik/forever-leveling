@@ -22,22 +22,11 @@
    "title": "A Threat Within WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
-  "Aetheen of the Gales": {
+  "Aetheen of the Gales (WoW Forever)": {
    "id": "SyQ7jtPrYnk",
    "title": "Aetheen Of The Gales Quest (WoW Forever)",
    "channel": "FocustaGuides"
   },
-  "Aggressive Encroachment": {
-   "id": "4bhyh439_Q0",
-   "title": "Aggressive Encroachment Full Quest World of Warcraft",
-   "channel": "PazarGamingGuides"
-  },
-  "Agitators": {
-   "id": "nS4EuwkvRdQ",
-   "title": "Agitators Full Quest Guide World of Warcraft",
-   "channel": "PazarGamingGuides"
-  },
-  "Archaic Rune": null,
   "Beginnings": {
    "id": "f3c3TGTiF6M",
    "title": "Beginnings (Warlock Quest)",
@@ -66,11 +55,6 @@
   "Coldridge Valley Mail Delivery": {
    "id": "qsohNNGB0rw",
    "title": "Coldridge Valley Mail Delivery Quest (WoW Classic)",
-   "channel": "FocustaGuides"
-  },
-  "Coming of Age": {
-   "id": "xcBQvomaLNQ",
-   "title": "Coming Of Age Quest (WoW TBC)",
    "channel": "FocustaGuides"
   },
   "Consecrated Letter": {
@@ -103,7 +87,7 @@
    "title": "Eagan Peltskinner WoW Classic Quest",
    "channel": "Bue"
   },
-  "Elemental Unrest": {
+  "Elemental Unrest (WoW Forever)": {
    "id": "wqWJ7Mz9M2Q",
    "title": "Elemental Unrest Quest (WoW Forever)",
    "channel": "FocustaGuides"
@@ -168,12 +152,12 @@
    "title": "WoW Classic - Durotar - Etched Tablet",
    "channel": "Royamarn"
   },
-  "Falling With Style": {
+  "Falling With Style (WoW Forever)": {
    "id": "xoMlJR4BgHY",
    "title": "Falling With Style Quest (WoW Forever)",
    "channel": "FocustaGuides"
   },
-  "Foul Matriarch": {
+  "Foul Matriarch (WoW Forever)": {
    "id": "TUEWtP7Ji_s",
    "title": "Foul Matriarch – WoW Forever",
    "channel": "Game Guides Channel"
@@ -224,15 +208,10 @@
    "title": "World of Warcraft: Priest: Hallowed Tablet",
    "channel": "Warcraft Story"
   },
-  "Harmony in Balance": {
+  "Harmony in Balance (WoW Forever)": {
    "id": "iejF1VQ48wM",
    "title": "Harmony in Balance - WoW Forever Quest",
    "channel": "Endo Game Guides"
-  },
-  "Infestation Investigation": {
-   "id": "aOnoxOLJU2M",
-   "title": "Infestation Investigation Full Quest Guide World of Warcraft",
-   "channel": "PazarGamingGuides"
   },
   "Investigate Echo Ridge": {
    "id": "EkH0YQFqpXo",
@@ -261,7 +240,7 @@
    "title": "Rest and Relaxation WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
-  "Return to Rorian": {
+  "Return to Rorian (WoW Forever)": {
    "id": "hQZqkpZok0M",
    "title": "Return To Rorian Quest (WoW Forever)",
    "channel": "FocustaGuides"
@@ -366,7 +345,7 @@
    "title": "World of Warcraft: Warlock: Tainted Scroll",
    "channel": "Warcraft Story"
   },
-  "The Anchors of Zephras": {
+  "The Anchors of Zephras (WoW Forever)": {
    "id": "AixYzxIjScg",
    "title": "The Anchors of Zephras Full Quest World of Warcraft",
    "channel": "PazarGamingGuides"
@@ -391,7 +370,7 @@
    "title": "The Damned, WoW Classic Quest",
    "channel": "Bue"
   },
-  "The Gift of Skysight": {
+  "The Gift of Skysight (WoW Forever)": {
    "id": "MBM7OHDoII0",
    "title": "The Gift of Skysight, WoW Forever Skyborne Quest",
    "channel": "Bue"
@@ -411,7 +390,7 @@
    "title": "The Mindless Ones Quest (WoW Classic)",
    "channel": "FocustaGuides"
   },
-  "The Next Step": {
+  "The Next Step (WoW Forever)": {
    "id": "Md0_JxexUcs",
    "title": "The Next Step Quest (WoW Forever)",
    "channel": "FocustaGuides"

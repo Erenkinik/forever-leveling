@@ -18,6 +18,16 @@ SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
 DEFAULT_BUDGET = 95
 RESULTS = 10
 _WOW = re.compile(r"\b(wow|world of warcraft|classic|forever|vanilla|quest)\b", re.I)
+# Quests new in Forever (ids from here on) often share a name with an older quest (Skyborne's "Call of Earth",
+# "Coming of Age"), so they get their own entry, are searched as Forever quests and take only a video that says so.
+FOREVER_QUESTS = 90_000
+FOREVER_SUFFIX = " (WoW Forever)"
+_FOREVER = re.compile(r"\b(forever|skyborne|zephras)\b", re.I)
+
+
+def video_key(quest_id: int | None, name: str) -> str:
+    """The quest's entry in data/videos.json: its name, plus FOREVER_SUFFIX for a quest new in Forever."""
+    return f"{name}{FOREVER_SUFFIX}" if (quest_id or 0) >= FOREVER_QUESTS else name
 
 
 class QuotaExceeded(Exception):
@@ -28,19 +38,26 @@ def _norm(text: str) -> str:
     return " ".join(re.sub(r"[^\w]+", " ", text.lower()).split())
 
 
-def query_for(name: str) -> str:
-    return f'"{name}" wow classic quest'
+def query_for(key: str) -> str:
+    if key.endswith(FOREVER_SUFFIX):
+        return f'"{key.removesuffix(FOREVER_SUFFIX)}" wow forever quest'
+    return f'"{key}" wow classic quest'
 
 
-def pick(name: str, items: list[dict]) -> dict | None:
-    """The first search result whose title names the quest and says it is WoW, as {id, title, channel}."""
-    want = _norm(name)
+def pick(key: str, items: list[dict]) -> dict | None:
+    """The first search result whose title names the quest and says it is WoW, as {id, title, channel}; for a
+    Forever quest's entry its title or description must also say Forever (or Skyborne, Zephras)."""
+    forever = key.endswith(FOREVER_SUFFIX)
+    want = _norm(key.removesuffix(FOREVER_SUFFIX))
     for item in items:
         vid = (item.get("id") or {}).get("videoId")
         snippet = item.get("snippet") or {}
         title = snippet.get("title") or ""
-        if vid and f" {want} " in f" {_norm(title)} " and _WOW.search(title):
-            return {"id": vid, "title": title, "channel": snippet.get("channelTitle")}
+        if not (vid and f" {want} " in f" {_norm(title)} " and _WOW.search(title)):
+            continue
+        if forever and not _FOREVER.search(f"{title} {snippet.get('description') or ''}"):
+            continue
+        return {"id": vid, "title": title, "channel": snippet.get("channelTitle")}
     return None
 
 
@@ -60,13 +77,15 @@ def search(name: str, api_key: str, opener: Callable = urllib.request.urlopen) -
 
 
 def quest_names_in_order(routes: list[dict], quests: dict[int, dict]) -> list[str]:
-    """The names of the quests the routes accept, earliest first (by step position, over all routes)."""
+    """The video entries (video_key) of the quests the routes accept, earliest first (by step position, over all
+    routes)."""
     first: dict[str, int] = {}
     for route in routes:
         for i, step in enumerate(route.get("steps", [])):
             name = (quests.get(step.get("questId")) or {}).get("name")
             if step.get("type") == "accept" and name:
-                first[name] = min(first.get(name, i), i)
+                key = video_key(step.get("questId"), name)
+                first[key] = min(first.get(key, i), i)
     return sorted(first, key=lambda n: (first[n], n))
 
 

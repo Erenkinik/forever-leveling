@@ -63,9 +63,15 @@ def _spawns(src: dict, names: dict[int, str] | None) -> dict[int, dict]:
     return out
 
 
+# Quest items made at an object rather than dropped, which pfQuest does not list: item id -> the objects.
+ITEM_OBJECTS: dict[int, list[int]] = {
+    5184: [19549],  # Filled Crystal Phial (Crown of the Earth): filled at the Shadowglen Moonwell
+}
+
+
 def _items(src: dict, names: dict) -> dict[int, dict]:
     """Drop sources per item: unit ("U") and object ("O") ids and the units' drop chances; vendors and refs are
-    ignored."""
+    ignored. ITEM_OBJECTS adds the objects pfQuest does not list."""
     out: dict[int, dict] = {}
     for iid, entry in src.items():
         entry = _dict(entry)
@@ -74,6 +80,9 @@ def _items(src: dict, names: dict) -> dict[int, dict]:
             "units": list(droppers), "objects": list(_dict(entry.get("O"))), "name": names.get(iid),
             "chances": {u: c for u, c in droppers.items() if isinstance(c, (int, float))},
         }
+    for iid, objects in ITEM_OBJECTS.items():
+        rec = out.setdefault(iid, {"units": [], "objects": [], "name": names.get(iid), "chances": {}})
+        rec["objects"] = rec["objects"] + [o for o in objects if o not in rec["objects"]]
     return out
 
 

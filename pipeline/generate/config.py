@@ -84,6 +84,11 @@ RACE_CLASSES: dict[str, tuple[str, ...]] = {
     "Undead": ("Warrior", "Rogue", "Priest", "Mage", "Warlock"),
     "Tauren": ("Warrior", "Hunter", "Shaman", "Druid"),
 }
+# Races whose classes depend on the faction: Skyborne Alliance play Mage, Skyborne Horde Shaman (Forever).
+FACTION_RACE_CLASSES: dict[tuple[str, str], tuple[str, ...]] = {
+    ("Skyborne", "Alliance"): ("Warrior", "Hunter", "Rogue", "Mage", "Druid"),
+    ("Skyborne", "Horde"): ("Warrior", "Hunter", "Rogue", "Shaman", "Druid"),
+}
 
 # Kill XP. Counts, drop chances and mob levels come from the quest's `kills` (pipeline/normalize/kills.py); these
 # fill in what the data does not say. A kill objective of unknown count is taken as this many kills, a collect

@@ -12,6 +12,7 @@ import urllib.request
 from pathlib import Path
 from typing import Callable
 
+from pipeline.config import CLASS_BITS
 from pipeline.ingest.pfquest import PfData
 
 REPO = "danielcosta42/lodestar"
@@ -243,6 +244,18 @@ def _fix_class_points(text: str) -> str:
     return "\n".join(out)
 
 
+def _class_mask(only: str) -> int | None:
+    """The classes a step's "only" condition allows, as pfQuest's class mask: "only Shaman" is Shaman's bit, "only not
+    Druid not Hunter ..." every class it does not name; None when it names no class."""
+    named = {m.group(2): bool(m.group(1)) for m in re.finditer(rf"\b(not )?({'|'.join(CLASS_BITS)})\b", only)}
+    allowed = [c for c, negated in named.items() if not negated]
+    if allowed:
+        return sum(CLASS_BITS[c] for c in allowed)
+    if named:
+        return sum(bit for c, bit in CLASS_BITS.items() if c not in named)
+    return None
+
+
 def parse_guide(text: str, map_ids: dict[str, int]) -> dict:
     """One guide's facts: {"quests": {id: {...}}, "units", "objects", "items", "order": [quest ids]}.
 
@@ -257,7 +270,7 @@ def parse_guide(text: str, map_ids: dict[str, int]) -> dict:
     def quest(qid: int) -> dict:
         if qid not in quests:
             quests[qid] = {"start": None, "end": None, "U": {}, "I": {}, "O": {}, "pre": [], "min": None,
-                           "skyborne": False}
+                           "skyborne": False, "class": None}
             order.append(qid)
         return quests[qid]
 
@@ -269,7 +282,9 @@ def parse_guide(text: str, map_ids: dict[str, int]) -> dict:
     for block in text.split("\nstep\n")[1:]:
         lines = [ln.strip() for ln in block.splitlines()]
         only = " ".join(ln for ln in lines if ln.startswith("only "))
-        needs = [int(q) for group in re.findall(r"completed\(([\d, ]+)\)", only) for q in re.findall(r"\d+", group)]
+        # "not completed(...)" is the opposite of a prerequisite: the step is for those who did not do it.
+        needs = [int(q) for group in re.findall(r"(?<!not )completed\(([\d, ]+)\)", only)
+                 for q in re.findall(r"\d+", group)]
         min_level = max((int(n) for n in re.findall(r"level>=(\d+)", only)), default=None)
         npc = None
         for ln in lines:
@@ -293,6 +308,7 @@ def parse_guide(text: str, map_ids: dict[str, int]) -> dict:
                     q["pre"] = sorted(set(q["pre"]) | set(needs))
                     q["min"] = min_level
                     q["skyborne"] = bool(re.search(r"\bSkyborne\b", only))  # "only Skyborne": the race's own
+                    q["class"] = _class_mask(only)
             elif verb == "kill" and qm:
                 quest(int(qm.group(1)))["U"][eid] = count
                 place(units, eid, name, point)
@@ -349,6 +365,7 @@ def load_lodestar(src_dir: Path, map_ids: dict[str, int], uimap_to_area: dict[in
                 "source": "lodestar",
                 # Zephras Isle is the Skyborne start, and the guide marks the race's own quests elsewhere.
                 "races": ["Skyborne"] if q["skyborne"] else None,
+                **({"class": q["class"]} if q["class"] else {}),
             }
         for uid, u in g["units"].items():
             rec = units.setdefault(uid, {"name": u["name"], "coords": [], "fac": None})

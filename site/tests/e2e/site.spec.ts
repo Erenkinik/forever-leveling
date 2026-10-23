@@ -427,6 +427,26 @@ test('where a quest starts, its video waits on parchment until play is pressed',
   await page.goto(`/${id}/`);
   const panel = page.getByRole('region', { name: 'Quest video' });
   await expect(panel.locator('iframe')).toHaveCount(0);
-  await panel.getByRole('button', { name: `Play video: ${video.title}` }).click();
+  await panel.getByRole('button', { name: `Watch the quest: ${video.title}` }).click();
   await expect(panel.locator('iframe')).toHaveAttribute('src', new RegExp(`youtube-nocookie.com/embed/${video.id}`));
+});
+
+test('progress can be reset from the settings, after a second press', async ({ page }) => {
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await openSettings(page);
+  await expect(page.getByRole('button', { name: 'Reset progress' })).toBeDisabled();
+  for (let n = 1; n <= 3; n++) await page.getByRole('button', { name: `Step ${n} done` }).click();
+  await openSettings(page);
+  await page.getByRole('button', { name: 'Reset progress' }).click();
+  await expect(page.getByText('Clear all 3 done steps on this route?')).toBeVisible();
+  await page.getByRole('button', { name: 'Cancel' }).click();
+  await expect(page.getByRole('button', { name: 'Step 3 done' })).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Reset progress' }).click();
+  await page.getByRole('button', { name: 'Reset', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Step 1 done' })).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('#announcer')).toHaveText('Progress reset. Back to step 1.');
+  await page.reload();
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Step 3 done' })).toHaveAttribute('aria-pressed', 'false');
 });

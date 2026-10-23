@@ -44,6 +44,32 @@ def test_parse_guide_keeps_the_facts():
     assert g["items"][300]["droppers"] == {"Wolf"}
 
 
+def test_parse_guide_reads_class_conditions_and_not_completed_is_no_prerequisite():
+    g = parse_guide("""x
+step
+  only Shaman not completed(1516) not completed(1519) not haveq(1516)
+  talk Boro##100
+  accept Earth##10 |goto Zephras Isle 40.0,20.0
+step
+  only not completed(96627) not completed(96628)
+  talk Aetheen##101
+  accept Adventurer##11 |goto Zephras Isle 41.0,21.0
+step
+  only Hunter completed(10)
+  talk Aetheen##101
+  accept Hunt##12 |goto Zephras Isle 41.0,21.0
+step
+  only not Druid not Hunter not Paladin not Priest not Rogue not Shaman not Warlock not Warrior
+  talk Belann##102
+  accept Arcane##13 |goto Zephras Isle 42.0,22.0
+""", MAPS)
+    q = g["quests"]
+    assert (q[10]["pre"], q[10]["class"]) == ([], 64)
+    assert (q[11]["pre"], q[11]["class"]) == ([], None)
+    assert (q[12]["pre"], q[12]["class"]) == ([10], 4)
+    assert q[13]["class"] == 128  # every class it does not name: Mage
+
+
 def test_load_lodestar_gives_pfquest_shaped_data(tmp_path):
     (tmp_path / "zephras-alliance.lua").write_text(GUIDE, encoding="utf-8")
     pf = load_lodestar(tmp_path, MAPS, AREAS)

@@ -37,7 +37,6 @@ export default function RaceSwitcher({ current, routes }: { current: RouteMeta; 
                   </a>
                 </li>
               ))}
-              <li><span className="soon">Skyborne <small>coming soon</small></span></li>
             </ul>
           </div>
         ))}

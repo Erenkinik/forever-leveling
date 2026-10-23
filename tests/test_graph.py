@@ -65,6 +65,14 @@ def test_class_quest_is_kept_when_the_race_can_play_one_of_its_classes():
     assert sel.excluded == {"class": [5, 6, 7], "race": [4]}
 
 
+def test_skyborne_classes_depend_on_the_faction():
+    quests = {1: _q(1, classes=["Mage"]), 2: _q(2, classes=["Shaman"]), 3: _q(3, classes=["Warrior"])}
+    alliance = select_quests(quests, ZoneOrder("t", "Skyborne", "Alliance", False, [10]))
+    horde = select_quests(quests, ZoneOrder("t", "Skyborne", "Horde", False, [10]))
+    assert (sorted(alliance.quests), alliance.excluded) == ([1, 3], {"class": [2]})
+    assert (sorted(horde.quests), horde.excluded) == ([2, 3], {"class": [1]})
+
+
 def test_exclusion_reasons_and_precedence():
     quests = {
         1: _q(1, in_forever=False, min_level=None, races=["Orc"], map_id=99),

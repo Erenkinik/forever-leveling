@@ -5,7 +5,8 @@ import urllib.error
 import pytest
 
 from pipeline.ingest.youtube import (
-    QuotaExceeded, api_key_from, fill_videos, load_videos, pick, quest_names_in_order, save_videos, search,
+    QuotaExceeded, api_key_from, fill_videos, load_videos, pick, query_for, quest_names_in_order, save_videos, search,
+    video_key,
 )
 
 
@@ -21,6 +22,22 @@ def test_pick_takes_the_first_title_that_names_the_quest_and_wow():
     assert pick("Rude Awakening", items[:2]) is None
     # punctuation and case do not matter
     assert pick("The Hunt Begins", [item("e", "WOW - the hunt begins!")])["id"] == "e"
+
+
+def test_a_forever_quest_has_its_own_entry_and_takes_only_a_forever_video():
+    assert video_key(92467, "Call of Earth") == "Call of Earth (WoW Forever)"
+    assert video_key(1516, "Call of Earth") == "Call of Earth"
+    assert query_for("Call of Earth (WoW Forever)") == '"Call of Earth" wow forever quest'
+    classic = item("a", "Call of Earth (Orc Shaman) WoW Classic")
+    described = {**item("b", "Agitators Full Quest Guide World of Warcraft"),
+                 "snippet": {"title": "Agitators Full Quest Guide World of Warcraft", "channelTitle": "P",
+                             "description": "Zephras Isle quest in WoW Forever"}}
+    assert pick("Call of Earth (WoW Forever)", [classic]) is None
+    assert pick("Call of Earth", [classic])["id"] == "a"
+    assert pick("Agitators (WoW Forever)", [described])["id"] == "b"
+    quests = {92467: {"name": "Call of Earth"}, 1516: {"name": "Call of Earth"}}
+    routes = [{"steps": [{"type": "accept", "questId": 92467}, {"type": "accept", "questId": 1516}]}]
+    assert quest_names_in_order(routes, quests) == ["Call of Earth (WoW Forever)", "Call of Earth"]
 
 
 def test_quest_names_in_order_puts_the_earliest_steps_first_and_shares_names():

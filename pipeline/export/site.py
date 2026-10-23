@@ -2,6 +2,8 @@
 import copy
 import math
 
+from pipeline.ingest.youtube import video_key
+
 # How many item sources (dropping units/objects) a collect objective names: the nearest ones on the step map.
 MAX_SOURCES = 3
 # The objective area drawn on the site map: at most this many spawn points, the ones nearest the step.
@@ -77,7 +79,7 @@ def _quest_entry(q: dict, race: str, faction: str, need_level: bool = True) -> d
     entry = {"questId": q["id"], "name": q.get("name"), "mapId": start["uiMapId"], "x": start["x"], "y": start["y"],
              "level": level, "minLevel": q.get("minLevel"), "npcName": start.get("name")}
     if q.get("classes"):
-        playable = class_only(q, race)
+        playable = class_only(q, race, faction)
         if not playable:
             return None
         entry["classOnly"] = playable
@@ -146,7 +148,7 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
     carry their item's icon FileDataID; with `seconds` (export.timing.step_seconds) every step carries its
     estimated time. `optional` lists the quests off the route (optional_quests); with `dungeons`
     (data/canonical/dungeons.json) `dungeons` lists the entrances on the route's maps (route_dungeons); with
-    `videos` (data/videos.json, by quest name) accept steps carry their quest's YouTube video."""
+    `videos` (data/videos.json, by youtube.video_key) accept steps carry their quest's YouTube video."""
     out = copy.deepcopy(route)
     units = spawns.get("units", {})
     for step in out.get("steps", []):
@@ -156,8 +158,10 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
         step["zoneName"] = uimaps.get(map_id) if map_id is not None else None
         if levels is not None and step.get("id") in levels:
             step["level"] = levels[step["id"]]
-        if videos and step.get("type") == "accept" and videos.get(step["questName"] or ""):
-            step["video"] = videos[step["questName"]]
+        if videos and step.get("type") == "accept" and step["questName"]:
+            video = videos.get(video_key(quest_id, step["questName"]))
+            if video:
+                step["video"] = video
         if seconds is not None and step.get("id") in seconds:
             step["seconds"] = seconds[step["id"]]
         if step.get("type") == "complete" and quest_id in quests:

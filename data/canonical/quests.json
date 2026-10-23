@@ -50955,7 +50955,7 @@
     "kind": "collect",
     "id": 5184,
     "count": 1,
-    "chance": null,
+    "chance": 0.0,
     "level": null
    }
   ],
@@ -311213,11 +311213,10 @@
   "level": 3,
   "minLevel": 1,
   "races": null,
-  "classes": null,
-  "prereqs": [
-   1516,
-   1519
+  "classes": [
+   "Shaman"
   ],
+  "prereqs": [],
   "start": {
    "type": "npc",
    "id": 251374,
@@ -311265,7 +311264,7 @@
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": true
+  "prereqsAny": false
  },
  {
   "id": 92467,
@@ -311273,7 +311272,9 @@
   "level": 3,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -311320,7 +311321,9 @@
   "level": 3,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -311745,7 +311748,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Mage"
+  ],
   "prereqs": [
    92461
   ],
@@ -311794,7 +311799,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [
    92461
   ],
@@ -311841,7 +311848,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Rogue"
+  ],
   "prereqs": [
    92461
   ],
@@ -311888,7 +311897,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [
    92461
   ],
@@ -311937,7 +311948,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Druid"
+  ],
   "prereqs": [
    92461
   ],
@@ -312658,7 +312671,9 @@
   "level": 2,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Warrior"
+  ],
   "prereqs": [
    92461
   ],
@@ -323130,7 +323145,9 @@
   "level": 8,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Mage"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -323177,7 +323194,9 @@
   "level": 8,
   "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Mage"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -324572,7 +324591,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Warrior"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -324672,7 +324693,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Druid"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -324719,7 +324742,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -324766,7 +324791,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -324866,7 +324893,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -332571,9 +332600,7 @@
   "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [
-   94493
-  ],
+  "prereqs": [],
   "start": {
    "type": "npc",
    "id": 252359,
@@ -334075,7 +334102,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Druid"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -338388,7 +338417,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -338445,7 +338476,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Hunter"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -351126,14 +351159,7 @@
   "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [
-   95998,
-   96604,
-   96605,
-   96606,
-   96607,
-   96608
-  ],
+  "prereqs": [],
   "start": {
    "type": "npc",
    "id": 263664,
@@ -351171,7 +351197,7 @@
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": true
+  "prereqsAny": false
  },
  {
   "id": 96102,
@@ -357857,14 +357883,7 @@
   "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [
-   96627,
-   96628,
-   96630,
-   96652,
-   96656,
-   96659
-  ],
+  "prereqs": [],
   "start": {
    "type": "npc",
    "id": 251366,
@@ -357900,7 +357919,7 @@
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": true
+  "prereqsAny": false
  },
  {
   "id": 96646,
@@ -357909,14 +357928,7 @@
   "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [
-   96626,
-   96629,
-   96634,
-   96655,
-   96658,
-   96661
-  ],
+  "prereqs": [],
   "start": {
    "type": "npc",
    "id": 263664,
@@ -357952,7 +357964,7 @@
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": true
+  "prereqsAny": false
  },
  {
   "id": 96652,
@@ -363908,7 +363920,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -363957,7 +363971,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -364016,7 +364032,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
@@ -364290,7 +364308,9 @@
   "races": [
    "Skyborne"
   ],
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
    "type": "npc",
