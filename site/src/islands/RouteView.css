@@ -131,19 +131,18 @@ svg.step-icon.grind { stroke: var(--gold); }
 .tag { font: 14px var(--font-mono); color: var(--muted); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0 6px; }
 .report { font: 14px var(--font-mono); color: var(--gold); min-height: 24px; display: inline-flex; align-items: center; }
 .tag.warn { color: var(--warn); border-color: var(--warn); }
-.tag.session { color: var(--on-gold); background: var(--gold); border-color: var(--gold); }
 
-/* Session plan above the steps. */
-.session-plan {
+/* Start at the player's level, above the steps. */
+.level-start {
   display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 4px 0 14px; padding: 10px 14px;
   background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 10px;
 }
-.session-plan label { display: flex; gap: 10px; align-items: center; }
-.session-plan select {
-  min-height: 44px; padding: 6px 10px; background: var(--raised); color: var(--text);
+.level-start label { display: flex; gap: 10px; align-items: center; }
+.level-start select, .level-start button {
+  min-height: 44px; padding: 6px 12px; background: var(--raised); color: var(--text);
   border: 1px solid var(--border); border-radius: 8px; font: 16px var(--font-body); cursor: pointer;
 }
-.session-plan p { margin: 0; color: var(--muted); }
+.level-start button { color: var(--gold); border-color: var(--gold); }
 .quest { color: var(--quest); font-weight: 600; }
 .npc { color: var(--npc); }
 .item { color: var(--text); font-weight: 600; }

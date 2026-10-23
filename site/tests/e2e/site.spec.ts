@@ -212,7 +212,7 @@ test('steps show objectives, levels and plain-language gap reasons', async ({ pa
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.locator('li.step.complete').first()).toContainText(/: (kill|collect|use) /);
-  await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+( · about .+)?$/);
+  await expect(page.locator('h2.zone .zone-levels').first()).toHaveText(/^Levels \d+–\d+$/);
   await expect(page.locator('.progress-level')).toHaveText('Level 1');
   const gap = page.locator('li.step.gap').first();
   await expect(gap).toContainText('Skip for now:');
@@ -361,15 +361,19 @@ test('exploration mode shows the quests off the route on the map, and is remembe
   await expect(page.getByRole('button', { name: 'All quests' })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('a session plan marks where the chosen time runs out, and zones show their time', async ({ page }) => {
+test('a levelled player jumps to the step for their level, and the steps before it are done', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
-  await expect(page.locator('.session-plan p')).toContainText(/About .+ left on this route/);
-  await expect(page.locator('.zone-levels').first()).toContainText(/about \d+ (h|min)/);
-  await expect(page.locator('.tag.session')).toHaveCount(0);
-  await page.getByLabel('Play session').selectOption('60');
-  await expect(page.locator('.session-plan p')).toContainText(/Steps 1–\d+, to about level \d+/);
-  await expect(page.locator('.tag.session')).toHaveCount(1);
+  await page.getByLabel('Already levelled? Start at level').selectOption('10');
+  await page.getByRole('button', { name: 'Go to that step' }).click();
+  await expect(page.locator('.progress-level')).toHaveText('Level 10');
+  const current = page.locator('li.step.current');
+  await expect(current).toBeFocused();
+  const n = Number(await current.locator('.mark').textContent());
+  expect(n).toBeGreaterThan(1);
+  await expect(page.locator('li.step.done')).toHaveCount(n - 1);
+  await page.reload();
+  await expect(page.locator('.progress-level')).toHaveText('Level 10');
 });
 
 test('a dungeon entrance on the map shows its quests in a panel', async ({ page }) => {

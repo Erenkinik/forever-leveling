@@ -173,33 +173,10 @@ export function optionalOnMap(quests: OptionalQuest[], mapId: number, playerClas
     && (!playerClass || !q.classOnly || q.classOnly.includes(playerClass)));
 }
 
-/** "45 min", "1 h 20 min", "31 h" (whole minutes, minutes dropped from 10 hours up). */
-export function formatDuration(seconds: number): string {
-  const minutes = Math.max(1, Math.round(seconds / 60));
-  const h = Math.floor(minutes / 60);
-  const m = minutes % 60;
-  if (h === 0) return `${m} min`;
-  return h >= 10 || m === 0 ? `${h} h` : `${h} h ${m} min`;
-}
-
-/** Estimated seconds of the steps not done yet. */
-export function secondsLeft(steps: Step[], done: ReadonlySet<string>): number {
-  return steps.reduce((t, s) => t + (done.has(s.id) ? 0 : s.seconds ?? 0), 0);
-}
-
-/** Where a session of `minutes` from step `from` ends: the last step that fits (at least `from`), and the level
- *  the player is at after it (the next step's estimate). Done steps take no time. */
-export function sessionEnd(steps: Step[], from: number, minutes: number, done: ReadonlySet<string>):
-  { index: number; level?: number } {
-  let left = minutes * 60;
-  let index = from;
-  for (let i = from; i < steps.length; i++) {
-    const cost = done.has(steps[i].id) ? 0 : steps[i].seconds ?? 0;
-    if (cost > left && i > from) break;
-    left -= cost;
-    index = i;
-  }
-  return { index, level: steps[index + 1]?.level ?? steps[index]?.level };
+/** Where a player already at `level` starts: the first step (not a skipped one) estimated at that level or higher;
+ *  -1 when the route never gets there. */
+export function stepForLevel(steps: Step[], level: number): number {
+  return steps.findIndex((s) => s.type !== 'gap' && (s.level ?? 0) >= level);
 }
 
 /** The dungeon entrances on this map, each with the quests a player of this class can take ('' = any). */
@@ -288,14 +265,12 @@ export interface Settings {
   playerClass: string;
   /** exploration mode: the map also shows the quests off the route */
   explore: boolean;
-  /** session plan: minutes the player has now; 0 = no plan */
-  sessionMinutes: number;
 }
 
 // Also read by the inline script in src/layouts/Base.astro, which applies high contrast before first paint.
 export const SETTINGS_KEY = 'fxp:v1:settings';
 const DEFAULT_SETTINGS: Settings = {
-  shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0,
+  shortcuts: true, highContrast: false, playerClass: '', explore: false,
 };
 
 export function loadSettings(store: KeyValueStore): Settings {
@@ -308,8 +283,6 @@ export function loadSettings(store: KeyValueStore): Settings {
       highContrast: typeof r.highContrast === 'boolean' ? r.highContrast : DEFAULT_SETTINGS.highContrast,
       playerClass: typeof r.playerClass === 'string' ? r.playerClass : DEFAULT_SETTINGS.playerClass,
       explore: typeof r.explore === 'boolean' ? r.explore : DEFAULT_SETTINGS.explore,
-      sessionMinutes: typeof r.sessionMinutes === 'number' && r.sessionMinutes >= 0
-        ? r.sessionMinutes : DEFAULT_SETTINGS.sessionMinutes,
     };
   } catch {
     return { ...DEFAULT_SETTINGS };

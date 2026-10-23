@@ -1,8 +1,8 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, dungeonsOnMap, formatDuration, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
-  reportUrl, secondsLeft, sessionEnd,
+  clusterPins, describeStep, dungeonsOnMap, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
+  reportUrl, stepForLevel,
   mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
   type DungeonQuest, type KeyValueStore, type QuestVideo, type Part, type Route, type Settings, type Step,
@@ -18,8 +18,6 @@ const MAP_ART = mapIndex.maps as Record<string, { width: number; height: number 
 
 const ZOOMS = [1, 1.5, 2, 3];
 const SEARCH_LIMIT = 8;
-// Session plan choices, in minutes.
-const SESSION_MINUTES = [30, 60, 90, 120, 180];
 // Steps shown on the map: a few behind and ahead of the current step, on its map only (plus the quest log's).
 const MAP_BEHIND = 2;
 const MAP_AHEAD = 6;
@@ -63,13 +61,11 @@ interface RowProps {
   isCurrent: boolean;
   /** Only the current step gets a report link, so the list stays one tab stop per step. */
   reportHref?: string;
-  /** the last step of the planned session */
-  endsSession?: boolean;
   onToggle: (step: Step, e: MouseEvent<HTMLButtonElement>) => void;
   register: (id: string, el: HTMLLIElement | null) => void;
 }
 
-const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, endsSession, onToggle, register }:
+const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, onToggle, register }:
   RowProps) {
   return (
     <li
@@ -92,7 +88,6 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
           <span className="xy">{coords(step)}</span>
           {step.classOnly && <span className="tag class">{step.classOnly.join(', ')}</span>}
           {step.type === 'gap' && <span className="tag warn">Skipped</span>}
-          {endsSession && <span className="tag session">Session end</span>}
           {reportHref && (
             <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
               Report this step<span className="sr-only"> (opens GitHub in a new tab)</span>
@@ -220,7 +215,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   const [done, setDone] = useState<Set<string>>(() => new Set());
   const [loaded, setLoaded] = useState(false);
   const [settings, setSettings] = useState<Settings>({
-    shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0,
+    shortcuts: true, highContrast: false, playerClass: '', explore: false,
   });
   const [zoom, setZoom] = useState(0);
   // The dungeon whose quest panel is open (its Map id), and the marker to give focus back to when it closes.
@@ -292,6 +287,18 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     setDone(next);
     saveDone(store(), route.id, next);
     setAnnouncement('Progress reset. Back to step 1.');
+  };
+  // A player who is already levelled starts where the route reaches their level: every step before it is done.
+  const levels = useMemo(() => levelRange(steps), [steps]);
+  const [startLevel, setStartLevel] = useState(0);
+  const startAtLevel = (level: number) => {
+    const at = stepForLevel(steps, level);
+    if (at < 0) return;
+    const next = new Set(steps.slice(0, at).map((s) => s.id));
+    setDone(next);
+    saveDone(store(), route.id, next);
+    setAnnouncement(`Starting at step ${at + 1}, level ${steps[at].level}. The steps before it are marked done.`);
+    focusStep(steps[at]);
   };
   // Stable callbacks for the memoised rows; they always call the latest toggle.
   const toggleRef = useRef(toggle);
@@ -390,8 +397,6 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   const found = searchSteps(steps, query, Math.max(0, currentIndex), SEARCH_LIMIT + 1);
   const matches = found.slice(0, SEARCH_LIMIT);
   const doneCount = steps.reduce((n, s) => n + (done.has(s.id) ? 1 : 0), 0);
-  const plan = current && settings.sessionMinutes > 0
-    ? sessionEnd(steps, currentIndex, settings.sessionMinutes, done) : null;
 
   return (
     <div className="route-view">
@@ -441,41 +446,31 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
 
       <div className="route-main">
         <section aria-label="Route steps" className="steps" data-loaded={loaded ? 'true' : 'false'}>
-          <div className="session-plan">
-            <label>
-              <span>Play session</span>
-              <select value={settings.sessionMinutes}
-                      onChange={(e) => updateSettings({ sessionMinutes: Number(e.target.value) })}>
-                <option value={0}>No plan</option>
-                {SESSION_MINUTES.map((m) => <option key={m} value={m}>{formatDuration(m * 60)}</option>)}
-              </select>
-            </label>
-            <p aria-live="polite">
-              {plan && current
-                ? <>Steps {currentIndex + 1}–{plan.index + 1}{plan.level !== undefined && <>, to about level {plan.level}</>}.</>
-                : <>About {formatDuration(secondsLeft(steps, done))} left on this route.</>}
-            </p>
-          </div>
+          {levels && levels[1] > levels[0] && (
+            <form className="level-start" onSubmit={(e) => { e.preventDefault(); startAtLevel(Math.max(startLevel, levels[0])); }}>
+              <label>
+                <span>Already levelled? Start at level</span>
+                <select value={Math.max(startLevel, levels[0])} onChange={(e) => setStartLevel(Number(e.target.value))}>
+                  {Array.from({ length: levels[1] - levels[0] + 1 }, (_, i) => levels[0] + i)
+                    .map((l) => <option key={l} value={l}>{l}</option>)}
+                </select>
+              </label>
+              <button type="submit">Go to that step</button>
+            </form>
+          )}
           {groups.map((g) => (
             <section key={g.key}>
               <h2 className="zone">
                 {g.zoneName}
                 {(() => {
                   const range = levelRange(g.steps);
-                  const time = g.steps.reduce((t, s) => t + (s.seconds ?? 0), 0);
-                  return (
-                    <span className="zone-levels">
-                      {range && <>Levels {range[0]}–{range[1]}</>}{range && time > 0 && ' · '}
-                      {time > 0 && <>about {formatDuration(time)}</>}
-                    </span>
-                  );
+                  return range && <span className="zone-levels">Levels {range[0]}–{range[1]}</span>;
                 })()}
               </h2>
               <ol>
                 {g.steps.map((s) => (
                   <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}
                            isCurrent={s === current} onToggle={onRowToggle} register={register}
-                           endsSession={plan !== null && s === steps[plan.index]}
                            reportHref={s === current ? reportUrl(route, s, currentIndex + 1) : undefined} />
                 ))}
               </ol>

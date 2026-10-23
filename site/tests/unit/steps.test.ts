@@ -87,12 +87,12 @@ test('settings round-trip with defaults for missing or broken values', async () 
   const { loadSettings, saveSettings, SETTINGS_KEY } = await import('../../src/lib/steps.ts');
   const mem = new Map<string, string>();
   const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) };
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0 });
-  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true, sessionMinutes: 60 });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false });
+  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true });
   assert.equal(SETTINGS_KEY, 'fxp:v1:settings');
-  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true, sessionMinutes: 60 });
+  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true });
   mem.set(SETTINGS_KEY, '[1]');
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0 });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false });
 });
 
 test('reportUrl opens a prefilled GitHub issue for the step', async () => {
@@ -311,19 +311,14 @@ test('exploration mode lists the quests off the route on the map, for the chosen
   assert.deepEqual(optionalOnMap(quests, 10, 'Mage').map((q) => q.questId), [1, 3]);
 });
 
-test('durations read like a person would say them, and a session ends where its time runs out', async () => {
-  const { formatDuration, secondsLeft, sessionEnd } = await import('../../src/lib/steps.ts');
-  assert.equal(formatDuration(20), '1 min');
-  assert.equal(formatDuration(45 * 60), '45 min');
-  assert.equal(formatDuration(80 * 60), '1 h 20 min');
-  assert.equal(formatDuration(120 * 60), '2 h');
-  assert.equal(formatDuration(31.4 * 3600), '31 h');
-  const t = (id: string, seconds: number, level: number): Step => ({ ...base, id, type: 'accept', seconds, level });
-  const steps = [t('a', 600, 1), t('b', 1200, 2), t('c', 1200, 3), t('d', 600, 4)];
-  assert.equal(secondsLeft(steps, new Set(['a'])), 3000);
-  assert.deepEqual(sessionEnd(steps, 0, 30, new Set()), { index: 1, level: 3 });  // 10 + 20 min
-  assert.deepEqual(sessionEnd(steps, 0, 30, new Set(['b'])), { index: 2, level: 4 });  // done steps are free
-  assert.deepEqual(sessionEnd(steps, 1, 5, new Set()), { index: 1, level: 3 });  // at least the current step
+test('a levelled player starts at the first step of their level that is not skipped', async () => {
+  const { stepForLevel } = await import('../../src/lib/steps.ts');
+  const t = (id: string, level: number, type: Step['type'] = 'accept'): Step => ({ ...base, id, type, level });
+  const steps = [t('a', 1), t('b', 3), t('c', 5, 'gap'), t('d', 5), t('e', 6)];
+  assert.equal(stepForLevel(steps, 1), 0);
+  assert.equal(stepForLevel(steps, 2), 1);  // no step at 2: the first one above it
+  assert.equal(stepForLevel(steps, 5), 3);  // the skipped step is passed over
+  assert.equal(stepForLevel(steps, 7), -1);
 });
 
 test('dungeons on a map keep the quests the chosen class can take', async () => {
