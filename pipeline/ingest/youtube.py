@@ -53,8 +53,9 @@ def search(name: str, api_key: str, opener: Callable = urllib.request.urlopen) -
         with opener(f"{SEARCH_URL}?{params}", timeout=30) as resp:
             return json.loads(resp.read().decode("utf-8")).get("items", [])
     except urllib.error.HTTPError as exc:
-        if exc.code == 403:
-            raise QuotaExceeded("YouTube refused the search (HTTP 403): quota used up or key not allowed") from exc
+        if exc.code in (403, 429):
+            raise QuotaExceeded(f"YouTube refused the search (HTTP {exc.code}): quota used up or key not allowed") \
+                from exc
         raise
 
 

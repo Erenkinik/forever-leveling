@@ -5,7 +5,7 @@ import urllib.error
 import pytest
 
 from pipeline.ingest.youtube import (
-    api_key_from, fill_videos, load_videos, pick, quest_names_in_order, save_videos, search,
+    QuotaExceeded, api_key_from, fill_videos, load_videos, pick, quest_names_in_order, save_videos, search,
 )
 
 
@@ -58,6 +58,13 @@ def test_fill_videos_searches_new_names_within_the_budget_and_stops_at_the_quota
     assert fill_videos(["A", "B", "C"], videos2, "KEY", budget=1,
                        opener=lambda u, timeout: FakeResp(b'{"items": []}')) == (1, False)
     assert videos2 == {"A": None}
+
+
+def test_search_takes_too_many_requests_as_the_quota_used_up():
+    def opener(url, timeout):
+        raise urllib.error.HTTPError(url, 429, "Too Many Requests", {}, None)
+    with pytest.raises(QuotaExceeded):
+        search("X", "KEY", opener)
 
 
 def test_search_raises_other_http_errors():
