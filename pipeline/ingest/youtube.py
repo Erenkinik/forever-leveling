@@ -77,7 +77,7 @@ def save_videos(path: Path, videos: dict[str, dict | None]) -> None:
     doc = {"note": "quest name -> YouTube video (null: searched, none fit); python -m pipeline videos",
            "videos": dict(sorted(videos.items()))}
     tmp = path.with_name(path.name + ".part")
-    tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     tmp.replace(path)
 
 
