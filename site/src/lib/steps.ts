@@ -267,8 +267,6 @@ export function clusterPins(steps: Step[], threshold: number, yScale = 1): Step[
 export interface Settings {
   shortcuts: boolean;
   highContrast: boolean;
-  /** the player's class; '' shows every class's quests */
-  playerClass: string;
   /** exploration mode: the map also shows the quests off the route */
   explore: boolean;
 }
@@ -276,7 +274,7 @@ export interface Settings {
 // Also read by the inline script in src/layouts/Base.astro, which applies high contrast before first paint.
 export const SETTINGS_KEY = 'fxp:v1:settings';
 const DEFAULT_SETTINGS: Settings = {
-  shortcuts: true, highContrast: false, playerClass: '', explore: false,
+  shortcuts: true, highContrast: false, explore: false,
 };
 
 export function loadSettings(store: KeyValueStore): Settings {
@@ -287,11 +285,29 @@ export function loadSettings(store: KeyValueStore): Settings {
     return {
       shortcuts: typeof r.shortcuts === 'boolean' ? r.shortcuts : DEFAULT_SETTINGS.shortcuts,
       highContrast: typeof r.highContrast === 'boolean' ? r.highContrast : DEFAULT_SETTINGS.highContrast,
-      playerClass: typeof r.playerClass === 'string' ? r.playerClass : DEFAULT_SETTINGS.playerClass,
       explore: typeof r.explore === 'boolean' ? r.explore : DEFAULT_SETTINGS.explore,
     };
   } catch {
     return { ...DEFAULT_SETTINGS };
+  }
+}
+
+/** The player's class on a route ('' = none chosen); each route keeps its own, as each race plays its own classes. */
+export const classKey = (routeId: string): string => `fxp:v1:${routeId}:class`;
+
+export function loadClass(store: KeyValueStore, routeId: string): string {
+  try {
+    return store.getItem(classKey(routeId)) ?? '';
+  } catch {
+    return '';
+  }
+}
+
+export function saveClass(store: KeyValueStore, routeId: string, playerClass: string): void {
+  try {
+    store.setItem(classKey(routeId), playerClass);
+  } catch {
+    // Blocked storage: the choice lasts for this page only.
   }
 }
 

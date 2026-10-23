@@ -415,3 +415,17 @@ svg.step-icon.grind { stroke: var(--gold); }
   background: radial-gradient(circle at 35% 30%, #ffe7a3, #f0c060 45%, #a87824);
   box-shadow: 0 0 0 2px #f0c060, inset 0 -2px 3px rgba(0, 0, 0, .35);
 }
+
+/* Three-digit step numbers: smaller, so they fit the coin and the round pin. */
+.step .mark.long { font-size: 15px; letter-spacing: -.04em; }
+.step.current .mark.long { font-size: 16px; }
+.pin.long:not(.has-icon) { font-size: 11px; letter-spacing: -.06em; }
+.pin.long.multi:not(.has-icon) { font-size: 9px; }
+.pin.has-icon.long .pin-num { font-size: 13px; }
+.pin.has-icon.long.current .pin-num { font-size: 15px; }
+/* A pin's step number sits on a faint dark pill, so it stays readable over the map's town names. */
+.pin.has-icon .pin-num { background: rgba(15, 12, 8, .55); border-radius: 4px; padding: 1px 3px; }
+/* A race in both factions (Skyborne) shows which one the route is for. */
+.race-button .race-faction { font: 600 13px var(--font-mono); }
+.race-button .race-faction.alliance { color: var(--alliance); }
+.race-button .race-faction.horde { color: var(--horde); }

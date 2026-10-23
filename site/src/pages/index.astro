@@ -19,6 +19,8 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
           what to do at each stop. Your progress is saved in this browser.</p>
       </div>
     </section>
+    {/* Alliance and Horde side by side, each race facing its counterpart, as on the character creation screen */}
+    <div class="factions">
     {factions.map((faction) => (
       <section aria-labelledby={`f-${faction}`} class="faction">
         <h2 id={`f-${faction}`} class={faction.toLowerCase()}>
@@ -33,7 +35,9 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
                   <img class="race-crest" src={`/art/crest-${r.id}.webp`} alt="" width="56" height="56" />
                   <span class="race-text">
                     <span class="race-name">{r.race}</span>
-                    <span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]} · {r.steps.length} steps</span>
+                    <span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]}</span>
+                    {/* class quests show only once a class is chosen, so they are not counted */}
+                    <span class="sub">{r.steps.filter((s) => !s.classOnly).length} steps</span>
                   </span>
                 </a>
               </li>
@@ -42,6 +46,7 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
         </ul>
       </section>
     ))}
+    </div>
     <p class="note">Skyborne start on Zephras Isle, new in Forever, and pick their faction there; each faction has its
       own Skyborne route.</p>
   </main>
@@ -58,7 +63,8 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
   .faction-emblem { height: 40px; width: auto; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7)); }
   .faction h2.alliance { color: var(--alliance); }
   .faction h2.horde { color: var(--horde); }
-  .races { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .factions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; max-width: 760px; }
+  .races { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .race {
     display: flex; align-items: center; gap: 14px; min-height: 84px; padding: 14px 16px;
     background: linear-gradient(135deg, color-mix(in srgb, var(--race-deep) 85%, var(--surface)), var(--surface) 70%);
@@ -70,7 +76,17 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
     transform: translateY(-2px); border-color: var(--race); box-shadow: 0 10px 24px rgba(0, 0, 0, .45);
   }
   .race-crest { flex: none; width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); }
-  .race-text { display: grid; gap: 2px; }
+  .race-text { display: grid; gap: 2px; min-width: 0; }
   .race-name { font: 700 20px var(--font-display); letter-spacing: .03em; }
   .race .sub { font: 14px var(--font-mono); color: var(--muted); }
+  /* Phones: the two columns stay face to face; each card stacks its crest over its name, so the rows line up. */
+  @media (max-width: 600px) {
+    .factions { gap: 0 10px; }
+    .faction h2 { font-size: 20px; gap: 8px; }
+    .faction-emblem { height: 32px; }
+    .race { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 150px; padding: 12px 6px; }
+    .race-crest { width: 44px; height: 44px; }
+    .race-name { font-size: 16px; letter-spacing: .01em; }
+    .race .sub { font-size: 12px; white-space: nowrap; }
+  }
 </style>

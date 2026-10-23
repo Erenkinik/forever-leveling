@@ -5,7 +5,16 @@ import type { Route } from './steps.ts';
 const files = import.meta.glob<Route>(['../data/*.json', '!../data/maps.json', '!../data/item-icons.json'],
   { eager: true, import: 'default' });
 
-export const routes: Route[] = Object.values(files).sort((a, b) => a.race.localeCompare(b.race));
+// The game's character creation screen order: each Alliance race faces its Horde counterpart (Human and Orc, Dwarf
+// and Undead, Night Elf and Tauren, Gnome and Troll, Skyborne and Skyborne).
+const CREATE_ORDER = [['Human', 'Orc'], ['Dwarf', 'Undead'], ['Night Elf', 'Tauren'], ['Gnome', 'Troll'], ['Skyborne']];
+const rank = (race: string) => {
+  const i = CREATE_ORDER.findIndex((pair) => pair.includes(race));
+  return i < 0 ? CREATE_ORDER.length : i;
+};
+
+export const routes: Route[] = Object.values(files)
+  .sort((a, b) => rank(a.race) - rank(b.race) || a.faction.localeCompare(b.faction) || a.race.localeCompare(b.race));
 
 export function routeById(id: string): Route | undefined {
   return routes.find((r) => r.id === id);

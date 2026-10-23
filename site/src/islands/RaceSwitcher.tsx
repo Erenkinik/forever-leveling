@@ -21,6 +21,9 @@ export default function RaceSwitcher({ current, routes }: { current: RouteMeta; 
               aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(!open)}>
         <img className="crest-img" src={`/art/crest-${current.id}.webp`} alt="" width={30} height={30} />
         <span className="race-name">{current.race}</span>
+        {routes.filter((r) => r.race === current.race).length > 1 && (
+          <span className={`race-faction ${current.faction.toLowerCase()}`} aria-hidden="true">{current.faction}</span>
+        )}
         <span className="sr-only">, {current.faction}. Change race</span>
         <span className="chevron" aria-hidden="true">▾</span>
       </button>

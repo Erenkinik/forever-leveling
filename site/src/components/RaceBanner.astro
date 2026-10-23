@@ -40,7 +40,8 @@ const { theme, routeId } = Astro.props;
   }
   :root[data-contrast="high"] .race-backdrop { display: none; }
   .race-banner { position: absolute; top: 0; z-index: 0; pointer-events: none; }
-  .race-banner.head { right: max(16px, calc((100vw - 1640px) / 2 + 24px)); width: 60px; }
+  /* sized to hang inside the header, above its gold rule */
+  .race-banner.head { right: max(16px, calc((100vw - 1640px) / 2 + 24px)); width: 36px; }
   .race-banner.side { display: none; }
   /* wide screens: the margins beside the page are wide enough for a large banner on each side */
   @media (min-width: 1880px) {

@@ -87,12 +87,25 @@ test('settings round-trip with defaults for missing or broken values', async () 
   const { loadSettings, saveSettings, SETTINGS_KEY } = await import('../../src/lib/steps.ts');
   const mem = new Map<string, string>();
   const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) };
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false });
-  saveSettings(store, { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, explore: false });
+  saveSettings(store, { shortcuts: false, highContrast: true, explore: true });
   assert.equal(SETTINGS_KEY, 'fxp:v1:settings');
-  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, playerClass: 'Warlock', explore: true });
+  assert.deepEqual(loadSettings(store), { shortcuts: false, highContrast: true, explore: true });
   mem.set(SETTINGS_KEY, '[1]');
-  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, playerClass: '', explore: false });
+  assert.deepEqual(loadSettings(store), { shortcuts: true, highContrast: false, explore: false });
+});
+
+test('each route remembers its own class', async () => {
+  const { loadClass, saveClass } = await import('../../src/lib/steps.ts');
+  const mem = new Map<string, string>();
+  const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) };
+  assert.equal(loadClass(store, 'human'), '');
+  saveClass(store, 'human', 'Hunter');
+  assert.equal(loadClass(store, 'human'), 'Hunter');
+  assert.equal(loadClass(store, 'orc'), '');
+  const broken = { getItem: (): string => { throw new Error('blocked'); }, setItem: () => { throw new Error('blocked'); } };
+  assert.equal(loadClass(broken, 'human'), '');
+  saveClass(broken, 'human', 'Mage');  // does not throw
 });
 
 test('reportUrl opens a prefilled GitHub issue for the step', async () => {

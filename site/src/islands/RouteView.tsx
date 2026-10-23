@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEven
 
 import {
   clusterPins, describeStep, dungeonsOnMap, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
-  reportUrl, stepForLevel,
+  reportUrl, stepForLevel, loadClass, saveClass,
   mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
   type DungeonQuest, type KeyValueStore, type QuestVideo, type Part, type Route, type Settings, type Step,
@@ -85,7 +85,7 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
       aria-current={isCurrent ? 'step' : undefined}
       data-step-id={step.id}
     >
-      <button type="button" className="mark" aria-pressed={isDone} aria-label={`Step ${n} done`}
+      <button type="button" className={`mark${n >= 100 ? ' long' : ''}`} aria-pressed={isDone} aria-label={`Step ${n} done`}
               onClick={(e) => onToggle(step, e)}>
         {isDone ? '✓' : n}
       </button>
@@ -225,8 +225,9 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   const [done, setDone] = useState<Set<string>>(() => new Set());
   const [loaded, setLoaded] = useState(false);
   const [settings, setSettings] = useState<Settings>({
-    shortcuts: true, highContrast: false, playerClass: '', explore: false,
+    shortcuts: true, highContrast: false, explore: false,
   });
+  const [savedClass, setSavedClass] = useState('');
   const [zoom, setZoom] = useState(0);
   // The dungeon whose quest panel is open (its Map id), and the marker to give focus back to when it closes.
   const [openDungeon, setOpenDungeon] = useState<number | null>(null);
@@ -250,6 +251,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   useEffect(() => {
     setDone(loadDone(store(), route.id, validIds));
     setSettings(loadSettings(store()));
+    setSavedClass(loadClass(store(), route.id));
     setLoaded(true);
     // Another tab of the same route saved progress: take it over instead of overwriting it later.
     const onStorage = (e: StorageEvent) => {
@@ -264,7 +266,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
   }, [settings.highContrast]);
 
   // Only the chosen class's quests are shown; with no class (or one this race cannot play) no class quests are.
-  const playerClass = classes.includes(settings.playerClass) ? settings.playerClass : '';
+  const playerClass = classes.includes(savedClass) ? savedClass : '';
   const steps = useMemo(() => stepsForClass(route.steps, playerClass), [route.steps, playerClass]);
   const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
   const groups = useMemo(() => groupByZone(steps), [steps]);
@@ -417,7 +419,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
             <label className="class-pick">
               <span className="sr-only">Class</span>
               <select value={playerClass} data-class={playerClass || undefined}
-                      onChange={(e) => updateSettings({ playerClass: e.target.value })}>
+                      onChange={(e) => { setSavedClass(e.target.value); saveClass(store(), route.id, e.target.value); }}>
                 <option value="">Class</option>
                 {classes.map((c) => <option key={c} value={c} data-class={c}>{c}</option>)}
               </select>
@@ -475,7 +477,11 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                 {g.zoneName}
                 {(() => {
                   const range = levelRange(g.steps);
-                  return range && <span className="zone-levels">Levels {range[0]}–{range[1]}</span>;
+                  return range && (
+                    <span className="zone-levels">
+                      {range[0] === range[1] ? <>Level {range[0]}</> : <>Levels {range[0]}–{range[1]}</>}
+                    </span>
+                  );
                 })()}
               </h2>
               <ol>
@@ -594,7 +600,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       <button
                         key={lead.id}
                         type="button"
-                        className={`pin ${state}${group.length > 1 ? ' multi' : ''}${icon ? ' has-icon' : ''}${icon === 'progress' ? ' progress' : ''}`}
+                        className={`pin ${state}${n >= 100 ? ' long' : ''}${group.length > 1 ? ' multi' : ''}${icon ? ' has-icon' : ''}${icon === 'progress' ? ' progress' : ''}`}
                         style={{ left: `${lead.x}%`, top: `${lead.y}%` }}
                         aria-label={label}
                         onClick={() => focusStep(lead)}
