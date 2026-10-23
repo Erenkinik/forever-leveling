@@ -46504,6 +46504,7 @@
   {
    "id": 34,
    "name": "Stormwind Stockade",
+   "kind": "dungeon",
    "mapId": 1453,
    "x": 50.4,
    "y": 66.2,
@@ -46608,11 +46609,13 @@
      "zoneName": "Wetlands",
      "step": "accept-303"
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 36,
    "name": "Deadmines",
+   "kind": "dungeon",
    "mapId": 1436,
    "x": 38.2,
    "y": 77.5,
@@ -46753,11 +46756,13 @@
      "zoneName": "Westfall",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 48,
    "name": "Blackfathom Deeps",
+   "kind": "dungeon",
    "mapId": 1440,
    "x": 16.5,
    "y": 11.0,
@@ -46814,11 +46819,13 @@
      "zoneName": "Teldrassil",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 90,
    "name": "Gnomeregan",
+   "kind": "dungeon",
    "mapId": 1426,
    "x": 17.7,
    "y": 39.2,
@@ -46899,11 +46906,292 @@
      "zoneName": "Ironforge",
      "step": null
     }
+   ],
+   "attunement": []
+  },
+  {
+   "id": 249,
+   "name": "Onyxia's Lair",
+   "kind": "raid",
+   "mapId": 1445,
+   "x": 52.9,
+   "y": 77.7,
+   "levels": null,
+   "quests": [],
+   "attunement": [
+    {
+     "questId": 4182,
+     "name": "Dragonkin Menace",
+     "mapId": 1428,
+     "x": 85.8,
+     "y": 68.9,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Helendis Riverhorn",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4183,
+     "name": "The True Masters",
+     "mapId": 1428,
+     "x": 85.8,
+     "y": 68.9,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Helendis Riverhorn",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4184,
+     "name": "The True Masters",
+     "mapId": 1433,
+     "x": 30,
+     "y": 44.5,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Magistrate Solomon",
+     "zoneName": "Redridge Mountains",
+     "step": null
+    },
+    {
+     "questId": 4185,
+     "name": "The True Masters",
+     "mapId": 1453,
+     "x": 78.2,
+     "y": 18,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Highlord Bolvar Fordragon",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 4186,
+     "name": "The True Masters",
+     "mapId": 1453,
+     "x": 78.2,
+     "y": 18,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Highlord Bolvar Fordragon",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 4223,
+     "name": "The True Masters",
+     "mapId": 1433,
+     "x": 30,
+     "y": 44.5,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Magistrate Solomon",
+     "zoneName": "Redridge Mountains",
+     "step": null
+    },
+    {
+     "questId": 4224,
+     "name": "The True Masters",
+     "mapId": 1428,
+     "x": 84.7,
+     "y": 69,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Marshal Maxwell",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4241,
+     "name": "Marshal Windsor",
+     "mapId": 1428,
+     "x": 84.7,
+     "y": 69,
+     "level": 54,
+     "minLevel": 48,
+     "npcName": "Marshal Maxwell",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 6402,
+     "name": "Stormwind Rendezvous",
+     "mapId": 1428,
+     "x": 84.7,
+     "y": 69,
+     "level": 60,
+     "minLevel": 50,
+     "npcName": "Marshal Maxwell",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 6501,
+     "name": "The Dragon's Eye",
+     "mapId": 1453,
+     "x": 78.2,
+     "y": 18,
+     "level": 60,
+     "minLevel": 50,
+     "npcName": "Highlord Bolvar Fordragon",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 6502,
+     "name": "Drakefire Amulet",
+     "mapId": 1452,
+     "x": 54.5,
+     "y": 51.2,
+     "level": 60,
+     "minLevel": 50,
+     "npcName": "Haleh",
+     "zoneName": "Winterspring",
+     "step": null
+    }
    ]
+  },
+  {
+   "id": 309,
+   "name": "Zul'Gurub",
+   "kind": "raid",
+   "mapId": 1434,
+   "x": 54.0,
+   "y": 17.6,
+   "levels": [
+    44,
+    60
+   ],
+   "quests": [
+    {
+     "questId": 3520,
+     "name": "Screecher Spirits",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 44,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 3527,
+     "name": "The Prophecy of Mosh'aru",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 47,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 4787,
+     "name": "The Ancient Egg",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 50,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 3528,
+     "name": "The God Hakkar",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 53,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 4788,
+     "name": "The Final Tablets",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 5065,
+     "name": "The Lost Tablets of Mosh'aru",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 8181,
+     "name": "Confront Yeh'kinya",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 8201,
+     "name": "A Collection of Heads",
+     "mapId": 1434,
+     "x": 15.3,
+     "y": 15.5,
+     "level": 60,
+     "minLevel": 58,
+     "npcName": "Exzhal",
+     "zoneName": "Stranglethorn Vale",
+     "step": null
+    },
+    {
+     "questId": 8240,
+     "name": "A Bijou for Zanza",
+     "mapId": 1434,
+     "x": 14.5,
+     "y": 15.8,
+     "level": 60,
+     "minLevel": 58,
+     "npcName": "Vinchaxa",
+     "zoneName": "Stranglethorn Vale",
+     "step": null
+    },
+    {
+     "questId": 9023,
+     "name": "The Perfect Poison",
+     "mapId": 1451,
+     "x": 52.1,
+     "y": 39.1,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Dirk Thunderwood",
+     "zoneName": "Silithus",
+     "step": null
+    }
+   ],
+   "attunement": []
   },
   {
    "id": 349,
    "name": "Maraudon",
+   "kind": "dungeon",
    "mapId": 1443,
    "x": 29.1,
    "y": 62.9,
@@ -46972,7 +47260,32 @@
      "zoneName": "Desolace",
      "step": null
     }
+   ],
+   "attunement": [
+    {
+     "questId": 7044,
+     "name": "Legends of Maraudon",
+     "mapId": 1443,
+     "x": 32,
+     "y": 63.7,
+     "level": 49,
+     "minLevel": 41,
+     "npcName": "Cavindra",
+     "zoneName": "Desolace",
+     "step": null
+    }
    ]
+  },
+  {
+   "id": 2784,
+   "name": "Demon Fall Canyon",
+   "kind": "dungeon",
+   "mapId": 1440,
+   "x": 84.1,
+   "y": 77.3,
+   "levels": null,
+   "quests": [],
+   "attunement": []
   }
  ]
 }

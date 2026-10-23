@@ -111,7 +111,7 @@ def _dungeons_path() -> Path:
 def _build_dungeons() -> str:
     import csv
 
-    from pipeline.ingest.lodestar import load_dungeon_quests
+    from pipeline.ingest.lodestar import guide_entrances, load_attunements, load_dungeon_quests
     from pipeline.ingest.wago import load_uimap_parents, load_uimaps
     from pipeline.normalize.dungeons import build_dungeons
 
@@ -121,8 +121,14 @@ def _build_dungeons() -> str:
         with open(wago / f"{table}.csv", encoding="utf-8", newline="") as f:
             return list(csv.DictReader(f))
 
-    doc = build_dungeons(rows("Map"), rows("UiMapAssignment"), load_uimaps(wago), load_uimap_parents(wago),
-                         load_dungeon_quests(RAW_DIR / "lodestar"))
+    names, parents = load_uimaps(wago), load_uimap_parents(wago)
+    map_ids: dict[str, int] = {}
+    for ui in sorted(names):
+        if parents.get(ui):  # a map with no parent is a duplicate (Zephras Isle 2665)
+            map_ids.setdefault(names[ui], ui)
+    lodestar = RAW_DIR / "lodestar"
+    doc = build_dungeons(rows("Map"), rows("UiMapAssignment"), names, parents, load_dungeon_quests(lodestar),
+                         load_attunements(lodestar), rows("AreaPOI"), guide_entrances(lodestar, map_ids))
     return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
 
 

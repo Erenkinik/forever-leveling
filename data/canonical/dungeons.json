@@ -4,6 +4,7 @@
   {
    "id": 33,
    "name": "Shadowfang Keep",
+   "kind": "dungeon",
    "uiMapId": 1421,
    "x": 44.7,
    "y": 67.8,
@@ -17,11 +18,13 @@
      1013,
      1014
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 34,
    "name": "Stormwind Stockade",
+   "kind": "dungeon",
    "uiMapId": 1453,
    "x": 50.4,
    "y": 66.2,
@@ -37,11 +40,13 @@
      378,
      391
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 36,
    "name": "Deadmines",
+   "kind": "dungeon",
    "uiMapId": 1436,
    "x": 38.2,
    "y": 77.5,
@@ -64,11 +69,13 @@
     "Horde": [
      95036
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 43,
    "name": "Wailing Caverns",
+   "kind": "dungeon",
    "uiMapId": 1413,
    "x": 47.7,
    "y": 35.0,
@@ -96,11 +103,13 @@
      1490,
      914
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 47,
    "name": "Razorfen Kraul",
+   "kind": "dungeon",
    "uiMapId": 1413,
    "x": 42.3,
    "y": 89.9,
@@ -126,11 +135,13 @@
      6522,
      1838
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 48,
    "name": "Blackfathom Deeps",
+   "kind": "dungeon",
    "uiMapId": 1440,
    "x": 16.5,
    "y": 11.0,
@@ -152,11 +163,13 @@
      6563,
      6565
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 70,
    "name": "Uldaman",
+   "kind": "dungeon",
    "uiMapId": 1418,
    "x": 35.2,
    "y": 10.3,
@@ -195,11 +208,13 @@
      2338,
      2339
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 90,
    "name": "Gnomeregan",
+   "kind": "dungeon",
    "uiMapId": 1426,
    "x": 17.7,
    "y": 39.2,
@@ -219,11 +234,13 @@
      2945,
      2841
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 109,
    "name": "Sunken Temple",
+   "kind": "dungeon",
    "uiMapId": 1435,
    "x": 77.3,
    "y": 35.9,
@@ -298,11 +315,13 @@
      8232,
      8257
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 129,
    "name": "Razorfen Downs",
+   "kind": "dungeon",
    "uiMapId": 1413,
    "x": 50.9,
    "y": 92.9,
@@ -321,11 +340,13 @@
      6521,
      3525
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 189,
    "name": "Scarlet Monastery",
+   "kind": "dungeon",
    "uiMapId": 1420,
    "x": 85.1,
    "y": 31.4,
@@ -360,11 +381,13 @@
      1159,
      1160
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 209,
    "name": "Zul'Farrak",
+   "kind": "dungeon",
    "uiMapId": 1446,
    "x": 38.7,
    "y": 19.9,
@@ -391,11 +414,13 @@
      2770,
      3527
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 229,
    "name": "Blackrock Spire",
+   "kind": "dungeon",
    "uiMapId": 1428,
    "x": 33.0,
    "y": 25.2,
@@ -483,11 +508,22 @@
      4788,
      4735
     ]
+   },
+   "attunement": {
+    "Alliance": [
+     4742,
+     4743
+    ],
+    "Horde": [
+     4742,
+     4743
+    ]
    }
   },
   {
    "id": 230,
    "name": "Blackrock Depths",
+   "kind": "dungeon",
    "uiMapId": 1427,
    "x": 27.1,
    "y": 72.5,
@@ -565,11 +601,75 @@
      4022,
      4024
     ]
+   },
+   "attunement": {}
+  },
+  {
+   "id": 249,
+   "name": "Onyxia's Lair",
+   "kind": "raid",
+   "uiMapId": 1445,
+   "x": 52.9,
+   "y": 77.7,
+   "quests": {
+    "Alliance": [
+     7507,
+     7632,
+     7495,
+     7508,
+     7635,
+     7509
+    ],
+    "Horde": [
+     7507,
+     7632,
+     7490,
+     7508,
+     7635,
+     7509
+    ]
+   },
+   "attunement": {
+    "Alliance": [
+     4182,
+     4183,
+     4184,
+     4185,
+     4186,
+     4223,
+     4224,
+     4241,
+     4242,
+     4264,
+     4282,
+     4322,
+     6402,
+     6403,
+     6501,
+     6502
+    ],
+    "Horde": [
+     4903,
+     4941,
+     4974,
+     6566,
+     6567,
+     6568,
+     6569,
+     6570,
+     6582,
+     6583,
+     6584,
+     6585,
+     6601,
+     6602
+    ]
    }
   },
   {
    "id": 289,
    "name": "Scholomance",
+   "kind": "dungeon",
    "uiMapId": 1422,
    "x": 69.1,
    "y": 73.0,
@@ -638,11 +738,52 @@
      4771,
      5466
     ]
-   }
+   },
+   "attunement": {}
+  },
+  {
+   "id": 309,
+   "name": "Zul'Gurub",
+   "kind": "raid",
+   "uiMapId": 1434,
+   "x": 54.0,
+   "y": 17.6,
+   "quests": {
+    "Alliance": [
+     3520,
+     8201,
+     8240,
+     8183,
+     8227,
+     9023,
+     3527,
+     4787,
+     3528,
+     5065,
+     4788,
+     8181
+    ],
+    "Horde": [
+     3520,
+     8201,
+     8240,
+     8183,
+     8227,
+     9023,
+     3527,
+     4787,
+     3528,
+     5065,
+     4788,
+     8181
+    ]
+   },
+   "attunement": {}
   },
   {
    "id": 329,
    "name": "Stratholme",
+   "kind": "dungeon",
    "uiMapId": 1423,
    "x": 26.1,
    "y": 10.4,
@@ -717,11 +858,13 @@
      5463,
      5848
     ]
-   }
+   },
+   "attunement": {}
   },
   {
    "id": 349,
    "name": "Maraudon",
+   "kind": "dungeon",
    "uiMapId": 1443,
    "x": 29.1,
    "y": 62.9,
@@ -742,11 +885,22 @@
      7064,
      7066
     ]
+   },
+   "attunement": {
+    "Alliance": [
+     7044,
+     7046
+    ],
+    "Horde": [
+     7044,
+     7046
+    ]
    }
   },
   {
    "id": 389,
    "name": "Ragefire Chasm",
+   "kind": "dungeon",
    "uiMapId": 1454,
    "x": 53.0,
    "y": 48.9,
@@ -761,11 +915,53 @@
      5724,
      5728
     ]
+   },
+   "attunement": {}
+  },
+  {
+   "id": 409,
+   "name": "Molten Core",
+   "kind": "raid",
+   "uiMapId": 1427,
+   "x": 32.0,
+   "y": 94.8,
+   "quests": {
+    "Alliance": [
+     6804,
+     6805,
+     7632,
+     7785,
+     6821,
+     7786,
+     6822,
+     6823,
+     6824
+    ],
+    "Horde": [
+     6804,
+     6805,
+     7632,
+     7785,
+     6821,
+     7786,
+     6822,
+     6823,
+     6824
+    ]
+   },
+   "attunement": {
+    "Alliance": [
+     7848
+    ],
+    "Horde": [
+     7848
+    ]
    }
   },
   {
    "id": 429,
    "name": "Dire Maul",
+   "kind": "dungeon",
    "uiMapId": 1444,
    "x": 62.0,
    "y": 33.3,
@@ -850,7 +1046,165 @@
      7630,
      7631
     ]
+   },
+   "attunement": {}
+  },
+  {
+   "id": 469,
+   "name": "Blackwing Lair",
+   "kind": "raid",
+   "uiMapId": 1428,
+   "x": 32.5,
+   "y": 32.4,
+   "quests": {
+    "Alliance": [
+     7781
+    ],
+    "Horde": [
+     7783
+    ]
+   },
+   "attunement": {
+    "Alliance": [
+     7761
+    ],
+    "Horde": [
+     7761
+    ]
    }
+  },
+  {
+   "id": 509,
+   "name": "Ruins of Ahn'Qiraj",
+   "kind": "raid",
+   "uiMapId": 1451,
+   "x": 29.0,
+   "y": 92.8,
+   "quests": {
+    "Alliance": [
+     8791
+    ],
+    "Horde": [
+     8791
+    ]
+   },
+   "attunement": {}
+  },
+  {
+   "id": 531,
+   "name": "Ahn'Qiraj Temple",
+   "kind": "raid",
+   "uiMapId": 1451,
+   "x": 29.0,
+   "y": 92.7,
+   "quests": {
+    "Alliance": [
+     8579,
+     8801,
+     8802
+    ],
+    "Horde": [
+     8579,
+     8801,
+     8802
+    ]
+   },
+   "attunement": {
+    "Alliance": [
+     8286,
+     8288,
+     8301,
+     8303,
+     8305,
+     8519,
+     8555,
+     8575,
+     8576,
+     8577,
+     8578,
+     8730,
+     8584,
+     8585,
+     8586,
+     8587,
+     8597,
+     8598,
+     8606,
+     8620,
+     8728,
+     8729,
+     8733,
+     8734,
+     8735,
+     8736,
+     8741,
+     8742,
+     8743,
+     8745
+    ],
+    "Horde": [
+     8286,
+     8288,
+     8301,
+     8303,
+     8305,
+     8519,
+     8555,
+     8575,
+     8576,
+     8577,
+     8578,
+     8730,
+     8584,
+     8585,
+     8586,
+     8587,
+     8597,
+     8598,
+     8606,
+     8620,
+     8728,
+     8729,
+     8733,
+     8734,
+     8735,
+     8736,
+     8741,
+     8742,
+     8743,
+     8745
+    ]
+   }
+  },
+  {
+   "id": 2784,
+   "name": "Demon Fall Canyon",
+   "kind": "dungeon",
+   "uiMapId": 1440,
+   "x": 84.1,
+   "y": 77.3,
+   "quests": {},
+   "attunement": {}
+  },
+  {
+   "id": 2999,
+   "name": "Ruins of Lordaeron",
+   "kind": "dungeon",
+   "uiMapId": 1458,
+   "x": 67.7,
+   "y": 13.6,
+   "quests": {
+    "Horde": [
+     97289,
+     97291,
+     97292,
+     92401,
+     92422,
+     95216,
+     92421
+    ]
+   },
+   "attunement": {}
   }
  ]
 }

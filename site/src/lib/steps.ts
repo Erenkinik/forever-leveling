@@ -59,7 +59,9 @@ export interface Route {
   dungeons?: Dungeon[];
 }
 
-export interface DungeonQuest extends OptionalQuest {
+export interface DungeonQuest extends Omit<OptionalQuest, 'level'> {
+  /** null for the quests of Forever's new dungeons, whose level is not known */
+  level: number | null;
   /** the map the quest starts on */
   zoneName: string | null;
   /** the route's accept step for it, or null when the route does not take it */
@@ -69,12 +71,15 @@ export interface DungeonQuest extends OptionalQuest {
 export interface Dungeon {
   id: number;
   name: string;
+  kind: 'dungeon' | 'raid';
   mapId: number;
   x: number;
   y: number;
   /** lowest and highest level of its quests, or null without quests */
   levels: [number, number] | null;
   quests: DungeonQuest[];
+  /** the attunement's quests, in chain order (each opens the next) */
+  attunement: DungeonQuest[];
 }
 
 export interface OptionalQuest {
@@ -190,9 +195,11 @@ export function sessionEnd(steps: Step[], from: number, minutes: number, done: R
 
 /** The dungeon entrances on this map, each with the quests a player of this class can take ('' = any). */
 export function dungeonsOnMap(dungeons: Dungeon[], mapId: number, playerClass: string): Dungeon[] {
+  const forClass = (q: DungeonQuest) => !playerClass || !q.classOnly || q.classOnly.includes(playerClass);
   return dungeons.filter((d) => d.mapId === mapId).map((d) => ({
     ...d,
-    quests: d.quests.filter((q) => !playerClass || !q.classOnly || q.classOnly.includes(playerClass)),
+    quests: d.quests.filter(forClass),
+    attunement: (d.attunement ?? []).filter(forClass),
   }));
 }
 

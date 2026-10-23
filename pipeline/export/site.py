@@ -61,14 +61,15 @@ def _objectives(quest: dict, spawns: dict, step: dict, item_icons: dict[str, int
     return out
 
 
-def _quest_entry(q: dict, race: str, faction: str) -> dict | None:
-    """A quest the race and faction can take (in Forever, a known level and a located start) as the site lists it:
-    id, name, where it starts and its level, with classOnly for a class quest; None when they cannot."""
+def _quest_entry(q: dict, race: str, faction: str, need_level: bool = True) -> dict | None:
+    """A quest the race and faction can take (in Forever, a known level unless not need_level, and a located start)
+    as the site lists it: id, name, where it starts and its level (None when unknown), with classOnly for a class
+    quest; None when they cannot."""
     from pipeline.generate.graph import class_only
 
     start = q.get("start") or {}
     level = q.get("level") if q.get("level") is not None else q.get("minLevel")
-    if (not q.get("inForever") or level is None or start.get("uiMapId") is None
+    if (not q.get("inForever") or (need_level and level is None) or start.get("uiMapId") is None
             or start.get("x") is None or start.get("y") is None
             or (q.get("races") is not None and race not in q["races"])
             or (q.get("factions") is not None and faction not in q["factions"])):
@@ -105,22 +106,33 @@ def route_dungeons(route: dict, quests: dict[int, dict], dungeons: list[dict], u
     race and faction can take (where they start, the route step that takes them) and those quests' level range."""
     maps = {s["mapId"] for s in route.get("steps", [])}
     accepts = {s["questId"]: s["id"] for s in route.get("steps", []) if s["type"] == "accept"}
-    out = []
-    for d in dungeons:
-        if d["uiMapId"] not in maps:
-            continue
-        listed = []
-        for qid in d["quests"].get(route.get("faction"), []):
-            entry = _quest_entry(quests[qid], route.get("race"), route.get("faction")) if qid in quests else None
+
+    def listed(ids: list[int]) -> list[dict]:
+        out = []
+        for qid in ids:
+            # Forever's new dungeons have quests of unknown level; the panel lists them all the same.
+            entry = (_quest_entry(quests[qid], route.get("race"), route.get("faction"), need_level=False)
+                     if qid in quests else None)
             if entry is None:
                 continue
             entry["zoneName"] = uimaps.get(entry["mapId"])
             entry["step"] = accepts.get(qid)
-            listed.append(entry)
-        levels = [e["level"] for e in listed]
-        out.append({"id": d["id"], "name": d["name"], "mapId": d["uiMapId"], "x": d["x"], "y": d["y"],
-                    "levels": [min(levels), max(levels)] if levels else None,
-                    "quests": sorted(listed, key=lambda e: (e["level"], e["questId"]))})
+            out.append(entry)
+        return out
+
+    out = []
+    for d in dungeons:
+        if d["uiMapId"] not in maps:
+            continue
+        faction = route.get("faction")
+        dungeon_quests = listed(d["quests"].get(faction, []))
+        levels = [e["level"] for e in dungeon_quests if e["level"] is not None]
+        out.append({"id": d["id"], "name": d["name"], "kind": d.get("kind", "dungeon"), "mapId": d["uiMapId"],
+                    "x": d["x"], "y": d["y"], "levels": [min(levels), max(levels)] if levels else None,
+                    "quests": sorted(dungeon_quests, key=lambda e: (e["level"] is None, e["level"] or 0,
+                                                                    e["questId"])),
+                    # the attunement keeps its chain order: each quest opens the next
+                    "attunement": listed(d.get("attunement", {}).get(faction, []))})
     return out
 
 

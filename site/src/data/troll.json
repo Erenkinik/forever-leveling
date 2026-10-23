@@ -39100,6 +39100,7 @@
   {
    "id": 33,
    "name": "Shadowfang Keep",
+   "kind": "dungeon",
    "mapId": 1421,
    "x": 44.7,
    "y": 67.8,
@@ -39144,11 +39145,13 @@
      "zoneName": "Silverpine Forest",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 43,
    "name": "Wailing Caverns",
+   "kind": "dungeon",
    "mapId": 1413,
    "x": 47.7,
    "y": 35.0,
@@ -39301,11 +39304,13 @@
      "zoneName": "Mulgore",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 47,
    "name": "Razorfen Kraul",
+   "kind": "dungeon",
    "mapId": 1413,
    "x": 42.3,
    "y": 89.9,
@@ -39380,11 +39385,13 @@
      "zoneName": "Mulgore",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 48,
    "name": "Blackfathom Deeps",
+   "kind": "dungeon",
    "mapId": 1440,
    "x": 16.5,
    "y": 11.0,
@@ -39453,11 +39460,13 @@
      "zoneName": "Ashenvale",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 70,
    "name": "Uldaman",
+   "kind": "dungeon",
    "mapId": 1418,
    "x": 35.2,
    "y": 10.3,
@@ -39583,11 +39592,13 @@
      "zoneName": "Feralas",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
   },
   {
    "id": 129,
    "name": "Razorfen Downs",
+   "kind": "dungeon",
    "mapId": 1413,
    "x": 50.9,
    "y": 92.9,
@@ -39632,11 +39643,148 @@
      "zoneName": "Undercity",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
+  },
+  {
+   "id": 309,
+   "name": "Zul'Gurub",
+   "kind": "raid",
+   "mapId": 1434,
+   "x": 54.0,
+   "y": 17.6,
+   "levels": [
+    44,
+    60
+   ],
+   "quests": [
+    {
+     "questId": 3520,
+     "name": "Screecher Spirits",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 44,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 3527,
+     "name": "The Prophecy of Mosh'aru",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 47,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 4787,
+     "name": "The Ancient Egg",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 50,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 3528,
+     "name": "The God Hakkar",
+     "mapId": 1446,
+     "x": 67,
+     "y": 22.4,
+     "level": 53,
+     "minLevel": 40,
+     "npcName": "Yeh'kinya",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 4788,
+     "name": "The Final Tablets",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 5065,
+     "name": "The Lost Tablets of Mosh'aru",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 8181,
+     "name": "Confront Yeh'kinya",
+     "mapId": 1446,
+     "x": 66.9,
+     "y": 24,
+     "level": 58,
+     "minLevel": 40,
+     "npcName": "Prospector Ironboot",
+     "zoneName": "Tanaris",
+     "step": null
+    },
+    {
+     "questId": 8201,
+     "name": "A Collection of Heads",
+     "mapId": 1434,
+     "x": 15.3,
+     "y": 15.5,
+     "level": 60,
+     "minLevel": 58,
+     "npcName": "Exzhal",
+     "zoneName": "Stranglethorn Vale",
+     "step": null
+    },
+    {
+     "questId": 8240,
+     "name": "A Bijou for Zanza",
+     "mapId": 1434,
+     "x": 14.5,
+     "y": 15.8,
+     "level": 60,
+     "minLevel": 58,
+     "npcName": "Vinchaxa",
+     "zoneName": "Stranglethorn Vale",
+     "step": null
+    },
+    {
+     "questId": 9023,
+     "name": "The Perfect Poison",
+     "mapId": 1451,
+     "x": 52.1,
+     "y": 39.1,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Dirk Thunderwood",
+     "zoneName": "Silithus",
+     "step": null
+    }
+   ],
+   "attunement": []
   },
   {
    "id": 349,
    "name": "Maraudon",
+   "kind": "dungeon",
    "mapId": 1443,
    "x": 29.1,
    "y": 62.9,
@@ -39705,11 +39853,26 @@
      "zoneName": "Desolace",
      "step": null
     }
+   ],
+   "attunement": [
+    {
+     "questId": 7044,
+     "name": "Legends of Maraudon",
+     "mapId": 1443,
+     "x": 32,
+     "y": 63.7,
+     "level": 49,
+     "minLevel": 41,
+     "npcName": "Cavindra",
+     "zoneName": "Desolace",
+     "step": null
+    }
    ]
   },
   {
    "id": 389,
    "name": "Ragefire Chasm",
+   "kind": "dungeon",
    "mapId": 1454,
    "x": 53.0,
    "y": 48.9,
@@ -39802,7 +39965,19 @@
      "zoneName": "Orgrimmar",
      "step": null
     }
-   ]
+   ],
+   "attunement": []
+  },
+  {
+   "id": 2784,
+   "name": "Demon Fall Canyon",
+   "kind": "dungeon",
+   "mapId": 1440,
+   "x": 84.1,
+   "y": 77.3,
+   "levels": null,
+   "quests": [],
+   "attunement": []
   }
  ]
 }

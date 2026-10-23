@@ -28,8 +28,25 @@ DUNGEON_GUIDES: dict[int, str] = {
     129: "Razorfen_Downs", 189: "Scarlet_Monastery", 209: "ZulFarrak", 229: "Blackrock_Spire",
     230: "Blackrock_Depths", 289: "Scholomance", 329: "Stratholme", 349: "Maraudon", 389: "Ragefire_Chasm",
     429: "Dire_Maul",
+    # raids
+    249: "Onyxias_Lair", 309: "ZulGurub", 409: "Molten_Core", 469: "Blackwing_Lair", 509: "Ruins_of_AhnQiraj",
+    531: "Temple_of_AhnQiraj",
+    # new in Forever
+    2959: "City_of_Dalaran", 2998: "Excavation_Site_Wetlands", 2999: "Ruins_of_Lordaeron", 3065: "The_Hall_of_Thanes",
 }
-NO_GUIDE = {("Horde", 34), ("Alliance", 389)}
+NO_GUIDE = {("Horde", 34), ("Alliance", 389), ("Horde", 3065), ("Alliance", 2999)}
+# The dungeons new in Forever, whose quests pfQuest does not have.
+NEW_DUNGEONS = (2959, 2998, 2999, 3065)
+# Attunement guides (Guides/Attunements/<path>.lua) by the Map id they open; a path under a faction folder is that
+# faction's, the others are both factions'.
+ATTUNEMENT_GUIDES: dict[int, list[str]] = {
+    349: ["Maraudon_-_Scepter_of_Celebras"],
+    249: ["Alliance/Onyxias_Lair_Alliance", "Horde/Onyxias_Lair_Horde"],
+    409: ["Molten_Core_-_Attunement_to_the_Core"],
+    469: ["Blackwing_Lair_-_Blackhands_Command"],
+    229: ["Upper_Blackrock_Spire_-_Seal_of_Ascension"],
+    531: ["AhnQiraj_-_Scepter_of_the_Shifting_Sands"],
+}
 # The guides start at level 1 and end at 12; quest levels are not in them, so they are spread over this range
 # in guide order (an estimate).
 LEVELS = (1, 12)
@@ -70,6 +87,52 @@ def fetch_lodestar(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> 
                 part.unlink(missing_ok=True)
                 raise RuntimeError(f"failed to download {stem} ({faction}): {exc}") from exc
             part.replace(dest)
+    for paths in ATTUNEMENT_GUIDES.values():
+        for rel in paths:
+            dest = base / "attunements" / f"{rel}.lua"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            part = dest.with_name(dest.name + ".part")
+            url = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/Guides/Attunements/{rel}.lua"
+            try:
+                with opener(url, timeout=60) as resp:
+                    part.write_bytes(resp.read())
+            except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
+                part.unlink(missing_ok=True)
+                raise RuntimeError(f"failed to download attunement {rel}: {exc}") from exc
+            part.replace(dest)
+
+
+def load_attunements(src_dir: Path) -> dict[int, dict[str, list[int]]]:
+    """Map id -> faction -> the quests of its attunement (both factions for a guide outside a faction folder)."""
+    out: dict[int, dict[str, list[int]]] = {}
+    for map_id, paths in ATTUNEMENT_GUIDES.items():
+        for rel in paths:
+            path = Path(src_dir) / "attunements" / f"{rel}.lua"
+            if not path.is_file():
+                continue
+            owner = rel.split("/")[0] if "/" in rel else None
+            for faction in GUIDES:
+                if owner in (None, faction):
+                    have = out.setdefault(map_id, {}).setdefault(faction, [])
+                    have += [q for q in dungeon_quests(path.read_text(encoding="utf-8")) if q not in have]
+    return out
+
+
+def guide_entrances(src_dir: Path, map_ids: dict[str, int]) -> dict[int, tuple[int, float, float]]:
+    """Map id -> (UiMap id, x, y) of a dungeon guide's step that only goes somewhere ("goto Zone x,y"): the way
+    in, for dungeons whose entrance the game data does not give."""
+    out: dict[int, tuple[int, float, float]] = {}
+    for map_id, stem in DUNGEON_GUIDES.items():
+        for faction in GUIDES:
+            path = Path(src_dir) / "dungeons" / faction.lower() / f"{stem}.lua"
+            if map_id in out or not path.is_file():
+                continue
+            for line in path.read_text(encoding="utf-8").splitlines():
+                # a step line "goto Zone x,y" (not a "|goto" on a quest line)
+                if line.strip().startswith("goto ") and (point := _goto("|" + line.strip(), map_ids)):
+                    out[map_id] = point
+                    break
+    return out
 
 
 def dungeon_quests(text: str) -> list[int]:
@@ -218,6 +281,26 @@ def load_lodestar(src_dir: Path, map_ids: dict[str, int], uimap_to_area: dict[in
                 known = [stand_in]
             rec = items.setdefault(iid, {"name": it["name"], "units": [], "objects": [], "chances": {}})
             rec["units"] = sorted(set(rec["units"]) | set(known))
+    # Forever's new dungeons: their quests (name, giver and where) from the dungeon guides. The guides give no level,
+    # so it stays unknown: the quests show in the dungeon's panel but no route takes them.
+    for map_id in NEW_DUNGEONS:
+        for faction in GUIDES:
+            path = Path(src_dir) / "dungeons" / faction.lower() / f"{DUNGEON_GUIDES[map_id]}.lua"
+            if not path.is_file():
+                continue
+            g = parse_guide(path.read_text(encoding="utf-8"), map_ids)
+            for qid in g["order"]:
+                q = g["quests"][qid]
+                factions.setdefault(qid, set()).add(faction)
+                if qid in quests or not q["start"]:
+                    continue
+                quests[qid] = {"name": q.get("name"), "lvl": None, "min": None, "pre": q["pre"],
+                               "objectiveText": None, "start": {"U": [q["start"]]},
+                               "end": {"U": [q["end"]]} if q["end"] else {}, "obj": {}, "source": "lodestar",
+                               "races": None}
+            for uid, u in g["units"].items():
+                rec = units.setdefault(uid, {"name": u["name"], "coords": [], "fac": None})
+                rec["coords"] += [c for c in coords(u["points"]) if c not in rec["coords"]]
     # A quest in one faction's guide only is that faction's; in both, anyone's (None).
     for qid, q in quests.items():
         q["factions"] = None if len(factions[qid]) > 1 else sorted(factions[qid])

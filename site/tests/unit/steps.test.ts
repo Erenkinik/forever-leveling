@@ -333,11 +333,15 @@ test('dungeons on a map keep the quests the chosen class can take', async () => 
     zoneName: 'Westfall', step: null, classOnly,
   });
   const dungeons = [
-    { id: 36, name: 'Deadmines', mapId: 1436, x: 38, y: 77, levels: [17, 22] as [number, number],
-      quests: [quest(1), quest(2, ['Mage'])] },
-    { id: 34, name: 'Stormwind Stockade', mapId: 1453, x: 50, y: 66, levels: null, quests: [] },
+    { id: 36, name: 'Deadmines', kind: 'dungeon' as const, mapId: 1436, x: 38, y: 77,
+      levels: [17, 22] as [number, number], quests: [quest(1), quest(2, ['Mage'])],
+      attunement: [quest(3), quest(4, ['Warlock'])] },
+    { id: 34, name: 'Stormwind Stockade', kind: 'dungeon' as const, mapId: 1453, x: 50, y: 66, levels: null,
+      quests: [], attunement: [] },
   ];
   assert.deepEqual(dungeonsOnMap(dungeons, 1436, '').map((d) => d.quests.length), [2]);
-  assert.deepEqual(dungeonsOnMap(dungeons, 1436, 'Rogue')[0].quests.map((q) => q.questId), [1]);
+  const rogue = dungeonsOnMap(dungeons, 1436, 'Rogue')[0];
+  assert.deepEqual(rogue.quests.map((q) => q.questId), [1]);
+  assert.deepEqual(rogue.attunement.map((q) => q.questId), [3]);  // the attunement is filtered by class too
   assert.deepEqual(dungeonsOnMap(dungeons, 1429, ''), []);
 });

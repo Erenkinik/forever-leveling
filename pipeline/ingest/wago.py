@@ -8,7 +8,7 @@ from typing import Callable
 
 USER_AGENT = "forever-leveling-pipeline/0.1"  # wago rejects urllib's default agent with 403
 URL_TEMPLATE = "https://wago.tools/db2/{table}/csv?build={build}"
-WAGO_TABLES = ("QuestV2", "UiMap", "UiMapAssignment", "AreaTable", "QuestXP", "TaxiNodes", "TaxiPath", "Map")
+WAGO_TABLES = ("QuestV2", "UiMap", "UiMapAssignment", "AreaTable", "QuestXP", "TaxiNodes", "TaxiPath", "Map", "AreaPOI")
 
 
 def fetch_tables(build: str, raw_dir: Path, opener: Callable = urllib.request.urlopen,

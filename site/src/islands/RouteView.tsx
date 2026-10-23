@@ -5,7 +5,7 @@ import {
   reportUrl, secondsLeft, sessionEnd,
   mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
-  type KeyValueStore, type Part, type Route, type Settings, type Step,
+  type DungeonQuest, type KeyValueStore, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import mapIndex from '../data/maps.json';
 import RaceSwitcher, { type RouteMeta } from './RaceSwitcher.tsx';
@@ -103,6 +103,26 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
     </li>
   );
 });
+
+/** A dungeon's quests: name and level ("?" when unknown), who gives it and where, and the route step for it. */
+function QuestList({ quests, index }: { quests: DungeonQuest[]; index: Map<string, number> }) {
+  return (
+    <ol className="dungeon-quests-list">
+      {quests.map((q) => (
+        <li key={q.questId}>
+          <span className="quest">{q.name ?? `quest #${q.questId}`}</span>{' '}
+          <span className="lvl">({q.level ?? '?'})</span>
+          {q.classOnly && <span className="tag class">{q.classOnly.join(', ')}</span>}
+          <span className="from">
+            From <span className="npc">{q.npcName ?? 'unknown'}</span>
+            {q.zoneName && <> in {q.zoneName}</>} at {q.x.toFixed(1)}, {q.y.toFixed(1)}.
+            {' '}{q.step ? <>On your route: step {(index.get(q.step) ?? 0) + 1}.</> : <>Not on this route.</>}
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 function Settings({ settings, update }: { settings: Settings; update: (patch: Partial<Settings>) => void }) {
   const { open, setOpen, buttonRef, rootRef } = useDisclosure();
@@ -409,22 +429,26 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       ))}
                     </svg>
                   )}
-                  {dungeonsOnMap(route.dungeons ?? [], current.mapId, playerClass).map((d) => (
-                    // Dungeon entrance: the game's icon, a "!" at its top right when it has quests for this race.
+                  {dungeonsOnMap(route.dungeons ?? [], current.mapId, playerClass).map((d) => {
+                    // Dungeon or raid entrance: the game's icon, a "!" at its top right when it has quests or an
+                    // attunement for this race.
+                    const count = d.quests.length + d.attunement.length;
+                    return (
                     <button key={`dungeon-${d.id}`} type="button" className="pin dungeon"
                             style={{ left: `${d.x}%`, top: `${d.y}%` }} aria-haspopup="dialog"
                             aria-expanded={openDungeon === d.id}
-                            aria-label={`${d.name}, dungeon${d.quests.length ? `, ${d.quests.length} quests` : ''}`}
+                            aria-label={`${d.name}, ${d.kind}${count ? `, ${count} quests` : ''}`}
                             onClick={(e) => {
                               dungeonButton.current = e.currentTarget;
                               setOpenDungeon(openDungeon === d.id ? null : d.id);
                             }}>
                       <img src="/art/icon-dungeon.webp" alt="" width={28} height={28} />
-                      {d.quests.length > 0 && <img className="dungeon-quests" src="/art/icon-accept.webp" alt=""
-                                                   width={18} height={18} />}
+                      {count > 0 && <img className="dungeon-quests" src="/art/icon-accept.webp" alt=""
+                                         width={18} height={18} />}
                       <span className="pin-label">{d.name}</span>
                     </button>
-                  ))}
+                    );
+                  })}
                   {settings.explore && optionalOnMap(route.optional ?? [], current.mapId, playerClass).map((q) => (
                     // Off-route quests: drawn under the route's pins, named on hover and in the list below.
                     <span key={`optional-${q.questId}`} role="img" style={{ left: `${q.x}%`, top: `${q.y}%` }}
@@ -480,28 +504,25 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                               onClick={() => { setOpenDungeon(null); dungeonButton.current?.focus(); }}>×</button>
                     </div>
                     <p className="dungeon-sub">
-                      Dungeon{d.levels && <> · quests level {d.levels[0]}–{d.levels[1]}</>}
+                      {d.kind === 'raid' ? 'Raid' : 'Dungeon'}
+                      {d.levels && <> · quests level {d.levels[0]}–{d.levels[1]}</>}
                     </p>
-                    {d.quests.length === 0
-                      ? <p>No quests for this dungeon that you can take.</p>
-                      : (
-                        <ol className="dungeon-quests-list">
-                          {d.quests.map((q) => (
-                            <li key={q.questId}>
-                              <span className="quest">{q.name ?? `quest #${q.questId}`}</span>{' '}
-                              <span className="lvl">({q.level})</span>
-                              {q.classOnly && <span className="tag class">{q.classOnly.join(', ')}</span>}
-                              <span className="from">
-                                From <span className="npc">{q.npcName ?? 'unknown'}</span>
-                                {q.zoneName && <> in {q.zoneName}</>} at {q.x.toFixed(1)}, {q.y.toFixed(1)}.
-                                {' '}{q.step
-                                  ? <>On your route: step {(index.get(q.step) ?? 0) + 1}.</>
-                                  : <>Not on this route.</>}
-                              </span>
-                            </li>
-                          ))}
-                        </ol>
-                      )}
+                    {d.attunement.length > 0 && (
+                      <>
+                        <h4>Attunement</h4>
+                        <p className="dungeon-note">Done in this order; each quest opens the next.</p>
+                        <QuestList quests={d.attunement} index={index} />
+                      </>
+                    )}
+                    {d.quests.length > 0 && (
+                      <>
+                        {d.attunement.length > 0 && <h4>Quests</h4>}
+                        <QuestList quests={d.quests} index={index} />
+                      </>
+                    )}
+                    {d.quests.length + d.attunement.length === 0 && (
+                      <p>No quests here that you can take.</p>
+                    )}
                   </section>
                 );
               })()}

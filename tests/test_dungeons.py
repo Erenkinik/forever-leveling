@@ -28,8 +28,8 @@ def test_dungeon_entrances_land_on_their_zone_map_with_their_quests():
         _map_row(40, "No Entrance", 0, 0),
     ]
     doc = build_dungeons(rows, _rows("UiMapAssignment"), MAPS, PARENTS, {36: {"Alliance": [7, 8]}})
-    assert doc["dungeons"] == [{"id": 36, "name": "Test Mine", "uiMapId": 1429, "x": 42.5, "y": 65.7,
-                                "quests": {"Alliance": [7, 8]}}]
+    assert doc["dungeons"] == [{"id": 36, "name": "Test Mine", "kind": "dungeon", "uiMapId": 1429, "x": 42.5,
+                                "y": 65.7, "quests": {"Alliance": [7, 8]}, "attunement": {}}]
 
 
 def test_route_dungeons_list_the_quests_the_route_can_take():
@@ -49,3 +49,14 @@ def test_route_dungeons_list_the_quests_the_route_can_take():
     assert d["levels"] == [20, 24]
     assert [(e["questId"], e["step"], e["zoneName"]) for e in d["quests"]] == [
         (1, "accept-1", "Westfall"), (2, None, "Westfall")]  # Horde, Shaman and unknown quests left out
+
+
+def test_new_dungeons_without_a_corpse_point_use_a_poi_or_the_guide_entrance():
+    rows = [_map_row(50, "Poi Hall", 0, 0, continent="-1"), _map_row(51, "Guide Vault", 0, 0, continent="-1"),
+            _map_row(52, "Lost Den", 0, 0, continent="-1"), _map_row(53, "Big Raid", -9460, 62, instance="2")]
+    pois = [{"Name_lang": "Poi Hall", "Pos_0": "-9460", "Pos_1": "62", "ContinentID": "0"}]
+    doc = build_dungeons(rows, _rows("UiMapAssignment"), MAPS, PARENTS, {}, {53: {"Horde": [5]}}, pois,
+                         {51: (1429, 10.0, 20.0)})
+    got = {d["name"]: (d["kind"], d["uiMapId"], d["x"], d["y"], d["attunement"]) for d in doc["dungeons"]}
+    assert got == {"Poi Hall": ("dungeon", 1429, 42.5, 65.7, {}), "Guide Vault": ("dungeon", 1429, 10.0, 20.0, {}),
+                   "Big Raid": ("raid", 1429, 42.5, 65.7, {"Horde": [5]})}  # Lost Den has no known entrance
