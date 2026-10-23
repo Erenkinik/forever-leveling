@@ -16,7 +16,8 @@ test('buildHeaders allows exactly the inline scripts by hash and sets the securi
   const csp = headers.split('\n').find((l) => l.includes('Content-Security-Policy'))!;
   assert.ok(headers.startsWith('/*\n'));
   assert.ok(csp.includes(`script-src 'self' ${[sha('a()'), sha('c()')].sort().join(' ')};`), csp);
-  for (const part of ["default-src 'self'", "object-src 'none'", "frame-ancestors 'none'", "base-uri 'self'"]) {
+  for (const part of ["default-src 'self'", "object-src 'none'", "frame-ancestors 'none'", "base-uri 'self'",
+                      "frame-src https://www.youtube-nocookie.com;", "img-src 'self' data: https://i.ytimg.com;"]) {
     assert.ok(csp.includes(part), part);
   }
   for (const h of ['X-Content-Type-Options: nosniff', 'Referrer-Policy: strict-origin-when-cross-origin',

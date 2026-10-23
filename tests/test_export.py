@@ -219,3 +219,16 @@ def test_optional_quests_are_the_doable_ones_off_the_route_on_its_maps():
         {"questId": 8, "name": "Q8", "mapId": 1429, "x": 40.0, "y": 50.0, "level": 5, "minLevel": 3,
          "npcName": "Giver", "classOnly": ["Mage"]},
     ]
+
+
+def test_site_json_gives_accept_steps_their_quests_video():
+    route = {"id": "t", "steps": [
+        {"id": "accept-1", "type": "accept", "questId": 1, "mapId": 1429, "x": 1.0, "y": 1.0},
+        {"id": "turnin-1", "type": "turnin", "questId": 1, "mapId": 1429, "x": 1.0, "y": 1.0},
+        {"id": "accept-2", "type": "accept", "questId": 2, "mapId": 1429, "x": 1.0, "y": 1.0},
+    ]}
+    video = {"id": "abc", "title": "WoW Classic Q1 quest", "channel": "Guides"}
+    args = ({1: {"name": "Q1"}, 2: {"name": "Q2"}}, {"units": {}}, {1429: "Elwynn Forest"})
+    accept, turnin, other = to_site_json(route, *args, videos={"Q1": video, "Q2": None})["steps"]
+    assert accept["video"] == video
+    assert "video" not in turnin and "video" not in other  # only where a quest starts, and only a found video

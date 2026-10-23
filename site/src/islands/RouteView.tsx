@@ -5,7 +5,7 @@ import {
   reportUrl, secondsLeft, sessionEnd,
   mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
-  type DungeonQuest, type KeyValueStore, type Part, type Route, type Settings, type Step,
+  type DungeonQuest, type KeyValueStore, type QuestVideo, type Part, type Route, type Settings, type Step,
 } from '../lib/steps.ts';
 import mapIndex from '../data/maps.json';
 import RaceSwitcher, { type RouteMeta } from './RaceSwitcher.tsx';
@@ -103,6 +103,34 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
     </li>
   );
 });
+
+/** The quest's video on parchment, where a quest starts. Nothing loads from YouTube but the thumbnail until the
+ * viewer presses play; then the player (privacy-enhanced mode) takes its place. */
+function VideoScroll({ video }: { video: QuestVideo }) {
+  const [playing, setPlaying] = useState(false);
+  return (
+    <section className="quest-scroll video-scroll" aria-labelledby="video-title">
+      <h3 id="video-title">Quest video</h3>
+      <p className="quest-zone">{video.title}{video.channel && <> · {video.channel}</>}</p>
+      <div className="video-frame">
+        {playing ? (
+          <iframe src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`} title={video.title}
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
+        ) : (
+          <button type="button" className="video-play" onClick={() => setPlaying(true)}
+                  aria-label={`Play video: ${video.title}`}>
+            <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
+            <span className="video-play-icon" aria-hidden="true" />
+          </button>
+        )}
+      </div>
+      <p className="video-note">
+        Plays from YouTube. <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank"
+                               rel="noopener noreferrer">Open on YouTube</a>
+      </p>
+    </section>
+  );
+}
 
 /** A dungeon's quests: name and level ("?" when unknown), who gives it and where, and the route step for it. */
 function QuestList({ quests, index }: { quests: DungeonQuest[]; index: Map<string, number> }) {
@@ -600,6 +628,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                   </section>
                 );
               })()}
+              {current.type === 'accept' && current.video && <VideoScroll key={current.video.id} video={current.video} />}
               <details className="coords-details">
                 <summary>All pins on this map</summary>
                 <ol className="coords" aria-label="Coordinates of the steps on the map">

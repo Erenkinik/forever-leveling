@@ -41,6 +41,15 @@ export interface Step {
   seconds?: number;
   /** complete steps: spawn points (x, y on this map) where the objectives are done */
   area?: [number, number][];
+  /** accept steps: a YouTube video of the quest, when one was found (pipeline videos) */
+  video?: QuestVideo;
+}
+
+export interface QuestVideo {
+  /** YouTube video id */
+  id: string;
+  title: string;
+  channel: string | null;
 }
 
 export interface Route {

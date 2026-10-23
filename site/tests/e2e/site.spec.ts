@@ -275,7 +275,7 @@ test('skipped steps are never the current step', async ({ page }) => {
 test('the quest scroll under the map lists what to do for the current quest', async ({ page }) => {
   await page.goto('/human/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
-  const scroll = page.locator('.quest-scroll');
+  const scroll = page.locator('.quest-scroll:not(.video-scroll)');
   await expect(scroll.locator('h3')).toHaveText('A Threat Within');
   const items = scroll.locator('ol > li');
   await expect(items.first()).toContainText('Talk to Deputy Willem at 48.2, 42.9 and accept the quest.');
@@ -316,7 +316,7 @@ test('high contrast keeps the quest parchment', async ({ page }) => {
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await openSettings(page);
   await page.getByLabel('High contrast').check();
-  const bg = await page.locator('.quest-scroll').evaluate((el) => getComputedStyle(el).backgroundImage);
+  const bg = await page.locator('.quest-scroll:not(.video-scroll)').evaluate((el) => getComputedStyle(el).backgroundImage);
   expect(bg).toContain('parchment.webp');
 });
 
@@ -408,4 +408,25 @@ test('on a phone the map is a sheet opened from the Map button', async ({ page }
   await page.keyboard.press('Escape');
   await expect(sheet).toHaveCount(0);
   await expect(button).toBeFocused();
+});
+
+test('where a quest starts, its video waits on parchment until play is pressed', async ({ page }) => {
+  const { readFileSync } = await import('node:fs');
+  const found = ROUTES.flatMap((id) => {
+    const route = JSON.parse(readFileSync(new URL(`../../src/data/${id}.json`, import.meta.url), 'utf8'));
+    const at = route.steps.findIndex((s: { type: string; video?: unknown }) => s.type === 'accept' && s.video);
+    return at < 0 ? [] : [{ id, done: route.steps.slice(0, at).map((s: { id: string }) => s.id),
+                            video: route.steps[at].video }];
+  });
+  test.skip(found.length === 0, 'no quest videos yet (python -m pipeline videos)');
+  const { id, done, video } = found[0];
+  await page.route('https://i.ytimg.com/**', (r) => r.fulfill({ status: 204 }));
+  await page.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ contentType: 'text/html', body: '' }));
+  await page.addInitScript(([key, ids]) => window.localStorage.setItem(key, JSON.stringify(ids)),
+                           [`fxp:v1:${id}`, done] as const);
+  await page.goto(`/${id}/`);
+  const panel = page.getByRole('region', { name: 'Quest video' });
+  await expect(panel.locator('iframe')).toHaveCount(0);
+  await panel.getByRole('button', { name: `Play video: ${video.title}` }).click();
+  await expect(panel.locator('iframe')).toHaveAttribute('src', new RegExp(`youtube-nocookie.com/embed/${video.id}`));
 });

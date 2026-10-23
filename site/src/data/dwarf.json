@@ -24,6 +24,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 1,
+   "video": {
+    "id": "vWFO5gcW45k",
+    "title": "Dwarven Outfitters Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -39,6 +44,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 1,
+   "video": {
+    "id": "qsohNNGB0rw",
+    "title": "Coldridge Valley Mail Delivery Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -416,6 +426,11 @@
    "npcName": "Balir Frosthammer",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "ETIEw0z_cC8",
+    "title": "A New Threat WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 35
   },
   {
@@ -434,6 +449,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "lKo8QOfY9rw",
+    "title": "World Of Warcraft Classic | Runa simple/Simple rune | Quest guide",
+    "channel": "Lorito"
+   },
    "seconds": 11
   },
   {
@@ -452,6 +472,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "gYcHL4_lvfE",
+    "title": "World of Warcraft: Paladin: Consecrated Rune",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -470,6 +495,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "juXq7RAE2-o",
+    "title": "Etched Rune WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -488,6 +518,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "BQqgdkjGP3M",
+    "title": "World Of Warcraft Classic | Runa encriptada/Encrypted rune | Quest guide",
+    "channel": "Lorito"
+   },
    "seconds": 10
   },
   {
@@ -506,6 +541,11 @@
    "npcName": "Sten Stoutarm",
    "zoneName": "Dun Morogh",
    "level": 2,
+   "video": {
+    "id": "X-dP62OlkPU",
+    "title": "World of Warcraft: Priest: Hallowed Rune",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -1062,6 +1102,11 @@
    "npcName": "Hands Springsprocket",
    "zoneName": "Dun Morogh",
    "level": 3,
+   "video": {
+    "id": "Gwldh_S85Jo",
+    "title": "Supplies to Tannok WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 56
   },
   {
@@ -1179,6 +1224,11 @@
    "npcName": "Grelin Whitebeard",
    "zoneName": "Dun Morogh",
    "level": 3,
+   "video": {
+    "id": "xs5dA_yaS4s",
+    "title": "The Troll Cave WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 55
   },
   {
@@ -1194,6 +1244,11 @@
    "npcName": "Talin Keeneye",
    "zoneName": "Dun Morogh",
    "level": 3,
+   "video": {
+    "id": "Ww69PNN4jVc",
+    "title": "The Boar Hunter WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 37
   },
   {
@@ -1209,6 +1264,11 @@
    "npcName": "Talin Keeneye",
    "zoneName": "Dun Morogh",
    "level": 3,
+   "video": {
+    "id": "qsohNNGB0rw",
+    "title": "Coldridge Valley Mail Delivery Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -1804,6 +1864,11 @@
    "npcName": "Teo Hammerstorm",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 12
   },
   {
@@ -1922,6 +1987,11 @@
    "npcName": "Teo Hammerstorm",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 11
   },
   {
@@ -1958,6 +2028,11 @@
    "npcName": "Minor Manifestation of Earth",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {

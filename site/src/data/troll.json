@@ -24,6 +24,11 @@
    "npcName": "Kaltunk",
    "zoneName": "Durotar",
    "level": 1,
+   "video": {
+    "id": "A5MMH4CigUA",
+    "title": "Your Place In The World Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -54,6 +59,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 1,
+   "video": {
+    "id": "6o0C7IWtfMA",
+    "title": "Cutting Teeth WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -375,6 +385,11 @@
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "l3QQ2fdUsI4",
+    "title": "Vile Familiars Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 17
   },
   {
@@ -592,6 +607,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "Ny27Sqg0pKU",
+    "title": "Sting Of The Scorpid Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 17
   },
   {
@@ -610,6 +630,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "WXxENSgsXXM",
+    "title": "World of Warcraft: Warrior: Simple Tablet",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -628,6 +653,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "vDBRZIg_xWs",
+    "title": "WoW Classic - Durotar - Etched Tablet",
+    "channel": "Royamarn"
+   },
    "seconds": 10
   },
   {
@@ -646,6 +676,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "mWL1byB0REg",
+    "title": "Encrypted Tablet Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -664,6 +699,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "sslXcOsUQ8I",
+    "title": "World of Warcraft: Shaman: Rune-Inscribed Tablet",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -682,6 +722,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "xjLpmZh7Mm0",
+    "title": "World of Warcraft: Priest: Hallowed Tablet",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -700,6 +745,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "iEmfExik35w",
+    "title": "World of Warcraft: Mage: Glyphic Tablet",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -1347,6 +1397,11 @@
    "npcName": "Hana'zua",
    "zoneName": "Durotar",
    "level": 3,
+   "video": {
+    "id": "Y2Oq-I2_zoo",
+    "title": "Sarkoth Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 38
   },
   {
@@ -1581,6 +1636,11 @@
    "npcName": "Canaga Earthcaller",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 13
   },
   {
@@ -1596,6 +1656,11 @@
    "npcName": "Hana'zua",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "Y2Oq-I2_zoo",
+    "title": "Sarkoth Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 46
   },
   {
@@ -1846,6 +1911,11 @@
    "npcName": "Canaga Earthcaller",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 12
   },
   {
@@ -1900,6 +1970,11 @@
    "npcName": "Minor Manifestation of Earth",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {

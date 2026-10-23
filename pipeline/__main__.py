@@ -486,6 +486,8 @@ def cmd_export(args) -> int:
     item_icons = _item_icons(root)
     taxi = load_taxi_canonical(DATA_DIR)
     dungeons = load_dungeons_canonical(DATA_DIR)
+    from pipeline.ingest.youtube import load_videos
+    videos = load_videos(DATA_DIR / "videos.json")
     outputs = []
     for path in paths:
         try:
@@ -496,7 +498,7 @@ def cmd_export(args) -> int:
         try:
             levels = _route_levels(route, quests, xp_table)
             site = to_site_json(route, quests, spawns, uimaps, levels, item_icons,
-                                step_seconds(route, quests, levels, taxi), dungeons)
+                                step_seconds(route, quests, levels, taxi), dungeons, videos)
             outputs.append((path.stem, _json_text(site), to_lua(route)))
         except (ValueError, KeyError, TypeError, AttributeError) as exc:
             print(f"cannot export route file {path}: {type(exc).__name__}: {exc}", file=sys.stderr)
@@ -582,6 +584,34 @@ def _route_collect_items() -> list[int]:
     return sorted(items)
 
 
+def cmd_videos(args) -> int:
+    """Search YouTube for the routes' quests not searched yet (at most --budget searches) into data/videos.json."""
+    from pipeline.ingest.youtube import api_key_from, fill_videos, load_videos, quest_names_in_order, save_videos
+
+    key = api_key_from(dict(os.environ), DATA_DIR.parent / ".env")
+    if not key:
+        print("no YOUTUBE_API_KEY in the environment or .env", file=sys.stderr)
+        return 1
+    if not _canonical_path().is_file():
+        print(f"missing canonical quests: {_canonical_path()} (run normalize)", file=sys.stderr)
+        return 1
+    quests = {q["id"]: q for q in json.loads(_canonical_path().read_text(encoding="utf-8"))}
+    routes = [json.loads(p.read_text(encoding="utf-8")) for p in sorted((DATA_DIR / "routes").glob("*.json"))
+              if not p.name.endswith(".generated.json")]
+    names = quest_names_in_order(routes, quests)
+    path = DATA_DIR / "videos.json"
+    videos = load_videos(path)
+    try:
+        done, out = fill_videos(names, videos, key, args.budget)
+    finally:
+        save_videos(path, videos)
+    found = sum(1 for v in videos.values() if v)
+    left = sum(1 for n in names if n not in videos)
+    print(f"searched {done}; {found} of {len(videos)} searched quest names have a video; {left} left to search"
+          + ("; quota used up, run again tomorrow" if out else ""))
+    return 0
+
+
 def cmd_maps(args) -> int:
     """Zone map images for every map a route visits, plus race crests and the quest parchment (site/public/art);
     --check needs no raw data."""
@@ -657,6 +687,9 @@ def main(argv: list[str] | None = None) -> int:
     mp = sub.add_parser("maps", help="write site/public/maps/<uiMapId>.webp from the game's map art")
     mp.add_argument("--check", action="store_true", help="every route map has an image or a recorded absence")
     mp.set_defaults(func=cmd_maps)
+    vid = sub.add_parser("videos", help="find YouTube videos for the routes' quests into data/videos.json")
+    vid.add_argument("--budget", type=int, default=95, help="at most this many searches (100 quota units each)")
+    vid.set_defaults(func=cmd_videos)
     sug = sub.add_parser("suggest-zones", help="write draft data/zone-order/<route>.yaml from quest data")
     sug.add_argument("--all", action="store_true", help="every route in pipeline/generate/config.py ROUTES")
     sug.add_argument("--force", action="store_true", help="overwrite existing zone order files")

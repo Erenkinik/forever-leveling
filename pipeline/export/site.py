@@ -138,13 +138,15 @@ def route_dungeons(route: dict, quests: dict[int, dict], dungeons: list[dict], u
 
 def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dict[int, str],
                  levels: dict[str, int] | None = None, item_icons: dict[str, int | None] | None = None,
-                 seconds: dict[str, int] | None = None, dungeons: list[dict] | None = None) -> dict:
+                 seconds: dict[str, int] | None = None, dungeons: list[dict] | None = None,
+                 videos: dict[str, dict | None] | None = None) -> dict:
     """Return a copy of route whose steps also carry questName, npcName and zoneName (None when unknown);
     complete steps also carry their objectives, and with `levels` (xpsim.estimate_levels) every step
     carries its estimated player level; with `item_icons` (site/src/data/item-icons.json) collect objectives
     carry their item's icon FileDataID; with `seconds` (export.timing.step_seconds) every step carries its
     estimated time. `optional` lists the quests off the route (optional_quests); with `dungeons`
-    (data/canonical/dungeons.json) `dungeons` lists the entrances on the route's maps (route_dungeons)."""
+    (data/canonical/dungeons.json) `dungeons` lists the entrances on the route's maps (route_dungeons); with
+    `videos` (data/videos.json, by quest name) accept steps carry their quest's YouTube video."""
     out = copy.deepcopy(route)
     units = spawns.get("units", {})
     for step in out.get("steps", []):
@@ -154,6 +156,8 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
         step["zoneName"] = uimaps.get(map_id) if map_id is not None else None
         if levels is not None and step.get("id") in levels:
             step["level"] = levels[step["id"]]
+        if videos and step.get("type") == "accept" and videos.get(step["questName"] or ""):
+            step["video"] = videos[step["questName"]]
         if seconds is not None and step.get("id") in seconds:
             step["seconds"] = seconds[step["id"]]
         if step.get("type") == "complete" and quest_id in quests:

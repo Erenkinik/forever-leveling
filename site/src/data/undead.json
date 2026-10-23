@@ -24,6 +24,11 @@
    "npcName": "Undertaker Mordo",
    "zoneName": "Tirisfal Glades",
    "level": 1,
+   "video": {
+    "id": "8-gIKFQBad0",
+    "title": "Rude Awakening Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -42,6 +47,11 @@
    "npcName": "Venya Marthand",
    "zoneName": "Tirisfal Glades",
    "level": 1,
+   "video": {
+    "id": "vh24ePzPciY",
+    "title": "World of Warcraft: Warlock: Piercing The Veil",
+    "channel": "Warcraft Story"
+   },
    "seconds": 33
   },
   {
@@ -200,6 +210,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 1,
+   "video": {
+    "id": "4oGW1SDAqdU",
+    "title": "The Mindless Ones Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 12
   },
   {
@@ -510,6 +525,11 @@
    "npcName": "Novice Elreth",
    "zoneName": "Tirisfal Glades",
    "level": 2,
+   "video": {
+    "id": "jd3A20Lble4",
+    "title": "The Damned, WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 11
   },
   {
@@ -985,6 +1005,11 @@
    "npcName": "Deathguard Saltain",
    "zoneName": "Tirisfal Glades",
    "level": 3,
+   "video": {
+    "id": "SabEZUAPKnA",
+    "title": "Scavenging Deathknell WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 14
   },
   {
@@ -1462,6 +1487,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "gFzy6DnSSGc",
+    "title": "World Of Warcraft Classic | Un pergamino simple/Simple scroll | Quest guide",
+    "channel": "Lorito"
+   },
    "seconds": 11
   },
   {
@@ -1480,6 +1510,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "TsIe3PY1V34",
+    "title": "Encrypted Scroll WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -1498,6 +1533,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "9RN1m2kVG88",
+    "title": "World of Warcraft: Priest: Hallowed Scroll",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -1516,6 +1556,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "Qd33ShICMiU",
+    "title": "World of Warcraft: Mage: Glyphic Scroll",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -1534,6 +1579,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "qke8F68N1ME",
+    "title": "World of Warcraft: Warlock: Tainted Scroll",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -1549,6 +1599,11 @@
    "npcName": "Shadow Priest Sarvis",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "NQz6-2W5tgU",
+    "title": "Rattling the Rattlecages WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {

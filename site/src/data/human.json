@@ -24,6 +24,11 @@
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
    "level": 1,
+   "video": {
+    "id": "p6IW3Laip6s",
+    "title": "A Threat Within WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -54,6 +59,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 1,
+   "video": {
+    "id": "n-evdY7pSJs",
+    "title": "Kobold Camp Cleanup WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -69,6 +79,11 @@
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
    "level": 1,
+   "video": {
+    "id": "1ow4TjD2f9E",
+    "title": "Eagan Peltskinner WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 16
   },
   {
@@ -272,6 +287,11 @@
    "npcName": "Drusilla La Salle",
    "zoneName": "Elwynn Forest",
    "level": 2,
+   "video": {
+    "id": "OKl3KVSEKfQ",
+    "title": "The Stolen Tome WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 19
   },
   {
@@ -287,6 +307,11 @@
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
    "level": 2,
+   "video": {
+    "id": "HXcffmDjyfs",
+    "title": "A Brotherhood Of Thieves Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 18
   },
   {
@@ -700,6 +725,11 @@
    "npcName": "Falkhaan Isenstrider",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "8XGJDfO5MU8",
+    "title": "Rest and Relaxation WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 30
   },
   {
@@ -730,6 +760,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "EkH0YQFqpXo",
+    "title": "Investigate Echo Ridge WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 94
   },
   {
@@ -748,6 +783,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "mwWe4Fzz6Fs",
+    "title": "Simple Letter World of Warcraft Classic Elwynn Forest Quests",
+    "channel": "MyPCisCrazy"
+   },
    "seconds": 10
   },
   {
@@ -766,6 +806,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "F3ekBJ7_mtA",
+    "title": "Paladin Quests: Consecrated Letter (WoW Classic)",
+    "channel": "Mynt's Quest Log - Classic WoW"
+   },
    "seconds": 10
   },
   {
@@ -784,6 +829,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "obsO0KfauHA",
+    "title": "Encrypted Letter Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -802,6 +852,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "sle2_gmYghs",
+    "title": "World of Warcraft Classic Hallowed Letter",
+    "channel": "World of Warcraft Classic Video"
+   },
    "seconds": 10
   },
   {
@@ -820,6 +875,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "3F-6r70hJC0",
+    "title": "World of Warcraft: Mage: Glyphic Letter",
+    "channel": "Warcraft Story"
+   },
    "seconds": 10
   },
   {
@@ -838,6 +898,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "EweJHzP_kAk",
+    "title": "Quest: Tainted Letter (Human Warlock) 🏃‍➡️ | World of Warcraft: Mists of Pandaria (Alliance)",
+    "channel": "Valek WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -853,6 +918,11 @@
    "npcName": "Eagan Peltskinner",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "XwuVZi4qbSo",
+    "title": "Wolves Across The Border Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -868,6 +938,11 @@
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
    "level": 3,
+   "video": {
+    "id": "Tss_e796d_U",
+    "title": "Bounty on Garrick Padfoot WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 20
   },
   {

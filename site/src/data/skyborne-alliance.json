@@ -39,6 +39,11 @@
    "npcName": "Ailee Farheart",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "xcBQvomaLNQ",
+    "title": "Coming Of Age Quest (WoW TBC)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -54,6 +59,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "wqWJ7Mz9M2Q",
+    "title": "Elemental Unrest Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 16
   },
   {
@@ -69,6 +79,11 @@
    "npcName": "Yala Windwatcher",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "nS4EuwkvRdQ",
+    "title": "Agitators Full Quest Guide World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 52
   },
   {
@@ -84,6 +99,11 @@
    "npcName": "Yala Windwatcher",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "hQZqkpZok0M",
+    "title": "Return To Rorian Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -99,6 +119,11 @@
    "npcName": "Aetheen of the Gales",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "TUEWtP7Ji_s",
+    "title": "Foul Matriarch – WoW Forever",
+    "channel": "Game Guides Channel"
+   },
    "seconds": 47
   },
   {
@@ -114,6 +139,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "SyQ7jtPrYnk",
+    "title": "Aetheen Of The Gales Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -129,6 +159,11 @@
    "npcName": "Aetheen of the Gales",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "Md0_JxexUcs",
+    "title": "The Next Step Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -144,6 +179,11 @@
    "npcName": "Valreaa Valewind",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "4bhyh439_Q0",
+    "title": "Aggressive Encroachment Full Quest World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 18
   },
   {
@@ -159,6 +199,11 @@
    "npcName": "Myriaal Mistwake",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "xoMlJR4BgHY",
+    "title": "Falling With Style Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 21
   },
   {
@@ -174,6 +219,11 @@
    "npcName": "Halaan Hawk-Eye",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "AixYzxIjScg",
+    "title": "The Anchors of Zephras Full Quest World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 11
   },
   {
@@ -433,6 +483,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "iejF1VQ48wM",
+    "title": "Harmony in Balance - WoW Forever Quest",
+    "channel": "Endo Game Guides"
+   },
    "seconds": 24
   },
   {
@@ -448,6 +503,11 @@
    "npcName": "Elatrell Featherlight",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "aOnoxOLJU2M",
+    "title": "Infestation Investigation Full Quest Guide World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 22
   },
   {

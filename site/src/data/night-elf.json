@@ -54,6 +54,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 1,
+   "video": {
+    "id": "8Yo43TfL4R0",
+    "title": "The Balance of Nature WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -69,6 +74,11 @@
    "npcName": "Melithar Staghelm",
    "zoneName": "Teldrassil",
    "level": 1,
+   "video": {
+    "id": "GWtpUNr4NDQ",
+    "title": "The Woodland Protector 1/2 WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 22
   },
   {
@@ -338,6 +348,11 @@
    "npcName": "Dirania Silvershine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "WlIACLt2BHY",
+    "title": "A Good Friend WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 37
   },
   {
@@ -368,6 +383,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "8Yo43TfL4R0",
+    "title": "The Balance of Nature WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 72
   },
   {
@@ -383,6 +403,11 @@
    "npcName": "Tarindrella",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "GWtpUNr4NDQ",
+    "title": "The Woodland Protector 1/2 WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 18
   },
   {
@@ -401,6 +426,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "0T5ocKDPMJI",
+    "title": "Simple Sigil Quest - World of Warcraft",
+    "channel": "WCQuests"
+   },
    "seconds": 18
   },
   {
@@ -419,6 +449,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "RSB1RTzLd94",
+    "title": "Etched Sigil (Hunter) WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -437,6 +472,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "lIeTI1VeLOY",
+    "title": "WoW Classic Encrypted Sigil (Frahun Shadewhisper)",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -455,6 +495,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "l_mLq0FrW3I",
+    "title": "World Of Warcraft Classic | El sigilo sagrado/Hallowed sigil | Quest guide",
+    "channel": "Lorito"
+   },
    "seconds": 10
   },
   {
@@ -473,6 +518,11 @@
    "npcName": "Conservator Ilthalaine",
    "zoneName": "Teldrassil",
    "level": 2,
+   "video": {
+    "id": "oLRRWp-nGkU",
+    "title": "Verdant Sigil WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -1008,6 +1058,11 @@
    "npcName": "Porthannius",
    "zoneName": "Teldrassil",
    "level": 4,
+   "video": {
+    "id": "cO7l7Tq1QIA",
+    "title": "Dolanaar Delivery Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 50
   },
   {

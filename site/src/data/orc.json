@@ -24,6 +24,11 @@
    "npcName": "Kaltunk",
    "zoneName": "Durotar",
    "level": 1,
+   "video": {
+    "id": "A5MMH4CigUA",
+    "title": "Your Place In The World Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -54,6 +59,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 1,
+   "video": {
+    "id": "6o0C7IWtfMA",
+    "title": "Cutting Teeth WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -370,6 +380,11 @@
    "npcName": "Ruzan",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "l3QQ2fdUsI4",
+    "title": "Vile Familiars Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -391,6 +406,11 @@
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "l3QQ2fdUsI4",
+    "title": "Vile Familiars Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 12
   },
   {
@@ -803,6 +823,11 @@
    "npcName": "Ruzan",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "l3QQ2fdUsI4",
+    "title": "Vile Familiars Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 12
   },
   {
@@ -836,6 +861,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "Ny27Sqg0pKU",
+    "title": "Sting Of The Scorpid Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 17
   },
   {
@@ -854,6 +884,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "EtIRd8BxM5g",
+    "title": "World of Warcraft Classic - Orc Warrior - Durotar - Quest 3 - Simple Parchment",
+    "channel": "Kurgan"
+   },
    "seconds": 10
   },
   {
@@ -872,6 +907,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "RQ3UuNnixx4",
+    "title": "Etched Parchment (WOW classic quest)",
+    "channel": "BalkySK"
+   },
    "seconds": 10
   },
   {
@@ -890,6 +930,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "1-j_049JxME",
+    "title": "Encrypted Parchment Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -908,6 +953,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "MrqbUks9Dpc",
+    "title": "Rune Inscribed Parchment WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -926,6 +976,11 @@
    "npcName": "Gornek",
    "zoneName": "Durotar",
    "level": 2,
+   "video": {
+    "id": "HWyxqa1tu_4",
+    "title": "Tainted Parchment WoW Classic Starting Zone Quest ImSyriusz",
+    "channel": "ImSyriusz - I need 974 Subs PLZ TY"
+   },
    "seconds": 10
   },
   {
@@ -1555,6 +1610,11 @@
    "npcName": "Hana'zua",
    "zoneName": "Durotar",
    "level": 3,
+   "video": {
+    "id": "Y2Oq-I2_zoo",
+    "title": "Sarkoth Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 38
   },
   {
@@ -1789,6 +1849,11 @@
    "npcName": "Canaga Earthcaller",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 13
   },
   {
@@ -1804,6 +1869,11 @@
    "npcName": "Hana'zua",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "Y2Oq-I2_zoo",
+    "title": "Sarkoth Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 46
   },
   {
@@ -2006,6 +2076,11 @@
    "npcName": "Canaga Earthcaller",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 27
   },
   {
@@ -2072,6 +2147,11 @@
    "npcName": "Minor Manifestation of Earth",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 100
   },
   {

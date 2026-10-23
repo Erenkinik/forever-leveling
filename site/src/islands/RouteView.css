@@ -288,6 +288,29 @@ svg.step-icon.grind { stroke: var(--gold); }
 /* High contrast keeps the parchment and makes every word on it black. */
 :root[data-contrast="high"] .quest-scroll,
 :root[data-contrast="high"] .quest-scroll :is(h3, .quest-zone, li.done, .npc, .item, .quest) { color: #000; }
+/* The quest video, on the same parchment. */
+.video-scroll h3 { font-size: 22px; }
+.video-scroll .quest-zone { font: 14px/1.35 var(--font-body); }
+.video-frame {
+  position: relative; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; background: #1a1008;
+  border: 2px solid #6b4a1a; box-shadow: inset 0 0 0 1px #000, 0 4px 12px rgba(60, 30, 5, .45);
+}
+.video-frame iframe, .video-play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-play { padding: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.video-play img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: sepia(.25); }
+.video-play:hover img, .video-play:focus-visible img { filter: none; }
+.video-play-icon {
+  position: relative; width: 72px; height: 72px; border-radius: 50%; border: 3px solid #f0c060;
+  background: radial-gradient(circle at 40% 35%, #8a1c00, #3c1000); box-shadow: 0 4px 14px rgba(0, 0, 0, .7);
+}
+.video-play-icon::after {
+  content: ""; position: absolute; left: 28px; top: 20px; border-style: solid; border-width: 16px 0 16px 26px;
+  border-color: transparent transparent transparent #ffe7a3;
+}
+.video-play:focus-visible { outline: 3px solid #3c1f00; outline-offset: -3px; }
+.video-note { margin: 8px 0 0; font-size: 14px; color: #4d3818; }
+.video-note a { color: #123c6b; font-weight: 700; }
+:root[data-contrast="high"] .video-note, :root[data-contrast="high"] .video-note a { color: #000; }
 .coords-details { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .coords-details summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--text); }
 

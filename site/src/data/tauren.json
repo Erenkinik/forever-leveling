@@ -24,6 +24,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 1,
+   "video": {
+    "id": "mFs2MLdPW54",
+    "title": "The Hunt Begins WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -39,6 +44,11 @@
    "npcName": "Chief Hawkwind",
    "zoneName": "Mulgore",
    "level": 1,
+   "video": {
+    "id": "HJgMACaMNOw",
+    "title": "A Humble Task Quest (1/2) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 18
   },
   {
@@ -508,6 +518,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 2,
+   "video": {
+    "id": "Tn5fIpByzDY",
+    "title": "The Hunt Continues Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 61
   },
   {
@@ -526,6 +541,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 2,
+   "video": {
+    "id": "I0ZNa_t5CPA",
+    "title": "World Of Warcraft Classic | La nota simple/Simple note | Quest guide",
+    "channel": "Lorito"
+   },
    "seconds": 10
   },
   {
@@ -544,6 +564,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 2,
+   "video": {
+    "id": "8PlGt60oqaY",
+    "title": "WoW Classic Etched Note",
+    "channel": "DibuckTV"
+   },
    "seconds": 10
   },
   {
@@ -562,6 +587,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 2,
+   "video": {
+    "id": "5zA0T2zW19w",
+    "title": "Rune-Inscribed Note (Shaman) WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -580,6 +610,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 2,
+   "video": {
+    "id": "ZgP-0rT2U9I",
+    "title": "Verdant Note - WoW Classic Quest Guide",
+    "channel": "Guide Plaza"
+   },
    "seconds": 10
   },
   {
@@ -1001,6 +1036,11 @@
    "npcName": "Brave Windfeather",
    "zoneName": "Mulgore",
    "level": 3,
+   "video": {
+    "id": "w_f2HSIKpGU",
+    "title": "Break Sharptusk! Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 16
   },
   {
@@ -1065,6 +1105,11 @@
    "npcName": "Seer Ravenfeather",
    "zoneName": "Mulgore",
    "level": 4,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 12
   },
   {
@@ -1187,6 +1232,11 @@
    "npcName": "Seer Ravenfeather",
    "zoneName": "Mulgore",
    "level": 4,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -1220,6 +1270,11 @@
    "npcName": "Grull Hawkwind",
    "zoneName": "Mulgore",
    "level": 4,
+   "video": {
+    "id": "yc3jvy88Ipw",
+    "title": "The Battleboars WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 92
   },
   {
@@ -1528,6 +1583,11 @@
    "npcName": "Greatmother Hawkwind",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "HJgMACaMNOw",
+    "title": "A Humble Task Quest (1/2) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 61
   },
   {
@@ -1546,6 +1606,11 @@
    "npcName": "Minor Manifestation of Earth",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "nyntgWJHf1s",
+    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
+    "channel": "Bue"
+   },
    "seconds": 45
   },
   {

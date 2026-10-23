@@ -23,7 +23,9 @@ export function buildHeaders(htmlPages) {
     `script-src 'self' ${[...hashes].sort().join(' ')}`.trim(),
     // React sets pin positions as style attributes; styles cannot run code.
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data:",
+    // Quest videos: the thumbnail from YouTube, and the player (privacy-enhanced mode) once the viewer presses play.
+    "img-src 'self' data: https://i.ytimg.com",
+    "frame-src https://www.youtube-nocookie.com",
     "font-src 'self'",
     "connect-src 'self'",
     "object-src 'none'",
