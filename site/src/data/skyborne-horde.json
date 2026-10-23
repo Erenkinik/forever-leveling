@@ -33881,6 +33881,13 @@
    "seconds": 15
   }
  ],
+ "classes": [
+  "Druid",
+  "Hunter",
+  "Rogue",
+  "Shaman",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 4641,

@@ -148,8 +148,13 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
     carry their item's icon FileDataID; with `seconds` (export.timing.step_seconds) every step carries its
     estimated time. `optional` lists the quests off the route (optional_quests); with `dungeons`
     (data/canonical/dungeons.json) `dungeons` lists the entrances on the route's maps (route_dungeons); with
-    `videos` (data/videos.json, by youtube.video_key) accept steps carry their quest's YouTube video."""
+    `videos` (data/videos.json, by youtube.video_key) accept steps carry their quest's YouTube video. `classes` lists
+    the classes the route's race plays (the site's class picker), alphabetically."""
+    from pipeline.generate.config import FACTION_RACE_CLASSES, RACE_CLASSES
+
     out = copy.deepcopy(route)
+    race, faction = route.get("race"), route.get("faction")
+    out["classes"] = sorted(FACTION_RACE_CLASSES.get((race, faction)) or RACE_CLASSES.get(race, ()))
     units = spawns.get("units", {})
     for step in out.get("steps", []):
         quest_id, npc_id, map_id = step.get("questId"), step.get("npcId"), step.get("mapId")

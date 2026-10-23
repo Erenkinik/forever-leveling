@@ -43260,6 +43260,15 @@
    "seconds": 185
   }
  ],
+ "classes": [
+  "Hunter",
+  "Mage",
+  "Paladin",
+  "Priest",
+  "Rogue",
+  "Warlock",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 8155,
@@ -43727,6 +43736,19 @@
    "npcName": "Maxan Anvol",
    "classOnly": [
     "Priest"
+   ]
+  },
+  {
+   "questId": 6085,
+   "name": "Taming the Beast",
+   "mapId": 1426,
+   "x": 45.8,
+   "y": 53,
+   "level": 10,
+   "minLevel": 10,
+   "npcName": "Grif Wildheart",
+   "classOnly": [
+    "Hunter"
    ]
   },
   {

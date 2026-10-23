@@ -430,6 +430,8 @@ test('where a quest starts, its video waits on parchment until play is pressed',
   await page.addInitScript(([key, ids]) => window.localStorage.setItem(key, JSON.stringify(ids)),
                            [`fxp:v1:${id}`, done] as const);
   await page.goto(`/${id}/`);
+  // A click before the island is hydrated does nothing.
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   const panel = page.getByRole('region', { name: 'Quest video' });
   await expect(panel.locator('iframe')).toHaveCount(0);
   await panel.getByRole('button', { name: `Watch the quest: ${video.title}` }).click();

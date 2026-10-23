@@ -66,6 +66,8 @@ export interface Route {
   optional?: OptionalQuest[];
   /** dungeon entrances on the route's maps, with their quests for this race */
   dungeons?: Dungeon[];
+  /** the classes the race plays, alphabetically (Forever adds some, like Dwarf shamans) */
+  classes?: string[];
 }
 
 export interface DungeonQuest extends Omit<OptionalQuest, 'level'> {

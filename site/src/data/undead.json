@@ -42787,6 +42787,14 @@
    "seconds": 15
   }
  ],
+ "classes": [
+  "Mage",
+  "Paladin",
+  "Priest",
+  "Rogue",
+  "Warlock",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 4641,

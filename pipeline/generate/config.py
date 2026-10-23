@@ -73,15 +73,17 @@ ROUTES: dict[str, tuple[str, str]] = {
 }
 
 # Classes each race can play (vanilla, plus Forever's), for class quests: a route keeps a class quest when its race
-# can play one of the quest's classes, and marks its steps classOnly with those classes.
+# can play one of the quest's classes, and marks its steps classOnly with those classes. From the game's
+# CharBaseInfo table (wago.tools, DATA_BUILD); Forever added Human hunters, Dwarf shamans, Gnome priests, Orc mages,
+# Troll warlocks and Undead paladins.
 RACE_CLASSES: dict[str, tuple[str, ...]] = {
-    "Human": ("Warrior", "Paladin", "Rogue", "Priest", "Mage", "Warlock"),
-    "Dwarf": ("Warrior", "Paladin", "Hunter", "Rogue", "Priest", "Shaman"),  # Forever: Dwarf shamans
-    "Gnome": ("Warrior", "Rogue", "Mage", "Warlock"),
+    "Human": ("Warrior", "Paladin", "Hunter", "Rogue", "Priest", "Mage", "Warlock"),
+    "Dwarf": ("Warrior", "Paladin", "Hunter", "Rogue", "Priest", "Shaman"),
+    "Gnome": ("Warrior", "Rogue", "Priest", "Mage", "Warlock"),
     "Night Elf": ("Warrior", "Hunter", "Rogue", "Priest", "Druid"),
-    "Orc": ("Warrior", "Hunter", "Rogue", "Shaman", "Warlock"),
-    "Troll": ("Warrior", "Hunter", "Rogue", "Priest", "Shaman", "Mage"),
-    "Undead": ("Warrior", "Rogue", "Priest", "Mage", "Warlock"),
+    "Orc": ("Warrior", "Hunter", "Rogue", "Shaman", "Mage", "Warlock"),
+    "Troll": ("Warrior", "Hunter", "Rogue", "Priest", "Shaman", "Mage", "Warlock"),
+    "Undead": ("Warrior", "Paladin", "Rogue", "Priest", "Mage", "Warlock"),
     "Tauren": ("Warrior", "Hunter", "Shaman", "Druid"),
 }
 # Races whose classes depend on the faction: Skyborne Alliance play Mage, Skyborne Horde Shaman (Forever).

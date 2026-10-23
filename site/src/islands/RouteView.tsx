@@ -215,7 +215,8 @@ function Settings({ settings, update, doneCount, onReset }: SettingsProps) {
 }
 
 export default function RouteView({ route, routes }: { route: Route; routes: RouteMeta[] }) {
-  const classes = useMemo(() => routeClasses(route.steps), [route.steps]);
+  // Every class the race plays, also one with no class quests on the route (a Human hunter still picks Hunter).
+  const classes = useMemo(() => route.classes ?? routeClasses(route.steps), [route.classes, route.steps]);
   const validIds = useMemo(() => new Set(route.steps.map((s) => s.id)), [route.steps]);
 
   const storeRef = useRef<KeyValueStore | null>(null);

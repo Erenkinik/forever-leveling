@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-23T17:27:25Z",
+ "generatedAt": "2026-10-23T17:44:54Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -373,6 +373,14 @@
    "confidence": "unverified",
    "questId": 792,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Vile Familiars",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -392,6 +400,14 @@
    "y": 55.5,
    "confidence": "unverified",
    "questId": 792,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Vile Familiars",
    "npcName": null,
    "zoneName": "Durotar",
@@ -564,6 +580,14 @@
    "confidence": "unverified",
    "questId": 792,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Vile Familiars",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -1404,6 +1428,14 @@
    "confidence": "unverified",
    "questId": 794,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -1528,6 +1560,14 @@
    "y": 53.0,
    "confidence": "unverified",
    "questId": 794,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": null,
    "zoneName": "Durotar",
@@ -1590,6 +1630,14 @@
    "confidence": "unverified",
    "questId": 794,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -1663,6 +1711,14 @@
    "confidence": "unverified",
    "questId": 805,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Report to Sen'jin Village",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -1847,6 +1903,14 @@
    "confidence": "unverified",
    "questId": 805,
    "npcId": 3188,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Priest",
+    "Shaman",
+    "Mage"
+   ],
    "questName": "Report to Sen'jin Village",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
@@ -5399,6 +5463,24 @@
    "seconds": 21
   },
   {
+   "id": "accept-1506",
+   "type": "accept",
+   "mapId": 1411,
+   "x": 54.4,
+   "y": 41.3,
+   "confidence": "unverified",
+   "questId": 1506,
+   "npcId": 3294,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Gan'rul's Summons",
+   "npcName": "Ophek",
+   "zoneName": "Durotar",
+   "level": 10,
+   "seconds": 40
+  },
+  {
    "id": "accept-1859",
    "type": "accept",
    "mapId": 1411,
@@ -5414,7 +5496,7 @@
    "npcName": "Kaplak",
    "zoneName": "Durotar",
    "level": 10,
-   "seconds": 19
+   "seconds": 32
   },
   {
    "id": "accept-2983",
@@ -6104,8 +6186,8 @@
    "id": "travel-1413-1454",
    "type": "travel",
    "mapId": 1454,
-   "x": 42.7,
-   "y": 53.6,
+   "x": 48.2,
+   "y": 45.3,
    "confidence": "unverified",
    "mode": "walk",
    "radius": 5,
@@ -6114,6 +6196,24 @@
    "zoneName": "Orgrimmar",
    "level": 10,
    "seconds": 60
+  },
+  {
+   "id": "turnin-1506",
+   "type": "turnin",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "confidence": "unverified",
+   "questId": 1506,
+   "npcId": 5875,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Gan'rul's Summons",
+   "npcName": "Gan'rul Bloodeye",
+   "zoneName": "Orgrimmar",
+   "level": 10,
+   "seconds": 10
   },
   {
    "id": "turnin-1859",
@@ -6131,7 +6231,7 @@
    "npcName": "Therzok",
    "zoneName": "Orgrimmar",
    "level": 10,
-   "seconds": 10
+   "seconds": 26
   },
   {
    "id": "flightpath-23",
@@ -7325,6 +7425,24 @@
    "questId": 1487,
    "reason": "quest 1487: objective unit 3636 location unknown",
    "questName": "Deviate Eradication",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 13,
+   "seconds": 0
+  },
+  {
+   "id": "gap-1946",
+   "type": "gap",
+   "mapId": 1413,
+   "x": 57.2,
+   "y": 30.3,
+   "confidence": "unverified",
+   "questId": 1946,
+   "reason": "quest 1946: prereq 1945 not in route",
+   "classOnly": [
+    "Mage"
+   ],
+   "questName": "Nether-lace Garment",
    "npcName": null,
    "zoneName": "The Barrens",
    "level": 13,
@@ -14889,6 +15007,21 @@
    "seconds": 0
   },
   {
+   "id": "gap-1221",
+   "type": "gap",
+   "mapId": 1413,
+   "x": 44.5,
+   "y": 59.1,
+   "confidence": "unverified",
+   "questId": 1221,
+   "reason": "quest 1221: objective item 5876 location unknown",
+   "questName": "Blueleaf Tubers",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 16,
+   "seconds": 0
+  },
+  {
    "id": "accept-866",
    "type": "accept",
    "mapId": 1413,
@@ -19530,6 +19663,24 @@
    "seconds": 30
   },
   {
+   "id": "gap-1740",
+   "type": "gap",
+   "mapId": 1413,
+   "x": 63,
+   "y": 37.2,
+   "confidence": "unverified",
+   "questId": 1740,
+   "reason": "quest 1740: objective item 6914 location unknown",
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "The Orb of Soran'ruk",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 19,
+   "seconds": 0
+  },
+  {
    "id": "accept-882",
    "type": "accept",
    "mapId": 1413,
@@ -23008,6 +23159,24 @@
    "seconds": 121
   },
   {
+   "id": "accept-1507",
+   "type": "accept",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "confidence": "unverified",
+   "questId": 1507,
+   "npcId": 5875,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Devourer of Souls",
+   "npcName": "Gan'rul Bloodeye",
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 35
+  },
+  {
    "id": "accept-1528",
    "type": "accept",
    "mapId": 1454,
@@ -23023,7 +23192,7 @@
    "npcName": "Searn Firewarder",
    "zoneName": "Orgrimmar",
    "level": 20,
-   "seconds": 48
+   "seconds": 33
   },
   {
    "id": "accept-1823",
@@ -23358,6 +23527,76 @@
    "seconds": 351
   },
   {
+   "id": "travel-fly-77-23",
+   "type": "travel",
+   "mapId": 1454,
+   "x": 45.3,
+   "y": 63.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Camp Taurajo, The Barrens",
+   "node": "Orgrimmar, Durotar",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 188
+  },
+  {
+   "id": "turnin-1507",
+   "type": "turnin",
+   "mapId": 1454,
+   "x": 47.1,
+   "y": 46.4,
+   "confidence": "unverified",
+   "questId": 1507,
+   "npcId": 5909,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Devourer of Souls",
+   "npcName": "Cazul",
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 33
+  },
+  {
+   "id": "accept-1508",
+   "type": "accept",
+   "mapId": 1454,
+   "x": 47.1,
+   "y": 46.4,
+   "confidence": "unverified",
+   "questId": 1508,
+   "npcId": 5909,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Blind Cazul",
+   "npcName": "Cazul",
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 10
+  },
+  {
+   "id": "travel-fly-23-80",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 63.1,
+   "y": 37.1,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Orgrimmar, Durotar",
+   "node": "Ratchet, The Barrens",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 20,
+   "seconds": 118
+  },
+  {
    "id": "accept-1530",
    "type": "accept",
    "mapId": 1413,
@@ -23373,7 +23612,7 @@
    "npcName": "Islen Waterseer",
    "zoneName": "The Barrens",
    "level": 20,
-   "seconds": 351
+   "seconds": 86
   },
   {
    "id": "accept-1824",
@@ -23770,6 +24009,76 @@
    "seconds": 185
   },
   {
+   "id": "travel-fly-77-23-2",
+   "type": "travel",
+   "mapId": 1454,
+   "x": 45.3,
+   "y": 63.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Camp Taurajo, The Barrens",
+   "node": "Orgrimmar, Durotar",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 188
+  },
+  {
+   "id": "turnin-1508",
+   "type": "turnin",
+   "mapId": 1454,
+   "x": 37,
+   "y": 59.4,
+   "confidence": "unverified",
+   "questId": 1508,
+   "npcId": 5910,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Blind Cazul",
+   "npcName": "Zankaja",
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 28
+  },
+  {
+   "id": "accept-1509",
+   "type": "accept",
+   "mapId": 1454,
+   "x": 37,
+   "y": 59.4,
+   "confidence": "unverified",
+   "questId": 1509,
+   "npcId": 5910,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "News of Dogran",
+   "npcName": "Zankaja",
+   "zoneName": "Orgrimmar",
+   "level": 20,
+   "seconds": 10
+  },
+  {
+   "id": "travel-fly-23-77-2",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 44.5,
+   "y": 59.1,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Orgrimmar, Durotar",
+   "node": "Camp Taurajo, The Barrens",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 20,
+   "seconds": 188
+  },
+  {
    "id": "accept-1825",
    "type": "accept",
    "mapId": 1413,
@@ -23785,7 +24094,25 @@
    "npcName": "Ruga Ragetotem",
    "zoneName": "The Barrens",
    "level": 20,
-   "seconds": 10
+   "seconds": 14
+  },
+  {
+   "id": "turnin-1509",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 51.9,
+   "y": 30.3,
+   "confidence": "unverified",
+   "questId": 1509,
+   "npcId": 3464,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "News of Dogran",
+   "npcName": "Gazrog",
+   "zoneName": "The Barrens",
+   "level": 20,
+   "seconds": 310
   },
   {
    "id": "turnin-1825",
@@ -23803,7 +24130,25 @@
    "npcName": "Thun'grim Firegaze",
    "zoneName": "The Barrens",
    "level": 20,
-   "seconds": 344
+   "seconds": 87
+  },
+  {
+   "id": "accept-1510",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 51.9,
+   "y": 30.3,
+   "confidence": "unverified",
+   "questId": 1510,
+   "npcId": 3464,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "News of Dogran",
+   "npcName": "Gazrog",
+   "zoneName": "The Barrens",
+   "level": 20,
+   "seconds": 87
   },
   {
    "id": "travel-1413-1440",
@@ -23850,21 +24195,52 @@
    "seconds": 14
   },
   {
-   "id": "travel-fly-61-25",
+   "id": "travel-1440-1442-2",
+   "type": "travel",
+   "mapId": 1442,
+   "x": 73.2,
+   "y": 95.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 20,
+   "seconds": 60
+  },
+  {
+   "id": "turnin-1510",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 73.2,
+   "y": 95.1,
+   "confidence": "unverified",
+   "questId": 1510,
+   "npcId": 4197,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "News of Dogran",
+   "npcName": "Ken'zigla",
+   "zoneName": "Stonetalon Mountains",
+   "level": 20,
+   "seconds": 10
+  },
+  {
+   "id": "travel-1442-1413-4",
    "type": "travel",
    "mapId": 1413,
-   "x": 51.5,
-   "y": 30.4,
+   "x": 35.3,
+   "y": 27.9,
    "confidence": "unverified",
-   "mode": "flight",
+   "mode": "walk",
    "radius": 5,
-   "fromNode": "Splintertree Post, Ashenvale",
-   "node": "Crossroads, The Barrens",
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
    "level": 20,
-   "seconds": 122
+   "seconds": 60
   },
   {
    "id": "grind-1413-21",
@@ -23878,7 +24254,7 @@
    "npcName": null,
    "zoneName": "The Barrens",
    "level": 20,
-   "seconds": 4236
+   "seconds": 4000
   },
   {
    "id": "accept-1068",
@@ -24147,7 +24523,7 @@
    ]
   },
   {
-   "id": "travel-1442-1413-4",
+   "id": "travel-1442-1413-5",
    "type": "travel",
    "mapId": 1413,
    "x": 35.3,
@@ -24717,6 +25093,294 @@
    "seconds": 302
   },
   {
+   "id": "grind-1413-24",
+   "type": "grind",
+   "mapId": 1413,
+   "x": 45.9,
+   "y": 77,
+   "confidence": "unverified",
+   "untilLevel": 24,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 23,
+   "seconds": 5046
+  },
+  {
+   "id": "accept-846",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 45.9,
+   "y": 77,
+   "confidence": "unverified",
+   "questId": 846,
+   "npcId": 3341,
+   "questName": "Revenge of Gann",
+   "npcName": "Gann Stonespire",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 10
+  },
+  {
+   "id": "complete-846",
+   "type": "complete",
+   "mapId": 1413,
+   "x": 49.12,
+   "y": 84.19,
+   "confidence": "unverified",
+   "questId": 846,
+   "questName": "Revenge of Gann",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 684,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 5017,
+     "name": "Nitroglycerin",
+     "sources": [
+      "Bael'dun Officer",
+      "Bael'dun Soldier",
+      "Bael'dun Rifleman"
+     ],
+     "icon": 134719
+    },
+    {
+     "kind": "collect",
+     "id": 5018,
+     "name": "Wood Pulp",
+     "sources": [
+      "Bael'dun Officer",
+      "Bael'dun Soldier",
+      "Bael'dun Rifleman"
+     ],
+     "icon": 135437
+    },
+    {
+     "kind": "collect",
+     "id": 5019,
+     "name": "Sodium Nitrate",
+     "sources": [
+      "Bael'dun Officer",
+      "Bael'dun Soldier",
+      "Bael'dun Rifleman"
+     ],
+     "icon": 133587
+    }
+   ],
+   "area": [
+    [
+     48.3,
+     84.2
+    ],
+    [
+     48.5,
+     83.8
+    ],
+    [
+     48.5,
+     84.6
+    ],
+    [
+     48.6,
+     83.9
+    ],
+    [
+     48.6,
+     84.1
+    ],
+    [
+     48.6,
+     84.2
+    ],
+    [
+     48.7,
+     84.8
+    ],
+    [
+     48.8,
+     84.3
+    ],
+    [
+     48.9,
+     84
+    ],
+    [
+     48.9,
+     84.3
+    ],
+    [
+     48.9,
+     84.5
+    ],
+    [
+     48.9,
+     84.9
+    ],
+    [
+     49,
+     84.3
+    ],
+    [
+     49.1,
+     83.9
+    ],
+    [
+     49.1,
+     84.7
+    ],
+    [
+     49.2,
+     83.8
+    ],
+    [
+     49.2,
+     84.1
+    ],
+    [
+     49.2,
+     84.3
+    ],
+    [
+     49.3,
+     84.1
+    ],
+    [
+     49.3,
+     84.2
+    ],
+    [
+     49.3,
+     84.4
+    ],
+    [
+     49.3,
+     84.5
+    ],
+    [
+     49.4,
+     83.7
+    ],
+    [
+     49.4,
+     83.9
+    ],
+    [
+     49.4,
+     84.1
+    ],
+    [
+     49.4,
+     84.4
+    ],
+    [
+     49.5,
+     84
+    ],
+    [
+     49.5,
+     84.2
+    ],
+    [
+     49.5,
+     84.3
+    ],
+    [
+     49.6,
+     83.6
+    ],
+    [
+     49.7,
+     83.8
+    ],
+    [
+     49.7,
+     83.9
+    ],
+    [
+     49.7,
+     84
+    ],
+    [
+     49.8,
+     84.1
+    ]
+   ]
+  },
+  {
+   "id": "turnin-846",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 45.9,
+   "y": 77,
+   "confidence": "unverified",
+   "questId": 846,
+   "npcId": 3341,
+   "questName": "Revenge of Gann",
+   "npcName": "Gann Stonespire",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 94
+  },
+  {
+   "id": "accept-849",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 45.9,
+   "y": 77,
+   "confidence": "unverified",
+   "questId": 849,
+   "npcId": 3341,
+   "questName": "Revenge of Gann",
+   "npcName": "Gann Stonespire",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 10
+  },
+  {
+   "id": "complete-849",
+   "type": "complete",
+   "mapId": 1413,
+   "x": 47.0,
+   "y": 85.6,
+   "confidence": "unverified",
+   "questId": 849,
+   "questName": "Revenge of Gann",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 85,
+   "objectives": [
+    {
+     "kind": "use",
+     "id": 3644,
+     "name": "Bael Modan Flying Machine"
+    }
+   ],
+   "area": [
+    [
+     47,
+     85.6
+    ]
+   ]
+  },
+  {
+   "id": "turnin-849",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 45.9,
+   "y": 77,
+   "confidence": "unverified",
+   "questId": 849,
+   "npcId": 3341,
+   "questName": "Revenge of Gann",
+   "npcName": "Gann Stonespire",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 95
+  },
+  {
    "id": "travel-1413-1442-4",
    "type": "travel",
    "mapId": 1442,
@@ -24728,7 +25392,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 60
   },
   {
@@ -24743,7 +25407,7 @@
    "questName": "Protect Kaya",
    "npcName": "Kaya Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -24758,7 +25422,7 @@
    "questName": "Protect Kaya",
    "npcName": "Makaba Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 113
   },
   {
@@ -24773,7 +25437,7 @@
    "questName": "Kaya's Alive",
    "npcName": "Makaba Flathoof",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -24788,7 +25452,7 @@
    "questName": "Kaya's Alive",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 334
   },
   {
@@ -24802,7 +25466,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 27
   },
   {
@@ -24817,7 +25481,7 @@
    "questName": "Blood Feeders",
    "npcName": "Xen'Zilla",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 254
   },
   {
@@ -24832,8 +25496,41 @@
    "questName": "Report to Kadrak",
    "npcName": "Darn Talongrip",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 24
+  },
+  {
+   "id": "accept-1058",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 74.5,
+   "y": 97.9,
+   "confidence": "unverified",
+   "questId": 1058,
+   "npcId": 3995,
+   "questName": "Jin'Zil's Forest Magic",
+   "npcName": "Witch Doctor Jin'Zil",
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 27
+  },
+  {
+   "id": "accept-1511",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 73.2,
+   "y": 95.1,
+   "confidence": "unverified",
+   "questId": 1511,
+   "npcId": 4197,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Ken'zigla's Draught",
+   "npcName": "Ken'zigla",
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 26
   },
   {
    "id": "complete-6461",
@@ -24846,7 +25543,7 @@
    "questName": "Blood Feeders",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 601,
    "objectives": [
     {
@@ -25176,6 +25873,323 @@
    ]
   },
   {
+   "id": "complete-1058",
+   "type": "complete",
+   "mapId": 1442,
+   "x": 38.35,
+   "y": 16.48,
+   "confidence": "unverified",
+   "questId": 1058,
+   "questName": "Jin'Zil's Forest Magic",
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 1615,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 5582,
+     "name": "Stonetalon Sap",
+     "sources": [
+      "Sap Beast"
+     ],
+     "icon": 134437
+    },
+    {
+     "kind": "collect",
+     "id": 5583,
+     "name": "Fey Dragon Scale",
+     "sources": [
+      "Fey Dragon",
+      "Wily Fey Dragon",
+      "Nal'taszar"
+     ],
+     "icon": 134303
+    },
+    {
+     "kind": "collect",
+     "id": 5584,
+     "name": "Twilight Whisker",
+     "sources": [
+      "Twilight Runner"
+     ],
+     "icon": 134324
+    },
+    {
+     "kind": "collect",
+     "id": 5585,
+     "name": "Courser Eye",
+     "sources": [
+      "Antlered Courser",
+      "Great Courser"
+     ],
+     "icon": 133884
+    }
+   ],
+   "area": [
+    [
+     25.6,
+     11.5
+    ],
+    [
+     30.9,
+     9.6
+    ],
+    [
+     31,
+     11.5
+    ],
+    [
+     31.6,
+     12.7
+    ],
+    [
+     32,
+     10.2
+    ],
+    [
+     32,
+     16.6
+    ],
+    [
+     32.1,
+     11.5
+    ],
+    [
+     32.2,
+     8.9
+    ],
+    [
+     32.6,
+     11.2
+    ],
+    [
+     33,
+     8
+    ],
+    [
+     33.1,
+     13.2
+    ],
+    [
+     33.2,
+     17.2
+    ],
+    [
+     33.3,
+     9.9
+    ],
+    [
+     33.4,
+     12.3
+    ],
+    [
+     33.4,
+     17.3
+    ],
+    [
+     33.7,
+     16.4
+    ],
+    [
+     33.7,
+     17.7
+    ],
+    [
+     34.1,
+     19.6
+    ],
+    [
+     34.3,
+     8
+    ],
+    [
+     34.5,
+     9.1
+    ],
+    [
+     34.5,
+     10.1
+    ],
+    [
+     34.7,
+     16.4
+    ],
+    [
+     34.7,
+     19
+    ],
+    [
+     34.8,
+     17.4
+    ],
+    [
+     35.7,
+     18.3
+    ],
+    [
+     35.7,
+     20.1
+    ],
+    [
+     36.3,
+     16.4
+    ],
+    [
+     37.1,
+     19.9
+    ],
+    [
+     37.4,
+     10
+    ],
+    [
+     37.4,
+     20.4
+    ],
+    [
+     37.4,
+     20.9
+    ],
+    [
+     37.5,
+     16.7
+    ],
+    [
+     38.1,
+     18.9
+    ],
+    [
+     38.2,
+     15.4
+    ],
+    [
+     38.8,
+     8
+    ],
+    [
+     38.8,
+     10.3
+    ],
+    [
+     39,
+     12.1
+    ],
+    [
+     39.2,
+     5.9
+    ],
+    [
+     39.5,
+     7.4
+    ],
+    [
+     39.6,
+     9.4
+    ],
+    [
+     39.6,
+     17.7
+    ],
+    [
+     39.8,
+     13.8
+    ],
+    [
+     39.9,
+     9.9
+    ],
+    [
+     40,
+     12.2
+    ],
+    [
+     40,
+     12.5
+    ],
+    [
+     40.1,
+     8.3
+    ],
+    [
+     40.1,
+     11
+    ],
+    [
+     40.1,
+     15.3
+    ],
+    [
+     40.7,
+     6
+    ],
+    [
+     41.1,
+     11.4
+    ],
+    [
+     44.3,
+     23.6
+    ],
+    [
+     44.4,
+     25.4
+    ],
+    [
+     44.9,
+     22.6
+    ],
+    [
+     45,
+     21.3
+    ],
+    [
+     45.2,
+     23.4
+    ],
+    [
+     45.3,
+     23.8
+    ],
+    [
+     45.4,
+     20.1
+    ],
+    [
+     46.2,
+     21.4
+    ],
+    [
+     46.6,
+     27.1
+    ],
+    [
+     46.8,
+     27.6
+    ],
+    [
+     46.8,
+     29.5
+    ],
+    [
+     46.8,
+     38.2
+    ],
+    [
+     47.1,
+     31.6
+    ],
+    [
+     50.4,
+     36.6
+    ],
+    [
+     51.8,
+     35.2
+    ]
+   ]
+  },
+  {
    "id": "turnin-6461",
    "type": "turnin",
    "mapId": 1442,
@@ -25187,8 +26201,125 @@
    "questName": "Blood Feeders",
    "npcName": "Xen'Zilla",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 177
+   "level": 24,
+   "seconds": 441
+  },
+  {
+   "id": "turnin-1058",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 74.5,
+   "y": 97.9,
+   "confidence": "unverified",
+   "questId": 1058,
+   "npcId": 3995,
+   "questName": "Jin'Zil's Forest Magic",
+   "npcName": "Witch Doctor Jin'Zil",
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 37
+  },
+  {
+   "id": "travel-1442-1413-6",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 44.6,
+   "y": 59.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 60
+  },
+  {
+   "id": "turnin-1511",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 44.6,
+   "y": 59.3,
+   "confidence": "unverified",
+   "questId": 1511,
+   "npcId": 5911,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Ken'zigla's Draught",
+   "npcName": "Grunt Logmar",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 10
+  },
+  {
+   "id": "accept-1515",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 44.6,
+   "y": 59.3,
+   "confidence": "unverified",
+   "questId": 1515,
+   "npcId": 5911,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Dogran's Captivity",
+   "npcName": "Grunt Logmar",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 10
+  },
+  {
+   "id": "turnin-1515",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 43.3,
+   "y": 47.9,
+   "confidence": "unverified",
+   "questId": 1515,
+   "npcId": 5908,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Dogran's Captivity",
+   "npcName": "Grunt Dogran",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 122
+  },
+  {
+   "id": "accept-1512",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 43.3,
+   "y": 47.9,
+   "confidence": "unverified",
+   "questId": 1512,
+   "npcId": 5908,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Love's Gift",
+   "npcName": "Grunt Dogran",
+   "zoneName": "The Barrens",
+   "level": 24,
+   "seconds": 10
+  },
+  {
+   "id": "travel-1413-1442-5",
+   "type": "travel",
+   "mapId": 1442,
+   "x": 71.9,
+   "y": 60,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 60
   },
   {
    "id": "accept-1090",
@@ -25202,8 +26333,8 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 173
+   "level": 24,
+   "seconds": 10
   },
   {
    "id": "turnin-1090",
@@ -25217,7 +26348,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -25232,7 +26363,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Piznik",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -25247,7 +26378,7 @@
    "questName": "Gerenzo's Orders",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 101
   },
   {
@@ -25262,7 +26393,7 @@
    "questName": "Gerenzo Wrenchwhistle",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 0
   },
   {
@@ -25277,7 +26408,7 @@
    "questName": "Super Reaper 6000",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -25291,7 +26422,7 @@
    "questName": "Super Reaper 6000",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 261,
    "objectives": [
     {
@@ -25415,7 +26546,7 @@
    "questName": "Super Reaper 6000",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 96
   },
   {
@@ -25430,7 +26561,7 @@
    "questName": "Further Instructions",
    "npcName": "Ziz Fizziks",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 10
   },
   {
@@ -25445,7 +26576,7 @@
    "questName": "Earthen Arise",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 0
   },
   {
@@ -25460,7 +26591,7 @@
    "questName": "The Den",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 0
   },
   {
@@ -25475,7 +26606,7 @@
    "questName": "Boulderslide Ravine",
    "npcName": "Mor'rogal",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 93
   },
   {
@@ -25490,7 +26621,7 @@
    "questName": "Cycle of Rebirth",
    "npcName": "Tammra Windfield",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 36
   },
   {
@@ -25505,8 +26636,23 @@
    "questName": "Trouble in the Deeps",
    "npcName": "Tsunaman",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 37
+  },
+  {
+   "id": "accept-6282",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 47.2,
+   "y": 61.2,
+   "confidence": "unverified",
+   "questId": 6282,
+   "npcId": 11860,
+   "questName": "Harpies Threaten",
+   "npcName": "Maggran Earthbinder",
+   "zoneName": "Stonetalon Mountains",
+   "level": 24,
+   "seconds": 24
   },
   {
    "id": "accept-6393",
@@ -25520,8 +26666,8 @@
    "questName": "Elemental War",
    "npcName": "Tsunaman",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 10
+   "level": 24,
+   "seconds": 24
   },
   {
    "id": "accept-1087",
@@ -25535,7 +26681,7 @@
    "questName": "Cenarius' Legacy",
    "npcName": "Braelyn Firehand",
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 31
   },
   {
@@ -25549,7 +26695,7 @@
    "questName": "Elemental War",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 23,
+   "level": 24,
    "seconds": 409,
    "objectives": [
     {
@@ -25648,779 +26794,6 @@
    ]
   },
   {
-   "id": "complete-6301",
-   "type": "complete",
-   "mapId": 1442,
-   "x": 48.77,
-   "y": 40.67,
-   "confidence": "unverified",
-   "questId": 6301,
-   "questName": "Cycle of Rebirth",
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 148,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 16205,
-     "name": "Gaea Seed",
-     "sources": [
-      "Gaea Seed"
-     ],
-     "icon": 133944
-    }
-   ],
-   "area": [
-    [
-     45.8,
-     43.1
-    ],
-    [
-     46,
-     40.7
-    ],
-    [
-     46.3,
-     39.6
-    ],
-    [
-     46.7,
-     37.5
-    ],
-    [
-     48,
-     39.8
-    ],
-    [
-     48,
-     44.3
-    ],
-    [
-     48.4,
-     35.9
-    ],
-    [
-     48.9,
-     43.9
-    ],
-    [
-     49.7,
-     43.3
-    ],
-    [
-     49.7,
-     45.1
-    ],
-    [
-     50.2,
-     39.2
-    ],
-    [
-     50.4,
-     37.3
-    ],
-    [
-     50.6,
-     36.6
-    ],
-    [
-     51,
-     41.1
-    ],
-    [
-     51.8,
-     42.6
-    ]
-   ]
-  },
-  {
-   "id": "complete-1087",
-   "type": "complete",
-   "mapId": 1442,
-   "x": 36.34,
-   "y": 13.04,
-   "confidence": "unverified",
-   "questId": 1087,
-   "questName": "Cenarius' Legacy",
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 455,
-   "objectives": [
-    {
-     "kind": "kill",
-     "id": 4051,
-     "name": "Cenarion Botanist"
-    },
-    {
-     "kind": "kill",
-     "id": 4053,
-     "name": "Daughter of Cenarius"
-    },
-    {
-     "kind": "kill",
-     "id": 4057,
-     "name": "Son of Cenarius"
-    }
-   ],
-   "area": [
-    [
-     34.7,
-     12.3
-    ],
-    [
-     35.3,
-     11
-    ],
-    [
-     35.3,
-     12.1
-    ],
-    [
-     35.4,
-     13.3
-    ],
-    [
-     35.4,
-     15.3
-    ],
-    [
-     35.8,
-     12.5
-    ],
-    [
-     35.9,
-     10.5
-    ],
-    [
-     36.1,
-     14.4
-    ],
-    [
-     36.3,
-     11.9
-    ],
-    [
-     36.5,
-     13.1
-    ],
-    [
-     36.7,
-     15.6
-    ],
-    [
-     37,
-     15
-    ],
-    [
-     37.2,
-     12.4
-    ],
-    [
-     37.5,
-     13.1
-    ],
-    [
-     38.2,
-     11.4
-    ],
-    [
-     38.3,
-     13.3
-    ]
-   ]
-  },
-  {
-   "id": "complete-6421",
-   "type": "complete",
-   "mapId": 1442,
-   "x": 59.39,
-   "y": 91.45,
-   "confidence": "unverified",
-   "questId": 6421,
-   "questName": "Boulderslide Ravine",
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 399,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 16581,
-     "name": "Resonite Crystal",
-     "sources": [
-      "Resonite Crystal"
-     ],
-     "icon": 134076
-    }
-   ],
-   "area": [
-    [
-     57.2,
-     90
-    ],
-    [
-     57.3,
-     89.2
-    ],
-    [
-     57.4,
-     89.7
-    ],
-    [
-     57.9,
-     91.2
-    ],
-    [
-     58.2,
-     89.8
-    ],
-    [
-     58.2,
-     93.3
-    ],
-    [
-     58.5,
-     92.7
-    ],
-    [
-     58.6,
-     91.2
-    ],
-    [
-     58.6,
-     92.1
-    ],
-    [
-     58.7,
-     90.7
-    ],
-    [
-     58.7,
-     91.5
-    ],
-    [
-     58.7,
-     93.4
-    ],
-    [
-     58.7,
-     93.9
-    ],
-    [
-     58.9,
-     90.8
-    ],
-    [
-     59.1,
-     92.6
-    ],
-    [
-     59.2,
-     89.6
-    ],
-    [
-     59.2,
-     89.9
-    ],
-    [
-     59.4,
-     90.5
-    ],
-    [
-     59.4,
-     91.6
-    ],
-    [
-     59.4,
-     91.8
-    ],
-    [
-     59.4,
-     92.8
-    ],
-    [
-     59.6,
-     90.7
-    ],
-    [
-     59.6,
-     90.9
-    ],
-    [
-     59.6,
-     91.5
-    ],
-    [
-     59.6,
-     92
-    ],
-    [
-     59.6,
-     92.3
-    ],
-    [
-     59.7,
-     92.9
-    ],
-    [
-     60,
-     91.9
-    ],
-    [
-     60,
-     92.7
-    ],
-    [
-     60.1,
-     90
-    ],
-    [
-     60.1,
-     91.2
-    ],
-    [
-     60.1,
-     91.6
-    ],
-    [
-     60.2,
-     92.4
-    ],
-    [
-     60.3,
-     90.6
-    ],
-    [
-     60.7,
-     90.9
-    ],
-    [
-     60.9,
-     91.5
-    ],
-    [
-     60.9,
-     92.5
-    ],
-    [
-     61.2,
-     92.3
-    ],
-    [
-     61.4,
-     90.8
-    ],
-    [
-     61.4,
-     91.1
-    ]
-   ]
-  },
-  {
-   "id": "turnin-6421",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 47.2,
-   "y": 64,
-   "confidence": "unverified",
-   "questId": 6421,
-   "npcId": 11861,
-   "questName": "Boulderslide Ravine",
-   "npcName": "Mor'rogal",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 163
-  },
-  {
-   "id": "turnin-6301",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 47.5,
-   "y": 58.4,
-   "confidence": "unverified",
-   "questId": 6301,
-   "npcId": 11864,
-   "questName": "Cycle of Rebirth",
-   "npcName": "Tammra Windfield",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 36
-  },
-  {
-   "id": "turnin-6393",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 47.4,
-   "y": 64.3,
-   "confidence": "unverified",
-   "questId": 6393,
-   "npcId": 11862,
-   "questName": "Elemental War",
-   "npcName": "Tsunaman",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 37
-  },
-  {
-   "id": "turnin-1087",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 45.9,
-   "y": 60.4,
-   "confidence": "unverified",
-   "questId": 1087,
-   "npcId": 4198,
-   "questName": "Cenarius' Legacy",
-   "npcName": "Braelyn Firehand",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 31
-  },
-  {
-   "id": "accept-6381",
-   "type": "accept",
-   "mapId": 1442,
-   "x": 47.5,
-   "y": 58.4,
-   "confidence": "unverified",
-   "questId": 6381,
-   "npcId": 11864,
-   "questName": "New Life",
-   "npcName": "Tammra Windfield",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 25
-  },
-  {
-   "id": "complete-6381",
-   "type": "complete",
-   "mapId": 1442,
-   "x": 32.89,
-   "y": 68.06,
-   "confidence": "unverified",
-   "questId": 6381,
-   "questName": "New Life",
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 111,
-   "objectives": [
-    {
-     "kind": "use",
-     "id": 177929,
-     "name": "Gaea Dirt Mound"
-    }
-   ],
-   "area": [
-    [
-     27.8,
-     64.7
-    ],
-    [
-     29.1,
-     63.7
-    ],
-    [
-     29.1,
-     68.9
-    ],
-    [
-     29.6,
-     71.3
-    ],
-    [
-     30.1,
-     62.5
-    ],
-    [
-     30.1,
-     68.4
-    ],
-    [
-     30.2,
-     67.6
-    ],
-    [
-     30.4,
-     73.8
-    ],
-    [
-     30.5,
-     70.8
-    ],
-    [
-     30.8,
-     66.6
-    ],
-    [
-     31.3,
-     61.4
-    ],
-    [
-     31.3,
-     72.4
-    ],
-    [
-     31.4,
-     68.5
-    ],
-    [
-     31.9,
-     64.2
-    ],
-    [
-     31.9,
-     70.6
-    ],
-    [
-     32.2,
-     68.2
-    ],
-    [
-     32.3,
-     70.1
-    ],
-    [
-     33.6,
-     69
-    ],
-    [
-     33.7,
-     67
-    ],
-    [
-     33.7,
-     70.8
-    ],
-    [
-     33.7,
-     73
-    ],
-    [
-     33.9,
-     61.9
-    ],
-    [
-     34.2,
-     61.3
-    ],
-    [
-     34.5,
-     69.1
-    ],
-    [
-     34.7,
-     72.3
-    ],
-    [
-     35.2,
-     63.7
-    ],
-    [
-     35.8,
-     66.1
-    ],
-    [
-     35.9,
-     70
-    ],
-    [
-     35.9,
-     70.3
-    ],
-    [
-     36,
-     65.2
-    ],
-    [
-     36.1,
-     68
-    ],
-    [
-     36.6,
-     74.4
-    ],
-    [
-     36.9,
-     72
-    ],
-    [
-     37.8,
-     66.2
-    ]
-   ]
-  },
-  {
-   "id": "turnin-6381",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 47.5,
-   "y": 58.4,
-   "confidence": "unverified",
-   "questId": 6381,
-   "npcId": 11864,
-   "questName": "New Life",
-   "npcName": "Tammra Windfield",
-   "zoneName": "Stonetalon Mountains",
-   "level": 23,
-   "seconds": 121
-  },
-  {
-   "id": "travel-1442-1440",
-   "type": "travel",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 23,
-   "seconds": 60
-  },
-  {
-   "id": "turnin-6542",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "questId": 6542,
-   "npcId": 8582,
-   "questName": "Report to Kadrak",
-   "npcName": "Kadrak",
-   "zoneName": "Ashenvale",
-   "level": 23,
-   "seconds": 10
-  },
-  {
-   "id": "turnin-6562",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 11.6,
-   "y": 34.3,
-   "confidence": "unverified",
-   "questId": 6562,
-   "npcId": 12736,
-   "questName": "Trouble in the Deeps",
-   "npcName": "Je'neu Sancrea",
-   "zoneName": "Ashenvale",
-   "level": 24,
-   "seconds": 568
-  },
-  {
-   "id": "flightpath-58",
-   "type": "flightpath",
-   "mapId": 1440,
-   "x": 12.2,
-   "y": 33.8,
-   "confidence": "unverified",
-   "node": "Zoram'gar Outpost, Ashenvale",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 24,
-   "seconds": 16
-  },
-  {
-   "id": "travel-fly-58-80",
-   "type": "travel",
-   "mapId": 1413,
-   "x": 63.1,
-   "y": 37.1,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Zoram'gar Outpost, Ashenvale",
-   "node": "Ratchet, The Barrens",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "The Barrens",
-   "level": 24,
-   "seconds": 243
-  },
-  {
-   "id": "turnin-1094",
-   "type": "turnin",
-   "mapId": 1413,
-   "x": 63,
-   "y": 37.2,
-   "confidence": "unverified",
-   "questId": 1094,
-   "npcId": 3442,
-   "questName": "Further Instructions",
-   "npcName": "Sputtervalve",
-   "zoneName": "The Barrens",
-   "level": 24,
-   "seconds": 12
-  },
-  {
-   "id": "travel-fly-80-25",
-   "type": "travel",
-   "mapId": 1413,
-   "x": 51.5,
-   "y": 30.4,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Ratchet, The Barrens",
-   "node": "Crossroads, The Barrens",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "The Barrens",
-   "level": 24,
-   "seconds": 72
-  },
-  {
-   "id": "travel-1413-1442-5",
-   "type": "travel",
-   "mapId": 1442,
-   "x": 74.5,
-   "y": 97.9,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 60
-  },
-  {
-   "id": "accept-1058",
-   "type": "accept",
-   "mapId": 1442,
-   "x": 74.5,
-   "y": 97.9,
-   "confidence": "unverified",
-   "questId": 1058,
-   "npcId": 3995,
-   "questName": "Jin'Zil's Forest Magic",
-   "npcName": "Witch Doctor Jin'Zil",
-   "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 10
-  },
-  {
-   "id": "accept-6282",
-   "type": "accept",
-   "mapId": 1442,
-   "x": 47.2,
-   "y": 61.2,
-   "confidence": "unverified",
-   "questId": 6282,
-   "npcId": 11860,
-   "questName": "Harpies Threaten",
-   "npcName": "Maggran Earthbinder",
-   "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 266
-  },
-  {
    "id": "complete-6282",
    "type": "complete",
    "mapId": 1442,
@@ -26432,7 +26805,7 @@
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
    "level": 24,
-   "seconds": 808,
+   "seconds": 716,
    "objectives": [
     {
      "kind": "kill",
@@ -26783,336 +27156,405 @@
    ]
   },
   {
-   "id": "complete-1058",
+   "id": "complete-6301",
    "type": "complete",
    "mapId": 1442,
-   "x": 38.35,
-   "y": 16.48,
+   "x": 48.77,
+   "y": 40.67,
    "confidence": "unverified",
-   "questId": 1058,
-   "questName": "Jin'Zil's Forest Magic",
+   "questId": 6301,
+   "questName": "Cycle of Rebirth",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 1581,
+   "level": 25,
+   "seconds": 164,
    "objectives": [
     {
      "kind": "collect",
-     "id": 5582,
-     "name": "Stonetalon Sap",
+     "id": 16205,
+     "name": "Gaea Seed",
      "sources": [
-      "Sap Beast"
+      "Gaea Seed"
      ],
-     "icon": 134437
-    },
-    {
-     "kind": "collect",
-     "id": 5583,
-     "name": "Fey Dragon Scale",
-     "sources": [
-      "Fey Dragon",
-      "Wily Fey Dragon",
-      "Nal'taszar"
-     ],
-     "icon": 134303
-    },
-    {
-     "kind": "collect",
-     "id": 5584,
-     "name": "Twilight Whisker",
-     "sources": [
-      "Twilight Runner"
-     ],
-     "icon": 134324
-    },
-    {
-     "kind": "collect",
-     "id": 5585,
-     "name": "Courser Eye",
-     "sources": [
-      "Antlered Courser",
-      "Great Courser"
-     ],
-     "icon": 133884
+     "icon": 133944
     }
    ],
    "area": [
     [
-     25.6,
-     11.5
+     45.8,
+     43.1
     ],
     [
-     30.9,
-     9.6
+     46,
+     40.7
     ],
     [
-     31,
-     11.5
+     46.3,
+     39.6
     ],
     [
-     31.6,
-     12.7
+     46.7,
+     37.5
     ],
     [
-     32,
-     10.2
+     48,
+     39.8
     ],
     [
-     32,
-     16.6
+     48,
+     44.3
     ],
     [
-     32.1,
-     11.5
+     48.4,
+     35.9
     ],
     [
-     32.2,
-     8.9
+     48.9,
+     43.9
     ],
     [
-     32.6,
-     11.2
+     49.7,
+     43.3
     ],
     [
-     33,
-     8
+     49.7,
+     45.1
     ],
     [
-     33.1,
-     13.2
-    ],
-    [
-     33.2,
-     17.2
-    ],
-    [
-     33.3,
-     9.9
-    ],
-    [
-     33.4,
-     12.3
-    ],
-    [
-     33.4,
-     17.3
-    ],
-    [
-     33.7,
-     16.4
-    ],
-    [
-     33.7,
-     17.7
-    ],
-    [
-     34.1,
-     19.6
-    ],
-    [
-     34.3,
-     8
-    ],
-    [
-     34.5,
-     9.1
-    ],
-    [
-     34.5,
-     10.1
-    ],
-    [
-     34.7,
-     16.4
-    ],
-    [
-     34.7,
-     19
-    ],
-    [
-     34.8,
-     17.4
-    ],
-    [
-     35.7,
-     18.3
-    ],
-    [
-     35.7,
-     20.1
-    ],
-    [
-     36.3,
-     16.4
-    ],
-    [
-     37.1,
-     19.9
-    ],
-    [
-     37.4,
-     10
-    ],
-    [
-     37.4,
-     20.4
-    ],
-    [
-     37.4,
-     20.9
-    ],
-    [
-     37.5,
-     16.7
-    ],
-    [
-     38.1,
-     18.9
-    ],
-    [
-     38.2,
-     15.4
-    ],
-    [
-     38.8,
-     8
-    ],
-    [
-     38.8,
-     10.3
-    ],
-    [
-     39,
-     12.1
-    ],
-    [
-     39.2,
-     5.9
-    ],
-    [
-     39.5,
-     7.4
-    ],
-    [
-     39.6,
-     9.4
-    ],
-    [
-     39.6,
-     17.7
-    ],
-    [
-     39.8,
-     13.8
-    ],
-    [
-     39.9,
-     9.9
-    ],
-    [
-     40,
-     12.2
-    ],
-    [
-     40,
-     12.5
-    ],
-    [
-     40.1,
-     8.3
-    ],
-    [
-     40.1,
-     11
-    ],
-    [
-     40.1,
-     15.3
-    ],
-    [
-     40.7,
-     6
-    ],
-    [
-     41.1,
-     11.4
-    ],
-    [
-     44.3,
-     23.6
-    ],
-    [
-     44.4,
-     25.4
-    ],
-    [
-     44.9,
-     22.6
-    ],
-    [
-     45,
-     21.3
-    ],
-    [
-     45.2,
-     23.4
-    ],
-    [
-     45.3,
-     23.8
-    ],
-    [
-     45.4,
-     20.1
-    ],
-    [
-     46.2,
-     21.4
-    ],
-    [
-     46.6,
-     27.1
-    ],
-    [
-     46.8,
-     27.6
-    ],
-    [
-     46.8,
-     29.5
-    ],
-    [
-     46.8,
-     38.2
-    ],
-    [
-     47.1,
-     31.6
+     50.2,
+     39.2
     ],
     [
      50.4,
+     37.3
+    ],
+    [
+     50.6,
      36.6
     ],
     [
+     51,
+     41.1
+    ],
+    [
      51.8,
-     35.2
+     42.6
     ]
    ]
   },
   {
-   "id": "turnin-1058",
+   "id": "complete-1087",
+   "type": "complete",
+   "mapId": 1442,
+   "x": 36.34,
+   "y": 13.04,
+   "confidence": "unverified",
+   "questId": 1087,
+   "questName": "Cenarius' Legacy",
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 455,
+   "objectives": [
+    {
+     "kind": "kill",
+     "id": 4051,
+     "name": "Cenarion Botanist"
+    },
+    {
+     "kind": "kill",
+     "id": 4053,
+     "name": "Daughter of Cenarius"
+    },
+    {
+     "kind": "kill",
+     "id": 4057,
+     "name": "Son of Cenarius"
+    }
+   ],
+   "area": [
+    [
+     34.7,
+     12.3
+    ],
+    [
+     35.3,
+     11
+    ],
+    [
+     35.3,
+     12.1
+    ],
+    [
+     35.4,
+     13.3
+    ],
+    [
+     35.4,
+     15.3
+    ],
+    [
+     35.8,
+     12.5
+    ],
+    [
+     35.9,
+     10.5
+    ],
+    [
+     36.1,
+     14.4
+    ],
+    [
+     36.3,
+     11.9
+    ],
+    [
+     36.5,
+     13.1
+    ],
+    [
+     36.7,
+     15.6
+    ],
+    [
+     37,
+     15
+    ],
+    [
+     37.2,
+     12.4
+    ],
+    [
+     37.5,
+     13.1
+    ],
+    [
+     38.2,
+     11.4
+    ],
+    [
+     38.3,
+     13.3
+    ]
+   ]
+  },
+  {
+   "id": "complete-6421",
+   "type": "complete",
+   "mapId": 1442,
+   "x": 59.39,
+   "y": 91.45,
+   "confidence": "unverified",
+   "questId": 6421,
+   "questName": "Boulderslide Ravine",
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 399,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 16581,
+     "name": "Resonite Crystal",
+     "sources": [
+      "Resonite Crystal"
+     ],
+     "icon": 134076
+    }
+   ],
+   "area": [
+    [
+     57.2,
+     90
+    ],
+    [
+     57.3,
+     89.2
+    ],
+    [
+     57.4,
+     89.7
+    ],
+    [
+     57.9,
+     91.2
+    ],
+    [
+     58.2,
+     89.8
+    ],
+    [
+     58.2,
+     93.3
+    ],
+    [
+     58.5,
+     92.7
+    ],
+    [
+     58.6,
+     91.2
+    ],
+    [
+     58.6,
+     92.1
+    ],
+    [
+     58.7,
+     90.7
+    ],
+    [
+     58.7,
+     91.5
+    ],
+    [
+     58.7,
+     93.4
+    ],
+    [
+     58.7,
+     93.9
+    ],
+    [
+     58.9,
+     90.8
+    ],
+    [
+     59.1,
+     92.6
+    ],
+    [
+     59.2,
+     89.6
+    ],
+    [
+     59.2,
+     89.9
+    ],
+    [
+     59.4,
+     90.5
+    ],
+    [
+     59.4,
+     91.6
+    ],
+    [
+     59.4,
+     91.8
+    ],
+    [
+     59.4,
+     92.8
+    ],
+    [
+     59.6,
+     90.7
+    ],
+    [
+     59.6,
+     90.9
+    ],
+    [
+     59.6,
+     91.5
+    ],
+    [
+     59.6,
+     92
+    ],
+    [
+     59.6,
+     92.3
+    ],
+    [
+     59.7,
+     92.9
+    ],
+    [
+     60,
+     91.9
+    ],
+    [
+     60,
+     92.7
+    ],
+    [
+     60.1,
+     90
+    ],
+    [
+     60.1,
+     91.2
+    ],
+    [
+     60.1,
+     91.6
+    ],
+    [
+     60.2,
+     92.4
+    ],
+    [
+     60.3,
+     90.6
+    ],
+    [
+     60.7,
+     90.9
+    ],
+    [
+     60.9,
+     91.5
+    ],
+    [
+     60.9,
+     92.5
+    ],
+    [
+     61.2,
+     92.3
+    ],
+    [
+     61.4,
+     90.8
+    ],
+    [
+     61.4,
+     91.1
+    ]
+   ]
+  },
+  {
+   "id": "turnin-6421",
    "type": "turnin",
    "mapId": 1442,
-   "x": 74.5,
-   "y": 97.9,
+   "x": 47.2,
+   "y": 64,
    "confidence": "unverified",
-   "questId": 1058,
-   "npcId": 3995,
-   "questName": "Jin'Zil's Forest Magic",
-   "npcName": "Witch Doctor Jin'Zil",
+   "questId": 6421,
+   "npcId": 11861,
+   "questName": "Boulderslide Ravine",
+   "npcName": "Mor'rogal",
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 465
+   "level": 25,
+   "seconds": 163
+  },
+  {
+   "id": "turnin-6301",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 47.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "questId": 6301,
+   "npcId": 11864,
+   "questName": "Cycle of Rebirth",
+   "npcName": "Tammra Windfield",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 36
   },
   {
    "id": "turnin-6282",
@@ -27126,8 +27568,53 @@
    "questName": "Harpies Threaten",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 266
+   "level": 25,
+   "seconds": 23
+  },
+  {
+   "id": "turnin-6393",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 47.4,
+   "y": 64.3,
+   "confidence": "unverified",
+   "questId": 6393,
+   "npcId": 11862,
+   "questName": "Elemental War",
+   "npcName": "Tsunaman",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 24
+  },
+  {
+   "id": "turnin-1087",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 45.9,
+   "y": 60.4,
+   "confidence": "unverified",
+   "questId": 1087,
+   "npcId": 4198,
+   "questName": "Cenarius' Legacy",
+   "npcName": "Braelyn Firehand",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 31
+  },
+  {
+   "id": "accept-6381",
+   "type": "accept",
+   "mapId": 1442,
+   "x": 47.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "questId": 6381,
+   "npcId": 11864,
+   "questName": "New Life",
+   "npcName": "Tammra Windfield",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 25
   },
   {
    "id": "accept-6283",
@@ -27141,8 +27628,167 @@
    "questName": "Bloodfury Bloodline",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 10
+   "level": 25,
+   "seconds": 23
+  },
+  {
+   "id": "complete-6381",
+   "type": "complete",
+   "mapId": 1442,
+   "x": 32.89,
+   "y": 68.06,
+   "confidence": "unverified",
+   "questId": 6381,
+   "questName": "New Life",
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 105,
+   "objectives": [
+    {
+     "kind": "use",
+     "id": 177929,
+     "name": "Gaea Dirt Mound"
+    }
+   ],
+   "area": [
+    [
+     27.8,
+     64.7
+    ],
+    [
+     29.1,
+     63.7
+    ],
+    [
+     29.1,
+     68.9
+    ],
+    [
+     29.6,
+     71.3
+    ],
+    [
+     30.1,
+     62.5
+    ],
+    [
+     30.1,
+     68.4
+    ],
+    [
+     30.2,
+     67.6
+    ],
+    [
+     30.4,
+     73.8
+    ],
+    [
+     30.5,
+     70.8
+    ],
+    [
+     30.8,
+     66.6
+    ],
+    [
+     31.3,
+     61.4
+    ],
+    [
+     31.3,
+     72.4
+    ],
+    [
+     31.4,
+     68.5
+    ],
+    [
+     31.9,
+     64.2
+    ],
+    [
+     31.9,
+     70.6
+    ],
+    [
+     32.2,
+     68.2
+    ],
+    [
+     32.3,
+     70.1
+    ],
+    [
+     33.6,
+     69
+    ],
+    [
+     33.7,
+     67
+    ],
+    [
+     33.7,
+     70.8
+    ],
+    [
+     33.7,
+     73
+    ],
+    [
+     33.9,
+     61.9
+    ],
+    [
+     34.2,
+     61.3
+    ],
+    [
+     34.5,
+     69.1
+    ],
+    [
+     34.7,
+     72.3
+    ],
+    [
+     35.2,
+     63.7
+    ],
+    [
+     35.8,
+     66.1
+    ],
+    [
+     35.9,
+     70
+    ],
+    [
+     35.9,
+     70.3
+    ],
+    [
+     36,
+     65.2
+    ],
+    [
+     36.1,
+     68
+    ],
+    [
+     36.6,
+     74.4
+    ],
+    [
+     36.9,
+     72
+    ],
+    [
+     37.8,
+     66.2
+    ]
+   ]
   },
   {
    "id": "complete-6283",
@@ -27155,8 +27801,8 @@
    "questName": "Bloodfury Bloodline",
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 139,
+   "level": 25,
+   "seconds": 57,
    "objectives": [
     {
      "kind": "collect",
@@ -27176,6 +27822,21 @@
    ]
   },
   {
+   "id": "turnin-6381",
+   "type": "turnin",
+   "mapId": 1442,
+   "x": 47.5,
+   "y": 58.4,
+   "confidence": "unverified",
+   "questId": 6381,
+   "npcId": 11864,
+   "questName": "New Life",
+   "npcName": "Tammra Windfield",
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 128
+  },
+  {
    "id": "turnin-6283",
    "type": "turnin",
    "mapId": 1442,
@@ -27187,8 +27848,151 @@
    "questName": "Bloodfury Bloodline",
    "npcName": "Maggran Earthbinder",
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 124
+   "level": 25,
+   "seconds": 23
+  },
+  {
+   "id": "travel-1442-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25,
+   "seconds": 60
+  },
+  {
+   "id": "turnin-6542",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "questId": 6542,
+   "npcId": 8582,
+   "questName": "Report to Kadrak",
+   "npcName": "Kadrak",
+   "zoneName": "Ashenvale",
+   "level": 25,
+   "seconds": 10
+  },
+  {
+   "id": "turnin-6562",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 11.6,
+   "y": 34.3,
+   "confidence": "unverified",
+   "questId": 6562,
+   "npcId": 12736,
+   "questName": "Trouble in the Deeps",
+   "npcName": "Je'neu Sancrea",
+   "zoneName": "Ashenvale",
+   "level": 25,
+   "seconds": 568
+  },
+  {
+   "id": "flightpath-58",
+   "type": "flightpath",
+   "mapId": 1440,
+   "x": 12.2,
+   "y": 33.8,
+   "confidence": "unverified",
+   "node": "Zoram'gar Outpost, Ashenvale",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 25,
+   "seconds": 16
+  },
+  {
+   "id": "travel-fly-58-23",
+   "type": "travel",
+   "mapId": 1454,
+   "x": 45.3,
+   "y": 63.7,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Zoram'gar Outpost, Ashenvale",
+   "node": "Orgrimmar, Durotar",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Orgrimmar",
+   "level": 25,
+   "seconds": 216
+  },
+  {
+   "id": "turnin-1512",
+   "type": "turnin",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "confidence": "unverified",
+   "questId": 1512,
+   "npcId": 5875,
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Love's Gift",
+   "npcName": "Gan'rul Bloodeye",
+   "zoneName": "Orgrimmar",
+   "level": 25,
+   "seconds": 35
+  },
+  {
+   "id": "travel-fly-23-80-2",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 63.1,
+   "y": 37.1,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Orgrimmar, Durotar",
+   "node": "Ratchet, The Barrens",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 25,
+   "seconds": 118
+  },
+  {
+   "id": "turnin-1094",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 63,
+   "y": 37.2,
+   "confidence": "unverified",
+   "questId": 1094,
+   "npcId": 3442,
+   "questName": "Further Instructions",
+   "npcName": "Sputtervalve",
+   "zoneName": "The Barrens",
+   "level": 25,
+   "seconds": 12
+  },
+  {
+   "id": "travel-fly-80-29",
+   "type": "travel",
+   "mapId": 1442,
+   "x": 45.2,
+   "y": 59.9,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ratchet, The Barrens",
+   "node": "Sun Rock Retreat, Stonetalon Mountains",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Stonetalon Mountains",
+   "level": 25,
+   "seconds": 202
   },
   {
    "id": "grind-1442-26",
@@ -27201,8 +28005,8 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
-   "level": 24,
-   "seconds": 9955
+   "level": 25,
+   "seconds": 5015
   },
   {
    "id": "accept-5881",
@@ -34185,6 +34989,24 @@
    "seconds": 0
   },
   {
+   "id": "gap-4782",
+   "type": "gap",
+   "mapId": 1434,
+   "x": 32.2,
+   "y": 27.7,
+   "confidence": "unverified",
+   "questId": 4782,
+   "reason": "quest 4782: prereq 4781 not in route",
+   "classOnly": [
+    "Warlock"
+   ],
+   "questName": "Components for the Enchanted Gold Bloodrobe",
+   "npcName": null,
+   "zoneName": "Stranglethorn Vale",
+   "level": 34,
+   "seconds": 0
+  },
+  {
    "id": "accept-575",
    "type": "accept",
    "mapId": 1434,
@@ -36989,6 +37811,15 @@
    "seconds": 15
   }
  ],
+ "classes": [
+  "Hunter",
+  "Mage",
+  "Priest",
+  "Rogue",
+  "Shaman",
+  "Warlock",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 2380,
@@ -37820,49 +38651,6 @@
    "npcName": "Auld Stonespire"
   },
   {
-   "questId": 846,
-   "name": "Revenge of Gann",
-   "mapId": 1413,
-   "x": 45.9,
-   "y": 77,
-   "level": 26,
-   "minLevel": 17,
-   "npcName": "Gann Stonespire"
-  },
-  {
-   "questId": 849,
-   "name": "Revenge of Gann",
-   "mapId": 1413,
-   "x": 45.9,
-   "y": 77,
-   "level": 26,
-   "minLevel": 17,
-   "npcName": "Gann Stonespire"
-  },
-  {
-   "questId": 1221,
-   "name": "Blueleaf Tubers",
-   "mapId": 1413,
-   "x": 62.4,
-   "y": 37.6,
-   "level": 26,
-   "minLevel": 20,
-   "npcName": "Mebok Mizzyrix"
-  },
-  {
-   "questId": 1946,
-   "name": "Nether-lace Garment",
-   "mapId": 1413,
-   "x": 52.2,
-   "y": 31.7,
-   "level": 26,
-   "minLevel": 26,
-   "npcName": "Kil'hala",
-   "classOnly": [
-    "Mage"
-   ]
-  },
-  {
    "questId": 873,
    "name": "Isha Awak",
    "mapId": 1413,
@@ -37979,6 +38767,32 @@
    ]
   },
   {
+   "questId": 1795,
+   "name": "The Binding",
+   "mapId": 1413,
+   "x": 62.6,
+   "y": 35.5,
+   "level": 30,
+   "minLevel": 30,
+   "npcName": "Strahad Farsan",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
+   "questId": 1801,
+   "name": "Tome of the Cabal",
+   "mapId": 1413,
+   "x": 62.6,
+   "y": 35.5,
+   "level": 30,
+   "minLevel": 30,
+   "npcName": "Strahad Farsan",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 1838,
    "name": "Brutal Armor",
    "mapId": 1413,
@@ -38054,6 +38868,19 @@
    "npcName": "Wharfmaster Dizzywig"
   },
   {
+   "questId": 1796,
+   "name": "Components for the Enchanted Gold Bloodrobe",
+   "mapId": 1413,
+   "x": 62.5,
+   "y": 35.4,
+   "level": 31,
+   "minLevel": 31,
+   "npcName": "Menara Voidrender",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 1362,
    "name": "The Kolkar of Desolace",
    "mapId": 1413,
@@ -38072,6 +38899,19 @@
    "level": 33,
    "minLevel": 29,
    "npcName": "Korran"
+  },
+  {
+   "questId": 4781,
+   "name": "Components for the Enchanted Gold Bloodrobe",
+   "mapId": 1413,
+   "x": 62.5,
+   "y": 35.4,
+   "level": 34,
+   "minLevel": 31,
+   "npcName": "Menara Voidrender",
+   "classOnly": [
+    "Warlock"
+   ]
   },
   {
    "questId": 7866,
@@ -38843,6 +39683,32 @@
    "npcName": "Doras"
   },
   {
+   "questId": 1501,
+   "name": "Creature of the Void",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "level": 11,
+   "minLevel": 10,
+   "npcName": "Gan'rul Bloodeye",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
+   "questId": 1504,
+   "name": "The Binding",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "level": 11,
+   "minLevel": 10,
+   "npcName": "Gan'rul Bloodeye",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 5726,
    "name": "Hidden Enemies",
    "mapId": 1454,
@@ -38995,6 +39861,19 @@
    "npcName": "Rilli Greasygob"
   },
   {
+   "questId": 1513,
+   "name": "The Binding",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "level": 20,
+   "minLevel": 20,
+   "npcName": "Gan'rul Bloodeye",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 2458,
    "name": "Deep Cover",
    "mapId": 1454,
@@ -39057,6 +39936,19 @@
    ]
   },
   {
+   "questId": 2996,
+   "name": "Seeking Strahad",
+   "mapId": 1454,
+   "x": 48.2,
+   "y": 45.3,
+   "level": 30,
+   "minLevel": 30,
+   "npcName": "Gan'rul Bloodeye",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 7827,
    "name": "A Donation of Silk",
    "mapId": 1454,
@@ -39065,6 +39957,19 @@
    "level": 30,
    "minLevel": 26,
    "npcName": "Rashona Straglash"
+  },
+  {
+   "questId": 4737,
+   "name": "In Search of Menara Voidrender",
+   "mapId": 1454,
+   "x": 48.5,
+   "y": 45.4,
+   "level": 31,
+   "minLevel": 31,
+   "npcName": "Zevrost",
+   "classOnly": [
+    "Warlock"
+   ]
   },
   {
    "questId": 2751,
@@ -39127,6 +40032,19 @@
    "npcName": "Nogg"
   },
   {
+   "questId": 4967,
+   "name": "Knowledge of the Orb of Orahil",
+   "mapId": 1454,
+   "x": 48.5,
+   "y": 45.4,
+   "level": 35,
+   "minLevel": 35,
+   "npcName": "Zevrost",
+   "classOnly": [
+    "Warlock"
+   ]
+  },
+  {
    "questId": 6963,
    "name": "Stolen Winter Veil Treats",
    "mapId": 1454,
@@ -39170,6 +40088,21 @@
      "minLevel": 18,
      "npcName": "High Executor Hadrec",
      "zoneName": "Silverpine Forest",
+     "step": null
+    },
+    {
+     "questId": 1740,
+     "name": "The Orb of Soran'ruk",
+     "mapId": 1413,
+     "x": 49.3,
+     "y": 57.2,
+     "level": 25,
+     "minLevel": 20,
+     "npcName": "Doan Karhan",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "The Barrens",
      "step": null
     },
     {

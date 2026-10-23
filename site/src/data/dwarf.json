@@ -48405,6 +48405,14 @@
    "seconds": 185
   }
  ],
+ "classes": [
+  "Hunter",
+  "Paladin",
+  "Priest",
+  "Rogue",
+  "Shaman",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 3370,

@@ -47247,6 +47247,13 @@
    "seconds": 185
   }
  ],
+ "classes": [
+  "Mage",
+  "Priest",
+  "Rogue",
+  "Warlock",
+  "Warrior"
+ ],
  "optional": [
   {
    "questId": 873,

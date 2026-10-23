@@ -232,3 +232,10 @@ def test_site_json_gives_accept_steps_their_quests_video():
     accept, turnin, other = to_site_json(route, *args, videos={"Q1": video, "Q2": None})["steps"]
     assert accept["video"] == video
     assert "video" not in turnin and "video" not in other  # only where a quest starts, and only a found video
+
+
+def test_site_json_lists_the_classes_the_race_plays_with_forevers_new_ones():
+    human = to_site_json({**ROUTE, "race": "Human", "faction": "Alliance"}, {}, {}, {})
+    assert human["classes"] == ["Hunter", "Mage", "Paladin", "Priest", "Rogue", "Warlock", "Warrior"]  # Human hunters
+    skyborne = to_site_json({**ROUTE, "race": "Skyborne", "faction": "Horde"}, {}, {}, {})
+    assert skyborne["classes"] == ["Druid", "Hunter", "Rogue", "Shaman", "Warrior"]
