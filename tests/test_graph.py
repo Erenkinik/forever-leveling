@@ -73,6 +73,26 @@ def test_skyborne_classes_depend_on_the_faction():
     assert (sorted(horde.quests), horde.excluded) == ([2, 3], {"class": [1]})
 
 
+def test_a_quest_that_follows_a_class_quest_is_for_that_class_too():
+    from pipeline.generate.graph import chain_classes
+
+    quests = {
+        1: _q(1, classes=["Warlock"]), 2: _q(2, prereqs=[1]), 3: _q(3, prereqs=[2]),  # a Warlock chain
+        4: _q(4), 5: _q(5, prereqs=[4]),                                             # everyone's chain
+        # "Vile Familiars": one version for Warlocks, one for the others; the follow-up is for everyone
+        6: _q(6, classes=["Warlock"]), 7: _q(7, classes=["Warrior", "Rogue", "Priest", "Mage", "Paladin"]),
+        8: {**_q(8, prereqs=[6, 7]), "prereqsAny": True},
+        9: _q(9, classes=["Mage"], prereqs=[1]),  # no class can reach it: keeps its own classes
+        10: _q(10, prereqs=[1, 99]),               # a prereq off the route is ignored
+    }
+    assert chain_classes(quests, "Human") == {
+        1: ["Warlock"], 2: ["Warlock"], 3: ["Warlock"], 6: ["Warlock"],
+        7: ["Warrior", "Paladin", "Rogue", "Priest", "Mage"],
+        8: ["Warrior", "Paladin", "Rogue", "Priest", "Mage", "Warlock"],  # every class, once one is chosen
+        9: ["Mage"], 10: ["Warlock"],
+    }
+
+
 def test_exclusion_reasons_and_precedence():
     quests = {
         1: _q(1, in_forever=False, min_level=None, races=["Orc"], map_id=99),

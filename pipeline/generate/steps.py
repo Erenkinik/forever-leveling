@@ -7,7 +7,7 @@ from pipeline.generate.config import (
 )
 from pipeline.generate.flight import Flights
 from pipeline.generate.gaps import complete_location, quest_gaps
-from pipeline.generate.graph import build_graph, class_only, drop_pulled, select_quests
+from pipeline.generate.graph import build_graph, chain_classes, drop_pulled, select_quests
 from pipeline.generate.hubs import Hub, build_hubs, unplaced
 from pipeline.generate.xpsim import XpState, kill_xp, quest_level, quest_xp, shared_xp
 from pipeline.generate.zone_order import ZoneOrder
@@ -263,7 +263,7 @@ def generate_route(order: ZoneOrder, quests: dict[int, dict], spawns: dict, xp_t
 
     position = {qid: i for i, qid in enumerate(graph.order)}
     attached = _attach_unplaced(no_start, sel.quests, hubs)
-    classes = {qid: class_only(q, order.race, order.faction) for qid, q in sel.quests.items() if q.get("classes")}
+    classes = chain_classes(sel.quests, order.race, order.faction)
     steps = _Steps(order.faction, continents, Flights(taxi, order.faction) if taxi else None, classes)
     state = XpState(1, 0)
     deferred = _Deferred()

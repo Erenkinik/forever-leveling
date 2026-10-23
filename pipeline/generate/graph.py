@@ -82,6 +82,35 @@ def class_only(q: dict, race: str, faction: str | None = None) -> list[str]:
     return [c for c in q.get("classes") or [] if c in playable]
 
 
+def chain_classes(quests: dict[int, dict], race: str, faction: str | None = None) -> dict[int, list[str]]:
+    """The classes (that the race plays) who can take each class quest and each quest that follows one: a class
+    quest's own classes, narrowed by its prereqs in `quests` (all of them, or any one for prereqsAny), so a quest
+    that follows a class quest is for that class too. One that follows class versions of a quest for every class
+    ("Vile Familiars") lists every class: the site shows it once a class is chosen. A quest no class can reach
+    keeps its own classes."""
+    playable = FACTION_RACE_CLASSES.get((race, faction)) or RACE_CLASSES.get(race, ())
+    everyone = frozenset(playable)
+    memo: dict[int, tuple[frozenset[str], bool]] = {}
+
+    def reach(qid: int) -> tuple[frozenset[str], bool]:
+        """(the classes who can take it, whether a class quest is on its way)"""
+        if qid not in memo:
+            q = quests[qid]
+            own = frozenset(class_only(q, race, faction)) if q.get("classes") else everyone
+            prereqs = [reach(p) for p in q.get("prereqs") or [] if p in quests]
+            sets = [s for s, _ in prereqs]
+            if not sets:
+                via = everyone
+            elif q.get("prereqsAny"):
+                via = frozenset().union(*sets)
+            else:
+                via = everyone.intersection(*sets)
+            memo[qid] = ((own & via) or own, own != everyone or any(g for _, g in prereqs))
+        return memo[qid]
+
+    return {qid: [c for c in playable if c in reach(qid)[0]] for qid in quests if reach(qid)[1]}
+
+
 def _choose_alternative(q: dict, quests: dict[int, dict], selected: dict[int, dict], off_route: set[int],
                         continents: dict[int, int] | None) -> dict:
     """For a quest whose prereqs are alternatives (prereqsAny), the quest with only the ones this route does:

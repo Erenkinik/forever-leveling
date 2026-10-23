@@ -162,15 +162,19 @@ export function routeClasses(steps: Step[]): string[] {
   return [...new Set(steps.flatMap((s) => s.classOnly ?? []))].sort();
 }
 
-/** The steps a player of this class does: everyone's steps and the class's own ('' keeps every step). */
+/** Whether a player of this class takes the quest: a quest for every class, or one of the class's own ('' = no class
+ *  chosen, so no class quests). */
+const forClass = (classOnly: string[] | undefined, playerClass: string) =>
+  !classOnly || classOnly.includes(playerClass);
+
+/** The steps a player of this class does: everyone's steps and the class's own ('' = only everyone's). */
 export function stepsForClass(steps: Step[], playerClass: string): Step[] {
-  return playerClass ? steps.filter((s) => !s.classOnly || s.classOnly.includes(playerClass)) : steps;
+  return steps.filter((s) => forClass(s.classOnly, playerClass));
 }
 
-/** Exploration mode: the quests off the route on this map that a player of this class can take ('' = any). */
+/** Exploration mode: the quests off the route on this map that a player of this class can take. */
 export function optionalOnMap(quests: OptionalQuest[], mapId: number, playerClass: string): OptionalQuest[] {
-  return quests.filter((q) => q.mapId === mapId
-    && (!playerClass || !q.classOnly || q.classOnly.includes(playerClass)));
+  return quests.filter((q) => q.mapId === mapId && forClass(q.classOnly, playerClass));
 }
 
 /** Where a player already at `level` starts: the first step (not a skipped one) estimated at that level or higher;
@@ -179,13 +183,13 @@ export function stepForLevel(steps: Step[], level: number): number {
   return steps.findIndex((s) => s.type !== 'gap' && (s.level ?? 0) >= level);
 }
 
-/** The dungeon entrances on this map, each with the quests a player of this class can take ('' = any). */
+/** The dungeon entrances on this map, each with the quests a player of this class can take. */
 export function dungeonsOnMap(dungeons: Dungeon[], mapId: number, playerClass: string): Dungeon[] {
-  const forClass = (q: DungeonQuest) => !playerClass || !q.classOnly || q.classOnly.includes(playerClass);
+  const takes = (q: DungeonQuest) => forClass(q.classOnly, playerClass);
   return dungeons.filter((d) => d.mapId === mapId).map((d) => ({
     ...d,
-    quests: d.quests.filter(forClass),
-    attunement: (d.attunement ?? []).filter(forClass),
+    quests: d.quests.filter(takes),
+    attunement: (d.attunement ?? []).filter(takes),
   }));
 }
 

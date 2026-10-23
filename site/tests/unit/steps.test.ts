@@ -266,7 +266,7 @@ test('flight steps: finding a flight master and flying between two', async () =>
   assert.equal(pinLabel(fly), 'Fly to Crossroads');
 });
 
-test('a class sees the steps for everyone and its own class quests', async () => {
+test('a class sees the steps for everyone and its own class quests; no class sees no class quests', async () => {
   const { routeClasses, stepsForClass } = await import('../../src/lib/steps.ts');
   const all: Step = { ...base, id: 'a', type: 'accept' };
   const lock: Step = { ...base, id: 'w', type: 'accept', classOnly: ['Warlock'] };
@@ -275,7 +275,7 @@ test('a class sees the steps for everyone and its own class quests', async () =>
   assert.deepEqual(routeClasses(steps), ['Rogue', 'Warlock', 'Warrior']);
   assert.deepEqual(stepsForClass(steps, 'Warlock'), [all, lock]);
   assert.deepEqual(stepsForClass(steps, 'Rogue'), [all, war]);
-  assert.deepEqual(stepsForClass(steps, ''), steps);
+  assert.deepEqual(stepsForClass(steps, ''), [all]);
 });
 
 test('the map shows what is left of every quest in the log, wherever it is in the route', async () => {
@@ -307,7 +307,7 @@ test('exploration mode lists the quests off the route on the map, for the chosen
   const o = (questId: number, mapId: number, classOnly?: string[]) =>
     ({ questId, name: `Q${questId}`, mapId, x: 1, y: 1, level: 5, minLevel: 3, npcName: null, classOnly });
   const quests = [o(1, 10), o(2, 20), o(3, 10, ['Mage']), o(4, 10, ['Warlock'])];
-  assert.deepEqual(optionalOnMap(quests, 10, '').map((q) => q.questId), [1, 3, 4]);
+  assert.deepEqual(optionalOnMap(quests, 10, '').map((q) => q.questId), [1]);
   assert.deepEqual(optionalOnMap(quests, 10, 'Mage').map((q) => q.questId), [1, 3]);
 });
 
@@ -334,7 +334,7 @@ test('dungeons on a map keep the quests the chosen class can take', async () => 
     { id: 34, name: 'Stormwind Stockade', kind: 'dungeon' as const, mapId: 1453, x: 50, y: 66, levels: null,
       quests: [], attunement: [] },
   ];
-  assert.deepEqual(dungeonsOnMap(dungeons, 1436, '').map((d) => d.quests.length), [2]);
+  assert.deepEqual(dungeonsOnMap(dungeons, 1436, '').map((d) => d.quests.length), [1]);  // no class: no class quests
   const rogue = dungeonsOnMap(dungeons, 1436, 'Rogue')[0];
   assert.deepEqual(rogue.quests.map((q) => q.questId), [1]);
   assert.deepEqual(rogue.attunement.map((q) => q.questId), [3]);  // the attunement is filtered by class too

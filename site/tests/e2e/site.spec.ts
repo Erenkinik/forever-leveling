@@ -303,9 +303,9 @@ test('items to collect show their game icon, and map pins use the game quest ico
   expect(src).toMatch(/^\/art\/items\/\d+\.webp$/);
   expect((await page.request.get(src)).status()).toBe(200);
   await expect(page.locator('.pin.current img')).toHaveAttribute('src', '/art/icon-accept.webp');
-  // Turn-ins of quests not done yet show the faint grey "?": with the first nine steps done the player is out
+  // Turn-ins of quests not done yet show the faint grey "?": with the first eight steps done the player is out
   // collecting, and the quest's turn-in back at the start shows the grey "?".
-  for (let n = 1; n <= 9; n++) await page.getByRole('button', { name: `Step ${n} done` }).click();
+  for (let n = 1; n <= 8; n++) await page.getByRole('button', { name: `Step ${n} done` }).click();
   const progress = page.locator('.pin.progress img').first();
   await expect(progress).toHaveAttribute('src', '/art/icon-progress.webp');
   expect((await page.request.get('/art/icon-progress.webp')).status()).toBe(200);
@@ -330,17 +330,18 @@ test('the map shades where the current quest objectives are done', async ({ page
   expect(opacity).toBeLessThan(0.6);
 });
 
-test('choosing a class shows only its own class quests, and the choice is remembered', async ({ page }) => {
+test('with no class no class quests show; choosing one adds its own, in its colour, and is remembered', async ({ page }) => {
   await page.goto('/orc/');
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   const pick = page.getByRole('combobox', { name: 'Class' });
   await expect(pick).toHaveValue('');
   const tags = page.locator('li.step .tag.class');
-  expect(await tags.allTextContents()).toEqual(expect.arrayContaining(['Warlock', 'Shaman']));
+  await expect(tags).toHaveCount(0);
   await pick.selectOption('Warlock');
-  const left = await tags.allTextContents();
-  expect(left.length).toBeGreaterThan(0);
-  expect(left.every((t) => t.split(', ').includes('Warlock'))).toBe(true);
+  expect(await tags.count()).toBeGreaterThan(0);
+  expect(new Set(await tags.allTextContents())).toEqual(new Set(['Warlock']));
+  await expect(tags.first()).toHaveCSS('color', 'rgb(135, 136, 238)');
+  await expect(pick).toHaveCSS('color', 'rgb(135, 136, 238)');
   await page.reload();
   await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
   await expect(page.getByRole('combobox', { name: 'Class' })).toHaveValue('Warlock');

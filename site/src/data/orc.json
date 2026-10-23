@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:26:38Z",
+ "generatedAt": "2026-10-23T17:30:50Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -1641,6 +1641,13 @@
    "confidence": "unverified",
    "questId": 794,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -1765,6 +1772,13 @@
    "y": 53.0,
    "confidence": "unverified",
    "questId": 794,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": null,
    "zoneName": "Durotar",
@@ -1827,6 +1841,13 @@
    "confidence": "unverified",
    "questId": 794,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ],
    "questName": "Burning Blade Medallion",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -2110,6 +2131,13 @@
    "confidence": "unverified",
    "questId": 805,
    "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ],
    "questName": "Report to Sen'jin Village",
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
@@ -2125,6 +2153,13 @@
    "confidence": "unverified",
    "questId": 805,
    "npcId": 3188,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ],
    "questName": "Report to Sen'jin Village",
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",

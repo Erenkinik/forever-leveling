@@ -25,7 +25,19 @@
   min-height: 44px; padding: 6px 10px; background: var(--raised); color: var(--text);
   border: 1px solid var(--border); border-radius: 8px; font: 16px var(--font-body); cursor: pointer;
 }
-.tag.class { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 60%, var(--border-subtle)); }
+/* The game's class colours; the Shaman blue is lightened to stay readable on the dark page. */
+[data-class="Warrior"] { --class: #c69b6d; }
+[data-class="Paladin"] { --class: #f48cba; }
+[data-class="Hunter"] { --class: #aad372; }
+[data-class="Rogue"] { --class: #fff468; }
+[data-class="Priest"] { --class: #ffffff; }
+[data-class="Shaman"] { --class: #3d9bff; }
+[data-class="Mage"] { --class: #3fc7eb; }
+[data-class="Warlock"] { --class: #8788ee; }
+[data-class="Druid"] { --class: #ff7c0a; }
+.class-pick select[data-class], .class-pick option[data-class] { color: var(--class); font-weight: 600; }
+.class-pick option:not([data-class]) { color: var(--text); font-weight: 400; }
+.tag.class { color: var(--class, var(--gold)); border-color: color-mix(in srgb, var(--class, var(--gold)) 60%, var(--border-subtle)); }
 .race-button, .icon-button {
   min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
   background: var(--raised); color: var(--text); border: 1px solid var(--border); border-radius: 8px;

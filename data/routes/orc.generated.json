@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:26:38Z",
+ "generatedAt": "2026-10-23T17:30:50Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -387,7 +387,14 @@
    "y": 69.1,
    "confidence": "unverified",
    "questId": 794,
-   "npcId": 3145
+   "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ]
   },
   {
    "id": "complete-790",
@@ -414,7 +421,14 @@
    "x": 42.7,
    "y": 53.0,
    "confidence": "unverified",
-   "questId": 794
+   "questId": 794,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ]
   },
   {
    "id": "turnin-790",
@@ -444,7 +458,14 @@
    "y": 69.1,
    "confidence": "unverified",
    "questId": 794,
-   "npcId": 3145
+   "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ]
   },
   {
    "id": "accept-1516",
@@ -567,7 +588,14 @@
    "y": 69.1,
    "confidence": "unverified",
    "questId": 805,
-   "npcId": 3145
+   "npcId": 3145,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ]
   },
   {
    "id": "turnin-805",
@@ -577,7 +605,14 @@
    "y": 74.7,
    "confidence": "unverified",
    "questId": 805,
-   "npcId": 3188
+   "npcId": 3188,
+   "classOnly": [
+    "Warrior",
+    "Hunter",
+    "Rogue",
+    "Shaman",
+    "Warlock"
+   ]
   },
   {
    "id": "accept-1518",

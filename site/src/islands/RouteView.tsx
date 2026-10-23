@@ -46,6 +46,13 @@ function Text({ parts }: { parts: Part[] }) {
   );
 }
 
+/** One tag per class, in the class's game colour (RouteView.css, [data-class]); none for a quest of every class of
+ *  the route (`every`), which follows class versions of a quest and shows once a class is chosen. */
+function ClassTags({ classes, every }: { classes?: string[]; every?: number }) {
+  if (every !== undefined && every > 1 && (classes?.length ?? 0) >= every) return null;
+  return <>{classes?.map((c) => <span key={c} className="tag class" data-class={c}>{c}</span>)}</>;
+}
+
 /** Space is a page shortcut unless the user is typing or on a control that Space itself activates. */
 function spaceBelongsToTarget(target: EventTarget | null): boolean {
   const el = target as HTMLElement | null;
@@ -61,11 +68,13 @@ interface RowProps {
   isCurrent: boolean;
   /** Only the current step gets a report link, so the list stays one tab stop per step. */
   reportHref?: string;
+  /** how many classes have quests on the route */
+  classCount: number;
   onToggle: (step: Step, e: MouseEvent<HTMLButtonElement>) => void;
   register: (id: string, el: HTMLLIElement | null) => void;
 }
 
-const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, onToggle, register }:
+const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, classCount, onToggle, register }:
   RowProps) {
   return (
     <li
@@ -86,7 +95,7 @@ const StepRow = memo(function StepRow({ step, n, isDone, isCurrent, reportHref, 
         <span className="text"><Text parts={describeStep(step)} /></span>
         <span className="meta">
           <span className="xy">{coords(step)}</span>
-          {step.classOnly && <span className="tag class">{step.classOnly.join(', ')}</span>}
+          <ClassTags classes={step.classOnly} every={classCount} />
           {step.type === 'gap' && <span className="tag warn">Skipped</span>}
           {reportHref && (
             <a className="report" href={reportHref} target="_blank" rel="noopener noreferrer">
@@ -138,7 +147,7 @@ function QuestList({ quests, index }: { quests: DungeonQuest[]; index: Map<strin
         <li key={q.questId}>
           <span className="quest">{q.name ?? `quest #${q.questId}`}</span>{' '}
           <span className="lvl">({q.level ?? '?'})</span>
-          {q.classOnly && <span className="tag class">{q.classOnly.join(', ')}</span>}
+          <ClassTags classes={q.classOnly} />
           <span className="from">
             From <span className="npc">{q.npcName ?? 'unknown'}</span>
             {q.zoneName && <> in {q.zoneName}</>} at {q.x.toFixed(1)}, {q.y.toFixed(1)}.
@@ -253,7 +262,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     document.documentElement.dataset.contrast = settings.highContrast ? 'high' : '';
   }, [settings.highContrast]);
 
-  // Only the chosen class's quests are shown (a class this race cannot play shows every class).
+  // Only the chosen class's quests are shown; with no class (or one this race cannot play) no class quests are.
   const playerClass = classes.includes(settings.playerClass) ? settings.playerClass : '';
   const steps = useMemo(() => stepsForClass(route.steps, playerClass), [route.steps, playerClass]);
   const index = useMemo(() => new Map(steps.map((s, i) => [s.id, i])), [steps]);
@@ -406,9 +415,10 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
           {classes.length > 0 && (
             <label className="class-pick">
               <span className="sr-only">Class</span>
-              <select value={playerClass} onChange={(e) => updateSettings({ playerClass: e.target.value })}>
-                <option value="">All classes</option>
-                {classes.map((c) => <option key={c} value={c}>{c}</option>)}
+              <select value={playerClass} data-class={playerClass || undefined}
+                      onChange={(e) => updateSettings({ playerClass: e.target.value })}>
+                <option value="">Class</option>
+                {classes.map((c) => <option key={c} value={c} data-class={c}>{c}</option>)}
               </select>
             </label>
           )}
@@ -469,7 +479,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
               </h2>
               <ol>
                 {g.steps.map((s) => (
-                  <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)}
+                  <StepRow key={s.id} step={s} n={(index.get(s.id) ?? 0) + 1} isDone={done.has(s.id)} classCount={classes.length}
                            isCurrent={s === current} onToggle={onRowToggle} register={register}
                            reportHref={s === current ? reportUrl(route, s, currentIndex + 1) : undefined} />
                 ))}

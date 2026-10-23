@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:26:40Z",
+ "generatedAt": "2026-10-23T17:27:25Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -68,15 +68,7 @@
    "y": 69.1,
    "confidence": "unverified",
    "questId": 792,
-   "npcId": 3145,
-   "classOnly": [
-    "Warrior",
-    "Hunter",
-    "Rogue",
-    "Priest",
-    "Shaman",
-    "Mage"
-   ]
+   "npcId": 3145
   },
   {
    "id": "complete-792",
@@ -85,15 +77,7 @@
    "x": 44.42,
    "y": 55.5,
    "confidence": "unverified",
-   "questId": 792,
-   "classOnly": [
-    "Warrior",
-    "Hunter",
-    "Rogue",
-    "Priest",
-    "Shaman",
-    "Mage"
-   ]
+   "questId": 792
   },
   {
    "id": "turnin-792",
@@ -103,15 +87,7 @@
    "y": 69.1,
    "confidence": "unverified",
    "questId": 792,
-   "npcId": 3145,
-   "classOnly": [
-    "Warrior",
-    "Hunter",
-    "Rogue",
-    "Priest",
-    "Shaman",
-    "Mage"
-   ]
+   "npcId": 3145
   },
   {
    "id": "accept-789",
