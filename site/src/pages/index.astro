@@ -7,84 +7,163 @@ import { themeFor } from '../lib/races.ts';
 const factions = ['Alliance', 'Horde'] as const;
 // The highest level the routes reach (their levelRange), so the page follows the pipeline's LEVEL_CAP.
 const cap = Math.max(...routes.map((r) => r.levelRange[1]));
+const STEPS = [
+  ['Pick your race', 'Each race has its own route from its starting zone.'],
+  ['Set your class and level', 'Class quests join the route; already levelled? Start where your level is.'],
+  ['Follow the steps', 'The map, the NPCs and what to do at each stop. Your progress is saved in this browser.'],
+];
 ---
 <Base title={`ForeverXP: free WoW Forever 1–${cap} leveling routes`}
       description={`Pick your race and follow a free step-by-step quest route from level 1 to ${cap} in WoW Forever.`}>
   <main id="main">
     <section class="hero">
-      <Emblem size={96} class="hero-emblem" />
-      <div>
-        <h1>Level 1 to {cap}, the fast way</h1>
-        <p class="lead">A free step-by-step quest route for every race in WoW Forever, with the map, the NPCs and
-          what to do at each stop. Your progress is saved in this browser.</p>
-      </div>
+      <Emblem size={64} class="hero-emblem" />
+      <h1>Level 1 to {cap}, the fast way</h1>
+      <p class="lead">A free step-by-step quest route for every race in WoW Forever, with the map, the NPCs and
+        what to do at each stop.</p>
     </section>
-    {/* Alliance and Horde side by side, each race facing its counterpart, as on the character creation screen */}
-    <div class="factions">
-    {factions.map((faction) => (
-      <section aria-labelledby={`f-${faction}`} class="faction">
-        <h2 id={`f-${faction}`} class={faction.toLowerCase()}>
-          <img class="faction-emblem" src={`/art/faction-${faction.toLowerCase()}.webp`} alt="" height="40" /> {faction}
-        </h2>
-        <ul class="races">
-          {routes.filter((r) => r.faction === faction).map((r) => {
-            const theme = themeFor(r.id);
-            return (
-              <li>
-                <a class="race" href={`/${r.id}/`} style={`--race: ${theme.accent}; --race-deep: ${theme.deep};`}>
-                  <img class="race-crest" src={`/art/crest-${r.id}.webp`} alt="" width="56" height="56" />
-                  <span class="race-text">
-                    <span class="race-name">{r.race}</span>
-                    <span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]}</span>
-                    {/* class quests show only once a class is chosen, so they are not counted */}
-                    <span class="sub">{r.steps.filter((s) => !s.classOnly).length} steps</span>
-                  </span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-    ))}
-    </div>
-    <p class="note">Skyborne start on Zephras Isle, new in Forever, and pick their faction there; each faction has its
-      own Skyborne route.</p>
+
+    <section class="choose" aria-labelledby="choose-title">
+      <h2 id="choose-title" class="choose-title">Choose your race</h2>
+      {/* Alliance and Horde face each other, each race across from its counterpart, as on the character creation
+          screen; on wide screens the Horde cards are mirrored, so the two columns are symmetric. */}
+      <div class="factions">
+        {factions.map((faction) => (
+          <section aria-labelledby={`f-${faction}`} class={`faction ${faction.toLowerCase()}`}>
+            <h3 id={`f-${faction}`} class="faction-title">
+              <img class="faction-emblem" src={`/art/faction-${faction.toLowerCase()}.webp`} alt="" height="40" />
+              {faction}
+            </h3>
+            <ul class="races">
+              {routes.filter((r) => r.faction === faction).map((r) => {
+                const theme = themeFor(r.id);
+                return (
+                  <li>
+                    <a class="race" href={`/${r.id}/`} style={`--race: ${theme.accent}; --race-deep: ${theme.deep};`}>
+                      <img class="race-crest" src={`/art/crest-${r.id}.webp`} alt="" width="56" height="56" />
+                      <span class="race-text">
+                        <span class="race-name">{r.race}</span>
+                        <span class="sub">Levels {r.levelRange[0]}–{r.levelRange[1]}</span>
+                        {/* class quests show only once a class is chosen, so they are not counted */}
+                        <span class="sub">{r.steps.filter((s) => !s.classOnly).length} steps</span>
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
+      <p class="note">Skyborne start on Zephras Isle, new in Forever, and pick their faction there; each faction has
+        its own Skyborne route.</p>
+    </section>
+
+    <section class="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="sr-only">How it works</h2>
+      <ol class="how-steps">
+        {STEPS.map(([title, text]) => (
+          <li><strong>{title}</strong><span>{text}</span></li>
+        ))}
+      </ol>
+    </section>
   </main>
 </Base>
 
 <style>
-  .hero { display: flex; gap: 24px; align-items: center; margin: 28px 0 12px; }
-  .hero h1 { font-size: 40px; margin: 0 0 8px; }
-  .lead { font-size: 18px; max-width: 60ch; margin: 0; }
-  @media (max-width: 600px) { .hero { flex-direction: column; align-items: flex-start; } .hero h1 { font-size: 30px; } }
-  .note { color: var(--muted); }
-  .faction h2 { font-size: 24px; margin-top: 32px; display: flex; align-items: center; gap: 12px; }
+  /* The hero: centred, short, so the race choice is on the first screen. */
+  .hero { display: grid; justify-items: center; text-align: center; gap: 8px; margin: 12px auto 0; max-width: 760px; }
+  .hero h1 { font-size: 40px; margin: 0; }
+  .lead { font-size: 18px; max-width: 58ch; margin: 0; color: var(--text); }
+
+  .choose { margin-top: 24px; }
+  .choose-title {
+    display: flex; align-items: center; gap: 16px; margin: 0 0 18px; font-size: 18px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: .14em; justify-content: center;
+  }
+  .choose-title::before, .choose-title::after {
+    content: ""; flex: 1; max-width: 240px; height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 70%, transparent));
+  }
+  .choose-title::after { transform: scaleX(-1); }
+
+  /* Two faction panels with a gold seam between them. */
+  .factions {
+    position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px;
+    max-width: 980px; margin: 0 auto;
+  }
+  .factions::before {
+    content: ""; position: absolute; top: 8px; bottom: 8px; left: 50%; width: 1px;
+    background: linear-gradient(transparent, color-mix(in srgb, var(--gold) 60%, transparent) 15%,
+      color-mix(in srgb, var(--gold) 60%, transparent) 85%, transparent);
+  }
+  .faction { --side: var(--alliance); }
+  .faction.horde { --side: var(--horde); }
+  .faction-title {
+    display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 16px; padding-bottom: 12px;
+    font-size: 26px; color: var(--side);
+    border-bottom: 2px solid color-mix(in srgb, var(--side) 45%, transparent);
+  }
   /* The game's own faction emblem from the target frame (python -m pipeline maps). */
   .faction-emblem { height: 40px; width: auto; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7)); }
-  .faction h2.alliance { color: var(--alliance); }
-  .faction h2.horde { color: var(--horde); }
-  .factions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; max-width: 760px; }
-  .races { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+
+  .races { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .race {
-    display: flex; align-items: center; gap: 14px; min-height: 84px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 16px; min-height: 84px; padding: 12px 18px;
     background: linear-gradient(135deg, color-mix(in srgb, var(--race-deep) 85%, var(--surface)), var(--surface) 70%);
-    border: 1px solid color-mix(in srgb, var(--race) 55%, var(--border-subtle)); border-left: 4px solid var(--race);
+    /* the race colour as a thin frame and a soft inner glow from the crest's side */
+    border: 1px solid color-mix(in srgb, var(--race) 55%, var(--border-subtle));
+    box-shadow: inset 18px 0 28px -22px var(--race);
     border-radius: 10px; color: var(--text); text-decoration: none;
     transition: transform .15s, border-color .15s, box-shadow .15s;
   }
   a.race:hover, a.race:focus-visible {
-    transform: translateY(-2px); border-color: var(--race); box-shadow: 0 10px 24px rgba(0, 0, 0, .45);
+    transform: translateY(-2px); border-color: var(--race);
+    box-shadow: inset 18px 0 28px -22px var(--race), 0 10px 24px rgba(0, 0, 0, .45);
+  }
+  /* Horde cards mirrored: crest and glow on the outer side, like the Alliance cards. */
+  .horde .race {
+    flex-direction: row-reverse; text-align: right; box-shadow: inset -18px 0 28px -22px var(--race);
+    background: linear-gradient(225deg, color-mix(in srgb, var(--race-deep) 85%, var(--surface)), var(--surface) 70%);
+  }
+  .horde a.race:hover, .horde a.race:focus-visible {
+    box-shadow: inset -18px 0 28px -22px var(--race), 0 10px 24px rgba(0, 0, 0, .45);
   }
   .race-crest { flex: none; width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); }
   .race-text { display: grid; gap: 2px; min-width: 0; }
-  .race-name { font: 700 20px var(--font-display); letter-spacing: .03em; }
+  .race-name { font: 700 21px var(--font-display); letter-spacing: .03em; }
   .race .sub { font: 14px var(--font-mono); color: var(--muted); }
+  .note { max-width: 980px; margin: 18px auto 0; text-align: center; color: var(--muted); }
+
+  /* How it works: three short steps under the choice. */
+  .how { max-width: 980px; margin: 40px auto 0; }
+  .how-steps {
+    list-style: none; counter-reset: how; padding: 0; margin: 0; display: grid; gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .how-steps li {
+    counter-increment: how; display: grid; align-content: start; gap: 4px; padding: 16px 18px 16px 62px; position: relative;
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 10px; color: var(--muted);
+  }
+  .how-steps li::before {
+    content: counter(how); position: absolute; left: 16px; top: 16px; width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; font: 18px/1 var(--font-display); color: #3c1f00;
+    background: radial-gradient(circle at 35% 30%, #ffe7a3, #f0c060 45%, #a87824); box-shadow: 0 0 0 1px #000;
+  }
+  .how-steps strong { font: 600 17px var(--font-display); color: var(--text); }
+
+  @media (max-width: 900px) {
+    .how-steps { grid-template-columns: minmax(0, 1fr); }
+  }
   /* Phones: the two columns stay face to face; each card stacks its crest over its name, so the rows line up. */
   @media (max-width: 600px) {
+    .hero h1 { font-size: 30px; }
+    .lead { font-size: 16px; }
     .factions { gap: 0 10px; }
-    .faction h2 { font-size: 20px; gap: 8px; }
+    .factions::before { display: none; }
+    .faction-title { font-size: 20px; gap: 8px; }
     .faction-emblem { height: 32px; }
-    .race { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 150px; padding: 12px 6px; }
+    .race, .horde .race { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 150px; padding: 12px 6px; }
     .race-crest { width: 44px; height: 44px; }
     .race-name { font-size: 16px; letter-spacing: .01em; }
     .race .sub { font-size: 12px; white-space: nowrap; }
