@@ -331361,41 +331361,59 @@
  },
  {
   "id": 94373,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 4,
+  "minLevel": 4,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   98581
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257446,
+   "name": "Teo Hammerstorm",
+   "uiMapId": 1426,
+   "x": 28.79,
+   "y": 66.18
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257446,
+   "name": "Teo Hammerstorm",
+   "uiMapId": 1426,
+   "x": 28.79,
+   "y": 66.18
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    264356
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 264356,
+    "count": 2,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331404,27 +331422,31 @@
  },
  {
   "id": 94374,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 4,
+  "minLevel": 4,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94373
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257446,
+   "name": "Teo Hammerstorm",
+   "uiMapId": 1426,
+   "x": 28.79,
+   "y": 66.18
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10005891,
+   "name": "Minor Manifestation of Earth",
+   "uiMapId": 1426,
+   "x": 24.84,
+   "y": 61.86
   },
   "objectives": {
    "units": [],
@@ -331432,13 +331454,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331447,27 +331473,31 @@
  },
  {
   "id": 94375,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 4,
+  "minLevel": 4,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94374
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10005891,
+   "name": "Minor Manifestation of Earth",
+   "uiMapId": 1426,
+   "x": 24.84,
+   "y": 61.86
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257446,
+   "name": "Teo Hammerstorm",
+   "uiMapId": 1426,
+   "x": 28.79,
+   "y": 66.18
   },
   "objectives": {
    "units": [],
@@ -331475,13 +331505,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332079,27 +332113,29 @@
  },
  {
   "id": 94449,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Fire",
+  "level": 10,
+  "minLevel": 10,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258098,
+   "name": "Eldrun Stormbreaker",
+   "uiMapId": 1455,
+   "x": 47.38,
+   "y": 13.48
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257597,
+   "name": "Bruegs Kindleborn",
+   "uiMapId": 1426,
+   "x": 87.94,
+   "y": 44.8
   },
   "objectives": {
    "units": [],
@@ -332107,13 +332143,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332122,27 +332162,31 @@
  },
  {
   "id": 94465,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Fire",
+  "level": 11,
+  "minLevel": 10,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94449
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257597,
+   "name": "Bruegs Kindleborn",
+   "uiMapId": 1426,
+   "x": 87.94,
+   "y": 44.8
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257808,
+   "name": "Braldir Ashmantle",
+   "uiMapId": 1432,
+   "x": 32.17,
+   "y": 65.97
   },
   "objectives": {
    "units": [],
@@ -332150,13 +332194,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332165,41 +332213,67 @@
  },
  {
   "id": 94466,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Fire",
+  "level": 14,
+  "minLevel": 10,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94465
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257808,
+   "name": "Braldir Ashmantle",
+   "uiMapId": 1432,
+   "x": 32.17,
+   "y": 65.97
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257808,
+   "name": "Braldir Ashmantle",
+   "uiMapId": 1432,
+   "x": 32.17,
+   "y": 65.97
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    6652,
+    5026
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 6652,
+    "count": 1,
+    "chance": 25.0,
+    "level": 10.5
+   },
+   {
+    "kind": "collect",
+    "id": 5026,
+    "count": 1,
+    "chance": 25.0,
+    "level": 10.5
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332208,41 +332282,59 @@
  },
  {
   "id": 94467,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Fire",
+  "level": 14,
+  "minLevel": 10,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94466
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257808,
+   "name": "Braldir Ashmantle",
+   "uiMapId": 1432,
+   "x": 32.17,
+   "y": 65.97
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10061934,
+   "name": "Brazier of the Dormant Flame",
+   "uiMapId": 1432,
+   "x": 31.9,
+   "y": 64.5
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    6655
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 6655,
+    "count": null,
+    "chance": 100.0,
+    "level": 12.0
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332251,27 +332343,31 @@
  },
  {
   "id": 94468,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Fire",
+  "level": 14,
+  "minLevel": 10,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94467
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10061934,
+   "name": "Brazier of the Dormant Flame",
+   "uiMapId": 1432,
+   "x": 31.9,
+   "y": 64.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257597,
+   "name": "Bruegs Kindleborn",
+   "uiMapId": 1426,
+   "x": 87.94,
+   "y": 44.8
   },
   "objectives": {
    "units": [],
@@ -332279,13 +332375,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332911,27 +333011,29 @@
  },
  {
   "id": 94494,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 20,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258098,
+   "name": "Eldrun Stormbreaker",
+   "uiMapId": 1455,
+   "x": 47.38,
+   "y": 13.48
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258043,
+   "name": "Norric Lochthane",
+   "uiMapId": 1432,
+   "x": 41.86,
+   "y": 19.02
   },
   "objectives": {
    "units": [],
@@ -332939,13 +333041,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332954,27 +333060,31 @@
  },
  {
   "id": 94495,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 20,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94494
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258043,
+   "name": "Norric Lochthane",
+   "uiMapId": 1432,
+   "x": 41.86,
+   "y": 19.02
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "objectives": {
    "units": [],
@@ -332982,13 +333092,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332997,41 +333111,59 @@
  },
  {
   "id": 94497,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 21,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94495
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265734
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265734,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333040,41 +333172,59 @@
  },
  {
   "id": 94499,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 21,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94497
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265748
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265748,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333083,41 +333233,59 @@
  },
  {
   "id": 94500,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 21,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94499
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265773
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265773,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333126,27 +333294,31 @@
  },
  {
   "id": 94501,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 22,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94500
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258203,
+   "name": "Hervdana Saegrund",
+   "uiMapId": 1437,
+   "x": 65.75,
+   "y": 76.45
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258043,
+   "name": "Norric Lochthane",
+   "uiMapId": 1432,
+   "x": 41.86,
+   "y": 19.02
   },
   "objectives": {
    "units": [],
@@ -333154,13 +333326,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333169,41 +333345,59 @@
  },
  {
   "id": 94502,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 23,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94501
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258043,
+   "name": "Norric Lochthane",
+   "uiMapId": 1432,
+   "x": 41.86,
+   "y": 19.02
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10619896,
+   "name": "Forgotten Shrine",
+   "uiMapId": 1436,
+   "x": 45.57,
+   "y": 59.88
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    7812
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 7812,
+    "count": null,
+    "chance": 100.0,
+    "level": 22.0
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333212,27 +333406,31 @@
  },
  {
   "id": 94503,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 23,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94502
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10619896,
+   "name": "Forgotten Shrine",
+   "uiMapId": 1436,
+   "x": 45.57,
+   "y": 59.88
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10005895,
+   "name": "Minor Manifestation of Water",
+   "uiMapId": 1436,
+   "x": 47.5,
+   "y": 60.4
   },
   "objectives": {
    "units": [],
@@ -333240,13 +333438,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -333298,27 +333500,31 @@
  },
  {
   "id": 94505,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Water",
+  "level": 23,
+  "minLevel": 20,
   "races": null,
-  "classes": null,
-  "prereqs": [],
+  "classes": [
+   "Shaman"
+  ],
+  "prereqs": [
+   94503
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10005895,
+   "name": "Minor Manifestation of Water",
+   "uiMapId": 1436,
+   "x": 47.5,
+   "y": 60.4
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258043,
+   "name": "Norric Lochthane",
+   "uiMapId": 1432,
+   "x": 41.86,
+   "y": 19.02
   },
   "objectives": {
    "units": [],
@@ -333326,13 +333532,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -334948,27 +335158,29 @@
  },
  {
   "id": 94789,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Air",
+  "level": 30,
+  "minLevel": 30,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 258098,
+   "name": "Eldrun Stormbreaker",
+   "uiMapId": 1455,
+   "x": 47.38,
+   "y": 13.48
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259023,
+   "name": "Veyric Thunderhame",
+   "uiMapId": 1417,
+   "x": 59.77,
+   "y": 27.6
   },
   "objectives": {
    "units": [],
@@ -334976,13 +335188,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -375247,27 +375463,29 @@
  },
  {
   "id": 98581,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Archaic Rune",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
-  "classes": null,
+  "classes": [
+   "Shaman"
+  ],
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": -10000658,
+   "name": "Sten Stoutarm",
+   "uiMapId": 1426,
+   "x": 29.93,
+   "y": 71.2
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257446,
+   "name": "Teo Hammerstorm",
+   "uiMapId": 1426,
+   "x": 28.79,
+   "y": 66.18
   },
   "objectives": {
    "units": [],
@@ -375275,13 +375493,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",

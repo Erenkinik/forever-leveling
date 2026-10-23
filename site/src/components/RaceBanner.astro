@@ -1,6 +1,9 @@
 ---
-// A hanging banner in the race colours with the race crest, drawn behind the page content (decorative).
+// The race page's backdrop, behind the page content (decorative): the race's starting zone map art, blurred and
+// dark under a glow in the race colours, its crest as a faint watermark, and waving race banners (Banner.astro): a
+// small one by the title, and on wide screens a large one in each margin beside the page.
 import type { RaceTheme } from '../lib/races.ts';
+import Banner from './Banner.astro';
 
 interface Props {
   theme: RaceTheme;
@@ -9,26 +12,46 @@ interface Props {
 }
 const { theme, routeId } = Astro.props;
 ---
-<div class="race-banner" aria-hidden="true">
-  <svg viewBox="0 0 200 380" preserveAspectRatio="xMidYMin meet">
-    <defs>
-      <linearGradient id="banner-cloth" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color={theme.accent} stop-opacity=".9" />
-        <stop offset="1" stop-color={theme.deep} />
-      </linearGradient>
-    </defs>
-    <rect x="-6" y="0" width="212" height="12" rx="6" fill="#b8862e" />
-    <path d="M8 12h184v290l-92 64-92-64z" fill="url(#banner-cloth)" stroke="#f0c060" stroke-width="4" />
-    <path d="M20 24h160v270l-80 56-80-56z" fill="none" stroke="#f0c060" stroke-opacity=".45" stroke-width="2" />
-    <image href={`/art/crest-${routeId}.webp`} x="30" y="22" width="140" height="150" preserveAspectRatio="xMidYMid meet" />
-  </svg>
+<div class="race-backdrop" aria-hidden="true">
+  <div class="zone-art" style={`background-image: url(/maps/${theme.home}.webp)`}></div>
+  <img class="watermark" src={`/art/crest-${routeId}.webp`} alt="" />
 </div>
+<div class="race-banner head" aria-hidden="true"><Banner theme={theme} routeId={routeId} uid="head" /></div>
+<div class="race-banner side left" aria-hidden="true"><Banner theme={theme} routeId={routeId} uid="left" /></div>
+<div class="race-banner side right" aria-hidden="true"><Banner theme={theme} routeId={routeId} uid="right" /></div>
 
 <style>
-  .race-banner {
-    position: absolute; top: 0; right: max(16px, calc((100vw - 1200px) / 2 - 40px)); width: 200px; z-index: 0;
-    pointer-events: none; opacity: .6;
+  .race-backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .zone-art {
+    position: absolute; inset: -40px; background-position: center; background-size: cover;
+    filter: blur(4px) saturate(.7) brightness(.55); opacity: .5;
   }
-  .race-banner svg { width: 100%; height: auto; display: block; }
-  @media (max-width: 900px) { .race-banner { width: 120px; right: 8px; opacity: .35; } }
+  /* the race colour glows from the top; the middle falls to the page colour so text stays on dark */
+  .race-backdrop::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(1200px 600px at 70% -10%, color-mix(in srgb, var(--race-deep) 85%, transparent), transparent 70%),
+      radial-gradient(900px 500px at 0% 100%, color-mix(in srgb, var(--race) 12%, transparent), transparent 70%),
+      radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--bg) 55%, transparent) 0%, color-mix(in srgb, var(--bg) 80%, transparent) 100%);
+  }
+  .watermark {
+    position: absolute; left: -4vw; bottom: -6vh; width: min(46vw, 620px); opacity: .1;
+    filter: grayscale(.3) blur(1px);
+  }
+  :root[data-contrast="high"] .race-backdrop { display: none; }
+  .race-banner { position: absolute; top: 0; z-index: 0; pointer-events: none; }
+  .race-banner.head { right: max(16px, calc((100vw - 1640px) / 2 + 24px)); width: 60px; }
+  .race-banner.side { display: none; }
+  /* wide screens: the margins beside the page are wide enough for a large banner on each side */
+  @media (min-width: 1880px) {
+    .race-banner.head { display: none; }
+    .race-banner.side { display: block; position: fixed; width: min(130px, calc((100vw - 1640px) / 2 - 24px)); top: 0; }
+    .race-banner.left { left: calc((100vw - 1640px) / 4); transform: translateX(-50%); }
+    .race-banner.right { right: calc((100vw - 1640px) / 4); transform: translateX(50%); }
+  }
+  @media (max-width: 900px) {
+    .race-banner.head { width: 64px; right: 8px; opacity: .55; }
+    .zone-art { opacity: .22; }
+    .watermark { width: 80vw; }
+  }
 </style>

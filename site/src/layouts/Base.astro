@@ -8,8 +8,10 @@ interface Props {
   description: string;
   /** A race page: its colours tint the page background and accents. */
   theme?: RaceTheme;
+  /** A wide page (a route: steps and a large map side by side). */
+  wide?: boolean;
 }
-const { title, description, theme } = Astro.props;
+const { title, description, theme, wide } = Astro.props;
 const themeStyle = theme ? `--race: ${theme.accent}; --race-deep: ${theme.deep};` : undefined;
 ---
 <!doctype html>
@@ -35,7 +37,7 @@ const themeStyle = theme ? `--race: ${theme.accent}; --race-deep: ${theme.deep};
   <body>
     <slot name="skip" />
     <slot name="backdrop" />
-    <div class="wrap">
+    <div class:list={['wrap', { wide }]}>
       <header class="site-header">
         <a class="brand" href="/" aria-label="ForeverXP home">
           <Emblem size={40} />
@@ -63,6 +65,8 @@ const themeStyle = theme ? `--race: ${theme.accent}; --race-deep: ${theme.deep};
   }
   :root[data-contrast="high"] body { background: var(--bg); }
   .wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 16px; }
+  .wrap.wide { max-width: 1640px; padding: 16px 24px; }
+  @media (max-width: 900px) { .wrap.wide { padding: 16px; } }
   .site-header {
     display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
     padding: 12px 0 16px; border-bottom: 1px solid color-mix(in srgb, var(--race) 45%, var(--border-subtle));

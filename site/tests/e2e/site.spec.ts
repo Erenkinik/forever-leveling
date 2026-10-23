@@ -392,3 +392,20 @@ test('a dungeon entrance on the map shows its quests in a panel', async ({ page 
   await expect(panel).toHaveCount(0);
   await expect(entrance).toBeFocused();
 });
+
+test('on a phone the map is a sheet opened from the Map button', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/orc/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const map = page.locator('#route-map');
+  await expect(map).not.toBeInViewport();
+  const button = page.getByRole('button', { name: 'Map', exact: true });
+  await button.click();
+  const sheet = page.getByRole('dialog', { name: /^Map of / });
+  await expect(sheet).toBeInViewport();
+  await expect(sheet.getByRole('button', { name: 'Close map' })).toBeFocused();
+  expect(await new AxeBuilder({ page }).include('#route-map').analyze().then((r) => r.violations)).toEqual([]);
+  await page.keyboard.press('Escape');
+  await expect(sheet).toHaveCount(0);
+  await expect(button).toBeFocused();
+});

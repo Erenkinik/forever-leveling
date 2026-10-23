@@ -21,8 +21,8 @@
 ## Elenen görevler (nedene göre)
 
 - class: 14 (kimlikler: 30, 1881, 1882, 1883, 1884, 1943, 1944, 1945, 1946, 1950, 1959, 1960, 1961, 1962)
-- faction: 691
-- level-unknown: 2832
+- faction: 710
+- level-unknown: 2813
 - not-in-forever: 771
 - over-cap: 2039
 - race: 245

@@ -21,8 +21,8 @@
 ## Elenen görevler (nedene göre)
 
 - class: 29 (kimlikler: 30, 63, 96, 100, 220, 1516, 1517, 1518, 1519, 1520, 1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530, 1531, 1532, 1534, 1535, 1536, 2983, 2984, 2985, 2986)
-- faction: 691
-- level-unknown: 2832
+- faction: 710
+- level-unknown: 2813
 - not-in-forever: 771
 - over-cap: 2039
 - race: 236

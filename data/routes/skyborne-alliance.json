@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:54:03Z",
+ "generatedAt": "2026-10-23T02:55:10Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -523,16 +523,6 @@
    "npcId": 252095
   },
   {
-   "id": "gap-92553",
-   "type": "gap",
-   "mapId": 2521,
-   "x": 38.32,
-   "y": 30.19,
-   "confidence": "unverified",
-   "questId": 92553,
-   "reason": "quest 92553: objective located only off-route"
-  },
-  {
    "id": "gap-96101",
    "type": "gap",
    "mapId": 2521,
@@ -611,6 +601,16 @@
    "confidence": "unverified",
    "questId": 92551,
    "npcId": 252172
+  },
+  {
+   "id": "accept-92553",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905
   },
   {
    "id": "accept-92596",
@@ -710,6 +710,15 @@
    "y": 44.79,
    "confidence": "unverified",
    "questId": 92515
+  },
+  {
+   "id": "complete-92553",
+   "type": "complete",
+   "mapId": 2521,
+   "x": 41.48,
+   "y": 42.68,
+   "confidence": "unverified",
+   "questId": 92553
   },
   {
    "id": "complete-94413",
@@ -835,6 +844,16 @@
    "npcId": 252172
   },
   {
+   "id": "turnin-92553",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905
+  },
+  {
    "id": "turnin-92596",
    "type": "turnin",
    "mapId": 2521,
@@ -925,6 +944,26 @@
    "npcId": 251903
   },
   {
+   "id": "accept-94007",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 45.26,
+   "y": 44.24,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 254084
+  },
+  {
+   "id": "turnin-94007",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 59.61,
+   "y": 72.65,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 252389
+  },
+  {
    "id": "accept-92528",
    "type": "accept",
    "mapId": 2521,
@@ -992,26 +1031,6 @@
    "confidence": "unverified",
    "questId": 92850,
    "npcId": 253285
-  },
-  {
-   "id": "accept-94007",
-   "type": "accept",
-   "mapId": 2521,
-   "x": 45.26,
-   "y": 44.24,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 254084
-  },
-  {
-   "id": "turnin-94007",
-   "type": "turnin",
-   "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 252389
   },
   {
    "id": "accept-92682",

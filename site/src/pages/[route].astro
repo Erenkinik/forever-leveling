@@ -14,18 +14,19 @@ const { route } = Astro.props as { route: Route };
 const title = `${route.race} 1–${route.levelRange[1]} leveling route · ForeverXP`;
 const theme = themeFor(route.id);
 ---
-<Base title={title} theme={theme}
+<Base title={title} theme={theme} wide
       description={`Free step-by-step ${route.race} (${route.faction}) quest route from level ${route.levelRange[0]} to ${route.levelRange[1]} in WoW Forever.`}>
   <a slot="skip" class="skip-link" href="#current-step">Skip to current step</a>
   <RaceBanner slot="backdrop" theme={theme} routeId={route.id} />
+  <h1 slot="header" class="route-h1">{route.race} <span class="range">1–{route.levelRange[1]}</span> leveling route</h1>
   <main id="main">
-    <h1 class="route-h1">{route.race} <span class="range">1–{route.levelRange[1]}</span> leveling route</h1>
     <RouteView client:load route={route}
                routes={routes.map((r) => ({ id: r.id, race: r.race, faction: r.faction }))} />
   </main>
 </Base>
 
 <style>
-  .route-h1 { font-size: 32px; margin: 20px 0 4px; }
+  .route-h1 { flex: 1; font-size: 30px; margin: 0 0 0 16px; padding-right: 110px; }
+  @media (max-width: 900px) { .route-h1 { flex-basis: 100%; margin: 4px 0 0; padding-right: 96px; } }
   .route-h1 .range { color: var(--text); }
 </style>

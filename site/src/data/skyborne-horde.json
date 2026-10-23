@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:54:05Z",
+ "generatedAt": "2026-10-23T02:55:11Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -1010,21 +1010,6 @@
    "seconds": 30
   },
   {
-   "id": "gap-92553",
-   "type": "gap",
-   "mapId": 2521,
-   "x": 38.32,
-   "y": 30.19,
-   "confidence": "unverified",
-   "questId": 92553,
-   "reason": "quest 92553: objective located only off-route",
-   "questName": "Restocking the Larders",
-   "npcName": null,
-   "zoneName": "Zephras Isle",
-   "level": 6,
-   "seconds": 0
-  },
-  {
    "id": "gap-96101",
    "type": "gap",
    "mapId": 2521,
@@ -1160,6 +1145,21 @@
    "seconds": 14
   },
   {
+   "id": "accept-92553",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905,
+   "questName": "Restocking the Larders",
+   "npcName": "Zerril Softbreeze",
+   "zoneName": "Zephras Isle",
+   "level": 6,
+   "seconds": 23
+  },
+  {
    "id": "accept-92579",
    "type": "accept",
    "mapId": 2521,
@@ -1172,7 +1172,7 @@
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
    "level": 6,
-   "seconds": 14
+   "seconds": 27
   },
   {
    "id": "accept-92595",
@@ -1311,6 +1311,44 @@
    ]
   },
   {
+   "id": "complete-92553",
+   "type": "complete",
+   "mapId": 2521,
+   "x": 41.48,
+   "y": 42.68,
+   "confidence": "unverified",
+   "questId": 92553,
+   "questName": "Restocking the Larders",
+   "npcName": null,
+   "zoneName": "Zephras Isle",
+   "level": 6,
+   "seconds": 588,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 6889,
+     "name": "Small Egg",
+     "sources": [],
+     "icon": 132832
+    },
+    {
+     "kind": "collect",
+     "id": 5469,
+     "name": "Strider Meat",
+     "sources": [
+      "Galestrider"
+     ],
+     "icon": 133972
+    }
+   ],
+   "area": [
+    [
+     41.5,
+     42.7
+    ]
+   ]
+  },
+  {
    "id": "complete-94411",
    "type": "complete",
    "mapId": 2521,
@@ -1321,8 +1359,8 @@
    "questName": "Meddlesome Mages",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 6,
-   "seconds": 244,
+   "level": 7,
+   "seconds": 242,
    "objectives": [
     {
      "kind": "kill",
@@ -1348,7 +1386,7 @@
    "questName": "The Criminal Element",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 6,
+   "level": 7,
    "seconds": 430,
    "objectives": [
     {
@@ -1384,7 +1422,7 @@
    "questName": "Pilfered Windstones",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 6,
+   "level": 7,
    "seconds": 500,
    "objectives": [
     {
@@ -1575,7 +1613,7 @@
    "questName": "The Problem With Prideclaws",
    "npcName": "Indari Sunseam",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 19
   },
   {
@@ -1590,7 +1628,7 @@
    "questName": "Hippogryph Harrassment",
    "npcName": "Teeri Wellwind",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 13
   },
   {
@@ -1605,7 +1643,7 @@
    "questName": "The Criminal Element",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 20
   },
   {
@@ -1620,7 +1658,7 @@
    "questName": "Falaath Village",
    "npcName": "Missionary Jasaan",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 68
   },
   {
@@ -1654,6 +1692,21 @@
    "seconds": 14
   },
   {
+   "id": "turnin-92553",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905,
+   "questName": "Restocking the Larders",
+   "npcName": "Zerril Softbreeze",
+   "zoneName": "Zephras Isle",
+   "level": 8,
+   "seconds": 23
+  },
+  {
    "id": "turnin-92579",
    "type": "turnin",
    "mapId": 2521,
@@ -1666,7 +1719,7 @@
    "npcName": "Valennia Stormfist",
    "zoneName": "Zephras Isle",
    "level": 8,
-   "seconds": 246
+   "seconds": 258
   },
   {
    "id": "turnin-92595",
@@ -1770,8 +1823,38 @@
    "questName": "Meddlesome Mages",
    "npcName": "Illaya Amberwind",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 21
+  },
+  {
+   "id": "accept-94007",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 45.26,
+   "y": 44.24,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 254084,
+   "questName": "Taming the Beast",
+   "npcName": "Elayaa Easewind",
+   "zoneName": "Zephras Isle",
+   "level": 9,
+   "seconds": 24
+  },
+  {
+   "id": "turnin-94007",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 59.61,
+   "y": 72.65,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 252389,
+   "questName": "Taming the Beast",
+   "npcName": "Quel'ana Quickgale",
+   "zoneName": "Zephras Isle",
+   "level": 9,
+   "seconds": 199
   },
   {
    "id": "accept-92528",
@@ -1785,8 +1868,8 @@
    "questName": "Among the Faithful",
    "npcName": "Missionary Jasaan",
    "zoneName": "Zephras Isle",
-   "level": 8,
-   "seconds": 76
+   "level": 9,
+   "seconds": 144
   },
   {
    "id": "turnin-92528",
@@ -1800,7 +1883,7 @@
    "questName": "Among the Faithful",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 68
   },
   {
@@ -1815,7 +1898,7 @@
    "questName": "A Last Request",
    "npcName": "Peacekeeper Vaaniel",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 101
   },
   {
@@ -1830,7 +1913,7 @@
    "questName": "A Last Request",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 101
   },
   {
@@ -1845,7 +1928,7 @@
    "questName": "Make Yourself Useful",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 203
   },
   {
@@ -1860,7 +1943,7 @@
    "questName": "Flutterfly Dust",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 10
   },
   {
@@ -1875,7 +1958,7 @@
    "questName": "Ornery Ornery Galestriders",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 10
   },
   {
@@ -1890,7 +1973,7 @@
    "questName": "The Hills Have Eyes",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 10
   },
   {
@@ -1905,7 +1988,7 @@
    "questName": "Standing Our Ground",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 10
   },
   {
@@ -1920,7 +2003,7 @@
    "questName": "What Is My Purpose?",
    "npcName": "Malfunctioning Cyclone Construct",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 35
   },
   {
@@ -1935,7 +2018,7 @@
    "questName": "Deliver the News",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 35
   },
   {
@@ -1949,7 +2032,7 @@
    "questName": "Make Yourself Useful",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 207,
    "objectives": [
     {
@@ -2127,7 +2210,7 @@
    "questName": "Ornery Ornery Galestriders",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2142,7 +2225,7 @@
    "questName": "The Hills Have Eyes",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2157,7 +2240,7 @@
    "questName": "Standing Our Ground",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2172,7 +2255,7 @@
    "questName": "What Is My Purpose?",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2187,45 +2270,15 @@
    "questName": "Deliver the News",
    "npcName": "Alvarion Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 141
-  },
-  {
-   "id": "accept-94007",
-   "type": "accept",
-   "mapId": 2521,
-   "x": 45.26,
-   "y": 44.24,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 254084,
-   "questName": "Taming the Beast",
-   "npcName": "Elayaa Easewind",
-   "zoneName": "Zephras Isle",
-   "level": 10,
-   "seconds": 214
-  },
-  {
-   "id": "turnin-94007",
-   "type": "turnin",
-   "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 252389,
-   "questName": "Taming the Beast",
-   "npcName": "Quel'ana Quickgale",
-   "zoneName": "Zephras Isle",
-   "level": 10,
-   "seconds": 199
   },
   {
    "id": "gap-94484",
    "type": "gap",
    "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
+   "x": 62.14,
+   "y": 73.31,
    "confidence": "unverified",
    "questId": 94484,
    "reason": "quest 94484: prereq 94493 not in route",
@@ -2248,7 +2301,7 @@
    "npcName": "Talaanis Shadowsong",
    "zoneName": "Zephras Isle",
    "level": 10,
-   "seconds": 66
+   "seconds": 46
   },
   {
    "id": "accept-92643",
@@ -3210,7 +3263,7 @@
    "questName": "Prepare for Battle",
    "npcName": "Valennia Stormfist",
    "zoneName": "Zephras Isle",
-   "level": 11,
+   "level": 12,
    "seconds": 120
   },
   {
@@ -3225,7 +3278,7 @@
    "questName": "What Comes Next",
    "npcName": "Ayessa Dawnsinger",
    "zoneName": "Zephras Isle",
-   "level": 11,
+   "level": 12,
    "seconds": 59
   },
   {
@@ -3435,7 +3488,7 @@
    "questName": "Training the Beast",
    "npcName": "Quel'dora Quickgale",
    "zoneName": "Zephras Isle",
-   "level": 12,
+   "level": 13,
    "seconds": 10
   },
   {
@@ -3450,7 +3503,7 @@
    "questName": "The Cult's True Plans",
    "npcName": "Talaanis Shadowsong",
    "zoneName": "Zephras Isle",
-   "level": 12,
+   "level": 13,
    "seconds": 66
   },
   {
@@ -3882,7 +3935,7 @@
    "questName": "The Inner Sanctum",
    "npcName": "Valennia Stormfist",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 173
   },
   {
@@ -3897,7 +3950,7 @@
    "questName": "Mercy Falls on Deaf Ears",
    "npcName": "Vayn Moongaze",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 87
   },
   {
@@ -3912,7 +3965,7 @@
    "questName": "Tears of the Lady",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 33
   },
   {
@@ -3927,7 +3980,7 @@
    "questName": "Feathers for Binding",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 10
   },
   {
@@ -3942,7 +3995,7 @@
    "questName": "Unwanted and Unworthy",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 10
   },
   {
@@ -3957,7 +4010,7 @@
    "questName": "The Ties That Bind",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 10
   },
   {
@@ -3972,7 +4025,7 @@
    "questName": "The Wounds of Betrayal",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 10
   },
   {
@@ -3987,7 +4040,7 @@
    "questName": "The Fate of the Den",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 10
   },
   {
@@ -4001,7 +4054,7 @@
    "questName": "Tears of the Lady",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 408,
    "objectives": [
     {
@@ -4262,7 +4315,7 @@
    "questName": "The Strange Hermit",
    "npcName": "Strange Hermit",
    "zoneName": "Zephras Isle",
-   "level": 14,
+   "level": 15,
    "seconds": 218
   },
   {
@@ -4277,7 +4330,7 @@
    "questName": "The Forest's Bounty",
    "npcName": "Strange Hermit",
    "zoneName": "Zephras Isle",
-   "level": 14,
+   "level": 15,
    "seconds": 10
   },
   {
@@ -4292,7 +4345,7 @@
    "questName": "Free the Hollows",
    "npcName": "Strange Hermit",
    "zoneName": "Zephras Isle",
-   "level": 14,
+   "level": 15,
    "seconds": 10
   },
   {
@@ -4306,7 +4359,7 @@
    "questName": "The Forest's Bounty",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 14,
+   "level": 15,
    "seconds": 438,
    "objectives": [
     {
@@ -5311,7 +5364,7 @@
    "questName": "Neeru Fireblade",
    "npcName": "Margoz",
    "zoneName": "Durotar",
-   "level": 15,
+   "level": 16,
    "seconds": 10
   },
   {
@@ -5326,7 +5379,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Orgrimmar",
-   "level": 15,
+   "level": 16,
    "seconds": 60
   },
   {
@@ -5341,7 +5394,7 @@
    "questName": "Neeru Fireblade",
    "npcName": "Neeru Fireblade",
    "zoneName": "Orgrimmar",
-   "level": 15,
+   "level": 16,
    "seconds": 10
   },
   {
@@ -5355,7 +5408,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Orgrimmar",
-   "level": 15,
+   "level": 16,
    "seconds": 29
   },
   {
@@ -5370,7 +5423,7 @@
    "questName": "Ak'Zeloth",
    "npcName": "Neeru Fireblade",
    "zoneName": "Orgrimmar",
-   "level": 15,
+   "level": 16,
    "seconds": 29
   },
   {
@@ -5385,7 +5438,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 15,
+   "level": 16,
    "seconds": 60
   },
   {
@@ -5400,7 +5453,7 @@
    "questName": "Ak'Zeloth",
    "npcName": "Ak'Zeloth",
    "zoneName": "The Barrens",
-   "level": 15,
+   "level": 16,
    "seconds": 10
   },
   {
@@ -8528,6 +8581,21 @@
    "seconds": 104
   },
   {
+   "id": "accept-6541",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 51.5,
+   "y": 30.9,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 3429,
+   "questName": "Report to Kadrak",
+   "npcName": "Thork",
+   "zoneName": "The Barrens",
+   "level": 17,
+   "seconds": 11
+  },
+  {
    "id": "travel-1413-1412-3",
    "type": "travel",
    "mapId": 1412,
@@ -8539,7 +8607,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Mulgore",
-   "level": 16,
+   "level": 17,
    "seconds": 60
   },
   {
@@ -8554,7 +8622,7 @@
    "questName": "The Hunter's Way",
    "npcName": "Melor Stonehoof",
    "zoneName": "Mulgore",
-   "level": 16,
+   "level": 17,
    "seconds": 10
   },
   {
@@ -8569,7 +8637,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 60
   },
   {
@@ -8584,7 +8652,7 @@
    "questName": "The Disruption Ends",
    "npcName": "Thork",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 10
   },
   {
@@ -8599,7 +8667,7 @@
    "questName": "Stolen Silver",
    "npcName": "Gazrog",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 18
   },
   {
@@ -8614,7 +8682,7 @@
    "questName": "Apothecary Zamah",
    "npcName": "Apothecary Helbrim",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 17
   },
   {
@@ -8629,7 +8697,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "Mulgore",
-   "level": 16,
+   "level": 17,
    "seconds": 60
   },
   {
@@ -8644,7 +8712,7 @@
    "questName": "Sergra Darkthorn",
    "npcName": "Melor Stonehoof",
    "zoneName": "Mulgore",
-   "level": 16,
+   "level": 17,
    "seconds": 10
   },
   {
@@ -8659,7 +8727,7 @@
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 60
   },
   {
@@ -8674,7 +8742,7 @@
    "questName": "The Forgotten Pools",
    "npcName": "Tonga Runetotem",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 10
   },
   {
@@ -8689,7 +8757,7 @@
    "questName": "Verog the Dervish",
    "npcName": "Regthar Deathgate",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 117
   },
   {
@@ -8704,7 +8772,7 @@
    "questName": "Harpy Lieutenants",
    "npcName": "Darsok Swiftdagger",
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 104
   },
   {
@@ -8718,7 +8786,7 @@
    "questName": "The Disruption Ends",
    "npcName": null,
    "zoneName": "The Barrens",
-   "level": 16,
+   "level": 17,
    "seconds": 537,
    "objectives": [
     {
@@ -9268,21 +9336,6 @@
    "seconds": 104
   },
   {
-   "id": "accept-6541",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 51.5,
-   "y": 30.9,
-   "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 3429,
-   "questName": "Report to Kadrak",
-   "npcName": "Thork",
-   "zoneName": "The Barrens",
-   "level": 17,
-   "seconds": 11
-  },
-  {
    "id": "accept-844",
    "type": "accept",
    "mapId": 1413,
@@ -9295,7 +9348,7 @@
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
    "level": 17,
-   "seconds": 20
+   "seconds": 19
   },
   {
    "id": "accept-877",
@@ -11324,505 +11377,6 @@
    "seconds": 19
   },
   {
-   "id": "accept-903",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.2,
-   "y": 31,
-   "confidence": "unverified",
-   "questId": 903,
-   "npcId": 3338,
-   "questName": "Prowlers of the Barrens",
-   "npcName": "Sergra Darkthorn",
-   "zoneName": "The Barrens",
-   "level": 17,
-   "seconds": 19
-  },
-  {
-   "id": "accept-1489",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.3,
-   "y": 31.9,
-   "confidence": "unverified",
-   "questId": 1489,
-   "npcId": 3448,
-   "questName": "Hamuul Runetotem",
-   "npcName": "Tonga Runetotem",
-   "zoneName": "The Barrens",
-   "level": 17,
-   "seconds": 19
-  },
-  {
-   "id": "accept-3301",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.3,
-   "y": 31.9,
-   "confidence": "unverified",
-   "questId": 3301,
-   "npcId": 3448,
-   "questName": "Mura Runetotem",
-   "npcName": "Tonga Runetotem",
-   "zoneName": "The Barrens",
-   "level": 17,
-   "seconds": 10
-  },
-  {
-   "id": "complete-903",
-   "type": "complete",
-   "mapId": 1413,
-   "x": 49.16,
-   "y": 24.67,
-   "confidence": "unverified",
-   "questId": 903,
-   "questName": "Prowlers of the Barrens",
-   "npcName": null,
-   "zoneName": "The Barrens",
-   "level": 17,
-   "seconds": 308,
-   "objectives": [
-    {
-     "kind": "collect",
-     "id": 5096,
-     "name": "Prowler Claws",
-     "sources": [
-      "Savannah Prowler"
-     ],
-     "icon": 132935
-    }
-   ],
-   "area": [
-    [
-     40.3,
-     20.5
-    ],
-    [
-     40.3,
-     20.7
-    ],
-    [
-     40.4,
-     20.2
-    ],
-    [
-     40.6,
-     22.5
-    ],
-    [
-     40.7,
-     21
-    ],
-    [
-     40.8,
-     22.9
-    ],
-    [
-     40.8,
-     26.3
-    ],
-    [
-     40.9,
-     20.8
-    ],
-    [
-     40.9,
-     21.8
-    ],
-    [
-     41,
-     21
-    ],
-    [
-     41,
-     21.2
-    ],
-    [
-     41,
-     21.5
-    ],
-    [
-     41,
-     26.6
-    ],
-    [
-     41,
-     26.8
-    ],
-    [
-     41,
-     27.2
-    ],
-    [
-     41.1,
-     20.8
-    ],
-    [
-     41.2,
-     27
-    ],
-    [
-     41.3,
-     24.3
-    ],
-    [
-     41.3,
-     28.4
-    ],
-    [
-     41.4,
-     28.7
-    ],
-    [
-     41.5,
-     24.2
-    ],
-    [
-     41.6,
-     28.7
-    ],
-    [
-     41.7,
-     23.3
-    ],
-    [
-     42,
-     23.5
-    ],
-    [
-     42.2,
-     32.4
-    ],
-    [
-     42.4,
-     32.8
-    ],
-    [
-     42.4,
-     34.6
-    ],
-    [
-     42.5,
-     35.1
-    ],
-    [
-     42.6,
-     28.9
-    ],
-    [
-     42.6,
-     33
-    ],
-    [
-     42.7,
-     32.7
-    ],
-    [
-     42.7,
-     33.2
-    ],
-    [
-     42.7,
-     34.6
-    ],
-    [
-     42.8,
-     33.4
-    ],
-    [
-     42.8,
-     35
-    ],
-    [
-     42.9,
-     33.4
-    ],
-    [
-     42.9,
-     33.8
-    ],
-    [
-     43,
-     33.1
-    ],
-    [
-     43.2,
-     33.3
-    ],
-    [
-     43.2,
-     33.7
-    ],
-    [
-     43.4,
-     35.3
-    ],
-    [
-     43.5,
-     39.3
-    ],
-    [
-     43.6,
-     35.2
-    ],
-    [
-     43.6,
-     35.5
-    ],
-    [
-     43.6,
-     39.1
-    ],
-    [
-     43.6,
-     39.4
-    ],
-    [
-     43.7,
-     37.9
-    ],
-    [
-     43.8,
-     32.6
-    ],
-    [
-     43.8,
-     35.4
-    ],
-    [
-     43.8,
-     37.6
-    ],
-    [
-     43.9,
-     32.9
-    ],
-    [
-     44.2,
-     31.2
-    ],
-    [
-     44.2,
-     31.6
-    ],
-    [
-     44.2,
-     32.8
-    ],
-    [
-     44.5,
-     31.9
-    ],
-    [
-     53.2,
-     15.5
-    ],
-    [
-     53.3,
-     15.2
-    ],
-    [
-     53.3,
-     16.1
-    ],
-    [
-     53.5,
-     15.4
-    ],
-    [
-     53.5,
-     15.9
-    ],
-    [
-     53.7,
-     13.5
-    ],
-    [
-     53.7,
-     13.9
-    ],
-    [
-     53.7,
-     15.7
-    ],
-    [
-     53.8,
-     15
-    ],
-    [
-     53.8,
-     15.3
-    ],
-    [
-     53.9,
-     14.1
-    ],
-    [
-     54,
-     13.5
-    ],
-    [
-     54,
-     15.2
-    ],
-    [
-     54,
-     15.6
-    ],
-    [
-     54.2,
-     15.1
-    ],
-    [
-     54.5,
-     14.5
-    ],
-    [
-     54.6,
-     14.6
-    ],
-    [
-     54.7,
-     15.1
-    ],
-    [
-     54.8,
-     14.8
-    ],
-    [
-     55,
-     14.9
-    ],
-    [
-     55,
-     15.2
-    ],
-    [
-     55.5,
-     14.8
-    ],
-    [
-     55.5,
-     16
-    ],
-    [
-     55.6,
-     14.6
-    ],
-    [
-     55.6,
-     15.1
-    ],
-    [
-     55.6,
-     16.3
-    ],
-    [
-     55.6,
-     16.5
-    ],
-    [
-     55.7,
-     15.9
-    ],
-    [
-     55.8,
-     14.8
-    ],
-    [
-     55.8,
-     16.2
-    ],
-    [
-     57.7,
-     39.3
-    ],
-    [
-     58.6,
-     40.8
-    ],
-    [
-     59,
-     36.5
-    ],
-    [
-     59.2,
-     41
-    ],
-    [
-     59.3,
-     40.8
-    ],
-    [
-     59.6,
-     40.9
-    ],
-    [
-     59.7,
-     34.4
-    ],
-    [
-     60.2,
-     7.9
-    ],
-    [
-     60.6,
-     7.9
-    ],
-    [
-     62.6,
-     27.5
-    ],
-    [
-     62.8,
-     28.7
-    ],
-    [
-     63.1,
-     27.5
-    ],
-    [
-     63.2,
-     28.1
-    ],
-    [
-     63.2,
-     29.5
-    ],
-    [
-     63.3,
-     7.3
-    ],
-    [
-     63.5,
-     5.3
-    ],
-    [
-     63.5,
-     5.9
-    ],
-    [
-     63.7,
-     6.3
-    ]
-   ]
-  },
-  {
-   "id": "turnin-903",
-   "type": "turnin",
-   "mapId": 1413,
-   "x": 52.2,
-   "y": 31,
-   "confidence": "unverified",
-   "questId": 903,
-   "npcId": 3338,
-   "questName": "Prowlers of the Barrens",
-   "npcName": "Sergra Darkthorn",
-   "zoneName": "The Barrens",
-   "level": 18,
-   "seconds": 85
-  },
-  {
    "id": "accept-899",
    "type": "accept",
    "mapId": 1413,
@@ -11835,7 +11389,7 @@
    "npcName": "Mankrik",
    "zoneName": "The Barrens",
    "level": 18,
-   "seconds": 16
+   "seconds": 15
   },
   {
    "id": "accept-4921",
@@ -12499,6 +12053,505 @@
    "seconds": 10
   },
   {
+   "id": "accept-903",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.2,
+   "y": 31,
+   "confidence": "unverified",
+   "questId": 903,
+   "npcId": 3338,
+   "questName": "Prowlers of the Barrens",
+   "npcName": "Sergra Darkthorn",
+   "zoneName": "The Barrens",
+   "level": 18,
+   "seconds": 19
+  },
+  {
+   "id": "accept-1489",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.3,
+   "y": 31.9,
+   "confidence": "unverified",
+   "questId": 1489,
+   "npcId": 3448,
+   "questName": "Hamuul Runetotem",
+   "npcName": "Tonga Runetotem",
+   "zoneName": "The Barrens",
+   "level": 18,
+   "seconds": 19
+  },
+  {
+   "id": "accept-3301",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.3,
+   "y": 31.9,
+   "confidence": "unverified",
+   "questId": 3301,
+   "npcId": 3448,
+   "questName": "Mura Runetotem",
+   "npcName": "Tonga Runetotem",
+   "zoneName": "The Barrens",
+   "level": 18,
+   "seconds": 10
+  },
+  {
+   "id": "complete-903",
+   "type": "complete",
+   "mapId": 1413,
+   "x": 49.16,
+   "y": 24.67,
+   "confidence": "unverified",
+   "questId": 903,
+   "questName": "Prowlers of the Barrens",
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 18,
+   "seconds": 308,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 5096,
+     "name": "Prowler Claws",
+     "sources": [
+      "Savannah Prowler"
+     ],
+     "icon": 132935
+    }
+   ],
+   "area": [
+    [
+     40.3,
+     20.5
+    ],
+    [
+     40.3,
+     20.7
+    ],
+    [
+     40.4,
+     20.2
+    ],
+    [
+     40.6,
+     22.5
+    ],
+    [
+     40.7,
+     21
+    ],
+    [
+     40.8,
+     22.9
+    ],
+    [
+     40.8,
+     26.3
+    ],
+    [
+     40.9,
+     20.8
+    ],
+    [
+     40.9,
+     21.8
+    ],
+    [
+     41,
+     21
+    ],
+    [
+     41,
+     21.2
+    ],
+    [
+     41,
+     21.5
+    ],
+    [
+     41,
+     26.6
+    ],
+    [
+     41,
+     26.8
+    ],
+    [
+     41,
+     27.2
+    ],
+    [
+     41.1,
+     20.8
+    ],
+    [
+     41.2,
+     27
+    ],
+    [
+     41.3,
+     24.3
+    ],
+    [
+     41.3,
+     28.4
+    ],
+    [
+     41.4,
+     28.7
+    ],
+    [
+     41.5,
+     24.2
+    ],
+    [
+     41.6,
+     28.7
+    ],
+    [
+     41.7,
+     23.3
+    ],
+    [
+     42,
+     23.5
+    ],
+    [
+     42.2,
+     32.4
+    ],
+    [
+     42.4,
+     32.8
+    ],
+    [
+     42.4,
+     34.6
+    ],
+    [
+     42.5,
+     35.1
+    ],
+    [
+     42.6,
+     28.9
+    ],
+    [
+     42.6,
+     33
+    ],
+    [
+     42.7,
+     32.7
+    ],
+    [
+     42.7,
+     33.2
+    ],
+    [
+     42.7,
+     34.6
+    ],
+    [
+     42.8,
+     33.4
+    ],
+    [
+     42.8,
+     35
+    ],
+    [
+     42.9,
+     33.4
+    ],
+    [
+     42.9,
+     33.8
+    ],
+    [
+     43,
+     33.1
+    ],
+    [
+     43.2,
+     33.3
+    ],
+    [
+     43.2,
+     33.7
+    ],
+    [
+     43.4,
+     35.3
+    ],
+    [
+     43.5,
+     39.3
+    ],
+    [
+     43.6,
+     35.2
+    ],
+    [
+     43.6,
+     35.5
+    ],
+    [
+     43.6,
+     39.1
+    ],
+    [
+     43.6,
+     39.4
+    ],
+    [
+     43.7,
+     37.9
+    ],
+    [
+     43.8,
+     32.6
+    ],
+    [
+     43.8,
+     35.4
+    ],
+    [
+     43.8,
+     37.6
+    ],
+    [
+     43.9,
+     32.9
+    ],
+    [
+     44.2,
+     31.2
+    ],
+    [
+     44.2,
+     31.6
+    ],
+    [
+     44.2,
+     32.8
+    ],
+    [
+     44.5,
+     31.9
+    ],
+    [
+     53.2,
+     15.5
+    ],
+    [
+     53.3,
+     15.2
+    ],
+    [
+     53.3,
+     16.1
+    ],
+    [
+     53.5,
+     15.4
+    ],
+    [
+     53.5,
+     15.9
+    ],
+    [
+     53.7,
+     13.5
+    ],
+    [
+     53.7,
+     13.9
+    ],
+    [
+     53.7,
+     15.7
+    ],
+    [
+     53.8,
+     15
+    ],
+    [
+     53.8,
+     15.3
+    ],
+    [
+     53.9,
+     14.1
+    ],
+    [
+     54,
+     13.5
+    ],
+    [
+     54,
+     15.2
+    ],
+    [
+     54,
+     15.6
+    ],
+    [
+     54.2,
+     15.1
+    ],
+    [
+     54.5,
+     14.5
+    ],
+    [
+     54.6,
+     14.6
+    ],
+    [
+     54.7,
+     15.1
+    ],
+    [
+     54.8,
+     14.8
+    ],
+    [
+     55,
+     14.9
+    ],
+    [
+     55,
+     15.2
+    ],
+    [
+     55.5,
+     14.8
+    ],
+    [
+     55.5,
+     16
+    ],
+    [
+     55.6,
+     14.6
+    ],
+    [
+     55.6,
+     15.1
+    ],
+    [
+     55.6,
+     16.3
+    ],
+    [
+     55.6,
+     16.5
+    ],
+    [
+     55.7,
+     15.9
+    ],
+    [
+     55.8,
+     14.8
+    ],
+    [
+     55.8,
+     16.2
+    ],
+    [
+     57.7,
+     39.3
+    ],
+    [
+     58.6,
+     40.8
+    ],
+    [
+     59,
+     36.5
+    ],
+    [
+     59.2,
+     41
+    ],
+    [
+     59.3,
+     40.8
+    ],
+    [
+     59.6,
+     40.9
+    ],
+    [
+     59.7,
+     34.4
+    ],
+    [
+     60.2,
+     7.9
+    ],
+    [
+     60.6,
+     7.9
+    ],
+    [
+     62.6,
+     27.5
+    ],
+    [
+     62.8,
+     28.7
+    ],
+    [
+     63.1,
+     27.5
+    ],
+    [
+     63.2,
+     28.1
+    ],
+    [
+     63.2,
+     29.5
+    ],
+    [
+     63.3,
+     7.3
+    ],
+    [
+     63.5,
+     5.3
+    ],
+    [
+     63.5,
+     5.9
+    ],
+    [
+     63.7,
+     6.3
+    ]
+   ]
+  },
+  {
+   "id": "turnin-903",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 52.2,
+   "y": 31,
+   "confidence": "unverified",
+   "questId": 903,
+   "npcId": 3338,
+   "questName": "Prowlers of the Barrens",
+   "npcName": "Sergra Darkthorn",
+   "zoneName": "The Barrens",
+   "level": 18,
+   "seconds": 85
+  },
+  {
    "id": "accept-881",
    "type": "accept",
    "mapId": 1413,
@@ -12511,7 +12564,7 @@
    "npcName": "Sergra Darkthorn",
    "zoneName": "The Barrens",
    "level": 18,
-   "seconds": 19
+   "seconds": 10
   },
   {
    "id": "complete-881",
@@ -15590,7 +15643,7 @@
    "questName": "Trouble at the Docks",
    "npcName": "Crane Operator Bigglefuzz",
    "zoneName": "The Barrens",
-   "level": 18,
+   "level": 19,
    "seconds": 20
   },
   {
@@ -20519,7 +20572,83 @@
    "seconds": 63
   },
   {
-   "id": "travel-1413-1412-5",
+   "id": "travel-fly-77-25",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 51.5,
+   "y": 30.4,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Camp Taurajo, The Barrens",
+   "node": "Crossroads, The Barrens",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "The Barrens",
+   "level": 20,
+   "seconds": 99
+  },
+  {
+   "id": "travel-1413-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 20,
+   "seconds": 60
+  },
+  {
+   "id": "turnin-6541",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 8582,
+   "questName": "Report to Kadrak",
+   "npcName": "Kadrak",
+   "zoneName": "Ashenvale",
+   "level": 20,
+   "seconds": 10
+  },
+  {
+   "id": "turnin-6382",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6382,
+   "npcId": 12696,
+   "questName": "The Ashenvale Hunt",
+   "npcName": "Senani Thunderheart",
+   "zoneName": "Ashenvale",
+   "level": 20,
+   "seconds": 167
+  },
+  {
+   "id": "flightpath-61",
+   "type": "flightpath",
+   "mapId": 1440,
+   "x": 73.3,
+   "y": 61.7,
+   "confidence": "unverified",
+   "node": "Splintertree Post, Ashenvale",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Ashenvale",
+   "level": 20,
+   "seconds": 14
+  },
+  {
+   "id": "travel-1440-1412",
    "type": "travel",
    "mapId": 1412,
    "x": 34.4,
@@ -20579,122 +20708,19 @@
    "seconds": 26
   },
   {
-   "id": "travel-1412-1440",
-   "type": "travel",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "mode": "walk",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 20,
-   "seconds": 60
-  },
-  {
-   "id": "turnin-6541",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
-   "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 8582,
-   "questName": "Report to Kadrak",
-   "npcName": "Kadrak",
-   "zoneName": "Ashenvale",
-   "level": 20,
-   "seconds": 10
-  },
-  {
-   "id": "turnin-6382",
-   "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
-   "confidence": "unverified",
-   "questId": 6382,
-   "npcId": 12696,
-   "questName": "The Ashenvale Hunt",
-   "npcName": "Senani Thunderheart",
-   "zoneName": "Ashenvale",
-   "level": 20,
-   "seconds": 167
-  },
-  {
-   "id": "flightpath-61",
-   "type": "flightpath",
-   "mapId": 1440,
-   "x": 73.3,
-   "y": 61.7,
-   "confidence": "unverified",
-   "node": "Splintertree Post, Ashenvale",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Ashenvale",
-   "level": 20,
-   "seconds": 14
-  },
-  {
-   "id": "travel-1440-1421",
-   "type": "travel",
-   "mapId": 1421,
-   "x": 42.9,
-   "y": 42,
-   "confidence": "unverified",
-   "mode": "zeppelin",
-   "radius": 5,
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Silverpine Forest",
-   "level": 20,
-   "seconds": 180
-  },
-  {
-   "id": "turnin-3301",
-   "type": "turnin",
-   "mapId": 1421,
-   "x": 42.9,
-   "y": 42,
-   "confidence": "unverified",
-   "questId": 3301,
-   "npcId": 8385,
-   "questName": "Mura Runetotem",
-   "npcName": "Mura Runetotem",
-   "zoneName": "Silverpine Forest",
-   "level": 20,
-   "seconds": 10
-  },
-  {
-   "id": "flightpath-10",
-   "type": "flightpath",
-   "mapId": 1421,
-   "x": 45.6,
-   "y": 42.4,
-   "confidence": "unverified",
-   "node": "The Sepulcher, Silverpine Forest",
-   "questName": null,
-   "npcName": null,
-   "zoneName": "Silverpine Forest",
-   "level": 21,
-   "seconds": 26
-  },
-  {
-   "id": "travel-1421-1442",
+   "id": "travel-1412-1442",
    "type": "travel",
    "mapId": 1442,
    "x": 74.5,
    "y": 97.9,
    "confidence": "unverified",
-   "mode": "zeppelin",
+   "mode": "walk",
    "radius": 5,
    "questName": null,
    "npcName": null,
    "zoneName": "Stonetalon Mountains",
    "level": 21,
-   "seconds": 180
+   "seconds": 60
   },
   {
    "id": "turnin-1060",
@@ -20727,19 +20753,63 @@
    "seconds": 207
   },
   {
-   "id": "travel-1442-1413-2",
+   "id": "travel-1442-1421",
+   "type": "travel",
+   "mapId": 1421,
+   "x": 42.9,
+   "y": 42,
+   "confidence": "unverified",
+   "mode": "zeppelin",
+   "radius": 5,
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Silverpine Forest",
+   "level": 21,
+   "seconds": 180
+  },
+  {
+   "id": "turnin-3301",
+   "type": "turnin",
+   "mapId": 1421,
+   "x": 42.9,
+   "y": 42,
+   "confidence": "unverified",
+   "questId": 3301,
+   "npcId": 8385,
+   "questName": "Mura Runetotem",
+   "npcName": "Mura Runetotem",
+   "zoneName": "Silverpine Forest",
+   "level": 21,
+   "seconds": 10
+  },
+  {
+   "id": "flightpath-10",
+   "type": "flightpath",
+   "mapId": 1421,
+   "x": 45.6,
+   "y": 42.4,
+   "confidence": "unverified",
+   "node": "The Sepulcher, Silverpine Forest",
+   "questName": null,
+   "npcName": null,
+   "zoneName": "Silverpine Forest",
+   "level": 21,
+   "seconds": 26
+  },
+  {
+   "id": "travel-1421-1413",
    "type": "travel",
    "mapId": 1413,
    "x": 35.3,
    "y": 27.9,
    "confidence": "unverified",
-   "mode": "walk",
+   "mode": "zeppelin",
    "radius": 5,
    "questName": null,
    "npcName": null,
    "zoneName": "The Barrens",
    "level": 21,
-   "seconds": 60
+   "seconds": 180
   },
   {
    "id": "accept-1068",
@@ -21008,7 +21078,7 @@
    ]
   },
   {
-   "id": "travel-1442-1413-3",
+   "id": "travel-1442-1413-2",
    "type": "travel",
    "mapId": 1413,
    "x": 35.3,
@@ -27526,7 +27596,7 @@
    "seconds": 132
   },
   {
-   "id": "travel-1413-1412-6",
+   "id": "travel-1413-1412-5",
    "type": "travel",
    "mapId": 1412,
    "x": 44,

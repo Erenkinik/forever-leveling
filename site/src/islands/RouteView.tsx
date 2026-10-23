@@ -262,6 +262,37 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
   }, []);
+  // Phones and tablets show the map as a sheet opened from a round button (RouteView.css, max-width 900px).
+  const [narrow, setNarrow] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const fabRef = useRef<HTMLButtonElement | null>(null);
+  const closeRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    setNarrow(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setNarrow(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+  const sheet = narrow && sheetOpen;
+  const closeSheet = useCallback(() => {
+    setSheetOpen(false);
+    fabRef.current?.focus();
+  }, []);
+  useEffect(() => {
+    if (!sheet) return;
+    closeRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeSheet();
+    };
+    document.addEventListener('keydown', onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = overflow;
+    };
+  }, [sheet, closeSheet]);
   const observerRef = useRef<ResizeObserver | null>(null);
   const frameRef = useCallback((el: HTMLDivElement | null) => {
     observerRef.current?.disconnect();
@@ -385,7 +416,22 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
           ))}
         </section>
 
-        <aside className="mapbox" aria-label={current ? `Map of ${current.zoneName ?? 'the current zone'}` : 'Map'}>
+        {narrow && current && (
+          <button ref={fabRef} type="button" className="map-fab" aria-controls="route-map" aria-expanded={sheet}
+                  onClick={() => setSheetOpen(true)}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15" /></svg>
+            Map
+          </button>
+        )}
+        {sheet && <div className="map-scrim" aria-hidden="true" onClick={closeSheet} />}
+        <div id="route-map" className={`mapbox${sheet ? ' open' : ''}`}
+               aria-label={current ? `Map of ${current.zoneName ?? 'the current zone'}` : 'Map'}
+               role={sheet ? 'dialog' : 'complementary'} aria-modal={sheet ? true : undefined}
+               inert={narrow && !sheet ? true : undefined}>
+          {narrow && (
+            <button ref={closeRef} type="button" className="icon-button map-close" aria-label="Close map"
+                    onClick={closeSheet}>×</button>
+          )}
           {current ? (
             <>
               <h2 className="map-title">{current.zoneName ?? `map #${current.mapId}`}</h2>
@@ -570,7 +616,7 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
           ) : (
             <p id="current-step" tabIndex={-1}>Route complete. Well done!</p>
           )}
-        </aside>
+        </div>
       </div>
     </div>
   );

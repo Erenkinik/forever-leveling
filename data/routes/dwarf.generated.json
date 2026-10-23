@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:26:34Z",
+ "generatedAt": "2026-10-23T02:57:41Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -30,6 +30,19 @@
    "confidence": "unverified",
    "questId": 233,
    "npcId": 658
+  },
+  {
+   "id": "accept-98581",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 29.93,
+   "y": 71.2,
+   "confidence": "unverified",
+   "questId": 98581,
+   "npcId": -10000658,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "complete-179",
@@ -59,6 +72,19 @@
    "confidence": "unverified",
    "questId": 233,
    "npcId": 714
+  },
+  {
+   "id": "turnin-98581",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 28.79,
+   "y": 66.18,
+   "confidence": "unverified",
+   "questId": 98581,
+   "npcId": 257446,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "accept-170",
@@ -360,6 +386,19 @@
    ]
   },
   {
+   "id": "accept-94373",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 28.79,
+   "y": 66.18,
+   "confidence": "unverified",
+   "questId": 94373,
+   "npcId": 257446,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
    "id": "accept-3364",
    "type": "accept",
    "mapId": 1426,
@@ -368,6 +407,18 @@
    "confidence": "unverified",
    "questId": 3364,
    "npcId": 12738
+  },
+  {
+   "id": "complete-94373",
+   "type": "complete",
+   "mapId": 1426,
+   "x": 26.84,
+   "y": 79.92,
+   "confidence": "unverified",
+   "questId": 94373,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "turnin-5626",
@@ -383,6 +434,19 @@
    ]
   },
   {
+   "id": "turnin-94373",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 28.79,
+   "y": 66.18,
+   "confidence": "unverified",
+   "questId": 94373,
+   "npcId": 257446,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
    "id": "turnin-3364",
    "type": "turnin",
    "mapId": 1426,
@@ -391,6 +455,58 @@
    "confidence": "unverified",
    "questId": 3364,
    "npcId": 836
+  },
+  {
+   "id": "accept-94374",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 28.79,
+   "y": 66.18,
+   "confidence": "unverified",
+   "questId": 94374,
+   "npcId": 257446,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "turnin-94374",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 24.84,
+   "y": 61.86,
+   "confidence": "unverified",
+   "questId": 94374,
+   "npcId": -10005891,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94375",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 24.84,
+   "y": 61.86,
+   "confidence": "unverified",
+   "questId": 94375,
+   "npcId": -10005891,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "turnin-94375",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 28.79,
+   "y": 66.18,
+   "confidence": "unverified",
+   "questId": 94375,
+   "npcId": 257446,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "accept-218",
@@ -1156,6 +1272,51 @@
    ]
   },
   {
+   "id": "travel-1426-1455-3",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 47.38,
+   "y": 13.48,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "accept-94449",
+   "type": "accept",
+   "mapId": 1455,
+   "x": 47.38,
+   "y": 13.48,
+   "confidence": "unverified",
+   "questId": 94449,
+   "npcId": 258098,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-6-8",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 50.8,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Thelsamar, Loch Modan"
+  },
+  {
+   "id": "travel-1432-1426-2",
+   "type": "travel",
+   "mapId": 1426,
+   "x": 95.4,
+   "y": 46.5,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
    "id": "accept-416",
    "type": "accept",
    "mapId": 1426,
@@ -1271,6 +1432,19 @@
    ]
   },
   {
+   "id": "turnin-94449",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 87.94,
+   "y": 44.8,
+   "confidence": "unverified",
+   "questId": 94449,
+   "npcId": 257597,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
    "id": "turnin-416",
    "type": "turnin",
    "mapId": 1426,
@@ -1324,6 +1498,19 @@
    "npcId": 1231,
    "classOnly": [
     "Hunter"
+   ]
+  },
+  {
+   "id": "accept-94465",
+   "type": "accept",
+   "mapId": 1426,
+   "x": 87.94,
+   "y": 44.8,
+   "confidence": "unverified",
+   "questId": 94465,
+   "npcId": 257597,
+   "classOnly": [
+    "Shaman"
    ]
   },
   {
@@ -1405,7 +1592,7 @@
    ]
   },
   {
-   "id": "travel-1426-1455-3",
+   "id": "travel-1426-1455-4",
    "type": "travel",
    "mapId": 1455,
    "x": 70.8,
@@ -1490,7 +1677,42 @@
    ]
   },
   {
-   "id": "travel-1453-1426",
+   "id": "travel-1453-1432",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 32.17,
+   "y": 65.97,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "turnin-94465",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 32.17,
+   "y": 65.97,
+   "confidence": "unverified",
+   "questId": 94465,
+   "npcId": 257808,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-8-6-2",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 55.9,
+   "y": 47.9,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Thelsamar, Loch Modan",
+   "node": "Ironforge, Dun Morogh"
+  },
+  {
+   "id": "travel-1455-1426-4",
    "type": "travel",
    "mapId": 1426,
    "x": 47.6,
@@ -1522,7 +1744,7 @@
    ]
   },
   {
-   "id": "travel-1426-1455-4",
+   "id": "travel-1426-1455-5",
    "type": "travel",
    "mapId": 1455,
    "x": 27.6,
@@ -1545,7 +1767,7 @@
    ]
   },
   {
-   "id": "travel-fly-6-8",
+   "id": "travel-fly-6-8-2",
    "type": "travel",
    "mapId": 1432,
    "x": 33.9,
@@ -1555,6 +1777,95 @@
    "radius": 5,
    "fromNode": "Ironforge, Dun Morogh",
    "node": "Thelsamar, Loch Modan"
+  },
+  {
+   "id": "accept-94466",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 32.17,
+   "y": 65.97,
+   "confidence": "unverified",
+   "questId": 94466,
+   "npcId": 257808,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "complete-94466",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 33.3,
+   "y": 48.8,
+   "confidence": "unverified",
+   "questId": 94466,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "turnin-94466",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 32.17,
+   "y": 65.97,
+   "confidence": "unverified",
+   "questId": 94466,
+   "npcId": 257808,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94467",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 32.17,
+   "y": 65.97,
+   "confidence": "unverified",
+   "questId": 94467,
+   "npcId": 257808,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "complete-94467",
+   "type": "complete",
+   "mapId": 1432,
+   "x": 31.9,
+   "y": 64.5,
+   "confidence": "unverified",
+   "questId": 94467,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "turnin-94467",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 31.9,
+   "y": 64.5,
+   "confidence": "unverified",
+   "questId": 94467,
+   "npcId": -10061934,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94468",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 31.9,
+   "y": 64.5,
+   "confidence": "unverified",
+   "questId": 94468,
+   "npcId": -10061934,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "accept-224",
@@ -1664,7 +1975,7 @@
    "npcId": 1572
   },
   {
-   "id": "travel-1432-1426-2",
+   "id": "travel-1432-1426-3",
    "type": "travel",
    "mapId": 1426,
    "x": 96.1,
@@ -1682,6 +1993,19 @@
    "confidence": "unverified",
    "questId": 6391,
    "npcId": 1572
+  },
+  {
+   "id": "turnin-94468",
+   "type": "turnin",
+   "mapId": 1426,
+   "x": 87.94,
+   "y": 44.8,
+   "confidence": "unverified",
+   "questId": 94468,
+   "npcId": 257597,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "travel-1426-1432-3",
@@ -1714,7 +2038,7 @@
    "reason": "quest 250: end location unknown"
   },
   {
-   "id": "travel-fly-8-6-2",
+   "id": "travel-fly-8-6-3",
    "type": "travel",
    "mapId": 1455,
    "x": 55.9,
@@ -1736,7 +2060,7 @@
    "npcId": 4256
   },
   {
-   "id": "travel-fly-6-8-2",
+   "id": "travel-fly-6-8-3",
    "type": "travel",
    "mapId": 1432,
    "x": 33.9,
@@ -1777,7 +2101,7 @@
    "npcId": 1340
   },
   {
-   "id": "travel-fly-8-6-3",
+   "id": "travel-fly-8-6-4",
    "type": "travel",
    "mapId": 1455,
    "x": 55.9,
@@ -2004,7 +2328,7 @@
    "npcId": 6577
   },
   {
-   "id": "travel-fly-8-6-4",
+   "id": "travel-fly-8-6-5",
    "type": "travel",
    "mapId": 1455,
    "x": 55.9,
@@ -2036,7 +2360,7 @@
    "npcId": 1356
   },
   {
-   "id": "travel-fly-6-8-3",
+   "id": "travel-fly-6-8-4",
    "type": "travel",
    "mapId": 1432,
    "x": 33.9,
@@ -2167,7 +2491,7 @@
    "npcId": 5413
   },
   {
-   "id": "travel-1453-1432",
+   "id": "travel-1453-1432-2",
    "type": "travel",
    "mapId": 1432,
    "x": 23.2,
@@ -2475,7 +2799,77 @@
    "node": "Menethil Harbor, Wetlands"
   },
   {
-   "id": "travel-1437-1436",
+   "id": "travel-1437-1455",
+   "type": "travel",
+   "mapId": 1455,
+   "x": 47.38,
+   "y": 13.48,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "grind-1455-20",
+   "type": "grind",
+   "mapId": 1455,
+   "x": 47.38,
+   "y": 13.48,
+   "confidence": "unverified",
+   "untilLevel": 20
+  },
+  {
+   "id": "accept-94494",
+   "type": "accept",
+   "mapId": 1455,
+   "x": 47.38,
+   "y": 13.48,
+   "confidence": "unverified",
+   "questId": 94494,
+   "npcId": 258098,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-6-8-5",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 50.8,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Ironforge, Dun Morogh",
+   "node": "Thelsamar, Loch Modan"
+  },
+  {
+   "id": "turnin-94494",
+   "type": "turnin",
+   "mapId": 1432,
+   "x": 41.86,
+   "y": 19.02,
+   "confidence": "unverified",
+   "questId": 94494,
+   "npcId": 258043,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94495",
+   "type": "accept",
+   "mapId": 1432,
+   "x": 41.86,
+   "y": 19.02,
+   "confidence": "unverified",
+   "questId": 94495,
+   "npcId": 258043,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-1432-1436",
    "type": "travel",
    "mapId": 1436,
    "x": 59.9,
@@ -2911,6 +3305,32 @@
    "npcId": 392
   },
   {
+   "id": "gap-94503",
+   "type": "gap",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "questId": 94503,
+   "reason": "quest 94503: prereq 94502 not in route",
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "gap-94505",
+   "type": "gap",
+   "mapId": 1436,
+   "x": 30,
+   "y": 86,
+   "confidence": "unverified",
+   "questId": 94505,
+   "reason": "quest 94505: prereq 94503 is a gap",
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
    "id": "travel-1436-1433",
    "type": "travel",
    "mapId": 1433,
@@ -3132,6 +3552,16 @@
    "npcId": 381
   },
   {
+   "id": "accept-91",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900
+  },
+  {
    "id": "accept-20",
    "type": "accept",
    "mapId": 1433,
@@ -3206,6 +3636,15 @@
    "questId": 20
   },
   {
+   "id": "complete-91",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 77.99,
+   "y": 46.52,
+   "confidence": "unverified",
+   "questId": 91
+  },
+  {
    "id": "complete-246",
    "type": "complete",
    "mapId": 1433,
@@ -3275,6 +3714,16 @@
    "npcId": 381
   },
   {
+   "id": "turnin-91",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 29.7,
+   "y": 44.3,
+   "confidence": "unverified",
+   "questId": 91,
+   "npcId": 900
+  },
+  {
    "id": "turnin-20",
    "type": "turnin",
    "mapId": 1433,
@@ -3295,33 +3744,63 @@
    "npcId": 381
   },
   {
-   "id": "accept-91",
+   "id": "accept-34",
    "type": "accept",
    "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
+   "x": 21.9,
+   "y": 46.3,
    "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900
+   "questId": 34,
+   "npcId": 342
   },
   {
-   "id": "complete-91",
+   "id": "travel-1433-1453",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 45.7,
+   "y": 38.4,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "accept-343",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 45.7,
+   "y": 38.4,
+   "confidence": "unverified",
+   "questId": 343,
+   "npcId": 1444
+  },
+  {
+   "id": "travel-1453-1433",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 16.0,
+   "y": 49.3,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "complete-34",
    "type": "complete",
    "mapId": 1433,
-   "x": 77.99,
-   "y": 46.52,
+   "x": 16.0,
+   "y": 49.3,
    "confidence": "unverified",
-   "questId": 91
+   "questId": 34
   },
   {
-   "id": "turnin-91",
+   "id": "turnin-34",
    "type": "turnin",
    "mapId": 1433,
-   "x": 29.7,
-   "y": 44.3,
+   "x": 21.9,
+   "y": 46.3,
    "confidence": "unverified",
-   "questId": 91,
-   "npcId": 900
+   "questId": 34,
+   "npcId": 342
   },
   {
    "id": "travel-1433-1429",
@@ -3371,6 +3850,16 @@
    "y": 72.3,
    "confidence": "unverified",
    "node": "Stormwind, Elwynn"
+  },
+  {
+   "id": "turnin-343",
+   "type": "turnin",
+   "mapId": 1453,
+   "x": 74.2,
+   "y": 7.5,
+   "confidence": "unverified",
+   "questId": 343,
+   "npcId": 1440
   },
   {
    "id": "travel-fly-2-4",
@@ -3525,22 +4014,38 @@
    "npcId": 382
   },
   {
-   "id": "complete-124",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 29.02,
-   "y": 31.55,
+   "id": "travel-fly-5-2-2",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
    "confidence": "unverified",
-   "questId": 124
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
   },
   {
-   "id": "complete-89",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 26.48,
-   "y": 28.05,
+   "id": "accept-344",
+   "type": "accept",
+   "mapId": 1453,
+   "x": 74.2,
+   "y": 7.5,
    "confidence": "unverified",
-   "questId": 89
+   "questId": 344,
+   "npcId": 1440
+  },
+  {
+   "id": "travel-fly-2-5-2",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Stormwind, Elwynn",
+   "node": "Lakeshire, Redridge"
   },
   {
    "id": "complete-122",
@@ -3559,6 +4064,24 @@
    "y": 56.35,
    "confidence": "unverified",
    "questId": 115
+  },
+  {
+   "id": "complete-124",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 29.02,
+   "y": 31.55,
+   "confidence": "unverified",
+   "questId": 124
+  },
+  {
+   "id": "complete-89",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 26.48,
+   "y": 28.05,
+   "confidence": "unverified",
+   "questId": 89
   },
   {
    "id": "turnin-130",
@@ -3621,67 +4144,62 @@
    "npcId": 382
   },
   {
-   "id": "accept-34",
+   "id": "accept-128",
    "type": "accept",
    "mapId": 1433,
-   "x": 21.9,
-   "y": 46.3,
+   "x": 31.5,
+   "y": 57.9,
    "confidence": "unverified",
-   "questId": 34,
-   "npcId": 342
+   "questId": 128,
+   "npcId": 903
   },
   {
-   "id": "travel-fly-5-2-2",
-   "type": "travel",
-   "mapId": 1453,
-   "x": 71.6,
-   "y": 72.3,
-   "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Lakeshire, Redridge",
-   "node": "Stormwind, Elwynn"
-  },
-  {
-   "id": "accept-343",
+   "id": "accept-19",
    "type": "accept",
-   "mapId": 1453,
-   "x": 45.7,
-   "y": 38.4,
-   "confidence": "unverified",
-   "questId": 343,
-   "npcId": 1444
-  },
-  {
-   "id": "travel-fly-2-5-2",
-   "type": "travel",
    "mapId": 1433,
-   "x": 25.3,
-   "y": 59.0,
+   "x": 33.5,
+   "y": 49,
    "confidence": "unverified",
-   "mode": "flight",
-   "radius": 5,
-   "fromNode": "Stormwind, Elwynn",
-   "node": "Lakeshire, Redridge"
+   "questId": 19,
+   "npcId": 382
   },
   {
-   "id": "complete-34",
+   "id": "complete-19",
    "type": "complete",
    "mapId": 1433,
-   "x": 16.0,
-   "y": 49.3,
+   "x": 69.6,
+   "y": 59.7,
    "confidence": "unverified",
-   "questId": 34
+   "questId": 19
   },
   {
-   "id": "turnin-34",
+   "id": "complete-128",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 30.27,
+   "y": 11.32,
+   "confidence": "unverified",
+   "questId": 128
+  },
+  {
+   "id": "turnin-128",
    "type": "turnin",
    "mapId": 1433,
-   "x": 21.9,
-   "y": 46.3,
+   "x": 31.5,
+   "y": 57.9,
    "confidence": "unverified",
-   "questId": 34,
-   "npcId": 342
+   "questId": 128,
+   "npcId": 903
+  },
+  {
+   "id": "turnin-19",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 33.5,
+   "y": 49,
+   "confidence": "unverified",
+   "questId": 19,
+   "npcId": 382
   },
   {
    "id": "travel-fly-5-2-3",
@@ -3704,26 +4222,6 @@
    "confidence": "unverified",
    "questId": 135,
    "npcId": 332
-  },
-  {
-   "id": "turnin-343",
-   "type": "turnin",
-   "mapId": 1453,
-   "x": 74.2,
-   "y": 7.5,
-   "confidence": "unverified",
-   "questId": 343,
-   "npcId": 1440
-  },
-  {
-   "id": "accept-344",
-   "type": "accept",
-   "mapId": 1453,
-   "x": 74.2,
-   "y": 7.5,
-   "confidence": "unverified",
-   "questId": 344,
-   "npcId": 1440
   },
   {
    "id": "travel-1453-1429",
@@ -3810,7 +4308,29 @@
    "npcId": 344
   },
   {
-   "id": "travel-1433-1429-2",
+   "id": "accept-126",
+   "type": "accept",
+   "mapId": 1433,
+   "x": 31,
+   "y": 47.3,
+   "confidence": "unverified",
+   "questId": 126,
+   "npcId": 415
+  },
+  {
+   "id": "travel-fly-5-2-5",
+   "type": "travel",
+   "mapId": 1453,
+   "x": 71.6,
+   "y": 72.3,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Stormwind, Elwynn"
+  },
+  {
+   "id": "travel-1453-1429-2",
    "type": "travel",
    "mapId": 1429,
    "x": 49.6,
@@ -3833,11 +4353,20 @@
    "id": "travel-1429-1433-2",
    "type": "travel",
    "mapId": 1433,
-   "x": 26.6,
-   "y": 44.3,
+   "x": 27.7,
+   "y": 21.4,
    "confidence": "unverified",
    "mode": "walk",
    "radius": 5
+  },
+  {
+   "id": "complete-126",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 27.7,
+   "y": 21.4,
+   "confidence": "unverified",
+   "questId": 126
   },
   {
    "id": "turnin-131",
@@ -3848,6 +4377,16 @@
    "confidence": "unverified",
    "questId": 131,
    "npcId": 379
+  },
+  {
+   "id": "turnin-126",
+   "type": "turnin",
+   "mapId": 1433,
+   "x": 31,
+   "y": 47.3,
+   "confidence": "unverified",
+   "questId": 126,
+   "npcId": 415
   },
   {
    "id": "turnin-345",
@@ -4103,93 +4642,6 @@
    "node": "Lakeshire, Redridge"
   },
   {
-   "id": "accept-128",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 31.5,
-   "y": 57.9,
-   "confidence": "unverified",
-   "questId": 128,
-   "npcId": 903
-  },
-  {
-   "id": "accept-19",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 33.5,
-   "y": 49,
-   "confidence": "unverified",
-   "questId": 19,
-   "npcId": 382
-  },
-  {
-   "id": "accept-126",
-   "type": "accept",
-   "mapId": 1433,
-   "x": 31,
-   "y": 47.3,
-   "confidence": "unverified",
-   "questId": 126,
-   "npcId": 415
-  },
-  {
-   "id": "complete-126",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 27.7,
-   "y": 21.4,
-   "confidence": "unverified",
-   "questId": 126
-  },
-  {
-   "id": "complete-128",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 30.27,
-   "y": 11.32,
-   "confidence": "unverified",
-   "questId": 128
-  },
-  {
-   "id": "complete-19",
-   "type": "complete",
-   "mapId": 1433,
-   "x": 69.6,
-   "y": 59.7,
-   "confidence": "unverified",
-   "questId": 19
-  },
-  {
-   "id": "turnin-128",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 31.5,
-   "y": 57.9,
-   "confidence": "unverified",
-   "questId": 128,
-   "npcId": 903
-  },
-  {
-   "id": "turnin-19",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 33.5,
-   "y": 49,
-   "confidence": "unverified",
-   "questId": 19,
-   "npcId": 382
-  },
-  {
-   "id": "turnin-126",
-   "type": "turnin",
-   "mapId": 1433,
-   "x": 31,
-   "y": 47.3,
-   "confidence": "unverified",
-   "questId": 126,
-   "npcId": 415
-  },
-  {
    "id": "accept-219",
    "type": "accept",
    "mapId": 1433,
@@ -4210,7 +4662,7 @@
    "npcId": 382
   },
   {
-   "id": "travel-fly-5-2-5",
+   "id": "travel-fly-5-2-6",
    "type": "travel",
    "mapId": 1453,
    "x": 71.6,
@@ -4222,7 +4674,7 @@
    "node": "Stormwind, Elwynn"
   },
   {
-   "id": "travel-1453-1429-2",
+   "id": "travel-1453-1429-3",
    "type": "travel",
    "mapId": 1429,
    "x": 49.6,
@@ -5760,13 +6212,48 @@
    "npcId": 4201
   },
   {
-   "id": "travel-1442-1431",
+   "id": "travel-1442-1437",
+   "type": "travel",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "mode": "boat",
+   "radius": 5
+  },
+  {
+   "id": "turnin-94495",
+   "type": "turnin",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94495,
+   "npcId": 258203,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-8-5",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Thelsamar, Loch Modan",
+   "node": "Lakeshire, Redridge"
+  },
+  {
+   "id": "travel-1433-1431",
    "type": "travel",
    "mapId": 1431,
    "x": 71.9,
    "y": 46.4,
    "confidence": "unverified",
-   "mode": "boat",
+   "mode": "walk",
    "radius": 5
   },
   {
@@ -7441,7 +7928,7 @@
    "node": "Ironforge, Dun Morogh"
   },
   {
-   "id": "travel-1455-1426-4",
+   "id": "travel-1455-1426-5",
    "type": "travel",
    "mapId": 1426,
    "x": 19.8,
@@ -8540,7 +9027,7 @@
    "npcId": 344
   },
   {
-   "id": "travel-fly-5-2-6",
+   "id": "travel-fly-5-2-7",
    "type": "travel",
    "mapId": 1453,
    "x": 71.6,
@@ -8592,6 +9079,142 @@
    "confidence": "unverified",
    "questId": 469,
    "npcId": 2094
+  },
+  {
+   "id": "gap-94500",
+   "type": "gap",
+   "mapId": 1437,
+   "x": 8.5,
+   "y": 55.7,
+   "confidence": "unverified",
+   "questId": 94500,
+   "reason": "quest 94500: objective located only off-route",
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "gap-94501",
+   "type": "gap",
+   "mapId": 1437,
+   "x": 8.5,
+   "y": 55.7,
+   "confidence": "unverified",
+   "questId": 94501,
+   "reason": "quest 94501: prereq 94500 is a gap",
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94497",
+   "type": "accept",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94497,
+   "npcId": 258203,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "complete-94497",
+   "type": "complete",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94497,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "turnin-94497",
+   "type": "turnin",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94497,
+   "npcId": 258203,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "accept-94499",
+   "type": "accept",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94499,
+   "npcId": 258203,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-8-5-2",
+   "type": "travel",
+   "mapId": 1433,
+   "x": 25.3,
+   "y": 59.0,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Thelsamar, Loch Modan",
+   "node": "Lakeshire, Redridge"
+  },
+  {
+   "id": "complete-94499",
+   "type": "complete",
+   "mapId": 1433,
+   "x": 73.7,
+   "y": 61.6,
+   "confidence": "unverified",
+   "questId": 94499,
+   "classOnly": [
+    "Shaman"
+   ]
+  },
+  {
+   "id": "travel-fly-5-8",
+   "type": "travel",
+   "mapId": 1432,
+   "x": 33.9,
+   "y": 50.8,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Lakeshire, Redridge",
+   "node": "Thelsamar, Loch Modan"
+  },
+  {
+   "id": "travel-1432-1437-2",
+   "type": "travel",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "turnin-94499",
+   "type": "turnin",
+   "mapId": 1437,
+   "x": 65.75,
+   "y": 76.45,
+   "confidence": "unverified",
+   "questId": 94499,
+   "npcId": 258203,
+   "classOnly": [
+    "Shaman"
+   ]
   },
   {
    "id": "accept-294",
@@ -9560,16 +10183,6 @@
    "npcId": 1074
   },
   {
-   "id": "accept-304",
-   "type": "accept",
-   "mapId": 1437,
-   "x": 49.8,
-   "y": 18.3,
-   "confidence": "unverified",
-   "questId": 304,
-   "npcId": 1071
-  },
-  {
    "id": "complete-303",
    "type": "complete",
    "mapId": 1437,
@@ -9577,15 +10190,6 @@
    "y": 21.01,
    "confidence": "unverified",
    "questId": 303
-  },
-  {
-   "id": "complete-304",
-   "type": "complete",
-   "mapId": 1437,
-   "x": 62.5,
-   "y": 28.4,
-   "confidence": "unverified",
-   "questId": 304
   },
   {
    "id": "turnin-303",
@@ -9596,16 +10200,6 @@
    "confidence": "unverified",
    "questId": 303,
    "npcId": 1074
-  },
-  {
-   "id": "turnin-304",
-   "type": "turnin",
-   "mapId": 1437,
-   "x": 49.8,
-   "y": 18.3,
-   "confidence": "unverified",
-   "questId": 304,
-   "npcId": 1071
   },
   {
    "id": "accept-647",

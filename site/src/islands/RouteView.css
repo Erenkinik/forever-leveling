@@ -3,9 +3,10 @@
   position: sticky; top: 0; z-index: 20; display: grid; align-items: center; gap: 12px;
   grid-template-columns: auto minmax(160px, 1fr) minmax(200px, 1.2fr) auto;
   margin: 12px -16px 8px; padding: 10px 16px;
-  background: linear-gradient(180deg, rgba(28, 23, 16, .97), rgba(15, 12, 8, .97));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--race-deep) 35%, rgba(28, 23, 16, .97)), rgba(15, 12, 8, .97));
   border-bottom: 1px solid var(--border-subtle); box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
+@media (min-width: 901px) { .topbar { margin-left: -24px; margin-right: -24px; padding: 10px 24px; } }
 @media (max-width: 900px) {
   .topbar { grid-template-columns: auto 1fr auto; }
   .topbar .search { grid-column: 1 / -1; grid-row: 2; }
@@ -89,6 +90,8 @@
 .settings-panel input { width: 20px; height: 20px; accent-color: var(--gold); }
 
 .route-main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+/* Wide screens: a steps column of reading width and the map filling the rest. */
+@media (min-width: 1200px) { .route-main { grid-template-columns: minmax(440px, 560px) minmax(0, 1fr); } }
 @media (max-width: 900px) { .route-main { grid-template-columns: 1fr; } }
 
 .zone {
@@ -106,7 +109,7 @@ svg.step-icon.grind { stroke: var(--gold); }
 .step.done .step-icon { opacity: .5; }
 .steps ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .step {
-  display: flex; gap: 10px; align-items: flex-start; background: var(--surface);
+  display: flex; gap: 10px; align-items: flex-start; background: color-mix(in srgb, var(--surface) 92%, transparent);
   border: 1px solid var(--border-subtle); border-radius: 10px; padding: 10px 14px 10px 10px; scroll-margin: 140px;
   transition: border-color .15s, background-color .15s;
 }
@@ -149,10 +152,43 @@ svg.step-icon.grind { stroke: var(--gold); }
   background: var(--gold); color: var(--on-gold); border-radius: 4px; padding: 4px 6px;
 }
 
-.mapbox { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; position: sticky; top: 12px; }
-@media (max-width: 900px) { .mapbox { position: static; } }
+.mapbox {
+  background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; position: sticky; top: 84px; max-height: calc(100vh - 96px); overflow: auto; scrollbar-width: thin;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+}
 .map-title { font-size: 24px; margin: 0 0 8px; }
-.map-frame { overflow: auto; border-radius: 6px; border: 1px solid var(--border-subtle); max-height: 70vh; }
+.map-frame { overflow: auto; border-radius: 6px; border: 1px solid var(--border-subtle); max-height: calc(100vh - 220px); }
+.map-close, .map-fab, .map-scrim { display: none; }
+/* Phones and tablets: the map is a sheet that slides up from the bottom, opened by a round button. */
+@media (max-width: 900px) {
+  .mapbox {
+    position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 40; max-height: 82vh; margin: 0;
+    padding: 26px 12px 16px; border-radius: 16px 16px 0 0; border-bottom: 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, .7); transform: translateY(105%); visibility: hidden;
+    transition: transform .25s ease, visibility 0s linear .25s;
+  }
+  .mapbox.open { transform: none; visibility: visible; transition: transform .25s ease; }
+  .mapbox::before {
+    content: ""; position: absolute; top: 9px; left: 50%; width: 44px; height: 5px; margin-left: -22px;
+    border-radius: 3px; background: var(--border);
+  }
+  .map-frame { max-height: none; }
+  .map-close {
+    display: inline-flex; position: absolute; top: 10px; right: 10px; font-size: 24px; line-height: 1;
+  }
+  .map-title { padding-right: 52px; }
+  .map-scrim { display: block; position: fixed; inset: 0; z-index: 35; background: rgba(0, 0, 0, .5); border: 0; }
+  .map-fab {
+    display: grid; place-items: center; position: fixed; right: 16px; bottom: calc(18px + env(safe-area-inset-bottom));
+    z-index: 30; width: 64px; height: 64px; border-radius: 50%; padding: 0; cursor: pointer;
+    background: var(--raised); border: 2px solid var(--gold); color: var(--gold);
+    font: 600 13px/1 var(--font-display); box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
+  }
+  .map-fab svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+  .route-main { padding-bottom: 90px; } /* the last step stays clear of the button */
+}
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) { .mapbox, .mapbox.open { transition: none; } }
 .map { position: relative; aspect-ratio: 1 / 1; background: #1b2414; min-width: 100%; }
 .map.art { background-size: 100% 100%; background-repeat: no-repeat; }
 .pin-label {
@@ -188,8 +224,8 @@ svg.step-icon.grind { stroke: var(--gold); }
 
 /* Dungeon entrances: the game's icon, with a small "!" at the top right when it has quests. */
 .pin.dungeon { width: 30px; height: 30px; background: none; border: 0; outline: 0; padding: 0; }
-.pin.dungeon img { width: 28px; height: 28px; filter: drop-shadow(0 0 2px #000); }
-.pin.dungeon img.dungeon-quests { position: absolute; right: -10px; top: -12px; width: 18px; height: 18px; }
+.pin.dungeon img { width: 26px; height: 26px; filter: drop-shadow(0 0 2px #000); }
+.pin.dungeon img.dungeon-quests { position: absolute; right: -6px; top: -8px; width: 14px; height: 14px; }
 .pin.dungeon:hover .pin-label, .pin.dungeon:focus-visible .pin-label, .pin.dungeon[aria-expanded="true"] .pin-label {
   display: block;
 }
@@ -212,8 +248,8 @@ svg.step-icon.grind { stroke: var(--gold); }
 .dungeon-quests-list .tag { margin-left: 6px; }
 
 /* Exploration mode: quests off the route, a small faint "!" under the route's pins. */
-.pin.optional { width: 20px; height: 20px; background: none; border: 0; outline: 0; cursor: default; }
-.pin.optional img { width: 20px; height: 20px; opacity: .55; filter: drop-shadow(0 0 1px #000); }
+.pin.optional { width: 16px; height: 16px; background: none; border: 0; outline: 0; cursor: default; }
+.pin.optional img { width: 16px; height: 16px; opacity: .55; filter: drop-shadow(0 0 1px #000); }
 .pin.optional:hover img { opacity: 1; }
 /* Not takeable yet (the game shows no "!" below a quest's minimum level): grey and fainter. */
 .pin.optional.too-high img { filter: grayscale(1) drop-shadow(0 0 1px #000); opacity: .35; }
@@ -258,22 +294,22 @@ svg.step-icon.grind { stroke: var(--gold); }
 /* Game icon pins: the icon is the marker, the step number sits beside it
    in the game's outlined yellow lettering, with no frame. */
 .pin.has-icon {
-  width: 34px; height: 34px; background: none; border: 0; outline: 0; padding: 0;
+  width: 28px; height: 28px; background: none; border: 0; outline: 0; padding: 0;
 }
-.pin.has-icon img { width: 32px; height: 32px; filter: drop-shadow(0 0 2px #000); }
+.pin.has-icon img { width: 22px; height: 22px; filter: drop-shadow(0 0 2px #000); }
 .pin.has-icon .pin-num {
   position: absolute; left: 80%; top: 50%; white-space: nowrap; letter-spacing: 0;
-  font: 400 18px/1 var(--font-display); color: #fff;
+  font: 400 15px/1 var(--font-display); color: #fff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 3px #000;
 }
-.pin.has-icon.current img { width: 42px; height: 42px; filter: drop-shadow(0 0 2px #000) drop-shadow(0 0 8px rgba(255, 209, 0, .8)); }
-.pin.has-icon.current .pin-num { font-size: 22px; color: #ffd100; }
+.pin.has-icon.current img { width: 28px; height: 28px; filter: drop-shadow(0 0 2px #000) drop-shadow(0 0 8px rgba(255, 209, 0, .8)); }
+.pin.has-icon.current .pin-num { font-size: 18px; color: #ffd100; }
 .pin.has-icon.done img { filter: grayscale(1) brightness(.8) drop-shadow(0 1px 2px #000); }
 .pin.has-icon.done .pin-num { color: #b5b5b5; }
 /* A turn-in whose quest is not done yet: faint, so the blue objective area stays the thing to look at. */
 .pin.has-icon.progress img { opacity: .5; }
 /* The "?" of a turn-in merged into this pin, small at its top-left corner. */
-.pin.has-icon img.pin-extra { position: absolute; left: -12px; top: -10px; width: 22px; height: 22px; }
+.pin.has-icon img.pin-extra { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; }
 .pin.has-icon img.pin-extra.progress { opacity: .6; }
 .pin.has-icon.progress:not(.current) .pin-num { color: #b5b5b5; opacity: .7; }
 @media (pointer: coarse) { .pin.has-icon { width: 44px; height: 44px; } }

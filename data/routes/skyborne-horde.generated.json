@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:54:05Z",
+ "generatedAt": "2026-10-23T02:55:11Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -573,16 +573,6 @@
    "npcId": 252095
   },
   {
-   "id": "gap-92553",
-   "type": "gap",
-   "mapId": 2521,
-   "x": 38.32,
-   "y": 30.19,
-   "confidence": "unverified",
-   "questId": 92553,
-   "reason": "quest 92553: objective located only off-route"
-  },
-  {
    "id": "gap-96101",
    "type": "gap",
    "mapId": 2521,
@@ -673,6 +663,16 @@
    "npcId": 252172
   },
   {
+   "id": "accept-92553",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905
+  },
+  {
    "id": "accept-92579",
    "type": "accept",
    "mapId": 2521,
@@ -760,6 +760,15 @@
    "y": 44.79,
    "confidence": "unverified",
    "questId": 92515
+  },
+  {
+   "id": "complete-92553",
+   "type": "complete",
+   "mapId": 2521,
+   "x": 41.48,
+   "y": 42.68,
+   "confidence": "unverified",
+   "questId": 92553
   },
   {
    "id": "complete-94411",
@@ -895,6 +904,16 @@
    "npcId": 252172
   },
   {
+   "id": "turnin-92553",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905
+  },
+  {
    "id": "turnin-92579",
    "type": "turnin",
    "mapId": 2521,
@@ -973,6 +992,26 @@
    "confidence": "unverified",
    "questId": 94411,
    "npcId": 251902
+  },
+  {
+   "id": "accept-94007",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 45.26,
+   "y": 44.24,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 254084
+  },
+  {
+   "id": "turnin-94007",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 59.61,
+   "y": 72.65,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 252389
   },
   {
    "id": "accept-92528",
@@ -1200,31 +1239,11 @@
    "npcId": 252448
   },
   {
-   "id": "accept-94007",
-   "type": "accept",
-   "mapId": 2521,
-   "x": 45.26,
-   "y": 44.24,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 254084
-  },
-  {
-   "id": "turnin-94007",
-   "type": "turnin",
-   "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 252389
-  },
-  {
    "id": "gap-94484",
    "type": "gap",
    "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
+   "x": 62.14,
+   "y": 73.31,
    "confidence": "unverified",
    "questId": 94484,
    "reason": "quest 94484: prereq 94493 not in route"
@@ -3210,6 +3229,16 @@
    "npcId": 3449
   },
   {
+   "id": "accept-6541",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 51.5,
+   "y": 30.9,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 3429
+  },
+  {
    "id": "travel-1413-1412-3",
    "type": "travel",
    "mapId": 1412,
@@ -3426,16 +3455,6 @@
    "npcId": 3449
   },
   {
-   "id": "accept-6541",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 51.5,
-   "y": 30.9,
-   "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 3429
-  },
-  {
    "id": "accept-844",
    "type": "accept",
    "mapId": 1413,
@@ -3581,55 +3600,6 @@
    "npcId": 3448
   },
   {
-   "id": "accept-903",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.2,
-   "y": 31,
-   "confidence": "unverified",
-   "questId": 903,
-   "npcId": 3338
-  },
-  {
-   "id": "accept-1489",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.3,
-   "y": 31.9,
-   "confidence": "unverified",
-   "questId": 1489,
-   "npcId": 3448
-  },
-  {
-   "id": "accept-3301",
-   "type": "accept",
-   "mapId": 1413,
-   "x": 52.3,
-   "y": 31.9,
-   "confidence": "unverified",
-   "questId": 3301,
-   "npcId": 3448
-  },
-  {
-   "id": "complete-903",
-   "type": "complete",
-   "mapId": 1413,
-   "x": 49.16,
-   "y": 24.67,
-   "confidence": "unverified",
-   "questId": 903
-  },
-  {
-   "id": "turnin-903",
-   "type": "turnin",
-   "mapId": 1413,
-   "x": 52.2,
-   "y": 31,
-   "confidence": "unverified",
-   "questId": 903,
-   "npcId": 3338
-  },
-  {
    "id": "accept-899",
    "type": "accept",
    "mapId": 1413,
@@ -3725,6 +3695,55 @@
    "confidence": "unverified",
    "questId": 1060,
    "npcId": 3449
+  },
+  {
+   "id": "accept-903",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.2,
+   "y": 31,
+   "confidence": "unverified",
+   "questId": 903,
+   "npcId": 3338
+  },
+  {
+   "id": "accept-1489",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.3,
+   "y": 31.9,
+   "confidence": "unverified",
+   "questId": 1489,
+   "npcId": 3448
+  },
+  {
+   "id": "accept-3301",
+   "type": "accept",
+   "mapId": 1413,
+   "x": 52.3,
+   "y": 31.9,
+   "confidence": "unverified",
+   "questId": 3301,
+   "npcId": 3448
+  },
+  {
+   "id": "complete-903",
+   "type": "complete",
+   "mapId": 1413,
+   "x": 49.16,
+   "y": 24.67,
+   "confidence": "unverified",
+   "questId": 903
+  },
+  {
+   "id": "turnin-903",
+   "type": "turnin",
+   "mapId": 1413,
+   "x": 52.2,
+   "y": 31,
+   "confidence": "unverified",
+   "questId": 903,
+   "npcId": 3338
   },
   {
    "id": "accept-881",
@@ -4601,7 +4620,58 @@
    "npcId": 3387
   },
   {
-   "id": "travel-1413-1412-5",
+   "id": "travel-fly-77-25",
+   "type": "travel",
+   "mapId": 1413,
+   "x": 51.5,
+   "y": 30.4,
+   "confidence": "unverified",
+   "mode": "flight",
+   "radius": 5,
+   "fromNode": "Camp Taurajo, The Barrens",
+   "node": "Crossroads, The Barrens"
+  },
+  {
+   "id": "travel-1413-1440",
+   "type": "travel",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "mode": "walk",
+   "radius": 5
+  },
+  {
+   "id": "turnin-6541",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 68.6,
+   "y": 89.1,
+   "confidence": "unverified",
+   "questId": 6541,
+   "npcId": 8582
+  },
+  {
+   "id": "turnin-6382",
+   "type": "turnin",
+   "mapId": 1440,
+   "x": 73.8,
+   "y": 61.5,
+   "confidence": "unverified",
+   "questId": 6382,
+   "npcId": 12696
+  },
+  {
+   "id": "flightpath-61",
+   "type": "flightpath",
+   "mapId": 1440,
+   "x": 73.3,
+   "y": 61.7,
+   "confidence": "unverified",
+   "node": "Splintertree Post, Ashenvale"
+  },
+  {
+   "id": "travel-1440-1412",
    "type": "travel",
    "mapId": 1412,
    "x": 34.4,
@@ -4641,46 +4711,37 @@
    "npcId": 4046
   },
   {
-   "id": "travel-1412-1440",
+   "id": "travel-1412-1442",
    "type": "travel",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
+   "mapId": 1442,
+   "x": 74.5,
+   "y": 97.9,
    "confidence": "unverified",
    "mode": "walk",
    "radius": 5
   },
   {
-   "id": "turnin-6541",
+   "id": "turnin-1060",
    "type": "turnin",
-   "mapId": 1440,
-   "x": 68.6,
-   "y": 89.1,
+   "mapId": 1442,
+   "x": 74.5,
+   "y": 97.9,
    "confidence": "unverified",
-   "questId": 6541,
-   "npcId": 8582
+   "questId": 1060,
+   "npcId": 3995
   },
   {
-   "id": "turnin-6382",
+   "id": "turnin-1483",
    "type": "turnin",
-   "mapId": 1440,
-   "x": 73.8,
-   "y": 61.5,
+   "mapId": 1442,
+   "x": 59,
+   "y": 62.6,
    "confidence": "unverified",
-   "questId": 6382,
-   "npcId": 12696
+   "questId": 1483,
+   "npcId": 4201
   },
   {
-   "id": "flightpath-61",
-   "type": "flightpath",
-   "mapId": 1440,
-   "x": 73.3,
-   "y": 61.7,
-   "confidence": "unverified",
-   "node": "Splintertree Post, Ashenvale"
-  },
-  {
-   "id": "travel-1440-1421",
+   "id": "travel-1442-1421",
    "type": "travel",
    "mapId": 1421,
    "x": 42.9,
@@ -4709,43 +4770,13 @@
    "node": "The Sepulcher, Silverpine Forest"
   },
   {
-   "id": "travel-1421-1442",
-   "type": "travel",
-   "mapId": 1442,
-   "x": 74.5,
-   "y": 97.9,
-   "confidence": "unverified",
-   "mode": "zeppelin",
-   "radius": 5
-  },
-  {
-   "id": "turnin-1060",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 74.5,
-   "y": 97.9,
-   "confidence": "unverified",
-   "questId": 1060,
-   "npcId": 3995
-  },
-  {
-   "id": "turnin-1483",
-   "type": "turnin",
-   "mapId": 1442,
-   "x": 59,
-   "y": 62.6,
-   "confidence": "unverified",
-   "questId": 1483,
-   "npcId": 4201
-  },
-  {
-   "id": "travel-1442-1413-2",
+   "id": "travel-1421-1413",
    "type": "travel",
    "mapId": 1413,
    "x": 35.3,
    "y": 27.9,
    "confidence": "unverified",
-   "mode": "walk",
+   "mode": "zeppelin",
    "radius": 5
   },
   {
@@ -4797,7 +4828,7 @@
    "questId": 1068
   },
   {
-   "id": "travel-1442-1413-3",
+   "id": "travel-1442-1413-2",
    "type": "travel",
    "mapId": 1413,
    "x": 35.3,
@@ -6378,7 +6409,7 @@
    "node": "Camp Taurajo, The Barrens"
   },
   {
-   "id": "travel-1413-1412-6",
+   "id": "travel-1413-1412-5",
    "type": "travel",
    "mapId": 1412,
    "x": 44,

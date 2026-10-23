@@ -6,7 +6,7 @@
   1,
   35
  ],
- "generatedAt": "2026-10-22T23:54:03Z",
+ "generatedAt": "2026-10-23T02:55:10Z",
  "dataBuild": "1.60.1.70532",
  "reviewed": false,
  "releaseTier": "beta",
@@ -935,21 +935,6 @@
    "seconds": 30
   },
   {
-   "id": "gap-92553",
-   "type": "gap",
-   "mapId": 2521,
-   "x": 38.32,
-   "y": 30.19,
-   "confidence": "unverified",
-   "questId": 92553,
-   "reason": "quest 92553: objective located only off-route",
-   "questName": "Restocking the Larders",
-   "npcName": null,
-   "zoneName": "Zephras Isle",
-   "level": 6,
-   "seconds": 0
-  },
-  {
    "id": "gap-96101",
    "type": "gap",
    "mapId": 2521,
@@ -1070,6 +1055,21 @@
    "seconds": 14
   },
   {
+   "id": "accept-92553",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905,
+   "questName": "Restocking the Larders",
+   "npcName": "Zerril Softbreeze",
+   "zoneName": "Zephras Isle",
+   "level": 6,
+   "seconds": 23
+  },
+  {
    "id": "accept-92596",
    "type": "accept",
    "mapId": 2521,
@@ -1082,7 +1082,7 @@
    "npcName": "Rathiril Sunlance",
    "zoneName": "Zephras Isle",
    "level": 6,
-   "seconds": 16
+   "seconds": 26
   },
   {
    "id": "accept-92701",
@@ -1236,6 +1236,44 @@
    ]
   },
   {
+   "id": "complete-92553",
+   "type": "complete",
+   "mapId": 2521,
+   "x": 41.48,
+   "y": 42.68,
+   "confidence": "unverified",
+   "questId": 92553,
+   "questName": "Restocking the Larders",
+   "npcName": null,
+   "zoneName": "Zephras Isle",
+   "level": 6,
+   "seconds": 588,
+   "objectives": [
+    {
+     "kind": "collect",
+     "id": 6889,
+     "name": "Small Egg",
+     "sources": [],
+     "icon": 132832
+    },
+    {
+     "kind": "collect",
+     "id": 5469,
+     "name": "Strider Meat",
+     "sources": [
+      "Galestrider"
+     ],
+     "icon": 133972
+    }
+   ],
+   "area": [
+    [
+     41.5,
+     42.7
+    ]
+   ]
+  },
+  {
    "id": "complete-94413",
    "type": "complete",
    "mapId": 2521,
@@ -1247,7 +1285,7 @@
    "npcName": null,
    "zoneName": "Zephras Isle",
    "level": 6,
-   "seconds": 229,
+   "seconds": 232,
    "objectives": [
     {
      "kind": "kill",
@@ -1273,7 +1311,7 @@
    "questName": "Hippogryph Harrassment",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 6,
+   "level": 7,
    "seconds": 640,
    "objectives": [
     {
@@ -1318,7 +1356,7 @@
    "questName": "A Little Beauty",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 6,
+   "level": 7,
    "seconds": 404,
    "objectives": [
     {
@@ -1515,7 +1553,7 @@
    "questName": "The Criminal Element",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 20
   },
   {
@@ -1530,7 +1568,7 @@
    "questName": "Falaath Village",
    "npcName": "Missionary Jasaan",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 68
   },
   {
@@ -1545,7 +1583,7 @@
    "questName": "Havoc in the Highlands",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 7,
+   "level": 8,
    "seconds": 68
   },
   {
@@ -1564,6 +1602,21 @@
    "seconds": 14
   },
   {
+   "id": "turnin-92553",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 43.85,
+   "y": 43.89,
+   "confidence": "unverified",
+   "questId": 92553,
+   "npcId": 251905,
+   "questName": "Restocking the Larders",
+   "npcName": "Zerril Softbreeze",
+   "zoneName": "Zephras Isle",
+   "level": 8,
+   "seconds": 23
+  },
+  {
    "id": "turnin-92596",
    "type": "turnin",
    "mapId": 2521,
@@ -1576,7 +1629,7 @@
    "npcName": "Rathiril Sunlance",
    "zoneName": "Zephras Isle",
    "level": 8,
-   "seconds": 16
+   "seconds": 26
   },
   {
    "id": "turnin-92701",
@@ -1699,6 +1752,36 @@
    "seconds": 21
   },
   {
+   "id": "accept-94007",
+   "type": "accept",
+   "mapId": 2521,
+   "x": 45.26,
+   "y": 44.24,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 254084,
+   "questName": "Taming the Beast",
+   "npcName": "Elayaa Easewind",
+   "zoneName": "Zephras Isle",
+   "level": 9,
+   "seconds": 21
+  },
+  {
+   "id": "turnin-94007",
+   "type": "turnin",
+   "mapId": 2521,
+   "x": 59.61,
+   "y": 72.65,
+   "confidence": "unverified",
+   "questId": 94007,
+   "npcId": 252389,
+   "questName": "Taming the Beast",
+   "npcName": "Quel'ana Quickgale",
+   "zoneName": "Zephras Isle",
+   "level": 9,
+   "seconds": 199
+  },
+  {
    "id": "accept-92528",
    "type": "accept",
    "mapId": 2521,
@@ -1710,8 +1793,8 @@
    "questName": "Among the Faithful",
    "npcName": "Missionary Jasaan",
    "zoneName": "Zephras Isle",
-   "level": 8,
-   "seconds": 64
+   "level": 9,
+   "seconds": 144
   },
   {
    "id": "turnin-92528",
@@ -1725,7 +1808,7 @@
    "questName": "Among the Faithful",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 68
   },
   {
@@ -1740,7 +1823,7 @@
    "questName": "A Last Request",
    "npcName": "Peacekeeper Vaaniel",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 101
   },
   {
@@ -1755,7 +1838,7 @@
    "questName": "A Last Request",
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 101
   },
   {
@@ -1770,7 +1853,7 @@
    "questName": "The Missing Scholar",
    "npcName": "Fillion Flamebreeze",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 147
   },
   {
@@ -1784,7 +1867,7 @@
    "questName": "The Missing Scholar",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 269,
    "objectives": [
     {
@@ -1816,38 +1899,8 @@
    "questName": "The Missing Scholar",
    "npcName": "Fillion Flamebreeze",
    "zoneName": "Zephras Isle",
-   "level": 8,
+   "level": 9,
    "seconds": 143
-  },
-  {
-   "id": "accept-94007",
-   "type": "accept",
-   "mapId": 2521,
-   "x": 45.26,
-   "y": 44.24,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 254084,
-   "questName": "Taming the Beast",
-   "npcName": "Elayaa Easewind",
-   "zoneName": "Zephras Isle",
-   "level": 9,
-   "seconds": 262
-  },
-  {
-   "id": "turnin-94007",
-   "type": "turnin",
-   "mapId": 2521,
-   "x": 59.61,
-   "y": 72.65,
-   "confidence": "unverified",
-   "questId": 94007,
-   "npcId": 252389,
-   "questName": "Taming the Beast",
-   "npcName": "Quel'ana Quickgale",
-   "zoneName": "Zephras Isle",
-   "level": 9,
-   "seconds": 199
   },
   {
    "id": "accept-92682",
@@ -1862,7 +1915,7 @@
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
    "level": 9,
-   "seconds": 124
+   "seconds": 165
   },
   {
    "id": "accept-92683",
@@ -2128,7 +2181,7 @@
    "questName": "Flutterfly Dust",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2143,7 +2196,7 @@
    "questName": "Ornery Ornery Galestriders",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2158,7 +2211,7 @@
    "questName": "The Hills Have Eyes",
    "npcName": "Aamelia Windfield",
    "zoneName": "Zephras Isle",
-   "level": 9,
+   "level": 10,
    "seconds": 10
   },
   {
@@ -2937,7 +2990,7 @@
    "questName": "Making Our Move",
    "npcName": null,
    "zoneName": "Zephras Isle",
-   "level": 10,
+   "level": 11,
    "seconds": 601,
    "objectives": [
     {
@@ -3197,7 +3250,7 @@
    "questName": "Avenged Tenfold",
    "npcName": "Elaadrin Evengale",
    "zoneName": "Zephras Isle",
-   "level": 11,
+   "level": 12,
    "seconds": 13
   },
   {
@@ -3212,7 +3265,7 @@
    "questName": "Catching Wind",
    "npcName": "Elaadrin Evengale",
    "zoneName": "Zephras Isle",
-   "level": 11,
+   "level": 12,
    "seconds": 10
   },
   {
@@ -3407,7 +3460,7 @@
    "questName": "Taming the Beast",
    "npcName": "Quel'ana Quickgale",
    "zoneName": "Zephras Isle",
-   "level": 12,
+   "level": 13,
    "seconds": 110
   },
   {
@@ -3422,7 +3475,7 @@
    "questName": "Training the Beast",
    "npcName": "Quel'dora Quickgale",
    "zoneName": "Zephras Isle",
-   "level": 12,
+   "level": 13,
    "seconds": 10
   },
   {
@@ -3824,7 +3877,7 @@
    "questName": "Al'Aketh Assassins",
    "npcName": "Fendaal Windstone",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 120
   },
   {
@@ -3839,7 +3892,7 @@
    "questName": "Confront Lorthuna",
    "npcName": "Valennia Stormfist",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 98
   },
   {
@@ -3854,7 +3907,7 @@
    "questName": "The Inner Sanctum",
    "npcName": "Hyusaa Quickbreeze",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 21
   },
   {
@@ -3869,7 +3922,7 @@
    "questName": "Confront Lorthuna",
    "npcName": "Elaadrin Evengale",
    "zoneName": "Zephras Isle",
-   "level": 13,
+   "level": 14,
    "seconds": 167
   },
   {
@@ -4234,7 +4287,7 @@
    "questName": "The Wounds of Betrayal",
    "npcName": "Elegael Thornpaw",
    "zoneName": "Zephras Isle",
-   "level": 14,
+   "level": 15,
    "seconds": 10
   },
   {

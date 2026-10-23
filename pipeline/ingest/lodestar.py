@@ -47,6 +47,57 @@ ATTUNEMENT_GUIDES: dict[int, list[str]] = {
     229: ["Upper_Blackrock_Spire_-_Seal_of_Ascension"],
     531: ["AhnQiraj_-_Scepter_of_the_Shifting_Sands"],
 }
+# Class guides (Guides/Class/<Faction>/<Class>.lua) by faction. Only the quests in CLASS_QUESTS are taken from
+# them: the class chains new in Forever, which pfQuest does not have.
+CLASS_GUIDES: dict[str, tuple[str, ...]] = {"Alliance": ("Shaman",)}
+CLASS_MASKS = {"Shaman": 64}
+# Forever's Alliance (Dwarf) shaman totem chains: quest id -> (level, minimum level, the quest before it). The
+# levels are Forever's own (forever.warcraftdb.com); the Water chain's are not published there, so they are
+# estimated from the chain's minimum level 20.
+CLASS_QUESTS: dict[int, tuple[int, int, int | None]] = {
+    # Earth: Archaic Rune, then three Call of Earth
+    98581: (1, 1, None), 94373: (4, 4, 98581), 94374: (4, 4, 94373), 94375: (4, 4, 94374),
+    # Fire
+    94449: (10, 10, None), 94465: (11, 10, 94449), 94466: (14, 10, 94465), 94467: (14, 10, 94466),
+    94468: (14, 10, 94467),
+    # Water
+    94494: (20, 20, None), 94495: (20, 20, 94494), 94497: (21, 20, 94495), 94499: (21, 20, 94497),
+    94500: (21, 20, 94499), 94501: (22, 20, 94500), 94502: (23, 20, 94501), 94503: (23, 20, 94502),
+    94505: (23, 20, 94503),
+    # Air
+    94789: (30, 30, None),
+}
+# NPC ids from here up are new in Forever; a class chain's quest giver below it gets a stand-in id (_class_npc),
+# above any item stand-in (minus the item id).
+FOREVER_NPCS = 200_000
+CLASS_NPC_BASE = 10_000_000
+# Quests a class chain hands in at, or takes from, an object (the guide has no NPC for them): quest id -> (which
+# end, the object's name, its zone, x, y). The route needs an NPC there, so the object gets a stand-in unit
+# (minus CLASS_NPC_BASE plus the object id) where it stands.
+CLASS_OBJECT_ENDS: dict[int, tuple[str, str, str, float, float]] = {
+    94467: ("end", "Brazier of the Dormant Flame", "Loch Modan", 31.9, 64.5),
+    94468: ("start", "Brazier of the Dormant Flame", "Loch Modan", 31.9, 64.5),
+    94502: ("end", "Forgotten Shrine", "Westfall", 45.57, 59.88),
+    94503: ("start", "Forgotten Shrine", "Westfall", 45.57, 59.88),
+}
+OBJECT_IDS = {"Brazier of the Dormant Flame": 61934, "Forgotten Shrine": 619896}
+# The class guide is generated, and for items and NPCs the vanilla Horde quests also have it puts the point on the
+# other faction's map. (id on the line, the guide's zone) -> where it is in Forever ("Zone x,y") and, for an item,
+# who drops it there; from the public Forever guides (Warcraft Tavern's "Dwarf Shaman Totem Quests").
+CLASS_POINT_FIXES: dict[tuple[int, str], tuple[str, str | None]] = {
+    (5026, "The Barrens"): ("Loch Modan 35.6,20.2", "Tunnel Rat Geomancer"),  # Fire Tar
+    (5026, "Durotar"): ("Loch Modan 35.6,20.2", "Tunnel Rat Geomancer"),
+    (6652, "Durotar"): ("Loch Modan 31.0,77.4", "Stonesplinter Seer"),  # Reagent Pouch
+    (6655, "Durotar"): ("Loch Modan 31.9,64.5", "Minor Manifestation of Fire"),  # Glowing Ember
+    (94467, "Durotar"): ("Loch Modan 31.9,64.5", None),  # the Brazier of the Dormant Flame
+    (61934, "Durotar"): ("Loch Modan 31.9,64.5", None),
+    (94468, "Durotar"): ("Loch Modan 31.9,64.5", None),
+    (7812, "Silverpine Forest"): ("Westfall 47.5,60.4", "Corrupt Minor Manifestation of Water"),  # Bracers
+    (94503, "Silverpine Forest"): ("Westfall 47.5,60.4", None),  # the Minor Manifestation of Water
+    (94505, "Silverpine Forest"): ("Westfall 47.5,60.4", None),
+    (265748, "Wetlands"): ("Redridge Mountains 73.7,61.6", None),  # Full Red Waterskin: Stonewatch Falls
+    (265773, "Wetlands"): ("Ashenvale 37.0,51.6", None),  # Full Blue Waterskin: the waters of Astranaar
+}
 # The guides start at level 1 and end at 12; quest levels are not in them, so they are spread over this range
 # in guide order (an estimate).
 LEVELS = (1, 12)
@@ -86,6 +137,19 @@ def fetch_lodestar(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> 
             except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
                 part.unlink(missing_ok=True)
                 raise RuntimeError(f"failed to download {stem} ({faction}): {exc}") from exc
+            part.replace(dest)
+    for faction, classes in CLASS_GUIDES.items():
+        for cls in classes:
+            dest = base / "class" / faction.lower() / f"{cls}.lua"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            part = dest.with_name(dest.name + ".part")
+            url = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/Guides/Class/{faction}/{cls}.lua"
+            try:
+                with opener(url, timeout=60) as resp:
+                    part.write_bytes(resp.read())
+            except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
+                part.unlink(missing_ok=True)
+                raise RuntimeError(f"failed to download class guide {cls} ({faction}): {exc}") from exc
             part.replace(dest)
     for paths in ATTUNEMENT_GUIDES.values():
         for rel in paths:
@@ -156,6 +220,27 @@ def _goto(line: str, map_ids: dict[str, int]) -> tuple[int, float, float] | None
     if not m or m.group(1) not in map_ids:
         return None
     return map_ids[m.group(1)], float(m.group(2)), float(m.group(3))
+
+
+def _class_npc(uid: int | None) -> int | None:
+    """The unit id a class chain's quest giver gets: its own for an NPC new in Forever, else a stand-in (minus
+    CLASS_NPC_BASE plus the id), because Forever put the vanilla NPC somewhere else and the vanilla quests keep
+    pfQuest's place for it."""
+    return uid if uid is None or uid >= FOREVER_NPCS else -(CLASS_NPC_BASE + uid)
+
+
+def _fix_class_points(text: str) -> str:
+    """The class guide with CLASS_POINT_FIXES applied: a line naming the id with a goto in the given zone gets the
+    fixed goto, and for an item its Forever dropper."""
+    out = []
+    for line in text.splitlines():
+        for (eid, zone), (goto, dropper) in CLASS_POINT_FIXES.items():
+            if f"##{eid} " in line and f"|goto {zone} " in line:
+                line = re.sub(r"\|goto [^|]+?(?= \||$)", f"|goto {goto}", line)
+                if dropper:
+                    line = re.sub(r"\{dropsfrom\}[^|]+", f"{{dropsfrom}}{dropper}", line)
+        out.append(line)
+    return "\n".join(out)
 
 
 def parse_guide(text: str, map_ids: dict[str, int]) -> dict:
@@ -301,6 +386,55 @@ def load_lodestar(src_dir: Path, map_ids: dict[str, int], uimap_to_area: dict[in
             for uid, u in g["units"].items():
                 rec = units.setdefault(uid, {"name": u["name"], "coords": [], "fac": None})
                 rec["coords"] += [c for c in coords(u["points"]) if c not in rec["coords"]]
+    # The class chains new in Forever, from the class guides: only the quests in CLASS_QUESTS, with their levels and
+    # chain order from there (the guides do not say which quest comes first).
+    for faction, classes in CLASS_GUIDES.items():
+        for cls in classes:
+            path = Path(src_dir) / "class" / faction.lower() / f"{cls}.lua"
+            if not path.is_file():
+                continue
+            g = parse_guide(_fix_class_points(path.read_text(encoding="utf-8")), map_ids)
+            for qid in g["order"]:
+                if qid not in CLASS_QUESTS or qid in quests:
+                    continue
+                q = g["quests"][qid]
+                lvl, min_level, before = CLASS_QUESTS[qid]
+                start, end = (_class_npc(q[k]) for k in ("start", "end"))
+                if qid in CLASS_OBJECT_ENDS:
+                    side, name, zone, x, y = CLASS_OBJECT_ENDS[qid]
+                    stand_in = -(CLASS_NPC_BASE + OBJECT_IDS[name])
+                    rec = units.setdefault(stand_in, {"name": name, "coords": [], "fac": None})
+                    rec["coords"] += [c for c in coords([(map_ids[zone], x, y)] if zone in map_ids else [])
+                                      if c not in rec["coords"]]
+                    start, end = (stand_in, end) if side == "start" else (start, stand_in)
+                factions.setdefault(qid, set()).add(faction)
+                text = "; ".join(f"{c} {g['items'].get(i, {}).get('name')}" for i, c in q["I"].items() if c)
+                quests[qid] = {
+                    "name": q.get("name"), "lvl": lvl, "min": min_level, "pre": [before] if before else [],
+                    "objectiveText": text or None, "class": CLASS_MASKS[cls],
+                    "start": {"U": [start]} if start else {}, "end": {"U": [end]} if end else {},
+                    "obj": {k: list(q[k]) for k in ("U", "I", "O") if q[k]}, "source": "lodestar", "races": None,
+                }
+            taken = {e for qid in quests if qid in CLASS_QUESTS for k in ("U", "I", "O")
+                     for e in g["quests"].get(qid, {}).get(k, {})}
+            ends = {e for qid in quests if qid in CLASS_QUESTS for e in (g["quests"].get(qid, {}).get("start"),
+                                                                        g["quests"].get(qid, {}).get("end"))}
+            for uid, u in g["units"].items():
+                if uid in taken or uid in ends:
+                    rec = units.setdefault(_class_npc(uid) if uid in ends else uid, {"name": u["name"], "coords": [], "fac": None})
+                    rec["coords"] += [c for c in coords(u["points"]) if c not in rec["coords"]]
+            for oid, o in g["objects"].items():
+                if oid in taken:
+                    rec = objects.setdefault(oid, {"name": o["name"], "coords": [], "fac": None})
+                    rec["coords"] += [c for c in coords(o["points"]) if c not in rec["coords"]]
+            for iid, it in g["items"].items():
+                if iid not in taken:
+                    continue
+                rec = items.setdefault(iid, {"name": it["name"], "units": [], "objects": [], "chances": {}})
+                if it["points"]:  # the guide's droppers are named only: a stand-in where it is got
+                    units.setdefault(-iid, {"name": ", ".join(sorted(it["droppers"])) or it["name"], "coords": [],
+                                            "fac": None})["coords"] += coords(it["points"])
+                    rec["units"] = sorted(set(rec["units"]) | {-iid})
     # A quest in one faction's guide only is that faction's; in both, anyone's (None).
     for qid, q in quests.items():
         q["factions"] = None if len(factions[qid]) > 1 else sorted(factions[qid])
@@ -308,10 +442,16 @@ def load_lodestar(src_dir: Path, map_ids: dict[str, int], uimap_to_area: dict[in
 
 
 def merge(base: PfData, extra: PfData) -> PfData:
-    """`base` (pfQuest) with the quests, units, objects and items it lacks taken from `extra`."""
+    """`base` (pfQuest) with the quests, units, objects and items it lacks taken from `extra`; an item both have
+    also gets extra's stand-in droppers (where a Forever quest gets it)."""
+    items = {**extra.items, **base.items}
+    for iid, it in base.items.items():
+        stand_ins = [d for d in extra.items.get(iid, {}).get("units", []) if d < 0 and d not in it.get("units", [])]
+        if stand_ins:
+            items[iid] = {**it, "units": it.get("units", []) + stand_ins}
     return PfData(
         quests={**extra.quests, **base.quests},
         units={**extra.units, **base.units},
         objects={**extra.objects, **base.objects},
-        items={**extra.items, **base.items},
+        items=items,
     )
