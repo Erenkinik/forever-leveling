@@ -1,0 +1,18 @@
+# TASLAK — Eren onaylayacak (§8.2). Skyborne Zephras Isle'da başlar (Lodestar rehberindeki olgular), sonra Human
+# rotasının bölgeleriyle devam eder.
+route: skyborne-alliance
+race: Skyborne
+faction: Alliance
+reviewed: false
+zones:
+  - Zephras Isle
+  - Westfall
+  - Loch Modan
+  - Redridge Mountains
+  - Darkshore
+  - Ashenvale
+  - Wetlands
+  - Duskwood
+  - Hillsbrad Foothills
+  - Stranglethorn Vale
+  - Desolace

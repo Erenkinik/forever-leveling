@@ -54,6 +54,8 @@ def step_seconds(route: dict, quests: dict[int, dict], levels: dict[str, int] | 
                 seconds = _flight_yards(step, taxi) / FLY_YARDS_PER_SECOND + FLIGHT_OVERHEAD_SECONDS
             elif mode in ("boat", "zeppelin"):
                 seconds = SHIP_SECONDS
+            elif mode == "portal":
+                seconds = TALK_SECONDS
             else:
                 seconds = ZONE_CROSSING_SECONDS
         elif kind != "gap":

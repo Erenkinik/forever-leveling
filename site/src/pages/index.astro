@@ -22,7 +22,7 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
     {factions.map((faction) => (
       <section aria-labelledby={`f-${faction}`} class="faction">
         <h2 id={`f-${faction}`} class={faction.toLowerCase()}>
-          <span aria-hidden="true">{faction === 'Alliance' ? '◆' : '▲'}</span> {faction}
+          <img class="faction-emblem" src={`/art/faction-${faction.toLowerCase()}.webp`} alt="" height="40" /> {faction}
         </h2>
         <ul class="races">
           {routes.filter((r) => r.faction === faction).map((r) => {
@@ -39,15 +39,11 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
               </li>
             );
           })}
-          <li>
-            <span class="race soon" aria-disabled="true">
-              <span class="race-text"><span class="race-name">Skyborne</span><span class="sub">Coming soon</span></span>
-            </span>
-          </li>
         </ul>
       </section>
     ))}
-    <p class="note">Skyborne starts on Zephras Isle, which is new in Forever. Its routes follow once the quests are recorded.</p>
+    <p class="note">Skyborne start on Zephras Isle, new in Forever, and pick their faction there; each faction has its
+      own Skyborne route.</p>
   </main>
 </Base>
 
@@ -57,7 +53,9 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
   .lead { font-size: 18px; max-width: 60ch; margin: 0; }
   @media (max-width: 600px) { .hero { flex-direction: column; align-items: flex-start; } .hero h1 { font-size: 30px; } }
   .note { color: var(--muted); }
-  .faction h2 { font-size: 24px; margin-top: 32px; }
+  .faction h2 { font-size: 24px; margin-top: 32px; display: flex; align-items: center; gap: 12px; }
+  /* The game's own faction emblem from the target frame (python -m pipeline maps). */
+  .faction-emblem { height: 40px; width: auto; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7)); }
   .faction h2.alliance { color: var(--alliance); }
   .faction h2.horde { color: var(--horde); }
   .races { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
@@ -75,5 +73,4 @@ const cap = Math.max(...routes.map((r) => r.levelRange[1]));
   .race-text { display: grid; gap: 2px; }
   .race-name { font: 700 20px var(--font-display); letter-spacing: .03em; }
   .race .sub { font: 14px var(--font-mono); color: var(--muted); }
-  .race.soon { border-style: dashed; border-left-width: 1px; color: var(--muted); background: var(--surface); }
 </style>

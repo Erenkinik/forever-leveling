@@ -131,7 +131,8 @@
             "flight",
             "boat",
             "zeppelin",
-            "hearth"
+            "hearth",
+            "portal"
           ]
         },
         "radius": {

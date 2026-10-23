@@ -2,7 +2,9 @@
 import math
 
 from pipeline.generate import GenerationError
-from pipeline.generate.config import CONTINENT_TRAVEL, ISLAND_MAPS, LEVEL_CAP, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT
+from pipeline.generate.config import (
+    CONTINENT_TRAVEL, ISLAND_MAPS, LEVEL_CAP, PORTAL_MAPS, QUEST_LEVEL_MARGIN, QUEST_LOG_LIMIT,
+)
 from pipeline.generate.flight import Flights
 from pipeline.generate.gaps import complete_location, quest_gaps
 from pipeline.generate.graph import build_graph, class_only, drop_pulled, select_quests
@@ -21,7 +23,7 @@ class _Steps:
     """Step list that emits a travel step on every map change and keeps ids unique (-2, -3, ...).
 
     `continents` (map -> continent UiMap) decides the travel mode: across continents, or to or from an
-    island, the faction's boat or zeppelin; otherwise walking. Unknown maps walk. With `flights`, a flight master
+    island, the faction's boat or zeppelin; to or from Zephras Isle the Skyborne portal; otherwise walking. Unknown maps walk. With `flights`, a flight master
     near a step is found there (a flightpath step), and a walk to another map flies when that is much shorter.
     Steps of the quests in `classes` (quest id -> classes) are marked classOnly.
     """
@@ -37,6 +39,8 @@ class _Steps:
         self._classes = classes or {}
 
     def _mode(self, src: int, dst: int) -> str:
+        if src in PORTAL_MAPS or dst in PORTAL_MAPS:
+            return "portal"
         a, b = self._continents.get(src), self._continents.get(dst)
         if src in ISLAND_MAPS or dst in ISLAND_MAPS or (a is not None and b is not None and a != b):
             return "boat" if (src in ISLAND_MAPS or dst in ISLAND_MAPS) else self._ship

@@ -21,12 +21,12 @@
 ## Elenen görevler (nedene göre)
 
 - class: 14 (kimlikler: 30, 1881, 1882, 1883, 1884, 1943, 1944, 1945, 1946, 1950, 1959, 1960, 1961, 1962)
-- faction: 670
-- level-unknown: 2968
+- faction: 691
+- level-unknown: 2832
 - not-in-forever: 771
 - over-cap: 2039
-- race: 224
-- zone: 385
+- race: 245
+- zone: 479
 - zone-outlier: 32 (kimlikler: 235, 873, 874, 1040, 1095, 1112, 1130, 1145, 1153, 1184, 1362, 1719, 1791, 1795, 1796, 1801, 1838, 1839, 1840, 1841, 1842, 1843, 1848, 2380, 4781, 6626, 7789, 7833, 7834, 7866, 8370, 8426)
 
 ## Rotaya çekilen önkoşullar (başka bölgede başlıyor)

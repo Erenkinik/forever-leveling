@@ -22,8 +22,9 @@ class ZoneOrder:
     zones: list[int]
 
 
-def load_zone_order(path: Path, uimaps: dict[int, str]) -> ZoneOrder:
-    """Load and validate a zone order file; names must match exactly one UiMap name."""
+def load_zone_order(path: Path, uimaps: dict[int, str], parents: dict[int, int] | None = None) -> ZoneOrder:
+    """Load and validate a zone order file; names must match exactly one UiMap name. With `parents`, a name shared
+    by several maps means the one that has a parent map (the game also lists a parentless Zephras Isle)."""
     path = Path(path)
     try:
         doc = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -41,6 +42,8 @@ def load_zone_order(path: Path, uimaps: dict[int, str]) -> ZoneOrder:
     ids: list[int] = []
     for name in doc["zones"]:
         matches = by_name.get(name, [])
+        if len(matches) > 1 and parents is not None:
+            matches = [m for m in matches if parents.get(m)] or matches
         if not matches:
             raise ValueError(f"{path.name}: unknown zone name {name!r}")
         if len(matches) > 1:

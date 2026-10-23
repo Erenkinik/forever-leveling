@@ -7,17 +7,20 @@ async function openSettings(page: Page) {
   if ((await gear.getAttribute('aria-expanded')) !== 'true') await gear.click();
 }
 
-const ROUTES = ['dwarf', 'gnome', 'human', 'night-elf', 'orc', 'tauren', 'troll', 'undead'];
+const ROUTES = ['dwarf', 'gnome', 'human', 'night-elf', 'orc', 'skyborne-alliance', 'skyborne-horde', 'tauren',
+  'troll', 'undead'];
 
-test('race picker reaches every route and marks Skyborne as coming soon', async ({ page }) => {
+test('race picker reaches every route, Skyborne once per faction', async ({ page }) => {
+  test.setTimeout(90_000);  // opens all ten route pages, some with a thousand steps
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(/^Level 1 to \d+, the fast way$/);
   const hrefs = await page.locator('a.race').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
   expect(hrefs.sort()).toEqual(ROUTES.map((r) => `/${r}/`).sort());
-  await expect(page.getByText('Coming soon')).toHaveCount(2);
+  await expect(page.locator('section.faction a.race', { hasText: 'Skyborne' })).toHaveCount(2);
   for (const route of ROUTES) {
     const res = await page.goto(`/${route}/`);
     expect(res?.status()).toBe(200);
+    await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();  // the island is hydrated
     await expect(page.locator('li.step[aria-current="step"]')).toHaveCount(1);
   }
 });
@@ -251,7 +254,7 @@ test('the race switcher lists every race and moves to the chosen one', async ({ 
   await expect(button).toHaveAttribute('aria-expanded', 'false');
   await button.click();
   await expect(button).toHaveAttribute('aria-expanded', 'true');
-  await expect(page.locator('.race-panel a')).toHaveCount(8);
+  await expect(page.locator('.race-panel a')).toHaveCount(ROUTES.length);
   await expect(page.locator('.race-panel a[aria-current="page"]')).toHaveText('Human');
   await page.keyboard.press('Escape');
   await expect(button).toHaveAttribute('aria-expanded', 'false');

@@ -144,7 +144,12 @@ ART_QUADS: dict[str, int] = {
     "crest-troll": 131777,
     "crest-undead": 131487,
     "crest-tauren": 131715,
+    # Skyborne has no crest in the game files: its banner shows the faction's.
+    "crest-skyborne-alliance": 131223,
+    "crest-skyborne-horde": 131507,
 }
+# The faction emblems of the target frame (interface/targetingframe/ui-pvp-<faction>.blp), trimmed to the emblem.
+FACTION_EMBLEMS: dict[str, int] = {"faction-alliance": 136998, "faction-horde": 137000}
 # The quest frame parchment (interface/questframe/questbg.blp): the page is the top-left 300x335 of the texture.
 PARCHMENT = (530420, (0, 0, 300, 335))
 CREST_MAX = 640
@@ -206,7 +211,8 @@ def hollow_icon(icon: Image.Image, grey: int = 175, wall: int = 9) -> Image.Imag
 
 
 def build_art(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.urlopen) -> list[str]:
-    """Write <out_dir>/<name>.webp for the race crests, the quest parchment and the icons; returns the names."""
+    """Write <out_dir>/<name>.webp for the race crests, the faction emblems, the quest parchment and the icons;
+    returns the names."""
     cache = Path(raw_dir) / "art"
     out_dir.mkdir(parents=True, exist_ok=True)
     stitched: dict[int, Image.Image] = {}
@@ -217,6 +223,11 @@ def build_art(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.ur
             crest.thumbnail((CREST_MAX, CREST_MAX))
             stitched[base] = crest
         stitched[base].save(out_dir / f"{name}.webp", "WEBP", quality=WEBP_QUALITY, method=6)
+        names.append(name)
+    for name, fdid in FACTION_EMBLEMS.items():
+        emblem = _tile(fdid, cache, opener).convert("RGBA")
+        box = emblem.getchannel("A").getbbox()
+        (emblem.crop(box) if box else emblem).save(out_dir / f"{name}.webp", "WEBP", lossless=True)
         names.append(name)
     fdid, box = PARCHMENT
     _tile(fdid, cache, opener).convert("RGB").crop(box).save(out_dir / "parchment.webp", "WEBP",

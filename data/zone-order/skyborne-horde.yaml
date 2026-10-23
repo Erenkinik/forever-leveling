@@ -1,0 +1,15 @@
+# TASLAK — Eren onaylayacak (§8.2). Skyborne Zephras Isle'da başlar (Lodestar rehberindeki olgular), sonra Orc
+# rotasının bölgeleriyle devam eder.
+route: skyborne-horde
+race: Skyborne
+faction: Horde
+reviewed: false
+zones:
+  - Zephras Isle
+  - The Barrens
+  - Stonetalon Mountains
+  - Ashenvale
+  - Thousand Needles
+  - Desolace
+  - Stranglethorn Vale
+  - Arathi Highlands

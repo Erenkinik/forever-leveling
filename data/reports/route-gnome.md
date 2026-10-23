@@ -21,12 +21,12 @@
 ## Elenen görevler (nedene göre)
 
 - class: 13 (kimlikler: 30, 96, 1649, 1650, 1651, 1652, 1653, 1654, 1806, 2985, 2986, 6085, 6124)
-- faction: 493
-- level-unknown: 2968
+- faction: 514
+- level-unknown: 2832
 - not-in-forever: 771
 - over-cap: 2039
-- race: 242
-- zone: 416
+- race: 263
+- zone: 510
 - zone-outlier: 28 (kimlikler: 98, 166, 227, 228, 229, 231, 466, 467, 873, 981, 1040, 1095, 1112, 1143, 1275, 1302, 1719, 1758, 1791, 1795, 1796, 2299, 2359, 2926, 2962, 4781, 6626, 7863)
 
 ## Rotaya çekilen önkoşullar (başka bölgede başlıyor)

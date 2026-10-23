@@ -154,14 +154,15 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
         "start": _point(), "end": _point(), "objectives": _objectives(None), "kills": [],
     }
     if pq is not None:
-        sources.append("pfquest")
+        sources.append(pq.get("source", "pfquest"))  # "lodestar" for the Zephras Isle facts
         s_ref, e_ref = _endpoint(pq.get("start")), _endpoint(pq.get("end"))
         for label in ("start", "end"):
             if _is_multiple(pq.get(label)):
                 conflicts.append(f"{label}.multiple")
         rec.update(
             name=pq.get("name"), level=pq.get("lvl"), minLevel=pq.get("min"),
-            races=races_from_mask(pq.get("race")), classes=classes_from_mask(pq.get("class")),
+            races=pq["races"] if "races" in pq else races_from_mask(pq.get("race")),
+            classes=classes_from_mask(pq.get("class")),
             prereqs=list(pq.get("pre") or []),
             start=_build_point(pf, s_ref, _unit_zones(pf, e_ref), zone_to_uimap, conflicts, "start"),
             end=_build_point(pf, e_ref, _unit_zones(pf, s_ref), zone_to_uimap, conflicts, "end"),
@@ -204,6 +205,8 @@ def _record(qid, pf, forever_ids, zone_to_uimap, manual) -> dict:
     rec["factions"] = factions_for(
         rec["races"], [_endpoint_fac(pf, raw_ends[label], rec[label]) for label in ("start", "end")]
     )
+    if pq is not None and "factions" in pq:  # a source that knows the quest's faction (Lodestar's guides)
+        rec["factions"] = pq["factions"]
     lineages = sorted({SOURCE_LINEAGE[s] for s in sources})
     conflicts = sorted(set(conflicts))
     in_forever = qid in forever_ids

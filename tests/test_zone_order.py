@@ -53,3 +53,11 @@ def test_invalid_yaml_is_a_value_error_naming_the_file(tmp_path):
     p = _write(tmp_path, "route: t\nzones: [Alpha\n")
     with pytest.raises(ValueError, match=r"^order\.yaml: invalid YAML: "):
         load_zone_order(p, UIMAPS)
+
+
+def test_a_name_several_maps_share_means_the_one_with_a_parent(tmp_path):
+    p = _write(tmp_path, "route: t\nrace: Skyborne\nfaction: Alliance\nreviewed: false\nzones: [Zephras Isle]\n")
+    maps = {2521: "Zephras Isle", 2665: "Zephras Isle"}
+    assert load_zone_order(p, maps, {2521: 947, 2665: 0}).zones == [2521]
+    with pytest.raises(ValueError, match="several"):
+        load_zone_order(p, maps)

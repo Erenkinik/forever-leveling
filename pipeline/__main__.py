@@ -22,6 +22,23 @@ def _canonical_path() -> Path:
     return DATA_DIR / "canonical" / "quests.json"
 
 
+def _with_lodestar(pf):
+    """pfQuest's data plus the Zephras Isle (Skyborne) facts from Lodestar's guides in raw/lodestar, when there."""
+    from pipeline.ingest.lodestar import load_lodestar, merge
+    from pipeline.ingest.wago import load_uimap_parents, load_uimaps, load_zone_to_uimap
+
+    wago = RAW_DIR / "wago" / DATA_BUILD
+    names, parents = load_uimaps(wago), load_uimap_parents(wago)
+    map_ids: dict[str, int] = {}
+    for ui in sorted(names):
+        if parents.get(ui):  # a map with no parent is a duplicate (Zephras Isle 2665)
+            map_ids.setdefault(names[ui], ui)
+    uimap_to_area: dict[int, int] = {}
+    for area, ui in sorted(load_zone_to_uimap(wago).items()):
+        uimap_to_area.setdefault(ui, area)
+    return merge(pf, load_lodestar(RAW_DIR / "lodestar", map_ids, uimap_to_area))
+
+
 def _build_records() -> list[dict]:
     from pipeline.ingest.manual import load_manual
     from pipeline.ingest.pfquest import load_pfquest
@@ -30,7 +47,7 @@ def _build_records() -> list[dict]:
 
     wago = RAW_DIR / "wago" / DATA_BUILD
     return build_canonical(
-        load_pfquest(RAW_DIR / "pfquest"),
+        _with_lodestar(load_pfquest(RAW_DIR / "pfquest")),
         load_quest_ids(wago),
         load_zone_to_uimap(wago),
         load_manual(DATA_DIR / "manual" / "quests.yaml"),
@@ -97,7 +114,8 @@ def _build_spawns(records: list[dict]) -> str:
     from pipeline.normalize.spawns import build_spawns
 
     doc = build_spawns(
-        load_pfquest(RAW_DIR / "pfquest", require_items=True), records, load_zone_to_uimap(RAW_DIR / "wago" / DATA_BUILD)
+        _with_lodestar(load_pfquest(RAW_DIR / "pfquest", require_items=True)), records,
+        load_zone_to_uimap(RAW_DIR / "wago" / DATA_BUILD),
     )
     return json.dumps(doc, indent=None, ensure_ascii=False, separators=(",", ":")) + "\n"
 
@@ -334,7 +352,7 @@ def cmd_generate(args) -> int:
 
     try:
         uimaps = load_uimaps_canonical(DATA_DIR)
-        order = load_zone_order(order_path, uimaps)
+        order = load_zone_order(order_path, uimaps, load_uimap_parents_canonical(DATA_DIR))
         patches = load_overrides(DATA_DIR / "overrides" / f"{args.route}.yaml")
     except (ValueError, OSError) as exc:
         print(str(exc), file=sys.stderr)

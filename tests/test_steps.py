@@ -525,3 +525,10 @@ def test_class_quest_steps_are_marked_and_give_no_shared_xp():
     assert report["questLevel"] == 1
     everyone, report = _gen(two(None))
     assert report["questLevel"] == 2 and "classOnly" not in everyone["steps"][0]  # 2 * 250 XP
+
+
+def test_leaving_zephras_isle_is_the_skyborne_portal():
+    quests = _quests(_q(1, 10, 10, map_id=2521), _q(2, 20, 20, map_id=20, level=2, min_level=1))
+    order = ZoneOrder("t", "Skyborne", "Alliance", False, [2521, 20])
+    route, _ = _gen(quests, order=order)
+    assert _step(route, "travel-2521-20")["mode"] == "portal"

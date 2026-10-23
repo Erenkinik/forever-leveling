@@ -15,6 +15,8 @@ export const RACE_THEMES: Record<string, RaceTheme> = {
   troll: { accent: '#3aa88f', deep: '#0f3029' },
   undead: { accent: '#8fbf5a', deep: '#1c2a12' },
   tauren: { accent: '#c99a52', deep: '#3a2a14' },
+  'skyborne-alliance': { accent: '#6cb8e6', deep: '#10293a' },
+  'skyborne-horde': { accent: '#e0866e', deep: '#3b1a12' },
 };
 
 export const themeFor = (routeId: string): RaceTheme => RACE_THEMES[routeId] ?? RACE_THEMES.human;

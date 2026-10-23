@@ -78,6 +78,7 @@ export interface Part {
 
 const TRAVEL_VERB: Record<string, string> = {
   walk: 'Travel to', boat: 'Take the boat to', zeppelin: 'Take the zeppelin to', flight: 'Fly to', hearth: 'Hearth to',
+  portal: 'Take the portal to',
 };
 
 const quest = (s: Step): Part => ({ text: s.questName ?? `quest #${s.questId}`, kind: 'quest' });

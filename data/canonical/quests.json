@@ -310861,27 +310861,27 @@
  },
  {
   "id": 92460,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Coming of Age",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251362,
+   "name": "Ailee Farheart",
+   "uiMapId": 2521,
+   "x": 42.82,
+   "y": 23.37
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "objectives": {
    "units": [],
@@ -310892,10 +310892,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -310904,41 +310906,55 @@
  },
  {
   "id": 92461,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Harmony in Balance",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92460
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "objectives": {
-   "units": [],
+   "units": [
+    250873
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 250873,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -310947,41 +310963,55 @@
  },
  {
   "id": 92462,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Infestation Investigation",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92460
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251368,
+   "name": "Elatrell Featherlight",
+   "uiMapId": 2521,
+   "x": 43.4,
+   "y": 24.79
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251368,
+   "name": "Elatrell Featherlight",
+   "uiMapId": 2521,
+   "x": 43.4,
+   "y": 24.79
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251169
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251169,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -310990,41 +311020,55 @@
  },
  {
   "id": 92463,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Cirrusfly Queen",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92462
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251368,
+   "name": "Elatrell Featherlight",
+   "uiMapId": 2521,
+   "x": 43.4,
+   "y": 24.79
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251368,
+   "name": "Elatrell Featherlight",
+   "uiMapId": 2521,
+   "x": 43.4,
+   "y": 24.79
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251404
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251404,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311033,27 +311077,27 @@
  },
  {
   "id": 92464,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Elemental Unrest",
+  "level": 1,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 249363,
+   "name": "Yala Windwatcher",
+   "uiMapId": 2521,
+   "x": 47.26,
+   "y": 21.89
   },
   "objectives": {
    "units": [],
@@ -311064,10 +311108,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311076,41 +311122,61 @@
  },
  {
   "id": 92465,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Agitators",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 249363,
+   "name": "Yala Windwatcher",
+   "uiMapId": 2521,
+   "x": 47.26,
+   "y": 21.89
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 249363,
+   "name": "Yala Windwatcher",
+   "uiMapId": 2521,
+   "x": 47.26,
+   "y": 21.89
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251143,
+    251160
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251143,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 251160,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311119,70 +311185,87 @@
  },
  {
   "id": 92466,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   1516,
+   1519
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251374,
+   "name": "Windshaper Boro",
+   "uiMapId": 2521,
+   "x": 42.77,
+   "y": 23.58
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251374,
+   "name": "Windshaper Boro",
+   "uiMapId": 2521,
+   "x": 42.77,
+   "y": 23.58
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    251924
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 251924,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": false
+  "prereqsAny": true
  },
  {
   "id": 92467,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251374,
+   "name": "Windshaper Boro",
+   "uiMapId": 2521,
+   "x": 42.77,
+   "y": 23.58
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251166,
+   "name": "Minor Manifestation of Earth",
+   "uiMapId": 2521,
+   "x": 49.67,
+   "y": 23.8
   },
   "objectives": {
    "units": [],
@@ -311190,13 +311273,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311205,27 +311292,27 @@
  },
  {
   "id": 92468,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Call of Earth",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251166,
+   "name": "Minor Manifestation of Earth",
+   "uiMapId": 2521,
+   "x": 49.67,
+   "y": 23.8
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251374,
+   "name": "Windshaper Boro",
+   "uiMapId": 2521,
+   "x": 42.77,
+   "y": 23.58
   },
   "objectives": {
    "units": [],
@@ -311233,13 +311320,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311248,27 +311339,27 @@
  },
  {
   "id": 92469,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Return to Rorian",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 249363,
+   "name": "Yala Windwatcher",
+   "uiMapId": 2521,
+   "x": 47.26,
+   "y": 21.89
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "objectives": {
    "units": [],
@@ -311279,10 +311370,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311291,41 +311384,53 @@
  },
  {
   "id": 92470,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Foul Matriarch",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251366,
+   "name": "Aetheen of the Gales",
+   "uiMapId": 2521,
+   "x": 42.74,
+   "y": 23.66
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251366,
+   "name": "Aetheen of the Gales",
+   "uiMapId": 2521,
+   "x": 42.74,
+   "y": 23.66
   },
   "objectives": {
-   "units": [],
+   "units": [
+    250937
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 250937,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311334,27 +311439,27 @@
  },
  {
   "id": 92471,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Aetheen of the Gales",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251366,
+   "name": "Aetheen of the Gales",
+   "uiMapId": 2521,
+   "x": 42.74,
+   "y": 23.66
   },
   "objectives": {
    "units": [],
@@ -311365,10 +311470,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311377,27 +311484,27 @@
  },
  {
   "id": 92472,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Next Step",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251366,
+   "name": "Aetheen of the Gales",
+   "uiMapId": 2521,
+   "x": 42.74,
+   "y": 23.66
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
    "units": [],
@@ -311408,10 +311515,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311420,41 +311529,53 @@
  },
  {
   "id": 92473,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Aggressive Encroachment",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257551,
+   "name": "Valreaa Valewind",
+   "uiMapId": 2521,
+   "x": 42.42,
+   "y": 25.12
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257551,
+   "name": "Valreaa Valewind",
+   "uiMapId": 2521,
+   "x": 42.42,
+   "y": 25.12
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    251918
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 251918,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311463,27 +311584,29 @@
  },
  {
   "id": 92474,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Falling With Style",
+  "level": 2,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 263113,
+   "name": "Myriaal Mistwake",
+   "uiMapId": 2521,
+   "x": 43.68,
+   "y": 24.1
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "objectives": {
    "units": [],
@@ -311494,10 +311617,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311592,27 +311717,29 @@
  },
  {
   "id": 92481,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Student of the Arcane",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251379,
+   "name": "Dorii Brightwhisper",
+   "uiMapId": 2521,
+   "x": 41.57,
+   "y": 23.65
   },
   "objectives": {
    "units": [],
@@ -311620,13 +311747,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311635,27 +311766,29 @@
  },
  {
   "id": 92482,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Way of the Hunter",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251376,
+   "name": "Tai'ree Farsight",
+   "uiMapId": 2521,
+   "x": 42.46,
+   "y": 23.67
   },
   "objectives": {
    "units": [],
@@ -311666,10 +311799,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311678,27 +311813,29 @@
  },
  {
   "id": 92483,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "At Home in the Shadows",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251389,
+   "name": "Akeri Duskblade",
+   "uiMapId": 2521,
+   "x": 43.73,
+   "y": 24.3
   },
   "objectives": {
    "units": [],
@@ -311709,10 +311846,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311721,27 +311860,29 @@
  },
  {
   "id": 92484,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Embracing the Elements",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251374,
+   "name": "Windshaper Boro",
+   "uiMapId": 2521,
+   "x": 42.77,
+   "y": 23.58
   },
   "objectives": {
    "units": [],
@@ -311749,13 +311890,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311764,27 +311909,29 @@
  },
  {
   "id": 92485,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Student of Nature",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251373,
+   "name": "Xyton Silverwind",
+   "uiMapId": 2521,
+   "x": 41.71,
+   "y": 23.36
   },
   "objectives": {
    "units": [],
@@ -311795,10 +311942,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311936,27 +312085,27 @@
  },
  {
   "id": 92514,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Welcome to Shen'dar Village",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
    "units": [],
@@ -311964,13 +312113,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -311979,41 +312132,53 @@
  },
  {
   "id": 92515,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Problem With Prideclaws",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251993,
+   "name": "Indari Sunseam",
+   "uiMapId": 2521,
+   "x": 44.66,
+   "y": 44.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251993,
+   "name": "Indari Sunseam",
+   "uiMapId": 2521,
+   "x": 44.66,
+   "y": 44.51
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    252670
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 252670,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312022,41 +312187,69 @@
  },
  {
   "id": 92516,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Hippogryph Harrassment",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251906,
+   "name": "Teeri Wellwind",
+   "uiMapId": 2521,
+   "x": 44.44,
+   "y": 44.96
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251906,
+   "name": "Teeri Wellwind",
+   "uiMapId": 2521,
+   "x": 44.44,
+   "y": 44.96
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251291,
+    251284,
+    251261
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251291,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 251284,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 251261,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312065,41 +312258,61 @@
  },
  {
   "id": 92517,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Criminal Element",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251918,
+    255534
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251918,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 255534,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312323,27 +312536,27 @@
  },
  {
   "id": 92528,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Among the Faithful",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257065,
+   "name": "Missionary Jasaan",
+   "uiMapId": 2521,
+   "x": 46.86,
+   "y": 56.21
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
    "units": [],
@@ -312354,10 +312567,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312366,27 +312581,27 @@
  },
  {
   "id": 92529,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Falaath Village",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251904,
+   "name": "Sania Silverstream",
+   "uiMapId": 2521,
+   "x": 44.86,
+   "y": 45.46
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257065,
+   "name": "Missionary Jasaan",
+   "uiMapId": 2521,
+   "x": 46.86,
+   "y": 56.21
   },
   "objectives": {
    "units": [],
@@ -312397,10 +312612,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312409,27 +312626,29 @@
  },
  {
   "id": 92532,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Warrior's Path",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251361,
+   "name": "Rorian the Dayseeker",
+   "uiMapId": 2521,
+   "x": 42.09,
+   "y": 23.49
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251964,
+   "name": "Blademaster Ren",
+   "uiMapId": 2521,
+   "x": 43.65,
+   "y": 24.17
   },
   "objectives": {
    "units": [],
@@ -312440,10 +312659,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312581,41 +312802,69 @@
  },
  {
   "id": 92544,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Al'Aketh Thugs",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252095,
+   "name": "Hanaa Nightwind",
+   "uiMapId": 2521,
+   "x": 38.32,
+   "y": 30.19
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252095,
+   "name": "Hanaa Nightwind",
+   "uiMapId": 2521,
+   "x": 38.32,
+   "y": 30.19
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251448,
+    251145,
+    256935
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251448,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 251145,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 256935,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312710,41 +312959,53 @@
  },
  {
   "id": 92550,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Havoc in the Highlands",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
-   "units": [],
+   "units": [
+    252068
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 252068,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312753,41 +313014,53 @@
  },
  {
   "id": 92551,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Stolen Supplies",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252172,
+   "name": "Danarii Bellowveil",
+   "uiMapId": 2521,
+   "x": 45.24,
+   "y": 45.18
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252172,
+   "name": "Danarii Bellowveil",
+   "uiMapId": 2521,
+   "x": 45.24,
+   "y": 45.18
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    252760
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 252760,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -312839,41 +313112,61 @@
  },
  {
   "id": 92553,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Restocking the Larders",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251905,
+   "name": "Zerril Softbreeze",
+   "uiMapId": 2521,
+   "x": 43.85,
+   "y": 43.89
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251905,
+   "name": "Zerril Softbreeze",
+   "uiMapId": 2521,
+   "x": 43.85,
+   "y": 43.89
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    6889,
+    5469
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 6889,
+    "count": 3,
+    "chance": 70.69,
+    "level": 15.5
+   },
+   {
+    "kind": "collect",
+    "id": 5469,
+    "count": 8,
+    "chance": 44.75,
+    "level": 15.0
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313011,27 +313304,27 @@
  },
  {
   "id": 92579,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "To Valanaar",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -313039,13 +313332,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313269,27 +313566,27 @@
  },
  {
   "id": 92595,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Windshapers",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251902,
+   "name": "Illaya Amberwind",
+   "uiMapId": 2521,
+   "x": 43.53,
+   "y": 44.78
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251902,
+   "name": "Illaya Amberwind",
+   "uiMapId": 2521,
+   "x": 43.53,
+   "y": 44.78
   },
   "objectives": {
    "units": [],
@@ -313297,13 +313594,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313312,27 +313613,27 @@
  },
  {
   "id": 92596,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The High Order",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251903,
+   "name": "Rathiril Sunlance",
+   "uiMapId": 2521,
+   "x": 45.0,
+   "y": 46.35
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251903,
+   "name": "Rathiril Sunlance",
+   "uiMapId": 2521,
+   "x": 45.0,
+   "y": 46.35
   },
   "objectives": {
    "units": [],
@@ -313340,13 +313641,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313355,41 +313660,51 @@
  },
  {
   "id": 92597,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Reading the Ley Lines",
+  "level": 2,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251371,
+   "name": "Falorne Fallwind",
+   "uiMapId": 2521,
+   "x": 43.32,
+   "y": 24.87
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251371,
+   "name": "Falorne Fallwind",
+   "uiMapId": 2521,
+   "x": 43.32,
+   "y": 24.87
   },
   "objectives": {
    "units": [],
    "items": [],
-   "objects": []
+   "objects": [
+    460002
+   ]
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313398,41 +313713,49 @@
  },
  {
   "id": 92598,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "The Gift of Skysight",
+  "level": 2,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251487,
+   "name": "Ventaari Brightwish",
+   "uiMapId": 2521,
+   "x": 42.65,
+   "y": 24.35
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251487,
+   "name": "Ventaari Brightwish",
+   "uiMapId": 2521,
+   "x": 42.65,
+   "y": 24.35
   },
   "objectives": {
    "units": [],
    "items": [],
-   "objects": []
+   "objects": [
+    460001
+   ]
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313570,27 +313893,27 @@
  },
  {
   "id": 92640,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Desperate Times",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -313601,10 +313924,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313613,41 +313938,61 @@
  },
  {
   "id": 92642,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Disrupting Logistics",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "objectives": {
-   "units": [],
+   "units": [
+    254596,
+    270201
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 254596,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 270201,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313656,27 +314001,27 @@
  },
  {
   "id": 92643,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Turncoat",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253372,
+   "name": "Dead Cultist",
+   "uiMapId": 2521,
+   "x": 56.02,
+   "y": 58.79
   },
   "objectives": {
    "units": [],
@@ -313687,10 +314032,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313699,27 +314046,27 @@
  },
  {
   "id": 92644,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Unfortunate News",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253372,
+   "name": "Dead Cultist",
+   "uiMapId": 2521,
+   "x": 56.02,
+   "y": 58.79
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -313730,10 +314077,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313742,41 +314091,53 @@
  },
  {
   "id": 92645,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Breaking the Breaker",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "objectives": {
-   "units": [],
+   "units": [
+    252666
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 252666,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313785,27 +314146,27 @@
  },
  {
   "id": 92646,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Confront Lorthuna",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253590,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 65.22,
+   "y": 50.38
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
@@ -313813,13 +314174,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313828,27 +314193,27 @@
  },
  {
   "id": 92679,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Blood Tithe",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252448,
+   "name": "Alvarion Windfield",
+   "uiMapId": 2521,
+   "x": 62.14,
+   "y": 73.31
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
    "units": [],
@@ -313859,10 +314224,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313871,41 +314238,53 @@
  },
  {
   "id": 92682,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Make Yourself Useful",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
-   "units": [],
+   "units": [
+    252802
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 252802,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313914,41 +314293,53 @@
  },
  {
   "id": 92683,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Flutterfly Dust",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    253595
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 253595,
+    "count": 5,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -313957,41 +314348,53 @@
  },
  {
   "id": 92684,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Ornery Ornery Galestriders",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    253597
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 253597,
+    "count": 7,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314000,41 +314403,53 @@
  },
  {
   "id": 92685,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Hills Have Eyes",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    253596
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 253596,
+    "count": 7,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314043,41 +314458,53 @@
  },
  {
   "id": 92693,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Standing Our Ground",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
-   "units": [],
+   "units": [
+    252863
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 252863,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314086,27 +314513,27 @@
  },
  {
   "id": 92698,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "What Is My Purpose?",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 250929,
+   "name": "Malfunctioning Cyclone Construct",
+   "uiMapId": 2521,
+   "x": 48.7,
+   "y": 78.38
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "objectives": {
    "units": [],
@@ -314117,10 +314544,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314129,27 +314558,27 @@
  },
  {
   "id": 92699,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Supreme Magister",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
@@ -314157,13 +314586,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314172,27 +314605,27 @@
  },
  {
   "id": 92700,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Grand Skyseer",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
@@ -314200,13 +314633,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314215,27 +314652,27 @@
  },
  {
   "id": 92701,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "To Valanaar",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -314243,13 +314680,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314301,27 +314742,27 @@
  },
  {
   "id": 92703,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Deliver the News",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252800,
+   "name": "Aamelia Windfield",
+   "uiMapId": 2521,
+   "x": 46.7,
+   "y": 81.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252448,
+   "name": "Alvarion Windfield",
+   "uiMapId": 2521,
+   "x": 62.14,
+   "y": 73.31
   },
   "objectives": {
    "units": [],
@@ -314332,10 +314773,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314430,27 +314873,27 @@
  },
  {
   "id": 92708,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Grand Adventure",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
@@ -314458,13 +314901,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314473,27 +314920,27 @@
  },
  {
   "id": 92709,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Grand Adventure",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
@@ -314501,13 +314948,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314559,19 +315010,19 @@
  },
  {
   "id": 92727,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Missing Scholar",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253204,
+   "name": "Dondallion Whisperwind",
+   "uiMapId": 2521,
+   "x": 66.28,
+   "y": 79.84
   },
   "end": {
    "type": null,
@@ -314587,13 +315038,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -314602,41 +315057,55 @@
  },
  {
   "id": 92741,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Unwelcome Visitors",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253004,
+   "name": "Iaadaria Bitterwind",
+   "uiMapId": 2521,
+   "x": 66.32,
+   "y": 79.55
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253004,
+   "name": "Iaadaria Bitterwind",
+   "uiMapId": 2521,
+   "x": 66.32,
+   "y": 79.55
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    254378
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 254378,
+    "count": 8,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -315505,41 +315974,55 @@
  },
  {
   "id": 92834,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Avenged Tenfold",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    255658
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 255658,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -315548,41 +316031,47 @@
  },
  {
   "id": 92840,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Catching Wind",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
    "items": [],
-   "objects": []
+   "objects": [
+    697118
+   ]
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -315806,9 +316295,9 @@
  },
  {
   "id": 92849,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Missing Scholar",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
@@ -315821,12 +316310,12 @@
    "y": null
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253284,
+   "name": "Fillion Flamebreeze",
+   "uiMapId": 2521,
+   "x": 52.05,
+   "y": 69.4
   },
   "objectives": {
    "units": [],
@@ -315834,13 +316323,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -315849,41 +316342,55 @@
  },
  {
   "id": 92850,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Missing Scholar",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253284,
+   "name": "Fillion Flamebreeze",
+   "uiMapId": 2521,
+   "x": 52.05,
+   "y": 69.4
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253285,
+   "name": "Fillion Flamebreeze",
+   "uiMapId": 2521,
+   "x": 66.2,
+   "y": 79.88
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    257107
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 257107,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -315978,27 +316485,27 @@
  },
  {
   "id": 92860,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "In Service of Zephras",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -316006,13 +316513,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -316064,27 +316575,27 @@
  },
  {
   "id": 92871,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "In Service of Zephras",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -316092,13 +316603,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -316236,27 +316751,27 @@
  },
  {
   "id": 92880,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Return to Valanaar",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
    "units": [],
@@ -316267,10 +316782,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -316279,27 +316796,27 @@
  },
  {
   "id": 92881,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The High Elder's Request",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -316310,10 +316827,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -316795,41 +317314,69 @@
  },
  {
   "id": 92947,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Making Our Move",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253844,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 61.17,
+   "y": 70.95
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253576,
+   "name": "Hyusaa Quickbreeze",
+   "uiMapId": 2521,
+   "x": 63.82,
+   "y": 50.59
   },
   "objectives": {
-   "units": [],
+   "units": [
+    252765,
+    252762,
+    252763
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 252765,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 252762,
+    "count": null,
+    "chance": null,
+    "level": null
+   },
+   {
+    "kind": "kill",
+    "id": 252763,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -317225,27 +317772,27 @@
  },
  {
   "id": 93036,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Infiltrating the Cult",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251904,
+   "name": "Sania Silverstream",
+   "uiMapId": 2521,
+   "x": 44.86,
+   "y": 45.46
   },
   "objectives": {
    "units": [],
@@ -317256,10 +317803,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -317569,27 +318118,27 @@
  },
  {
   "id": 93065,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Prepare for Battle",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253844,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 61.17,
+   "y": 70.95
   },
   "objectives": {
    "units": [],
@@ -317600,10 +318149,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -317698,27 +318249,27 @@
  },
  {
   "id": 93089,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "What Comes Next",
+  "level": 12,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
@@ -317726,13 +318277,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -317741,27 +318296,27 @@
  },
  {
   "id": 93090,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "What Comes Next",
+  "level": 12,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
@@ -317769,13 +318324,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -318128,27 +318687,27 @@
  },
  {
   "id": 93159,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Strange Hermit",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "objectives": {
    "units": [],
@@ -318159,10 +318718,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -318171,41 +318732,53 @@
  },
  {
   "id": 93160,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Forest's Bounty",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    257128
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 257128,
+    "count": 8,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -318257,41 +318830,53 @@
  },
  {
   "id": 93165,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Mercy Falls on Deaf Ears",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254151,
+   "name": "Vayn Moongaze",
+   "uiMapId": 2521,
+   "x": 63.77,
+   "y": 36.02
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254151,
+   "name": "Vayn Moongaze",
+   "uiMapId": 2521,
+   "x": 63.77,
+   "y": 36.02
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    258771
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 258771,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -318386,41 +318971,53 @@
  },
  {
   "id": 93172,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Free the Hollows",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251684,
+   "name": "Strange Hermit",
+   "uiMapId": 2521,
+   "x": 53.96,
+   "y": 38.9
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251676
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251676,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -319031,41 +319628,53 @@
  },
  {
   "id": 93317,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Crab Season",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257006,
+   "name": "Nyalah Brightfire",
+   "uiMapId": 2521,
+   "x": 60.66,
+   "y": 72.72
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257006,
+   "name": "Nyalah Brightfire",
+   "uiMapId": 2521,
+   "x": 60.66,
+   "y": 72.72
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    257941
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 257941,
+    "count": 6,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -319074,9 +319683,9 @@
  },
  {
   "id": 93318,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "WANTED: Vulgara the Insatiable",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
@@ -319089,26 +319698,38 @@
    "y": null
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252172,
+   "name": "Danarii Bellowveil",
+   "uiMapId": 2521,
+   "x": 45.24,
+   "y": 45.18
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    257942
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 257942,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -319117,41 +319738,53 @@
  },
  {
   "id": 93319,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Pilfered Windstones",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251906,
+   "name": "Teeri Wellwind",
+   "uiMapId": 2521,
+   "x": 44.44,
+   "y": 44.96
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251906,
+   "name": "Teeri Wellwind",
+   "uiMapId": 2521,
+   "x": 44.44,
+   "y": 44.96
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    257945
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 257945,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -319160,27 +319793,27 @@
  },
  {
   "id": 93320,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Tower Defense",
+  "level": 9,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252378,
+   "name": "Yorana Windyreed",
+   "uiMapId": 2521,
+   "x": 69.47,
+   "y": 67.27
   },
   "objectives": {
    "units": [],
@@ -319191,10 +319824,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -319891,27 +320526,27 @@
  },
  {
   "id": 93461,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Welcome to Shen'dar Village",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
    "units": [],
@@ -319919,13 +320554,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -320321,41 +320960,55 @@
  },
  {
   "id": 93552,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Harvesting Windstones",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   92461
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251363,
+   "name": "Dalia the Collector",
+   "uiMapId": 2521,
+   "x": 43.34,
+   "y": 23.99
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251363,
+   "name": "Dalia the Collector",
+   "uiMapId": 2521,
+   "x": 43.34,
+   "y": 23.99
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    258772
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 258772,
+    "count": 15,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -321826,27 +322479,27 @@
  },
  {
   "id": 93735,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Broken Construct",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256083,
+   "name": "Riaani Nightwind",
+   "uiMapId": 2521,
+   "x": 59.07,
+   "y": 73.06
   },
   "objectives": {
    "units": [],
@@ -321854,13 +322507,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -321869,41 +322526,55 @@
  },
  {
   "id": 93736,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Unwelcome Spirits",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254344,
+   "name": "Endaria Mistgaze",
+   "uiMapId": 2521,
+   "x": 58.17,
+   "y": 78.31
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254344,
+   "name": "Endaria Mistgaze",
+   "uiMapId": 2521,
+   "x": 58.17,
+   "y": 78.31
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    262357
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 262357,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -321912,27 +322583,27 @@
  },
  {
   "id": 93737,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Broken Construct",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256083,
+   "name": "Riaani Nightwind",
+   "uiMapId": 2521,
+   "x": 59.07,
+   "y": 73.06
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256083,
+   "name": "Riaani Nightwind",
+   "uiMapId": 2521,
+   "x": 59.07,
+   "y": 73.06
   },
   "objectives": {
    "units": [],
@@ -321940,13 +322611,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -321955,27 +322630,27 @@
  },
  {
   "id": 93738,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Broken Construct",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256083,
+   "name": "Riaani Nightwind",
+   "uiMapId": 2521,
+   "x": 59.07,
+   "y": 73.06
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
@@ -321983,13 +322658,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -321998,19 +322677,21 @@
  },
  {
   "id": 93739,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Exploring the Horde",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 4949,
+   "name": "Thrall",
+   "uiMapId": 1454,
+   "x": 31.7,
+   "y": 37.8
   },
   "end": {
    "type": null,
@@ -322026,13 +322707,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322041,41 +322726,55 @@
  },
  {
   "id": 93740,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Blood for Blood",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    255658
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 255658,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322084,41 +322783,55 @@
  },
  {
   "id": 93746,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Firm Response",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "objectives": {
-   "units": [],
+   "units": [
+    256247
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 256247,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322385,27 +323098,27 @@
  },
  {
   "id": 93791,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Speak with Belann",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252373,
+   "name": "Anathamaas Aetherwind",
+   "uiMapId": 2521,
+   "x": 65.93,
+   "y": 80.52
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256507,
+   "name": "Belann Windwood",
+   "uiMapId": 2521,
+   "x": 62.91,
+   "y": 77.39
   },
   "objectives": {
    "units": [],
@@ -322413,13 +323126,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322428,41 +323145,55 @@
  },
  {
   "id": 93797,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Boughs in the Wind",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256507,
+   "name": "Belann Windwood",
+   "uiMapId": 2521,
+   "x": 62.91,
+   "y": 77.39
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 256507,
+   "name": "Belann Windwood",
+   "uiMapId": 2521,
+   "x": 62.91,
+   "y": 77.39
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    262668
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 262668,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322858,27 +323589,27 @@
  },
  {
   "id": 93835,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Confront Lorthuna",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253590,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 65.22,
+   "y": 50.38
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
@@ -322886,13 +323617,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -322901,27 +323636,27 @@
  },
  {
   "id": 93836,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Fate of Zephras",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -322929,13 +323664,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323288,27 +324027,27 @@
  },
  {
   "id": 93926,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Western Watch",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252155,
+   "name": "Peacekeeper Vaaniel",
+   "uiMapId": 2521,
+   "x": 42.35,
+   "y": 62.01
   },
   "objectives": {
    "units": [],
@@ -323319,10 +324058,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323331,27 +324072,27 @@
  },
  {
   "id": 93927,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Last Request",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252155,
+   "name": "Peacekeeper Vaaniel",
+   "uiMapId": 2521,
+   "x": 42.35,
+   "y": 62.01
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "objectives": {
    "units": [],
@@ -323362,10 +324103,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323417,27 +324160,27 @@
  },
  {
   "id": 93948,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Deliver the Signet",
+  "level": 5,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251523,
+   "name": "Constable Aonda",
+   "uiMapId": 2521,
+   "x": 45.63,
+   "y": 45.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -323448,10 +324191,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323460,41 +324205,53 @@
  },
  {
   "id": 93949,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Bugged",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252383,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 66.22,
+   "y": 76.63
   },
   "objectives": {
-   "units": [],
+   "units": [
+    251727
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 251727,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323503,41 +324260,53 @@
  },
  {
   "id": 93951,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Little Beauty",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251991,
+   "name": "Taleen Shimmerthread",
+   "uiMapId": 2521,
+   "x": 44.84,
+   "y": 44.24
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251991,
+   "name": "Taleen Shimmerthread",
+   "uiMapId": 2521,
+   "x": 44.84,
+   "y": 44.24
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    263493
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 263493,
+    "count": 8,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323589,27 +324358,27 @@
  },
  {
   "id": 93958,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Inner Sanctum",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253576,
+   "name": "Hyusaa Quickbreeze",
+   "uiMapId": 2521,
+   "x": 63.82,
+   "y": 50.59
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253590,
+   "name": "Valennia Stormfist",
+   "uiMapId": 2521,
+   "x": 65.22,
+   "y": 50.38
   },
   "objectives": {
    "units": [],
@@ -323620,10 +324389,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323632,27 +324403,29 @@
  },
  {
   "id": 93963,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Exploring the Alliance",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 1748,
+   "name": "Highlord Bolvar Fordragon",
+   "uiMapId": 1453,
+   "x": 78.2,
+   "y": 18
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 1748,
+   "name": "Highlord Bolvar Fordragon",
+   "uiMapId": 1453,
+   "x": 78.2,
+   "y": 18
   },
   "objectives": {
    "units": [],
@@ -323660,13 +324433,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323761,41 +324538,55 @@
  },
  {
   "id": 94003,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "The Skybreaker Bulwark",
+  "level": 7,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252377,
+   "name": "Seena Skybreaker",
+   "uiMapId": 2521,
+   "x": 59.86,
+   "y": 72.82
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252377,
+   "name": "Seena Skybreaker",
+   "uiMapId": 2521,
+   "x": 59.86,
+   "y": 72.82
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    263993
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 263993,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323847,27 +324638,29 @@
  },
  {
   "id": 94006,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "The Great Ursera Spirit",
+  "level": 8,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252359,
+   "name": "Lotheluum Starbreeze",
+   "uiMapId": 2521,
+   "x": 64.01,
+   "y": 75.1
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 255853,
+   "name": "Urs'endris",
+   "uiMapId": 2521,
+   "x": 69.83,
+   "y": 61.67
   },
   "objectives": {
    "units": [],
@@ -323878,10 +324671,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323890,27 +324685,29 @@
  },
  {
   "id": 94007,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Taming the Beast",
+  "level": 11,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254084,
+   "name": "Elayaa Easewind",
+   "uiMapId": 2521,
+   "x": 45.26,
+   "y": 44.24
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "objectives": {
    "units": [],
@@ -323921,10 +324718,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -323933,41 +324732,55 @@
  },
  {
   "id": 94013,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Taming the Beast",
+  "level": 9,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    250874
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 250874,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -324019,27 +324832,29 @@
  },
  {
   "id": 94050,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Training the Beast",
+  "level": 10,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 254411,
+   "name": "Quel'dora Quickgale",
+   "uiMapId": 2521,
+   "x": 59.62,
+   "y": 72.59
   },
   "objectives": {
    "units": [],
@@ -324050,10 +324865,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -330469,27 +331286,27 @@
  },
  {
   "id": 94369,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Fate of Zephras",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -330497,13 +331314,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -330770,41 +331591,55 @@
  },
  {
   "id": 94411,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Meddlesome Mages",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251902,
+   "name": "Illaya Amberwind",
+   "uiMapId": 2521,
+   "x": 43.53,
+   "y": 44.78
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251902,
+   "name": "Illaya Amberwind",
+   "uiMapId": 2521,
+   "x": 43.53,
+   "y": 44.78
   },
   "objectives": {
-   "units": [],
+   "units": [
+    257521
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 257521,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -330813,41 +331648,55 @@
  },
  {
   "id": 94413,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "A Magical Affront",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251903,
+   "name": "Rathiril Sunlance",
+   "uiMapId": 2521,
+   "x": 45.0,
+   "y": 46.35
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251903,
+   "name": "Rathiril Sunlance",
+   "uiMapId": 2521,
+   "x": 45.0,
+   "y": 46.35
   },
   "objectives": {
-   "units": [],
+   "units": [
+    257532
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 257532,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -330856,27 +331705,27 @@
  },
  {
   "id": 94414,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Anchors of Zephras",
+  "level": 2,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257554,
+   "name": "Halaan Hawk-Eye",
+   "uiMapId": 2521,
+   "x": 43.77,
+   "y": 24.08
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257554,
+   "name": "Halaan Hawk-Eye",
+   "uiMapId": 2521,
+   "x": 43.77,
+   "y": 24.08
   },
   "objectives": {
    "units": [],
@@ -330887,10 +331736,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331587,27 +332438,29 @@
  },
  {
   "id": 94484,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Unnerving Silence",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   94493
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252359,
+   "name": "Lotheluum Starbreeze",
+   "uiMapId": 2521,
+   "x": 64.01,
+   "y": 75.1
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
@@ -331618,10 +332471,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331630,41 +332485,53 @@
  },
  {
   "id": 94485,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Tears of the Lady",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265105
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265105,
+    "count": 8,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331673,41 +332540,53 @@
  },
  {
   "id": 94486,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Feathers for Binding",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265140
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265140,
+    "count": 20,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331716,41 +332595,53 @@
  },
  {
   "id": 94487,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Unwanted and Unworthy",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265141
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265141,
+    "count": 10,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331759,41 +332650,53 @@
  },
  {
   "id": 94488,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Ties That Bind",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    265475
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 265475,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331802,27 +332705,27 @@
  },
  {
   "id": 94489,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Wounds of Betrayal",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
@@ -331833,10 +332736,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331845,9 +332750,9 @@
  },
  {
   "id": 94490,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Ripped Missive",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
@@ -331860,12 +332765,12 @@
    "y": null
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "objectives": {
    "units": [],
@@ -331876,10 +332781,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -331888,27 +332795,27 @@
  },
  {
   "id": 94491,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Fate of the Den",
+  "level": 11,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 257944,
+   "name": "Elegael Thornpaw",
+   "uiMapId": 2521,
+   "x": 61.76,
+   "y": 39.14
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252359,
+   "name": "Lotheluum Starbreeze",
+   "uiMapId": 2521,
+   "x": 64.01,
+   "y": 75.1
   },
   "objectives": {
    "units": [],
@@ -331919,10 +332826,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332619,27 +333528,27 @@
  },
  {
   "id": 94568,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Cult's True Plans",
+  "level": 10,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252476,
+   "name": "Talaanis Shadowsong",
+   "uiMapId": 2521,
+   "x": 66.17,
+   "y": 76.51
   },
   "objectives": {
    "units": [],
@@ -332650,10 +333559,12 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -332920,41 +333831,55 @@
  },
  {
   "id": 94638,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Strength and Mercy",
+  "level": 8,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 255853,
+   "name": "Urs'endris",
+   "uiMapId": 2521,
+   "x": 69.83,
+   "y": 61.67
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 255853,
+   "name": "Urs'endris",
+   "uiMapId": 2521,
+   "x": 69.83,
+   "y": 61.67
   },
   "objectives": {
-   "units": [],
+   "units": [
+    258443
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 258443,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -335715,41 +336640,53 @@
  },
  {
   "id": 94896,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Aid For The Refugees",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259012,
+   "name": "Ealaane Nimbuswalker",
+   "uiMapId": 2521,
+   "x": 65.93,
+   "y": 74.36
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259012,
+   "name": "Ealaane Nimbuswalker",
+   "uiMapId": 2521,
+   "x": 65.93,
+   "y": 74.36
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    266433
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 266433,
+    "count": 8,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -335758,41 +336695,53 @@
  },
  {
   "id": 94897,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Fate of a Loved One",
+  "level": 6,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259012,
+   "name": "Ealaane Nimbuswalker",
+   "uiMapId": 2521,
+   "x": 65.93,
+   "y": 74.36
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259012,
+   "name": "Ealaane Nimbuswalker",
+   "uiMapId": 2521,
+   "x": 65.93,
+   "y": 74.36
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    266434
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 266434,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -336532,27 +337481,27 @@
  },
  {
   "id": 94946,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Magical City of Dalaran",
+  "level": 12,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259084,
+   "name": "Denaaris Stargale",
+   "uiMapId": 1416,
+   "x": 12.36,
+   "y": 56.31
   },
   "objectives": {
    "units": [],
@@ -336560,13 +337509,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -336575,41 +337528,49 @@
  },
  {
   "id": 94947,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Welcome to Azeroth",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259084,
+   "name": "Denaaris Stargale",
+   "uiMapId": 1416,
+   "x": 12.36,
+   "y": 56.31
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 1748,
+   "name": "Highlord Bolvar Fordragon",
+   "uiMapId": 1453,
+   "x": 78.2,
+   "y": 18
   },
   "objectives": {
    "units": [],
    "items": [],
-   "objects": []
+   "objects": [
+    631299
+   ]
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -337177,41 +338138,55 @@
  },
  {
   "id": 94978,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Taming the Beast",
+  "level": 7,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    254588
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 254588,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -337220,41 +338195,55 @@
  },
  {
   "id": 94979,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Taming the Beast",
+  "level": 8,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252389,
+   "name": "Quel'ana Quickgale",
+   "uiMapId": 2521,
+   "x": 59.61,
+   "y": 72.65
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    251707
+   ],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 251707,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -341606,27 +342595,27 @@
  },
  {
   "id": 95349,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Earthen Ring",
+  "level": 12,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251968,
+   "name": "Ayessa Dawnsinger",
+   "uiMapId": 2521,
+   "x": 59.15,
+   "y": 79.73
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259119,
+   "name": "Alaana Stormwalker",
+   "uiMapId": 1412,
+   "x": 33.4,
+   "y": 22.5
   },
   "objectives": {
    "units": [],
@@ -341634,13 +342623,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -341649,27 +342642,29 @@
  },
  {
   "id": 95350,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Welcome to Azeroth",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 259119,
+   "name": "Alaana Stormwalker",
+   "uiMapId": 1412,
+   "x": 33.4,
+   "y": 22.5
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 4949,
+   "name": "Thrall",
+   "uiMapId": 1454,
+   "x": 31.7,
+   "y": 37.8
   },
   "objectives": {
    "units": [],
@@ -341677,13 +342672,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -349862,46 +350861,57 @@
  },
  {
   "id": 96101,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Great Outdoors",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   95998,
+   96604,
+   96605,
+   96606,
+   96607,
+   96608
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 263664,
+   "name": "Raan Wildwind",
+   "uiMapId": 2521,
+   "x": 41.7,
+   "y": 44.78
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 263664,
+   "name": "Raan Wildwind",
+   "uiMapId": 2521,
+   "x": 41.7,
+   "y": 44.78
   },
   "objectives": {
    "units": [],
    "items": [],
-   "objects": []
+   "objects": [
+    460003
+   ]
   },
   "kills": [],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": false
+  "prereqsAny": true
  },
  {
   "id": 96102,
@@ -356570,27 +357580,34 @@
  },
  {
   "id": 96638,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "The Adventurer",
+  "level": 3,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   96627,
+   96628,
+   96630,
+   96652,
+   96656,
+   96659
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251366,
+   "name": "Aetheen of the Gales",
+   "uiMapId": 2521,
+   "x": 42.74,
+   "y": 23.66
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 263664,
+   "name": "Raan Wildwind",
+   "uiMapId": 2521,
+   "x": 41.7,
+   "y": 44.78
   },
   "objectives": {
    "units": [],
@@ -356601,39 +357618,48 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": false
+  "prereqsAny": true
  },
  {
   "id": 96646,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Camping 101: Cooking",
+  "level": 4,
+  "minLevel": 1,
   "races": null,
   "classes": null,
-  "prereqs": [],
+  "prereqs": [
+   96626,
+   96629,
+   96634,
+   96655,
+   96658,
+   96661
+  ],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 263664,
+   "name": "Raan Wildwind",
+   "uiMapId": 2521,
+   "x": 41.7,
+   "y": 44.78
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 251905,
+   "name": "Zerril Softbreeze",
+   "uiMapId": 2521,
+   "x": 43.85,
+   "y": 43.89
   },
   "objectives": {
    "units": [],
@@ -356644,15 +357670,17 @@
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
   "seenInBuild": "1.60.1.70532",
-  "prereqsAny": false
+  "prereqsAny": true
  },
  {
   "id": 96652,
@@ -362590,27 +363618,29 @@
  },
  {
   "id": 97243,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Call of Fire",
+  "level": 8,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252382,
+   "name": "Sessaria Skystride",
+   "uiMapId": 2521,
+   "x": 58.33,
+   "y": 78.57
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "objectives": {
    "units": [],
@@ -362618,13 +363648,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -362633,41 +363667,57 @@
  },
  {
   "id": 97244,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Call of Fire",
+  "level": 8,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    277267
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 277267,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -362676,41 +363726,57 @@
  },
  {
   "id": 97245,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Call of Fire",
+  "level": 11,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "objectives": {
    "units": [],
-   "items": [],
+   "items": [
+    277269
+   ],
    "objects": []
   },
-  "kills": [],
-  "factions": null,
+  "kills": [
+   {
+    "kind": "collect",
+    "id": 277269,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -362934,27 +364000,29 @@
  },
  {
   "id": 97257,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Call of Fire",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 268592,
+   "name": "Olariaan Swiftburn",
+   "uiMapId": 2521,
+   "x": 51.21,
+   "y": 86.22
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252382,
+   "name": "Sessaria Skystride",
+   "uiMapId": 2521,
+   "x": 58.33,
+   "y": 78.57
   },
   "objectives": {
    "units": [],
@@ -362962,13 +364030,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -368954,19 +370026,21 @@
  },
  {
   "id": 98021,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Journey to Sentinel Hill",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 1748,
+   "name": "Highlord Bolvar Fordragon",
+   "uiMapId": 1453,
+   "x": 78.2,
+   "y": 18
   },
   "end": {
    "type": null,
@@ -368982,13 +370056,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -368997,27 +370075,29 @@
  },
  {
   "id": 98024,
-  "name": null,
-  "level": null,
-  "minLevel": null,
-  "races": null,
+  "name": "Journey to the Crossroads",
+  "level": 12,
+  "minLevel": 1,
+  "races": [
+   "Skyborne"
+  ],
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 4949,
+   "name": "Thrall",
+   "uiMapId": 1454,
+   "x": 31.7,
+   "y": 37.8
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 3429,
+   "name": "Thork",
+   "uiMapId": 1413,
+   "x": 51.5,
+   "y": 30.9
   },
   "objectives": {
    "units": [],
@@ -369025,13 +370105,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Horde"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -373770,41 +374854,53 @@
  },
  {
   "id": 98512,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Al'Aketh Assassins",
+  "level": 8,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 273017,
+   "name": "Fendaal Windstone",
+   "uiMapId": 2521,
+   "x": 56.78,
+   "y": 61.22
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 273017,
+   "name": "Fendaal Windstone",
+   "uiMapId": 2521,
+   "x": 56.78,
+   "y": 61.22
   },
   "objectives": {
-   "units": [],
+   "units": [
+    254626
+   ],
    "items": [],
    "objects": []
   },
-  "kills": [],
+  "kills": [
+   {
+    "kind": "kill",
+    "id": 254626,
+    "count": null,
+    "chance": null,
+    "level": null
+   }
+  ],
   "factions": null,
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",
@@ -378887,27 +379983,27 @@
  },
  {
   "id": 99260,
-  "name": null,
-  "level": null,
-  "minLevel": null,
+  "name": "Fillion's Mission",
+  "level": 7,
+  "minLevel": 1,
   "races": null,
   "classes": null,
   "prereqs": [],
   "start": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 253285,
+   "name": "Fillion Flamebreeze",
+   "uiMapId": 2521,
+   "x": 66.2,
+   "y": 79.88
   },
   "end": {
-   "type": null,
-   "id": null,
-   "name": null,
-   "uiMapId": null,
-   "x": null,
-   "y": null
+   "type": "npc",
+   "id": 252475,
+   "name": "Elaadrin Evengale",
+   "uiMapId": 2521,
+   "x": 66.59,
+   "y": 79.91
   },
   "objectives": {
    "units": [],
@@ -378915,13 +380011,17 @@
    "objects": []
   },
   "kills": [],
-  "factions": null,
+  "factions": [
+   "Alliance"
+  ],
   "inForever": true,
   "sources": [
-   "wago-db2"
+   "wago-db2",
+   "lodestar"
   ],
   "lineages": [
-   "blizzard-client"
+   "blizzard-client",
+   "community"
   ],
   "conflicts": [],
   "confidence": "unverified",

@@ -98,6 +98,8 @@ MAX_KILLS_PER_OBJECTIVE = 40
 # island, so going to or from it is a boat even within Kalimdor.
 CONTINENT_TRAVEL = {"Alliance": "boat", "Horde": "zeppelin"}
 ISLAND_MAPS = frozenset({1438})  # Teldrassil
+# Leaving Zephras Isle (the Skyborne start) is the Skyborne portal to the faction's capital, not a ship.
+PORTAL_MAPS = frozenset({2521})
 
 # Flight paths (pipeline/generate/flight.py). A flight master within DISCOVER_YARDS of a step is found then (a
 # flightpath step). A map change on one continent flies when walking to a found flight master, flying and walking
