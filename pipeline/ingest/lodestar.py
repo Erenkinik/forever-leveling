@@ -20,6 +20,16 @@ GUIDES = {
     "Alliance": "Guides/Leveling/Alliance/Zephras_Isle_5-12.lua",
     "Horde": "Guides/Leveling/Horde/Zephras_Isle_5-12.lua",
 }
+# Dungeon guides (Guides/Dungeons/<Faction>/<file>.lua) by the dungeon's Map id: only which quests belong to a
+# dungeon is taken from them. Stockade has no Horde guide and Ragefire Chasm no Alliance one.
+DUNGEON_GUIDES: dict[int, str] = {
+    33: "Shadowfang_Keep", 34: "The_Stockade", 36: "The_Deadmines", 43: "Wailing_Caverns", 47: "Razorfen_Kraul",
+    48: "Blackfathom_Deeps", 70: "Uldaman", 90: "Gnomeregan", 109: "The_Temple_of_AtalHakkar",
+    129: "Razorfen_Downs", 189: "Scarlet_Monastery", 209: "ZulFarrak", 229: "Blackrock_Spire",
+    230: "Blackrock_Depths", 289: "Scholomance", 329: "Stratholme", 349: "Maraudon", 389: "Ragefire_Chasm",
+    429: "Dire_Maul",
+}
+NO_GUIDE = {("Horde", 34), ("Alliance", 389)}
 # The guides start at level 1 and end at 12; quest levels are not in them, so they are spread over this range
 # in guide order (an estimate).
 LEVELS = (1, 12)
@@ -45,6 +55,37 @@ def fetch_lodestar(raw_dir: Path, opener: Callable = urllib.request.urlopen) -> 
             part.unlink(missing_ok=True)
             raise RuntimeError(f"failed to download {path}: {exc}") from exc
         part.replace(dest)
+    for faction in GUIDES:
+        for map_id, stem in DUNGEON_GUIDES.items():
+            if (faction, map_id) in NO_GUIDE:
+                continue
+            dest = base / "dungeons" / faction.lower() / f"{stem}.lua"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            part = dest.with_name(dest.name + ".part")
+            url = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/Guides/Dungeons/{faction}/{stem}.lua"
+            try:
+                with opener(url, timeout=60) as resp:
+                    part.write_bytes(resp.read())
+            except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
+                part.unlink(missing_ok=True)
+                raise RuntimeError(f"failed to download {stem} ({faction}): {exc}") from exc
+            part.replace(dest)
+
+
+def dungeon_quests(text: str) -> list[int]:
+    """The quests a dungeon guide accepts, in guide order."""
+    return list(dict.fromkeys(int(q) for q in re.findall(r"^\s*accept .+?##(\d+)", text, re.M)))
+
+
+def load_dungeon_quests(src_dir: Path) -> dict[int, dict[str, list[int]]]:
+    """Dungeon Map id -> faction -> its quests, from the downloaded dungeon guides (absent files are skipped)."""
+    out: dict[int, dict[str, list[int]]] = {}
+    for map_id, stem in DUNGEON_GUIDES.items():
+        for faction in GUIDES:
+            path = Path(src_dir) / "dungeons" / faction.lower() / f"{stem}.lua"
+            if path.is_file():
+                out.setdefault(map_id, {})[faction] = dungeon_quests(path.read_text(encoding="utf-8"))
+    return out
 
 
 def _goto(line: str, map_ids: dict[str, int]) -> tuple[int, float, float] | None:

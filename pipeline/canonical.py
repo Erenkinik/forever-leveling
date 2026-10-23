@@ -34,3 +34,9 @@ def load_taxi_canonical(data_dir: Path = DATA_DIR) -> dict | None:
     """The committed taxi.json (flight masters, flights, zone map bounds), or None before normalize wrote it."""
     path = Path(data_dir) / "canonical" / "taxi.json"
     return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else None
+
+
+def load_dungeons_canonical(data_dir: Path = DATA_DIR) -> list[dict]:
+    """The committed dungeons.json (entrances on zone maps, quests by faction); [] before normalize wrote it."""
+    path = Path(data_dir) / "canonical" / "dungeons.json"
+    return json.loads(path.read_text(encoding="utf-8"))["dungeons"] if path.is_file() else []

@@ -32,7 +32,7 @@ def to_world(x: float, y: float, b: list[float]) -> tuple[float, float]:
     return b[2] - y / 100 * (b[2] - b[0]), b[3] - x / 100 * (b[3] - b[1])
 
 
-def _zone_for(name: str, x_world: float, y_world: float, continent: int, bounds: dict[int, list[float]],
+def zone_for(name: str, x_world: float, y_world: float, continent: int, bounds: dict[int, list[float]],
               uimaps: dict[int, str], parents: dict[int, int]) -> int | None:
     """The zone map (not a continent or the world) of this continent that contains the point. Map bounds are
     rectangles that overlap their neighbours, so the node's name decides: "Orgrimmar, Durotar" is on the Orgrimmar
@@ -61,7 +61,7 @@ def build_taxi(nodes: list[dict], paths: list[dict], assignments: list[dict], ui
         if not factions or r["Name_lang"].startswith("zzOLD"):  # zzOLD: retired nodes
             continue
         xw, yw, continent = float(r["Pos_0"]), float(r["Pos_1"]), int(r["ContinentID"])
-        ui = _zone_for(r["Name_lang"], xw, yw, continent, bounds, uimaps, parents)
+        ui = zone_for(r["Name_lang"], xw, yw, continent, bounds, uimaps, parents)
         if ui is None:
             continue
         x, y = to_map(xw, yw, bounds[ui])

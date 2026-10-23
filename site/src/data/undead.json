@@ -45347,5 +45347,1235 @@
    "minLevel": 30,
    "npcName": "Master Apothecary Faranell"
   }
+ ],
+ "dungeons": [
+  {
+   "id": 33,
+   "name": "Shadowfang Keep",
+   "mapId": 1421,
+   "x": 44.7,
+   "y": 67.8,
+   "levels": [
+    25,
+    27
+   ],
+   "quests": [
+    {
+     "questId": 1098,
+     "name": "Deathstalkers in Shadowfang",
+     "mapId": 1421,
+     "x": 43.4,
+     "y": 40.9,
+     "level": 25,
+     "minLevel": 18,
+     "npcName": "High Executor Hadrec",
+     "zoneName": "Silverpine Forest",
+     "step": null
+    },
+    {
+     "questId": 1740,
+     "name": "The Orb of Soran'ruk",
+     "mapId": 1413,
+     "x": 49.3,
+     "y": 57.2,
+     "level": 25,
+     "minLevel": 20,
+     "npcName": "Doan Karhan",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 1013,
+     "name": "The Book of Ur",
+     "mapId": 1458,
+     "x": 53.7,
+     "y": 54.5,
+     "level": 26,
+     "minLevel": 16,
+     "npcName": "Keeper Bel'dugur",
+     "zoneName": "Undercity",
+     "step": null
+    },
+    {
+     "questId": 1014,
+     "name": "Arugal Must Die",
+     "mapId": 1421,
+     "x": 44.2,
+     "y": 39.8,
+     "level": 27,
+     "minLevel": 18,
+     "npcName": "Dalar Dawnweaver",
+     "zoneName": "Silverpine Forest",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Wailing Caverns",
+   "mapId": 1413,
+   "x": 47.7,
+   "y": 35.0,
+   "levels": [
+    13,
+    22
+   ],
+   "quests": [
+    {
+     "questId": 870,
+     "name": "The Forgotten Pools",
+     "mapId": 1413,
+     "x": 52.3,
+     "y": 31.9,
+     "level": 13,
+     "minLevel": 10,
+     "npcName": "Tonga Runetotem",
+     "zoneName": "The Barrens",
+     "step": "accept-870"
+    },
+    {
+     "questId": 877,
+     "name": "The Stagnant Oasis",
+     "mapId": 1413,
+     "x": 52.3,
+     "y": 31.9,
+     "level": 16,
+     "minLevel": 10,
+     "npcName": "Tonga Runetotem",
+     "zoneName": "The Barrens",
+     "step": "accept-877"
+    },
+    {
+     "questId": 880,
+     "name": "Altered Beings",
+     "mapId": 1413,
+     "x": 52.3,
+     "y": 31.9,
+     "level": 16,
+     "minLevel": 10,
+     "npcName": "Tonga Runetotem",
+     "zoneName": "The Barrens",
+     "step": "accept-880"
+    },
+    {
+     "questId": 1489,
+     "name": "Hamuul Runetotem",
+     "mapId": 1413,
+     "x": 52.3,
+     "y": 31.9,
+     "level": 16,
+     "minLevel": 10,
+     "npcName": "Tonga Runetotem",
+     "zoneName": "The Barrens",
+     "step": "accept-1489"
+    },
+    {
+     "questId": 1490,
+     "name": "Nara Wildmane",
+     "mapId": 1412,
+     "x": 45.8,
+     "y": 22.7,
+     "level": 16,
+     "minLevel": 10,
+     "npcName": "Arch Druid Hamuul Runetotem",
+     "zoneName": "Mulgore",
+     "step": null
+    },
+    {
+     "questId": 1486,
+     "name": "Deviate Hides",
+     "mapId": 1413,
+     "x": 46,
+     "y": 35.7,
+     "level": 17,
+     "minLevel": 13,
+     "npcName": "Nalpak",
+     "zoneName": "The Barrens",
+     "step": "accept-1486"
+    },
+    {
+     "questId": 865,
+     "name": "Raptor Horns",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 13,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": "accept-865"
+    },
+    {
+     "questId": 959,
+     "name": "Trouble at the Docks",
+     "mapId": 1413,
+     "x": 63.1,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Crane Operator Bigglefuzz",
+     "zoneName": "The Barrens",
+     "step": "accept-959"
+    },
+    {
+     "questId": 962,
+     "name": "Serpentbloom",
+     "mapId": 1412,
+     "x": 34.4,
+     "y": 21.1,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Apothecary Zamah",
+     "zoneName": "Mulgore",
+     "step": null
+    },
+    {
+     "questId": 1491,
+     "name": "Smart Drinks",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 13,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": "accept-1491"
+    },
+    {
+     "questId": 1487,
+     "name": "Deviate Eradication",
+     "mapId": 1413,
+     "x": 46,
+     "y": 35.7,
+     "level": 21,
+     "minLevel": 15,
+     "npcName": "Ebru",
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 914,
+     "name": "Leaders of the Fang",
+     "mapId": 1412,
+     "x": 45.2,
+     "y": 23.3,
+     "level": 22,
+     "minLevel": 10,
+     "npcName": "Nara Wildmane",
+     "zoneName": "Mulgore",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "name": "Razorfen Kraul",
+   "mapId": 1413,
+   "x": 42.3,
+   "y": 89.9,
+   "levels": [
+    20,
+    34
+   ],
+   "quests": [
+    {
+     "questId": 1824,
+     "name": "Trial at the Field of Giants",
+     "mapId": 1413,
+     "x": 44.7,
+     "y": 59.4,
+     "level": 20,
+     "minLevel": 20,
+     "npcName": "Ruga Ragetotem",
+     "classOnly": [
+      "Warrior"
+     ],
+     "zoneName": "The Barrens",
+     "step": "accept-1824"
+    },
+    {
+     "questId": 1221,
+     "name": "Blueleaf Tubers",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 26,
+     "minLevel": 20,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 1838,
+     "name": "Brutal Armor",
+     "mapId": 1413,
+     "x": 57.2,
+     "y": 30.3,
+     "level": 30,
+     "minLevel": 20,
+     "npcName": "Thun'grim Firegaze",
+     "classOnly": [
+      "Warrior"
+     ],
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 1109,
+     "name": "Going, Going, Guano!",
+     "mapId": 1458,
+     "x": 48.8,
+     "y": 69.3,
+     "level": 33,
+     "minLevel": 30,
+     "npcName": "Master Apothecary Faranell",
+     "zoneName": "Undercity",
+     "step": null
+    },
+    {
+     "questId": 1102,
+     "name": "A Vengeful Fate",
+     "mapId": 1412,
+     "x": 37.1,
+     "y": 29,
+     "level": 34,
+     "minLevel": 29,
+     "npcName": "Auld Stonespire",
+     "zoneName": "Mulgore",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "name": "Blackfathom Deeps",
+   "mapId": 1440,
+   "x": 16.5,
+   "y": 11.0,
+   "levels": [
+    22,
+    27
+   ],
+   "quests": [
+    {
+     "questId": 6562,
+     "name": "Trouble in the Deeps",
+     "mapId": 1442,
+     "x": 47.4,
+     "y": 64.3,
+     "level": 22,
+     "minLevel": 17,
+     "npcName": "Tsunaman",
+     "zoneName": "Stonetalon Mountains",
+     "step": "accept-6562"
+    },
+    {
+     "questId": 6563,
+     "name": "The Essence of Aku'Mai",
+     "mapId": 1440,
+     "x": 11.6,
+     "y": 34.3,
+     "level": 22,
+     "minLevel": 17,
+     "npcName": "Je'neu Sancrea",
+     "zoneName": "Ashenvale",
+     "step": "accept-6563"
+    },
+    {
+     "questId": 1198,
+     "name": "In Search of Thaelrid",
+     "mapId": 1438,
+     "x": 28.7,
+     "y": 52.1,
+     "level": 24,
+     "minLevel": 18,
+     "npcName": "Dawnwatcher Shaedlass",
+     "zoneName": "Teldrassil",
+     "step": null
+    },
+    {
+     "questId": 6565,
+     "name": "Allegiance to the Old Gods",
+     "mapId": 1440,
+     "x": 11.6,
+     "y": 34.3,
+     "level": 26,
+     "minLevel": 17,
+     "npcName": "Je'neu Sancrea",
+     "zoneName": "Ashenvale",
+     "step": null
+    },
+    {
+     "questId": 6921,
+     "name": "Amongst the Ruins",
+     "mapId": 1440,
+     "x": 11.6,
+     "y": 34.3,
+     "level": 27,
+     "minLevel": 21,
+     "npcName": "Je'neu Sancrea",
+     "zoneName": "Ashenvale",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "name": "Uldaman",
+   "mapId": 1418,
+   "x": 35.2,
+   "y": 10.3,
+   "levels": [
+    40,
+    45
+   ],
+   "quests": [
+    {
+     "questId": 1954,
+     "name": "The Infernal Orb",
+     "mapId": 1445,
+     "x": 46.1,
+     "y": 57.1,
+     "level": 40,
+     "minLevel": 35,
+     "npcName": "Tabetha",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Dustwallow Marsh",
+     "step": null
+    },
+    {
+     "questId": 1955,
+     "name": "The Exorcism",
+     "mapId": 1445,
+     "x": 46.1,
+     "y": 57.1,
+     "level": 40,
+     "minLevel": 35,
+     "npcName": "Tabetha",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Dustwallow Marsh",
+     "step": null
+    },
+    {
+     "questId": 1956,
+     "name": "Power in Uldaman",
+     "mapId": 1445,
+     "x": 46.1,
+     "y": 57.1,
+     "level": 40,
+     "minLevel": 35,
+     "npcName": "Tabetha",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Dustwallow Marsh",
+     "step": null
+    },
+    {
+     "questId": 2283,
+     "name": "Necklace Recovery",
+     "mapId": 1454,
+     "x": 59.5,
+     "y": 36.6,
+     "level": 41,
+     "minLevel": 37,
+     "npcName": "Dran Droffers",
+     "zoneName": "Orgrimmar",
+     "step": null
+    },
+    {
+     "questId": 2284,
+     "name": "Necklace Recovery, Take 2",
+     "mapId": 1454,
+     "x": 59.5,
+     "y": 36.6,
+     "level": 41,
+     "minLevel": 37,
+     "npcName": "Dran Droffers",
+     "zoneName": "Orgrimmar",
+     "step": null
+    },
+    {
+     "questId": 2338,
+     "name": "Translating the Journal",
+     "mapId": 1418,
+     "x": 2.4,
+     "y": 46.1,
+     "level": 42,
+     "minLevel": 37,
+     "npcName": "Jarkal Mossmeld",
+     "zoneName": "Badlands",
+     "step": null
+    },
+    {
+     "questId": 2339,
+     "name": "Find the Gems and Power Source",
+     "mapId": 1418,
+     "x": 2.4,
+     "y": 46.1,
+     "level": 44,
+     "minLevel": 37,
+     "npcName": "Jarkal Mossmeld",
+     "zoneName": "Badlands",
+     "step": null
+    },
+    {
+     "questId": 2854,
+     "name": "Wild Leather Armor",
+     "mapId": 1444,
+     "x": 74.4,
+     "y": 42.9,
+     "level": 45,
+     "minLevel": 30,
+     "npcName": "Jangdor Swiftstrider",
+     "zoneName": "Feralas",
+     "step": null
+    },
+    {
+     "questId": 2855,
+     "name": "Wild Leather Shoulders",
+     "mapId": 1444,
+     "x": 74.4,
+     "y": 42.9,
+     "level": 45,
+     "minLevel": 30,
+     "npcName": "Jangdor Swiftstrider",
+     "zoneName": "Feralas",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 129,
+   "name": "Razorfen Downs",
+   "mapId": 1413,
+   "x": 50.9,
+   "y": 92.9,
+   "levels": [
+    35,
+    42
+   ],
+   "quests": [
+    {
+     "questId": 6626,
+     "name": "A Host of Evil",
+     "mapId": 1413,
+     "x": 49,
+     "y": 94.9,
+     "level": 35,
+     "minLevel": 28,
+     "npcName": "Myriam Moonsinger",
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 6521,
+     "name": "An Unholy Alliance",
+     "mapId": 1421,
+     "x": 74.2,
+     "y": 13.5,
+     "level": 36,
+     "minLevel": 28,
+     "npcName": "Varimathras",
+     "zoneName": "Silverpine Forest",
+     "step": null
+    },
+    {
+     "questId": 3341,
+     "name": "Bring the End",
+     "mapId": 1458,
+     "x": 74,
+     "y": 33.3,
+     "level": 42,
+     "minLevel": 37,
+     "npcName": "Andrew Brownell",
+     "zoneName": "Undercity",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 189,
+   "name": "Scarlet Monastery",
+   "mapId": 1420,
+   "x": 85.1,
+   "y": 31.4,
+   "levels": [
+    26,
+    42
+   ],
+   "quests": [
+    {
+     "questId": 1149,
+     "name": "Test of Faith",
+     "mapId": 1441,
+     "x": 53.9,
+     "y": 41.5,
+     "level": 26,
+     "minLevel": 25,
+     "npcName": "Dorn Plainstalker",
+     "zoneName": "Thousand Needles",
+     "step": "accept-1149"
+    },
+    {
+     "questId": 1150,
+     "name": "Test of Endurance",
+     "mapId": 1441,
+     "x": 53.9,
+     "y": 41.5,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Dorn Plainstalker",
+     "zoneName": "Thousand Needles",
+     "step": null
+    },
+    {
+     "questId": 1151,
+     "name": "Test of Strength",
+     "mapId": 1441,
+     "x": 53.9,
+     "y": 41.5,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Dorn Plainstalker",
+     "zoneName": "Thousand Needles",
+     "step": null
+    },
+    {
+     "questId": 1152,
+     "name": "Test of Lore",
+     "mapId": 1441,
+     "x": 53.9,
+     "y": 41.5,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Dorn Plainstalker",
+     "zoneName": "Thousand Needles",
+     "step": null
+    },
+    {
+     "questId": 1154,
+     "name": "Test of Lore",
+     "mapId": 1442,
+     "x": 78.8,
+     "y": 45.7,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Braug Dimspirit",
+     "zoneName": "Stonetalon Mountains",
+     "step": null
+    },
+    {
+     "questId": 1159,
+     "name": "Test of Lore",
+     "mapId": 1442,
+     "x": 78.8,
+     "y": 45.7,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Braug Dimspirit",
+     "zoneName": "Stonetalon Mountains",
+     "step": null
+    },
+    {
+     "questId": 1950,
+     "name": "Get the Scoop",
+     "mapId": 1441,
+     "x": 78.3,
+     "y": 75.7,
+     "level": 30,
+     "minLevel": 30,
+     "npcName": "Magus Tirth",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Thousand Needles",
+     "step": null
+    },
+    {
+     "questId": 6627,
+     "name": "Test of Lore",
+     "mapId": 1442,
+     "x": 78.8,
+     "y": 45.7,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Braug Dimspirit",
+     "zoneName": "Stonetalon Mountains",
+     "step": null
+    },
+    {
+     "questId": 1109,
+     "name": "Going, Going, Guano!",
+     "mapId": 1458,
+     "x": 48.8,
+     "y": 69.3,
+     "level": 33,
+     "minLevel": 30,
+     "npcName": "Master Apothecary Faranell",
+     "zoneName": "Undercity",
+     "step": null
+    },
+    {
+     "questId": 1113,
+     "name": "Hearts of Zeal",
+     "mapId": 1458,
+     "x": 48.8,
+     "y": 69.3,
+     "level": 33,
+     "minLevel": 30,
+     "npcName": "Master Apothecary Faranell",
+     "zoneName": "Undercity",
+     "step": null
+    },
+    {
+     "questId": 1160,
+     "name": "Test of Lore",
+     "mapId": 1458,
+     "x": 57.8,
+     "y": 65.4,
+     "level": 36,
+     "minLevel": 25,
+     "npcName": "Parqual Fintallas",
+     "zoneName": "Undercity",
+     "step": null
+    },
+    {
+     "questId": 1947,
+     "name": "Journey to the Marsh",
+     "mapId": 1412,
+     "x": 35,
+     "y": 19.7,
+     "level": 38,
+     "minLevel": 30,
+     "npcName": "Ursyn Ghull",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Mulgore",
+     "step": null
+    },
+    {
+     "questId": 1949,
+     "name": "Hidden Secrets",
+     "mapId": 1445,
+     "x": 46.1,
+     "y": 57.1,
+     "level": 38,
+     "minLevel": 30,
+     "npcName": "Tabetha",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Dustwallow Marsh",
+     "step": null
+    },
+    {
+     "questId": 1951,
+     "name": "Rituals of Power",
+     "mapId": 1441,
+     "x": 78.3,
+     "y": 75.7,
+     "level": 40,
+     "minLevel": 30,
+     "npcName": "Magus Tirth",
+     "classOnly": [
+      "Mage"
+     ],
+     "zoneName": "Thousand Needles",
+     "step": null
+    },
+    {
+     "questId": 1048,
+     "name": "Into The Scarlet Monastery",
+     "mapId": 1421,
+     "x": 74.2,
+     "y": 13.5,
+     "level": 42,
+     "minLevel": 33,
+     "npcName": "Varimathras",
+     "zoneName": "Silverpine Forest",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 289,
+   "name": "Scholomance",
+   "mapId": 1422,
+   "x": 69.1,
+   "y": 73.0,
+   "levels": [
+    52,
+    60
+   ],
+   "quests": [
+    {
+     "questId": 4726,
+     "name": "Broodling Essence",
+     "mapId": 1428,
+     "x": 65.2,
+     "y": 24,
+     "level": 52,
+     "minLevel": 50,
+     "npcName": "Tinkee Steamboil",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4808,
+     "name": "Felnok Steelspring",
+     "mapId": 1428,
+     "x": 65.2,
+     "y": 24,
+     "level": 54,
+     "minLevel": 50,
+     "npcName": "Tinkee Steamboil",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4809,
+     "name": "Chillwind Horns",
+     "mapId": 1452,
+     "x": 61.6,
+     "y": 38.6,
+     "level": 54,
+     "minLevel": 50,
+     "npcName": "Felnok Steelspring",
+     "zoneName": "Winterspring",
+     "step": null
+    },
+    {
+     "questId": 4810,
+     "name": "Return to Tinkee",
+     "mapId": 1452,
+     "x": 61.6,
+     "y": 38.6,
+     "level": 54,
+     "minLevel": 50,
+     "npcName": "Felnok Steelspring",
+     "zoneName": "Winterspring",
+     "step": null
+    },
+    {
+     "questId": 5529,
+     "name": "Plagued Hatchlings",
+     "mapId": 1423,
+     "x": 81.5,
+     "y": 59.7,
+     "level": 58,
+     "minLevel": 55,
+     "npcName": "Betina Bigglezink",
+     "zoneName": "Eastern Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 7623,
+     "name": "Lord Banehollow",
+     "mapId": 1428,
+     "x": 12.4,
+     "y": 31.6,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Gorzeeki Wildeyes",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7624,
+     "name": "Ulathek the Traitor",
+     "mapId": 1439,
+     "x": 51.4,
+     "y": 66.5,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Lord Banehollow",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Darkshore",
+     "step": null
+    },
+    {
+     "questId": 4734,
+     "name": "Egg Freezing",
+     "mapId": 1428,
+     "x": 65.2,
+     "y": 24,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Tinkee Steamboil",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4735,
+     "name": "Egg Collection",
+     "mapId": 1428,
+     "x": 65.2,
+     "y": 24,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Tinkee Steamboil",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 4771,
+     "name": "Dawn's Gambit",
+     "mapId": 1423,
+     "x": 81.5,
+     "y": 59.7,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Betina Bigglezink",
+     "zoneName": "Eastern Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5341,
+     "name": "Barov Family Fortune",
+     "mapId": 1422,
+     "x": 26.4,
+     "y": 58.8,
+     "level": 60,
+     "minLevel": 52,
+     "npcName": "Alexi Barov",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5382,
+     "name": "Doctor Theolen Krastinov, the Butcher",
+     "mapId": 1422,
+     "x": 70.2,
+     "y": 73.7,
+     "level": 60,
+     "minLevel": 55,
+     "npcName": "Eva Sarkhoff",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5384,
+     "name": "Kirtonos the Herald",
+     "mapId": 1422,
+     "x": 70.2,
+     "y": 73.7,
+     "level": 60,
+     "minLevel": 55,
+     "npcName": "Eva Sarkhoff",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5461,
+     "name": "The Human, Ras Frostwhisper",
+     "mapId": 1422,
+     "x": 70.5,
+     "y": 74,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Magistrate Marduke",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5462,
+     "name": "The Dying, Ras Frostwhisper",
+     "mapId": 1422,
+     "x": 70.5,
+     "y": 74,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Magistrate Marduke",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5463,
+     "name": "Menethil's Gift",
+     "mapId": 1423,
+     "x": 80.6,
+     "y": 58.8,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Leonid Barthalomew the Revered",
+     "zoneName": "Eastern Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5465,
+     "name": "Soulbound Keepsake",
+     "mapId": 1423,
+     "x": 80.6,
+     "y": 58.8,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Leonid Barthalomew the Revered",
+     "zoneName": "Eastern Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5466,
+     "name": "The Lich, Ras Frostwhisper",
+     "mapId": 1422,
+     "x": 70.5,
+     "y": 74,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Magistrate Marduke",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5515,
+     "name": "Krastinov's Bag of Horrors",
+     "mapId": 1422,
+     "x": 70.2,
+     "y": 73.7,
+     "level": 60,
+     "minLevel": 55,
+     "npcName": "Eva Sarkhoff",
+     "zoneName": "Western Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 5522,
+     "name": "Leonid Barthalomew",
+     "mapId": 1428,
+     "x": 65.2,
+     "y": 24,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Tinkee Steamboil",
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 5531,
+     "name": "Betina Bigglezink",
+     "mapId": 1423,
+     "x": 80.6,
+     "y": 58.8,
+     "level": 60,
+     "minLevel": 57,
+     "npcName": "Leonid Barthalomew the Revered",
+     "zoneName": "Eastern Plaguelands",
+     "step": null
+    },
+    {
+     "questId": 7625,
+     "name": "Xorothian Stardust",
+     "mapId": 1439,
+     "x": 51.4,
+     "y": 66.5,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Lord Banehollow",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Darkshore",
+     "step": null
+    },
+    {
+     "questId": 7629,
+     "name": "Imp Delivery",
+     "mapId": 1428,
+     "x": 12.4,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Gorzeeki Wildeyes",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 349,
+   "name": "Maraudon",
+   "mapId": 1443,
+   "x": 29.1,
+   "y": 62.9,
+   "levels": [
+    42,
+    51
+   ],
+   "quests": [
+    {
+     "questId": 7068,
+     "name": "Shadowshard Fragments",
+     "mapId": 1411,
+     "x": 42.9,
+     "y": 9.7,
+     "level": 42,
+     "minLevel": 39,
+     "npcName": "Uthel'nay",
+     "zoneName": "Durotar",
+     "step": null
+    },
+    {
+     "questId": 7028,
+     "name": "Twisted Evils",
+     "mapId": 1443,
+     "x": 62.2,
+     "y": 39.6,
+     "level": 47,
+     "minLevel": 41,
+     "npcName": "Willow",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7029,
+     "name": "Vyletongue Corruption",
+     "mapId": 1443,
+     "x": 23.2,
+     "y": 70.3,
+     "level": 47,
+     "minLevel": 41,
+     "npcName": "Vark Battlescar",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7067,
+     "name": "The Pariah's Instructions",
+     "mapId": 1443,
+     "x": 50.5,
+     "y": 86.7,
+     "level": 48,
+     "minLevel": 39,
+     "npcName": "Centaur Pariah",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7064,
+     "name": "Corruption of Earth and Seed",
+     "mapId": 1443,
+     "x": 26.9,
+     "y": 77.7,
+     "level": 51,
+     "minLevel": 45,
+     "npcName": "Selendra",
+     "zoneName": "Desolace",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 389,
+   "name": "Ragefire Chasm",
+   "mapId": 1454,
+   "x": 53.0,
+   "y": 48.9,
+   "levels": [
+    12,
+    16
+   ],
+   "quests": [
+    {
+     "questId": 5726,
+     "name": "Hidden Enemies",
+     "mapId": 1454,
+     "x": 31.7,
+     "y": 37.8,
+     "level": 12,
+     "minLevel": 9,
+     "npcName": "Thrall",
+     "zoneName": "Orgrimmar",
+     "step": null
+    },
+    {
+     "questId": 5727,
+     "name": "Hidden Enemies",
+     "mapId": 1454,
+     "x": 31.7,
+     "y": 37.8,
+     "level": 12,
+     "minLevel": 9,
+     "npcName": "Thrall",
+     "zoneName": "Orgrimmar",
+     "step": null
+    },
+    {
+     "questId": 5723,
+     "name": "Testing an Enemy's Strength",
+     "mapId": 1412,
+     "x": 44.1,
+     "y": 22.8,
+     "level": 15,
+     "minLevel": 9,
+     "npcName": "Rahauro",
+     "zoneName": "Mulgore",
+     "step": null
+    },
+    {
+     "questId": 5722,
+     "name": "Searching for the Lost Satchel",
+     "mapId": 1412,
+     "x": 44.1,
+     "y": 22.8,
+     "level": 16,
+     "minLevel": 9,
+     "npcName": "Rahauro",
+     "zoneName": "Mulgore",
+     "step": null
+    },
+    {
+     "questId": 5725,
+     "name": "The Power to Destroy...",
+     "mapId": 1421,
+     "x": 74.2,
+     "y": 13.5,
+     "level": 16,
+     "minLevel": 9,
+     "npcName": "Varimathras",
+     "zoneName": "Silverpine Forest",
+     "step": null
+    },
+    {
+     "questId": 5728,
+     "name": "Hidden Enemies",
+     "mapId": 1454,
+     "x": 31.7,
+     "y": 37.8,
+     "level": 16,
+     "minLevel": 9,
+     "npcName": "Thrall",
+     "zoneName": "Orgrimmar",
+     "step": null
+    },
+    {
+     "questId": 5761,
+     "name": "Slaying the Beast",
+     "mapId": 1454,
+     "x": 49.5,
+     "y": 50.6,
+     "level": 16,
+     "minLevel": 9,
+     "npcName": "Neeru Fireblade",
+     "zoneName": "Orgrimmar",
+     "step": null
+    }
+   ]
+  }
  ]
 }

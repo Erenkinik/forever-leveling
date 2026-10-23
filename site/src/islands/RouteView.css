@@ -186,6 +186,29 @@ svg.step-icon.grind { stroke: var(--gold); }
 .zoom button.explore { width: auto; padding: 0 14px; font: 15px var(--font-body); }
 .zoom button.explore[aria-pressed="true"] { background: var(--raised); border-color: var(--gold); color: var(--gold); }
 
+/* Dungeon entrances: the game's icon, with a small "!" at the top right when it has quests. */
+.pin.dungeon { width: 30px; height: 30px; background: none; border: 0; outline: 0; padding: 0; }
+.pin.dungeon img { width: 28px; height: 28px; filter: drop-shadow(0 0 2px #000); }
+.pin.dungeon img.dungeon-quests { position: absolute; right: -10px; top: -12px; width: 18px; height: 18px; }
+.pin.dungeon:hover .pin-label, .pin.dungeon:focus-visible .pin-label, .pin.dungeon[aria-expanded="true"] .pin-label {
+  display: block;
+}
+@media (pointer: coarse) { .pin.dungeon { width: 44px; height: 44px; } }
+
+/* The quest panel of a dungeon, under the map. */
+.dungeon-panel {
+  margin-top: 10px; padding: 12px 14px; background: var(--raised); border: 1px solid var(--gold);
+  border-radius: 8px; box-shadow: 0 6px 16px rgba(0, 0, 0, .45);
+}
+.dungeon-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.dungeon-head h3 { margin: 0; font-size: 22px; color: var(--gold); }
+.dungeon-head .icon-button { font-size: 22px; line-height: 1; }
+.dungeon-sub { margin: 2px 0 8px; color: var(--muted); font-size: 14px; }
+.dungeon-quests-list { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.dungeon-quests-list .lvl { color: var(--muted); }
+.dungeon-quests-list .from { display: block; font-size: 14px; color: var(--muted); }
+.dungeon-quests-list .tag { margin-left: 6px; }
+
 /* Exploration mode: quests off the route, a small faint "!" under the route's pins. */
 .pin.optional { width: 20px; height: 20px; background: none; border: 0; outline: 0; cursor: default; }
 .pin.optional img { width: 20px; height: 20px; opacity: .55; filter: drop-shadow(0 0 1px #000); }

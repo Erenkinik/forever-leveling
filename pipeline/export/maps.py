@@ -150,6 +150,8 @@ ART_QUADS: dict[str, int] = {
 }
 # The faction emblems of the target frame (interface/targetingframe/ui-pvp-<faction>.blp), trimmed to the emblem.
 FACTION_EMBLEMS: dict[str, int] = {"faction-alliance": 136998, "faction-horde": 137000}
+# The minimap's dungeon entrance icon (interface/minimap/dungeon_icon.blp), trimmed the same way.
+DUNGEON_ICON = 1488824
 # The quest frame parchment (interface/questframe/questbg.blp): the page is the top-left 300x335 of the texture.
 PARCHMENT = (530420, (0, 0, 300, 335))
 CREST_MAX = 640
@@ -224,7 +226,7 @@ def build_art(raw_dir: Path, out_dir: Path, opener: Callable = urllib.request.ur
             stitched[base] = crest
         stitched[base].save(out_dir / f"{name}.webp", "WEBP", quality=WEBP_QUALITY, method=6)
         names.append(name)
-    for name, fdid in FACTION_EMBLEMS.items():
+    for name, fdid in {**FACTION_EMBLEMS, "icon-dungeon": DUNGEON_ICON}.items():
         emblem = _tile(fdid, cache, opener).convert("RGBA")
         box = emblem.getchannel("A").getbbox()
         (emblem.crop(box) if box else emblem).save(out_dir / f"{name}.webp", "WEBP", lossless=True)

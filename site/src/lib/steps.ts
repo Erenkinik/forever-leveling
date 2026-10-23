@@ -55,6 +55,26 @@ export interface Route {
   steps: Step[];
   /** quests off the route that the race can do on its maps (exploration mode) */
   optional?: OptionalQuest[];
+  /** dungeon entrances on the route's maps, with their quests for this race */
+  dungeons?: Dungeon[];
+}
+
+export interface DungeonQuest extends OptionalQuest {
+  /** the map the quest starts on */
+  zoneName: string | null;
+  /** the route's accept step for it, or null when the route does not take it */
+  step: string | null;
+}
+
+export interface Dungeon {
+  id: number;
+  name: string;
+  mapId: number;
+  x: number;
+  y: number;
+  /** lowest and highest level of its quests, or null without quests */
+  levels: [number, number] | null;
+  quests: DungeonQuest[];
 }
 
 export interface OptionalQuest {
@@ -166,6 +186,14 @@ export function sessionEnd(steps: Step[], from: number, minutes: number, done: R
     index = i;
   }
   return { index, level: steps[index + 1]?.level ?? steps[index]?.level };
+}
+
+/** The dungeon entrances on this map, each with the quests a player of this class can take ('' = any). */
+export function dungeonsOnMap(dungeons: Dungeon[], mapId: number, playerClass: string): Dungeon[] {
+  return dungeons.filter((d) => d.mapId === mapId).map((d) => ({
+    ...d,
+    quests: d.quests.filter((q) => !playerClass || !q.classOnly || q.classOnly.includes(playerClass)),
+  }));
 }
 
 export interface ZoneGroup {

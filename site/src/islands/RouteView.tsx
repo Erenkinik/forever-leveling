@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 
 import {
-  clusterPins, describeStep, formatDuration, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
+  clusterPins, describeStep, dungeonsOnMap, formatDuration, groupByZone, levelRange, loadDone, loadSettings, pinLabel, questBrief,
   reportUrl, secondsLeft, sessionEnd,
   mapStepsFor, openQuests, optionalOnMap, routeClasses, safeStorage, saveDone, pinIcon,
   saveSettings, searchSteps, stepsForClass, storageKey,
@@ -142,6 +142,21 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
     shortcuts: true, highContrast: false, playerClass: '', explore: false, sessionMinutes: 0,
   });
   const [zoom, setZoom] = useState(0);
+  // The dungeon whose quest panel is open (its Map id), and the marker to give focus back to when it closes.
+  const [openDungeon, setOpenDungeon] = useState<number | null>(null);
+  const dungeonButton = useRef<HTMLButtonElement | null>(null);
+  const dungeonPanel = useRef<HTMLHeadingElement | null>(null);
+  useEffect(() => {
+    if (openDungeon === null) return;
+    dungeonPanel.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setOpenDungeon(null);
+      dungeonButton.current?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [openDungeon]);
   const [announcement, setAnnouncement] = useState('');
   const [query, setQuery] = useState('');
   const itemRefs = useRef(new Map<string, HTMLLIElement>());
@@ -394,6 +409,22 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                       ))}
                     </svg>
                   )}
+                  {dungeonsOnMap(route.dungeons ?? [], current.mapId, playerClass).map((d) => (
+                    // Dungeon entrance: the game's icon, a "!" at its top right when it has quests for this race.
+                    <button key={`dungeon-${d.id}`} type="button" className="pin dungeon"
+                            style={{ left: `${d.x}%`, top: `${d.y}%` }} aria-haspopup="dialog"
+                            aria-expanded={openDungeon === d.id}
+                            aria-label={`${d.name}, dungeon${d.quests.length ? `, ${d.quests.length} quests` : ''}`}
+                            onClick={(e) => {
+                              dungeonButton.current = e.currentTarget;
+                              setOpenDungeon(openDungeon === d.id ? null : d.id);
+                            }}>
+                      <img src="/art/icon-dungeon.webp" alt="" width={28} height={28} />
+                      {d.quests.length > 0 && <img className="dungeon-quests" src="/art/icon-accept.webp" alt=""
+                                                   width={18} height={18} />}
+                      <span className="pin-label">{d.name}</span>
+                    </button>
+                  ))}
                   {settings.explore && optionalOnMap(route.optional ?? [], current.mapId, playerClass).map((q) => (
                     // Off-route quests: drawn under the route's pins, named on hover and in the list below.
                     <span key={`optional-${q.questId}`} role="img" style={{ left: `${q.x}%`, top: `${q.y}%` }}
@@ -437,6 +468,43 @@ export default function RouteView({ route, routes }: { route: Route; routes: Rou
                   })}
                 </div>
               </div>
+              {(() => {
+                const d = dungeonsOnMap(route.dungeons ?? [], current.mapId, playerClass)
+                  .find((x) => x.id === openDungeon);
+                if (!d) return null;
+                return (
+                  <section className="dungeon-panel" role="dialog" aria-labelledby="dungeon-title">
+                    <div className="dungeon-head">
+                      <h3 id="dungeon-title" ref={dungeonPanel} tabIndex={-1}>{d.name}</h3>
+                      <button type="button" className="icon-button" aria-label="Close"
+                              onClick={() => { setOpenDungeon(null); dungeonButton.current?.focus(); }}>×</button>
+                    </div>
+                    <p className="dungeon-sub">
+                      Dungeon{d.levels && <> · quests level {d.levels[0]}–{d.levels[1]}</>}
+                    </p>
+                    {d.quests.length === 0
+                      ? <p>No quests for this dungeon that you can take.</p>
+                      : (
+                        <ol className="dungeon-quests-list">
+                          {d.quests.map((q) => (
+                            <li key={q.questId}>
+                              <span className="quest">{q.name ?? `quest #${q.questId}`}</span>{' '}
+                              <span className="lvl">({q.level})</span>
+                              {q.classOnly && <span className="tag class">{q.classOnly.join(', ')}</span>}
+                              <span className="from">
+                                From <span className="npc">{q.npcName ?? 'unknown'}</span>
+                                {q.zoneName && <> in {q.zoneName}</>} at {q.x.toFixed(1)}, {q.y.toFixed(1)}.
+                                {' '}{q.step
+                                  ? <>On your route: step {(index.get(q.step) ?? 0) + 1}.</>
+                                  : <>Not on this route.</>}
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
+                      )}
+                  </section>
+                );
+              })()}
               <div className="zoom" role="group" aria-label="Map zoom">
                 <button type="button" aria-label="Zoom in" disabled={zoom === ZOOMS.length - 1}
                         onClick={() => setZoom((z) => Math.min(ZOOMS.length - 1, z + 1))}>+</button>

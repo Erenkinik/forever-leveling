@@ -50264,5 +50264,913 @@
    "minLevel": 30,
    "npcName": "Wulmort Jinglepocket"
   }
+ ],
+ "dungeons": [
+  {
+   "id": 34,
+   "name": "Stormwind Stockade",
+   "mapId": 1453,
+   "x": 50.4,
+   "y": 66.2,
+   "levels": [
+    22,
+    30
+   ],
+   "quests": [
+    {
+     "questId": 389,
+     "name": "Bazil Thredd",
+     "mapId": 1453,
+     "x": 49.2,
+     "y": 30.3,
+     "level": 22,
+     "minLevel": 16,
+     "npcName": "Baros Alexston",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 386,
+     "name": "What Comes Around...",
+     "mapId": 1433,
+     "x": 26.3,
+     "y": 46.6,
+     "level": 25,
+     "minLevel": 22,
+     "npcName": "Guard Berton",
+     "zoneName": "Redridge Mountains",
+     "step": null
+    },
+    {
+     "questId": 377,
+     "name": "Crime and Punishment",
+     "mapId": 1431,
+     "x": 71.9,
+     "y": 47.8,
+     "level": 26,
+     "minLevel": 22,
+     "npcName": "Councilman Millstipe",
+     "zoneName": "Duskwood",
+     "step": null
+    },
+    {
+     "questId": 387,
+     "name": "Quell The Uprising",
+     "mapId": 1453,
+     "x": 41.1,
+     "y": 58.1,
+     "level": 26,
+     "minLevel": 22,
+     "npcName": "Warden Thelwater",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 388,
+     "name": "The Color of Blood",
+     "mapId": 1453,
+     "x": 73.4,
+     "y": 50.7,
+     "level": 26,
+     "minLevel": 22,
+     "npcName": "Nikova Raskol",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 378,
+     "name": "The Fury Runs Deep",
+     "mapId": 1437,
+     "x": 49.7,
+     "y": 18.2,
+     "level": 27,
+     "minLevel": 22,
+     "npcName": "Motley Garmason",
+     "zoneName": "Wetlands",
+     "step": null
+    },
+    {
+     "questId": 391,
+     "name": "The Stockade Riots",
+     "mapId": 1453,
+     "x": 41.1,
+     "y": 58.1,
+     "level": 29,
+     "minLevel": 16,
+     "npcName": "Warden Thelwater",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 303,
+     "name": "The Dark Iron War",
+     "mapId": 1437,
+     "x": 49.7,
+     "y": 18.2,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Motley Garmason",
+     "zoneName": "Wetlands",
+     "step": "accept-303"
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Deadmines",
+   "mapId": 1436,
+   "x": 38.2,
+   "y": 77.5,
+   "levels": [
+    17,
+    22
+   ],
+   "quests": [
+    {
+     "questId": 214,
+     "name": "Red Silk Bandanas",
+     "mapId": 1436,
+     "x": 56.7,
+     "y": 47.3,
+     "level": 17,
+     "minLevel": 14,
+     "npcName": "Scout Riell",
+     "zoneName": "Westfall",
+     "step": "accept-214"
+    },
+    {
+     "questId": 65,
+     "name": "The Defias Brotherhood",
+     "mapId": 1436,
+     "x": 56.3,
+     "y": 47.5,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Gryan Stoutmantle",
+     "zoneName": "Westfall",
+     "step": "accept-65"
+    },
+    {
+     "questId": 132,
+     "name": "The Defias Brotherhood",
+     "mapId": 1433,
+     "x": 26.5,
+     "y": 45.3,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Wiley the Black",
+     "zoneName": "Redridge Mountains",
+     "step": "accept-132"
+    },
+    {
+     "questId": 135,
+     "name": "The Defias Brotherhood",
+     "mapId": 1436,
+     "x": 56.3,
+     "y": 47.5,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Gryan Stoutmantle",
+     "zoneName": "Westfall",
+     "step": "accept-135"
+    },
+    {
+     "questId": 141,
+     "name": "The Defias Brotherhood",
+     "mapId": 1453,
+     "x": 75.8,
+     "y": 59.8,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Master Mathias Shaw",
+     "zoneName": "Stormwind City",
+     "step": "accept-141"
+    },
+    {
+     "questId": 142,
+     "name": "The Defias Brotherhood",
+     "mapId": 1436,
+     "x": 56.3,
+     "y": 47.5,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Gryan Stoutmantle",
+     "zoneName": "Westfall",
+     "step": "accept-142"
+    },
+    {
+     "questId": 155,
+     "name": "The Defias Brotherhood",
+     "mapId": 1436,
+     "x": 55.7,
+     "y": 47.5,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "The Defias Traitor",
+     "zoneName": "Westfall",
+     "step": "accept-155"
+    },
+    {
+     "questId": 168,
+     "name": "Collecting Memories",
+     "mapId": 1453,
+     "x": 65.4,
+     "y": 21.2,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Wilder Thistlenettle",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 167,
+     "name": "Oh Brother. . .",
+     "mapId": 1453,
+     "x": 65.4,
+     "y": 21.2,
+     "level": 20,
+     "minLevel": 15,
+     "npcName": "Wilder Thistlenettle",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 2040,
+     "name": "Underground Assault",
+     "mapId": 1453,
+     "x": 55.5,
+     "y": 12.5,
+     "level": 20,
+     "minLevel": 15,
+     "npcName": "Shoni the Shilent",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 166,
+     "name": "The Defias Brotherhood",
+     "mapId": 1436,
+     "x": 56.3,
+     "y": 47.5,
+     "level": 22,
+     "minLevel": 14,
+     "npcName": "Gryan Stoutmantle",
+     "zoneName": "Westfall",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Wailing Caverns",
+   "mapId": 1413,
+   "x": 47.7,
+   "y": 35.0,
+   "levels": [
+    17,
+    21
+   ],
+   "quests": [
+    {
+     "questId": 1486,
+     "name": "Deviate Hides",
+     "mapId": 1413,
+     "x": 46,
+     "y": 35.7,
+     "level": 17,
+     "minLevel": 13,
+     "npcName": "Nalpak",
+     "zoneName": "The Barrens",
+     "step": "accept-1486"
+    },
+    {
+     "questId": 865,
+     "name": "Raptor Horns",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 13,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": "accept-865"
+    },
+    {
+     "questId": 959,
+     "name": "Trouble at the Docks",
+     "mapId": 1413,
+     "x": 63.1,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 14,
+     "npcName": "Crane Operator Bigglefuzz",
+     "zoneName": "The Barrens",
+     "step": "accept-959"
+    },
+    {
+     "questId": 1491,
+     "name": "Smart Drinks",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 18,
+     "minLevel": 13,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": "accept-1491"
+    },
+    {
+     "questId": 1487,
+     "name": "Deviate Eradication",
+     "mapId": 1413,
+     "x": 46,
+     "y": 35.7,
+     "level": 21,
+     "minLevel": 15,
+     "npcName": "Ebru",
+     "zoneName": "The Barrens",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "name": "Razorfen Kraul",
+   "mapId": 1413,
+   "x": 42.3,
+   "y": 89.9,
+   "levels": [
+    22,
+    34
+   ],
+   "quests": [
+    {
+     "questId": 1699,
+     "name": "The Rethban Gauntlet",
+     "mapId": 1433,
+     "x": 26.6,
+     "y": 44.7,
+     "level": 22,
+     "minLevel": 20,
+     "npcName": "Yorus Barleybrew",
+     "classOnly": [
+      "Warrior"
+     ],
+     "zoneName": "Redridge Mountains",
+     "step": null
+    },
+    {
+     "questId": 1702,
+     "name": "The Shieldsmith",
+     "mapId": 1433,
+     "x": 26.6,
+     "y": 44.7,
+     "level": 22,
+     "minLevel": 20,
+     "npcName": "Yorus Barleybrew",
+     "classOnly": [
+      "Warrior"
+     ],
+     "zoneName": "Redridge Mountains",
+     "step": null
+    },
+    {
+     "questId": 1221,
+     "name": "Blueleaf Tubers",
+     "mapId": 1413,
+     "x": 62.4,
+     "y": 37.6,
+     "level": 26,
+     "minLevel": 20,
+     "npcName": "Mebok Mizzyrix",
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 1701,
+     "name": "Fire Hardened Mail",
+     "mapId": 1453,
+     "x": 58.1,
+     "y": 16.5,
+     "level": 28,
+     "minLevel": 20,
+     "npcName": "Furen Longbeard",
+     "classOnly": [
+      "Warrior"
+     ],
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 1101,
+     "name": "The Crone of the Kraul",
+     "mapId": 1444,
+     "x": 89.6,
+     "y": 46.6,
+     "level": 34,
+     "minLevel": 29,
+     "npcName": "Falfindel Waywarder",
+     "zoneName": "Feralas",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "name": "Blackfathom Deeps",
+   "mapId": 1440,
+   "x": 16.5,
+   "y": 11.0,
+   "levels": [
+    23,
+    25
+   ],
+   "quests": [
+    {
+     "questId": 971,
+     "name": "Knowledge in the Deeps",
+     "mapId": 1455,
+     "x": 50.8,
+     "y": 5.6,
+     "level": 23,
+     "minLevel": 10,
+     "npcName": "Gerrig Bonegrip",
+     "zoneName": "Ironforge",
+     "step": null
+    },
+    {
+     "questId": 1198,
+     "name": "In Search of Thaelrid",
+     "mapId": 1438,
+     "x": 28.7,
+     "y": 52.1,
+     "level": 24,
+     "minLevel": 18,
+     "npcName": "Dawnwatcher Shaedlass",
+     "zoneName": "Teldrassil",
+     "step": null
+    },
+    {
+     "questId": 1275,
+     "name": "Researching the Corruption",
+     "mapId": 1439,
+     "x": 38.3,
+     "y": 43,
+     "level": 24,
+     "minLevel": 18,
+     "npcName": "Gershala Nightwhisper",
+     "zoneName": "Darkshore",
+     "step": null
+    },
+    {
+     "questId": 1199,
+     "name": "Twilight Falls",
+     "mapId": 1438,
+     "x": 28.7,
+     "y": 51.9,
+     "level": 25,
+     "minLevel": 20,
+     "npcName": "Argent Guard Manados",
+     "zoneName": "Teldrassil",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "name": "Gnomeregan",
+   "mapId": 1426,
+   "x": 17.7,
+   "y": 39.2,
+   "levels": [
+    27,
+    35
+   ],
+   "quests": [
+    {
+     "questId": 2926,
+     "name": "Gnogaine",
+     "mapId": 1426,
+     "x": 45.9,
+     "y": 49.4,
+     "level": 27,
+     "minLevel": 20,
+     "npcName": "Ozzie Togglevolt",
+     "zoneName": "Dun Morogh",
+     "step": null
+    },
+    {
+     "questId": 2924,
+     "name": "Essential Artificials",
+     "mapId": 1455,
+     "x": 67.9,
+     "y": 46.1,
+     "level": 30,
+     "minLevel": 24,
+     "npcName": "Klockmort Spannerspan",
+     "zoneName": "Ironforge",
+     "step": null
+    },
+    {
+     "questId": 2928,
+     "name": "Gyrodrillmatic Excavationators",
+     "mapId": 1453,
+     "x": 55.5,
+     "y": 12.5,
+     "level": 30,
+     "minLevel": 20,
+     "npcName": "Shoni the Shilent",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 2930,
+     "name": "Data Rescue",
+     "mapId": 1455,
+     "x": 69.8,
+     "y": 48.1,
+     "level": 30,
+     "minLevel": 25,
+     "npcName": "Master Mechanic Castpipe",
+     "zoneName": "Ironforge",
+     "step": null
+    },
+    {
+     "questId": 2962,
+     "name": "The Only Cure is More Green Glow",
+     "mapId": 1426,
+     "x": 45.9,
+     "y": 49.4,
+     "level": 30,
+     "minLevel": 20,
+     "npcName": "Ozzie Togglevolt",
+     "zoneName": "Dun Morogh",
+     "step": null
+    },
+    {
+     "questId": 2929,
+     "name": "The Grand Betrayal",
+     "mapId": 1455,
+     "x": 68.8,
+     "y": 49,
+     "level": 35,
+     "minLevel": 25,
+     "npcName": "High Tinker Mekkatorque",
+     "zoneName": "Ironforge",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 129,
+   "name": "Razorfen Downs",
+   "mapId": 1413,
+   "x": 50.9,
+   "y": 92.9,
+   "levels": [
+    35,
+    42
+   ],
+   "quests": [
+    {
+     "questId": 6626,
+     "name": "A Host of Evil",
+     "mapId": 1413,
+     "x": 49,
+     "y": 94.9,
+     "level": 35,
+     "minLevel": 28,
+     "npcName": "Myriam Moonsinger",
+     "zoneName": "The Barrens",
+     "step": null
+    },
+    {
+     "questId": 3636,
+     "name": "Bring the Light",
+     "mapId": 1453,
+     "x": 39.6,
+     "y": 27.2,
+     "level": 42,
+     "minLevel": 39,
+     "npcName": "Archbishop Benedictus",
+     "zoneName": "Stormwind City",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 349,
+   "name": "Maraudon",
+   "mapId": 1443,
+   "x": 29.1,
+   "y": 62.9,
+   "levels": [
+    42,
+    51
+   ],
+   "quests": [
+    {
+     "questId": 7070,
+     "name": "Shadowshard Fragments",
+     "mapId": 1445,
+     "x": 66.4,
+     "y": 49.3,
+     "level": 42,
+     "minLevel": 39,
+     "npcName": "Archmage Tervosh",
+     "zoneName": "Dustwallow Marsh",
+     "step": null
+    },
+    {
+     "questId": 7028,
+     "name": "Twisted Evils",
+     "mapId": 1443,
+     "x": 62.2,
+     "y": 39.6,
+     "level": 47,
+     "minLevel": 41,
+     "npcName": "Willow",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7041,
+     "name": "Vyletongue Corruption",
+     "mapId": 1443,
+     "x": 68.5,
+     "y": 8.9,
+     "level": 47,
+     "minLevel": 41,
+     "npcName": "Talendria",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7067,
+     "name": "The Pariah's Instructions",
+     "mapId": 1443,
+     "x": 50.5,
+     "y": 86.7,
+     "level": 48,
+     "minLevel": 39,
+     "npcName": "Centaur Pariah",
+     "zoneName": "Desolace",
+     "step": null
+    },
+    {
+     "questId": 7065,
+     "name": "Corruption of Earth and Seed",
+     "mapId": 1443,
+     "x": 63.8,
+     "y": 10.7,
+     "level": 51,
+     "minLevel": 45,
+     "npcName": "Keeper Marandis",
+     "zoneName": "Desolace",
+     "step": null
+    }
+   ]
+  },
+  {
+   "id": 429,
+   "name": "Dire Maul",
+   "mapId": 1444,
+   "x": 62.0,
+   "y": 33.3,
+   "levels": [
+    57,
+    60
+   ],
+   "quests": [
+    {
+     "questId": 7488,
+     "name": "Lethtendris's Web",
+     "mapId": 1444,
+     "x": 30.4,
+     "y": 46.2,
+     "level": 57,
+     "minLevel": 54,
+     "npcName": "Latronicus Moonspear",
+     "zoneName": "Feralas",
+     "step": null
+    },
+    {
+     "questId": 7494,
+     "name": "Feathermoon Stronghold",
+     "mapId": 1453,
+     "x": 47.4,
+     "y": 64.2,
+     "level": 57,
+     "minLevel": 54,
+     "npcName": "Crier Goodman",
+     "zoneName": "Stormwind City",
+     "step": null
+    },
+    {
+     "questId": 7441,
+     "name": "Pusillin and the Elder Azj'Tordin",
+     "mapId": 1444,
+     "x": 76.9,
+     "y": 37.4,
+     "level": 58,
+     "minLevel": 54,
+     "npcName": "Azj'Tordin",
+     "zoneName": "Feralas",
+     "step": null
+    },
+    {
+     "questId": 7563,
+     "name": "Rage of Blood",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7564,
+     "name": "Wildeyes",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7623,
+     "name": "Lord Banehollow",
+     "mapId": 1428,
+     "x": 12.4,
+     "y": 31.6,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Gorzeeki Wildeyes",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7624,
+     "name": "Ulathek the Traitor",
+     "mapId": 1439,
+     "x": 51.4,
+     "y": 66.5,
+     "level": 58,
+     "minLevel": 60,
+     "npcName": "Lord Banehollow",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Darkshore",
+     "step": null
+    },
+    {
+     "questId": 7482,
+     "name": "Elven Legends",
+     "mapId": 1444,
+     "x": 31.2,
+     "y": 44.6,
+     "level": 60,
+     "minLevel": 54,
+     "npcName": "Scholar Runethorn",
+     "zoneName": "Feralas",
+     "step": null
+    },
+    {
+     "questId": 7581,
+     "name": "The Prison's Bindings",
+     "mapId": 1419,
+     "x": 34.1,
+     "y": 50.1,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Daio the Decrepit",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Blasted Lands",
+     "step": null
+    },
+    {
+     "questId": 7625,
+     "name": "Xorothian Stardust",
+     "mapId": 1439,
+     "x": 51.4,
+     "y": 66.5,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Lord Banehollow",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Darkshore",
+     "step": null
+    },
+    {
+     "questId": 7626,
+     "name": "Bell of Dethmoora",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7627,
+     "name": "Wheel of the Black March",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7628,
+     "name": "Doomsday Candle",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7629,
+     "name": "Imp Delivery",
+     "mapId": 1428,
+     "x": 12.4,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Gorzeeki Wildeyes",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7630,
+     "name": "Arcanite",
+     "mapId": 1428,
+     "x": 12.4,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Gorzeeki Wildeyes",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    },
+    {
+     "questId": 7631,
+     "name": "Dreadsteed of Xoroth",
+     "mapId": 1428,
+     "x": 12.7,
+     "y": 31.6,
+     "level": 60,
+     "minLevel": 60,
+     "npcName": "Mor'zul Bloodbringer",
+     "classOnly": [
+      "Warlock"
+     ],
+     "zoneName": "Burning Steppes",
+     "step": null
+    }
+   ]
+  }
  ]
 }

@@ -371,3 +371,24 @@ test('a session plan marks where the chosen time runs out, and zones show their 
   await expect(page.locator('.session-plan p')).toContainText(/Steps 1–\d+, to about level \d+/);
   await expect(page.locator('.tag.session')).toHaveCount(1);
 });
+
+test('a dungeon entrance on the map shows its quests in a panel', async ({ page }) => {
+  const { readFileSync } = await import('node:fs');
+  const route = JSON.parse(readFileSync(new URL('../../src/data/human.json', import.meta.url), 'utf8'));
+  // Every step before the route first reaches Westfall is done, so the map shows Westfall and the Deadmines.
+  const at = route.steps.findIndex((s: { mapId: number; type: string }) => s.mapId === 1436 && s.type !== 'travel');
+  const done = route.steps.slice(0, at).map((s: { id: string }) => s.id);
+  await page.addInitScript((ids) => window.localStorage.setItem('fxp:v1:human', JSON.stringify(ids)), done);
+  await page.goto('/human/');
+  await expect(page.locator('.steps[data-loaded="true"]')).toBeVisible();
+  const entrance = page.getByRole('button', { name: /^Deadmines, dungeon, \d+ quests$/ });
+  await expect(entrance.locator('img.dungeon-quests')).toHaveCount(1);  // the "!" for its quests
+  await entrance.click();
+  const panel = page.getByRole('dialog', { name: 'Deadmines' });
+  await expect(panel).toBeVisible();
+  expect(await panel.locator('li').count()).toBeGreaterThan(0);
+  await expect(panel).toContainText(/On your route: step \d+|Not on this route/);
+  await page.keyboard.press('Escape');
+  await expect(panel).toHaveCount(0);
+  await expect(entrance).toBeFocused();
+});

@@ -104,6 +104,28 @@ def _build_taxi() -> str:
     return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
 
 
+def _dungeons_path() -> Path:
+    return DATA_DIR / "canonical" / "dungeons.json"
+
+
+def _build_dungeons() -> str:
+    import csv
+
+    from pipeline.ingest.lodestar import load_dungeon_quests
+    from pipeline.ingest.wago import load_uimap_parents, load_uimaps
+    from pipeline.normalize.dungeons import build_dungeons
+
+    wago = RAW_DIR / "wago" / DATA_BUILD
+
+    def rows(table: str) -> list[dict]:
+        with open(wago / f"{table}.csv", encoding="utf-8", newline="") as f:
+            return list(csv.DictReader(f))
+
+    doc = build_dungeons(rows("Map"), rows("UiMapAssignment"), load_uimaps(wago), load_uimap_parents(wago),
+                         load_dungeon_quests(RAW_DIR / "lodestar"))
+    return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
+
+
 def _spawns_path() -> Path:
     return DATA_DIR / "canonical" / "spawns.json"
 
@@ -133,6 +155,7 @@ def cmd_normalize(args) -> int:
         questxp_text = _build_questxp()
         spawns_text = _build_spawns(records)
         taxi_text = _build_taxi()
+        dungeons_text = _build_dungeons()
     except FileNotFoundError as exc:
         print(f"missing raw data: {exc.filename} (run the fetch step first)", file=sys.stderr)
         return 1
@@ -146,6 +169,7 @@ def cmd_normalize(args) -> int:
         ("spawns", _spawns_path(), spawns_text),
         ("questxp", _questxp_path(), questxp_text),
         ("taxi", _taxi_path(), taxi_text),
+        ("dungeons", _dungeons_path(), dungeons_text),
     ]
     if args.check:
         for label, out, text in targets:
@@ -161,7 +185,8 @@ def cmd_normalize(args) -> int:
         _write_text_atomic(out, text)
     print(
         f"wrote {len(records)} quests to {targets[0][1]}, uimaps to {targets[1][1]}, "
-        f"spawns to {targets[2][1]}, questxp to {targets[3][1]} and flight paths to {targets[4][1]}"
+        f"spawns to {targets[2][1]}, questxp to {targets[3][1]}, flight paths to {targets[4][1]} "
+        f"and dungeons to {targets[5][1]}"
     )
     return 0
 
@@ -423,7 +448,8 @@ def _item_icons(root: Path) -> dict[str, int | None] | None:
 
 def cmd_export(args) -> int:
     from pipeline.canonical import (
-        load_questxp_canonical, load_spawns_canonical, load_taxi_canonical, load_uimaps_canonical,
+        load_dungeons_canonical, load_questxp_canonical, load_spawns_canonical, load_taxi_canonical,
+        load_uimaps_canonical,
     )
     from pipeline.export.lua import to_lua
     from pipeline.export.site import to_site_json
@@ -453,6 +479,7 @@ def cmd_export(args) -> int:
     root = DATA_DIR.parent
     item_icons = _item_icons(root)
     taxi = load_taxi_canonical(DATA_DIR)
+    dungeons = load_dungeons_canonical(DATA_DIR)
     outputs = []
     for path in paths:
         try:
@@ -463,7 +490,7 @@ def cmd_export(args) -> int:
         try:
             levels = _route_levels(route, quests, xp_table)
             site = to_site_json(route, quests, spawns, uimaps, levels, item_icons,
-                                step_seconds(route, quests, levels, taxi))
+                                step_seconds(route, quests, levels, taxi), dungeons)
             outputs.append((path.stem, _json_text(site), to_lua(route)))
         except (ValueError, KeyError, TypeError, AttributeError) as exc:
             print(f"cannot export route file {path}: {type(exc).__name__}: {exc}", file=sys.stderr)

@@ -325,3 +325,19 @@ test('durations read like a person would say them, and a session ends where its 
   assert.deepEqual(sessionEnd(steps, 0, 30, new Set(['b'])), { index: 2, level: 4 });  // done steps are free
   assert.deepEqual(sessionEnd(steps, 1, 5, new Set()), { index: 1, level: 3 });  // at least the current step
 });
+
+test('dungeons on a map keep the quests the chosen class can take', async () => {
+  const { dungeonsOnMap } = await import('../../src/lib/steps.ts');
+  const quest = (questId: number, classOnly?: string[]) => ({
+    questId, name: `Q${questId}`, mapId: 1, x: 1, y: 1, level: 20, minLevel: 18, npcName: 'Giver',
+    zoneName: 'Westfall', step: null, classOnly,
+  });
+  const dungeons = [
+    { id: 36, name: 'Deadmines', mapId: 1436, x: 38, y: 77, levels: [17, 22] as [number, number],
+      quests: [quest(1), quest(2, ['Mage'])] },
+    { id: 34, name: 'Stormwind Stockade', mapId: 1453, x: 50, y: 66, levels: null, quests: [] },
+  ];
+  assert.deepEqual(dungeonsOnMap(dungeons, 1436, '').map((d) => d.quests.length), [2]);
+  assert.deepEqual(dungeonsOnMap(dungeons, 1436, 'Rogue')[0].quests.map((q) => q.questId), [1]);
+  assert.deepEqual(dungeonsOnMap(dungeons, 1429, ''), []);
+});

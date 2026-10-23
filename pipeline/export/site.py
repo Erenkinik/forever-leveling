@@ -61,44 +61,78 @@ def _objectives(quest: dict, spawns: dict, step: dict, item_icons: dict[str, int
     return out
 
 
+def _quest_entry(q: dict, race: str, faction: str) -> dict | None:
+    """A quest the race and faction can take (in Forever, a known level and a located start) as the site lists it:
+    id, name, where it starts and its level, with classOnly for a class quest; None when they cannot."""
+    from pipeline.generate.graph import class_only
+
+    start = q.get("start") or {}
+    level = q.get("level") if q.get("level") is not None else q.get("minLevel")
+    if (not q.get("inForever") or level is None or start.get("uiMapId") is None
+            or start.get("x") is None or start.get("y") is None
+            or (q.get("races") is not None and race not in q["races"])
+            or (q.get("factions") is not None and faction not in q["factions"])):
+        return None
+    entry = {"questId": q["id"], "name": q.get("name"), "mapId": start["uiMapId"], "x": start["x"], "y": start["y"],
+             "level": level, "minLevel": q.get("minLevel"), "npcName": start.get("name")}
+    if q.get("classes"):
+        playable = class_only(q, race)
+        if not playable:
+            return None
+        entry["classOnly"] = playable
+    return entry
+
+
 def optional_quests(route: dict, quests: dict[int, dict]) -> list[dict]:
     """Quests the route does not take that its race and faction can do, starting at a known point on a map the
     route visits (the site's exploration mode shows them): by map, then level."""
     from pipeline.generate.config import LEVEL_CAP
-    from pipeline.generate.graph import class_only
 
     maps = {s["mapId"] for s in route.get("steps", [])}
     taken = {s["questId"] for s in route.get("steps", []) if s.get("questId") is not None}
-    race, faction = route.get("race"), route.get("faction")
     out = []
     for qid, q in quests.items():
-        start = q.get("start") or {}
-        level = q.get("level") if q.get("level") is not None else q.get("minLevel")
-        if (qid in taken or not q.get("inForever") or level is None or level > LEVEL_CAP
-                or (q.get("minLevel") or 0) > LEVEL_CAP or start.get("uiMapId") not in maps
-                or start.get("x") is None or start.get("y") is None
-                or (q.get("races") is not None and race not in q["races"])
-                or (q.get("factions") is not None and faction not in q["factions"])):
+        entry = _quest_entry(q, route.get("race"), route.get("faction"))
+        if (entry is None or qid in taken or entry["level"] > LEVEL_CAP or (q.get("minLevel") or 0) > LEVEL_CAP
+                or entry["mapId"] not in maps):
             continue
-        entry = {"questId": qid, "name": q.get("name"), "mapId": start["uiMapId"], "x": start["x"], "y": start["y"],
-                 "level": level, "minLevel": q.get("minLevel"), "npcName": start.get("name")}
-        if q.get("classes"):
-            playable = class_only(q, race)
-            if not playable:
-                continue
-            entry["classOnly"] = playable
         out.append(entry)
     return sorted(out, key=lambda e: (e["mapId"], e["level"], e["questId"]))
 
 
+def route_dungeons(route: dict, quests: dict[int, dict], dungeons: list[dict], uimaps: dict[int, str]) -> list[dict]:
+    """The dungeons whose entrance is on a map the route visits, each with the quests for it that the route's
+    race and faction can take (where they start, the route step that takes them) and those quests' level range."""
+    maps = {s["mapId"] for s in route.get("steps", [])}
+    accepts = {s["questId"]: s["id"] for s in route.get("steps", []) if s["type"] == "accept"}
+    out = []
+    for d in dungeons:
+        if d["uiMapId"] not in maps:
+            continue
+        listed = []
+        for qid in d["quests"].get(route.get("faction"), []):
+            entry = _quest_entry(quests[qid], route.get("race"), route.get("faction")) if qid in quests else None
+            if entry is None:
+                continue
+            entry["zoneName"] = uimaps.get(entry["mapId"])
+            entry["step"] = accepts.get(qid)
+            listed.append(entry)
+        levels = [e["level"] for e in listed]
+        out.append({"id": d["id"], "name": d["name"], "mapId": d["uiMapId"], "x": d["x"], "y": d["y"],
+                    "levels": [min(levels), max(levels)] if levels else None,
+                    "quests": sorted(listed, key=lambda e: (e["level"], e["questId"]))})
+    return out
+
+
 def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dict[int, str],
                  levels: dict[str, int] | None = None, item_icons: dict[str, int | None] | None = None,
-                 seconds: dict[str, int] | None = None) -> dict:
+                 seconds: dict[str, int] | None = None, dungeons: list[dict] | None = None) -> dict:
     """Return a copy of route whose steps also carry questName, npcName and zoneName (None when unknown);
     complete steps also carry their objectives, and with `levels` (xpsim.estimate_levels) every step
     carries its estimated player level; with `item_icons` (site/src/data/item-icons.json) collect objectives
     carry their item's icon FileDataID; with `seconds` (export.timing.step_seconds) every step carries its
-    estimated time. `optional` lists the quests off the route (optional_quests)."""
+    estimated time. `optional` lists the quests off the route (optional_quests); with `dungeons`
+    (data/canonical/dungeons.json) `dungeons` lists the entrances on the route's maps (route_dungeons)."""
     out = copy.deepcopy(route)
     units = spawns.get("units", {})
     for step in out.get("steps", []):
@@ -114,4 +148,6 @@ def to_site_json(route: dict, quests: dict[int, dict], spawns: dict, uimaps: dic
             step["objectives"] = _objectives(quests[quest_id], spawns, step, item_icons)
             step["area"] = _area(quests[quest_id], spawns, step)
     out["optional"] = optional_quests(route, quests)
+    if dungeons is not None:
+        out["dungeons"] = route_dungeons(route, quests, dungeons, uimaps)
     return out
