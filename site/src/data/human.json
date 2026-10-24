@@ -1681,6 +1681,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 4,
+   "video": {
+    "id": "-rTP8c-BNZ4",
+    "title": "Skirmish at Echo Ridge WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 16
   },
   {
@@ -1696,6 +1701,11 @@
    "npcName": "Deputy Willem",
    "zoneName": "Elwynn Forest",
    "level": 4,
+   "video": {
+    "id": "igiwIHnk7Ok",
+    "title": "Milly Osworth WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 16
   },
   {
@@ -1867,6 +1877,11 @@
    "npcName": "Priestess Anetta",
    "zoneName": "Elwynn Forest",
    "level": 5,
+   "video": {
+    "id": "xPH-R7i2IvA",
+    "title": "In Favor of the Light Quest Guide World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 15
   },
   {
@@ -1900,6 +1915,11 @@
    "npcName": "Marshal McBride",
    "zoneName": "Elwynn Forest",
    "level": 5,
+   "video": {
+    "id": "hE9vxnYz1lY",
+    "title": "Report to Goldshire WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 94
   },
   {
@@ -2147,6 +2167,11 @@
    "npcName": "Milly Osworth",
    "zoneName": "Elwynn Forest",
    "level": 5,
+   "video": {
+    "id": "NbTyZtm0ibg",
+    "title": "Grape Manifest WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -2177,6 +2202,11 @@
    "npcName": "\"Auntie\" Bernice Stonefield",
    "zoneName": "Elwynn Forest",
    "level": 5,
+   "video": {
+    "id": "UU-0wFbH8Kw",
+    "title": "Lost Necklace WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 170
   },
   {
@@ -2207,6 +2237,11 @@
    "npcName": "Billy Maclure",
    "zoneName": "Elwynn Forest",
    "level": 6,
+   "video": {
+    "id": "_N5wF2-BzIU",
+    "title": "Pie for Billy WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -2222,6 +2257,11 @@
    "npcName": "Maybell Maclure",
    "zoneName": "Elwynn Forest",
    "level": 6,
+   "video": {
+    "id": "Uw1oGD6LCiQ",
+    "title": "Young Lovers WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 23
   },
   {
@@ -2872,6 +2912,11 @@
    "npcName": "\"Auntie\" Bernice Stonefield",
    "zoneName": "Elwynn Forest",
    "level": 6,
+   "video": {
+    "id": "mn9BEZi9BrM",
+    "title": "Back to Billy WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 34
   },
   {
@@ -2887,6 +2932,11 @@
    "npcName": "Tommy Joe Stonefield",
    "zoneName": "Elwynn Forest",
    "level": 6,
+   "video": {
+    "id": "QdlKKpS8NEU",
+    "title": "Speak with Gramma WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 34
   },
   {
@@ -2932,6 +2982,11 @@
    "npcName": "Billy Maclure",
    "zoneName": "Elwynn Forest",
    "level": 6,
+   "video": {
+    "id": "Yksyj0NHflU",
+    "title": "Goldtooth WoW Classic Quest (Bernice&#39;s Necklace)",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 51
   },
   {
@@ -3162,6 +3217,11 @@
    "npcName": "Priestess Josetta",
    "zoneName": "Elwynn Forest",
    "level": 7,
+   "video": {
+    "id": "rONRzz2KRtw",
+    "title": "World of Warcraft. Quests - Garments of the Light",
+    "channel": "Позалипати у тверезість"
+   },
    "seconds": 10
   },
   {

@@ -1417,6 +1417,11 @@
    "npcName": "Foreman Thazz'ril",
    "zoneName": "Durotar",
    "level": 3,
+   "video": {
+    "id": "Ip_B6DdqzDY",
+    "title": "Lazy Peons Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 53
   },
   {
@@ -1440,6 +1445,11 @@
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
    "level": 3,
+   "video": {
+    "id": "Ox4KpAIB9mc",
+    "title": "Burning Blade Medallion WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 24
   },
   {
@@ -1723,6 +1733,11 @@
    "npcName": "Zureetha Fargaze",
    "zoneName": "Durotar",
    "level": 4,
+   "video": {
+    "id": "GikxkuyGD1Y",
+    "title": "world of warcraft classic - quest  Report to sen jin village",
+    "channel": "h m"
+   },
    "seconds": 24
   },
   {
@@ -1933,6 +1948,11 @@
    "npcName": "Ken'jai",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "qTjgKV7ijcg",
+    "title": "World of Warcraft: Priest: In Favor of Spirituality",
+    "channel": "Warcraft Story"
+   },
    "seconds": 116
   },
   {
@@ -2078,6 +2098,11 @@
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "YuAuqjWS_QI",
+    "title": "Report to Orgnil Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 53
   },
   {
@@ -2093,6 +2118,11 @@
    "npcName": "Master Vornal",
    "zoneName": "Durotar",
    "level": 5,
+   "video": {
+    "id": "wHi8rw_8VWo",
+    "title": "A Solvent Spirit Quest - Classic WoW",
+    "channel": "Slabu"
+   },
    "seconds": 12
   },
   {
@@ -2905,6 +2935,11 @@
    "npcName": "Vel'rin Fang",
    "zoneName": "Durotar",
    "level": 6,
+   "video": {
+    "id": "6_x76pERLr4",
+    "title": "Practical Prey Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 13
   },
   {

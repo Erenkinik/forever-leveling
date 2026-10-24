@@ -1873,6 +1873,11 @@
    "npcName": "Nori Pridedrift",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "LeBmteaWAU4",
+    "title": "Scalding Mornbrew Delivery Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 12
   },
   {
@@ -1903,6 +1908,11 @@
    "npcName": "Grelin Whitebeard",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "bK2NyaOW7W4",
+    "title": "The Stolen Journal Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 61
   },
   {
@@ -1918,6 +1928,11 @@
    "npcName": "Durnan Furcutter",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "1k5IX3xExgQ",
+    "title": "Bring Back The Mug WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 61
   },
   {
@@ -2084,6 +2099,11 @@
    "npcName": "Pilot Bellowfiz",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "S6ENGwe9OV0",
+    "title": "Stocking Jetsteam Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 76
   },
   {
@@ -2099,6 +2119,11 @@
    "npcName": "Tharek Blackstone",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "DCqrwJV2ohQ",
+    "title": "Tools for Steelgrill WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 38
   },
   {
@@ -2114,6 +2139,11 @@
    "npcName": "Pilot Stonegear",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "AUWsEil8Kwk",
+    "title": "The Grizzled Den Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 39
   },
   {
@@ -2129,6 +2159,11 @@
    "npcName": "Loslor Rudge",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "JFh9wnhURIY",
+    "title": "Ammo For Rumbleshot Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -3303,6 +3338,11 @@
    "npcName": "Pilot Bellowfiz",
    "zoneName": "Dun Morogh",
    "level": 6,
+   "video": {
+    "id": "DFIZWmbUYkE",
+    "title": "Evershine WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 109
   },
   {
@@ -3333,6 +3373,11 @@
    "npcName": "Senir Whitebeard",
    "zoneName": "Dun Morogh",
    "level": 7,
+   "video": {
+    "id": "ZwTlZgDvZdo",
+    "title": "Frostmane Hold Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 132
   },
   {

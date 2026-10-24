@@ -1048,6 +1048,11 @@
    "npcName": "Gilshalan Windwalker",
    "zoneName": "Teldrassil",
    "level": 4,
+   "video": {
+    "id": "Zw7xR54WOCM",
+    "title": "Webwood Venom WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 48
   },
   {
@@ -1296,6 +1301,11 @@
    "npcName": "Gilshalan Windwalker",
    "zoneName": "Teldrassil",
    "level": 4,
+   "video": {
+    "id": "YkNlJYeFLpU",
+    "title": "WoW Classic Webwood Egg Quest",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -1376,6 +1386,11 @@
    "npcName": "Shanda",
    "zoneName": "Teldrassil",
    "level": 5,
+   "video": {
+    "id": "F0SewJ6U2G4",
+    "title": "World of Warcraft: Priest: In Favor of Elune",
+    "channel": "Warcraft Story"
+   },
    "seconds": 22
   },
   {
@@ -1439,6 +1454,11 @@
    "npcName": "Tenaron Stormgrip",
    "zoneName": "Teldrassil",
    "level": 5,
+   "video": {
+    "id": "iHq2wRSXUnA",
+    "title": "Crown of the Earth (Filled Tourmaline Phial) WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -1500,6 +1520,11 @@
    "npcName": "Tenaron Stormgrip",
    "zoneName": "Teldrassil",
    "level": 5,
+   "video": {
+    "id": "iHq2wRSXUnA",
+    "title": "Crown of the Earth (Filled Tourmaline Phial) WoW Classic Quest",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 10
   },
   {
@@ -1530,6 +1555,11 @@
    "npcName": "Iverron",
    "zoneName": "Teldrassil",
    "level": 5,
+   "video": {
+    "id": "isjFTtvpBXk",
+    "title": "A Friend in Need WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 150
   },
   {
@@ -2411,6 +2441,11 @@
    "npcName": "Tallonkai Swiftroot",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "GoIvboJHK8Q",
+    "title": "The Emerald Dreamcatcher WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 126
   },
   {
@@ -2426,6 +2461,11 @@
    "npcName": "Zarrin",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "WRiBkhFcOT0",
+    "title": "Recipe Of The Kaldorei Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 34
   },
   {
@@ -2441,6 +2481,11 @@
    "npcName": "Athridas Bearmantle",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "gGQllAm3LD0",
+    "title": "A Troubling Breeze WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 31
   },
   {
@@ -2471,6 +2516,11 @@
    "npcName": "Tallonkai Swiftroot",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "vGn9BRYTBS8",
+    "title": "Twisted Hatred WoW Classic Quest (Melenas&#39; Head from Lord Melenas)",
+    "channel": "ZaFrostPet"
+   },
    "seconds": 45
   },
   {
@@ -2486,6 +2536,11 @@
    "npcName": "Syral Bladeleaf",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "jFyOMZ3Zo2Q",
+    "title": "Denalan’s Earth World of Warcraft Classic Quest #worldofwarcraftclassic",
+    "channel": "AnimePreOrderShop"
+   },
    "seconds": 15
   },
   {
@@ -2501,6 +2556,11 @@
    "npcName": "Moon Priestess Amara",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "xW0zLIIrqhA",
+    "title": "The Road To Darnassus Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 16
   },
   {
@@ -2519,6 +2579,11 @@
    "npcName": "Laurna Morninglight",
    "zoneName": "Teldrassil",
    "level": 6,
+   "video": {
+    "id": "-P6_MTlXu24",
+    "title": "Garments of the Moon, WoW Classic Quest / WoW SoD Quest",
+    "channel": "Bue"
+   },
    "seconds": 20
   },
   {

@@ -1846,6 +1846,11 @@
    "npcName": "Branstock Khalder",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "xPH-R7i2IvA",
+    "title": "In Favor of the Light Quest Guide World of Warcraft",
+    "channel": "PazarGamingGuides"
+   },
    "seconds": 60
   },
   {
@@ -1864,6 +1869,11 @@
    "npcName": "Teo Hammerstorm",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "dredxhRTGec",
+    "title": "Call of Earth  - Skyborne Shaman Quest Chain for Earth Totem, WoW Forever",
+    "channel": "Bue"
+   },
    "seconds": 12
   },
   {
@@ -1879,6 +1889,11 @@
    "npcName": "Nori Pridedrift",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "LeBmteaWAU4",
+    "title": "Scalding Mornbrew Delivery Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 63
   },
   {
@@ -1982,6 +1997,11 @@
    "npcName": "Teo Hammerstorm",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "dredxhRTGec",
+    "title": "Call of Earth  - Skyborne Shaman Quest Chain for Earth Totem, WoW Forever",
+    "channel": "Bue"
+   },
    "seconds": 11
   },
   {
@@ -2018,6 +2038,11 @@
    "npcName": "Minor Manifestation of Earth",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "dredxhRTGec",
+    "title": "Call of Earth  - Skyborne Shaman Quest Chain for Earth Totem, WoW Forever",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -2051,6 +2076,11 @@
    "npcName": "Grelin Whitebeard",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "bK2NyaOW7W4",
+    "title": "The Stolen Journal Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 62
   },
   {
@@ -2066,6 +2096,11 @@
    "npcName": "Durnan Furcutter",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "1k5IX3xExgQ",
+    "title": "Bring Back The Mug WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 61
   },
   {
@@ -2232,6 +2267,11 @@
    "npcName": "Pilot Bellowfiz",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "S6ENGwe9OV0",
+    "title": "Stocking Jetsteam Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 76
   },
   {
@@ -2247,6 +2287,11 @@
    "npcName": "Tharek Blackstone",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "DCqrwJV2ohQ",
+    "title": "Tools for Steelgrill WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 38
   },
   {
@@ -2262,6 +2307,11 @@
    "npcName": "Pilot Stonegear",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "AUWsEil8Kwk",
+    "title": "The Grizzled Den Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 39
   },
   {
@@ -2277,6 +2327,11 @@
    "npcName": "Loslor Rudge",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "JFh9wnhURIY",
+    "title": "Ammo For Rumbleshot Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -2295,6 +2350,11 @@
    "npcName": "Maxan Anvol",
    "zoneName": "Dun Morogh",
    "level": 5,
+   "video": {
+    "id": "rONRzz2KRtw",
+    "title": "World of Warcraft. Quests - Garments of the Light",
+    "channel": "Позалипати у тверезість"
+   },
    "seconds": 34
   },
   {
@@ -3517,6 +3577,11 @@
    "npcName": "Pilot Bellowfiz",
    "zoneName": "Dun Morogh",
    "level": 6,
+   "video": {
+    "id": "DFIZWmbUYkE",
+    "title": "Evershine WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 33
   },
   {
@@ -3547,6 +3612,11 @@
    "npcName": "Senir Whitebeard",
    "zoneName": "Dun Morogh",
    "level": 7,
+   "video": {
+    "id": "ZwTlZgDvZdo",
+    "title": "Frostmane Hold Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 132
   },
   {

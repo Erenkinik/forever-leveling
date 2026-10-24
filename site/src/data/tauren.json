@@ -1702,6 +1702,11 @@
    "npcName": "Chief Hawkwind",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "xugiyri6wFo",
+    "title": "Rites Of The Earthmother Quest (Horn Of Arra&#39;chea) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 14
   },
   {
@@ -1732,6 +1737,11 @@
    "npcName": "Antur Fallow",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "MCBuqRcTnhU",
+    "title": "A Task Unfinished Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 82
   },
   {
@@ -1762,6 +1772,11 @@
    "npcName": "Seer Graytongue",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "avKlr3Xuvh0",
+    "title": "Rite of Strength WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 196
   },
   {
@@ -2068,6 +2083,11 @@
    "npcName": "Chief Hawkwind",
    "zoneName": "Mulgore",
    "level": 5,
+   "video": {
+    "id": "xugiyri6wFo",
+    "title": "Rites Of The Earthmother Quest (Horn Of Arra&#39;chea) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -2158,6 +2178,11 @@
    "npcName": "Baine Bloodhoof",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "gzxbzWtuGIU",
+    "title": "Sharing the Land WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -2173,6 +2198,11 @@
    "npcName": "Baine Bloodhoof",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "XuLDIKun6Cs",
+    "title": "Rite of Vision 3/3 (Follow the Vision) WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 10
   },
   {
@@ -2188,6 +2218,11 @@
    "npcName": "Mull Thunderhorn",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "XWnc-yjcX2U",
+    "title": "Poison Water WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 19
   },
   {
@@ -2203,6 +2238,11 @@
    "npcName": "Harken Windtotem",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "hACXOJZdURI",
+    "title": "Swoop Hunting WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 17
   },
   {
@@ -2218,6 +2258,11 @@
    "npcName": "Ruul Eagletalon",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "Kde3dVI5V-8",
+    "title": "Dangers of the Windfury Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 30
   },
   {
@@ -2233,6 +2278,11 @@
    "npcName": "Maur Raincaller",
    "zoneName": "Mulgore",
    "level": 6,
+   "video": {
+    "id": "CydLQzdVMY4",
+    "title": "Mazzranache Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 39
   },
   {
@@ -4828,6 +4878,11 @@
    "npcName": "Zarlman Two-Moons",
    "zoneName": "Mulgore",
    "level": 8,
+   "video": {
+    "id": "XuLDIKun6Cs",
+    "title": "Rite of Vision 3/3 (Follow the Vision) WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 17
   },
   {
@@ -5312,6 +5367,11 @@
    "npcName": "Zarlman Two-Moons",
    "zoneName": "Mulgore",
    "level": 8,
+   "video": {
+    "id": "XuLDIKun6Cs",
+    "title": "Rite of Vision 3/3 (Follow the Vision) WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 28
   },
   {
@@ -8752,6 +8812,11 @@
    "npcName": "Cairne Bloodhoof",
    "zoneName": "Mulgore",
    "level": 12,
+   "video": {
+    "id": "xugiyri6wFo",
+    "title": "Rites Of The Earthmother Quest (Horn Of Arra&#39;chea) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -9628,6 +9693,11 @@
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
    "level": 16,
+   "video": {
+    "id": "YuAuqjWS_QI",
+    "title": "Report to Orgnil Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {

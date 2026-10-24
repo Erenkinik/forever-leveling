@@ -1,6 +1,11 @@
 {
  "note": "quest name -> YouTube video (null: searched, none fit); python -m pipeline videos",
  "videos": {
+  "A Friend in Need": {
+   "id": "isjFTtvpBXk",
+   "title": "A Friend in Need WoW Classic Quest",
+   "channel": "Bue"
+  },
   "A Good Friend": {
    "id": "WlIACLt2BHY",
    "title": "A Good Friend WoW Classic Quest",
@@ -16,16 +21,76 @@
    "title": "A New Threat WoW Classic Quest",
    "channel": "Bue"
   },
+  "A Peon's Burden": null,
+  "A Putrid Task": {
+   "id": "FKUfDFgel9A",
+   "title": "A Putrid Task WoW Classic Quest",
+   "channel": "Bue"
+  },
   "A Refugee's Quandary": null,
+  "A Rogue's Deal": null,
+  "A Solvent Spirit": {
+   "id": "wHi8rw_8VWo",
+   "title": "A Solvent Spirit Quest - Classic WoW",
+   "channel": "Slabu"
+  },
+  "A Student of Nature (WoW Forever)": null,
+  "A Student of the Arcane (WoW Forever)": {
+   "id": "ZN17-ax9S5s",
+   "title": "WoW Forever Quest: A Student of The Arcane",
+   "channel": "wowfholic"
+  },
+  "A Task Unfinished": {
+   "id": "MCBuqRcTnhU",
+   "title": "A Task Unfinished Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
   "A Threat Within": {
    "id": "p6IW3Laip6s",
    "title": "A Threat Within WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
+  "A Troubling Breeze": {
+   "id": "gGQllAm3LD0",
+   "title": "A Troubling Breeze WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Aetheen of the Gales (WoW Forever)": {
    "id": "SyQ7jtPrYnk",
    "title": "Aetheen Of The Gales Quest (WoW Forever)",
    "channel": "FocustaGuides"
+  },
+  "Aggressive Encroachment (WoW Forever)": {
+   "id": "tOj3mdG744Y",
+   "title": "Aggressive Encroachment, Quest | WoW Forever",
+   "channel": "WoWQuestly"
+  },
+  "Agitators (WoW Forever)": {
+   "id": "YcTsdnKHcHU",
+   "title": "Agitators Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "Al'Aketh Thugs (WoW Forever)": null,
+  "Ammo for Rumbleshot": {
+   "id": "JFh9wnhURIY",
+   "title": "Ammo For Rumbleshot Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Archaic Rune (WoW Forever)": null,
+  "At Home in the Shadows (WoW Forever)": {
+   "id": "KEKBJ3rA0X4",
+   "title": "At Home In The Shadows Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "At War With The Scarlet Crusade": {
+   "id": "l5PsCWj1JfU",
+   "title": "At War With The Scarlet Crusade Quest (1/4) (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Back to Billy": {
+   "id": "mn9BEZi9BrM",
+   "title": "Back to Billy WoW Classic Quest",
+   "channel": "Bue"
   },
   "Beginnings": {
    "id": "f3c3TGTiF6M",
@@ -42,19 +107,39 @@
    "title": "Break Sharptusk! Quest WoW Classic",
    "channel": "WoW Quests"
   },
+  "Bring Back the Mug": {
+   "id": "1k5IX3xExgQ",
+   "title": "Bring Back The Mug WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Brotherhood of Thieves": {
    "id": "HXcffmDjyfs",
    "title": "A Brotherhood Of Thieves Quest (WoW Classic)",
    "channel": "FocustaGuides"
+  },
+  "Burning Blade Medallion": {
+   "id": "Ox4KpAIB9mc",
+   "title": "Burning Blade Medallion WoW Classic Quest",
+   "channel": "Bue"
   },
   "Call of Earth": {
    "id": "nyntgWJHf1s",
    "title": "Call of Earth (Orc Shaman Earth Totem Quest Chain) WoW Classic",
    "channel": "Bue"
   },
+  "Call of Earth (WoW Forever)": {
+   "id": "dredxhRTGec",
+   "title": "Call of Earth  - Skyborne Shaman Quest Chain for Earth Totem, WoW Forever",
+   "channel": "Bue"
+  },
   "Coldridge Valley Mail Delivery": {
    "id": "qsohNNGB0rw",
    "title": "Coldridge Valley Mail Delivery Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Coming of Age (WoW Forever)": {
+   "id": "xM1g3iPau4M",
+   "title": "Coming Of Age Quest (WoW Forever)",
    "channel": "FocustaGuides"
   },
   "Consecrated Letter": {
@@ -67,10 +152,25 @@
    "title": "World of Warcraft: Paladin: Consecrated Rune",
    "channel": "Warcraft Story"
   },
+  "Crown of the Earth": {
+   "id": "iHq2wRSXUnA",
+   "title": "Crown of the Earth (Filled Tourmaline Phial) WoW Classic Quest",
+   "channel": "ZaFrostPet"
+  },
   "Cutting Teeth": {
    "id": "6o0C7IWtfMA",
    "title": "Cutting Teeth WoW Classic Quest",
    "channel": "Bue"
+  },
+  "Dangers of the Windfury": {
+   "id": "Kde3dVI5V-8",
+   "title": "Dangers of the Windfury Quest WoW Classic",
+   "channel": "WoW Quests"
+  },
+  "Denalan's Earth": {
+   "id": "jFyOMZ3Zo2Q",
+   "title": "Denalan’s Earth World of Warcraft Classic Quest #worldofwarcraftclassic",
+   "channel": "AnimePreOrderShop"
   },
   "Dolanaar Delivery": {
    "id": "cO7l7Tq1QIA",
@@ -91,6 +191,11 @@
    "id": "wqWJ7Mz9M2Q",
    "title": "Elemental Unrest Quest (WoW Forever)",
    "channel": "FocustaGuides"
+  },
+  "Embracing the Elements (WoW Forever)": {
+   "id": "-P1yQruMD6k",
+   "title": "Embracing the Elements | WoW Forever: Skyborne Quest Guide",
+   "channel": "Poradniki GamesBoard"
   },
   "Encrypted Letter": {
    "id": "obsO0KfauHA",
@@ -152,17 +257,47 @@
    "title": "WoW Classic - Durotar - Etched Tablet",
    "channel": "Royamarn"
   },
+  "Evershine": {
+   "id": "DFIZWmbUYkE",
+   "title": "Evershine WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Falaath Village (WoW Forever)": {
+   "id": "A6_aWu5boOs",
+   "title": "Falaath Village - Quest Guide (WoW Forever)",
+   "channel": "Explore WoW"
+  },
   "Falling With Style (WoW Forever)": {
    "id": "xoMlJR4BgHY",
    "title": "Falling With Style Quest (WoW Forever)",
    "channel": "FocustaGuides"
+  },
+  "Fields of Grief": {
+   "id": "m4pSkOjNBqM",
+   "title": "Fields of Grief - World of Warcraft Quest Guide",
+   "channel": "Warcraft Quest Videos"
   },
   "Foul Matriarch (WoW Forever)": {
    "id": "TUEWtP7Ji_s",
    "title": "Foul Matriarch – WoW Forever",
    "channel": "Game Guides Channel"
   },
+  "Frostmane Hold": {
+   "id": "ZwTlZgDvZdo",
+   "title": "Frostmane Hold Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
   "Galgar's Cactus Apple Surprise": null,
+  "Garments of the Light": {
+   "id": "rONRzz2KRtw",
+   "title": "World of Warcraft. Quests - Garments of the Light",
+   "channel": "Позалипати у тверезість"
+  },
+  "Garments of the Moon": {
+   "id": "-P6_MTlXu24",
+   "title": "Garments of the Moon, WoW Classic Quest / WoW SoD Quest",
+   "channel": "Bue"
+  },
   "Glyphic Letter": {
    "id": "3F-6r70hJC0",
    "title": "World of Warcraft: Mage: Glyphic Letter",
@@ -182,6 +317,22 @@
    "id": "iEmfExik35w",
    "title": "World of Warcraft: Mage: Glyphic Tablet",
    "channel": "Warcraft Story"
+  },
+  "Goldtooth": {
+   "id": "Yksyj0NHflU",
+   "title": "Goldtooth WoW Classic Quest (Bernice&#39;s Necklace)",
+   "channel": "ZaFrostPet"
+  },
+  "Gordo's Task": null,
+  "Grape Manifest": {
+   "id": "NbTyZtm0ibg",
+   "title": "Grape Manifest WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Graverobbers": {
+   "id": "ODSNUT3r7gc",
+   "title": "Graverobbers Quest (WoW Classic)",
+   "channel": "FocustaGuides"
   },
   "Hallowed Letter": {
    "id": "sle2_gmYghs",
@@ -213,36 +364,158 @@
    "title": "Harmony in Balance - WoW Forever Quest",
    "channel": "Endo Game Guides"
   },
+  "Harvesting Windstones (WoW Forever)": {
+   "id": "Huu180FDK-w",
+   "title": "Harvesting Windstones Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "Havoc in the Highlands (WoW Forever)": {
+   "id": "i7i-P9vYomA",
+   "title": "Havoc in the Highlands, Quest | WoW Forever",
+   "channel": "WoWQuestly"
+  },
+  "Hippogryph Harrassment (WoW Forever)": {
+   "id": "PVAmm_wyU6w",
+   "title": "Hippogryph Harrassment Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "In Favor of Darkness": {
+   "id": "ufC0EsBiir0",
+   "title": "World of Warcraft: Priest: In Favor of Darkness",
+   "channel": "Warcraft Story"
+  },
+  "In Favor of Elune": {
+   "id": "F0SewJ6U2G4",
+   "title": "World of Warcraft: Priest: In Favor of Elune",
+   "channel": "Warcraft Story"
+  },
+  "In Favor of Spirituality": {
+   "id": "qTjgKV7ijcg",
+   "title": "World of Warcraft: Priest: In Favor of Spirituality",
+   "channel": "Warcraft Story"
+  },
+  "In Favor of the Light": {
+   "id": "xPH-R7i2IvA",
+   "title": "In Favor of the Light Quest Guide World of Warcraft",
+   "channel": "PazarGamingGuides"
+  },
+  "Infestation Investigation (WoW Forever)": {
+   "id": "DtpwQEGRgN4",
+   "title": "Infestation Investigation Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
   "Investigate Echo Ridge": {
    "id": "EkH0YQFqpXo",
    "title": "Investigate Echo Ridge WoW Classic Quest",
    "channel": "Bue"
   },
+  "Iverron's Antidote": null,
   "Kobold Camp Cleanup": {
    "id": "n-evdY7pSJs",
    "title": "Kobold Camp Cleanup WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
+  "Lazy Peons": {
+   "id": "Ip_B6DdqzDY",
+   "title": "Lazy Peons Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Lost Necklace": {
+   "id": "UU-0wFbH8Kw",
+   "title": "Lost Necklace WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Marla's Last Wish": null,
+  "Mazzranache": {
+   "id": "CydLQzdVMY4",
+   "title": "Mazzranache Quest WoW Classic",
+   "channel": "WoW Quests"
+  },
+  "Milly Osworth": {
+   "id": "igiwIHnk7Ok",
+   "title": "Milly Osworth WoW Classic Quest",
+   "channel": "ZaFrostPet"
+  },
+  "Milly's Harvest": null,
   "Night Web's Hollow": null,
+  "Pie for Billy": {
+   "id": "_N5wF2-BzIU",
+   "title": "Pie for Billy WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Piercing the Veil": {
    "id": "vh24ePzPciY",
    "title": "World of Warcraft: Warlock: Piercing The Veil",
    "channel": "Warcraft Story"
+  },
+  "Poison Water": {
+   "id": "XWnc-yjcX2U",
+   "title": "Poison Water WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Practical Prey": {
+   "id": "6_x76pERLr4",
+   "title": "Practical Prey Quest WoW Classic",
+   "channel": "WoW Quests"
   },
   "Rattling the Rattlecages": {
    "id": "NQz6-2W5tgU",
    "title": "Rattling the Rattlecages WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
+  "Reading the Ley Lines (WoW Forever)": {
+   "id": "2t9kdiLxCC8",
+   "title": "Reading The Ley Lines Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "Recipe of the Kaldorei": {
+   "id": "WRiBkhFcOT0",
+   "title": "Recipe Of The Kaldorei Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Report to Goldshire": {
+   "id": "hE9vxnYz1lY",
+   "title": "Report to Goldshire WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Report to Orgnil": {
+   "id": "YuAuqjWS_QI",
+   "title": "Report to Orgnil Quest WoW Classic",
+   "channel": "WoW Quests"
+  },
+  "Report to Sen'jin Village": {
+   "id": "GikxkuyGD1Y",
+   "title": "world of warcraft classic - quest  Report to sen jin village",
+   "channel": "h m"
+  },
   "Rest and Relaxation": {
    "id": "8XGJDfO5MU8",
    "title": "Rest and Relaxation WoW Classic Quest",
    "channel": "ZaFrostPet"
   },
+  "Restocking the Larders (WoW Forever)": {
+   "id": "EmiV0TfzrZ4",
+   "title": "Restocking The Larders Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
   "Return to Rorian (WoW Forever)": {
    "id": "hQZqkpZok0M",
    "title": "Return To Rorian Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "Rite of Strength": {
+   "id": "avKlr3Xuvh0",
+   "title": "Rite of Strength WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Rite of Vision": {
+   "id": "XuLDIKun6Cs",
+   "title": "Rite of Vision 3/3 (Follow the Vision) WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Rites of the Earthmother": {
+   "id": "xugiyri6wFo",
+   "title": "Rites Of The Earthmother Quest (Horn Of Arra&#39;chea) (WoW Classic)",
    "channel": "FocustaGuides"
   },
   "Rude Awakening": {
@@ -270,10 +543,21 @@
    "title": "Sarkoth Quest WoW Classic",
    "channel": "WoW Quests"
   },
+  "Scalding Mornbrew Delivery": {
+   "id": "LeBmteaWAU4",
+   "title": "Scalding Mornbrew Delivery Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
   "Scavenging Deathknell": {
    "id": "SabEZUAPKnA",
    "title": "Scavenging Deathknell WoW Classic Quest",
    "channel": "ZaFrostPet"
+  },
+  "Senir's Observations": null,
+  "Sharing the Land": {
+   "id": "gzxbzWtuGIU",
+   "title": "Sharing the Land WoW Classic Quest",
+   "channel": "Bue"
   },
   "Simple Letter": {
    "id": "mwWe4Fzz6Fs",
@@ -315,15 +599,40 @@
    "title": "World of Warcraft: Warrior: Simple Tablet",
    "channel": "Warcraft Story"
   },
+  "Skirmish at Echo Ridge": {
+   "id": "-rTP8c-BNZ4",
+   "title": "Skirmish at Echo Ridge WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Speak with Gramma": {
+   "id": "QdlKKpS8NEU",
+   "title": "Speak with Gramma WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Sting of the Scorpid": {
    "id": "Ny27Sqg0pKU",
    "title": "Sting Of The Scorpid Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Stocking Jetsteam": {
+   "id": "S6ENGwe9OV0",
+   "title": "Stocking Jetsteam Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "Stolen Supplies (WoW Forever)": {
+   "id": "83woiXnCOP0",
+   "title": "Stolen Supplies Quest (WoW Forever)",
    "channel": "FocustaGuides"
   },
   "Supplies to Tannok": {
    "id": "Gwldh_S85Jo",
    "title": "Supplies to Tannok WoW Classic Quest",
    "channel": "ZaFrostPet"
+  },
+  "Swoop Hunting": {
+   "id": "hACXOJZdURI",
+   "title": "Swoop Hunting WoW Classic Quest",
+   "channel": "Bue"
   },
   "Tainted Letter": {
    "id": "EweJHzP_kAk",
@@ -345,6 +654,13 @@
    "title": "World of Warcraft: Warlock: Tainted Scroll",
    "channel": "Warcraft Story"
   },
+  "Tenaron's Summons": null,
+  "Thazz'ril's Pick": null,
+  "The Adventurer (WoW Forever)": {
+   "id": "ESNqPybdkec",
+   "title": "The Adventurer, WoW Forever Quest",
+   "channel": "Bue"
+  },
   "The Anchors of Zephras (WoW Forever)": {
    "id": "AixYzxIjScg",
    "title": "The Anchors of Zephras Full Quest World of Warcraft",
@@ -365,15 +681,40 @@
    "title": "The Boar Hunter WoW Classic Quest",
    "channel": "Bue"
   },
+  "The Cirrusfly Queen (WoW Forever)": {
+   "id": "hbboIB41RV8",
+   "title": "The Cirrusfly Queen Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "The Criminal Element (WoW Forever)": {
+   "id": "HJvDqzTg-u0",
+   "title": "The Criminal Element - WoW Forever Quest",
+   "channel": "Endo Game Guides"
+  },
   "The Damned": {
    "id": "jd3A20Lble4",
    "title": "The Damned, WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "The Emerald Dreamcatcher": {
+   "id": "GoIvboJHK8Q",
+   "title": "The Emerald Dreamcatcher WoW Classic Quest",
    "channel": "Bue"
   },
   "The Gift of Skysight (WoW Forever)": {
    "id": "MBM7OHDoII0",
    "title": "The Gift of Skysight, WoW Forever Skyborne Quest",
    "channel": "Bue"
+  },
+  "The Grizzled Den": {
+   "id": "AUWsEil8Kwk",
+   "title": "The Grizzled Den Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "The High Order (WoW Forever)": {
+   "id": "nPm0_SC0pmA",
+   "title": "The High Order Quest (WoW Forever)",
+   "channel": "FocustaGuides"
   },
   "The Hunt Begins": {
    "id": "mFs2MLdPW54",
@@ -395,6 +736,31 @@
    "title": "The Next Step Quest (WoW Forever)",
    "channel": "FocustaGuides"
   },
+  "The Problem With Prideclaws (WoW Forever)": {
+   "id": "tRMbnzBSaVc",
+   "title": "The Problem With Prideclaws, WoW Forever Quest",
+   "channel": "Bue"
+  },
+  "The Red Messenger": {
+   "id": "9qXZJGI7Lfc",
+   "title": "WoW Classic-Horde The Red Messenger Quest",
+   "channel": "DarthTaco"
+  },
+  "The Road to Darnassus": {
+   "id": "xW0zLIIrqhA",
+   "title": "The Road To Darnassus Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
+  "The Scarlet Crusade": {
+   "id": "iED9FHyW6Bo",
+   "title": "The Scarlet Crusade, WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "The Stolen Journal": {
+   "id": "bK2NyaOW7W4",
+   "title": "The Stolen Journal Quest (WoW Classic)",
+   "channel": "FocustaGuides"
+  },
   "The Stolen Tome": {
    "id": "OKl3KVSEKfQ",
    "title": "The Stolen Tome WoW Classic Quest",
@@ -405,10 +771,31 @@
    "title": "The Troll Cave WoW Classic Quest",
    "channel": "Bue"
   },
+  "The Warrior's Path (WoW Forever)": null,
+  "The Way of the Hunter (WoW Forever)": {
+   "id": "Oy4BfTpd2Jw",
+   "title": "The Way of the Hunter - WoW Forever Quest",
+   "channel": "Bd"
+  },
   "The Woodland Protector": {
    "id": "GWtpUNr4NDQ",
    "title": "The Woodland Protector 1/2 WoW Classic Quest",
    "channel": "Bue"
+  },
+  "To Valanaar (WoW Forever)": {
+   "id": "f-P5q8EETbY",
+   "title": "To Valanaar Quest (WoW Forever)",
+   "channel": "FocustaGuides"
+  },
+  "Tools for Steelgrill": {
+   "id": "DCqrwJV2ohQ",
+   "title": "Tools for Steelgrill WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Twisted Hatred": {
+   "id": "vGn9BRYTBS8",
+   "title": "Twisted Hatred WoW Classic Quest (Melenas&#39; Head from Lord Melenas)",
+   "channel": "ZaFrostPet"
   },
   "Verdant Note": {
    "id": "ZgP-0rT2U9I",
@@ -425,15 +812,38 @@
    "title": "Vile Familiars Quest (WoW Classic)",
    "channel": "FocustaGuides"
   },
+  "Vital Intelligence": {
+   "id": "Syn7LW77sXY",
+   "title": "Vital Intelligence Quest WoW Classic",
+   "channel": "WoW Quests"
+  },
+  "Webwood Egg": {
+   "id": "YkNlJYeFLpU",
+   "title": "WoW Classic Webwood Egg Quest",
+   "channel": "WoW Quests"
+  },
+  "Webwood Venom": {
+   "id": "Zw7xR54WOCM",
+   "title": "Webwood Venom WoW Classic Quest",
+   "channel": "Bue"
+  },
+  "Welcome to Shen'dar Village (WoW Forever)": null,
+  "Winter's Presents": null,
   "Wolves Across the Border": {
    "id": "XwuVZi4qbSo",
    "title": "Wolves Across The Border Quest (WoW Classic)",
    "channel": "FocustaGuides"
   },
+  "Young Lovers": {
+   "id": "Uw1oGD6LCiQ",
+   "title": "Young Lovers WoW Classic Quest",
+   "channel": "Bue"
+  },
   "Your Place In The World": {
    "id": "A5MMH4CigUA",
    "title": "Your Place In The World Quest WoW Classic",
    "channel": "WoW Quests"
-  }
+  },
+  "Zenn's Bidding": null
  }
 }

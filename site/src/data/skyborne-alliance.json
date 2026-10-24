@@ -24,6 +24,11 @@
    "npcName": "Ailee Farheart",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "xM1g3iPau4M",
+    "title": "Coming Of Age Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -59,6 +64,11 @@
    "npcName": "Yala Windwatcher",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "YcTsdnKHcHU",
+    "title": "Agitators Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 52
   },
   {
@@ -154,6 +164,11 @@
    "npcName": "Valreaa Valewind",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "tOj3mdG744Y",
+    "title": "Aggressive Encroachment, Quest | WoW Forever",
+    "channel": "WoWQuestly"
+   },
    "seconds": 18
   },
   {
@@ -209,6 +224,11 @@
    "npcName": "Aetheen of the Gales",
    "zoneName": "Zephras Isle",
    "level": 1,
+   "video": {
+    "id": "ESNqPybdkec",
+    "title": "The Adventurer, WoW Forever Quest",
+    "channel": "Bue"
+   },
    "seconds": 18
   },
   {
@@ -503,6 +523,11 @@
    "npcName": "Elatrell Featherlight",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "DtpwQEGRgN4",
+    "title": "Infestation Investigation Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 22
   },
   {
@@ -602,6 +627,11 @@
    "npcName": "Elatrell Featherlight",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "hbboIB41RV8",
+    "title": "The Cirrusfly Queen Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -620,6 +650,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "ZN17-ax9S5s",
+    "title": "WoW Forever Quest: A Student of The Arcane",
+    "channel": "wowfholic"
+   },
    "seconds": 22
   },
   {
@@ -638,6 +673,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "Oy4BfTpd2Jw",
+    "title": "The Way of the Hunter - WoW Forever Quest",
+    "channel": "Bd"
+   },
    "seconds": 10
   },
   {
@@ -656,6 +696,11 @@
    "npcName": "Rorian the Dayseeker",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "KEKBJ3rA0X4",
+    "title": "At Home In The Shadows Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 10
   },
   {
@@ -707,6 +752,11 @@
    "npcName": "Falorne Fallwind",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "2t9kdiLxCC8",
+    "title": "Reading The Ley Lines Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 22
   },
   {
@@ -722,6 +772,11 @@
    "npcName": "Dalia the Collector",
    "zoneName": "Zephras Isle",
    "level": 4,
+   "video": {
+    "id": "Huu180FDK-w",
+    "title": "Harvesting Windstones Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 15
   },
   {
@@ -1032,6 +1087,11 @@
    "npcName": "Indari Sunseam",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "tRMbnzBSaVc",
+    "title": "The Problem With Prideclaws, WoW Forever Quest",
+    "channel": "Bue"
+   },
    "seconds": 101
   },
   {
@@ -1047,6 +1107,11 @@
    "npcName": "Teeri Wellwind",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "PVAmm_wyU6w",
+    "title": "Hippogryph Harrassment Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 13
   },
   {
@@ -1062,6 +1127,11 @@
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "HJvDqzTg-u0",
+    "title": "The Criminal Element - WoW Forever Quest",
+    "channel": "Endo Game Guides"
+   },
    "seconds": 20
   },
   {
@@ -1077,6 +1147,11 @@
    "npcName": "Sania Silverstream",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "A6_aWu5boOs",
+    "title": "Falaath Village - Quest Guide (WoW Forever)",
+    "channel": "Explore WoW"
+   },
    "seconds": 16
   },
   {
@@ -1092,6 +1167,11 @@
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "i7i-P9vYomA",
+    "title": "Havoc in the Highlands, Quest | WoW Forever",
+    "channel": "WoWQuestly"
+   },
    "seconds": 16
   },
   {
@@ -1107,6 +1187,11 @@
    "npcName": "Danarii Bellowveil",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "83woiXnCOP0",
+    "title": "Stolen Supplies Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 14
   },
   {
@@ -1122,6 +1207,11 @@
    "npcName": "Zerril Softbreeze",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "EmiV0TfzrZ4",
+    "title": "Restocking The Larders Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 23
   },
   {
@@ -1137,6 +1227,11 @@
    "npcName": "Rathiril Sunlance",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "nPm0_SC0pmA",
+    "title": "The High Order Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 26
   },
   {
@@ -1152,6 +1247,11 @@
    "npcName": "Constable Aonda",
    "zoneName": "Zephras Isle",
    "level": 5,
+   "video": {
+    "id": "f-P5q8EETbY",
+    "title": "To Valanaar Quest (WoW Forever)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 17
   },
   {

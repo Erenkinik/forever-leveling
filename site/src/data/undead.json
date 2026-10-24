@@ -1619,6 +1619,11 @@
    "npcName": "Executor Arren",
    "zoneName": "Tirisfal Glades",
    "level": 4,
+   "video": {
+    "id": "iED9FHyW6Bo",
+    "title": "The Scarlet Crusade, WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 19
   },
   {
@@ -2025,6 +2030,11 @@
    "npcName": "Dark Cleric Duesten",
    "zoneName": "Tirisfal Glades",
    "level": 5,
+   "video": {
+    "id": "ufC0EsBiir0",
+    "title": "World of Warcraft: Priest: In Favor of Darkness",
+    "channel": "Warcraft Story"
+   },
    "seconds": 17
   },
   {
@@ -2058,6 +2068,11 @@
    "npcName": "Executor Arren",
    "zoneName": "Tirisfal Glades",
    "level": 5,
+   "video": {
+    "id": "9qXZJGI7Lfc",
+    "title": "WoW Classic-Horde The Red Messenger Quest",
+    "channel": "DarthTaco"
+   },
    "seconds": 209
   },
   {
@@ -2119,6 +2134,11 @@
    "npcName": "Executor Arren",
    "zoneName": "Tirisfal Glades",
    "level": 5,
+   "video": {
+    "id": "Syn7LW77sXY",
+    "title": "Vital Intelligence Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
@@ -2164,6 +2184,11 @@
    "npcName": "Deathguard Simmer",
    "zoneName": "Tirisfal Glades",
    "level": 5,
+   "video": {
+    "id": "m4pSkOjNBqM",
+    "title": "Fields of Grief - World of Warcraft Quest Guide",
+    "channel": "Warcraft Quest Videos"
+   },
    "seconds": 31
   },
   {
@@ -2970,6 +2995,11 @@
    "npcName": "Magistrate Sevren",
    "zoneName": "Tirisfal Glades",
    "level": 6,
+   "video": {
+    "id": "ODSNUT3r7gc",
+    "title": "Graverobbers Quest (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 161
   },
   {
@@ -2985,6 +3015,11 @@
    "npcName": "Deathguard Dillinger",
    "zoneName": "Tirisfal Glades",
    "level": 6,
+   "video": {
+    "id": "FKUfDFgel9A",
+    "title": "A Putrid Task WoW Classic Quest",
+    "channel": "Bue"
+   },
    "seconds": 30
   },
   {
@@ -3000,6 +3035,11 @@
    "npcName": "Apothecary Johaan",
    "zoneName": "Tirisfal Glades",
    "level": 6,
+   "video": {
+    "id": "m4pSkOjNBqM",
+    "title": "Fields of Grief - World of Warcraft Quest Guide",
+    "channel": "Warcraft Quest Videos"
+   },
    "seconds": 19
   },
   {
@@ -3015,6 +3055,11 @@
    "npcName": "Executor Zygand",
    "zoneName": "Tirisfal Glades",
    "level": 6,
+   "video": {
+    "id": "l5PsCWj1JfU",
+    "title": "At War With The Scarlet Crusade Quest (1/4) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 18
   },
   {
@@ -5106,6 +5151,11 @@
    "npcName": "Executor Zygand",
    "zoneName": "Tirisfal Glades",
    "level": 8,
+   "video": {
+    "id": "l5PsCWj1JfU",
+    "title": "At War With The Scarlet Crusade Quest (1/4) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 16
   },
   {
@@ -7079,6 +7129,11 @@
    "npcName": "Executor Zygand",
    "zoneName": "Tirisfal Glades",
    "level": 10,
+   "video": {
+    "id": "l5PsCWj1JfU",
+    "title": "At War With The Scarlet Crusade Quest (1/4) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 16
   },
   {
@@ -7434,6 +7489,11 @@
    "npcName": "Executor Zygand",
    "zoneName": "Tirisfal Glades",
    "level": 10,
+   "video": {
+    "id": "l5PsCWj1JfU",
+    "title": "At War With The Scarlet Crusade Quest (1/4) (WoW Classic)",
+    "channel": "FocustaGuides"
+   },
    "seconds": 18
   },
   {
@@ -12051,6 +12111,11 @@
    "npcName": "Master Gadrin",
    "zoneName": "Durotar",
    "level": 19,
+   "video": {
+    "id": "YuAuqjWS_QI",
+    "title": "Report to Orgnil Quest WoW Classic",
+    "channel": "WoW Quests"
+   },
    "seconds": 10
   },
   {
